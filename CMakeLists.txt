@@ -1,5 +1,13 @@
+cmake_minimum_required(VERSION 2.6)
+project(kompare)
 
-include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../libdialogpages ${CMAKE_CURRENT_SOURCE_DIR}/../komparepart ${CMAKE_CURRENT_SOURCE_DIR}/../interfaces  )
+# search packages used by KDE
+find_package(KDE4 REQUIRED)
+include(KDE4Defaults)
+add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
+
+# include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../libdialogpages ${CMAKE_CURRENT_SOURCE_DIR}/../komparepart ${CMAKE_CURRENT_SOURCE_DIR}/../interfaces  )
 
 
 ########### next target ###############

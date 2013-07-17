@@ -41,7 +41,7 @@ class DIFF2_EXPORT KompareModelList : public QObject
 {
 	Q_OBJECT
 public:
-	KompareModelList( DiffSettings* diffSettings, QWidget* widgetForKIO, QObject* parent, const char* name = 0 );
+	KompareModelList( DiffSettings* diffSettings, QWidget* widgetForKIO, QObject* parent, const char* name = 0, bool isReadWrite = true);
 	~KompareModelList();
 
 public:
@@ -204,6 +204,7 @@ private:
 	QTextCodec*           m_textCodec;
 
 	QWidget*              m_widgetForKIO;
+	bool                  m_isReadWrite;
 };
 
 } // End of namespace Diff2

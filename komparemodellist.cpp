@@ -43,11 +43,11 @@
 #include "diffmodellist.h"
 #include "kompareprocess.h"
 #include "parser.h"
-#include "kompare_part.h"
+//#include "kompare_part.h"
 
 using namespace Diff2;
 
-KompareModelList::KompareModelList( DiffSettings* diffSettings, QWidget* widgetForKIO, QObject* parent, const char* name )
+KompareModelList::KompareModelList( DiffSettings* diffSettings, QWidget* widgetForKIO, QObject* parent, const char* name, bool isReadWrite)
 	: QObject( parent ),
 	m_diffProcess( 0 ),
 	m_diffSettings( diffSettings ),
@@ -57,10 +57,11 @@ KompareModelList::KompareModelList( DiffSettings* diffSettings, QWidget* widgetF
 	m_modelIndex( 0 ),
 	m_info( 0 ),
 	m_textCodec( 0 ),
-	m_widgetForKIO( widgetForKIO )
+	m_widgetForKIO( widgetForKIO ),
+	m_isReadWrite( isReadWrite )
 {
 	kDebug(8101) << "Show me the arguments: " << diffSettings << ", " << widgetForKIO << ", " << parent << ", " << name << endl;
-	KActionCollection *ac = ((KomparePart*) parent)->actionCollection();
+	KActionCollection *ac = new KActionCollection(this);
 	m_applyDifference = ac->addAction( "difference_apply", this, SLOT(slotActionApplyDifference()) );
 	m_applyDifference->setIcon( KIcon("arrow-right") );
 	m_applyDifference->setText( i18n("&Apply Difference") );
@@ -1347,7 +1348,7 @@ void KompareModelList::updateModelListActions()
 	if ( m_models && m_selectedModel && m_selectedDifference )
 	{
 		// ARGH!!!! Casts are evil!!!
-		if ( ( ( KomparePart* )parent() )->isReadWrite() )
+		if ( m_isReadWrite )
 		{
 			if ( m_selectedModel->appliedCount() != m_selectedModel->differenceCount() )
 				m_applyAll->setEnabled( true );

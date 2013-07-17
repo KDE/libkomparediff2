@@ -19,6 +19,8 @@ set(diff2_PART_SRCS
 	diffmodel.cpp 
 	difference.cpp 
 	diffhunk.cpp 
+	diffsettings.cpp
+	settingsbase.cpp
 	parser.cpp 
 	parserbase.cpp 
 	cvsdiffparser.cpp 

@@ -61,43 +61,43 @@ KompareModelList::KompareModelList( DiffSettings* diffSettings, QWidget* widgetF
 	m_isReadWrite( isReadWrite )
 {
 	kDebug(8101) << "Show me the arguments: " << diffSettings << ", " << widgetForKIO << ", " << parent << ", " << name << endl;
-	KActionCollection *ac = new KActionCollection(this);
-	m_applyDifference = ac->addAction( "difference_apply", this, SLOT(slotActionApplyDifference()) );
+	m_actionCollection = new KActionCollection(this);
+	m_applyDifference = m_actionCollection->addAction( "difference_apply", this, SLOT(slotActionApplyDifference()) );
 	m_applyDifference->setIcon( KIcon("arrow-right") );
 	m_applyDifference->setText( i18n("&Apply Difference") );
 	m_applyDifference->setShortcut( QKeySequence(Qt::Key_Space) );
-	m_unApplyDifference = ac->addAction( "difference_unapply", this, SLOT(slotActionUnApplyDifference()) );
+	m_unApplyDifference = m_actionCollection->addAction( "difference_unapply", this, SLOT(slotActionUnApplyDifference()) );
 	m_unApplyDifference->setIcon( KIcon("arrow-left") );
 	m_unApplyDifference->setText( i18n("Un&apply Difference") );
 	m_unApplyDifference->setShortcut( QKeySequence(Qt::Key_Backspace) );
-	m_applyAll = ac->addAction( "difference_applyall", this, SLOT(slotActionApplyAllDifferences()) );
+	m_applyAll = m_actionCollection->addAction( "difference_applyall", this, SLOT(slotActionApplyAllDifferences()) );
 	m_applyAll->setIcon( KIcon("arrow-right-double") );
 	m_applyAll->setText( i18n("App&ly All") );
 	m_applyAll->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_A) );
-	m_unapplyAll = ac->addAction( "difference_unapplyall", this, SLOT(slotActionUnapplyAllDifferences()) );
+	m_unapplyAll = m_actionCollection->addAction( "difference_unapplyall", this, SLOT(slotActionUnapplyAllDifferences()) );
 	m_unapplyAll->setIcon( KIcon("arrow-left-double") );
 	m_unapplyAll->setText( i18n("&Unapply All") );
 	m_unapplyAll->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_U) );
-	m_previousFile = ac->addAction( "difference_previousfile", this, SLOT(slotPreviousModel()) );
+	m_previousFile = m_actionCollection->addAction( "difference_previousfile", this, SLOT(slotPreviousModel()) );
 	m_previousFile->setIcon( KIcon("arrow-up-double") );
 	m_previousFile->setText( i18n("P&revious File") );
 	m_previousFile->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_PageUp) );
-	m_nextFile = ac->addAction( "difference_nextfile", this, SLOT(slotNextModel()) );
+	m_nextFile = m_actionCollection->addAction( "difference_nextfile", this, SLOT(slotNextModel()) );
 	m_nextFile->setIcon( KIcon("arrow-down-double") );
 	m_nextFile->setText( i18n("N&ext File") );
 	m_nextFile->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_PageDown) );
-	m_previousDifference = ac->addAction( "difference_previous", this, SLOT(slotPreviousDifference()) );
+	m_previousDifference = m_actionCollection->addAction( "difference_previous", this, SLOT(slotPreviousDifference()) );
 	m_previousDifference->setIcon( KIcon("arrow-up") );
 	m_previousDifference->setText( i18n("&Previous Difference") );
 	m_previousDifference->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_Up) );
-	m_nextDifference = ac->addAction( "difference_next", this, SLOT(slotNextDifference()) );
+	m_nextDifference = m_actionCollection->addAction( "difference_next", this, SLOT(slotNextDifference()) );
 	m_nextDifference->setIcon( KIcon("arrow-down") );
 	m_nextDifference->setText( i18n("&Next Difference") );
 	m_nextDifference->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_Down) );
 	m_previousDifference->setEnabled( false );
 	m_nextDifference->setEnabled( false );
 
-	m_save = KStandardAction::save( this, SLOT(slotSaveDestination()), ac );
+	m_save = KStandardAction::save( this, SLOT(slotSaveDestination()), m_actionCollection );
 	m_save->setEnabled( false );
 
 	updateModelListActions();
@@ -846,6 +846,11 @@ DiffModel* KompareModelList::nextModel()
 	}
 
 	return m_selectedModel;
+}
+
+KActionCollection* KompareModelList::actionCollection() const
+{
+    return m_actionCollection;
 }
 
 void KompareModelList::slotPreviousDifference()

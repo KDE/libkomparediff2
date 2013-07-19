@@ -29,6 +29,7 @@
 
 
 class KAction;
+class KActionCollection;
 class KTemporaryFile;
 
 class DiffSettings;
@@ -85,6 +86,7 @@ public:
 	enum Kompare::Mode    mode()   const { return m_info->mode; };
 	const DiffModelList*  models() const { return m_models; };
 
+	KActionCollection* actionCollection() const;
 	int modelCount() const;
 	int differenceCount() const;
 	int appliedCount() const;
@@ -189,6 +191,7 @@ private:
 
 	struct Kompare::Info* m_info;
 
+	KActionCollection*    m_actionCollection;
 	KAction*              m_applyDifference;
 	KAction*              m_unApplyDifference;
 	KAction*              m_applyAll;

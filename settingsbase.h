@@ -21,11 +21,12 @@
 #include <QtCore/QObject>
 
 #include "kompare.h"
+#include "diff2export.h"
 
 class QWidget;
 class KConfig;
 
-class SettingsBase : public QObject
+class DIFF2_EXPORT SettingsBase : public QObject
 {
 Q_OBJECT
 public:

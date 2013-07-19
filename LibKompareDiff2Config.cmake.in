@@ -1,0 +1,31 @@
+#########################################################################
+#
+# LibKompareDiff2 Configuration File
+#
+# This file sets various CMake Variables
+#
+# LIBKOMPAREDIFF2_INCLUDE_DIR                - The Include Directory for the LIBKOMPAREDIFF2  library
+# LIBKOMPAREDIFF2_LIBRARIES                  - the libkomparediff2 library
+#
+# Copyright 2008  Andreas Pakulat <apaku@gmx.de>
+# Copyright 2010  Niko Sams <niko.sams@gmail.com>
+# Copyright 2013  Jeremy Whiting <jpwhiting@kde.org>
+# Redistribution and use is allowed according to the terms of the BSD license.
+######################################################################
+
+get_filename_component(_LIBKOMPAREDIFF2_CURRENT_DIR  "${CMAKE_CURRENT_LIST_FILE}" PATH)
+
+if(NOT WIN32)
+# This is needed on non-win32 platforms, as lib-install-dir might be in a
+# totally different prefix than include-install-dir. So instead hardcode the
+# absolute path during buildtime
+set( LIBKOMPAREDIFF2_INCLUDE_DIR "@INCLUDE_INSTALL_DIR@/libkomparediff2" )
+
+else(NOT WIN32)
+
+set( LIBKOMPAREDIFF2_INCLUDE_DIR "${_LIBKOMPAREDIFF2_CURRENT_DIR}/../../../include/libkomparediff2" )
+
+endif(NOT WIN32)
+
+set( LIBKOMPAREDIFF2_LIBRARIES komparediff2)
+

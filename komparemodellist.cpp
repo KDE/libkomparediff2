@@ -44,6 +44,9 @@
 #include "kompareprocess.h"
 #include "parser.h"
 //#include "kompare_part.h"
+#include <kglobal.h>
+
+static const KCatalogLoader loader("libkomparediff2");
 
 using namespace Diff2;
 

@@ -27,5 +27,6 @@ set( LIBKOMPAREDIFF2_INCLUDE_DIR "${_LIBKOMPAREDIFF2_CURRENT_DIR}/../../../inclu
 
 endif(NOT WIN32)
 
-set( LIBKOMPAREDIFF2_LIBRARIES komparediff2)
+include("${CMAKE_CURRENT_LIST_DIR}/LibKompareDiff2Targets.cmake")
+set( LIBKOMPAREDIFF2_LIBRARIES LibKompareDiff2Import__komparediff2)
 

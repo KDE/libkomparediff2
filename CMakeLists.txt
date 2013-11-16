@@ -7,9 +7,7 @@ include(KDE4Defaults)
 add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
 
-# include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../libdialogpages ${CMAKE_CURRENT_SOURCE_DIR}/../komparepart ${CMAKE_CURRENT_SOURCE_DIR}/../interfaces  )
-
-set(diff2_PART_SRCS
+set(komparediff2_SRCS
 	kompareprocess.cpp 
 	komparemodellist.cpp 
 	diffmodellist.cpp 
@@ -26,9 +24,9 @@ set(diff2_PART_SRCS
 	stringlistpair.cpp)
 
 
-kde4_add_library(komparediff2 SHARED ${diff2_PART_SRCS})
+kde4_add_library(komparediff2 SHARED ${komparediff2_SRCS})
 
-target_link_libraries(komparediff2 ${KDE4_KDECORE_LIBS} ${KDE4_KPARTS_LIBS})
+target_link_libraries(komparediff2 ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS})
 
 set_target_properties(komparediff2 PROPERTIES VERSION ${GENERIC_LIB_VERSION}
 SOVERSION ${GENERIC_LIB_SOVERSION} )

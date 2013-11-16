@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.6)
 project(kompare)
 
+message(FATAL_ERROR "Building this module separately is only supported from branch KDE/4.12 onwards.")
+
 # search packages used by KDE
 find_package(KDE4 REQUIRED)
 include(KDE4Defaults)

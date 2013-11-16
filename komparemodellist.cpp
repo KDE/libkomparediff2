@@ -43,7 +43,6 @@
 #include "diffmodellist.h"
 #include "kompareprocess.h"
 #include "parser.h"
-//#include "kompare_part.h"
 #include <kglobal.h>
 
 static const KCatalogLoader loader("libkomparediff2");
@@ -1355,7 +1354,6 @@ void KompareModelList::updateModelListActions()
 {
 	if ( m_models && m_selectedModel && m_selectedDifference )
 	{
-		// ARGH!!!! Casts are evil!!!
 		if ( m_isReadWrite )
 		{
 			if ( m_selectedModel->appliedCount() != m_selectedModel->differenceCount() )

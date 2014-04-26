@@ -18,9 +18,9 @@
 #include "diffmodel.h"
 
 #include <QtCore/QRegExp>
+#include <QtDebug>
 
-#include <kdebug.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 #include "difference.h"
 #include "diffhunk.h"
@@ -89,7 +89,7 @@ void DiffModel::splitSourceInPathAndFileName()
 	else
 		m_sourceFile = m_source;
 
-	kDebug(8101) << m_source << " was split into " << m_sourcePath << " and " << m_sourceFile << endl;
+	qDebug() << m_source << " was split into " << m_sourcePath << " and " << m_sourceFile << endl;
 }
 
 void DiffModel::splitDestinationInPathAndFileName()
@@ -104,7 +104,7 @@ void DiffModel::splitDestinationInPathAndFileName()
 	else
 		m_destinationFile = m_destination;
 
-	kDebug(8101) << m_destination << " was split into " << m_destinationPath << " and " << m_destinationFile << endl;
+	qDebug() << m_destination << " was split into " << m_destinationPath << " and " << m_destinationFile << endl;
 }
 
 DiffModel& DiffModel::operator=( const DiffModel& model )
@@ -139,8 +139,8 @@ bool DiffModel::operator<( const DiffModel& model )
 
 int DiffModel::localeAwareCompareSource( const DiffModel& model )
 {
-	kDebug(8101) << "Path: " << model.m_sourcePath << endl;
-	kDebug(8101) << "File: " << model.m_sourceFile << endl;
+	qDebug() << "Path: " << model.m_sourcePath << endl;
+	qDebug() << "File: " << model.m_sourceFile << endl;
 
 	int result = m_sourcePath.localeAwareCompare( model.m_sourcePath );
 
@@ -182,9 +182,9 @@ QString DiffModel::recreateDiff() const
 
 Difference* DiffModel::firstDifference()
 {
-	kDebug(8101) << "DiffModel::firstDifference()" << endl;
+	qDebug() << "DiffModel::firstDifference()" << endl;
 	m_diffIndex = 0;
-	kDebug(8101) << "m_diffIndex = " << m_diffIndex << endl;
+	qDebug() << "m_diffIndex = " << m_diffIndex << endl;
 
 	m_selectedDifference = m_differences[ m_diffIndex ];
 
@@ -193,9 +193,9 @@ Difference* DiffModel::firstDifference()
 
 Difference* DiffModel::lastDifference()
 {
-	kDebug(8101) << "DiffModel::lastDifference()" << endl;
+	qDebug() << "DiffModel::lastDifference()" << endl;
 	m_diffIndex = m_differences.count() - 1;
-	kDebug(8101) << "m_diffIndex = " << m_diffIndex << endl;
+	qDebug() << "m_diffIndex = " << m_diffIndex << endl;
 
 	m_selectedDifference = m_differences[ m_diffIndex ];
 
@@ -204,17 +204,17 @@ Difference* DiffModel::lastDifference()
 
 Difference* DiffModel::prevDifference()
 {
-	kDebug(8101) << "DiffModel::prevDifference()" << endl;
+	qDebug() << "DiffModel::prevDifference()" << endl;
 	if ( m_diffIndex > 0 && --m_diffIndex < m_differences.count() )
 	{
-		kDebug(8101) << "m_diffIndex = " << m_diffIndex << endl;
+		qDebug() << "m_diffIndex = " << m_diffIndex << endl;
 		m_selectedDifference = m_differences[ m_diffIndex ];
 	}
 	else
 	{
 		m_selectedDifference = 0;
 		m_diffIndex = 0;
-		kDebug(8101) << "m_diffIndex = " << m_diffIndex << endl;
+		qDebug() << "m_diffIndex = " << m_diffIndex << endl;
 	}
 
 	return m_selectedDifference;
@@ -222,17 +222,17 @@ Difference* DiffModel::prevDifference()
 
 Difference* DiffModel::nextDifference()
 {
-	kDebug(8101) << "DiffModel::nextDifference()" << endl;
+	qDebug() << "DiffModel::nextDifference()" << endl;
 	if (  ++m_diffIndex < m_differences.count() )
 	{
-		kDebug(8101) << "m_diffIndex = " << m_diffIndex << endl;
+		qDebug() << "m_diffIndex = " << m_diffIndex << endl;
 		m_selectedDifference = m_differences[ m_diffIndex ];
 	}
 	else
 	{
 		m_selectedDifference = 0;
 		m_diffIndex = 0; // just for safety...
-		kDebug(8101) << "m_diffIndex = " << m_diffIndex << endl;
+		qDebug() << "m_diffIndex = " << m_diffIndex << endl;
 	}
 
 	return m_selectedDifference;
@@ -383,8 +383,8 @@ void DiffModel::applyAllDifferences( bool apply )
 
 bool DiffModel::setSelectedDifference( Difference* diff )
 {
-	kDebug(8101) << "diff = " << diff << endl;
-	kDebug(8101) << "m_selectedDifference = " << m_selectedDifference << endl;
+	qDebug() << "diff = " << diff << endl;
+	qDebug() << "m_selectedDifference = " << m_selectedDifference << endl;
 
 	if ( diff != m_selectedDifference )
 	{
@@ -392,7 +392,7 @@ bool DiffModel::setSelectedDifference( Difference* diff )
 			return false;
 		// Do not set m_diffIndex if it cant be found
 		m_diffIndex = m_differences.indexOf( diff );
-		kDebug(8101) << "m_diffIndex = " << m_diffIndex << endl;
+		qDebug() << "m_diffIndex = " << m_diffIndex << endl;
 		m_selectedDifference = diff;
 	}
 

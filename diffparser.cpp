@@ -16,8 +16,8 @@
 #include "diffparser.h"
 
 #include <QtCore/QRegExp>
+#include <QtDebug>
 
-#include <kdebug.h>
 
 using namespace Diff2;
 
@@ -34,7 +34,7 @@ DiffParser::~DiffParser()
 
 enum Kompare::Format DiffParser::determineFormat()
 {
-	kDebug(8101) << "Determining the format of the diff Diff" << m_diffLines << endl;
+	qDebug() << "Determining the format of the diff Diff" << m_diffLines << endl;
 
 	QRegExp normalRE ( "[0-9]+[0-9,]*[acd][0-9]+[0-9,]*" );
 	QRegExp unifiedRE( "^--- " );
@@ -46,34 +46,34 @@ enum Kompare::Format DiffParser::determineFormat()
 
 	while( it != m_diffLines.end() )
 	{
-		kDebug(8101) << (*it) << endl;
+		qDebug() << (*it) << endl;
 		if( it->indexOf( normalRE, 0 ) == 0 )
 		{
-			kDebug(8101) << "Difflines are from a Normal diff..." << endl;
+			qDebug() << "Difflines are from a Normal diff..." << endl;
 			return Kompare::Normal;
 		}
 		else if( it->indexOf( unifiedRE, 0 ) == 0 )
 		{
-			kDebug(8101) << "Difflines are from a Unified diff..." << endl;
+			qDebug() << "Difflines are from a Unified diff..." << endl;
 			return Kompare::Unified;
 		}
 		else if( it->indexOf( contextRE, 0 ) == 0 )
 		{
-			kDebug(8101) << "Difflines are from a Context diff..." << endl;
+			qDebug() << "Difflines are from a Context diff..." << endl;
 			return Kompare::Context;
 		}
 		else if( it->indexOf( rcsRE, 0 ) == 0 )
 		{
-			kDebug(8101) << "Difflines are from an RCS diff..." << endl;
+			qDebug() << "Difflines are from an RCS diff..." << endl;
 			return Kompare::RCS;
 		}
 		else if( it->indexOf( edRE, 0 ) == 0 )
 		{
-			kDebug(8101) << "Difflines are from an ED diff..." << endl;
+			qDebug() << "Difflines are from an ED diff..." << endl;
 			return Kompare::Ed;
 		}
 		++it;
 	}
-	kDebug(8101) << "Difflines are from an unknown diff..." << endl;
+	qDebug() << "Difflines are from an unknown diff..." << endl;
 	return Kompare::UnknownFormat;
 }

@@ -22,14 +22,13 @@
 #ifndef LIBDIFF2EXPORT_H
 #define LIBDIFF2EXPORT_H
 
-/* needed for KDE_EXPORT macros */
-#include <kdemacros.h>
+#include <QtGlobal>
 
 #ifndef DIFF2_EXPORT
 # ifdef MAKE_KOMPAREDIFF2_LIB
-#  define DIFF2_EXPORT KDE_EXPORT
+#  define DIFF2_EXPORT Q_DECL_EXPORT
 # else
-#  define DIFF2_EXPORT KDE_IMPORT
+#  define DIFF2_EXPORT Q_DECL_IMPORT
 # endif
 #endif
 

@@ -1,11 +1,24 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.12)
+
 project(LibKompareDiff2)
 
 # search packages used by KDE
-find_package(KDE4 REQUIRED)
-include(KDE4Defaults)
-add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
-include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
+include(FeatureSummary)
+find_package(Qt5Core NO_MODULE)
+set_package_properties(Qt5Core PROPERTIES TYPE REQUIRED)
+find_package(Qt5Widgets NO_MODULE)
+set_package_properties(Qt5Widgets PROPERTIES TYPE REQUIRED)
+find_package(Qt5Test NO_MODULE)
+find_package(ECM 0.0.9 NO_MODULE)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
+
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings)
+
+find_package(KF5 CONFIG REQUIRED
+	CoreAddons Codecs Config XmlGui I18n KIO KDELibs4Support
+)
 
 set(komparediff2_SRCS
 	kompareprocess.cpp 
@@ -26,7 +39,15 @@ set(komparediff2_SRCS
 
 kde4_add_library(komparediff2 SHARED ${komparediff2_SRCS})
 
-target_link_libraries(komparediff2 ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS})
+target_link_libraries(komparediff2
+    Qt5::Core
+    Qt5::Widgets
+    KF5::Codecs
+    KF5::CoreAddons
+    KF5::I18n
+    KF5::KIOCore
+    KF5::KDELibs4Support
+)
 
 set_target_properties(komparediff2 PROPERTIES VERSION ${GENERIC_LIB_VERSION}
 SOVERSION ${GENERIC_LIB_SOVERSION} )

@@ -17,8 +17,6 @@
 
 #include "diffmodellist.h"
 
-#include <kdebug.h>
-
 using namespace Diff2;
 
 bool diffModelCompare(DiffModel* model1, DiffModel* model2)

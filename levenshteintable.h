@@ -22,7 +22,7 @@
 #include <iostream>
 #include <QtCore/QString>
 
-#include <kdebug.h>
+#include <QtDebug>
 
 namespace Diff2 {
 
@@ -100,7 +100,7 @@ template<class SequencePair> LevenshteinTable<SequencePair>::~LevenshteinTable()
 
 template<class SequencePair> int LevenshteinTable<SequencePair>::getContent( unsigned int posX, unsigned int posY ) const
 {
-//  kDebug(8101) << "Width = " << m_width << ", height = " << m_height << ", posX = " << posX << ", posY = " << posY;
+//  qDebug() << "Width = " << m_width << ", height = " << m_height << ", posX = " << posX << ", posY = " << posY;
 	return m_table[ posY * m_width + posX ];
 }
 
@@ -189,7 +189,7 @@ template<class SequencePair> unsigned int LevenshteinTable<SequencePair>::create
 
 template<class SequencePair> int LevenshteinTable<SequencePair>::chooseRoute( int c1, int c2, int c3, int current )
 {
-//  kDebug(8101) << "c1 = " << c1 << ", c2 = " << c2 << ", c3 = " << c3;
+//  qDebug() << "c1 = " << c1 << ", c2 = " << c2 << ", c3 = " << c3;
 // preference order: c2, c3, c1, hopefully this will work out for me
 	if ( c2 <= c1 && c2 <= c3 )
 	{
@@ -207,8 +207,8 @@ template<class SequencePair> int LevenshteinTable<SequencePair>::chooseRoute( in
 
 template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfMarkers()
 {
-//  kDebug(8101) << source;
-//  kDebug(8101) << destination;
+//  qDebug() << source;
+//  qDebug() << destination;
 //  dumpLevenshteinTable();
 
 	unsigned int x = m_width-1;
@@ -243,8 +243,8 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 		switch ( direction )
 		{
 		case 0: // north
-//          kDebug(8101) << "Picking north";
-//          kDebug(8101) << "Source[" << ( x - 1 ) << "] = " << QString( source[ x-1 ] ) << ", destination[" << ( y - 1 ) << "] = " << QString( destination[ y-1 ] );
+//          qDebug() << "Picking north";
+//          qDebug() << "Source[" << ( x - 1 ) << "] = " << QString( source[ x-1 ] ) << ", destination[" << ( y - 1 ) << "] = " << QString( destination[ y-1 ] );
 
 			if ( !m_sequences->markerListSecond().isEmpty() )
 				c = m_sequences->markerListSecond().first();
@@ -253,14 +253,14 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 
 			if ( c && c->type() == Marker::End )
 			{
-//              kDebug(8101) << "CurrentValue: " << currentValue;
+//              qDebug() << "CurrentValue: " << currentValue;
 				if ( n == currentValue )
 					m_sequences->prependSecond( new Marker( Marker::Start, y ) );
 // else: the change continues, do not do anything
 			}
 			else
 			{
-//              kDebug(8101) << "CurrentValue: " << currentValue;
+//              qDebug() << "CurrentValue: " << currentValue;
 				if ( n < currentValue )
 					m_sequences->prependSecond( new Marker( Marker::End, y ) );
 			}
@@ -271,8 +271,8 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 			}
 			break;
 		case 1: // northwest
-//          kDebug(8101) << "Picking northwest";
-//          kDebug(8101) << "Source[" << ( x - 1 ) << "] = " << QString( source[ x-1 ] ) << ", destination[" << ( y - 1 ) << "] = " << QString( destination[ y-1 ] );
+//          qDebug() << "Picking northwest";
+//          qDebug() << "Source[" << ( x - 1 ) << "] = " << QString( source[ x-1 ] ) << ", destination[" << ( y - 1 ) << "] = " << QString( destination[ y-1 ] );
 
 			if ( !m_sequences->markerListSecond().isEmpty() )
 				c = m_sequences->markerListSecond().first();
@@ -281,14 +281,14 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 
 			if ( c && c->type() == Marker::End )
 			{
-//              kDebug(8101) << "End found: CurrentValue: " << currentValue;
+//              qDebug() << "End found: CurrentValue: " << currentValue;
 				if ( nw == currentValue )
 					m_sequences->prependSecond( new Marker( Marker::Start, y ) );
 // else: the change continues, do not do anything
 			}
 			else
 			{
-//              kDebug(8101) << "CurrentValue: " << currentValue;
+//              qDebug() << "CurrentValue: " << currentValue;
 				if ( nw < currentValue )
 					m_sequences->prependSecond( new Marker( Marker::End, y ) );
 			}
@@ -300,14 +300,14 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 
 			if ( c && c->type() == Marker::End )
 			{
-//              kDebug(8101) << "End found: CurrentValue: " << currentValue;
+//              qDebug() << "End found: CurrentValue: " << currentValue;
 				if ( nw == currentValue )
 					m_sequences->prependFirst( new Marker( Marker::Start, x ) );
 // else: the change continues, do not do anything
 			}
 			else
 			{
-//              kDebug(8101) << "CurrentValue: " << currentValue;
+//              qDebug() << "CurrentValue: " << currentValue;
 				if ( nw < currentValue )
 					m_sequences->prependFirst( new Marker( Marker::End, x ) );
 			}
@@ -316,8 +316,8 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 			--x;
 			break;
 		case 2: // west
-//          kDebug(8101) << "Picking west";
-//          kDebug(8101) << "Source[" << ( x - 1 ) << "] = " << QString( source[ x-1 ] ) << ", destination[" << ( y - 1 ) << "] = " << QString( destination[ y-1 ] );
+//          qDebug() << "Picking west";
+//          qDebug() << "Source[" << ( x - 1 ) << "] = " << QString( source[ x-1 ] ) << ", destination[" << ( y - 1 ) << "] = " << QString( destination[ y-1 ] );
 
 			if ( !m_sequences->markerListFirst().isEmpty() )
 				c = m_sequences->markerListFirst().first();
@@ -326,14 +326,14 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 
 			if ( c && c->type() == Marker::End )
 			{
-//              kDebug(8101) << "End found: CurrentValue: " << currentValue;
+//              qDebug() << "End found: CurrentValue: " << currentValue;
 				if ( w == currentValue )
 					m_sequences->prependFirst( new Marker( Marker::Start, x ) );
 // else: the change continues, do not do anything
 			}
 			else
 			{
-//              kDebug(8101) << "CurrentValue: " << currentValue;
+//              qDebug() << "CurrentValue: " << currentValue;
 				if ( w < currentValue )
 					m_sequences->prependFirst( new Marker( Marker::End, x ) );
 			}
@@ -359,7 +359,7 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 		m_sequences->prependSecond( new Marker( Marker::Start, 0 ) );
 	}
 
-//  kDebug(8101) << "Source string: " << source;
+//  qDebug() << "Source string: " << source;
 
 //  QStringList list;
 //  int prevValue = 0;
@@ -368,7 +368,7 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 //  for ( ; mit != end; ++mit )
 //  {
 //      c = *mit;
-//      kDebug(8101) << "Source Marker Entry : Type: " << c->type() << ", Offset: " << c->offset();
+//      qDebug() << "Source Marker Entry : Type: " << c->type() << ", Offset: " << c->offset();
 //      list.append( source.mid( prevValue, c->offset() - prevValue ) );
 //      prevValue = c->offset();
 //  }
@@ -376,18 +376,18 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 //  {
 //      list.append( source.mid( prevValue, source.length() - prevValue ) );
 //  }
-//  kDebug(8101) << "Source Resulting stringlist : " << list.join("\n");
+//  qDebug() << "Source Resulting stringlist : " << list.join("\n");
 //
 //  list.clear();
 //  prevValue = 0;
 //
-//  kDebug(8101) << "Destination string: " << destination;
+//  qDebug() << "Destination string: " << destination;
 //  mit = m_sequences->markerListSecond().begin();
 //  end = m_sequences->markerListSecond().end();
 //  for ( ; mit != end; ++mit )
 //  {
 //      c = *mit;
-//      kDebug(8101) << "Destination Marker Entry : Type: " << c->type() << ", Offset: " << c->offset();
+//      qDebug() << "Destination Marker Entry : Type: " << c->type() << ", Offset: " << c->offset();
 //      list.append( destination.mid( prevValue, c->offset() - prevValue ) );
 //      prevValue = c->offset();
 //  }
@@ -395,7 +395,7 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 //  {
 //      list.append( destination.mid( prevValue, destination.length() - prevValue ) );
 //  }
-//  kDebug(8101) << "Destination Resulting string : " << list.join("\n");
+//  qDebug() << "Destination Resulting string : " << list.join("\n");
 }
 
 } // namespace Diff2

@@ -21,9 +21,11 @@ set(interactiveDiffTest_SRCS
 kde4_add_unit_test(interactiveDiffTest ${interactiveDiffTest_SRCS})
 set_target_properties(interactiveDiffTest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
 target_link_libraries(interactiveDiffTest
-    ${QT_QTTEST_LIBRARY}
-    ${KDE4_KDECORE_LIBS}
-    ${KDE4_KPARTS_LIBS}
+    Qt5::Test
+    KF5::CoreAddons
+    KF5::Parts
+    KF5::I18n
+    KF5::KDELibs4Support
 )
 
 set(levenshteinTest_SRCS
@@ -35,6 +37,6 @@ set(levenshteinTest_SRCS
 kde4_add_unit_test(levenshteintest ${levenshteinTest_SRCS})
 set_target_properties(levenshteintest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
 target_link_libraries(levenshteintest
-    ${QT_QTTEST_LIBRARY}
-    ${QT_QTCORE_LIBRARY}
+    Qt5::Test
+    Qt5::Core
 )

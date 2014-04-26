@@ -18,7 +18,8 @@
 #ifndef KOMPARE_H
 #define KOMPARE_H
 
-#include <kurl.h>
+#include <QUrl>
+#include <kio/global.h>
 
 #include "diff2export.h"
 
@@ -87,8 +88,8 @@ namespace Kompare
 			enum DiffMode _diffMode = UnknownDiffMode,
 			enum Format _format = UnknownFormat,
 			enum Generator _generator = UnknownGenerator,
-			KUrl _source = KUrl(),
-			KUrl _destination = KUrl(),
+			QUrl _source = QUrl(),
+			QUrl _destination = QUrl(),
 			QString _localSource = "",
 			QString _localDestination = "",
 			KTempDir* _sourceKTempDir = 0,
@@ -112,7 +113,7 @@ namespace Kompare
 		}
 		void swapSourceWithDestination()
 		{
-			KUrl url = source;
+			QUrl url = source;
 			source = destination;
 			destination = url;
 
@@ -128,8 +129,8 @@ namespace Kompare
 		enum DiffMode  diffMode;
 		enum Format    format;
 		enum Generator generator;
-		KUrl           source;
-		KUrl           destination;
+		QUrl           source;
+		QUrl           destination;
 		QString        localSource;
 		QString        localDestination;
 		KTempDir*      sourceKTempDir;
@@ -147,15 +148,15 @@ class DIFF2_EXPORT KompareFunctions
 public:
 	static QString constructRelativePath( const QString& from, const QString& to )
 	{
-		KUrl fromURL( from );
-		KUrl toURL( to );
-		KUrl root;
+		QUrl fromURL( from );
+		QUrl toURL( to );
+		QUrl root;
 		int upLevels = 0;
 
 		// Find a common root.
 		root = from;
 		while( root.isValid() && !root.isParentOf( toURL ) ) {
-			root = root.upUrl();
+			root = KIO::upUrl(root);
 			upLevels++;
 		}
 
@@ -166,7 +167,7 @@ public:
 			relative += "../";
 		}
 
-		relative += QString( to ).replace( 0, root.path( KUrl::LeaveTrailingSlash ).length(), "" );
+		relative += QString( to ).replace( 0, root.path().length(), "" );
 		return relative;
 	}
 };

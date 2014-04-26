@@ -21,10 +21,9 @@
 #include <QtCore/QDir>
 #include <QtCore/QStringList>
 #include <QtCore/QTextCodec>
+#include <QtDebug>
 
 #include <kcharsets.h>
-#include <kdebug.h>
-#include <kglobal.h>
 
 #include "diffsettings.h"
 
@@ -99,12 +98,12 @@ void KompareProcess::writeCommandLine()
 	// load the executable into the KProcess
 	if ( m_diffSettings->m_diffProgram.isEmpty() )
 	{
-		kDebug(8101) << "Using the first diff in the path..." << endl;
+		qDebug() << "Using the first diff in the path..." << endl;
 		*this << "diff";
 	}
 	else
 	{
-		kDebug(8101) << "Using a user specified diff, namely: " << m_diffSettings->m_diffProgram << endl;
+		qDebug() << "Using a user specified diff, namely: " << m_diffSettings->m_diffProgram << endl;
 		*this << m_diffSettings->m_diffProgram;
 	}
 
@@ -229,12 +228,12 @@ void KompareProcess::setEncoding( const QString& encoding )
 	}
 	else
 	{
-		m_codec = KGlobal::charsets()->codecForName( encoding.toLatin1() );
+		m_codec = KCharsets::charsets()->codecForName( encoding.toLatin1() );
 		if ( m_codec )
 			m_textDecoder = m_codec->makeDecoder();
 		else
 		{
-			kDebug(8101) << "Using locale codec as backup..." << endl;
+			qDebug() << "Using locale codec as backup..." << endl;
 			m_codec = QTextCodec::codecForLocale();
 			m_textDecoder = m_codec->makeDecoder();
 		}
@@ -250,7 +249,7 @@ void KompareProcess::start()
 	QStringList::ConstIterator end = program.constEnd();
 	for (; it != end; ++it )
 		cmdLine += "\"" + (*it) + "\" ";
-	kDebug(8101) << cmdLine << endl;
+	qDebug() << cmdLine << endl;
 #endif
 	setOutputChannelMode( SeparateChannels );
 	setNextOpenMode(QIODevice::ReadWrite);
@@ -271,12 +270,12 @@ void KompareProcess::slotFinished( int exitCode, QProcess::ExitStatus exitStatus
 		m_stderr = m_textDecoder->toUnicode( readAllStandardError() );
 	}
 	else
-		kDebug(8101) << "KompareProcess::slotFinished : No decoder !!!" << endl;
+		qDebug() << "KompareProcess::slotFinished : No decoder !!!" << endl;
 
 	// exit code of 0: no differences
 	//              1: some differences
 	//              2: error but there may be differences !
-	kDebug(8101) << "Exited with exit code : " << exitCode << endl;
+	qDebug() << "Exited with exit code : " << exitCode << endl;
 	emit diffHasFinished( exitStatus == NormalExit && exitCode != 0 );
 }
 

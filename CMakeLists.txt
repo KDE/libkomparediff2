@@ -15,10 +15,17 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_D
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings)
+include(ECMSetupVersion)
 
 find_package(KF5 CONFIG REQUIRED
 	CoreAddons Codecs Config XmlGui I18n KIO KDELibs4Support
 )
+
+set(KF5_VERSION "5.0")
+ecm_setup_version(${KF5_VERSION}
+                  VARIABLE_PREFIX LIBKOMPAREDIFF2
+                  PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/LibKompareDiff2ConfigVersion.cmake"
+                  SOVERSION 5)
 
 set(komparediff2_SRCS
 	kompareprocess.cpp 
@@ -37,7 +44,7 @@ set(komparediff2_SRCS
 	stringlistpair.cpp)
 
 
-kde4_add_library(komparediff2 SHARED ${komparediff2_SRCS})
+add_library(komparediff2 ${komparediff2_SRCS})
 
 target_link_libraries(komparediff2
     Qt5::Core
@@ -49,8 +56,8 @@ target_link_libraries(komparediff2
     KF5::KDELibs4Support
 )
 
-set_target_properties(komparediff2 PROPERTIES VERSION ${GENERIC_LIB_VERSION}
-SOVERSION ${GENERIC_LIB_SOVERSION} )
+set_target_properties(komparediff2 PROPERTIES VERSION ${LIBKOMPAREDIFF2_VERSION_STRING}
+SOVERSION ${LIBKOMPAREDIFF2_VERSION_STRING} )
 
 install(TARGETS komparediff2 EXPORT LibKompareDiff2Targets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
@@ -73,13 +80,10 @@ install(FILES
 # Config.cmake file.
 configure_file( "${CMAKE_SOURCE_DIR}/LibKompareDiff2Config.cmake.in" "${CMAKE_BINARY_DIR}/LibKompareDiff2Config.cmake" @ONLY )
 
-if(KDE4_USE_COMMON_CMAKE_PACKAGE_CONFIG_DIR)
-    set(_LibKompareDiff2_CONFIG_DEST "${LIB_INSTALL_DIR}/cmake/libkomparediff2")
-else(KDE4_USE_COMMON_CMAKE_PACKAGE_CONFIG_DIR)
-    set(_LibKompareDiff2_CONFIG_DEST "${LIB_INSTALL_DIR}/libkomparediff2")
-endif(KDE4_USE_COMMON_CMAKE_PACKAGE_CONFIG_DIR)
+set(_LibKompareDiff2_CONFIG_DEST "${LIB_INSTALL_DIR}/cmake/LibKompareDiff2")
 
 install( FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/LibKompareDiff2ConfigVersion.cmake"
         "${CMAKE_BINARY_DIR}/LibKompareDiff2Config.cmake"
         DESTINATION "${_LibKompareDiff2_CONFIG_DEST}" )
 install( EXPORT LibKompareDiff2Targets

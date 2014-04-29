@@ -48,7 +48,6 @@
 #include "diffmodellist.h"
 #include "kompareprocess.h"
 #include "parser.h"
-#include <kglobal.h>
 
 Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
 Q_LOGGING_CATEGORY(LIBKOMPAREDIFF2, "libkomparediff")

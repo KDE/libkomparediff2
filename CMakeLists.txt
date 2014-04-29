@@ -2,20 +2,21 @@ cmake_minimum_required(VERSION 2.8.12)
 
 project(LibKompareDiff2)
 
-# search packages used by KDE
-include(FeatureSummary)
-find_package(Qt5Core NO_MODULE)
-set_package_properties(Qt5Core PROPERTIES TYPE REQUIRED)
-find_package(Qt5Widgets NO_MODULE)
-set_package_properties(Qt5Widgets PROPERTIES TYPE REQUIRED)
-find_package(Qt5Test NO_MODULE)
-find_package(ECM 0.0.9 NO_MODULE)
+find_package(ECM 0.0.9 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings)
 include(ECMSetupVersion)
+
+include(FeatureSummary)
+
+find_package(Qt5Core NO_MODULE)
+set_package_properties(Qt5Core PROPERTIES TYPE REQUIRED)
+find_package(Qt5Widgets NO_MODULE)
+set_package_properties(Qt5Widgets PROPERTIES TYPE REQUIRED)
+find_package(Qt5Test NO_MODULE)
 
 find_package(KF5 CONFIG REQUIRED
 	CoreAddons Codecs Config XmlGui I18n KIO Parts

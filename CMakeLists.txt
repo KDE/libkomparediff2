@@ -28,20 +28,21 @@ ecm_setup_version(${KF5_VERSION}
                   SOVERSION 5)
 
 set(komparediff2_SRCS
-	kompareprocess.cpp 
-	komparemodellist.cpp 
-	diffmodellist.cpp 
-	diffmodel.cpp 
-	difference.cpp 
-	diffhunk.cpp 
+	kompareprocess.cpp
+	komparemodellist.cpp
+	diffmodellist.cpp
+	diffmodel.cpp
+	difference.cpp
+	diffhunk.cpp
 	diffsettings.cpp
 	settingsbase.cpp
-	parser.cpp 
-	parserbase.cpp 
-	cvsdiffparser.cpp 
-	diffparser.cpp 
-	perforceparser.cpp 
-	stringlistpair.cpp)
+	parser.cpp
+	parserbase.cpp
+	cvsdiffparser.cpp
+	diffparser.cpp
+	perforceparser.cpp
+	stringlistpair.cpp
+)
 
 
 add_library(komparediff2 ${komparediff2_SRCS})
@@ -53,6 +54,7 @@ target_link_libraries(komparediff2
     KF5::CoreAddons
     KF5::I18n
     KF5::KIOCore
+    KF5::XmlGui
     KF5::KDELibs4Support
 )
 

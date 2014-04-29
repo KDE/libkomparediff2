@@ -19,6 +19,10 @@
 
 #include "difference.h"
 
+#include <QLoggingCategory>
+
+Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
+
 using namespace Diff2;
 
 DiffHunk::DiffHunk( int sourceLine, int destinationLine, QString function, Type type ) :
@@ -99,7 +103,7 @@ QString DiffHunk::recreateHunk() const
 	        .arg( m_sourceLine )
 	        .arg( m_destinationLine )
 	        .arg( slc )
-	        .arg( dlc ); 
+	        .arg( dlc );
 
 	if ( !m_function.isEmpty() )
 		hunk += ' ' + m_function;
@@ -108,6 +112,6 @@ QString DiffHunk::recreateHunk() const
 
 	hunk += differences;
 
-	qDebug() << hunk << endl;
+	qCDebug(LIBKOMPAREDIFF2) << hunk << endl;
 	return hunk;
 }

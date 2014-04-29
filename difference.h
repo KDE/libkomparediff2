@@ -20,9 +20,11 @@
 
 #include <qvector.h>
 
-#include <QtDebug>
+#include <QLoggingCategory>
 #include "diff2export.h"
 #include "marker.h"
+
+Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
 
 class QString;
 
@@ -34,13 +36,13 @@ class DIFF2_EXPORT DifferenceString
 public:
 	DifferenceString()
 	{
-//		qDebug() << "DifferenceString::DifferenceString()" << endl;
+//		qCDebug(LIBKOMPAREDIFF2) << "DifferenceString::DifferenceString()" << endl;
 	}
 	explicit DifferenceString( const QString& string, const MarkerList& markerList = MarkerList() ) :
 		m_string( string ),
 		m_markerList( markerList )
 	{
-//		qDebug() << "DifferenceString::DifferenceString( " << string << ", " << markerList << " )" << endl;
+//		qCDebug(LIBKOMPAREDIFF2) << "DifferenceString::DifferenceString( " << string << ", " << markerList << " )" << endl;
 		calculateHash();
 	}
 	DifferenceString( const DifferenceString& ds ) :
@@ -49,7 +51,7 @@ public:
 		m_hash( ds.m_hash ),
 		m_markerList( ds.m_markerList )
 	{
-//		qDebug() << "DifferenceString::DifferenceString( const DifferenceString& " << ds << " )" << endl;
+//		qCDebug(LIBKOMPAREDIFF2) << "DifferenceString::DifferenceString( const DifferenceString& " << ds << " )" << endl;
 	}
 	~DifferenceString()
 	{

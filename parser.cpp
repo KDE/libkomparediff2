@@ -16,12 +16,14 @@
 
 #include "parser.h"
 
-#include <QtDebug>
+#include <QLoggingCategory>
 
 #include "cvsdiffparser.h"
 #include "diffparser.h"
 #include "perforceparser.h"
 #include "diffmodel.h"
+
+Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
 
 using namespace Diff2;
 
@@ -57,7 +59,7 @@ int Parser::cleanUpCrap( QStringList& diffLines )
 	}
 
 	return nol;
-} 
+}
 
 DiffModelList* Parser::parse( QStringList& diffLines, bool* malformed )
 {
@@ -67,20 +69,20 @@ DiffModelList* Parser::parse( QStringList& diffLines, bool* malformed )
 	m_generator = determineGenerator( diffLines );
 
 	int nol = cleanUpCrap( diffLines );
-	qDebug() << "Cleaned up " << nol << " line(s) of crap from the diff..." << endl;
+	qCDebug(LIBKOMPAREDIFF2) << "Cleaned up " << nol << " line(s) of crap from the diff..." << endl;
 
 	switch( m_generator )
 	{
 	case Kompare::CVSDiff :
-		qDebug() << "It is a CVS generated diff..." << endl;
+		qCDebug(LIBKOMPAREDIFF2) << "It is a CVS generated diff..." << endl;
 		parser = new CVSDiffParser( m_list, diffLines );
 		break;
 	case Kompare::Diff :
-		qDebug() << "It is a diff generated diff..." << endl;
+		qCDebug(LIBKOMPAREDIFF2) << "It is a diff generated diff..." << endl;
 		parser = new DiffParser( m_list, diffLines );
 		break;
 	case Kompare::Perforce :
-		qDebug() << "It is a Perforce generated diff..." << endl;
+		qCDebug(LIBKOMPAREDIFF2) << "It is a Perforce generated diff..." << endl;
 		parser = new PerforceParser( m_list, diffLines );
 		break;
 	default:
@@ -92,13 +94,13 @@ DiffModelList* Parser::parse( QStringList& diffLines, bool* malformed )
 	DiffModelList* modelList = parser->parse( malformed );
 	if ( modelList )
 	{
-		qDebug() << "Modelcount: " << modelList->count() << endl;
+		qCDebug(LIBKOMPAREDIFF2) << "Modelcount: " << modelList->count() << endl;
 		DiffModelListIterator modelIt = modelList->begin();
 		DiffModelListIterator mEnd    = modelList->end();
 		for ( ; modelIt != mEnd; ++modelIt )
 		{
-			qDebug() << "Hunkcount:  " << (*modelIt)->hunkCount() << endl;
-			qDebug() << "Diffcount:  " << (*modelIt)->differenceCount() << endl;
+			qCDebug(LIBKOMPAREDIFF2) << "Hunkcount:  " << (*modelIt)->hunkCount() << endl;
+			qCDebug(LIBKOMPAREDIFF2) << "Diffcount:  " << (*modelIt)->differenceCount() << endl;
 		}
 	}
 
@@ -120,18 +122,18 @@ enum Kompare::Generator Parser::determineGenerator( const QStringList& diffLines
 	{
 		if ( ( *it ).startsWith( cvsDiff ) )
 		{
-			qDebug() << "Diff is a CVSDiff" << endl;
+			qCDebug(LIBKOMPAREDIFF2) << "Diff is a CVSDiff" << endl;
 			return Kompare::CVSDiff;
 		}
 		else if ( ( *it ).startsWith( perforceDiff ) )
 		{
-			qDebug() << "Diff is a Perforce Diff" << endl;
+			qCDebug(LIBKOMPAREDIFF2) << "Diff is a Perforce Diff" << endl;
 			return Kompare::Perforce;
 		}
 		++it;
 	}
 
-	qDebug() << "We'll assume it is a diff Diff" << endl;
+	qCDebug(LIBKOMPAREDIFF2) << "We'll assume it is a diff Diff" << endl;
 
 	// For now we'll assume it is a diff file diff, later we might
 	// try to really determine if it is a diff file diff.

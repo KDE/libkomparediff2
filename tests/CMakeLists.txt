@@ -1,5 +1,7 @@
 include_directories(..)
 
+include(ECMMarkAsTest)
+
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 
 set(interactiveDiffTest_SRCS
@@ -18,13 +20,16 @@ set(interactiveDiffTest_SRCS
     ../stringlistpair.cpp
 )
 
-kde4_add_unit_test(interactiveDiffTest ${interactiveDiffTest_SRCS})
+add_executable(interactiveDiffTest ${interactiveDiffTest_SRCS})
+add_test(libkomparediff2-interactiveDiffTest interactiveDiffTest)
+ecm_mark_as_test(interactiveDiffTest)
 set_target_properties(interactiveDiffTest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
 target_link_libraries(interactiveDiffTest
     Qt5::Test
     KF5::CoreAddons
     KF5::Parts
     KF5::I18n
+    KF5::XmlGui
     KF5::KDELibs4Support
 )
 
@@ -34,7 +39,9 @@ set(levenshteinTest_SRCS
     ../stringlistpair.cpp
 )
 
-kde4_add_unit_test(levenshteintest ${levenshteinTest_SRCS})
+add_executable(levenshteintest ${levenshteinTest_SRCS})
+add_test(libkomparediff2-levenshteintest levenshteintest)
+ecm_mark_as_test(levenshteintest)
 set_target_properties(levenshteintest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
 target_link_libraries(levenshteintest
     Qt5::Test

@@ -26,15 +26,20 @@
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
 #include <QtCore/QLinkedList>
+#include <QtCore/QTemporaryFile>
 #include <QLoggingCategory>
 
 #include <kactioncollection.h>
 #include <kcharsets.h>
 #include <kdirwatch.h>
-#include <kio/netaccess.h>
+#include <kio/udsentry.h>
+#include <kio/statjob.h>
+#include <kio/mkdirjob.h>
+#include <kio/filecopyjob.h>
+#define TRANSLATION_DOMAIN "libkomparediff2"
 #include <klocalizedstring.h>
-#include <kmimetype.h>
-#include <ktemporaryfile.h>
+#include <QMimeType>
+#include <QMimeDatabase>
 #include <kstandardaction.h>
 
 #include "difference.h"
@@ -46,9 +51,6 @@
 #include <kglobal.h>
 
 Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
-
-static const KCatalogLoader loader("libkomparediff2");
-
 Q_LOGGING_CATEGORY(LIBKOMPAREDIFF2, "libkomparediff")
 
 using namespace Diff2;
@@ -150,13 +152,14 @@ bool KompareModelList::compare()
 	{
 		QFile sourceFile( m_info->localSource );
 		sourceFile.open( QIODevice::ReadOnly );
-		QString sourceMimeType = ( KMimeType::findByContent( sourceFile.readAll() ) )->name();
+		QMimeDatabase db;
+		QString sourceMimeType = ( db.mimeTypeForData( sourceFile.readAll() ) ).name();
 		sourceFile.close();
 		qCDebug(LIBKOMPAREDIFF2) << "Mimetype source     : " << sourceMimeType << endl;
 
 		QFile destinationFile( m_info->localDestination );
 		destinationFile.open( QIODevice::ReadOnly );
-		QString destinationMimeType = ( KMimeType::findByContent( destinationFile.readAll() ) )->name();
+		QString destinationMimeType = ( db.mimeTypeForData( destinationFile.readAll() ) ).name();
 		destinationFile.close();
 		qCDebug(LIBKOMPAREDIFF2) << "Mimetype destination: " << destinationMimeType << endl;
 
@@ -322,7 +325,7 @@ bool KompareModelList::saveDestination( DiffModel* model )
 	if( !model->hasUnsavedChanges() )
 		return true;
 
-	KTemporaryFile temp;
+	QTemporaryFile temp;
 
 	if( !temp.open() ) {
 		emit error( i18n( "Could not open a temporary file." ) );
@@ -404,21 +407,26 @@ bool KompareModelList::saveDestination( DiffModel* model )
 		QUrl fullDestinationPath = m_info->destination;
 		fullDestinationPath.setPath( fullDestinationPath.path() + "/" + tmp );
 		qCDebug(LIBKOMPAREDIFF2) << "fullDestinationPath : " << fullDestinationPath << endl;
-		if ( !KIO::NetAccess::stat( fullDestinationPath.path(), entry, m_widgetForKIO ) )
+		KIO::StatJob *statJob = KIO::stat( fullDestinationPath.path() );
+		if ( !statJob->exec() )
 		{
-			if ( !KIO::NetAccess::mkdir( fullDestinationPath.path(), m_widgetForKIO ) )
+			entry = statJob->statResult();
+			KIO::MkdirJob* mkdirJob = KIO::mkdir( fullDestinationPath.path() );
+			if ( !mkdirJob->exec() )
 			{
 				emit error( i18n( "<qt>Could not create destination directory <b>%1</b>.\nThe file has not been saved.</qt>", fullDestinationPath.path() ) );
 				return false;
 			}
 		}
-		result = KIO::NetAccess::upload( temp.fileName(), fullDestinationPath, m_widgetForKIO );
+		KIO::FileCopyJob* copyJob = KIO::file_copy( temp.fileName(), fullDestinationPath );
+		result = copyJob->exec();
 	}
 	else
 	{
 		qCDebug(LIBKOMPAREDIFF2) << "Tempfilename   : " << temp.fileName() << endl;
 		qCDebug(LIBKOMPAREDIFF2) << "DestinationURL : " << m_info->destination << endl;
-		result = KIO::NetAccess::upload( temp.fileName(), m_info->destination, m_widgetForKIO );
+		KIO::FileCopyJob* copyJob = KIO::file_copy( temp.fileName(), m_info->destination );
+		result = copyJob->exec();
 		qCDebug(LIBKOMPAREDIFF2) << "true or false?" << result << endl;
 	}
 
@@ -426,8 +434,8 @@ bool KompareModelList::saveDestination( DiffModel* model )
 	{
 		// FIXME: Wrong first argument given in case of comparing directories!
 		emit error( i18n( "<qt>Could not upload the temporary file to the destination location <b>%1</b>. The temporary file is still available under: <b>%2</b>. You can manually copy it to the right place.</qt>", m_info->destination.url(), temp.fileName() ) );
-                //Don't remove file when we delete temp and don't leak it.
-                temp.setAutoRemove(false);
+		//Don't remove file when we delete temp and don't leak it.
+		temp.setAutoRemove(false);
 	}
 	else
 	{
@@ -652,7 +660,7 @@ bool KompareModelList::saveDiff( const QString& url, QString directory, DiffSett
 {
 	qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::saveDiff: " << endl;
 
-	m_diffTemp = new KTemporaryFile();
+	m_diffTemp = new QTemporaryFile();
 	m_diffURL = url;
 
 	if( !m_diffTemp->open() ) {
@@ -691,7 +699,8 @@ void KompareModelList::slotWriteDiffOutput( bool success )
 			emit error( i18n( "Could not write to the temporary file." ) );
 		}
 
-		KIO::NetAccess::upload( m_diffTemp->fileName(), QUrl::fromLocalFile( m_diffURL ), m_widgetForKIO );
+		KIO::FileCopyJob* copyJob = KIO::file_copy( m_diffTemp->fileName(), QUrl::fromLocalFile( m_diffURL ) );
+		copyJob->exec();
 
 		emit status( Kompare::FinishedWritingDiff );
 	}

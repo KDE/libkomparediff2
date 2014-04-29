@@ -20,6 +20,7 @@
 #include <QtCore/QRegExp>
 #include <QLoggingCategory>
 
+#define TRANSLATION_DOMAIN "libkomparediff2"
 #include <klocalizedstring.h>
 
 #include "difference.h"

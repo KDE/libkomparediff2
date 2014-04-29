@@ -39,10 +39,10 @@ void InteractiveDiffTest::CompareDifferenceStringList(const DifferenceStringList
         QCOMPARE((*actualIter)->string(), *expectedIter);
     }
     if (actualIter != actual.constEnd()) {
-        QFAIL(QString("Actual has too many items, starting with '%1', line %2").arg((*actualIter)->string()).arg(actualIter - actual.constBegin()).toAscii());
+        QFAIL(QString("Actual has too many items, starting with '%1', line %2").arg((*actualIter)->string()).arg(actualIter - actual.constBegin()).toLatin1());
     }
     if (expectedIter != expected.constEnd()) {
-        QFAIL(QString("Actual has too few items, no match for '%1', line %2").arg(*expectedIter).arg(expectedIter - expected.constBegin()).toAscii());
+        QFAIL(QString("Actual has too few items, no match for '%1', line %2").arg(*expectedIter).arg(expectedIter - expected.constBegin()).toLatin1());
     }
 }
 

@@ -28,8 +28,8 @@
 #include "diff2export.h"
 
 class QAction;
+class QTemporaryFile;
 class KActionCollection;
-class KTemporaryFile;
 
 class DiffSettings;
 class KompareProcess;
@@ -174,7 +174,7 @@ private: // Helper methods
 	void setDepthAndApplied();
 
 private:
-	KTemporaryFile*       m_diffTemp;
+	QTemporaryFile*       m_diffTemp;
 	QString               m_diffURL;
 
 	KompareProcess*       m_diffProcess;

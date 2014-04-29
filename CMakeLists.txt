@@ -18,7 +18,7 @@ include(KDECompilerSettings)
 include(ECMSetupVersion)
 
 find_package(KF5 CONFIG REQUIRED
-	CoreAddons Codecs Config XmlGui I18n KIO KDELibs4Support
+	CoreAddons Codecs Config XmlGui I18n KIO Parts
 )
 
 set(KF5_VERSION "5.0")
@@ -55,7 +55,6 @@ target_link_libraries(komparediff2
     KF5::I18n
     KF5::KIOCore
     KF5::XmlGui
-    KF5::KDELibs4Support
 )
 
 set_target_properties(komparediff2 PROPERTIES VERSION ${LIBKOMPAREDIFF2_VERSION_STRING}

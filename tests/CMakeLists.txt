@@ -25,12 +25,13 @@ add_test(libkomparediff2-interactiveDiffTest interactiveDiffTest)
 ecm_mark_as_test(interactiveDiffTest)
 set_target_properties(interactiveDiffTest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
 target_link_libraries(interactiveDiffTest
+    Qt5::Core
     Qt5::Test
     KF5::CoreAddons
     KF5::Parts
     KF5::I18n
     KF5::XmlGui
-    KF5::KDELibs4Support
+    KF5::KIOCore
 )
 
 set(levenshteinTest_SRCS

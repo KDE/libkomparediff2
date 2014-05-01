@@ -21,7 +21,7 @@
 #include <QtCore/QObject>
 
 #include "kompare.h"
-#include "diff2export.h"
+#include "diff2_export.h"
 
 class QWidget;
 class KConfig;

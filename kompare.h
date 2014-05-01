@@ -21,7 +21,7 @@
 #include <QUrl>
 #include <kio/global.h>
 
-#include "diff2export.h"
+#include "diff2_export.h"
 
 // Forward declaration needed
 class KTempDir;

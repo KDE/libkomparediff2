@@ -11,6 +11,7 @@ include(KDECompilerSettings)
 include(ECMSetupVersion)
 
 include(FeatureSummary)
+include(GenerateExportHeader)
 
 find_package(Qt5Core NO_MODULE)
 set_package_properties(Qt5Core PROPERTIES TYPE REQUIRED)
@@ -47,6 +48,7 @@ set(komparediff2_SRCS
 
 
 add_library(komparediff2 ${komparediff2_SRCS})
+generate_export_header(komparediff2 BASE_NAME diff2)
 
 target_link_libraries(komparediff2
     Qt5::Core
@@ -66,7 +68,7 @@ install(TARGETS komparediff2 EXPORT LibKompareDiff2Targets ${INSTALL_TARGETS_DEF
 add_subdirectory(tests)
 
 install(FILES
-    diff2export.h
+    ${CMAKE_CURRENT_BINARY_DIR}/diff2_export.h
     settingsbase.h
     diffsettings.h
     komparemodellist.h

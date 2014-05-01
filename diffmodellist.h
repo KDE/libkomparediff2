@@ -21,7 +21,7 @@
 #include <QtCore/QList> // include for the base class
 
 #include "diffmodel.h"
-#include "diff2export.h"
+#include "diff2_export.h"
 
 namespace Diff2
 {

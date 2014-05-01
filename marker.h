@@ -22,7 +22,7 @@
 #define MARKER_H
 
 #include <QList>
-#include "diff2export.h"
+#include "diff2_export.h"
 
 namespace Diff2 {
 

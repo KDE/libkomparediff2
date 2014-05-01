@@ -23,7 +23,7 @@
 
 #include "diffhunk.h"
 #include "kompare.h"
-#include "diff2export.h"
+#include "diff2_export.h"
 
 namespace Diff2
 {

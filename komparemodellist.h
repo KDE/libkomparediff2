@@ -25,7 +25,7 @@
 #include "diffmodel.h"
 #include "diffmodellist.h"
 #include "kompare.h"
-#include "diff2export.h"
+#include "diff2_export.h"
 
 class QAction;
 class QTemporaryFile;

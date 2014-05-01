@@ -21,7 +21,7 @@
 #include <qvector.h>
 
 #include <QLoggingCategory>
-#include "diff2export.h"
+#include "diff2_export.h"
 #include "marker.h"
 
 Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)

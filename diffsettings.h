@@ -23,7 +23,7 @@
 
 #include "kompare.h"
 #include "settingsbase.h"
-#include "diff2export.h"
+#include "diff2_export.h"
 
 class DIFF2_EXPORT  DiffSettings : public SettingsBase
 {

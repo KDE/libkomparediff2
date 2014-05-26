@@ -19,7 +19,7 @@ find_package(Qt5Widgets NO_MODULE)
 set_package_properties(Qt5Widgets PROPERTIES TYPE REQUIRED)
 find_package(Qt5Test NO_MODULE)
 
-find_package(KF5 CONFIG REQUIRED
+find_package(KF5 REQUIRED
 	CoreAddons Codecs Config XmlGui I18n KIO Parts
 )
 

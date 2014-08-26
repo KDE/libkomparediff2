@@ -35,7 +35,7 @@ DiffParser::~DiffParser()
 
 enum Kompare::Format DiffParser::determineFormat()
 {
-	qCDebug(LIBKOMPAREDIFF2) << "Determining the format of the diff Diff" << m_diffLines << endl;
+	qCDebug(LIBKOMPAREDIFF2) << "Determining the format of the diff Diff" << m_diffLines;
 
 	QRegExp normalRE ( "[0-9]+[0-9,]*[acd][0-9]+[0-9,]*" );
 	QRegExp unifiedRE( "^--- " );
@@ -47,34 +47,34 @@ enum Kompare::Format DiffParser::determineFormat()
 
 	while( it != m_diffLines.end() )
 	{
-		qCDebug(LIBKOMPAREDIFF2) << (*it) << endl;
+		qCDebug(LIBKOMPAREDIFF2) << (*it);
 		if( it->indexOf( normalRE, 0 ) == 0 )
 		{
-			qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Normal diff..." << endl;
+			qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Normal diff...";
 			return Kompare::Normal;
 		}
 		else if( it->indexOf( unifiedRE, 0 ) == 0 )
 		{
-			qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Unified diff..." << endl;
+			qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Unified diff...";
 			return Kompare::Unified;
 		}
 		else if( it->indexOf( contextRE, 0 ) == 0 )
 		{
-			qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Context diff..." << endl;
+			qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Context diff...";
 			return Kompare::Context;
 		}
 		else if( it->indexOf( rcsRE, 0 ) == 0 )
 		{
-			qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an RCS diff..." << endl;
+			qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an RCS diff...";
 			return Kompare::RCS;
 		}
 		else if( it->indexOf( edRE, 0 ) == 0 )
 		{
-			qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an ED diff..." << endl;
+			qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an ED diff...";
 			return Kompare::Ed;
 		}
 		++it;
 	}
-	qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an unknown diff..." << endl;
+	qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an unknown diff...";
 	return Kompare::UnknownFormat;
 }

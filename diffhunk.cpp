@@ -112,6 +112,6 @@ QString DiffHunk::recreateHunk() const
 
 	hunk += differences;
 
-	qCDebug(LIBKOMPAREDIFF2) << hunk << endl;
+	qCDebug(LIBKOMPAREDIFF2) << hunk;
 	return hunk;
 }

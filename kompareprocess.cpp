@@ -100,12 +100,12 @@ void KompareProcess::writeCommandLine()
 	// load the executable into the KProcess
 	if ( m_diffSettings->m_diffProgram.isEmpty() )
 	{
-		qCDebug(LIBKOMPAREDIFF2) << "Using the first diff in the path..." << endl;
+		qCDebug(LIBKOMPAREDIFF2) << "Using the first diff in the path...";
 		*this << "diff";
 	}
 	else
 	{
-		qCDebug(LIBKOMPAREDIFF2) << "Using a user specified diff, namely: " << m_diffSettings->m_diffProgram << endl;
+		qCDebug(LIBKOMPAREDIFF2) << "Using a user specified diff, namely: " << m_diffSettings->m_diffProgram;
 		*this << m_diffSettings->m_diffProgram;
 	}
 
@@ -235,7 +235,7 @@ void KompareProcess::setEncoding( const QString& encoding )
 			m_textDecoder = m_codec->makeDecoder();
 		else
 		{
-			qCDebug(LIBKOMPAREDIFF2) << "Using locale codec as backup..." << endl;
+			qCDebug(LIBKOMPAREDIFF2) << "Using locale codec as backup...";
 			m_codec = QTextCodec::codecForLocale();
 			m_textDecoder = m_codec->makeDecoder();
 		}
@@ -251,7 +251,7 @@ void KompareProcess::start()
 	QStringList::ConstIterator end = program.constEnd();
 	for (; it != end; ++it )
 		cmdLine += "\"" + (*it) + "\" ";
-	qCDebug(LIBKOMPAREDIFF2) << cmdLine << endl;
+	qCDebug(LIBKOMPAREDIFF2) << cmdLine;
 #endif
 	setOutputChannelMode( SeparateChannels );
 	setNextOpenMode(QIODevice::ReadWrite);
@@ -272,12 +272,12 @@ void KompareProcess::slotFinished( int exitCode, QProcess::ExitStatus exitStatus
 		m_stderr = m_textDecoder->toUnicode( readAllStandardError() );
 	}
 	else
-		qCDebug(LIBKOMPAREDIFF2) << "KompareProcess::slotFinished : No decoder !!!" << endl;
+		qCDebug(LIBKOMPAREDIFF2) << "KompareProcess::slotFinished : No decoder !!!";
 
 	// exit code of 0: no differences
 	//              1: some differences
 	//              2: error but there may be differences !
-	qCDebug(LIBKOMPAREDIFF2) << "Exited with exit code : " << exitCode << endl;
+	qCDebug(LIBKOMPAREDIFF2) << "Exited with exit code : " << exitCode;
 	emit diffHasFinished( exitStatus == NormalExit && exitCode != 0 );
 }
 

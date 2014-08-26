@@ -92,7 +92,7 @@ void DiffModel::splitSourceInPathAndFileName()
 	else
 		m_sourceFile = m_source;
 
-	qCDebug(LIBKOMPAREDIFF2) << m_source << " was split into " << m_sourcePath << " and " << m_sourceFile << endl;
+	qCDebug(LIBKOMPAREDIFF2) << m_source << " was split into " << m_sourcePath << " and " << m_sourceFile;
 }
 
 void DiffModel::splitDestinationInPathAndFileName()
@@ -107,7 +107,7 @@ void DiffModel::splitDestinationInPathAndFileName()
 	else
 		m_destinationFile = m_destination;
 
-	qCDebug(LIBKOMPAREDIFF2) << m_destination << " was split into " << m_destinationPath << " and " << m_destinationFile << endl;
+	qCDebug(LIBKOMPAREDIFF2) << m_destination << " was split into " << m_destinationPath << " and " << m_destinationFile;
 }
 
 DiffModel& DiffModel::operator=( const DiffModel& model )
@@ -142,8 +142,8 @@ bool DiffModel::operator<( const DiffModel& model )
 
 int DiffModel::localeAwareCompareSource( const DiffModel& model )
 {
-	qCDebug(LIBKOMPAREDIFF2) << "Path: " << model.m_sourcePath << endl;
-	qCDebug(LIBKOMPAREDIFF2) << "File: " << model.m_sourceFile << endl;
+	qCDebug(LIBKOMPAREDIFF2) << "Path: " << model.m_sourcePath;
+	qCDebug(LIBKOMPAREDIFF2) << "File: " << model.m_sourceFile;
 
 	int result = m_sourcePath.localeAwareCompare( model.m_sourcePath );
 
@@ -185,9 +185,9 @@ QString DiffModel::recreateDiff() const
 
 Difference* DiffModel::firstDifference()
 {
-	qCDebug(LIBKOMPAREDIFF2) << "DiffModel::firstDifference()" << endl;
+	qCDebug(LIBKOMPAREDIFF2) << "DiffModel::firstDifference()";
 	m_diffIndex = 0;
-	qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex << endl;
+	qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
 
 	m_selectedDifference = m_differences[ m_diffIndex ];
 
@@ -196,9 +196,9 @@ Difference* DiffModel::firstDifference()
 
 Difference* DiffModel::lastDifference()
 {
-	qCDebug(LIBKOMPAREDIFF2) << "DiffModel::lastDifference()" << endl;
+	qCDebug(LIBKOMPAREDIFF2) << "DiffModel::lastDifference()";
 	m_diffIndex = m_differences.count() - 1;
-	qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex << endl;
+	qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
 
 	m_selectedDifference = m_differences[ m_diffIndex ];
 
@@ -207,17 +207,17 @@ Difference* DiffModel::lastDifference()
 
 Difference* DiffModel::prevDifference()
 {
-	qCDebug(LIBKOMPAREDIFF2) << "DiffModel::prevDifference()" << endl;
+	qCDebug(LIBKOMPAREDIFF2) << "DiffModel::prevDifference()";
 	if ( m_diffIndex > 0 && --m_diffIndex < m_differences.count() )
 	{
-		qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex << endl;
+		qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
 		m_selectedDifference = m_differences[ m_diffIndex ];
 	}
 	else
 	{
 		m_selectedDifference = 0;
 		m_diffIndex = 0;
-		qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex << endl;
+		qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
 	}
 
 	return m_selectedDifference;
@@ -225,17 +225,17 @@ Difference* DiffModel::prevDifference()
 
 Difference* DiffModel::nextDifference()
 {
-	qCDebug(LIBKOMPAREDIFF2) << "DiffModel::nextDifference()" << endl;
+	qCDebug(LIBKOMPAREDIFF2) << "DiffModel::nextDifference()";
 	if (  ++m_diffIndex < m_differences.count() )
 	{
-		qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex << endl;
+		qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
 		m_selectedDifference = m_differences[ m_diffIndex ];
 	}
 	else
 	{
 		m_selectedDifference = 0;
 		m_diffIndex = 0; // just for safety...
-		qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex << endl;
+		qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
 	}
 
 	return m_selectedDifference;
@@ -386,8 +386,8 @@ void DiffModel::applyAllDifferences( bool apply )
 
 bool DiffModel::setSelectedDifference( Difference* diff )
 {
-	qCDebug(LIBKOMPAREDIFF2) << "diff = " << diff << endl;
-	qCDebug(LIBKOMPAREDIFF2) << "m_selectedDifference = " << m_selectedDifference << endl;
+	qCDebug(LIBKOMPAREDIFF2) << "diff = " << diff;
+	qCDebug(LIBKOMPAREDIFF2) << "m_selectedDifference = " << m_selectedDifference;
 
 	if ( diff != m_selectedDifference )
 	{
@@ -395,7 +395,7 @@ bool DiffModel::setSelectedDifference( Difference* diff )
 			return false;
 		// Do not set m_diffIndex if it cant be found
 		m_diffIndex = m_differences.indexOf( diff );
-		qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex << endl;
+		qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
 		m_selectedDifference = diff;
 	}
 

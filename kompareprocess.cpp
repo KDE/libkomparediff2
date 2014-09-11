@@ -27,6 +27,34 @@
 
 #include "diffsettings.h"
 
+namespace {
+/// TODO: This should be replaced to QDir::relativeFilePath
+QString constructRelativePath( const QString& from, const QString& to )
+{
+	QUrl fromURL( from );
+	QUrl toURL( to );
+	QUrl root;
+	int upLevels = 0;
+
+	// Find a common root.
+	root = fromURL;
+	while( root.isValid() && !root.isParentOf( toURL ) ) {
+		root = KIO::upUrl(root);
+		upLevels++;
+	}
+
+	if( !root.isValid() ) return to;
+
+	QString relative;
+	for( ; upLevels > 0; upLevels-- ) {
+		relative += "../";
+	}
+
+	relative += QString( to ).replace( 0, root.path().length(), "" );
+	return relative;
+}
+}
+
 Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
 
 KompareProcess::KompareProcess( DiffSettings* diffSettings, Kompare::DiffMode diffMode, const QString & source, const QString & destination, const QString &dir, Kompare::Mode mode )

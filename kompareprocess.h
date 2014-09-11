@@ -27,7 +27,7 @@ class QTextDecoder;
 
 class DiffSettings;
 
-class KompareProcess : public KProcess, public KompareFunctions
+class KompareProcess : public KProcess
 {
 	Q_OBJECT
 

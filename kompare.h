@@ -140,36 +140,4 @@ namespace Kompare
 	};
 } // End of namespace Kompare
 
-/*
-** This should be removed and put somewhere else
-*/
-class DIFF2_EXPORT KompareFunctions
-{
-public:
-	static QString constructRelativePath( const QString& from, const QString& to )
-	{
-		QUrl fromURL( from );
-		QUrl toURL( to );
-		QUrl root;
-		int upLevels = 0;
-
-		// Find a common root.
-		root = from;
-		while( root.isValid() && !root.isParentOf( toURL ) ) {
-			root = KIO::upUrl(root);
-			upLevels++;
-		}
-
-		if( !root.isValid() ) return to;
-
-		QString relative;
-		for( ; upLevels > 0; upLevels-- ) {
-			relative += "../";
-		}
-
-		relative += QString( to ).replace( 0, root.path().length(), "" );
-		return relative;
-	}
-};
-
 #endif

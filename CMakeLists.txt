@@ -44,6 +44,7 @@ set(komparediff2_SRCS
 	diffparser.cpp
 	perforceparser.cpp
 	stringlistpair.cpp
+	kompare.cpp
 )
 
 

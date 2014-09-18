@@ -24,6 +24,7 @@
 #include <QLoggingCategory>
 
 #include <kcharsets.h>
+#include <kio/global.h>
 
 #include "diffsettings.h"
 

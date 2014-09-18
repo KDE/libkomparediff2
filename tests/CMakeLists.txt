@@ -18,6 +18,7 @@ set(interactiveDiffTest_SRCS
     ../parser.cpp
     ../parserbase.cpp
     ../stringlistpair.cpp
+    ../kompare.cpp
 )
 
 add_executable(interactiveDiffTest ${interactiveDiffTest_SRCS})

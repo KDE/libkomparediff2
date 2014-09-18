@@ -19,7 +19,6 @@
 #define KOMPARE_H
 
 #include <QUrl>
-#include <kio/global.h>
 
 #include "diff2_export.h"
 
@@ -96,35 +95,9 @@ namespace Kompare
 			KTempDir* _destinationKTempDir = 0,
 			uint _depth = 0,
 			bool _applied = true
-		)
-		{
-			mode = _mode;
-			diffMode = _diffMode;
-			format = _format;
-			generator = _generator;
-			source = _source;
-			destination = _destination;
-			localSource = _localSource;
-			localDestination = _localDestination;
-			sourceKTempDir = _sourceKTempDir;
-			destinationKTempDir = _destinationKTempDir;
-			depth = _depth;
-			applied = _applied;
-		}
-		void swapSourceWithDestination()
-		{
-			QUrl url = source;
-			source = destination;
-			destination = url;
+		);
+		void swapSourceWithDestination();
 
-			QString string = localSource;
-			localSource = localDestination;
-			localDestination = string;
-
-			KTempDir* tmpDir = sourceKTempDir;
-			sourceKTempDir = destinationKTempDir;
-			destinationKTempDir = tmpDir;
-		}
 		enum Mode      mode;
 		enum DiffMode  diffMode;
 		enum Format    format;

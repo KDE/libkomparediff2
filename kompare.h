@@ -81,7 +81,7 @@ namespace Kompare
 		Destination
 	};
 
-	struct Info {
+	struct DIFF2_EXPORT Info {
 		Info (
 			enum Mode _mode = UnknownMode,
 			enum DiffMode _diffMode = UnknownDiffMode,

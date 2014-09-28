@@ -44,7 +44,7 @@ ParserBase::ParserBase( const KompareModelList* list, const QStringList& diff ) 
 
 	// used in contexthunkheader
 	m_contextHunkHeader1.setPattern( "\\*{15} ?(.*)\\n" ); // capture is for function name
-	m_contextHunkHeader2.setPattern( "\\*\\*\\* ([0-9]+),([0-9]+) \\*\\*\\*\\*\\n" );
+	m_contextHunkHeader2.setPattern( "\\*\\*\\* ([0-9]+),([0-9]+) \\*\\*\\*\\*.*\\n" );
 	// used in contexthunkbody
 	m_contextHunkHeader3.setPattern( "--- ([0-9]+),([0-9]+) ----\\n" );
 
@@ -138,10 +138,10 @@ bool ParserBase::parseContextDiffHeader()
 //			qCDebug(LIBKOMPAREDIFF2) << "Matched string Header2 = " << m_contextDiffHeader2.cap( 0 );
 
 			m_currentModel = new DiffModel( m_contextDiffHeader1.cap( 1 ), m_contextDiffHeader2.cap( 1 ) );
-			m_currentModel->setSourceTimestamp     ( m_contextDiffHeader1.cap( 2 ) );
-			m_currentModel->setSourceRevision      ( m_contextDiffHeader1.cap( 4 ) );
-			m_currentModel->setDestinationTimestamp( m_contextDiffHeader2.cap( 2 ) );
-			m_currentModel->setDestinationRevision ( m_contextDiffHeader2.cap( 4 ) );
+			m_currentModel->setSourceTimestamp     ( m_contextDiffHeader1.cap( 3 ) );
+			m_currentModel->setSourceRevision      ( m_contextDiffHeader1.cap( 5 ) );
+			m_currentModel->setDestinationTimestamp( m_contextDiffHeader2.cap( 3 ) );
+			m_currentModel->setDestinationRevision ( m_contextDiffHeader2.cap( 5 ) );
 
 			++m_diffIterator;
 			result = true;

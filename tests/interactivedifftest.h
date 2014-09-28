@@ -40,6 +40,7 @@ private slots:
     void testExistingAndApplied();
     void testOneLineDeletionUnapplied();
     void testApplyUnapply();
+    void testContextDiff();
 private:
     void CompareDifferenceStringList(const Diff2::DifferenceStringList& actual, const QStringList& expected);
 };

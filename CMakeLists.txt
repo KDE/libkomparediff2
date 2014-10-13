@@ -61,6 +61,8 @@ target_link_libraries(komparediff2
     KF5::XmlGui
 )
 
+target_include_directories(komparediff2 INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/libkomparediff2>")
+
 set_target_properties(komparediff2 PROPERTIES VERSION ${LIBKOMPAREDIFF2_VERSION_STRING}
 SOVERSION ${LIBKOMPAREDIFF2_VERSION_STRING} )
 

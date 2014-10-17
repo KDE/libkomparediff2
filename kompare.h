@@ -23,7 +23,7 @@
 #include "diff2_export.h"
 
 // Forward declaration needed
-class KTempDir;
+class QTemporaryDir;
 
 namespace Kompare
 {
@@ -91,8 +91,8 @@ namespace Kompare
 			QUrl _destination = QUrl(),
 			QString _localSource = "",
 			QString _localDestination = "",
-			KTempDir* _sourceKTempDir = 0,
-			KTempDir* _destinationKTempDir = 0,
+			QTemporaryDir* _sourceQTempDir = 0,
+			QTemporaryDir* _destinationQTempDir = 0,
 			uint _depth = 0,
 			bool _applied = true
 		);
@@ -106,8 +106,8 @@ namespace Kompare
 		QUrl           destination;
 		QString        localSource;
 		QString        localDestination;
-		KTempDir*      sourceKTempDir;
-		KTempDir*      destinationKTempDir;
+		QTemporaryDir*      sourceQTempDir;
+		QTemporaryDir*      destinationQTempDir;
 		uint           depth;
 		bool           applied;
 	};

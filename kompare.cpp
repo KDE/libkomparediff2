@@ -17,7 +17,7 @@
 
 #include "kompare.h"
 
-Kompare::Info::Info(Kompare::Mode _mode, Kompare::DiffMode _diffMode, Kompare::Format _format, Kompare::Generator _generator, QUrl _source, QUrl _destination, QString _localSource, QString _localDestination, KTempDir* _sourceKTempDir, KTempDir* _destinationKTempDir, uint _depth, bool _applied)
+Kompare::Info::Info(Kompare::Mode _mode, Kompare::DiffMode _diffMode, Kompare::Format _format, Kompare::Generator _generator, QUrl _source, QUrl _destination, QString _localSource, QString _localDestination, QTemporaryDir* _sourceQTempDir, QTemporaryDir* _destinationQTempDir, uint _depth, bool _applied)
     : mode(_mode)
     , diffMode(_diffMode)
     , format(_format)
@@ -26,8 +26,8 @@ Kompare::Info::Info(Kompare::Mode _mode, Kompare::DiffMode _diffMode, Kompare::F
     , destination(_destination)
     , localSource(_localSource)
     , localDestination(_localDestination)
-    , sourceKTempDir(_sourceKTempDir)
-    , destinationKTempDir(_destinationKTempDir)
+    , sourceQTempDir(_sourceQTempDir)
+    , destinationQTempDir(_destinationQTempDir)
     , depth(_depth)
     , applied(_applied)
 {
@@ -44,7 +44,7 @@ void Kompare::Info::swapSourceWithDestination()
     localSource = localDestination;
     localDestination = string;
 
-    KTempDir* tmpDir = sourceKTempDir;
-    sourceKTempDir = destinationKTempDir;
-    destinationKTempDir = tmpDir;
+    QTemporaryDir* tmpDir = sourceQTempDir;
+    sourceQTempDir = destinationQTempDir;
+    destinationQTempDir = tmpDir;
 }

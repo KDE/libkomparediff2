@@ -153,4 +153,4 @@ void LevenshteinTest::testSmth()
 }
 
 
-QTEST_MAIN(LevenshteinTest);
+QTEST_GUILESS_MAIN(LevenshteinTest);

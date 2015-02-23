@@ -816,4 +816,4 @@ void InteractiveDiffTest::testContextDiff()
     contextDiff2();
 }
 
-QTEST_MAIN(InteractiveDiffTest);
+QTEST_GUILESS_MAIN(InteractiveDiffTest);

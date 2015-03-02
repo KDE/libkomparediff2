@@ -63,8 +63,7 @@ target_link_libraries(komparediff2
 
 target_include_directories(komparediff2 INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/libkomparediff2>")
 
-set_target_properties(komparediff2 PROPERTIES VERSION ${LIBKOMPAREDIFF2_VERSION_STRING}
-SOVERSION ${LIBKOMPAREDIFF2_VERSION_STRING} )
+set_target_properties(komparediff2 PROPERTIES VERSION ${LIBKOMPAREDIFF2_VERSION_STRING} SOVERSION ${LIBKOMPAREDIFF2_SOVERSION} )
 
 install(TARGETS komparediff2 EXPORT LibKompareDiff2Targets ${INSTALL_TARGETS_DEFAULT_ARGS})
 

@@ -417,14 +417,14 @@ bool KompareModelList::saveDestination( DiffModel* model )
 				return false;
 			}
 		}
-		KIO::FileCopyJob* copyJob = KIO::file_copy( temp.fileName(), fullDestinationPath );
+		KIO::FileCopyJob* copyJob = KIO::file_copy( QUrl::fromLocalFile( temp.fileName() ), fullDestinationPath );
 		result = copyJob->exec();
 	}
 	else
 	{
 		qCDebug(LIBKOMPAREDIFF2) << "Tempfilename   : " << temp.fileName();
 		qCDebug(LIBKOMPAREDIFF2) << "DestinationURL : " << m_info->destination;
-		KIO::FileCopyJob* copyJob = KIO::file_copy( temp.fileName(), m_info->destination );
+		KIO::FileCopyJob* copyJob = KIO::file_copy( QUrl::fromLocalFile( temp.fileName() ), m_info->destination );
 		result = copyJob->exec();
 		qCDebug(LIBKOMPAREDIFF2) << "true or false?" << result;
 	}
@@ -698,7 +698,7 @@ void KompareModelList::slotWriteDiffOutput( bool success )
 			emit error( i18n( "Could not write to the temporary file." ) );
 		}
 
-		KIO::FileCopyJob* copyJob = KIO::file_copy( m_diffTemp->fileName(), QUrl::fromLocalFile( m_diffURL ) );
+		KIO::FileCopyJob* copyJob = KIO::file_copy( QUrl::fromLocalFile( m_diffTemp->fileName() ), m_diffURL );
 		copyJob->exec();
 
 		emit status( Kompare::FinishedWritingDiff );

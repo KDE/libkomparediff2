@@ -27,6 +27,7 @@
 #include "diffhunk.h"
 #include "levenshteintable.h"
 #include "stringlistpair.h"
+#include "parserbase.h"
 
 Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
 
@@ -161,11 +162,11 @@ QString DiffModel::recreateDiff() const
 	// recreate header
 	QString tab = QString::fromLatin1( "\t" );
 	QString nl  = QString::fromLatin1( "\n" );
-	diff += QString::fromLatin1( "--- %1\t%2" ).arg( m_source ).arg( m_sourceTimestamp );
+	diff += QString::fromLatin1( "--- %1\t%2" ).arg( ParserBase::escapePath( m_source ) ).arg( m_sourceTimestamp );
 	if ( !m_sourceRevision.isEmpty() )
 		diff += tab + m_sourceRevision;
 	diff += nl;
-	diff += QString::fromLatin1( "+++ %1\t%2" ).arg( m_destination ).arg( m_destinationTimestamp );
+	diff += QString::fromLatin1( "+++ %1\t%2" ).arg( ParserBase::escapePath( m_destination ) ).arg( m_destinationTimestamp );
 	if ( !m_destinationRevision.isEmpty() )
 		diff += tab + m_destinationRevision;
 	diff += nl;

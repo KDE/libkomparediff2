@@ -37,6 +37,9 @@ public:
 	ParserBase( const KompareModelList* list, const QStringList& diff );
 	virtual ~ParserBase();
 
+	static QString escapePath( QString path );
+	static QString unescapePath( QString path );
+
 public:
 	enum Kompare::Format format() { return determineFormat(); };
 	DiffModelList* parse( bool* malformed = 0 );

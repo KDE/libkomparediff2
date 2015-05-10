@@ -29,6 +29,42 @@ Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
 
 using namespace Diff2;
 
+// static
+QString ParserBase::unescapePath( QString path )
+{
+	// If path contains spaces, it is enclosed in quotes
+	if ( path.startsWith( QLatin1Char( '"' ) ) && path.endsWith( QLatin1Char( '"' ) ) )
+		path = path.mid(1, path.size() - 2 );
+
+	// Unescape quotes
+	path.replace( QLatin1String( "\\\"" ), QLatin1String ("\"" ) );
+
+#ifndef Q_OS_WIN
+	// Unescape backquotes
+	path.replace( QLatin1String( "\\\\" ), QLatin1String ("\\" ) );
+#endif
+
+	return path;
+}
+
+// static
+QString ParserBase::escapePath( QString path )
+{
+#ifndef Q_OS_WIN
+	// Escape backquotes
+	path.replace( QLatin1String( "\\" ), QLatin1String ("\\\\" ) );
+#endif
+
+	// Escape quotes
+	path.replace( QLatin1String( "\"" ), QLatin1String ("\\\"" ) );
+
+	// Enclose in quotes if path contains space
+	if ( path.contains( QLatin1Char( ' ' ) ) )
+		path = QStringLiteral("\"%1\"").arg(path);
+
+	return path;
+}
+
 ParserBase::ParserBase( const KompareModelList* list, const QStringList& diff ) :
     m_diffLines( diff ),
     m_currentModel( 0 ),
@@ -137,7 +173,7 @@ bool ParserBase::parseContextDiffHeader()
 //			qCDebug(LIBKOMPAREDIFF2) << "Matched length Header2 = " << m_contextDiffHeader2.matchedLength();
 //			qCDebug(LIBKOMPAREDIFF2) << "Matched string Header2 = " << m_contextDiffHeader2.cap( 0 );
 
-			m_currentModel = new DiffModel( m_contextDiffHeader1.cap( 1 ), m_contextDiffHeader2.cap( 1 ) );
+			m_currentModel = new DiffModel( unescapePath( m_contextDiffHeader1.cap( 1 ) ), unescapePath( m_contextDiffHeader2.cap( 1 ) ) );
 			m_currentModel->setSourceTimestamp     ( m_contextDiffHeader1.cap( 3 ) );
 			m_currentModel->setSourceRevision      ( m_contextDiffHeader1.cap( 5 ) );
 			m_currentModel->setDestinationTimestamp( m_contextDiffHeader2.cap( 3 ) );
@@ -179,8 +215,8 @@ bool ParserBase::parseNormalDiffHeader()
 //			qCDebug(LIBKOMPAREDIFF2) << "Matched string Header = " << m_normalDiffHeader.cap( 0 );
 
 			m_currentModel = new DiffModel();
-			m_currentModel->setSourceFile          ( m_normalDiffHeader.cap( 1 ) );
-			m_currentModel->setDestinationFile     ( m_normalDiffHeader.cap( 2 ) );
+			m_currentModel->setSourceFile          ( unescapePath( m_normalDiffHeader.cap( 1 ) ) );
+			m_currentModel->setDestinationFile     ( unescapePath( m_normalDiffHeader.cap( 2 ) ) );
 
 			result = true;
 
@@ -227,7 +263,7 @@ bool ParserBase::parseUnifiedDiffHeader()
 		++m_diffIterator;
 		if ( m_diffIterator != m_diffLines.end() && m_unifiedDiffHeader2.exactMatch( *m_diffIterator ) )
 		{
-			m_currentModel = new DiffModel( m_unifiedDiffHeader1.cap( 1 ), m_unifiedDiffHeader2.cap( 1 ) );
+			m_currentModel = new DiffModel( unescapePath( m_unifiedDiffHeader1.cap( 1 ) ), unescapePath( m_unifiedDiffHeader2.cap( 1 ) ) );
 			m_currentModel->setSourceTimestamp( m_unifiedDiffHeader1.cap( 2 ) );
 			m_currentModel->setSourceRevision( m_unifiedDiffHeader1.cap( 4 ) );
 			m_currentModel->setDestinationTimestamp( m_unifiedDiffHeader2.cap( 2 ) );

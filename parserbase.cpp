@@ -676,7 +676,8 @@ void ParserBase::checkHeader( const QRegExp& header )
 	if ( m_diffIterator != m_diffLines.end()
 	     && !header.exactMatch( *m_diffIterator )
 	     && !m_diffIterator->startsWith("Index: ") /* SVN diff */
-	     && !m_diffIterator->startsWith("diff ") /* concatenated diff */)
+	     && !m_diffIterator->startsWith("diff ") /* concatenated diff */
+	     && !m_diffIterator->startsWith("-- ") /* git format-patch */)
 		m_malformed = true;
 }
 

@@ -417,14 +417,14 @@ bool KompareModelList::saveDestination( DiffModel* model )
 				return false;
 			}
 		}
-		KIO::FileCopyJob* copyJob = KIO::file_copy( QUrl::fromLocalFile( temp.fileName() ), fullDestinationPath );
+		KIO::FileCopyJob* copyJob = KIO::file_copy( QUrl::fromLocalFile( temp.fileName() ), fullDestinationPath, -1, KIO::Overwrite);
 		result = copyJob->exec();
 	}
 	else
 	{
 		qCDebug(LIBKOMPAREDIFF2) << "Tempfilename   : " << temp.fileName();
 		qCDebug(LIBKOMPAREDIFF2) << "DestinationURL : " << m_info->destination;
-		KIO::FileCopyJob* copyJob = KIO::file_copy( QUrl::fromLocalFile( temp.fileName() ), m_info->destination );
+		KIO::FileCopyJob* copyJob = KIO::file_copy( QUrl::fromLocalFile( temp.fileName() ), m_info->destination , -1, KIO::Overwrite);
 		result = copyJob->exec();
 		qCDebug(LIBKOMPAREDIFF2) << "true or false?" << result;
 	}

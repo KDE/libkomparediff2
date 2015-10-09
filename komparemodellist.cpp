@@ -406,11 +406,11 @@ bool KompareModelList::saveDestination( DiffModel* model )
 		QUrl fullDestinationPath = m_info->destination;
 		fullDestinationPath.setPath( fullDestinationPath.path() + "/" + tmp );
 		qCDebug(LIBKOMPAREDIFF2) << "fullDestinationPath : " << fullDestinationPath;
-		KIO::StatJob *statJob = KIO::stat( fullDestinationPath.path() );
+		KIO::StatJob *statJob = KIO::stat( fullDestinationPath );
 		if ( !statJob->exec() )
 		{
 			entry = statJob->statResult();
-			KIO::MkdirJob* mkdirJob = KIO::mkdir( fullDestinationPath.path() );
+			KIO::MkdirJob* mkdirJob = KIO::mkdir( fullDestinationPath );
 			if ( !mkdirJob->exec() )
 			{
 				emit error( i18n( "<qt>Could not create destination directory <b>%1</b>.\nThe file has not been saved.</qt>", fullDestinationPath.path() ) );

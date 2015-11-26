@@ -20,7 +20,7 @@ set_package_properties(Qt5Widgets PROPERTIES TYPE REQUIRED)
 find_package(Qt5Test NO_MODULE)
 
 find_package(KF5 REQUIRED
-	CoreAddons Codecs Config XmlGui I18n KIO Parts
+	CoreAddons Codecs Config XmlGui I18n KIO
 )
 
 set(KF5_VERSION "5.0")

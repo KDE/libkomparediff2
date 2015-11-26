@@ -29,7 +29,6 @@ target_link_libraries(interactiveDiffTest
     Qt5::Core
     Qt5::Test
     KF5::CoreAddons
-    KF5::Parts
     KF5::I18n
     KF5::XmlGui
     KF5::KIOCore

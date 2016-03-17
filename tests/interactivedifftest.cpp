@@ -84,7 +84,9 @@ void InteractiveDiffTest::testDifferenceContents()
 {
     QFETCH(QStringList, patch);
     Parser parser(0);
-    DiffModelList* models = parser.parse(patch);
+    bool malformed;
+    DiffModelList* models = parser.parse(patch, &malformed);
+    QVERIFY(!malformed);
     QCOMPARE(models->size(), 1);
     DiffModel* model = models->at(0);
 
@@ -497,7 +499,9 @@ void InteractiveDiffTest::testLineNumbers()
 {
     QFETCH(QStringList, patch);
     Parser parser(0);
-    DiffModelList* models = parser.parse(patch);
+    bool malformed;
+    DiffModelList* models = parser.parse(patch, &malformed);
+    QVERIFY(!malformed);
     QCOMPARE(models->size(), 1);
     DiffModel* model = models->at(0);
     model->applyAllDifferences(true);
@@ -641,7 +645,9 @@ void InteractiveDiffTest::testApplyUnapply()
     "+insert6\n" <<
     " line8\n";
     Parser parser(0);
-    DiffModelList* models = parser.parse(patch);
+    bool malformed;
+    DiffModelList* models = parser.parse(patch, &malformed);
+    QVERIFY(!malformed);
     QCOMPARE(models->size(), 1);
     DiffModel* model = models->at(0);
     QCOMPARE(model->differenceCount(), 4);
@@ -769,7 +775,9 @@ contextDiff1()
     "  		m_sourceFile = m_source.mid( pos+1, m_source.length() - pos );\n" <<
     "  	else\n";
     Parser parser(0);
-    DiffModelList* models = parser.parse(patch);
+    bool malformed;
+    DiffModelList* models = parser.parse(patch, &malformed);
+    QVERIFY(!malformed);
     QCOMPARE(models->size(), 1);
     DiffModel* model = models->at(0);
     QCOMPARE(model->differenceCount(), 2);
@@ -800,7 +808,9 @@ contextDiff2()
     "  	m_sourceTimestamp( "" ),\n";
 
     Parser parser(0);
-    DiffModelList* models = parser.parse(patch);
+    bool malformed;
+    DiffModelList* models = parser.parse(patch, &malformed);
+    QVERIFY(!malformed);
     QCOMPARE(models->size(), 1);
     DiffModel* model = models->at(0);
     QCOMPARE(model->differenceCount(), 1);
@@ -814,6 +824,27 @@ void InteractiveDiffTest::testContextDiff()
 {
     contextDiff1();
     contextDiff2();
+}
+
+void InteractiveDiffTest::testNormalDiff()
+{
+    QStringList patch;
+    patch <<
+    "1c1\n" <<
+    "< a\n" <<
+    "---\n" <<
+    "> b\n";
+    Parser parser(0);
+    bool malformed;
+    DiffModelList* models = parser.parse(patch, &malformed);
+    QVERIFY(!malformed);
+    QCOMPARE(models->size(), 1);
+    DiffModel* model = models->at(0);
+    QCOMPARE(model->differenceCount(), 1);
+    model->applyAllDifferences(true);
+    QVERIFY(model->differenceAt(0)->applied());
+    QCOMPARE(model->differenceAt(0)->sourceLineNumber(), 1);
+    QCOMPARE(model->differenceAt(0)->trackingDestinationLineNumber(), 1);
 }
 
 QTEST_GUILESS_MAIN(InteractiveDiffTest);

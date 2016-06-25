@@ -29,6 +29,8 @@ ecm_setup_version(${KF5_VERSION}
                   PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/LibKompareDiff2ConfigVersion.cmake"
                   SOVERSION 5)
 
+add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
+
 set(komparediff2_SRCS
 	kompareprocess.cpp
 	komparemodellist.cpp

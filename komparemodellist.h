@@ -173,9 +173,9 @@ private: // Helper methods
 	QStringList split( const QString& diff );
 	void setDepthAndApplied();
 
-private:
+private: // ### an exported class without a d pointer? Really? What about BC?
 	QTemporaryFile*       m_diffTemp;
-	QString               m_diffURL;
+	QUrl                  m_diffURL;
 
 	KompareProcess*       m_diffProcess;
 

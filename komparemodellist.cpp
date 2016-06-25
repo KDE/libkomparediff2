@@ -660,7 +660,7 @@ bool KompareModelList::saveDiff( const QString& url, QString directory, DiffSett
 	qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::saveDiff: ";
 
 	m_diffTemp = new QTemporaryFile();
-	m_diffURL = url;
+	m_diffURL = QUrl(url); // ### TODO the "url" argument should be a QUrl
 
 	if( !m_diffTemp->open() ) {
 		emit error( i18n( "Could not open a temporary file." ) );
@@ -704,7 +704,7 @@ void KompareModelList::slotWriteDiffOutput( bool success )
 		emit status( Kompare::FinishedWritingDiff );
 	}
 
-	m_diffURL.truncate( 0 );
+	m_diffURL = QUrl();
 	m_diffTemp->remove();
 
 	delete m_diffTemp;

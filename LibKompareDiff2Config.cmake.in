@@ -1,32 +1,16 @@
-#########################################################################
-#
-# LibKompareDiff2 Configuration File
-#
-# This file sets various CMake Variables
-#
-# LIBKOMPAREDIFF2_INCLUDE_DIR                - The Include Directory for the LIBKOMPAREDIFF2  library
-# LIBKOMPAREDIFF2_LIBRARIES                  - the libkomparediff2 library
-#
-# Copyright 2008  Andreas Pakulat <apaku@gmx.de>
-# Copyright 2010  Niko Sams <niko.sams@gmail.com>
-# Copyright 2013  Jeremy Whiting <jpwhiting@kde.org>
-# Redistribution and use is allowed according to the terms of the BSD license.
-######################################################################
+@PACKAGE_INIT@
 
-get_filename_component(_LIBKOMPAREDIFF2_CURRENT_DIR  "${CMAKE_CURRENT_LIST_FILE}" PATH)
+find_dependency(Qt5Core "@QT_MIN_VERSION@")
+find_dependency(Qt5Widgets "@QT_MIN_VERSION@")
 
-if(NOT WIN32)
-# This is needed on non-win32 platforms, as lib-install-dir might be in a
-# totally different prefix than include-install-dir. So instead hardcode the
-# absolute path during buildtime
-set( LIBKOMPAREDIFF2_INCLUDE_DIR "@INCLUDE_INSTALL_DIR@/libkomparediff2" )
-
-else(NOT WIN32)
-
-set( LIBKOMPAREDIFF2_INCLUDE_DIR "${_LIBKOMPAREDIFF2_CURRENT_DIR}/../../../include/libkomparediff2" )
-
-endif(NOT WIN32)
+find_dependency(KF5CoreAddons "@KF5_DEP_VERSION@")
+find_dependency(KF5Codecs "@KF5_DEP_VERSION@")
+find_dependency(KF5Config "@KF5_DEP_VERSION@")
+find_dependency(KF5I18n "@KF5_DEP_VERSION@")
+find_dependency(KF5KIO "@KF5_DEP_VERSION@")
+find_dependency(KF5XmlGui "@KF5_DEP_VERSION@")
 
 include("${CMAKE_CURRENT_LIST_DIR}/LibKompareDiff2Targets.cmake")
-set( LIBKOMPAREDIFF2_LIBRARIES LibKompareDiff2Import__komparediff2)
 
+get_target_property(LIBKOMPAREDIFF2_INCLUDE_DIR KompareDiff2 INTERFACE_INCLUDE_DIRECTORIES)
+set(LIBKOMPAREDIFF2_LIBRARIES KompareDiff2)

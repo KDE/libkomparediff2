@@ -44,14 +44,14 @@ public:
 
 	void setEncoding( const QString& encoding );
 
-signals:
+Q_SIGNALS:
 	void diffHasFinished( bool finishedNormally );
 
 protected:
 	void writeDefaultCommandLine();
 	void writeCommandLine();
 
-protected slots:
+protected Q_SLOTS:
 	void slotFinished( int, QProcess::ExitStatus );
 
 private:

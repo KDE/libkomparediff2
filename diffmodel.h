@@ -145,7 +145,7 @@ private:
 
 	bool m_blended;
 
-private slots:
+private Q_SLOTS:
 	void slotDifferenceApplied( Difference* diff );
 };
 

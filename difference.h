@@ -187,7 +187,7 @@ public:
 
 	QString recreateDifference() const;
 
-signals:
+Q_SIGNALS:
 	void differenceApplied( Difference* );
 
 private:

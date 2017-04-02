@@ -117,7 +117,7 @@ private:
 protected:
 	bool blendFile( DiffModel* model, const QString& lines );
 
-signals:
+Q_SIGNALS:
 	void status( Kompare::Status status );
 	void setStatusBarModelInfo( int modelIndex, int differenceIndex, int modelCount, int differenceCount, int appliedCount );
 	void error( QString error );
@@ -130,7 +130,7 @@ signals:
 	void diffString( const QString& );
 	void updateActions();
 
-public slots:
+public Q_SLOTS:
 	void slotSelectionChanged( const Diff2::DiffModel* model, const Diff2::Difference* diff );
 	void slotSelectionChanged( const Diff2::Difference* diff );
 
@@ -143,7 +143,7 @@ public slots:
 
 	void slotKompareInfo( struct Kompare::Info* );
 
-protected slots:
+protected Q_SLOTS:
 	void slotDiffProcessFinished( bool success );
 	void slotWriteDiffOutput( bool success );
 
@@ -156,7 +156,7 @@ protected slots:
 	    or the single destination if a single file diff. */
 	void slotSaveDestination();
 
-private slots:
+private Q_SLOTS:
 	void slotDirectoryChanged( const QString& );
 	void slotFileChanged( const QString& );
 

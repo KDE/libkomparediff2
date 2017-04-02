@@ -26,7 +26,7 @@
 class LevenshteinTest : public QObject
 {
     Q_OBJECT
-private slots:
+private Q_SLOTS:
     void testFirstEmptyString();
     void testSecondEmptyString();
     void testDifferenceStrings();

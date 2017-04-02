@@ -26,5 +26,5 @@ bool diffModelCompare(DiffModel* model1, DiffModel* model2)
 
 void DiffModelList::sort()
 {
-	qSort(begin(), end(), diffModelCompare);
+	std::sort(begin(), end(), diffModelCompare);
 }

@@ -18,8 +18,8 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#ifndef PATCHREVIEWTEST_H
-#define PATCHREVIEWTEST_H
+#ifndef INTERACTIVEDIFFTEST_H
+#define INTERACTIVEDIFFTEST_H
 
 #include <QObject>
 
@@ -46,4 +46,4 @@ private:
     void CompareDifferenceStringList(const Diff2::DifferenceStringList& actual, const QStringList& expected);
 };
 
-#endif //  PATCHREVIEWTEST_H
+#endif //  INTERACTIVEDIFFTEST_H

@@ -29,7 +29,7 @@ class KompareModelList;
 class Parser
 {
 public:
-	Parser( const KompareModelList* list );
+	explicit Parser(const KompareModelList* list);
 	~Parser();
 
 public:

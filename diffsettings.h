@@ -29,7 +29,7 @@ class DIFF2_EXPORT  DiffSettings : public SettingsBase
 {
 Q_OBJECT
 public:
-	DiffSettings( QWidget* parent );
+	explicit DiffSettings(QWidget* parent);
 	virtual ~DiffSettings();
 public:
 	// some virtual functions that will be overloaded from the base class

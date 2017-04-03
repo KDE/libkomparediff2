@@ -30,7 +30,7 @@ class DIFF2_EXPORT SettingsBase : public QObject
 {
 Q_OBJECT
 public:
-	SettingsBase( QWidget* parent );
+	explicit SettingsBase(QWidget* parent);
 	~SettingsBase();
 
 public:

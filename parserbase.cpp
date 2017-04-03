@@ -16,7 +16,7 @@
 
 #include "parserbase.h"
 
-#include <QtCore/QObject>
+#include <QObject>
 
 #include <QLoggingCategory>
 

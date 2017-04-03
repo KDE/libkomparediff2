@@ -20,13 +20,13 @@
 #include "komparemodellist.h"
 
 #include <QAction>
-#include <QtCore/QFile>
-#include <QtCore/QDir>
-#include <QtCore/QRegExp>
-#include <QtCore/QTextCodec>
-#include <QtCore/QTextStream>
-#include <QtCore/QLinkedList>
-#include <QtCore/QTemporaryFile>
+#include <QFile>
+#include <QDir>
+#include <QRegExp>
+#include <QTextCodec>
+#include <QTextStream>
+#include <QLinkedList>
+#include <QTemporaryFile>
 #include <QLoggingCategory>
 
 #include <kactioncollection.h>

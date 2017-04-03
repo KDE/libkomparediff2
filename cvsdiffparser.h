@@ -16,7 +16,7 @@
 #ifndef CVSDIFF_PARSER_H
 #define CVSDIFF_PARSER_H
 
-#include <QtCore/QRegExp>
+#include <QRegExp>
 
 #include "parserbase.h"
 

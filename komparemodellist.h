@@ -20,7 +20,7 @@
 #ifndef KOMPAREMODELLIST_H
 #define KOMPAREMODELLIST_H
 
-#include <QtCore/QObject>
+#include <QObject>
 
 #include "diffmodel.h"
 #include "diffmodellist.h"

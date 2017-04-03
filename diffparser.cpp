@@ -15,7 +15,7 @@
 
 #include "diffparser.h"
 
-#include <QtCore/QRegExp>
+#include <QRegExp>
 #include <QLoggingCategory>
 
 Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)

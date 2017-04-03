@@ -18,7 +18,7 @@
 #ifndef DIFFSETTINGS_H
 #define DIFFSETTINGS_H
 
-#include <QtCore/QStringList>
+#include <QStringList>
 #include <QWidget>
 
 #include "kompare.h"

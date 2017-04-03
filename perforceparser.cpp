@@ -15,7 +15,7 @@
 
 #include "perforceparser.h"
 
-#include <QtCore/QRegExp>
+#include <QRegExp>
 
 #include <QLoggingCategory>
 

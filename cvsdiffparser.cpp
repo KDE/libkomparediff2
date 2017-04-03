@@ -15,7 +15,7 @@
 
 #include "cvsdiffparser.h"
 
-#include <QtCore/QRegExp>
+#include <QRegExp>
 
 #include <QLoggingCategory>
 

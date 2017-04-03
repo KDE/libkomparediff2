@@ -17,7 +17,7 @@
 #ifndef DIFF2_PARSERBASE_H
 #define DIFF2_PARSERBASE_H
 
-#include <QtCore/QRegExp>
+#include <QRegExp>
 
 #include "kompare.h"
 #include "difference.h"

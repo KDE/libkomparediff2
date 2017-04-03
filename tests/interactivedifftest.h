@@ -21,7 +21,7 @@
 #ifndef PATCHREVIEWTEST_H
 #define PATCHREVIEWTEST_H
 
-#include <QtCore/QObject>
+#include <QObject>
 
 #include "../difference.h"
 

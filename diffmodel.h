@@ -18,8 +18,8 @@
 #ifndef DIFFMODEL_H
 #define DIFFMODEL_H
 
-#include <QtCore/QObject>
-#include <QtCore/QStringList>
+#include <QObject>
+#include <QStringList>
 
 #include "diffhunk.h"
 #include "kompare.h"

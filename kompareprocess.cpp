@@ -18,9 +18,9 @@
 
 #include "kompareprocess.h"
 
-#include <QtCore/QDir>
-#include <QtCore/QStringList>
-#include <QtCore/QTextCodec>
+#include <QDir>
+#include <QStringList>
+#include <QTextCodec>
 #include <QLoggingCategory>
 
 #include <kcharsets.h>

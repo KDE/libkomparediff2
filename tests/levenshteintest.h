@@ -21,7 +21,7 @@
 #ifndef LEVENSHTEINTEST_H
 #define LEVENSHTEINTEST_H
 
-#include <QtCore/QObject>
+#include <QObject>
 
 class LevenshteinTest : public QObject
 {

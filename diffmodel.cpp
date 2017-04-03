@@ -17,7 +17,7 @@
 
 #include "diffmodel.h"
 
-#include <QtCore/QRegExp>
+#include <QRegExp>
 #include <QLoggingCategory>
 
 #define TRANSLATION_DOMAIN "libkomparediff2"

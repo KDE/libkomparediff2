@@ -32,25 +32,25 @@ public:
 	virtual ~CVSDiffParser();
 
 protected:
-	virtual enum Kompare::Format determineFormat();
+	enum Kompare::Format determineFormat() Q_DECL_OVERRIDE;
 
 protected:
 //	virtual bool parseContextDiffHeader();
-	virtual bool parseEdDiffHeader();
-	virtual bool parseNormalDiffHeader();
-	virtual bool parseRCSDiffHeader();
+	bool parseEdDiffHeader() Q_DECL_OVERRIDE;
+	bool parseNormalDiffHeader() Q_DECL_OVERRIDE;
+	bool parseRCSDiffHeader() Q_DECL_OVERRIDE;
 //	virtual bool parseUnifiedDiffHeader();
 
 //	virtual bool parseContextHunkHeader();
-	virtual bool parseEdHunkHeader();
+	bool parseEdHunkHeader() Q_DECL_OVERRIDE;
 //	virtual bool parseNormalHunkHeader();
-	virtual bool parseRCSHunkHeader();
+	bool parseRCSHunkHeader() Q_DECL_OVERRIDE;
 //	virtual bool parseUnifiedHunkHeader();
 
 //	virtual bool parseContextHunkBody();
-	virtual bool parseEdHunkBody();
+	bool parseEdHunkBody() Q_DECL_OVERRIDE;
 //	virtual bool parseNormalHunkBody();
-	virtual bool parseRCSHunkBody();
+	bool parseRCSHunkBody() Q_DECL_OVERRIDE;
 //	virtual bool parseUnifiedHunkBody();
 };
 

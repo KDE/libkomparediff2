@@ -28,7 +28,7 @@ public:
 	virtual ~DiffParser();
 
 protected:
-	virtual enum Kompare::Format determineFormat();
+	enum Kompare::Format determineFormat() Q_DECL_OVERRIDE;
 };
 
 } // End of namespace Diff2

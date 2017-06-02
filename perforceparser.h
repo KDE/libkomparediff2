@@ -28,13 +28,13 @@ public:
 	virtual ~PerforceParser();
 
 protected:
-	virtual bool parseContextDiffHeader();
-	virtual bool parseNormalDiffHeader();
-	virtual bool parseRCSDiffHeader();
-	virtual bool parseUnifiedDiffHeader();
+	bool parseContextDiffHeader() Q_DECL_OVERRIDE;
+	bool parseNormalDiffHeader() Q_DECL_OVERRIDE;
+	bool parseRCSDiffHeader() Q_DECL_OVERRIDE;
+	bool parseUnifiedDiffHeader() Q_DECL_OVERRIDE;
 
 protected:
-	virtual enum Kompare::Format determineFormat();
+	enum Kompare::Format determineFormat() Q_DECL_OVERRIDE;
 };
 
 } // End of namespace Diff2

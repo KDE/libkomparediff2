@@ -33,8 +33,8 @@ public:
 	virtual ~DiffSettings();
 public:
 	// some virtual functions that will be overloaded from the base class
-	virtual void loadSettings( KConfig* config );
-	virtual void saveSettings( KConfig* config );
+	void loadSettings( KConfig* config ) Q_DECL_OVERRIDE;
+	void saveSettings( KConfig* config ) Q_DECL_OVERRIDE;
 
 public:
 	QString m_diffProgram;

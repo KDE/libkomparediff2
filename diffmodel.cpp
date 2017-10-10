@@ -21,7 +21,7 @@
 #include <QLoggingCategory>
 
 #define TRANSLATION_DOMAIN "libkomparediff2"
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 #include "difference.h"
 #include "diffhunk.h"

@@ -19,7 +19,7 @@
 #ifndef KOMPAREPROCESS_H
 #define KOMPAREPROCESS_H
 
-#include <kprocess.h>
+#include <KProcess>
 
 #include "kompare.h"
 

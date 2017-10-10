@@ -17,8 +17,8 @@
 
 #include "diffsettings.h"
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
+#include <KConfig>
+#include <KConfigGroup>
 
 DiffSettings::DiffSettings( QWidget* parent )
 	: SettingsBase( parent ),

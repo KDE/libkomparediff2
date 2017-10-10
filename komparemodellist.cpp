@@ -28,19 +28,19 @@
 #include <QLinkedList>
 #include <QTemporaryFile>
 #include <QLoggingCategory>
-
-#include <kactioncollection.h>
-#include <kcharsets.h>
-#include <kdirwatch.h>
-#include <kio/udsentry.h>
-#include <kio/statjob.h>
-#include <kio/mkdirjob.h>
-#include <kio/filecopyjob.h>
-#define TRANSLATION_DOMAIN "libkomparediff2"
-#include <klocalizedstring.h>
 #include <QMimeType>
 #include <QMimeDatabase>
-#include <kstandardaction.h>
+
+#include <KActionCollection>
+#include <KCharsets>
+#include <KDirWatch>
+#include <KIO/UDSEntry>
+#include <KIO/StatJob>
+#include <KIO/MkdirJob>
+#include <KIO/FileCopyJob>
+#define TRANSLATION_DOMAIN "libkomparediff2"
+#include <KLocalizedString>
+#include <KStandardAction>
 
 #include "difference.h"
 #include "diffhunk.h"

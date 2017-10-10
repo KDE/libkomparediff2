@@ -19,9 +19,6 @@
 
 #include <QRegExp>
 
-#define TRANSLATION_DOMAIN "libkomparediff2"
-#include <KLocalizedString>
-
 #include <komparediffdebug.h>
 #include "difference.h"
 #include "diffhunk.h"

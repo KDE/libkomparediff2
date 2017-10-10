@@ -44,6 +44,8 @@ add_definitions(
     -DQT_STRICT_ITERATORS
 )
 
+add_definitions(-DTRANSLATION_DOMAIN=\"libkomparediff2\")
+
 ecm_qt_declare_logging_category(komparediff2_DBG_SRCS
     HEADER komparediffdebug.h
     IDENTIFIER LIBKOMPAREDIFF2

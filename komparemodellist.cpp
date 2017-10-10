@@ -37,7 +37,6 @@
 #include <KIO/StatJob>
 #include <KIO/MkdirJob>
 #include <KIO/FileCopyJob>
-#define TRANSLATION_DOMAIN "libkomparediff2"
 #include <KLocalizedString>
 #include <KStandardAction>
 

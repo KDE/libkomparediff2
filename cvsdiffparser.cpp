@@ -17,13 +17,10 @@
 
 #include <QRegExp>
 
-#include <QLoggingCategory>
-
+#include <komparediffdebug.h>
 #include "komparemodellist.h"
 
 using namespace Diff2;
-
-Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
 
 CVSDiffParser::CVSDiffParser( const KompareModelList* list, const QStringList& diff ) : ParserBase( list, diff )
 {

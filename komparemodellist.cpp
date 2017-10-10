@@ -27,7 +27,6 @@
 #include <QTextStream>
 #include <QLinkedList>
 #include <QTemporaryFile>
-#include <QLoggingCategory>
 #include <QMimeType>
 #include <QMimeDatabase>
 
@@ -42,15 +41,13 @@
 #include <KLocalizedString>
 #include <KStandardAction>
 
+#include <komparediffdebug.h>
 #include "difference.h"
 #include "diffhunk.h"
 #include "diffmodel.h"
 #include "diffmodellist.h"
 #include "kompareprocess.h"
 #include "parser.h"
-
-Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
-Q_LOGGING_CATEGORY(LIBKOMPAREDIFF2, "libkomparediff")
 
 using namespace Diff2;
 

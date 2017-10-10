@@ -16,14 +16,11 @@
 
 #include "parser.h"
 
-#include <QLoggingCategory>
-
+#include <komparediffdebug.h>
 #include "cvsdiffparser.h"
 #include "diffparser.h"
 #include "perforceparser.h"
 #include "diffmodel.h"
-
-Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
 
 using namespace Diff2;
 

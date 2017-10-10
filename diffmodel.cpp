@@ -18,18 +18,16 @@
 #include "diffmodel.h"
 
 #include <QRegExp>
-#include <QLoggingCategory>
 
 #define TRANSLATION_DOMAIN "libkomparediff2"
 #include <KLocalizedString>
 
+#include <komparediffdebug.h>
 #include "difference.h"
 #include "diffhunk.h"
 #include "levenshteintable.h"
 #include "stringlistpair.h"
 #include "parserbase.h"
-
-Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
 
 using namespace Diff2;
 

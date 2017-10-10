@@ -10,6 +10,7 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMSetupVersion)
 include(ECMPackageConfigHelpers)
+include(ECMQtDeclareLoggingCategory)
 
 include(FeatureSummary)
 include(GenerateExportHeader)
@@ -43,7 +44,14 @@ add_definitions(
     -DQT_STRICT_ITERATORS
 )
 
+ecm_qt_declare_logging_category(komparediff2_DBG_SRCS
+    HEADER komparediffdebug.h
+    IDENTIFIER LIBKOMPAREDIFF2
+    CATEGORY_NAME "libkomparediff"
+)
+
 set(komparediff2_SRCS
+	${komparediff2_DBG_SRCS}
 	kompareprocess.cpp
 	komparemodellist.cpp
 	diffmodellist.cpp
@@ -60,7 +68,6 @@ set(komparediff2_SRCS
 	stringlistpair.cpp
 	kompare.cpp
 )
-
 
 add_library(komparediff2 ${komparediff2_SRCS})
 generate_export_header(komparediff2 BASE_NAME diff2)

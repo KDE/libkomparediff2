@@ -18,10 +18,7 @@
 #include "diffhunk.h"
 
 #include "difference.h"
-
-#include <QLoggingCategory>
-
-Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
+#include <komparediffdebug.h>
 
 using namespace Diff2;
 

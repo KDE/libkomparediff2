@@ -18,14 +18,11 @@
 
 #include <QObject>
 
-#include <QLoggingCategory>
-
+#include <komparediffdebug.h>
 #include "diffmodel.h"
 #include "diffhunk.h"
 #include "difference.h"
 #include "komparemodellist.h"
-
-Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
 
 using namespace Diff2;
 

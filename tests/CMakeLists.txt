@@ -19,6 +19,7 @@ set(interactiveDiffTest_SRCS
     ../parserbase.cpp
     ../stringlistpair.cpp
     ../kompare.cpp
+    ${komparediff2_DBG_SRCS}
 )
 
 add_executable(interactiveDiffTest ${interactiveDiffTest_SRCS})
@@ -38,6 +39,7 @@ set(levenshteinTest_SRCS
     levenshteintest.cpp
     ../difference.cpp
     ../stringlistpair.cpp
+    ${komparediff2_DBG_SRCS}
 )
 
 add_executable(levenshteintest ${levenshteinTest_SRCS})

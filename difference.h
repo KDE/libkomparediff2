@@ -18,13 +18,13 @@
 #ifndef DIFFERENCE_H
 #define DIFFERENCE_H
 
-#include <qvector.h>
+#include <QVector>
+#include <QObject>
 
-#include <QLoggingCategory>
 #include "diff2_export.h"
 #include "marker.h"
 
-Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
+// #include <komparediffdebug.h>
 
 class QString;
 

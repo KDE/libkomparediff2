@@ -29,28 +29,28 @@ class CVSDiffParser : public ParserBase
 {
 public:
 	CVSDiffParser( const KompareModelList* list, const QStringList& diff );
-	virtual ~CVSDiffParser();
+	~CVSDiffParser() override;
 
 protected:
-	enum Kompare::Format determineFormat() Q_DECL_OVERRIDE;
+	enum Kompare::Format determineFormat() override;
 
 protected:
 //	virtual bool parseContextDiffHeader();
-	bool parseEdDiffHeader() Q_DECL_OVERRIDE;
-	bool parseNormalDiffHeader() Q_DECL_OVERRIDE;
-	bool parseRCSDiffHeader() Q_DECL_OVERRIDE;
+	bool parseEdDiffHeader() override;
+	bool parseNormalDiffHeader() override;
+	bool parseRCSDiffHeader() override;
 //	virtual bool parseUnifiedDiffHeader();
 
 //	virtual bool parseContextHunkHeader();
-	bool parseEdHunkHeader() Q_DECL_OVERRIDE;
+	bool parseEdHunkHeader() override;
 //	virtual bool parseNormalHunkHeader();
-	bool parseRCSHunkHeader() Q_DECL_OVERRIDE;
+	bool parseRCSHunkHeader() override;
 //	virtual bool parseUnifiedHunkHeader();
 
 //	virtual bool parseContextHunkBody();
-	bool parseEdHunkBody() Q_DECL_OVERRIDE;
+	bool parseEdHunkBody() override;
 //	virtual bool parseNormalHunkBody();
-	bool parseRCSHunkBody() Q_DECL_OVERRIDE;
+	bool parseRCSHunkBody() override;
 //	virtual bool parseUnifiedHunkBody();
 };
 

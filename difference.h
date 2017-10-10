@@ -128,7 +128,7 @@ public:
 
 public:
 	Difference( int sourceLineNo, int destinationLineNo, int type = Difference::Unchanged );
-	~Difference();
+	~Difference() override;
 
 public:
 	int type() const { return m_type; };

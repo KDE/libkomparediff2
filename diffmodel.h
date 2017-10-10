@@ -38,7 +38,7 @@ public:
 
 	DiffModel( const QString& srcBaseURL, const QString& destBaseURL );
 	DiffModel();
-	~DiffModel();
+	~DiffModel() override;
 
 private:
 	DiffModel( const DiffModel& ) : QObject() {};

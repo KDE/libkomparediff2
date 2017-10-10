@@ -31,7 +31,7 @@ class DIFF2_EXPORT SettingsBase : public QObject
 Q_OBJECT
 public:
 	explicit SettingsBase(QWidget* parent);
-	~SettingsBase();
+	~SettingsBase() override;
 
 public:
 	virtual void loadSettings( KConfig* config );

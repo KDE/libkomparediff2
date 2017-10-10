@@ -30,11 +30,11 @@ class DIFF2_EXPORT  DiffSettings : public SettingsBase
 Q_OBJECT
 public:
 	explicit DiffSettings(QWidget* parent);
-	virtual ~DiffSettings();
+	~DiffSettings() override;
 public:
 	// some virtual functions that will be overloaded from the base class
-	void loadSettings( KConfig* config ) Q_DECL_OVERRIDE;
-	void saveSettings( KConfig* config ) Q_DECL_OVERRIDE;
+	void loadSettings( KConfig* config ) override;
+	void saveSettings( KConfig* config ) override;
 
 public:
 	QString m_diffProgram;

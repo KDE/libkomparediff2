@@ -56,14 +56,14 @@ using namespace Diff2;
 
 KompareModelList::KompareModelList( DiffSettings* diffSettings, QWidget* widgetForKIO, QObject* parent, const char* name, bool isReadWrite)
 	: QObject( parent ),
-	m_diffProcess( 0 ),
+	m_diffProcess(nullptr),
 	m_diffSettings( diffSettings ),
-	m_models( 0 ),
-	m_selectedModel( 0 ),
-	m_selectedDifference( 0 ),
+	m_models(nullptr),
+	m_selectedModel(nullptr),
+	m_selectedDifference(nullptr),
 	m_modelIndex( 0 ),
-	m_info( 0 ),
-	m_textCodec( 0 ),
+	m_info(nullptr),
+	m_textCodec(nullptr),
 	m_widgetForKIO( widgetForKIO ),
 	m_isReadWrite( isReadWrite )
 {
@@ -112,9 +112,9 @@ KompareModelList::KompareModelList( DiffSettings* diffSettings, QWidget* widgetF
 
 KompareModelList::~KompareModelList()
 {
-	m_selectedModel = 0;
-	m_selectedDifference = 0;
-	m_info = 0;
+	m_selectedModel = nullptr;
+	m_selectedDifference = nullptr;
+	m_info = nullptr;
 	delete m_models;
 }
 
@@ -521,7 +521,7 @@ void KompareModelList::slotDiffProcessFinished( bool success )
 	}
 
 	m_diffProcess->deleteLater();
-	m_diffProcess = 0;
+	m_diffProcess = nullptr;
 }
 
 void KompareModelList::slotDirectoryChanged( const QString& /*dir*/ )
@@ -666,7 +666,7 @@ bool KompareModelList::saveDiff( const QString& url, QString directory, DiffSett
 		emit error( i18n( "Could not open a temporary file." ) );
 		m_diffTemp->remove();
 		delete m_diffTemp;
-		m_diffTemp = 0;
+		m_diffTemp = nullptr;
 		return false;
 	}
 
@@ -708,10 +708,10 @@ void KompareModelList::slotWriteDiffOutput( bool success )
 	m_diffTemp->remove();
 
 	delete m_diffTemp;
-	m_diffTemp = 0;
+	m_diffTemp = nullptr;
 
 	delete m_diffProcess;
-	m_diffProcess = 0;
+	m_diffProcess = nullptr;
 }
 
 void KompareModelList::slotSelectionChanged( const Diff2::DiffModel* model, const Diff2::Difference* diff )
@@ -772,7 +772,7 @@ void KompareModelList::slotSelectionChanged( const Diff2::Difference* diff )
 
 void KompareModelList::slotPreviousModel()
 {
-	if ( ( m_selectedModel = prevModel() ) != 0 )
+	if ((m_selectedModel = prevModel()) != nullptr)
 	{
 		m_selectedDifference = m_selectedModel->firstDifference();
 	}
@@ -789,7 +789,7 @@ void KompareModelList::slotPreviousModel()
 
 void KompareModelList::slotNextModel()
 {
-	if ( ( m_selectedModel = nextModel() ) != 0 )
+	if ((m_selectedModel = nextModel()) != nullptr)
 	{
 		m_selectedDifference = m_selectedModel->firstDifference();
 	}
@@ -836,7 +836,7 @@ DiffModel* KompareModelList::prevModel()
 	}
 	else
 	{
-		m_selectedModel = 0;
+		m_selectedModel = nullptr;
 		m_modelIndex = 0;
 		qCDebug(LIBKOMPAREDIFF2) << "m_modelIndex = " << m_modelIndex;
 	}
@@ -854,7 +854,7 @@ DiffModel* KompareModelList::nextModel()
 	}
 	else
 	{
-		m_selectedModel = 0;
+		m_selectedModel = nullptr;
 		m_modelIndex = 0;
 		qCDebug(LIBKOMPAREDIFF2) << "m_modelIndex = " << m_modelIndex;
 	}
@@ -870,7 +870,7 @@ KActionCollection* KompareModelList::actionCollection() const
 void KompareModelList::slotPreviousDifference()
 {
 	qCDebug(LIBKOMPAREDIFF2) << "slotPreviousDifference called";
-	if ( ( m_selectedDifference = m_selectedModel->prevDifference() ) != 0 )
+	if ((m_selectedDifference = m_selectedModel->prevDifference()) != nullptr)
 	{
 		emit setSelection( m_selectedDifference );
 		emit setStatusBarModelInfo( findModel( m_selectedModel ), m_selectedModel->findDifference( m_selectedDifference ), modelCount(), differenceCount(), m_selectedModel->appliedCount() );
@@ -880,7 +880,7 @@ void KompareModelList::slotPreviousDifference()
 
 	qCDebug(LIBKOMPAREDIFF2) << "**** no previous difference... ok lets find the previous model...";
 
-	if ( ( m_selectedModel = prevModel() ) != 0 )
+	if ((m_selectedModel = prevModel()) != nullptr)
 	{
 		m_selectedDifference = m_selectedModel->lastDifference();
 
@@ -905,7 +905,7 @@ void KompareModelList::slotPreviousDifference()
 void KompareModelList::slotNextDifference()
 {
 	qCDebug(LIBKOMPAREDIFF2) << "slotNextDifference called";
-	if ( ( m_selectedDifference = m_selectedModel->nextDifference() ) != 0 )
+	if ((m_selectedDifference = m_selectedModel->nextDifference()) != nullptr)
 	{
 		emit setSelection( m_selectedDifference );
 		emit setStatusBarModelInfo( findModel( m_selectedModel ), m_selectedModel->findDifference( m_selectedDifference ), modelCount(), differenceCount(), m_selectedModel->appliedCount() );
@@ -915,7 +915,7 @@ void KompareModelList::slotNextDifference()
 
 	qCDebug(LIBKOMPAREDIFF2) << "**** no next difference... ok lets find the next model...";
 
-	if ( ( m_selectedModel = nextModel() ) != 0 )
+	if ((m_selectedModel = nextModel()) != nullptr)
 	{
 		m_selectedDifference = m_selectedModel->firstDifference();
 
@@ -1065,8 +1065,8 @@ bool KompareModelList::blendFile( DiffModel* model, const QString& fileContents 
 	qCDebug(LIBKOMPAREDIFF2) << "Hunks in hunklist: " << hunks->count();
 	DiffHunkListIterator hunkIt = hunks->begin();
 
-	DiffHunk*   newHunk = 0;
-	Difference* newDiff = 0;
+	DiffHunk*   newHunk = nullptr;
+	Difference* newDiff = nullptr;
 
 	// FIXME: this approach is not very good, we should first check if the hunk applies cleanly
 	// and without offset and if not use that new linenumber with offset to compare against

@@ -67,8 +67,8 @@ QString ParserBase::escapePath( QString path )
 
 ParserBase::ParserBase( const KompareModelList* list, const QStringList& diff ) :
     m_diffLines( diff ),
-    m_currentModel( 0 ),
-    m_models( 0 ),
+    m_currentModel(nullptr),
+    m_models(nullptr),
     m_diffIterator( m_diffLines.begin() ),
     m_singleFileDiff( false ),
     m_malformed( false ),
@@ -113,7 +113,7 @@ ParserBase::ParserBase( const KompareModelList* list, const QStringList& diff ) 
 ParserBase::~ParserBase()
 {
 	if ( m_models )
-		m_models = 0; // do not delete this, i pass it around...
+		m_models = nullptr; // do not delete this, i pass it around...
 }
 
 enum Kompare::Format ParserBase::determineFormat()
@@ -143,7 +143,7 @@ DiffModelList* ParserBase::parse( bool* malformed )
 			result = parseUnified();
 			break;
 		default: // Unknown and SideBySide for now
-			result = 0;
+			result = nullptr;
 			break;
 	}
 
@@ -701,7 +701,7 @@ DiffModelList* ParserBase::parseContext()
 	else
 	{
 		delete m_models;
-		return 0L;
+		return nullptr;
 	}
 }
 
@@ -724,7 +724,7 @@ DiffModelList* ParserBase::parseEd()
 	else
 	{
 		delete m_models;
-		return 0L;
+		return nullptr;
 	}
 }
 
@@ -758,7 +758,7 @@ DiffModelList* ParserBase::parseNormal()
 	else
 	{
 		delete m_models;
-		return 0L;
+		return nullptr;
 	}
 }
 
@@ -781,7 +781,7 @@ DiffModelList* ParserBase::parseRCS()
 	else
 	{
 		delete m_models;
-		return 0L;
+		return nullptr;
 	}
 }
 
@@ -807,7 +807,7 @@ DiffModelList* ParserBase::parseUnified()
 	else
 	{
 		delete m_models;
-		return 0L;
+		return nullptr;
 	}
 }
 

@@ -33,7 +33,7 @@ public:
 	~Parser();
 
 public:
-	DiffModelList* parse( QStringList& diffLines, bool* malformed = 0 );
+	DiffModelList* parse(QStringList& diffLines, bool* malformed = nullptr);
 
 	enum Kompare::Generator generator() const { return m_generator; };
 	enum Kompare::Format    format() const    { return m_format; };

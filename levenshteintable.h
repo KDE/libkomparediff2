@@ -79,7 +79,7 @@ template<class SequencePair> LevenshteinTable<SequencePair>::LevenshteinTable()
 m_height( 256 ),
 m_size( m_height * m_width ),
 m_table( new unsigned int[ m_size ] ),
-m_sequences(0)
+m_sequences(nullptr)
 {
 }
 
@@ -228,7 +228,7 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 		return;
 	}
 
-	Marker* c = 0;
+	Marker* c = nullptr;
 
 	int n, nw, w, direction, currentValue;
 	while ( x > 0 && y > 0 )
@@ -249,7 +249,7 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 			if ( !m_sequences->markerListSecond().isEmpty() )
 				c = m_sequences->markerListSecond().first();
 			else
-				c = 0;
+				c = nullptr;
 
 			if ( c && c->type() == Marker::End )
 			{
@@ -277,7 +277,7 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 			if ( !m_sequences->markerListSecond().isEmpty() )
 				c = m_sequences->markerListSecond().first();
 			else
-				c = 0;
+				c = nullptr;
 
 			if ( c && c->type() == Marker::End )
 			{
@@ -296,7 +296,7 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 			if ( !m_sequences->markerListFirst().isEmpty() )
 				c = m_sequences->markerListFirst().first();
 			else
-				c = 0;
+				c = nullptr;
 
 			if ( c && c->type() == Marker::End )
 			{
@@ -322,7 +322,7 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 			if ( !m_sequences->markerListFirst().isEmpty() )
 				c = m_sequences->markerListFirst().first();
 			else
-				c = 0;
+				c = nullptr;
 
 			if ( c && c->type() == Marker::End )
 			{

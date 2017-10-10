@@ -87,7 +87,7 @@ DiffModelList* Parser::parse( QStringList& diffLines, bool* malformed )
 		break;
 	default:
 		// Nothing to delete, just leave...
-		return 0L;
+		return nullptr;
 	}
 
 	m_format = parser->format();

@@ -47,7 +47,7 @@ DiffModel::DiffModel( const QString& source, const QString& destination ) :
 	m_destinationRevision( "" ),
 	m_appliedCount( 0 ),
 	m_diffIndex( 0 ),
-	m_selectedDifference( 0 ),
+	m_selectedDifference(nullptr),
 	m_blended( false )
 {
 	splitSourceInPathAndFileName();
@@ -67,7 +67,7 @@ DiffModel::DiffModel() :
 	m_destinationRevision( "" ),
 	m_appliedCount( 0 ),
 	m_diffIndex( 0 ),
-	m_selectedDifference( 0 ),
+	m_selectedDifference(nullptr),
 	m_blended( false )
 {
 }
@@ -75,7 +75,7 @@ DiffModel::DiffModel() :
 /**  */
 DiffModel::~DiffModel()
 {
-	m_selectedDifference = 0;
+	m_selectedDifference = nullptr;
 
 	qDeleteAll( m_hunks );
 	qDeleteAll( m_differences );
@@ -216,7 +216,7 @@ Difference* DiffModel::prevDifference()
 	}
 	else
 	{
-		m_selectedDifference = 0;
+		m_selectedDifference = nullptr;
 		m_diffIndex = 0;
 		qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
 	}
@@ -234,7 +234,7 @@ Difference* DiffModel::nextDifference()
 	}
 	else
 	{
-		m_selectedDifference = 0;
+		m_selectedDifference = nullptr;
 		m_diffIndex = 0; // just for safety...
 		qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
 	}

@@ -42,7 +42,7 @@ public:
 
 public:
 	enum Kompare::Format format() { return determineFormat(); };
-	DiffModelList* parse( bool* malformed = 0 );
+	DiffModelList* parse(bool* malformed = nullptr);
 
 protected:
 	virtual bool parseContextDiffHeader();

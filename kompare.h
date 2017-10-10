@@ -91,8 +91,8 @@ namespace Kompare
 			QUrl _destination = QUrl(),
 			QString _localSource = QString(),
 			QString _localDestination = QString(),
-			QTemporaryDir* _sourceQTempDir = 0,
-			QTemporaryDir* _destinationQTempDir = 0,
+			QTemporaryDir* _sourceQTempDir = nullptr,
+			QTemporaryDir* _destinationQTempDir = nullptr,
 			uint _depth = 0,
 			bool _applied = true
 		);

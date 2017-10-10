@@ -83,7 +83,7 @@ void InteractiveDiffTest::testSameLine()
 void InteractiveDiffTest::testDifferenceContents()
 {
     QFETCH(QStringList, patch);
-    Parser parser(0);
+    Parser parser(nullptr);
     bool malformed;
     DiffModelList* models = parser.parse(patch, &malformed);
     QVERIFY(!malformed);
@@ -498,7 +498,7 @@ void InteractiveDiffTest::testLineNumbers_data()
 void InteractiveDiffTest::testLineNumbers()
 {
     QFETCH(QStringList, patch);
-    Parser parser(0);
+    Parser parser(nullptr);
     bool malformed;
     DiffModelList* models = parser.parse(patch, &malformed);
     QVERIFY(!malformed);
@@ -644,7 +644,7 @@ void InteractiveDiffTest::testApplyUnapply()
     "-delete6\n" <<
     "+insert6\n" <<
     " line8\n";
-    Parser parser(0);
+    Parser parser(nullptr);
     bool malformed;
     DiffModelList* models = parser.parse(patch, &malformed);
     QVERIFY(!malformed);
@@ -774,7 +774,7 @@ contextDiff1()
     "  	if( ( pos = m_source.lastIndexOf( \"/\" ) ) >= 0 )\n" <<
     "  		m_sourceFile = m_source.mid( pos+1, m_source.length() - pos );\n" <<
     "  	else\n";
-    Parser parser(0);
+    Parser parser(nullptr);
     bool malformed;
     DiffModelList* models = parser.parse(patch, &malformed);
     QVERIFY(!malformed);
@@ -807,7 +807,7 @@ contextDiff2()
     "  	m_destinationFile( "" ),\n" <<
     "  	m_sourceTimestamp( "" ),\n";
 
-    Parser parser(0);
+    Parser parser(nullptr);
     bool malformed;
     DiffModelList* models = parser.parse(patch, &malformed);
     QVERIFY(!malformed);
@@ -834,7 +834,7 @@ void InteractiveDiffTest::testNormalDiff()
     "< a\n" <<
     "---\n" <<
     "> b\n";
-    Parser parser(0);
+    Parser parser(nullptr);
     bool malformed;
     DiffModelList* models = parser.parse(patch, &malformed);
     QVERIFY(!malformed);

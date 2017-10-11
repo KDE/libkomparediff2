@@ -27,7 +27,7 @@ find_package(KF5 ${KF5_DEP_VERSION} REQUIRED COMPONENTS
 	CoreAddons Codecs Config XmlGui I18n KIO
 )
 
-set(KOMPAREDIFF2_VERSION "5.1")
+set(KOMPAREDIFF2_VERSION "5.2")
 ecm_setup_version(${KOMPAREDIFF2_VERSION}
                   VARIABLE_PREFIX LIBKOMPAREDIFF2
                   PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/LibKompareDiff2ConfigVersion.cmake"

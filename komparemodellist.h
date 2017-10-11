@@ -41,7 +41,7 @@ class DIFF2_EXPORT KompareModelList : public QObject
 {
 	Q_OBJECT
 public:
-	KompareModelList( DiffSettings* diffSettings, QWidget* widgetForKIO, QObject* parent, const char* name = nullptr, bool isReadWrite = true);
+	KompareModelList(DiffSettings* diffSettings, QWidget* widgetForKIO, QObject* parent, const char* name = nullptr, bool supportReadWrite = true);
 	~KompareModelList() override;
 
 public:

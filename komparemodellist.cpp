@@ -50,7 +50,7 @@
 
 using namespace Diff2;
 
-KompareModelList::KompareModelList( DiffSettings* diffSettings, QWidget* widgetForKIO, QObject* parent, const char* name, bool isReadWrite)
+KompareModelList::KompareModelList(DiffSettings* diffSettings, QWidget* widgetForKIO, QObject* parent, const char* name, bool supportReadWrite)
 	: QObject( parent ),
 	m_diffProcess(nullptr),
 	m_diffSettings( diffSettings ),
@@ -61,26 +61,33 @@ KompareModelList::KompareModelList( DiffSettings* diffSettings, QWidget* widgetF
 	m_info(nullptr),
 	m_textCodec(nullptr),
 	m_widgetForKIO( widgetForKIO ),
-	m_isReadWrite( isReadWrite )
+	m_isReadWrite(supportReadWrite)
 {
 	qCDebug(LIBKOMPAREDIFF2) << "Show me the arguments: " << diffSettings << ", " << widgetForKIO << ", " << parent << ", " << name;
 	m_actionCollection = new KActionCollection(this);
-	m_applyDifference = m_actionCollection->addAction( "difference_apply", this, SLOT(slotActionApplyDifference()) );
-	m_applyDifference->setIcon( QIcon::fromTheme("arrow-right") );
-	m_applyDifference->setText( i18n("&Apply Difference") );
-	m_actionCollection->setDefaultShortcut( m_applyDifference, QKeySequence(Qt::Key_Space) );
-	m_unApplyDifference = m_actionCollection->addAction( "difference_unapply", this, SLOT(slotActionUnApplyDifference()) );
-	m_unApplyDifference->setIcon( QIcon::fromTheme("arrow-left") );
-	m_unApplyDifference->setText( i18n("Un&apply Difference") );
-	m_actionCollection->setDefaultShortcut( m_unApplyDifference, QKeySequence(Qt::Key_Backspace) );
-	m_applyAll = m_actionCollection->addAction( "difference_applyall", this, SLOT(slotActionApplyAllDifferences()) );
-	m_applyAll->setIcon( QIcon::fromTheme("arrow-right-double") );
-	m_applyAll->setText( i18n("App&ly All") );
-	m_actionCollection->setDefaultShortcut( m_applyAll, QKeySequence(Qt::CTRL + Qt::Key_A) );
-	m_unapplyAll = m_actionCollection->addAction( "difference_unapplyall", this, SLOT(slotActionUnapplyAllDifferences()) );
-	m_unapplyAll->setIcon( QIcon::fromTheme("arrow-left-double") );
-	m_unapplyAll->setText( i18n("&Unapply All") );
-	m_actionCollection->setDefaultShortcut( m_unapplyAll, QKeySequence(Qt::CTRL + Qt::Key_U) );
+	if (supportReadWrite) {
+		m_applyDifference = m_actionCollection->addAction( "difference_apply", this, SLOT(slotActionApplyDifference()) );
+		m_applyDifference->setIcon( QIcon::fromTheme("arrow-right") );
+		m_applyDifference->setText( i18n("&Apply Difference") );
+		m_actionCollection->setDefaultShortcut( m_applyDifference, QKeySequence(Qt::Key_Space) );
+		m_unApplyDifference = m_actionCollection->addAction( "difference_unapply", this, SLOT(slotActionUnApplyDifference()) );
+		m_unApplyDifference->setIcon( QIcon::fromTheme("arrow-left") );
+		m_unApplyDifference->setText( i18n("Un&apply Difference") );
+		m_actionCollection->setDefaultShortcut( m_unApplyDifference, QKeySequence(Qt::Key_Backspace) );
+		m_applyAll = m_actionCollection->addAction( "difference_applyall", this, SLOT(slotActionApplyAllDifferences()) );
+		m_applyAll->setIcon( QIcon::fromTheme("arrow-right-double") );
+		m_applyAll->setText( i18n("App&ly All") );
+		m_actionCollection->setDefaultShortcut( m_applyAll, QKeySequence(Qt::CTRL + Qt::Key_A) );
+		m_unapplyAll = m_actionCollection->addAction( "difference_unapplyall", this, SLOT(slotActionUnapplyAllDifferences()) );
+		m_unapplyAll->setIcon( QIcon::fromTheme("arrow-left-double") );
+		m_unapplyAll->setText( i18n("&Unapply All") );
+		m_actionCollection->setDefaultShortcut( m_unapplyAll, QKeySequence(Qt::CTRL + Qt::Key_U) );
+	} else {
+		m_applyDifference = nullptr;
+		m_unApplyDifference = nullptr;
+		m_applyAll = nullptr;
+		m_unapplyAll = nullptr;
+	}
 	m_previousFile = m_actionCollection->addAction( "difference_previousfile", this, SLOT(slotPreviousModel()) );
 	m_previousFile->setIcon( QIcon::fromTheme("arrow-up-double") );
 	m_previousFile->setText( i18n("P&revious File") );
@@ -100,8 +107,12 @@ KompareModelList::KompareModelList( DiffSettings* diffSettings, QWidget* widgetF
 	m_previousDifference->setEnabled( false );
 	m_nextDifference->setEnabled( false );
 
-	m_save = KStandardAction::save( this, SLOT(slotSaveDestination()), m_actionCollection );
-	m_save->setEnabled( false );
+	if (supportReadWrite) {
+		m_save = KStandardAction::save( this, SLOT(slotSaveDestination()), m_actionCollection );
+		m_save->setEnabled( false );
+	} else {
+		m_save = nullptr;
+	}
 
 	updateModelListActions();
 }
@@ -307,7 +318,7 @@ void KompareModelList::slotSaveDestination()
 	if ( m_selectedModel )
 	{
 		saveDestination( m_selectedModel );
-		m_save->setEnabled( false );
+		if (m_save) m_save->setEnabled( false );
 		emit updateActions();
 	}
 }
@@ -1376,7 +1387,7 @@ void KompareModelList::updateModelListActions()
 {
 	if ( m_models && m_selectedModel && m_selectedDifference )
 	{
-		if ( m_isReadWrite )
+		if ( m_isReadWrite && m_save)
 		{
 			if ( m_selectedModel->appliedCount() != m_selectedModel->differenceCount() )
 				m_applyAll->setEnabled( true );
@@ -1392,7 +1403,7 @@ void KompareModelList::updateModelListActions()
 			m_unApplyDifference->setEnabled( m_selectedDifference->applied() == true );
 			m_save->setEnabled( m_selectedModel->hasUnsavedChanges() );
 		}
-		else
+		else if(m_save)
 		{
 			m_applyDifference->setEnabled  ( false );
 			m_unApplyDifference->setEnabled( false );
@@ -1408,16 +1419,18 @@ void KompareModelList::updateModelListActions()
 	}
 	else
 	{
-		m_applyDifference->setEnabled   ( false );
-		m_unApplyDifference->setEnabled ( false );
-		m_applyAll->setEnabled          ( false );
-		m_unapplyAll->setEnabled        ( false );
+		if (m_save) {
+			m_applyDifference->setEnabled   ( false );
+			m_unApplyDifference->setEnabled ( false );
+			m_applyAll->setEnabled          ( false );
+			m_unapplyAll->setEnabled        ( false );
+			m_save->setEnabled              ( false );
+		}
 
 		m_previousFile->setEnabled      ( false );
 		m_nextFile->setEnabled          ( false );
 		m_previousDifference->setEnabled( false );
 		m_nextDifference->setEnabled    ( false );
-		m_save->setEnabled              ( false );
 	}
 }
 

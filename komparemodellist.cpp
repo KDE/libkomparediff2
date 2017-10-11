@@ -486,6 +486,20 @@ void KompareModelList::setEncoding( const QString& encoding )
 	qCDebug(LIBKOMPAREDIFF2) << "TextCodec: " << m_textCodec;
 }
 
+void KompareModelList::setReadWrite(bool isReadWrite)
+{
+	if (m_isReadWrite == isReadWrite)
+		return;
+
+	m_isReadWrite = isReadWrite;
+	updateModelListActions();
+}
+
+bool KompareModelList::isReadWrite() const
+{
+	return m_isReadWrite;
+}
+
 void KompareModelList::slotDiffProcessFinished( bool success )
 {
 	if ( success )

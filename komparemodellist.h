@@ -66,6 +66,9 @@ public:
 
 	void setEncoding( const QString& encoding );
 
+	void setReadWrite(bool isReadWrite);
+	bool isReadWrite() const;
+
 	QString recreateDiff() const;
 
 	// This parses the difflines and creates new models

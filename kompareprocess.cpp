@@ -23,8 +23,8 @@
 #include <QTextCodec>
 #include <QLoggingCategory>
 
-#include <kcharsets.h>
-#include <kio/global.h>
+#include <KCharsets>
+#include <KIO/Global>
 
 #include "diffsettings.h"
 

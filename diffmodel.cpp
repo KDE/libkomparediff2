@@ -297,7 +297,8 @@ void DiffModel::addHunk( DiffHunk* hunk )
 void DiffModel::addDiff( Difference* diff )
 {
 	m_differences.append( diff );
-	connect(diff, SIGNAL(differenceApplied(Difference*)), SLOT(slotDifferenceApplied(Difference*)));
+	connect(diff, &Difference::differenceApplied,
+		this, &DiffModel::slotDifferenceApplied);
 }
 
 bool DiffModel::hasUnsavedChanges( void ) const

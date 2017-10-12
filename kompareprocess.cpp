@@ -66,8 +66,9 @@ KompareProcess::KompareProcess( DiffSettings* diffSettings, Kompare::DiffMode di
 	m_textDecoder(nullptr)
 {
 	// connect the signal that indicates that the proces has exited
-	connect( this, SIGNAL( finished( int, QProcess::ExitStatus ) ),
-	         SLOT  ( slotFinished( int, QProcess::ExitStatus ) ) );
+	typedef void(QProcess::*void_QProcess_argIntExitStatus)(int, QProcess::ExitStatus);
+	connect(this, static_cast<void_QProcess_argIntExitStatus>(&QProcess::finished),
+	        this, &KompareProcess::slotFinished);
 
 	setEnv( "LANG", "C" );
 

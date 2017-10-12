@@ -22,7 +22,7 @@ find_package(Qt5Widgets ${QT_MIN_VERSION} NO_MODULE)
 set_package_properties(Qt5Widgets PROPERTIES TYPE REQUIRED)
 find_package(Qt5Test ${QT_MIN_VERSION} NO_MODULE)
 
-set(KF5_DEP_VERSION "5.16.0")
+set(KF5_DEP_VERSION "5.28.0")
 find_package(KF5 ${KF5_DEP_VERSION} REQUIRED COMPONENTS
 	CoreAddons Codecs Config XmlGui I18n KIO
 )

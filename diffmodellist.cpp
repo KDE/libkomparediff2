@@ -19,7 +19,7 @@
 
 using namespace Diff2;
 
-bool diffModelCompare(DiffModel* model1, DiffModel* model2)
+static bool diffModelCompare(DiffModel* model1, DiffModel* model2)
 {
 	return *model1 < *model2;
 }

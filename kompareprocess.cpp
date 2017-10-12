@@ -30,7 +30,7 @@
 
 namespace {
 /// TODO: This should be replaced to QDir::relativeFilePath
-QString constructRelativePath( const QString& from, const QString& to )
+static QString constructRelativePath( const QString& from, const QString& to )
 {
 	QUrl fromURL( from );
 	QUrl toURL( to );

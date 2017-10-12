@@ -330,7 +330,7 @@ void DiffModel::applyDifference( bool apply )
 	m_selectedDifference->apply( apply );
 }
 
-int GetDifferenceDelta(Difference* diff)
+static int GetDifferenceDelta(Difference* diff)
 {
 	int delta = diff->destinationLineCount() - diff->sourceLineCount();
 	if ( !diff->applied() )

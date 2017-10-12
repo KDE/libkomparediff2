@@ -227,7 +227,7 @@ bool KompareModelList::compare(Kompare::Mode mode)
 	return true;
 }
 
-QString lstripSeparators( const QString & from, uint count )
+static QString lstripSeparators(const QString& from, uint count)
 {
 	int position = 0;
 	for ( uint i = 0; i < count; ++i )

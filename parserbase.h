@@ -70,7 +70,7 @@ protected:
 	virtual DiffModelList* parseUnified();
 
 protected: // Helper methods to speed things up
-	bool matchesUnifiedHunkLine( QString line ) const;
+	bool matchesUnifiedHunkLine(const QString& line) const;
 	void checkHeader( const QRegExp& header );
 
 protected:

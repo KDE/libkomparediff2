@@ -562,7 +562,7 @@ bool ParserBase::parseRCSHunkBody()
 	return false;
 }
 
-bool ParserBase::matchesUnifiedHunkLine( QString line ) const
+bool ParserBase::matchesUnifiedHunkLine(const QString& line) const
 {
 	static const QChar context( ' ' );
 	static const QChar added  ( '+' );

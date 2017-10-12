@@ -22,7 +22,7 @@
 
 using namespace Diff2;
 
-DiffHunk::DiffHunk( int sourceLine, int destinationLine, QString function, Type type ) :
+DiffHunk::DiffHunk(int sourceLine, int destinationLine, const QString& function, Type type) :
 	m_sourceLine( sourceLine ),
 	m_destinationLine( destinationLine ),
 	m_function( function ),

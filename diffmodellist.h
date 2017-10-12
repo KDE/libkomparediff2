@@ -36,9 +36,7 @@ public:
 	DiffModelList( const DiffModelList &list ) : QList<DiffModel*>( list ) {}
 	virtual ~DiffModelList()
 	{
-		// Memleak as indicated by valgrind
-		while ( !isEmpty() )
-			delete takeFirst();
+		qDeleteAll(begin(), end());
 	}
 
 public:

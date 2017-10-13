@@ -21,11 +21,11 @@
 #include <QDir>
 #include <QStringList>
 #include <QTextCodec>
-#include <QLoggingCategory>
 
 #include <KCharsets>
 #include <KIO/Global>
 
+#include <komparediffdebug.h>
 #include "diffsettings.h"
 
 namespace {
@@ -55,8 +55,6 @@ static QString constructRelativePath( const QString& from, const QString& to )
 	return relative;
 }
 }
-
-Q_DECLARE_LOGGING_CATEGORY(LIBKOMPAREDIFF2)
 
 KompareProcess::KompareProcess( DiffSettings* diffSettings, Kompare::DiffMode diffMode, const QString & source, const QString & destination, const QString &dir, Kompare::Mode mode )
 	: KProcess(),

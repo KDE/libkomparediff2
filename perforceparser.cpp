@@ -23,13 +23,13 @@ using namespace Diff2;
 
 PerforceParser::PerforceParser( const KompareModelList* list, const QStringList& diff ) : ParserBase( list, diff )
 {
-	m_contextDiffHeader1.setPattern( "==== (.*) - (.*) ====\\n" );
+	m_contextDiffHeader1.setPattern(QStringLiteral("==== (.*) - (.*) ====\\n"));
 	m_contextDiffHeader1.setMinimal( true );
-	m_normalDiffHeader.setPattern  ( "==== (.*) - (.*) ====\\n" );
+	m_normalDiffHeader.setPattern  (QStringLiteral("==== (.*) - (.*) ====\\n"));
 	m_normalDiffHeader.setMinimal  ( true );
-	m_rcsDiffHeader.setPattern     ( "==== (.*) - (.*) ====\\n" );
+	m_rcsDiffHeader.setPattern     (QStringLiteral("==== (.*) - (.*) ====\\n"));
 	m_rcsDiffHeader.setMinimal     ( true );
-	m_unifiedDiffHeader1.setPattern( "==== (.*) - (.*) ====\\n" );
+	m_unifiedDiffHeader1.setPattern(QStringLiteral("==== (.*) - (.*) ====\\n"));
 	m_unifiedDiffHeader1.setMinimal( true );
 }
 
@@ -41,10 +41,10 @@ enum Kompare::Format PerforceParser::determineFormat()
 {
 	qCDebug(LIBKOMPAREDIFF2) << "Determining the format of the Perforce Diff";
 
-	QRegExp unifiedRE( "^@@" );
-	QRegExp contextRE( "^\\*{15}" );
-	QRegExp normalRE ( "^\\d+(|,\\d+)[acd]\\d+(|,\\d+)" );
-	QRegExp rcsRE    ( "^[acd]\\d+ \\d+" );
+	QRegExp unifiedRE(QStringLiteral("^@@"));
+	QRegExp contextRE(QStringLiteral("^\\*{15}"));
+	QRegExp normalRE (QStringLiteral("^\\d+(|,\\d+)[acd]\\d+(|,\\d+)"));
+	QRegExp rcsRE    (QStringLiteral("^[acd]\\d+ \\d+"));
 	// Summary is not supported since it gives no useful parsable info
 
 	QStringList::ConstIterator it = m_diffLines.begin();
@@ -84,8 +84,8 @@ bool PerforceParser::parseContextDiffHeader()
 
 	QStringList::ConstIterator itEnd = m_diffLines.end();
 
-	QRegExp sourceFileRE     ( "([^\\#]+)#(\\d+)" );
-	QRegExp destinationFileRE( "([^\\#]+)#(|\\d+)" );
+	QRegExp sourceFileRE     (QStringLiteral("([^\\#]+)#(\\d+)"));
+	QRegExp destinationFileRE(QStringLiteral("([^\\#]+)#(|\\d+)"));
 
 	while ( m_diffIterator != itEnd )
 	{
@@ -128,8 +128,8 @@ bool PerforceParser::parseNormalDiffHeader()
 
 	QStringList::ConstIterator itEnd = m_diffLines.end();
 
-	QRegExp sourceFileRE     ( "([^\\#]+)#(\\d+)" );
-	QRegExp destinationFileRE( "([^\\#]+)#(|\\d+)" );
+	QRegExp sourceFileRE     (QStringLiteral("([^\\#]+)#(\\d+)"));
+	QRegExp destinationFileRE(QStringLiteral("([^\\#]+)#(|\\d+)"));
 
 	while ( m_diffIterator != itEnd )
 	{
@@ -179,8 +179,8 @@ bool PerforceParser::parseUnifiedDiffHeader()
 
 	QStringList::ConstIterator itEnd = m_diffLines.end();
 
-	QRegExp sourceFileRE     ( "([^\\#]+)#(\\d+)" );
-	QRegExp destinationFileRE( "([^\\#]+)#(|\\d+)" );
+	QRegExp sourceFileRE     (QStringLiteral("([^\\#]+)#(\\d+)"));
+	QRegExp destinationFileRE(QStringLiteral("([^\\#]+)#(|\\d+)"));
 
 	while ( m_diffIterator != itEnd )
 	{

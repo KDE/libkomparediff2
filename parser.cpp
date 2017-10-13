@@ -39,7 +39,7 @@ int Parser::cleanUpCrap( QStringList& diffLines )
 
 	int nol = 0;
 
-	QString noNewLine( "\\ No newline" );
+	QLatin1String noNewLine( "\\ No newline" );
 
 	for ( ; it != diffLines.end(); ++it )
 	{
@@ -49,7 +49,7 @@ int Parser::cleanUpCrap( QStringList& diffLines )
 			// correcting the advance of the iterator because of the remove
 			--it;
 			QString temp( *it );
-			temp.truncate( temp.indexOf( '\n' ) );
+			temp.truncate(temp.indexOf(QLatin1Char('\n')));
 			*it = temp;
 			++nol;
 		}
@@ -109,8 +109,8 @@ DiffModelList* Parser::parse( QStringList& diffLines, bool* malformed )
 enum Kompare::Generator Parser::determineGenerator( const QStringList& diffLines )
 {
 	// Shit have to duplicate some code with this method and the ParserBase derived classes
-	QString cvsDiff     ( "Index: " );
-	QString perforceDiff( "==== " );
+	QLatin1String cvsDiff     ("Index: ");
+	QLatin1String perforceDiff("==== ");
 
 	QStringList::ConstIterator it = diffLines.begin();
 	QStringList::ConstIterator linesEnd = diffLines.end();

@@ -96,16 +96,16 @@ QString DiffHunk::recreateHunk() const
 	}
 
 	// recreate header
-	hunk += QString::fromLatin1( "@@ -%1,%3 +%2,%4 @@" )
+	hunk += QStringLiteral( "@@ -%1,%3 +%2,%4 @@" )
 	        .arg( m_sourceLine )
 	        .arg( m_destinationLine )
 	        .arg( slc )
 	        .arg( dlc );
 
 	if ( !m_function.isEmpty() )
-		hunk += ' ' + m_function;
+		hunk += QLatin1Char(' ') + m_function;
 
-	hunk += QString::fromLatin1( "\n" );
+	hunk += QLatin1Char('\n');
 
 	hunk += differences;
 

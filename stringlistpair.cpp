@@ -64,11 +64,11 @@ StringListPair::StringListPair(const QStringList& first, const QStringList& seco
     m_hashesFirst = new unsigned int[m_lengthFirst];
     m_hashesSecond = new unsigned int[m_lengthSecond];
 
-    m_hashesFirst[0] = qHash(QString(""));
+    m_hashesFirst[0] = qHash(QString());
     for (unsigned int i = 1; i < m_lengthFirst; ++i) {
         m_hashesFirst[i] = qHash(first[i - 1]);
     }
-    m_hashesSecond[0] = qHash(QString(""));
+    m_hashesSecond[0] = qHash(QString());
     for (unsigned int i = 1; i < m_lengthSecond; ++i) {
         m_hashesSecond[i] = qHash(second[i - 1]);
     }

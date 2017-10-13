@@ -32,14 +32,14 @@ using namespace Diff2;
 DiffModel::DiffModel( const QString& source, const QString& destination ) :
 	m_source( source ),
 	m_destination( destination ),
-	m_sourcePath( "" ),
-	m_destinationPath( "" ),
-	m_sourceFile( "" ),
-	m_destinationFile( "" ),
-	m_sourceTimestamp( "" ),
-	m_destinationTimestamp( "" ),
-	m_sourceRevision( "" ),
-	m_destinationRevision( "" ),
+	m_sourcePath(),
+	m_destinationPath(),
+	m_sourceFile(),
+	m_destinationFile(),
+	m_sourceTimestamp(),
+	m_destinationTimestamp(),
+	m_sourceRevision(),
+	m_destinationRevision(),
 	m_appliedCount( 0 ),
 	m_diffIndex( 0 ),
 	m_selectedDifference(nullptr),
@@ -50,16 +50,16 @@ DiffModel::DiffModel( const QString& source, const QString& destination ) :
 }
 
 DiffModel::DiffModel() :
-	m_source( "" ),
-	m_destination( "" ),
-	m_sourcePath( "" ),
-	m_destinationPath( "" ),
-	m_sourceFile( "" ),
-	m_destinationFile( "" ),
-	m_sourceTimestamp( "" ),
-	m_destinationTimestamp( "" ),
-	m_sourceRevision( "" ),
-	m_destinationRevision( "" ),
+	m_source(),
+	m_destination(),
+	m_sourcePath(),
+	m_destinationPath(),
+	m_sourceFile(),
+	m_destinationFile(),
+	m_sourceTimestamp(),
+	m_destinationTimestamp(),
+	m_sourceRevision(),
+	m_destinationRevision(),
 	m_appliedCount( 0 ),
 	m_diffIndex( 0 ),
 	m_selectedDifference(nullptr),
@@ -80,10 +80,10 @@ void DiffModel::splitSourceInPathAndFileName()
 {
 	int pos;
 
-	if( ( pos = m_source.lastIndexOf( "/" ) ) >= 0 )
+	if ((pos = m_source.lastIndexOf(QLatin1Char('/'))) >= 0)
 		m_sourcePath = m_source.mid( 0, pos+1 );
 
-	if( ( pos = m_source.lastIndexOf( "/" ) ) >= 0 )
+	if ((pos = m_source.lastIndexOf(QLatin1Char('/'))) >= 0)
 		m_sourceFile = m_source.mid( pos+1, m_source.length() - pos );
 	else
 		m_sourceFile = m_source;
@@ -95,10 +95,10 @@ void DiffModel::splitDestinationInPathAndFileName()
 {
 	int pos;
 
-	if( ( pos = m_destination.lastIndexOf( "/" ) )>= 0 )
+	if ((pos = m_destination.lastIndexOf(QLatin1Char('/'))) >= 0)
 		m_destinationPath = m_destination.mid( 0, pos+1 );
 
-	if( ( pos = m_destination.lastIndexOf( "/" ) ) >= 0 )
+	if ((pos = m_destination.lastIndexOf(QLatin1Char('/'))) >= 0)
 		m_destinationFile = m_destination.mid( pos+1, m_destination.length() - pos );
 	else
 		m_destinationFile = m_destination;
@@ -155,13 +155,13 @@ QString DiffModel::recreateDiff() const
 	QString diff;
 
 	// recreate header
-	QString tab = QString::fromLatin1( "\t" );
-	QString nl  = QString::fromLatin1( "\n" );
-	diff += QString::fromLatin1( "--- %1\t%2" ).arg( ParserBase::escapePath( m_source ) ).arg( m_sourceTimestamp );
+	const QChar tab = QLatin1Char('\t');
+	const QChar nl  = QLatin1Char('\n');
+	diff += QStringLiteral("--- %1\t%2").arg(ParserBase::escapePath(m_source), m_sourceTimestamp);
 	if ( !m_sourceRevision.isEmpty() )
 		diff += tab + m_sourceRevision;
 	diff += nl;
-	diff += QString::fromLatin1( "+++ %1\t%2" ).arg( ParserBase::escapePath( m_destination ) ).arg( m_destinationTimestamp );
+	diff += QStringLiteral("+++ %1\t%2").arg(ParserBase::escapePath(m_destination), m_destinationTimestamp);
 	if ( !m_destinationRevision.isEmpty() )
 		diff += tab + m_destinationRevision;
 	diff += nl;

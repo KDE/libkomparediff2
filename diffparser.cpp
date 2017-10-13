@@ -24,8 +24,8 @@ using namespace Diff2;
 DiffParser::DiffParser( const KompareModelList* list, const QStringList& diff ) : ParserBase( list, diff )
 {
 	// The regexps needed for context diff parsing, the rest is the same as in parserbase.cpp
-	m_contextDiffHeader1.setPattern( "\\*\\*\\* ([^\\t]+)(\\t([^\\t]+))?\\n" );
-	m_contextDiffHeader2.setPattern( "--- ([^\\t]+)(\\t([^\\t]+))?\\n" );
+	m_contextDiffHeader1.setPattern(QStringLiteral("\\*\\*\\* ([^\\t]+)(\\t([^\\t]+))?\\n"));
+	m_contextDiffHeader2.setPattern(QStringLiteral("--- ([^\\t]+)(\\t([^\\t]+))?\\n"));
 }
 
 DiffParser::~DiffParser()
@@ -36,11 +36,11 @@ enum Kompare::Format DiffParser::determineFormat()
 {
 	qCDebug(LIBKOMPAREDIFF2) << "Determining the format of the diff Diff" << m_diffLines;
 
-	QRegExp normalRE ( "[0-9]+[0-9,]*[acd][0-9]+[0-9,]*" );
-	QRegExp unifiedRE( "^--- " );
-	QRegExp contextRE( "^\\*\\*\\* " );
-	QRegExp rcsRE    ( "^[acd][0-9]+ [0-9]+" );
-	QRegExp edRE     ( "^[0-9]+[0-9,]*[acd]" );
+	QRegExp normalRE (QStringLiteral("[0-9]+[0-9,]*[acd][0-9]+[0-9,]*"));
+	QRegExp unifiedRE(QStringLiteral("^--- "));
+	QRegExp contextRE(QStringLiteral("^\\*\\*\\* "));
+	QRegExp rcsRE    (QStringLiteral("^[acd][0-9]+ [0-9]+"));
+	QRegExp edRE     (QStringLiteral("^[0-9]+[0-9,]*[acd]"));
 
 	QStringList::ConstIterator it = m_diffLines.begin();
 

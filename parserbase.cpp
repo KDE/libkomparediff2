@@ -57,7 +57,7 @@ QString ParserBase::escapePath( QString path )
 
 	// Enclose in quotes if path contains space
 	if ( path.contains( QLatin1Char( ' ' ) ) )
-		path = QStringLiteral("\"%1\"").arg(path);
+		path = QLatin1Char('"') + path + QLatin1Char('"');
 
 	return path;
 }
@@ -76,35 +76,35 @@ ParserBase::ParserBase( const KompareModelList* list, const QStringList& diff ) 
 	m_models = new DiffModelList();
 
 	// used in contexthunkheader
-	m_contextHunkHeader1.setPattern( "\\*{15} ?(.*)\\n" ); // capture is for function name
-	m_contextHunkHeader2.setPattern( "\\*\\*\\* ([0-9]+),([0-9]+) \\*\\*\\*\\*.*\\n" );
+	m_contextHunkHeader1.setPattern(QStringLiteral("\\*{15} ?(.*)\\n" )); // capture is for function name
+	m_contextHunkHeader2.setPattern(QStringLiteral("\\*\\*\\* ([0-9]+),([0-9]+) \\*\\*\\*\\*.*\\n"));
 	// used in contexthunkbody
-	m_contextHunkHeader3.setPattern( "--- ([0-9]+),([0-9]+) ----\\n" );
+	m_contextHunkHeader3.setPattern(QStringLiteral("--- ([0-9]+),([0-9]+) ----\\n"));
 
-	m_contextHunkBodyRemoved.setPattern( "- (.*)" );
-	m_contextHunkBodyAdded.setPattern  ( "\\+ (.*)" );
-	m_contextHunkBodyChanged.setPattern( "! (.*)" );
-	m_contextHunkBodyContext.setPattern( "  (.*)" );
-	m_contextHunkBodyLine.setPattern   ( "[-\\+! ] (.*)" );
+	m_contextHunkBodyRemoved.setPattern(QStringLiteral("- (.*)"));
+	m_contextHunkBodyAdded.setPattern  (QStringLiteral("\\+ (.*)"));
+	m_contextHunkBodyChanged.setPattern(QStringLiteral("! (.*)"));
+	m_contextHunkBodyContext.setPattern(QStringLiteral("  (.*)"));
+	m_contextHunkBodyLine.setPattern   (QStringLiteral("[-\\+! ] (.*)"));
 
 	// This regexp sucks... i'll see what happens
-	m_normalDiffHeader.setPattern( "diff (?:(?:-|--)[a-zA-Z0-9=\\\"]+ )*(?:|-- +)(.*) +(.*)\\n" );
+	m_normalDiffHeader.setPattern(QStringLiteral("diff (?:(?:-|--)[a-zA-Z0-9=\\\"]+ )*(?:|-- +)(.*) +(.*)\\n"));
 
-	m_normalHunkHeaderAdded.setPattern  ( "([0-9]+)a([0-9]+)(|,[0-9]+)(.*)\\n" );
-	m_normalHunkHeaderRemoved.setPattern( "([0-9]+)(|,[0-9]+)d([0-9]+)(.*)\\n" );
-	m_normalHunkHeaderChanged.setPattern( "([0-9]+)(|,[0-9]+)c([0-9]+)(|,[0-9]+)(.*)\\n" );
+	m_normalHunkHeaderAdded.setPattern  (QStringLiteral("([0-9]+)a([0-9]+)(|,[0-9]+)(.*)\\n"));
+	m_normalHunkHeaderRemoved.setPattern(QStringLiteral("([0-9]+)(|,[0-9]+)d([0-9]+)(.*)\\n"));
+	m_normalHunkHeaderChanged.setPattern(QStringLiteral("([0-9]+)(|,[0-9]+)c([0-9]+)(|,[0-9]+)(.*)\\n"));
 
-	m_normalHunkBodyRemoved.setPattern  ( "< (.*)" );
-	m_normalHunkBodyAdded.setPattern    ( "> (.*)" );
-	m_normalHunkBodyDivider.setPattern  ( "---\\n" );
+	m_normalHunkBodyRemoved.setPattern  (QStringLiteral("< (.*)"));
+	m_normalHunkBodyAdded.setPattern    (QStringLiteral("> (.*)"));
+	m_normalHunkBodyDivider.setPattern  (QStringLiteral("---\\n"));
 
-	m_unifiedDiffHeader1.setPattern    ( "--- ([^\\t]+)(?:\\t([^\\t]+)(?:\\t?)(.*))?\\n" );
-	m_unifiedDiffHeader2.setPattern    ( "\\+\\+\\+ ([^\\t]+)(?:\\t([^\\t]+)(?:\\t?)(.*))?\\n" );
-	m_unifiedHunkHeader.setPattern     ( "@@ -([0-9]+)(|,([0-9]+)) \\+([0-9]+)(|,([0-9]+)) @@(?: ?)(.*)\\n" );
-	m_unifiedHunkBodyAdded.setPattern  ( "\\+(.*)" );
-	m_unifiedHunkBodyRemoved.setPattern( "-(.*)" );
-	m_unifiedHunkBodyContext.setPattern( " (.*)" );
-	m_unifiedHunkBodyLine.setPattern   ( "([-+ ])(.*)" );
+	m_unifiedDiffHeader1.setPattern    (QStringLiteral("--- ([^\\t]+)(?:\\t([^\\t]+)(?:\\t?)(.*))?\\n"));
+	m_unifiedDiffHeader2.setPattern    (QStringLiteral("\\+\\+\\+ ([^\\t]+)(?:\\t([^\\t]+)(?:\\t?)(.*))?\\n"));
+	m_unifiedHunkHeader.setPattern     (QStringLiteral("@@ -([0-9]+)(|,([0-9]+)) \\+([0-9]+)(|,([0-9]+)) @@(?: ?)(.*)\\n"));
+	m_unifiedHunkBodyAdded.setPattern  (QStringLiteral("\\+(.*)"));
+	m_unifiedHunkBodyRemoved.setPattern(QStringLiteral("-(.*)"));
+	m_unifiedHunkBodyContext.setPattern(QStringLiteral(" (.*)"));
+	m_unifiedHunkBodyLine.setPattern   (QStringLiteral("([-+ ])(.*)"));
 }
 
 ParserBase::~ParserBase()
@@ -564,9 +564,9 @@ bool ParserBase::parseRCSHunkBody()
 
 bool ParserBase::matchesUnifiedHunkLine(const QString& line) const
 {
-	static const QChar context( ' ' );
-	static const QChar added  ( '+' );
-	static const QChar removed( '-' );
+	static const QChar context = QLatin1Char(' ');
+	static const QChar added = QLatin1Char('+');
+	static const QChar removed = QLatin1Char('-');
 
 	QChar first = line[0];
 
@@ -610,9 +610,9 @@ bool ParserBase::parseUnifiedHunkBody()
 
 	const QStringList::ConstIterator m_diffLinesEnd = m_diffLines.end();
 
-	const QString context = QString( " " );
-	const QString added   = QString( "+" );
-	const QString removed = QString( "-" );
+	const QString context = QStringLiteral(" ");
+	const QString added   = QStringLiteral("+");
+	const QString removed = QStringLiteral("-");
 
 	while( m_diffIterator != m_diffLinesEnd && matchesUnifiedHunkLine( *m_diffIterator ) && (lineCountA || lineCountB) )
 	{
@@ -672,9 +672,9 @@ void ParserBase::checkHeader( const QRegExp& header )
 {
 	if ( m_diffIterator != m_diffLines.end()
 	     && !header.exactMatch( *m_diffIterator )
-	     && !m_diffIterator->startsWith("Index: ") /* SVN diff */
-	     && !m_diffIterator->startsWith("diff ") /* concatenated diff */
-	     && !m_diffIterator->startsWith("-- ") /* git format-patch */)
+	     && !m_diffIterator->startsWith(QLatin1String("Index: ")) /* SVN diff */
+	     && !m_diffIterator->startsWith(QLatin1String("diff ")) /* concatenated diff */
+	     && !m_diffIterator->startsWith(QLatin1String("-- ")) /* git format-patch */)
 		m_malformed = true;
 }
 

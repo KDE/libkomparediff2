@@ -134,7 +134,7 @@ QString Difference::recreateDifference() const
 		{
 		case Change:
 		case Delete:
-			difference += '-';
+			difference += QLatin1Char('-');
 			break;
 		default:
 		// Insert but this is not possible in source
@@ -156,10 +156,10 @@ QString Difference::recreateDifference() const
 		{
 		case Change:
 		case Insert:
-			difference += '+';
+			difference += QLatin1Char('+');
 			break;
 		case Unchanged:
-			difference += ' ';
+			difference += QLatin1Char(' ');
 			break;
 		default: // Delete but this is not possible in destination
 //			qCDebug(LIBKOMPAREDIFF2) << "Go away, nothing to do for you in destination...";

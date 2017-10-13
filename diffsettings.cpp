@@ -48,7 +48,7 @@ DiffSettings::~DiffSettings()
 void DiffSettings::loadSettings( KConfig* config )
 {
 	KConfigGroup group( config, "Diff Options" );
-	m_diffProgram                    = group.readEntry    ( "DiffProgram", "" );
+	m_diffProgram                    = group.readEntry( "DiffProgram", QString());
 	m_linesOfContext                 = group.readEntry ( "LinesOfContext", 3 );
 	m_largeFiles                     = group.readEntry( "LargeFiles", true );
 	m_ignoreWhiteSpace               = group.readEntry( "IgnoreWhiteSpace", false );
@@ -57,7 +57,7 @@ void DiffSettings::loadSettings( KConfig* config )
 	m_ignoreChangesDueToTabExpansion = group.readEntry( "IgnoreChangesDueToTabExpansion", false );
 	m_ignoreChangesInCase            = group.readEntry( "IgnoreChangesInCase", false );
 	m_ignoreRegExp                   = group.readEntry( "IgnoreRegExp", false );
-	m_ignoreRegExpText               = group.readEntry    ( "IgnoreRegExpText", "" );
+	m_ignoreRegExpText               = group.readEntry( "IgnoreRegExpText", QString());
 	m_ignoreRegExpTextHistory        = group.readEntry( "IgnoreRegExpTextHistory", QStringList() );
 	m_createSmallerDiff              = group.readEntry( "CreateSmallerDiff", true );
 	m_convertTabsToSpaces            = group.readEntry( "ConvertTabsToSpaces", false );
@@ -71,7 +71,7 @@ void DiffSettings::loadSettings( KConfig* config )
 	m_excludeFilePattern             = group2.readEntry( "Pattern", false );
 	m_excludeFilePatternList         = group2.readEntry( "PatternList", QStringList() );
 	m_excludeFilesFile               = group2.readEntry( "File", false );
-	m_excludeFilesFileURL            = group2.readEntry    ( "FileURL", "" );
+	m_excludeFilesFileURL            = group2.readEntry( "FileURL", QString());
 	m_excludeFilesFileHistoryList    = group2.readEntry( "FileHistoryList", QStringList() );
 }
 

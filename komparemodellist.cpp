@@ -66,20 +66,20 @@ KompareModelList::KompareModelList(DiffSettings* diffSettings, QWidget* widgetFo
 	qCDebug(LIBKOMPAREDIFF2) << "Show me the arguments: " << diffSettings << ", " << widgetForKIO << ", " << parent << ", " << name;
 	m_actionCollection = new KActionCollection(this);
 	if (supportReadWrite) {
-		m_applyDifference = m_actionCollection->addAction("difference_apply", this, &KompareModelList::slotActionApplyDifference);
-		m_applyDifference->setIcon( QIcon::fromTheme("arrow-right") );
+		m_applyDifference = m_actionCollection->addAction(QStringLiteral("difference_apply"), this, &KompareModelList::slotActionApplyDifference);
+		m_applyDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right")));
 		m_applyDifference->setText( i18n("&Apply Difference") );
 		m_actionCollection->setDefaultShortcut( m_applyDifference, QKeySequence(Qt::Key_Space) );
-		m_unApplyDifference = m_actionCollection->addAction("difference_unapply", this, &KompareModelList::slotActionUnApplyDifference);
-		m_unApplyDifference->setIcon( QIcon::fromTheme("arrow-left") );
+		m_unApplyDifference = m_actionCollection->addAction(QStringLiteral("difference_unapply"), this, &KompareModelList::slotActionUnApplyDifference);
+		m_unApplyDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-left")));
 		m_unApplyDifference->setText( i18n("Un&apply Difference") );
 		m_actionCollection->setDefaultShortcut( m_unApplyDifference, QKeySequence(Qt::Key_Backspace) );
-		m_applyAll = m_actionCollection->addAction("difference_applyall", this, &KompareModelList::slotActionApplyAllDifferences);
-		m_applyAll->setIcon( QIcon::fromTheme("arrow-right-double") );
+		m_applyAll = m_actionCollection->addAction(QStringLiteral("difference_applyall"), this, &KompareModelList::slotActionApplyAllDifferences);
+		m_applyAll->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")));
 		m_applyAll->setText( i18n("App&ly All") );
 		m_actionCollection->setDefaultShortcut( m_applyAll, QKeySequence(Qt::CTRL + Qt::Key_A) );
-		m_unapplyAll = m_actionCollection->addAction("difference_unapplyall", this, &KompareModelList::slotActionUnapplyAllDifferences);
-		m_unapplyAll->setIcon( QIcon::fromTheme("arrow-left-double") );
+		m_unapplyAll = m_actionCollection->addAction(QStringLiteral("difference_unapplyall"), this, &KompareModelList::slotActionUnapplyAllDifferences);
+		m_unapplyAll->setIcon(QIcon::fromTheme(QStringLiteral("arrow-left-double")));
 		m_unapplyAll->setText( i18n("&Unapply All") );
 		m_actionCollection->setDefaultShortcut( m_unapplyAll, QKeySequence(Qt::CTRL + Qt::Key_U) );
 	} else {
@@ -88,20 +88,20 @@ KompareModelList::KompareModelList(DiffSettings* diffSettings, QWidget* widgetFo
 		m_applyAll = nullptr;
 		m_unapplyAll = nullptr;
 	}
-	m_previousFile = m_actionCollection->addAction("difference_previousfile", this, &KompareModelList::slotPreviousModel);
-	m_previousFile->setIcon( QIcon::fromTheme("arrow-up-double") );
+	m_previousFile = m_actionCollection->addAction(QStringLiteral("difference_previousfile"), this, &KompareModelList::slotPreviousModel);
+	m_previousFile->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up-double")));
 	m_previousFile->setText( i18n("P&revious File") );
 	m_actionCollection->setDefaultShortcut( m_previousFile, QKeySequence(Qt::CTRL + Qt::Key_PageUp) );
-	m_nextFile = m_actionCollection->addAction("difference_nextfile", this, &KompareModelList::slotNextModel);
-	m_nextFile->setIcon( QIcon::fromTheme("arrow-down-double") );
+	m_nextFile = m_actionCollection->addAction(QStringLiteral("difference_nextfile"), this, &KompareModelList::slotNextModel);
+	m_nextFile->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down-double")));
 	m_nextFile->setText( i18n("N&ext File") );
 	m_actionCollection->setDefaultShortcut( m_nextFile, QKeySequence(Qt::CTRL + Qt::Key_PageDown) );
-	m_previousDifference = m_actionCollection->addAction("difference_previous", this, &KompareModelList::slotPreviousDifference);
-	m_previousDifference->setIcon( QIcon::fromTheme("arrow-up") );
+	m_previousDifference = m_actionCollection->addAction(QStringLiteral("difference_previous"), this, &KompareModelList::slotPreviousDifference);
+	m_previousDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up")));
 	m_previousDifference->setText( i18n("&Previous Difference") );
 	m_actionCollection->setDefaultShortcut( m_previousDifference, QKeySequence(Qt::CTRL + Qt::Key_Up) );
-	m_nextDifference = m_actionCollection->addAction("difference_next", this, &KompareModelList::slotNextDifference);
-	m_nextDifference->setIcon( QIcon::fromTheme("arrow-down") );
+	m_nextDifference = m_actionCollection->addAction(QStringLiteral("difference_next"), this, &KompareModelList::slotNextDifference);
+	m_nextDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
 	m_nextDifference->setText( i18n("&Next Difference") );
 	m_actionCollection->setDefaultShortcut( m_nextDifference, QKeySequence(Qt::CTRL + Qt::Key_Down) );
 	m_previousDifference->setEnabled( false );
@@ -136,7 +136,7 @@ bool KompareModelList::isDirectory( const QString& url ) const
 
 bool KompareModelList::isDiff( const QString& mimeType ) const
 {
-	if ( mimeType == "text/x-patch" )
+	if (mimeType == QLatin1String("text/x-patch"))
 		return true;
 	else
 		return false;
@@ -232,7 +232,7 @@ static QString lstripSeparators(const QString& from, uint count)
 	int position = 0;
 	for ( uint i = 0; i < count; ++i )
 	{
-		position = from.indexOf('/', position);
+		position = from.indexOf(QLatin1Char('/'), position);
 		if ( position == -1 )
 		{
 			break;
@@ -240,7 +240,7 @@ static QString lstripSeparators(const QString& from, uint count)
 	}
 	if ( position == -1 )
 	{
-		return "";
+		return QString();
 	}
 	else
 	{
@@ -380,7 +380,7 @@ bool KompareModelList::saveDestination( DiffModel* model )
 	// qCDebug(LIBKOMPAREDIFF2) << "Everything: " << endl << list.join( "\n" );
 
 	if( list.count() > 0 )
-		stream << list.join( "" );
+		stream << list.join(QString());
 	if( temp.error() != QFile::NoError ) {
 		emit error( i18n( "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>", temp.fileName() ) );
 		temp.remove();
@@ -411,7 +411,7 @@ bool KompareModelList::saveDestination( DiffModel* model )
 		qCDebug(LIBKOMPAREDIFF2) << "tmp                 : " << tmp;
 		KIO::UDSEntry entry;
 		QUrl fullDestinationPath = m_info->destination;
-		fullDestinationPath.setPath( fullDestinationPath.path() + "/" + tmp );
+		fullDestinationPath.setPath( fullDestinationPath.path() + QLatin1Char('/') + tmp );
 		qCDebug(LIBKOMPAREDIFF2) << "fullDestinationPath : " << fullDestinationPath;
 		KIO::StatJob *statJob = KIO::stat( fullDestinationPath );
 		if ( !statJob->exec() )
@@ -482,14 +482,14 @@ bool KompareModelList::saveAll()
 void KompareModelList::setEncoding( const QString& encoding )
 {
 	m_encoding = encoding;
-	if ( !encoding.compare( "default", Qt::CaseInsensitive ) )
+	if (!encoding.compare(QLatin1String("default"), Qt::CaseInsensitive))
 	{
 		m_textCodec = QTextCodec::codecForLocale();
 	}
 	else
 	{
 		qCDebug(LIBKOMPAREDIFF2) << "Encoding : " << encoding;
-		m_textCodec = KCharsets::charsets()->codecForName( encoding.toLatin1() );
+		m_textCodec = KCharsets::charsets()->codecForName(encoding);
 		qCDebug(LIBKOMPAREDIFF2) << "TextCodec: " << m_textCodec;
 		if ( !m_textCodec )
 			m_textCodec = QTextCodec::codecForLocale();
@@ -580,7 +580,7 @@ QStringList KompareModelList::split( const QString& fileContents )
 #else
 	const char split = '\n';
 #endif
-	while ( ( pos = contents.indexOf( split, oldpos ) ) >= 0 )
+	while ((pos = contents.indexOf(QLatin1Char(split), oldpos)) >= 0)
 	{
 		list.append( contents.mid( oldpos, pos - oldpos + 1 ) );
 		oldpos = pos + 1;
@@ -1100,7 +1100,7 @@ bool KompareModelList::blendFile( DiffModel* model, const QString& fileContents 
 		DiffHunk* hunk = *hunkIt;
 		if ( srcLineNo < hunk->sourceLineNumber() )
 		{
-			newHunk = new DiffHunk( srcLineNo, destLineNo, "", DiffHunk::AddedByBlend );
+			newHunk = new DiffHunk(srcLineNo, destLineNo, QString(), DiffHunk::AddedByBlend);
 
 			hunkIt = ++hunks->insert( hunkIt, newHunk );
 
@@ -1133,7 +1133,7 @@ bool KompareModelList::blendFile( DiffModel* model, const QString& fileContents 
 
 	if ( linesIt != lEnd )
 	{
-		newHunk = new DiffHunk( srcLineNo, destLineNo, "", DiffHunk::AddedByBlend );
+		newHunk = new DiffHunk(srcLineNo, destLineNo, QString(), DiffHunk::AddedByBlend);
 
 		model->addHunk( newHunk );
 

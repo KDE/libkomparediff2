@@ -48,7 +48,7 @@ template<> char* toString(const Marker& marker)
 void LevenshteinTest::testFirstEmptyString()
 {
     DifferenceString* string1 = new DifferenceString(QString("12345"));
-    DifferenceString* string2 = new DifferenceString(QString(""));
+    DifferenceString* string2 = new DifferenceString(QString());
     DifferenceStringPair* pair = new DifferenceStringPair(string1, string2);
     LevenshteinTable<DifferenceStringPair> table;
     table.createTable(pair);
@@ -67,7 +67,7 @@ void LevenshteinTest::testFirstEmptyString()
 
 void LevenshteinTest::testSecondEmptyString()
 {
-    DifferenceString* string1 = new DifferenceString(QString(""));
+    DifferenceString* string1 = new DifferenceString(QString());
     DifferenceString* string2 = new DifferenceString(QString("12345"));
     DifferenceStringPair* pair = new DifferenceStringPair(string1, string2);
     LevenshteinTable<DifferenceStringPair> table;

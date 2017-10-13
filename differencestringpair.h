@@ -34,7 +34,7 @@ class DifferenceStringPair {
 public:
     DifferenceStringPair(DifferenceString* first, DifferenceString* second)
         : m_first(first), m_second(second),
-        m_strFirst(' ' + first->string()), m_strSecond(' ' + second->string()),
+        m_strFirst(QLatin1Char(' ') + first->string()), m_strSecond(QLatin1Char(' ') + second->string()),
         m_lengthFirst(m_strFirst.length()), m_lengthSecond(m_strSecond.length()),
         m_arrayFirst(m_strFirst.unicode()), m_arraySecond(m_strSecond.unicode())
     {

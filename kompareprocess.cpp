@@ -48,10 +48,10 @@ static QString constructRelativePath( const QString& from, const QString& to )
 
 	QString relative;
 	for( ; upLevels > 0; upLevels-- ) {
-		relative += "../";
+		relative += QStringLiteral("../");
 	}
 
-	relative += QString( to ).replace( 0, root.path().length(), "" );
+	relative += QString( to ).remove(0, root.path().length());
 	return relative;
 }
 }
@@ -70,7 +70,7 @@ KompareProcess::KompareProcess( DiffSettings* diffSettings, Kompare::DiffMode di
 	connect(this, static_cast<void_QProcess_argIntExitStatus>(&QProcess::finished),
 	        this, &KompareProcess::slotFinished);
 
-	setEnv( "LANG", "C" );
+	setEnv(QStringLiteral("LANG"), QStringLiteral("C"));
 
 	// Write command and options
 	if( m_mode == Kompare::Default )
@@ -87,12 +87,12 @@ KompareProcess::KompareProcess( DiffSettings* diffSettings, Kompare::DiffMode di
 	}
 
 	// Write file names
-	*this << "--";
+	*this << QStringLiteral("--");
 
 	//Add the option for diff to read from stdin(QIODevice::write), and save a pointer to the string
 	if(mode == Kompare::ComparingStringFile)
 	{
-		*this << "-";
+		*this << QStringLiteral("-");
 		m_customString = &source;
 	}
 	else
@@ -102,7 +102,7 @@ KompareProcess::KompareProcess( DiffSettings* diffSettings, Kompare::DiffMode di
 
 	if(mode == Kompare::ComparingFileString)
 	{
-		*this << "-";
+		*this << QStringLiteral("-");
 		m_customString = &destination;
 	}
 	else
@@ -115,14 +115,14 @@ void KompareProcess::writeDefaultCommandLine()
 {
 	if ( !m_diffSettings || m_diffSettings->m_diffProgram.isEmpty() )
 	{
-		*this << "diff" << "-dr";
+		*this << QStringLiteral("diff") << QStringLiteral("-dr");
 	}
 	else
 	{
-		*this << m_diffSettings->m_diffProgram << "-dr";
+		*this << m_diffSettings->m_diffProgram << QStringLiteral("-dr");
 	}
 
-	*this << "-U" << QString::number( m_diffSettings->m_linesOfContext );
+	*this << QStringLiteral("-U") << QString::number( m_diffSettings->m_linesOfContext );
 }
 
 void KompareProcess::writeCommandLine()
@@ -131,7 +131,7 @@ void KompareProcess::writeCommandLine()
 	if ( m_diffSettings->m_diffProgram.isEmpty() )
 	{
 		qCDebug(LIBKOMPAREDIFF2) << "Using the first diff in the path...";
-		*this << "diff";
+		*this << QStringLiteral("diff");
 	}
 	else
 	{
@@ -141,19 +141,19 @@ void KompareProcess::writeCommandLine()
 
 	switch( m_diffSettings->m_format ) {
 	case Kompare::Unified :
-		*this << "-U" << QString::number( m_diffSettings->m_linesOfContext );
+		*this << QStringLiteral("-U") << QString::number( m_diffSettings->m_linesOfContext );
 		break;
 	case Kompare::Context :
-		*this << "-C" << QString::number( m_diffSettings->m_linesOfContext );
+		*this << QStringLiteral("-C") << QString::number( m_diffSettings->m_linesOfContext );
 		break;
 	case Kompare::RCS :
-		*this << "-n";
+		*this << QStringLiteral("-n");
 		break;
 	case Kompare::Ed :
-		*this << "-e";
+		*this << QStringLiteral("-e");
 		break;
 	case Kompare::SideBySide:
-		*this << "-y";
+		*this << QStringLiteral("-y");
 		break;
 	case Kompare::Normal :
 	case Kompare::UnknownFormat :
@@ -169,81 +169,81 @@ void KompareProcess::writeCommandLine()
 #endif
 	   )
 	{
-		*this << "-H";
+		*this << QStringLiteral("-H");
 	}
 
 	if ( m_diffSettings->m_ignoreWhiteSpace )
 	{
-		*this << "-b";
+		*this << QStringLiteral("-b");
 	}
 
 	if ( m_diffSettings->m_ignoreAllWhiteSpace )
 	{
-		*this << "-w";
+		*this << QStringLiteral("-w");
 	}
 
 	if ( m_diffSettings->m_ignoreEmptyLines )
 	{
-		*this << "-B";
+		*this << QStringLiteral("-B");
 	}
 
 	if ( m_diffSettings->m_ignoreChangesDueToTabExpansion )
 	{
-		*this << "-E";
+		*this << QStringLiteral("-E");
 	}
 
 	if ( m_diffSettings->m_createSmallerDiff )
 	{
-		*this << "-d";
+		*this << QStringLiteral("-d");
 	}
 
 	if ( m_diffSettings->m_ignoreChangesInCase )
 	{
-		*this << "-i";
+		*this << QStringLiteral("-i");
 	}
 
 	if ( m_diffSettings->m_ignoreRegExp && !m_diffSettings->m_ignoreRegExpText.isEmpty() )
 	{
-		*this << "-I" << m_diffSettings->m_ignoreRegExpText;
+		*this << QStringLiteral("-I") << m_diffSettings->m_ignoreRegExpText;
 	}
 
 	if ( m_diffSettings->m_showCFunctionChange )
 	{
-		*this << "-p";
+		*this << QStringLiteral("-p");
 	}
 
 	if ( m_diffSettings->m_convertTabsToSpaces )
 	{
-		*this << "-t";
+		*this << QStringLiteral("-t");
 	}
 
 	if ( m_diffSettings->m_recursive )
 	{
-		*this << "-r";
+		*this << QStringLiteral("-r");
 	}
 
 	if ( m_diffSettings->m_newFiles )
 	{
-		*this << "-N";
+		*this << QStringLiteral("-N");
 	}
 
 // This option is more trouble than it is worth... please do not ever enable it unless you want really weird crashes
 //	if ( m_diffSettings->m_allText )
 //	{
-//		*this << "-a";
+//		*this << QStringLiteral("-a");
 //	}
 
 	if ( m_diffSettings->m_excludeFilePattern )
 	{
 		Q_FOREACH(const QString& it, m_diffSettings->m_excludeFilePatternList)
 		{
-			*this << "-x" << it;
+			*this << QStringLiteral("-x") << it;
 		}
 	}
 
 	if ( m_diffSettings->m_excludeFilesFile && !m_diffSettings->m_excludeFilesFileURL.isEmpty() )
 	{
-		*this << "-X" << m_diffSettings->m_excludeFilesFileURL;
+		*this << QStringLiteral("-X") << m_diffSettings->m_excludeFilesFileURL;
 	}
 }
 
@@ -254,13 +254,13 @@ KompareProcess::~KompareProcess()
 
 void KompareProcess::setEncoding( const QString& encoding )
 {
-	if ( !encoding.compare( "default", Qt::CaseInsensitive ) )
+	if (!encoding.compare(QLatin1String("default"), Qt::CaseInsensitive))
 	{
 		m_textDecoder = QTextCodec::codecForLocale()->makeDecoder();
 	}
 	else
 	{
-		m_codec = KCharsets::charsets()->codecForName( encoding.toLatin1() );
+		m_codec = KCharsets::charsets()->codecForName(encoding);
 		if ( m_codec )
 			m_textDecoder = m_codec->makeDecoder();
 		else
@@ -280,7 +280,7 @@ void KompareProcess::start()
 	QStringList::ConstIterator it = program.constBegin();
 	QStringList::ConstIterator end = program.constEnd();
 	for (; it != end; ++it )
-		cmdLine += "\"" + (*it) + "\" ";
+		cmdLine += QLatin1Char('\"') + (*it) + QLatin1String("\" ");
 	qCDebug(LIBKOMPAREDIFF2) << cmdLine;
 #endif
 	setOutputChannelMode( SeparateChannels );

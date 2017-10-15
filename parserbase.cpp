@@ -411,7 +411,7 @@ bool ParserBase::parseContextHunkBody()
             {
 //                 qCDebug(LIBKOMPAREDIFF2) << " " << m_contextHunkBodyRemoved.cap( 1 );
                 diff->addSourceLine(m_contextHunkBodyRemoved.cap(1));
-                linenoA++;
+                ++linenoA;
             }
         }
         else if (newIt != newLines.end() && m_contextHunkBodyAdded.exactMatch(*newIt))
@@ -426,7 +426,7 @@ bool ParserBase::parseContextHunkBody()
             {
 //                 qCDebug(LIBKOMPAREDIFF2) << " " << m_contextHunkBodyAdded.cap( 1 );
                 diff->addDestinationLine(m_contextHunkBodyAdded.cap(1));
-                linenoB++;
+                ++linenoB;
             }
         }
         else if ((oldIt == oldLines.end() || m_contextHunkBodyContext.exactMatch(*oldIt)) &&
@@ -456,8 +456,8 @@ bool ParserBase::parseContextHunkBody()
                 }
                 diff->addSourceLine(l);
                 diff->addDestinationLine(l);
-                linenoA++;
-                linenoB++;
+                ++linenoA;
+                ++linenoB;
             }
         }
         else if ((oldIt != oldLines.end() && m_contextHunkBodyChanged.exactMatch(*oldIt)) ||
@@ -473,14 +473,14 @@ bool ParserBase::parseContextHunkBody()
             {
 //                 qCDebug(LIBKOMPAREDIFF2) << " " << m_contextHunkBodyChanged.cap( 1 );
                 diff->addSourceLine(m_contextHunkBodyChanged.cap(1));
-                linenoA++;
+                ++linenoA;
                 ++oldIt;
             }
             while (newIt != newLines.end() && m_contextHunkBodyChanged.exactMatch(*newIt))
             {
 //                 qCDebug(LIBKOMPAREDIFF2) << " " << m_contextHunkBodyChanged.cap( 1 );
                 diff->addDestinationLine(m_contextHunkBodyChanged.cap(1));
-                linenoB++;
+                ++linenoB;
                 ++newIt;
             }
         }
@@ -592,7 +592,7 @@ bool ParserBase::parseUnifiedHunkBody()
         // If a hunk is an insertion or deletion with no context, the line number given
         // is the one before the hunk. this isn't what we want, so increment it to fix this.
         if (lineCountA == 0)
-            linenoA++;
+            ++linenoA;
     }
     linenoB = m_unifiedHunkHeader.cap(4).toInt();
     if (!m_unifiedHunkHeader.cap(6).isEmpty()) {
@@ -601,7 +601,7 @@ bool ParserBase::parseUnifiedHunkBody()
             return false;
 
         if (lineCountB == 0) // see above
-            linenoB++;
+            ++linenoB;
     }
     QString function = m_unifiedHunkHeader.cap(7);
 
@@ -625,8 +625,8 @@ bool ParserBase::parseUnifiedHunkBody()
             {
                 diff->addSourceLine(QString(*m_diffIterator).remove(0, 1));
                 diff->addDestinationLine(QString(*m_diffIterator).remove(0, 1));
-                linenoA++;
-                linenoB++;
+                ++linenoA;
+                ++linenoB;
                 --lineCountA;
                 --lineCountB;
             }
@@ -636,13 +636,13 @@ bool ParserBase::parseUnifiedHunkBody()
             for (; m_diffIterator != m_diffLinesEnd && (*m_diffIterator).startsWith(removed) && (lineCountA || lineCountB); ++m_diffIterator)
             {
                 diff->addSourceLine(QString(*m_diffIterator).remove(0, 1));
-                linenoA++;
+                ++linenoA;
                 --lineCountA;
             }
             for (; m_diffIterator != m_diffLinesEnd && (*m_diffIterator).startsWith(added) && (lineCountA || lineCountB); ++m_diffIterator)
             {
                 diff->addDestinationLine(QString(*m_diffIterator).remove(0, 1));
-                linenoB++;
+                ++linenoB;
                 --lineCountB;
             }
             if (diff->sourceLineCount() == 0)

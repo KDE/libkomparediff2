@@ -1113,8 +1113,8 @@ bool KompareModelList::blendFile(DiffModel* model, const QString& fileContents)
             {
                 newDiff->addSourceLine(*linesIt);
                 newDiff->addDestinationLine(*linesIt);
-                srcLineNo++;
-                destLineNo++;
+                ++srcLineNo;
+                ++destLineNo;
                 ++linesIt;
             }
         }
@@ -1173,8 +1173,8 @@ bool KompareModelList::blendFile(DiffModel* model, const QString& fileContents)
 //                  qCDebug(LIBKOMPAREDIFF2) << "SourceLine = " << srcLineNo << ": " << *linesIt;
                 newDiff->addSourceLine(*linesIt);
                 newDiff->addDestinationLine(*linesIt);
-                srcLineNo++;
-                destLineNo++;
+                ++srcLineNo;
+                ++destLineNo;
                 ++linesIt;
             }
         }
@@ -1183,7 +1183,7 @@ bool KompareModelList::blendFile(DiffModel* model, const QString& fileContents)
         {
         case Difference::Unchanged:
             qCDebug(LIBKOMPAREDIFF2) << "Unchanged";
-            for (int i = 0; i < diff->sourceLineCount(); i++)
+            for (int i = 0; i < diff->sourceLineCount(); ++i)
             {
                 if (linesIt != lEnd && *linesIt != diff->sourceLineAt(i)->string())
                 {
@@ -1196,8 +1196,8 @@ bool KompareModelList::blendFile(DiffModel* model, const QString& fileContents)
                 }
 //                  qCDebug(LIBKOMPAREDIFF2) << "SourceLine = " << srcLineNo << ": " << *linesIt;
 //                  qCDebug(LIBKOMPAREDIFF2) << "DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt( i )->string();
-                srcLineNo++;
-                destLineNo++;
+                ++srcLineNo;
+                ++destLineNo;
                 ++linesIt;
             }
 
@@ -1212,7 +1212,7 @@ bool KompareModelList::blendFile(DiffModel* model, const QString& fileContents)
 
             //QStringListConstIterator saveIt = linesIt;
 
-            for (int i = 0; i < diff->sourceLineCount(); i++)
+            for (int i = 0; i < diff->sourceLineCount(); ++i)
             {
                 if (linesIt != lEnd && *linesIt != diff->sourceLineAt(i)->string())
                 {
@@ -1223,8 +1223,8 @@ bool KompareModelList::blendFile(DiffModel* model, const QString& fileContents)
                     diff->sourceLineAt(i)->setConflictString(*linesIt);
                     diff->setConflict(true);
                 }
-                srcLineNo++;
-                destLineNo++;
+                ++srcLineNo;
+                ++destLineNo;
                 ++linesIt;
             }
 
@@ -1249,7 +1249,7 @@ bool KompareModelList::blendFile(DiffModel* model, const QString& fileContents)
         case Difference::Delete:
             qCDebug(LIBKOMPAREDIFF2) << "Delete";
             qCDebug(LIBKOMPAREDIFF2) << "Number of lines in Delete: " << diff->sourceLineCount();
-            for (int i = 0; i < diff->sourceLineCount(); i++)
+            for (int i = 0; i < diff->sourceLineCount(); ++i)
             {
                 if (linesIt != lEnd && *linesIt != diff->sourceLineAt(i)->string())
                 {
@@ -1263,7 +1263,7 @@ bool KompareModelList::blendFile(DiffModel* model, const QString& fileContents)
 
 //                  qCDebug(LIBKOMPAREDIFF2) << "SourceLine = " << srcLineNo << ": " << *it;
 //                  qCDebug(LIBKOMPAREDIFF2) << "DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt( i )->string();
-                srcLineNo++;
+                ++srcLineNo;
                 ++linesIt;
             }
 

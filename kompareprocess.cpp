@@ -41,13 +41,13 @@ static QString constructRelativePath(const QString& from, const QString& to)
     root = fromURL;
     while (root.isValid() && !root.isParentOf(toURL)) {
         root = KIO::upUrl(root);
-        upLevels++;
+        ++upLevels;
     }
 
     if (!root.isValid()) return to;
 
     QString relative;
-    for (; upLevels > 0; upLevels--) {
+    for (; upLevels > 0; --upLevels) {
         relative += QStringLiteral("../");
     }
 

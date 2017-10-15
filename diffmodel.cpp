@@ -323,9 +323,9 @@ void DiffModel::applyDifference(bool apply)
         return;
     }
     if (apply && !m_selectedDifference->applied())
-        m_appliedCount++;
+        ++m_appliedCount;
     else if (!apply && m_selectedDifference->applied())
-        m_appliedCount--;
+        --m_appliedCount;
 
     m_selectedDifference->apply(apply);
 }

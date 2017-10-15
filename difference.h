@@ -103,7 +103,7 @@ protected:
 
         m_hash = 1315423911;
 
-        for (unsigned int i = 0; i < len; i++)
+        for (unsigned int i = 0; i < len; ++i)
         {
             m_hash ^= (m_hash << 5) + str[i] + (m_hash >> 2);
         }

@@ -111,7 +111,7 @@ void LevenshteinTest::testStringLists()
     QStringList list1;
     list1 << "delete1" << "line1" << "line2" << "line3" << "delete2" << "delete3" << "line4";
     QStringList list2;
-    list2 << "line1" << "line2" << "line3" << "insert1" << "line4" <<"insert2";
+    list2 << "line1" << "line2" << "line3" << "insert1" << "line4" << "insert2";
     StringListPair* pair = new StringListPair(list1, list2);
     LevenshteinTable<StringListPair> table;
     table.createTable(pair);

@@ -21,10 +21,10 @@ using namespace Diff2;
 
 static bool diffModelCompare(DiffModel* model1, DiffModel* model2)
 {
-	return *model1 < *model2;
+    return *model1 < *model2;
 }
 
 void DiffModelList::sort()
 {
-	std::sort(begin(), end(), diffModelCompare);
+    std::sort(begin(), end(), diffModelCompare);
 }

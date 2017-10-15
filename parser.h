@@ -29,26 +29,26 @@ class KompareModelList;
 class Parser
 {
 public:
-	explicit Parser(const KompareModelList* list);
-	~Parser();
+    explicit Parser(const KompareModelList* list);
+    ~Parser();
 
 public:
-	DiffModelList* parse(QStringList& diffLines, bool* malformed = nullptr);
+    DiffModelList* parse(QStringList& diffLines, bool* malformed = nullptr);
 
-	enum Kompare::Generator generator() const { return m_generator; };
-	enum Kompare::Format    format() const    { return m_format; };
-
-private:
-	/** Which program was used to generate the output */
-	enum Kompare::Generator determineGenerator( const QStringList& diffLines );
-
-	int cleanUpCrap( QStringList& diffLines );
+    enum Kompare::Generator generator() const { return m_generator; };
+    enum Kompare::Format    format() const    { return m_format; };
 
 private:
-	enum Kompare::Generator m_generator;
-	enum Kompare::Format    m_format;
+    /** Which program was used to generate the output */
+    enum Kompare::Generator determineGenerator(const QStringList& diffLines);
 
-	const KompareModelList* m_list;
+    int cleanUpCrap(QStringList& diffLines);
+
+private:
+    enum Kompare::Generator m_generator;
+    enum Kompare::Format    m_format;
+
+    const KompareModelList* m_list;
 };
 
 } // End of namespace Diff2

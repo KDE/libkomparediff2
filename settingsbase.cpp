@@ -5,7 +5,7 @@
         Copyright 2001 Otto Bruggeman <otto.bruggeman@home.nl>
         Copyright 2001 John Firebaugh <jfirebaugh@kde.org>
 ****************************************************************************/
- 
+
 /***************************************************************************
 **
 **   This program is free software; you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 
 #include <QWidget>
 
-SettingsBase::SettingsBase( QWidget* parent ) : QObject( parent )
+SettingsBase::SettingsBase(QWidget* parent) : QObject(parent)
 {
 
 }
@@ -29,11 +29,11 @@ SettingsBase::~SettingsBase()
 
 }
 
-void SettingsBase::loadSettings( KConfig* /* config */ )
+void SettingsBase::loadSettings(KConfig* /* config */)
 {
 }
 
-void SettingsBase::saveSettings( KConfig* /* config */ )
+void SettingsBase::saveSettings(KConfig* /* config */)
 {
 }
 

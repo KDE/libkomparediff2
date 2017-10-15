@@ -24,17 +24,17 @@ namespace Diff2
 class PerforceParser : public ParserBase
 {
 public:
-	PerforceParser( const KompareModelList* list, const QStringList& diff );
-	~PerforceParser() override;
+    PerforceParser(const KompareModelList* list, const QStringList& diff);
+    ~PerforceParser() override;
 
 protected:
-	bool parseContextDiffHeader() override;
-	bool parseNormalDiffHeader() override;
-	bool parseRCSDiffHeader() override;
-	bool parseUnifiedDiffHeader() override;
+    bool parseContextDiffHeader() override;
+    bool parseNormalDiffHeader() override;
+    bool parseRCSDiffHeader() override;
+    bool parseUnifiedDiffHeader() override;
 
 protected:
-	enum Kompare::Format determineFormat() override;
+    enum Kompare::Format determineFormat() override;
 };
 
 } // End of namespace Diff2

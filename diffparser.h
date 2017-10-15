@@ -24,11 +24,11 @@ namespace Diff2
 class DiffParser : public ParserBase
 {
 public:
-	DiffParser( const KompareModelList* list, const QStringList& diff );
-	~DiffParser() override;
+    DiffParser(const KompareModelList* list, const QStringList& diff);
+    ~DiffParser() override;
 
 protected:
-	enum Kompare::Format determineFormat() override;
+    enum Kompare::Format determineFormat() override;
 };
 
 } // End of namespace Diff2

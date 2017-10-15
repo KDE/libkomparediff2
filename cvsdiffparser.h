@@ -28,30 +28,30 @@ class KompareModelList;
 class CVSDiffParser : public ParserBase
 {
 public:
-	CVSDiffParser( const KompareModelList* list, const QStringList& diff );
-	~CVSDiffParser() override;
+    CVSDiffParser(const KompareModelList* list, const QStringList& diff);
+    ~CVSDiffParser() override;
 
 protected:
-	enum Kompare::Format determineFormat() override;
+    enum Kompare::Format determineFormat() override;
 
 protected:
-//	virtual bool parseContextDiffHeader();
-	bool parseEdDiffHeader() override;
-	bool parseNormalDiffHeader() override;
-	bool parseRCSDiffHeader() override;
-//	virtual bool parseUnifiedDiffHeader();
+//     virtual bool parseContextDiffHeader();
+    bool parseEdDiffHeader() override;
+    bool parseNormalDiffHeader() override;
+    bool parseRCSDiffHeader() override;
+//     virtual bool parseUnifiedDiffHeader();
 
-//	virtual bool parseContextHunkHeader();
-	bool parseEdHunkHeader() override;
-//	virtual bool parseNormalHunkHeader();
-	bool parseRCSHunkHeader() override;
-//	virtual bool parseUnifiedHunkHeader();
+//     virtual bool parseContextHunkHeader();
+    bool parseEdHunkHeader() override;
+//     virtual bool parseNormalHunkHeader();
+    bool parseRCSHunkHeader() override;
+//     virtual bool parseUnifiedHunkHeader();
 
-//	virtual bool parseContextHunkBody();
-	bool parseEdHunkBody() override;
-//	virtual bool parseNormalHunkBody();
-	bool parseRCSHunkBody() override;
-//	virtual bool parseUnifiedHunkBody();
+//     virtual bool parseContextHunkBody();
+    bool parseEdHunkBody() override;
+//     virtual bool parseNormalHunkBody();
+    bool parseRCSHunkBody() override;
+//     virtual bool parseUnifiedHunkBody();
 };
 
 } // End of namespace Diff2

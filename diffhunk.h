@@ -29,34 +29,34 @@ class Difference;
 class DiffHunk
 {
 public:
-	enum Type { Normal, AddedByBlend };
+    enum Type { Normal, AddedByBlend };
 
 public:
-	DiffHunk( int sourceLine, int destinationLine, const QString& function = QString(), Type type = Normal );
-	~DiffHunk();
+    DiffHunk(int sourceLine, int destinationLine, const QString& function = QString(), Type type = Normal);
+    ~DiffHunk();
 
-	const DifferenceList& differences() const { return m_differences; };
-	const QString& function() const           { return m_function; };
+    const DifferenceList& differences() const { return m_differences; };
+    const QString& function() const           { return m_function; };
 
-	int sourceLineNumber() const      { return m_sourceLine; };
-	int destinationLineNumber() const { return m_destinationLine; };
+    int sourceLineNumber() const      { return m_sourceLine; };
+    int destinationLineNumber() const { return m_destinationLine; };
 
-	int sourceLineCount() const;
-	int destinationLineCount() const;
+    int sourceLineCount() const;
+    int destinationLineCount() const;
 
-	Type type() const         { return m_type; }
-	void setType( Type type ) { m_type = type; }
+    Type type() const       { return m_type; }
+    void setType(Type type) { m_type = type; }
 
-	void add( Difference* diff );
+    void add(Difference* diff);
 
-	QString recreateHunk() const;
+    QString recreateHunk() const;
 
 private:
-	int            m_sourceLine;
-	int            m_destinationLine;
-	DifferenceList m_differences;
-	QString        m_function;
-	Type           m_type;
+    int            m_sourceLine;
+    int            m_destinationLine;
+    DifferenceList m_differences;
+    QString        m_function;
+    Type           m_type;
 };
 
 typedef QList<DiffHunk*> DiffHunkList;

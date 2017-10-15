@@ -5,7 +5,7 @@
         Copyright 2001 Otto Bruggeman <otto.bruggeman@home.nl>
         Copyright 2001 John Firebaugh <jfirebaugh@kde.org>
 ****************************************************************************/
- 
+
 /***************************************************************************
 **
 **   This program is free software; you can redistribute it and/or modify
@@ -28,14 +28,14 @@ class KConfig;
 
 class DIFF2_EXPORT SettingsBase : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-	explicit SettingsBase(QWidget* parent);
-	~SettingsBase() override;
+    explicit SettingsBase(QWidget* parent);
+    ~SettingsBase() override;
 
 public:
-	virtual void loadSettings( KConfig* config );
-	virtual void saveSettings( KConfig* config );
+    virtual void loadSettings(KConfig* config);
+    virtual void saveSettings(KConfig* config);
 };
 
 #endif

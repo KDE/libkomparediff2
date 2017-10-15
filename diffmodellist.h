@@ -32,15 +32,15 @@ typedef QList<DiffModel*>::ConstIterator DiffModelListConstIterator;
 class DIFF2_EXPORT DiffModelList : public QList<DiffModel*>
 {
 public:
-	DiffModelList() {}
-	DiffModelList( const DiffModelList &list ) : QList<DiffModel*>( list ) {}
-	virtual ~DiffModelList()
-	{
-		qDeleteAll(begin(), end());
-	}
+    DiffModelList() {}
+    DiffModelList(const DiffModelList& list) : QList<DiffModel*>(list) {}
+    virtual ~DiffModelList()
+    {
+        qDeleteAll(begin(), end());
+    }
 
 public:
-	virtual void sort();
+    virtual void sort();
 
 }; // End of class DiffModelList
 

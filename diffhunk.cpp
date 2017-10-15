@@ -23,10 +23,10 @@
 using namespace Diff2;
 
 DiffHunk::DiffHunk(int sourceLine, int destinationLine, const QString& function, Type type) :
-	m_sourceLine( sourceLine ),
-	m_destinationLine( destinationLine ),
-	m_function( function ),
-	m_type( type )
+    m_sourceLine(sourceLine),
+    m_destinationLine(destinationLine),
+    m_function(function),
+    m_type(type)
 {
 }
 
@@ -34,81 +34,81 @@ DiffHunk::~DiffHunk()
 {
 }
 
-void DiffHunk::add( Difference* diff )
+void DiffHunk::add(Difference* diff)
 {
-	m_differences.append( diff );
+    m_differences.append(diff);
 }
 
 int DiffHunk::sourceLineCount() const
 {
-	DifferenceListConstIterator diffIt = m_differences.begin();
-	DifferenceListConstIterator dEnd   = m_differences.end();
+    DifferenceListConstIterator diffIt = m_differences.begin();
+    DifferenceListConstIterator dEnd   = m_differences.end();
 
-	int lineCount = 0;
+    int lineCount = 0;
 
-	for ( ; diffIt != dEnd; ++diffIt )
-		lineCount += (*diffIt)->sourceLineCount();
+    for (; diffIt != dEnd; ++diffIt)
+        lineCount += (*diffIt)->sourceLineCount();
 
-	return lineCount;
+    return lineCount;
 }
 
 int DiffHunk::destinationLineCount() const
 {
-	DifferenceListConstIterator diffIt = m_differences.begin();
-	DifferenceListConstIterator dEnd   = m_differences.end();
+    DifferenceListConstIterator diffIt = m_differences.begin();
+    DifferenceListConstIterator dEnd   = m_differences.end();
 
-	int lineCount = 0;
+    int lineCount = 0;
 
-	for ( ; diffIt != dEnd; ++diffIt )
-		lineCount += (*diffIt)->destinationLineCount();
+    for (; diffIt != dEnd; ++diffIt)
+        lineCount += (*diffIt)->destinationLineCount();
 
-	return lineCount;
+    return lineCount;
 }
 
 QString DiffHunk::recreateHunk() const
 {
-	QString hunk;
-	QString differences;
+    QString hunk;
+    QString differences;
 
-	// recreate body
-	DifferenceListConstIterator diffIt = m_differences.begin();
-	DifferenceListConstIterator dEnd   = m_differences.end();
+    // recreate body
+    DifferenceListConstIterator diffIt = m_differences.begin();
+    DifferenceListConstIterator dEnd   = m_differences.end();
 
-	int slc = 0; // source line count
-	int dlc = 0; // destination line count
-	for ( ; diffIt != dEnd; ++diffIt )
-	{
-		switch ( (*diffIt)->type() )
-		{
-		case Difference::Unchanged:
-		case Difference::Change:
-			slc += (*diffIt)->sourceLineCount();
-			dlc += (*diffIt)->destinationLineCount();
-			break;
-		case Difference::Insert:
-			dlc += (*diffIt)->destinationLineCount();
-			break;
-		case Difference::Delete:
-			slc += (*diffIt)->sourceLineCount();
-			break;
-		}
-		differences += (*diffIt)->recreateDifference();
-	}
+    int slc = 0; // source line count
+    int dlc = 0; // destination line count
+    for (; diffIt != dEnd; ++diffIt)
+    {
+        switch ((*diffIt)->type())
+        {
+        case Difference::Unchanged:
+        case Difference::Change:
+            slc += (*diffIt)->sourceLineCount();
+            dlc += (*diffIt)->destinationLineCount();
+            break;
+        case Difference::Insert:
+            dlc += (*diffIt)->destinationLineCount();
+            break;
+        case Difference::Delete:
+            slc += (*diffIt)->sourceLineCount();
+            break;
+        }
+        differences += (*diffIt)->recreateDifference();
+    }
 
-	// recreate header
-	hunk += QStringLiteral( "@@ -%1,%3 +%2,%4 @@" )
-	        .arg( m_sourceLine )
-	        .arg( m_destinationLine )
-	        .arg( slc )
-	        .arg( dlc );
+    // recreate header
+    hunk += QStringLiteral("@@ -%1,%3 +%2,%4 @@")
+            .arg(m_sourceLine)
+            .arg(m_destinationLine)
+            .arg(slc)
+            .arg(dlc);
 
-	if ( !m_function.isEmpty() )
-		hunk += QLatin1Char(' ') + m_function;
+    if (!m_function.isEmpty())
+        hunk += QLatin1Char(' ') + m_function;
 
-	hunk += QLatin1Char('\n');
+    hunk += QLatin1Char('\n');
 
-	hunk += differences;
+    hunk += differences;
 
-	qCDebug(LIBKOMPAREDIFF2) << hunk;
-	return hunk;
+    qCDebug(LIBKOMPAREDIFF2) << hunk;
+    return hunk;
 }

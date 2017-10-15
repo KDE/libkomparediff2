@@ -33,120 +33,120 @@ class Difference;
 
 class DIFF2_EXPORT DiffModel : public QObject
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
 
-	DiffModel( const QString& srcBaseURL, const QString& destBaseURL );
-	DiffModel();
-	~DiffModel() override;
+    DiffModel(const QString& srcBaseURL, const QString& destBaseURL);
+    DiffModel();
+    ~DiffModel() override;
 
 private:
-	DiffModel( const DiffModel& ) : QObject() {};
+    DiffModel(const DiffModel&) : QObject() {};
 
 public:
-	int parseDiff( enum Kompare::Format format, const QStringList& list );
+    int parseDiff(enum Kompare::Format format, const QStringList& list);
 
-	QString recreateDiff() const;
+    QString recreateDiff() const;
 
-	int hunkCount() const       { return m_hunks.count(); }
-	int differenceCount() const { return m_differences.count(); }
-	int appliedCount() const    { return m_appliedCount; }
+    int hunkCount() const       { return m_hunks.count(); }
+    int differenceCount() const { return m_differences.count(); }
+    int appliedCount() const    { return m_appliedCount; }
 
-	DiffHunk* hunkAt( int i )               { return ( m_hunks.at( i ) ); }
-	const Difference* differenceAt( int i ) const { return ( m_differences.at( i ) ); }
-	Difference* differenceAt( int i ) { return ( m_differences.at( i ) ); }
+    DiffHunk* hunkAt(int i)               { return (m_hunks.at(i)); }
+    const Difference* differenceAt(int i) const { return (m_differences.at(i)); }
+    Difference* differenceAt(int i) { return (m_differences.at(i)); }
 
-	DiffHunkList*         hunks()             { return &m_hunks; }
-	const DiffHunkList*   hunks() const       { return &m_hunks; }
-	DifferenceList*       differences()       { return &m_differences; }
-	const DifferenceList* differences() const { return &m_differences; }
+    DiffHunkList*         hunks()             { return &m_hunks; }
+    const DiffHunkList*   hunks() const       { return &m_hunks; }
+    DifferenceList*       differences()       { return &m_differences; }
+    const DifferenceList* differences() const { return &m_differences; }
 
-	int findDifference( Difference* diff ) const { return m_differences.indexOf( diff ); }
+    int findDifference(Difference* diff) const { return m_differences.indexOf(diff); }
 
-	Difference* firstDifference();
-	Difference* lastDifference();
-	Difference* prevDifference();
-	Difference* nextDifference();
+    Difference* firstDifference();
+    Difference* lastDifference();
+    Difference* prevDifference();
+    Difference* nextDifference();
 
-	const QString source() const               { return m_source; }
-	const QString destination() const          { return m_destination; }
-	const QString sourceFile() const;
-	const QString destinationFile() const;
-	const QString sourcePath() const;
-	const QString destinationPath() const;
-	const QString sourceTimestamp() const      { return m_sourceTimestamp; }
-	const QString destinationTimestamp() const { return m_destinationTimestamp; }
-	const QString sourceRevision() const       { return m_sourceRevision; }
-	const QString destinationRevision() const  { return m_destinationRevision; }
+    const QString source() const               { return m_source; }
+    const QString destination() const          { return m_destination; }
+    const QString sourceFile() const;
+    const QString destinationFile() const;
+    const QString sourcePath() const;
+    const QString destinationPath() const;
+    const QString sourceTimestamp() const      { return m_sourceTimestamp; }
+    const QString destinationTimestamp() const { return m_destinationTimestamp; }
+    const QString sourceRevision() const       { return m_sourceRevision; }
+    const QString destinationRevision() const  { return m_destinationRevision; }
 
-	void setSourceFile( QString path );
-	void setDestinationFile( QString path );
-	void setSourceTimestamp( QString timestamp );
-	void setDestinationTimestamp( QString timestamp );
-	void setSourceRevision( QString revision );
-	void setDestinationRevision( QString revision );
+    void setSourceFile(QString path);
+    void setDestinationFile(QString path);
+    void setSourceTimestamp(QString timestamp);
+    void setDestinationTimestamp(QString timestamp);
+    void setSourceRevision(QString revision);
+    void setDestinationRevision(QString revision);
 
-	void addHunk( DiffHunk* hunk );
-	void addDiff( Difference* diff );
-	bool hasUnsavedChanges() const;
+    void addHunk(DiffHunk* hunk);
+    void addDiff(Difference* diff);
+    bool hasUnsavedChanges() const;
 
-	int  diffIndex( void ) const       { return m_diffIndex; }
-	void setDiffIndex( int diffIndex ) { m_diffIndex = diffIndex; }
+    int  diffIndex(void) const       { return m_diffIndex; }
+    void setDiffIndex(int diffIndex) { m_diffIndex = diffIndex; }
 
-	void applyDifference( bool apply );
-	void applyAllDifferences( bool apply );
+    void applyDifference(bool apply);
+    void applyAllDifferences(bool apply);
 
-	bool setSelectedDifference( Difference* diff );
+    bool setSelectedDifference(Difference* diff);
 
-	DiffModel& operator=( const DiffModel& model );
-	bool operator<( const DiffModel& model );
+    DiffModel& operator=(const DiffModel& model);
+    bool operator<(const DiffModel& model);
 
-	int localeAwareCompareSource( const DiffModel& model );
+    int localeAwareCompareSource(const DiffModel& model);
 
-	bool isBlended() const { return m_blended; }
-	void setBlended( bool blended ) { m_blended = blended; }
+    bool isBlended() const { return m_blended; }
+    void setBlended(bool blended) { m_blended = blended; }
 
-	/**
-	 * @p oldlines - lines that were removed.
-	 * @p newLines - lines that were inserted.
-	 * @p startPos - number of line at which the change occured
-	 */
-	QPair<QList<Difference*>, QList<Difference*> > linesChanged(const QStringList& oldLines, const QStringList& newLines, int editLineNumber);
-
-private:
-	void splitSourceInPathAndFileName();
-	void splitDestinationInPathAndFileName();
-	void computeDiffStats(Difference* diff);
-	void processStartMarker(Difference* diff, const QStringList& lines, MarkerListConstIterator& currentMarker, int& currentListLine, bool isSource);
+    /**
+     * @p oldlines - lines that were removed.
+     * @p newLines - lines that were inserted.
+     * @p startPos - number of line at which the change occured
+     */
+    QPair<QList<Difference*>, QList<Difference*> > linesChanged(const QStringList& oldLines, const QStringList& newLines, int editLineNumber);
 
 private:
-	QString m_source;
-	QString m_destination;
+    void splitSourceInPathAndFileName();
+    void splitDestinationInPathAndFileName();
+    void computeDiffStats(Difference* diff);
+    void processStartMarker(Difference* diff, const QStringList& lines, MarkerListConstIterator& currentMarker, int& currentListLine, bool isSource);
 
-	QString m_sourcePath;
-	QString m_destinationPath;
+private:
+    QString m_source;
+    QString m_destination;
 
-	QString m_sourceFile;
-	QString m_destinationFile;
+    QString m_sourcePath;
+    QString m_destinationPath;
 
-	QString m_sourceTimestamp;
-	QString m_destinationTimestamp;
+    QString m_sourceFile;
+    QString m_destinationFile;
 
-	QString m_sourceRevision;
-	QString m_destinationRevision;
+    QString m_sourceTimestamp;
+    QString m_destinationTimestamp;
 
-	DiffHunkList   m_hunks;
-	DifferenceList m_differences;
+    QString m_sourceRevision;
+    QString m_destinationRevision;
 
-	int  m_appliedCount;
+    DiffHunkList   m_hunks;
+    DifferenceList m_differences;
 
-	int          m_diffIndex;
-	Difference*  m_selectedDifference;
+    int  m_appliedCount;
 
-	bool m_blended;
+    int          m_diffIndex;
+    Difference*  m_selectedDifference;
+
+    bool m_blended;
 
 private Q_SLOTS:
-	void slotDifferenceApplied( Difference* diff );
+    void slotDifferenceApplied(Difference* diff);
 };
 
 } // End of namespace Diff2

@@ -37,7 +37,7 @@ public:
         m_type = Marker::Start;
         m_offset = 0;
     }
-    Marker( enum Marker::Type type, unsigned int offset )
+    Marker(enum Marker::Type type, unsigned int offset)
     {
         m_type = type;
         m_offset = offset;
@@ -45,11 +45,11 @@ public:
     ~Marker() {}
 
 public:
-    enum Marker::Type type()   const { return m_type;   }
+    enum Marker::Type type()   const { return m_type; }
     unsigned int      offset() const { return m_offset; }
 
-    void setType  ( enum Marker::Type type ) { m_type   = type;   }
-    void setOffset( unsigned int offset )    { m_offset = offset; }
+    void setType(enum Marker::Type type) { m_type   = type; }
+    void setOffset(unsigned int offset)  { m_offset = offset; }
 
     bool operator == (const Marker& rhs) const {
         return this->type() == rhs.type() && this->offset() == rhs.offset();

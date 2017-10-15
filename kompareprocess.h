@@ -29,39 +29,39 @@ class DiffSettings;
 
 class KompareProcess : public KProcess
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	KompareProcess( DiffSettings* diffSettings, enum Kompare::DiffMode mode, const QString & source,
-			const QString & destination, const QString& directory = QString(), enum Kompare::Mode = Kompare::UnknownMode );
-	~KompareProcess() override;
+    KompareProcess(DiffSettings* diffSettings, enum Kompare::DiffMode mode, const QString& source,
+                   const QString& destination, const QString& directory = QString(), enum Kompare::Mode = Kompare::UnknownMode);
+    ~KompareProcess() override;
 
-	void start();
+    void start();
 
-	QString diffOutput() { return m_stdout; }
-	QString stdOut()     { return m_stdout; }
-	QString stdErr()     { return m_stderr; }
+    QString diffOutput() { return m_stdout; }
+    QString stdOut()     { return m_stdout; }
+    QString stdErr()     { return m_stderr; }
 
-	void setEncoding( const QString& encoding );
+    void setEncoding(const QString& encoding);
 
 Q_SIGNALS:
-	void diffHasFinished( bool finishedNormally );
+    void diffHasFinished(bool finishedNormally);
 
 protected:
-	void writeDefaultCommandLine();
-	void writeCommandLine();
+    void writeDefaultCommandLine();
+    void writeCommandLine();
 
 protected Q_SLOTS:
-	void slotFinished( int, QProcess::ExitStatus );
+    void slotFinished(int, QProcess::ExitStatus);
 
 private:
-	DiffSettings*          m_diffSettings;
-	enum Kompare::DiffMode m_mode;
-	const QString *        m_customString; // Used when a comparison between a file and a string is requested
-	QString                m_stdout;
-	QString                m_stderr;
-	QTextDecoder*          m_textDecoder;
-	QTextCodec *           m_codec;
+    DiffSettings*          m_diffSettings;
+    enum Kompare::DiffMode m_mode;
+    const QString*         m_customString; // Used when a comparison between a file and a string is requested
+    QString                m_stdout;
+    QString                m_stderr;
+    QTextDecoder*          m_textDecoder;
+    QTextCodec*            m_codec;
 };
 
 #endif

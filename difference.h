@@ -34,86 +34,86 @@ namespace Diff2
 class DIFF2_EXPORT DifferenceString
 {
 public:
-	DifferenceString()
-	{
-//		qCDebug(LIBKOMPAREDIFF2) << "DifferenceString::DifferenceString()";
-	}
-	explicit DifferenceString( const QString& string, const MarkerList& markerList = MarkerList() ) :
-		m_string( string ),
-		m_markerList( markerList )
-	{
-//		qCDebug(LIBKOMPAREDIFF2) << "DifferenceString::DifferenceString( " << string << ", " << markerList << " )";
-		calculateHash();
-	}
-	DifferenceString( const DifferenceString& ds ) :
-		m_string( ds.m_string ),
-		m_conflict( ds.m_conflict ),
-		m_hash( ds.m_hash ),
-		m_markerList( ds.m_markerList )
-	{
-//		qCDebug(LIBKOMPAREDIFF2) << "DifferenceString::DifferenceString( const DifferenceString& " << ds << " )";
-	}
-	~DifferenceString()
-	{
-		qDeleteAll( m_markerList );
-	}
+    DifferenceString()
+    {
+//         qCDebug(LIBKOMPAREDIFF2) << "DifferenceString::DifferenceString()";
+    }
+    explicit DifferenceString(const QString& string, const MarkerList& markerList = MarkerList()) :
+        m_string(string),
+        m_markerList(markerList)
+    {
+//         qCDebug(LIBKOMPAREDIFF2) << "DifferenceString::DifferenceString( " << string << ", " << markerList << " )";
+        calculateHash();
+    }
+    DifferenceString(const DifferenceString& ds) :
+        m_string(ds.m_string),
+        m_conflict(ds.m_conflict),
+        m_hash(ds.m_hash),
+        m_markerList(ds.m_markerList)
+    {
+//         qCDebug(LIBKOMPAREDIFF2) << "DifferenceString::DifferenceString( const DifferenceString& " << ds << " )";
+    }
+    ~DifferenceString()
+    {
+        qDeleteAll(m_markerList);
+    }
 
 public:
-	const QString& string() const
-	{
-		return m_string;
-	}
-	const QString& conflictString() const
-	{
-		return m_conflict;
-	}
-	const MarkerList& markerList()
-	{
-		return m_markerList;
-	}
-	void setString( const QString& string )
-	{
-		m_string = string;
-		calculateHash();
-	}
-	void setConflictString( const QString& conflict )
-	{
-		m_conflict = conflict;
-	}
-	void setMarkerList( const MarkerList& markerList )
-	{
-		m_markerList = markerList;
-	}
-	void prepend( Marker* marker )
-	{
-		m_markerList.prepend( marker );
-	}
-	bool operator==( const DifferenceString& ks )
-	{
-		if ( m_hash != ks.m_hash )
-			return false;
-		return m_string == ks.m_string;
-	}
+    const QString& string() const
+    {
+        return m_string;
+    }
+    const QString& conflictString() const
+    {
+        return m_conflict;
+    }
+    const MarkerList& markerList()
+    {
+        return m_markerList;
+    }
+    void setString(const QString& string)
+    {
+        m_string = string;
+        calculateHash();
+    }
+    void setConflictString(const QString& conflict)
+    {
+        m_conflict = conflict;
+    }
+    void setMarkerList(const MarkerList& markerList)
+    {
+        m_markerList = markerList;
+    }
+    void prepend(Marker* marker)
+    {
+        m_markerList.prepend(marker);
+    }
+    bool operator==(const DifferenceString& ks)
+    {
+        if (m_hash != ks.m_hash)
+            return false;
+        return m_string == ks.m_string;
+    }
 
 protected:
-	void calculateHash()
-	{
-		unsigned short const* str = reinterpret_cast<unsigned short const*>( m_string.unicode() );
-		const unsigned int len = m_string.length();
+    void calculateHash()
+    {
+        unsigned short const* str = reinterpret_cast<unsigned short const*>(m_string.unicode());
+        const unsigned int len = m_string.length();
 
-		m_hash = 1315423911;
+        m_hash = 1315423911;
 
-		for ( unsigned int i = 0; i < len; i++ )
-		{
-			m_hash ^= ( m_hash << 5 ) + str[i] + ( m_hash >> 2 );
-		}
-	}
+        for (unsigned int i = 0; i < len; i++)
+        {
+            m_hash ^= (m_hash << 5) + str[i] + (m_hash >> 2);
+        }
+    }
 
 private:
-	QString      m_string;
-	QString      m_conflict;
-	unsigned int m_hash;
-	MarkerList   m_markerList;
+    QString      m_string;
+    QString      m_conflict;
+    unsigned int m_hash;
+    MarkerList   m_markerList;
 };
 
 typedef QVector<DifferenceString*> DifferenceStringList;
@@ -122,87 +122,87 @@ typedef QVector<DifferenceString*>::const_iterator DifferenceStringListConstIter
 
 class DIFF2_EXPORT Difference : public QObject
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	enum Type { Change, Insert, Delete, Unchanged };
-
-public:
-	Difference( int sourceLineNo, int destinationLineNo, int type = Difference::Unchanged );
-	~Difference() override;
+    enum Type { Change, Insert, Delete, Unchanged };
 
 public:
-	int type() const { return m_type; };
+    Difference(int sourceLineNo, int destinationLineNo, int type = Difference::Unchanged);
+    ~Difference() override;
 
-	int sourceLineNumber() const { return m_sourceLineNo; }
-	int destinationLineNumber() const { return m_destinationLineNo; }
+public:
+    int type() const { return m_type; };
 
-	int sourceLineCount() const;
-	int destinationLineCount() const;
+    int sourceLineNumber() const { return m_sourceLineNo; }
+    int destinationLineNumber() const { return m_destinationLineNo; }
 
-	int sourceLineEnd() const;
-	int destinationLineEnd() const;
+    int sourceLineCount() const;
+    int destinationLineCount() const;
 
-	/// Destination line number that tracks applying/unapplying of other differences
-	/// Essentially a line number in a patch consisting of applied diffs only
-	int trackingDestinationLineNumber() const { return m_trackingDestinationLineNo; }
-	int trackingDestinationLineEnd() const;
-	void setTrackingDestinationLineNumber( int i ) { m_trackingDestinationLineNo = i; }
+    int sourceLineEnd() const;
+    int destinationLineEnd() const;
 
-	DifferenceString* sourceLineAt( int i ) const { return m_sourceLines[ i ]; }
-	DifferenceString* destinationLineAt( int i ) const { return m_destinationLines[ i ]; }
+    /// Destination line number that tracks applying/unapplying of other differences
+    /// Essentially a line number in a patch consisting of applied diffs only
+    int trackingDestinationLineNumber() const { return m_trackingDestinationLineNo; }
+    int trackingDestinationLineEnd() const;
+    void setTrackingDestinationLineNumber(int i) { m_trackingDestinationLineNo = i; }
 
-	const DifferenceStringList sourceLines() const { return m_sourceLines; }
-	const DifferenceStringList destinationLines() const { return m_destinationLines; }
+    DifferenceString* sourceLineAt(int i) const { return m_sourceLines[i]; }
+    DifferenceString* destinationLineAt(int i) const { return m_destinationLines[i]; }
 
-	bool hasConflict() const
-	{
-		return m_conflicts;
-	}
-	void setConflict( bool conflicts )
-	{
-		m_conflicts = conflicts;
-	}
+    const DifferenceStringList sourceLines() const { return m_sourceLines; }
+    const DifferenceStringList destinationLines() const { return m_destinationLines; }
 
-	bool isUnsaved() const
-	{
-		return m_unsaved;
-	}
-	void setUnsaved( bool unsaved )
-	{
-		m_unsaved = unsaved;
-	}
+    bool hasConflict() const
+    {
+        return m_conflicts;
+    }
+    void setConflict(bool conflicts)
+    {
+        m_conflicts = conflicts;
+    }
 
-	void apply( bool apply );
-	/// Apply without emitting any signals
-	void applyQuietly( bool apply );
-	bool applied() const { return m_applied; }
+    bool isUnsaved() const
+    {
+        return m_unsaved;
+    }
+    void setUnsaved(bool unsaved)
+    {
+        m_unsaved = unsaved;
+    }
 
-	void setType( int type ) { m_type = type; }
+    void apply(bool apply);
+    /// Apply without emitting any signals
+    void applyQuietly(bool apply);
+    bool applied() const { return m_applied; }
 
-	void addSourceLine( QString line );
-	void addDestinationLine( QString line );
+    void setType(int type) { m_type = type; }
 
-	/** This method will calculate the differences between the individual strings and store them as Markers */
-	void determineInlineDifferences();
+    void addSourceLine(QString line);
+    void addDestinationLine(QString line);
 
-	QString recreateDifference() const;
+    /** This method will calculate the differences between the individual strings and store them as Markers */
+    void determineInlineDifferences();
+
+    QString recreateDifference() const;
 
 Q_SIGNALS:
-	void differenceApplied( Difference* );
+    void differenceApplied(Difference*);
 
 private:
-	int                   m_type;
+    int                   m_type;
 
-	int                   m_sourceLineNo;
-	int                   m_destinationLineNo;
-	int                   m_trackingDestinationLineNo;
+    int                   m_sourceLineNo;
+    int                   m_destinationLineNo;
+    int                   m_trackingDestinationLineNo;
 
-	DifferenceStringList  m_sourceLines;
-	DifferenceStringList  m_destinationLines;
+    DifferenceStringList  m_sourceLines;
+    DifferenceStringList  m_destinationLines;
 
-	bool                  m_applied;
-	bool                  m_conflicts;
-	bool                  m_unsaved;
+    bool                  m_applied;
+    bool                  m_conflicts;
+    bool                  m_unsaved;
 };
 
 typedef QList<Difference*> DifferenceList;

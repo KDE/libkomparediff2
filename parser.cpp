@@ -21,6 +21,7 @@
 #include "diffparser.h"
 #include "perforceparser.h"
 #include "diffmodel.h"
+#include "diffmodellist.h"
 
 using namespace Diff2;
 

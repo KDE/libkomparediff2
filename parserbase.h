@@ -21,7 +21,6 @@
 
 #include "kompare.h"
 #include "difference.h"
-#include "diffmodellist.h"
 
 class QStringList;
 class QString;
@@ -30,6 +29,8 @@ namespace Diff2
 {
 
 class KompareModelList;
+class DiffModelList;
+class DiffModel;
 
 class ParserBase
 {

@@ -17,11 +17,8 @@
 
 #include "diffmodel.h"
 
-#include <QRegExp>
-
 #include <komparediffdebug.h>
 #include "difference.h"
-#include "diffhunk.h"
 #include "levenshteintable.h"
 #include "stringlistpair.h"
 #include "parserbase.h"

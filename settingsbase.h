@@ -20,7 +20,6 @@
 
 #include <QObject>
 
-#include "kompare.h"
 #include "diff2_export.h"
 
 class QWidget;

@@ -19,7 +19,6 @@
 #define DIFFSETTINGS_H
 
 #include <QStringList>
-#include <QWidget>
 
 #include "kompare.h"
 #include "settingsbase.h"

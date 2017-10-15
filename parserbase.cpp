@@ -19,6 +19,7 @@
 #include <QObject>
 
 #include <komparediffdebug.h>
+#include "diffmodellist.h"
 #include "diffmodel.h"
 #include "diffhunk.h"
 #include "difference.h"

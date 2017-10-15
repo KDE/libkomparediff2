@@ -20,9 +20,8 @@
 #define LEVENSHTEIN_H
 
 #include <iostream>
-#include <QString>
-
-#include <QDebug>
+// #include <QString>
+// #include <komparediffdebug.h>
 
 namespace Diff2 {
 

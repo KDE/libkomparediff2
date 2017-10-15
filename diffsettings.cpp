@@ -20,6 +20,8 @@
 #include <KConfig>
 #include <KConfigGroup>
 
+#include <QWidget>
+
 DiffSettings::DiffSettings(QWidget* parent)
     : SettingsBase(parent),
       m_linesOfContext(0),

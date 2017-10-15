@@ -16,8 +16,6 @@
 #ifndef CVSDIFF_PARSER_H
 #define CVSDIFF_PARSER_H
 
-#include <QRegExp>
-
 #include "parserbase.h"
 
 namespace Diff2

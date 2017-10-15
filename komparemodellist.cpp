@@ -41,10 +41,7 @@
 #include <KStandardAction>
 
 #include <komparediffdebug.h>
-#include "difference.h"
 #include "diffhunk.h"
-#include "diffmodel.h"
-#include "diffmodellist.h"
 #include "kompareprocess.h"
 #include "parser.h"
 

@@ -17,13 +17,12 @@
 #ifndef DIFF2_PARSER_H
 #define DIFF2_PARSER_H
 
-#include "diffmodellist.h"
 #include "kompare.h"
 
 namespace Diff2
 {
 
-class DiffModel;
+class DiffModelList;
 class KompareModelList;
 
 class Parser

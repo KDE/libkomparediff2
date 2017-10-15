@@ -19,17 +19,15 @@
 #define DIFFMODEL_H
 
 #include <QObject>
-#include <QStringList>
 
 #include "diffhunk.h"
 #include "kompare.h"
 #include "diff2_export.h"
 
+class QStringList;
+
 namespace Diff2
 {
-
-class DiffHunk;
-class Difference;
 
 class DIFF2_EXPORT DiffModel : public QObject
 {

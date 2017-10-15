@@ -18,6 +18,7 @@
 #include <QRegExp>
 
 #include <komparediffdebug.h>
+#include "diffmodel.h"
 
 using namespace Diff2;
 

@@ -17,7 +17,6 @@
 
 #include "diffhunk.h"
 
-#include "difference.h"
 #include <komparediffdebug.h>
 
 using namespace Diff2;

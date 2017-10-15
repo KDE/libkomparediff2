@@ -22,6 +22,7 @@
 
 #include <QTest>
 #include "../diffmodel.h"
+#include "../diffmodellist.h"
 #include "../parser.h"
 
 using namespace Diff2;

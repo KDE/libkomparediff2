@@ -327,7 +327,7 @@ bool KompareModelList::saveDestination(DiffModel* model)
 {
     qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::saveDestination: ";
 
-    // Unecessary safety check, we can guarantee there are unsaved changes!!!
+    // Unnecessary safety check, we can guarantee there are unsaved changes!!!
     if (!model->hasUnsavedChanges())
         return true;
 
@@ -399,7 +399,7 @@ bool KompareModelList::saveDestination(DiffModel* model)
     // Make sure the destination directory exists, it is possible when using -N to not have the destination dir/file available
     if (m_info->mode == Kompare::ComparingDirs)
     {
-        // Dont use destination which was used for creating the diff directly, use the original URL!!!
+        // Don't use destination which was used for creating the diff directly, use the original URL!!!
         // FIXME!!! Wrong destination this way! Need to add the sub directory to the url!!!!
         qCDebug(LIBKOMPAREDIFF2) << "Tempfilename (save) : " << temp.fileName();
         qCDebug(LIBKOMPAREDIFF2) << "Model->path+file    : " << model->destinationPath() << model->destinationFile();

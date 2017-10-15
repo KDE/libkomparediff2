@@ -114,7 +114,7 @@ void Difference::determineInlineDifferences()
         DifferenceString* dl = destinationLineAt(i);
         DifferenceStringPair* pair = new DifferenceStringPair(sl, dl);
 
-        // return value 0 means something went wrong creating the table so dont bother finding markers
+        // return value 0 means something went wrong creating the table so don't bother finding markers
         if (table.createTable(pair) != 0)
             table.createListsOfMarkers();
     }

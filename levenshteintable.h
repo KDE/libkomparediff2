@@ -217,7 +217,7 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
     unsigned int difference = getContent(x, y);
 
     // If the number of differences is more than half the length of the largest string
-    // dont bother to mark the individual changes
+    // don't bother to mark the individual changes
     // Patch based on work by Felix Berger as put as attachment to bug 75794
     if (!m_sequences->needFineGrainedOutput(difference))
     {

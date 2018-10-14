@@ -583,7 +583,7 @@ bool ParserBase::parseUnifiedHunkBody()
 
     // Fetching the stuff we need from the hunkheader regexp that was parsed in parseUnifiedHunkHeader();
     linenoA = m_unifiedHunkHeader.cap(1).toInt();
-    int lineCountA = 1, lineCountB = 1; // an ommitted line count in the header implies a line count of 1
+    int lineCountA = 1, lineCountB = 1; // an omitted line count in the header implies a line count of 1
     if (!m_unifiedHunkHeader.cap(3).isEmpty())
     {
         lineCountA = m_unifiedHunkHeader.cap(3).toInt(&wasNum);

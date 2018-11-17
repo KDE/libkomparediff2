@@ -9,9 +9,9 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMSetupVersion)
-include(ECMPackageConfigHelpers)
 include(ECMQtDeclareLoggingCategory)
 
+include(CMakePackageConfigHelpers)
 include(FeatureSummary)
 include(GenerateExportHeader)
 
@@ -114,7 +114,7 @@ install(FILES
 # Config.cmake file.
 set(_LibKompareDiff2_CONFIG_DEST "${LIB_INSTALL_DIR}/cmake/LibKompareDiff2")
 
-ecm_configure_package_config_file(
+configure_package_config_file(
     "${CMAKE_SOURCE_DIR}/LibKompareDiff2Config.cmake.in"
     "${CMAKE_BINARY_DIR}/LibKompareDiff2Config.cmake"
     INSTALL_DESTINATION  "${_LibKompareDiff2_CONFIG_DEST}"

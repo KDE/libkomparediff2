@@ -20,7 +20,9 @@ find_package(Qt5Core ${QT_MIN_VERSION} NO_MODULE)
 set_package_properties(Qt5Core PROPERTIES TYPE REQUIRED)
 find_package(Qt5Widgets ${QT_MIN_VERSION} NO_MODULE)
 set_package_properties(Qt5Widgets PROPERTIES TYPE REQUIRED)
-find_package(Qt5Test ${QT_MIN_VERSION} NO_MODULE)
+if(BUILD_TESTING)
+    find_package(Qt5Test ${QT_MIN_VERSION} CONFIG REQUIRED)
+endif()
 
 set(KF5_DEP_VERSION "5.28.0")
 find_package(KF5 ${KF5_DEP_VERSION} REQUIRED COMPONENTS
@@ -95,7 +97,9 @@ set_target_properties(komparediff2 PROPERTIES
 
 install(TARGETS komparediff2 EXPORT LibKompareDiff2Targets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
-add_subdirectory(tests)
+if (BUILD_TESTING)
+    add_subdirectory(tests)
+endif()
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/diff2_export.h

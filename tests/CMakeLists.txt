@@ -27,7 +27,7 @@ set(interactiveDiffTest_SRCS
 )
 
 add_executable(interactiveDiffTest ${interactiveDiffTest_SRCS})
-add_test(libkomparediff2-interactiveDiffTest interactiveDiffTest)
+add_test(NAME libkomparediff2-interactiveDiffTest COMMAND interactiveDiffTest)
 ecm_mark_as_test(interactiveDiffTest)
 set_target_properties(interactiveDiffTest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
 target_link_libraries(interactiveDiffTest
@@ -47,7 +47,7 @@ set(levenshteinTest_SRCS
 )
 
 add_executable(levenshteintest ${levenshteinTest_SRCS})
-add_test(libkomparediff2-levenshteintest levenshteintest)
+add_test(NAME libkomparediff2-levenshteintest COMMAND levenshteintest)
 ecm_mark_as_test(levenshteintest)
 set_target_properties(levenshteintest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
 target_link_libraries(levenshteintest

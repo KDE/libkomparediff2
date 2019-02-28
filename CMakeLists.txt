@@ -18,13 +18,17 @@ include(CMakePackageConfigHelpers)
 include(FeatureSummary)
 include(GenerateExportHeader)
 
-find_package(Qt5Core ${QT_MIN_VERSION} NO_MODULE)
-set_package_properties(Qt5Core PROPERTIES TYPE REQUIRED)
-find_package(Qt5Widgets ${QT_MIN_VERSION} NO_MODULE)
-set_package_properties(Qt5Widgets PROPERTIES TYPE REQUIRED)
+set(ADDITIONAL_REQUIRED_QT_COMPONENTS)
 if(BUILD_TESTING)
-    find_package(Qt5Test ${QT_MIN_VERSION} CONFIG REQUIRED)
+    list(APPEND ADDITIONAL_REQUIRED_QT_COMPONENTS Test)
 endif()
+
+find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED
+    COMPONENTS
+        Core
+        Widgets
+        ${ADDITIONAL_REQUIRED_QT_COMPONENTS}
+)
 
 find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
 	CoreAddons Codecs Config XmlGui I18n KIO

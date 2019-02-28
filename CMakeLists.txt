@@ -2,7 +2,10 @@ cmake_minimum_required(VERSION 3.0)
 
 project(LibKompareDiff2)
 
-find_package(ECM 5.16.0 REQUIRED NO_MODULE)
+set(QT_MIN_VERSION "5.9.0")
+set(KF_MIN_VERSION "5.53.0")
+
+find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -15,7 +18,6 @@ include(CMakePackageConfigHelpers)
 include(FeatureSummary)
 include(GenerateExportHeader)
 
-set(QT_MIN_VERSION "5.4.0")
 find_package(Qt5Core ${QT_MIN_VERSION} NO_MODULE)
 set_package_properties(Qt5Core PROPERTIES TYPE REQUIRED)
 find_package(Qt5Widgets ${QT_MIN_VERSION} NO_MODULE)
@@ -24,8 +26,7 @@ if(BUILD_TESTING)
     find_package(Qt5Test ${QT_MIN_VERSION} CONFIG REQUIRED)
 endif()
 
-set(KF5_DEP_VERSION "5.28.0")
-find_package(KF5 ${KF5_DEP_VERSION} REQUIRED COMPONENTS
+find_package(KF5 ${KF_MIN_VERSION} REQUIRED COMPONENTS
 	CoreAddons Codecs Config XmlGui I18n KIO
 )
 
@@ -37,7 +38,7 @@ ecm_setup_version(${KOMPAREDIFF2_VERSION}
 
 add_definitions(
     -DQT_DEPRECATED_WARNINGS
-    -DQT_DISABLE_DEPRECATED_BEFORE=0x050400
+    -DQT_DISABLE_DEPRECATED_BEFORE=0x050900
     -DQT_USE_QSTRINGBUILDER
     -DQT_NO_CAST_TO_ASCII
     -DQT_NO_CAST_FROM_ASCII

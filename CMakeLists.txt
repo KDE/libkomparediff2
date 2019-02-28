@@ -103,7 +103,7 @@ set_target_properties(komparediff2 PROPERTIES
     EXPORT_NAME "KompareDiff2"
 )
 
-install(TARGETS komparediff2 EXPORT LibKompareDiff2Targets ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS komparediff2 EXPORT LibKompareDiff2Targets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 if (BUILD_TESTING)
     add_subdirectory(tests)
@@ -120,11 +120,11 @@ install(FILES
     marker.h
     kompare.h
     diffhunk.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/libkomparediff2  COMPONENT Devel
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/libkomparediff2  COMPONENT Devel
 )
 
 # Config.cmake file.
-set(_LibKompareDiff2_CONFIG_DEST "${LIB_INSTALL_DIR}/cmake/LibKompareDiff2")
+set(_LibKompareDiff2_CONFIG_DEST "${KDE_INSTALL_CMAKEPACKAGEDIR}/LibKompareDiff2")
 
 configure_package_config_file(
     "${CMAKE_SOURCE_DIR}/LibKompareDiff2Config.cmake.in"

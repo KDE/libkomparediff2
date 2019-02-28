@@ -83,13 +83,16 @@ add_library(komparediff2 ${komparediff2_SRCS})
 generate_export_header(komparediff2 BASE_NAME diff2)
 
 target_link_libraries(komparediff2
-    Qt5::Core
-    Qt5::Widgets
-    KF5::Codecs
-    KF5::CoreAddons
-    KF5::I18n
-    KF5::KIOCore
-    KF5::XmlGui
+    PUBLIC
+        KF5::XmlGui
+        KF5::ConfigCore
+        Qt5::Widgets
+        Qt5::Core
+    PRIVATE
+        KF5::Codecs
+        KF5::KIOCore
+        KF5::I18n
+        KF5::CoreAddons
 )
 
 target_include_directories(komparediff2 INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}>")

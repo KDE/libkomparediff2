@@ -248,9 +248,8 @@ static QString lstripSeparators(const QString& from, uint count)
 void KompareModelList::setDepthAndApplied()
 {
     // Splice to avoid calling ~DiffModelList
-    QList<Diff2::DiffModel*> splicedModelList(*m_models);
-    foreach (DiffModel* model, splicedModelList)
-    {
+    const QList<Diff2::DiffModel*> splicedModelList(*m_models);
+    for (DiffModel* model : splicedModelList) {
         model->setSourceFile(lstripSeparators(model->source(), m_info->depth));
         model->setDestinationFile(lstripSeparators(model->destination(), m_info->depth));
         model->applyAllDifferences(m_info->applied);
@@ -1070,9 +1069,9 @@ bool KompareModelList::blendFile(DiffModel* model, const QString& fileContents)
 
     int srcLineNo = 1, destLineNo = 1;
 
-    QStringList list = split(fileContents);
+    const QStringList list = split(fileContents);
     QLinkedList<QString> lines;
-    foreach (const QString& str, list) {
+    for (const QString& str : list) {
         lines.append(str);
     }
 

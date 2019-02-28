@@ -340,8 +340,7 @@ static int GetDifferenceDelta(Difference* diff)
 void DiffModel::slotDifferenceApplied(Difference* diff)
 {
     int delta = GetDifferenceDelta(diff);
-    foreach (Difference* current, m_differences)
-    {
+    for (Difference* current : qAsConst(m_differences)) {
         if (current->destinationLineNumber() > diff->destinationLineNumber())
         {
             current->setTrackingDestinationLineNumber(current->trackingDestinationLineNumber() + delta);
@@ -465,7 +464,7 @@ QPair<QList<Difference*>, QList<Difference*> > DiffModel::linesChanged(const QSt
         for (int lineNumber = firstDestinationLineNumber; lineNumber < editLineNumber; ++lineNumber) {
             destinationLines.append((*appliedBegin)->destinationLineAt(lineNumber - firstDestinationLineNumber)->string());
         }
-        foreach (const QString& line, newLines) {
+        for (const QString& line : newLines) {
             destinationLines.append(line);
         }
         DifferenceListConstIterator appliedLast = appliedEnd;

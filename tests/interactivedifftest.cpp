@@ -654,8 +654,8 @@ void InteractiveDiffTest::testApplyUnapply()
     QCOMPARE(model->differenceCount(), 4);
     model->applyAllDifferences(true);
 
-    foreach (Difference* diff, *model->differences())
-    {
+    const auto differences = *model->differences();
+    for (Difference* diff : differences) {
         QVERIFY(diff->applied());
     }
     model->applyAllDifferences(false);

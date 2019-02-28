@@ -233,8 +233,7 @@ void KompareProcess::writeCommandLine()
 
     if (m_diffSettings->m_excludeFilePattern)
     {
-        Q_FOREACH (const QString& it, m_diffSettings->m_excludeFilePatternList)
-        {
+        for (const QString& it : qAsConst(m_diffSettings->m_excludeFilePatternList)) {
             *this << QStringLiteral("-x") << it;
         }
     }

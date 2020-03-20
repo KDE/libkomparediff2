@@ -50,10 +50,6 @@ add_definitions(
     -DQT_NO_SIGNALS_SLOTS_KEYWORDS
     -DQT_STRICT_ITERATORS
 )
-if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
-   add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
-   add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x060000)
-endif()
 add_definitions(-DTRANSLATION_DOMAIN=\"libkomparediff2\")
 
 ecm_qt_declare_logging_category(komparediff2_DBG_SRCS

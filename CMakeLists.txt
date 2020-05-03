@@ -49,6 +49,7 @@ add_definitions(
     -DQT_NO_URL_CAST_FROM_STRING
     -DQT_NO_SIGNALS_SLOTS_KEYWORDS
     -DQT_STRICT_ITERATORS
+    -DQT_NO_FOREACH
 )
 add_definitions(-DTRANSLATION_DOMAIN=\"libkomparediff2\")
 

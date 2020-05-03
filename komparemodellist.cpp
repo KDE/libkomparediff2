@@ -65,19 +65,19 @@ KompareModelList::KompareModelList(DiffSettings* diffSettings, QWidget* widgetFo
     if (supportReadWrite) {
         m_applyDifference = m_actionCollection->addAction(QStringLiteral("difference_apply"), this, &KompareModelList::slotActionApplyDifference);
         m_applyDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right")));
-        m_applyDifference->setText(i18n("&Apply Difference"));
+        m_applyDifference->setText(i18nc("@action", "&Apply Difference"));
         m_actionCollection->setDefaultShortcut(m_applyDifference, QKeySequence(Qt::Key_Space));
         m_unApplyDifference = m_actionCollection->addAction(QStringLiteral("difference_unapply"), this, &KompareModelList::slotActionUnApplyDifference);
         m_unApplyDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-left")));
-        m_unApplyDifference->setText(i18n("Un&apply Difference"));
+        m_unApplyDifference->setText(i18nc("@action", "Un&apply Difference"));
         m_actionCollection->setDefaultShortcut(m_unApplyDifference, QKeySequence(Qt::Key_Backspace));
         m_applyAll = m_actionCollection->addAction(QStringLiteral("difference_applyall"), this, &KompareModelList::slotActionApplyAllDifferences);
         m_applyAll->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")));
-        m_applyAll->setText(i18n("App&ly All"));
+        m_applyAll->setText(i18nc("@action", "App&ly All"));
         m_actionCollection->setDefaultShortcut(m_applyAll, QKeySequence(Qt::CTRL + Qt::Key_A));
         m_unapplyAll = m_actionCollection->addAction(QStringLiteral("difference_unapplyall"), this, &KompareModelList::slotActionUnapplyAllDifferences);
         m_unapplyAll->setIcon(QIcon::fromTheme(QStringLiteral("arrow-left-double")));
-        m_unapplyAll->setText(i18n("&Unapply All"));
+        m_unapplyAll->setText(i18nc("@action", "&Unapply All"));
         m_actionCollection->setDefaultShortcut(m_unapplyAll, QKeySequence(Qt::CTRL + Qt::Key_U));
     } else {
         m_applyDifference = nullptr;
@@ -87,19 +87,19 @@ KompareModelList::KompareModelList(DiffSettings* diffSettings, QWidget* widgetFo
     }
     m_previousFile = m_actionCollection->addAction(QStringLiteral("difference_previousfile"), this, &KompareModelList::slotPreviousModel);
     m_previousFile->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up-double")));
-    m_previousFile->setText(i18n("P&revious File"));
+    m_previousFile->setText(i18nc("@action", "P&revious File"));
     m_actionCollection->setDefaultShortcut(m_previousFile, QKeySequence(Qt::CTRL + Qt::Key_PageUp));
     m_nextFile = m_actionCollection->addAction(QStringLiteral("difference_nextfile"), this, &KompareModelList::slotNextModel);
     m_nextFile->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down-double")));
-    m_nextFile->setText(i18n("N&ext File"));
+    m_nextFile->setText(i18nc("@action", "N&ext File"));
     m_actionCollection->setDefaultShortcut(m_nextFile, QKeySequence(Qt::CTRL + Qt::Key_PageDown));
     m_previousDifference = m_actionCollection->addAction(QStringLiteral("difference_previous"), this, &KompareModelList::slotPreviousDifference);
     m_previousDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up")));
-    m_previousDifference->setText(i18n("&Previous Difference"));
+    m_previousDifference->setText(i18nc("@action", "&Previous Difference"));
     m_actionCollection->setDefaultShortcut(m_previousDifference, QKeySequence(Qt::CTRL + Qt::Key_Up));
     m_nextDifference = m_actionCollection->addAction(QStringLiteral("difference_next"), this, &KompareModelList::slotNextDifference);
     m_nextDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
-    m_nextDifference->setText(i18n("&Next Difference"));
+    m_nextDifference->setText(i18nc("@action", "&Next Difference"));
     m_actionCollection->setDefaultShortcut(m_nextDifference, QKeySequence(Qt::CTRL + Qt::Key_Down));
     m_previousDifference->setEnabled(false);
     m_nextDifference->setEnabled(false);

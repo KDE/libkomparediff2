@@ -239,10 +239,8 @@ static QString lstripSeparators(const QString& from, uint count)
     {
         return QString();
     }
-    else
-    {
-        return from.mid(position);
-    }
+
+    return from.mid(position + 1);
 }
 
 void KompareModelList::setDepthAndApplied()

@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.0)
 
 project(LibKompareDiff2)
 
-set(QT_MIN_VERSION "5.9.0")
-set(KF_MIN_VERSION "5.53.0")
+set(QT_MIN_VERSION "5.12.0")
+set(KF_MIN_VERSION "5.68.0")
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
@@ -57,6 +57,8 @@ ecm_qt_declare_logging_category(komparediff2_DBG_SRCS
     HEADER komparediffdebug.h
     IDENTIFIER LIBKOMPAREDIFF2
     CATEGORY_NAME "libkomparediff"
+    DESCRIPTION "libkomparediff"
+    EXPORT komparediff2
 )
 
 set(komparediff2_SRCS
@@ -120,6 +122,12 @@ install(FILES
     kompare.h
     diffhunk.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/libkomparediff2  COMPONENT Devel
+)
+
+ecm_qt_install_logging_categories(
+    EXPORT komparediff2
+    FILE libkomparediff2.categories
+    DESTINATION "${KDE_INSTALL_LOGGINGCATEGORIESDIR}"
 )
 
 # Config.cmake file.

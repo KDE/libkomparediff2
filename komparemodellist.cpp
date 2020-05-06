@@ -1110,9 +1110,10 @@ bool KompareModelList::blendFile(DiffModel* model, const QString& fileContents)
         // Now we add the linecount difference for the hunk that follows
         int size = hunk->sourceLineCount();
 
-        for (int i = 0; i < size; ++i)
+        linesIt += size;
+        if (linesIt > lEnd)
         {
-            ++linesIt;
+            linesIt = lEnd;
         }
 
         srcLineNo += size;

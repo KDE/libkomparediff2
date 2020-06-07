@@ -164,7 +164,6 @@ template<class SequencePair> unsigned int LevenshteinTable<SequencePair>::create
 
     int cost = 0, north = 0, west = 0, northwest = 0;
 
-    QChar si, dj;
     // Optimization, calculate row wise instead of column wise, wont trash the cache so much with large strings
     for (j = 1; j < n; ++j)
     {

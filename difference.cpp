@@ -80,7 +80,7 @@ void Difference::apply(bool apply)
     {
         m_applied = apply;
         m_unsaved = !m_unsaved;
-        emit differenceApplied(this);
+        Q_EMIT differenceApplied(this);
     }
 }
 

@@ -305,7 +305,7 @@ void KompareProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
     //              1: some differences
     //              2: error but there may be differences !
     qCDebug(LIBKOMPAREDIFF2) << "Exited with exit code : " << exitCode;
-    emit diffHasFinished(exitStatus == NormalExit && exitCode != 0);
+    Q_EMIT diffHasFinished(exitStatus == NormalExit && exitCode != 0);
 }
 
 

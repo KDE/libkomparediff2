@@ -218,7 +218,7 @@ bool KompareModelList::compare(Kompare::Mode mode)
     connect(m_diffProcess, &KompareProcess::diffHasFinished,
             this, &KompareModelList::slotDiffProcessFinished);
 
-    emit status(Kompare::RunningDiff);
+    Q_EMIT status(Kompare::RunningDiff);
     m_diffProcess->start();
 
     return true;
@@ -260,7 +260,7 @@ bool KompareModelList::openFileAndDiff()
 
     if (parseDiffOutput(readFile(m_info->localDestination)) != 0)
     {
-        emit error(i18n("<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff file.</qt>", m_info->destination.url()));
+        Q_EMIT error(i18n("<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff file.</qt>", m_info->destination.url()));
         return false;
     }
 
@@ -269,7 +269,7 @@ bool KompareModelList::openFileAndDiff()
     if (!blendOriginalIntoModelList(m_info->localSource))
     {
         qCDebug(LIBKOMPAREDIFF2) << "Oops cant blend original file into modellist : " << m_info->localSource;
-        emit error(i18n("<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</qt>", m_info->destination.url(), m_info->source.url()));
+        Q_EMIT error(i18n("<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</qt>", m_info->destination.url(), m_info->source.url()));
         return false;
     }
 
@@ -285,7 +285,7 @@ bool KompareModelList::openDirAndDiff()
 
     if (parseDiffOutput(readFile(m_info->localDestination)) != 0)
     {
-        emit error(i18n("<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff file.</qt>", m_info->destination.url()));
+        Q_EMIT error(i18n("<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff file.</qt>", m_info->destination.url()));
         return false;
     }
 
@@ -296,7 +296,7 @@ bool KompareModelList::openDirAndDiff()
     {
         // Trouble blending the original into the model
         qCDebug(LIBKOMPAREDIFF2) << "Oops cant blend original dir into modellist : " << m_info->localSource;
-        emit error(i18n("<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>.</qt>", m_info->destination.url(), m_info->source.url()));
+        Q_EMIT error(i18n("<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>.</qt>", m_info->destination.url(), m_info->source.url()));
         return false;
     }
 
@@ -313,7 +313,7 @@ void KompareModelList::slotSaveDestination()
     {
         saveDestination(m_selectedModel);
         if (m_save) m_save->setEnabled(false);
-        emit updateActions();
+        Q_EMIT updateActions();
     }
 }
 
@@ -328,7 +328,7 @@ bool KompareModelList::saveDestination(DiffModel* model)
     QTemporaryFile temp;
 
     if (!temp.open()) {
-        emit error(i18n("Could not open a temporary file."));
+        Q_EMIT error(i18n("Could not open a temporary file."));
         temp.remove();
         return false;
     }
@@ -376,14 +376,14 @@ bool KompareModelList::saveDestination(DiffModel* model)
     if (list.count() > 0)
         stream << list.join(QString());
     if (temp.error() != QFile::NoError) {
-        emit error(i18n("<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>", temp.fileName()));
+        Q_EMIT error(i18n("<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>", temp.fileName()));
         temp.remove();
         return false;
     }
 
     temp.close();
     if (temp.error() != QFile::NoError) {
-        emit error(i18n("<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>", temp.fileName()));
+        Q_EMIT error(i18n("<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>", temp.fileName()));
         temp.remove();
         return false;
     }
@@ -414,7 +414,7 @@ bool KompareModelList::saveDestination(DiffModel* model)
             KIO::MkdirJob* mkdirJob = KIO::mkdir(fullDestinationPath);
             if (!mkdirJob->exec())
             {
-                emit error(i18n("<qt>Could not create destination directory <b>%1</b>.\nThe file has not been saved.</qt>", fullDestinationPath.path()));
+                Q_EMIT error(i18n("<qt>Could not create destination directory <b>%1</b>.\nThe file has not been saved.</qt>", fullDestinationPath.path()));
                 return false;
             }
         }
@@ -433,7 +433,7 @@ bool KompareModelList::saveDestination(DiffModel* model)
     if (!result)
     {
         // FIXME: Wrong first argument given in case of comparing directories!
-        emit error(i18n("<qt>Could not upload the temporary file to the destination location <b>%1</b>. The temporary file is still available under: <b>%2</b>. You can manually copy it to the right place.</qt>", m_info->destination.url(), temp.fileName()));
+        Q_EMIT error(i18n("<qt>Could not upload the temporary file to the destination location <b>%1</b>. The temporary file is still available under: <b>%2</b>. You can manually copy it to the right place.</qt>", m_info->destination.url(), temp.fileName()));
         //Don't remove file when we delete temp and don't leak it.
         temp.setAutoRemove(false);
     }
@@ -509,10 +509,10 @@ void KompareModelList::slotDiffProcessFinished(bool success)
 {
     if (success)
     {
-        emit status(Kompare::Parsing);
+        Q_EMIT status(Kompare::Parsing);
         if (parseDiffOutput(m_diffProcess->diffOutput()) != 0)
         {
-            emit error(i18n("Could not parse diff output."));
+            Q_EMIT error(i18n("Could not parse diff output."));
         }
         else
         {
@@ -524,15 +524,15 @@ void KompareModelList::slotDiffProcessFinished(bool success)
             updateModelListActions();
             show();
         }
-        emit status(Kompare::FinishedParsing);
+        Q_EMIT status(Kompare::FinishedParsing);
     }
     else if (m_diffProcess->exitStatus() == 0)
     {
-        emit error(i18n("The files are identical."));
+        Q_EMIT error(i18n("The files are identical."));
     }
     else
     {
-        emit error(m_diffProcess->stdErr());
+        Q_EMIT error(m_diffProcess->stdErr());
     }
 
     m_diffProcess->deleteLater();
@@ -545,7 +545,7 @@ void KompareModelList::slotDirectoryChanged(const QString& /*dir*/)
     qCDebug(LIBKOMPAREDIFF2) << "Yippie directories are being watched !!! :)";
     if (m_diffProcess)
     {
-        emit status(Kompare::ReRunningDiff);
+        Q_EMIT status(Kompare::ReRunningDiff);
         m_diffProcess->start();
     }
 }
@@ -556,7 +556,7 @@ void KompareModelList::slotFileChanged(const QString& /*file*/)
     qCDebug(LIBKOMPAREDIFF2) << "Yippie files are being watched !!! :)";
     if (m_diffProcess)
     {
-        emit status(Kompare::ReRunningDiff);
+        Q_EMIT status(Kompare::ReRunningDiff);
         m_diffProcess->start();
     }
 }
@@ -621,18 +621,18 @@ bool KompareModelList::openDiff(const QString& diffFile)
 
     clear(); // Clear the current models
 
-    emit status(Kompare::Parsing);
+    Q_EMIT status(Kompare::Parsing);
 
     if (parseDiffOutput(diff) != 0)
     {
-        emit error(i18n("Could not parse diff output."));
+        Q_EMIT error(i18n("Could not parse diff output."));
         return false;
     }
 
     updateModelListActions();
     show();
 
-    emit status(Kompare::FinishedParsing);
+    Q_EMIT status(Kompare::FinishedParsing);
 
     return true;
 }
@@ -641,18 +641,18 @@ bool KompareModelList::parseAndOpenDiff(const QString& diff)
 {
     clear(); // Clear the current models
 
-    emit status(Kompare::Parsing);
+    Q_EMIT status(Kompare::Parsing);
 
     if (parseDiffOutput(diff) != 0)
     {
-        emit error(i18n("Could not parse diff output."));
+        Q_EMIT error(i18n("Could not parse diff output."));
         return false;
     }
 
     updateModelListActions();
     show();
 
-    emit status(Kompare::FinishedParsing);
+    Q_EMIT status(Kompare::FinishedParsing);
     return true;
 }
 
@@ -678,7 +678,7 @@ bool KompareModelList::saveDiff(const QString& url, QString directory, DiffSetti
     m_diffURL = QUrl(url); // ### TODO the "url" argument should be a QUrl
 
     if (!m_diffTemp->open()) {
-        emit error(i18n("Could not open a temporary file."));
+        Q_EMIT error(i18n("Could not open a temporary file."));
         m_diffTemp->remove();
         delete m_diffTemp;
         m_diffTemp = nullptr;
@@ -691,7 +691,7 @@ bool KompareModelList::saveDiff(const QString& url, QString directory, DiffSetti
     connect(m_diffProcess, &KompareProcess::diffHasFinished,
             this, &KompareModelList::slotWriteDiffOutput);
 
-    emit status(Kompare::RunningDiff);
+    Q_EMIT status(Kompare::RunningDiff);
     m_diffProcess->start();
     return true;
 }
@@ -710,13 +710,13 @@ void KompareModelList::slotWriteDiffOutput(bool success)
 
         if (false /*|| m_diffTemp->status() != 0 */)
         {
-            emit error(i18n("Could not write to the temporary file."));
+            Q_EMIT error(i18n("Could not write to the temporary file."));
         }
 
         KIO::FileCopyJob* copyJob = KIO::file_copy(QUrl::fromLocalFile(m_diffTemp->fileName()), m_diffURL);
         copyJob->exec();
 
-        emit status(Kompare::FinishedWritingDiff);
+        Q_EMIT status(Kompare::FinishedWritingDiff);
     }
 
     m_diffURL = QUrl();
@@ -732,7 +732,7 @@ void KompareModelList::slotWriteDiffOutput(bool success)
 void KompareModelList::slotSelectionChanged(const Diff2::DiffModel* model, const Diff2::Difference* diff)
 {
 // This method will signal all the other objects about a change in selection,
-// it will emit setSelection( const DiffModel*, const Difference* ) to all who are connected
+// it will Q_EMIT setSelection( const DiffModel*, const Difference* ) to all who are connected
     qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::slotSelectionChanged( " << model << ", " << diff << " )";
     qCDebug(LIBKOMPAREDIFF2) << "Sender is : " << sender()->metaObject()->className();
 //     qCDebug(LIBKOMPAREDIFF2) << kBacktrace();
@@ -758,15 +758,15 @@ void KompareModelList::slotSelectionChanged(const Diff2::DiffModel* model, const
         m_selectedDifference = m_selectedModel->firstDifference();
     }
 
-    emit setSelection(model, diff);
-    emit setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
+    Q_EMIT setSelection(model, diff);
+    Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
 
     updateModelListActions();
 }
 
 void KompareModelList::slotSelectionChanged(const Diff2::Difference* diff)
 {
-// This method will emit setSelection( const Difference* ) to whomever is listening
+// This method will Q_EMIT setSelection( const Difference* ) to whomever is listening
 // when for instance in kompareview the selection has changed
     qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::slotSelectionChanged( " << diff << " )";
     qCDebug(LIBKOMPAREDIFF2) << "Sender is : " << sender()->metaObject()->className();
@@ -779,8 +779,8 @@ void KompareModelList::slotSelectionChanged(const Diff2::Difference* diff)
         m_selectedDifference = m_selectedModel->firstDifference();
     }
 
-    emit setSelection(diff);
-    emit setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
+    Q_EMIT setSelection(diff);
+    Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
 
     updateModelListActions();
 }
@@ -797,8 +797,8 @@ void KompareModelList::slotPreviousModel()
         m_selectedDifference = m_selectedModel->firstDifference();
     }
 
-    emit setSelection(m_selectedModel, m_selectedDifference);
-    emit setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
+    Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
+    Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
     updateModelListActions();
 }
 
@@ -814,8 +814,8 @@ void KompareModelList::slotNextModel()
         m_selectedDifference = m_selectedModel->firstDifference();
     }
 
-    emit setSelection(m_selectedModel, m_selectedDifference);
-    emit setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
+    Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
+    Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
     updateModelListActions();
 }
 
@@ -887,8 +887,8 @@ void KompareModelList::slotPreviousDifference()
     qCDebug(LIBKOMPAREDIFF2) << "slotPreviousDifference called";
     if ((m_selectedDifference = m_selectedModel->prevDifference()) != nullptr)
     {
-        emit setSelection(m_selectedDifference);
-        emit setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
+        Q_EMIT setSelection(m_selectedDifference);
+        Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
         updateModelListActions();
         return;
     }
@@ -899,8 +899,8 @@ void KompareModelList::slotPreviousDifference()
     {
         m_selectedDifference = m_selectedModel->lastDifference();
 
-        emit setSelection(m_selectedModel, m_selectedDifference);
-        emit setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
+        Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
+        Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
         updateModelListActions();
         return;
     }
@@ -912,8 +912,8 @@ void KompareModelList::slotPreviousDifference()
     m_selectedModel = firstModel();
     m_selectedDifference = m_selectedModel->firstDifference();
 
-    emit setSelection(m_selectedModel, m_selectedDifference);
-    emit setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
+    Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
+    Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
     updateModelListActions();
 }
 
@@ -922,8 +922,8 @@ void KompareModelList::slotNextDifference()
     qCDebug(LIBKOMPAREDIFF2) << "slotNextDifference called";
     if ((m_selectedDifference = m_selectedModel->nextDifference()) != nullptr)
     {
-        emit setSelection(m_selectedDifference);
-        emit setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
+        Q_EMIT setSelection(m_selectedDifference);
+        Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
         updateModelListActions();
         return;
     }
@@ -934,8 +934,8 @@ void KompareModelList::slotNextDifference()
     {
         m_selectedDifference = m_selectedModel->firstDifference();
 
-        emit setSelection(m_selectedModel, m_selectedDifference);
-        emit setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
+        Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
+        Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
         updateModelListActions();
         return;
     }
@@ -946,27 +946,27 @@ void KompareModelList::slotNextDifference()
     m_selectedModel = lastModel();
     m_selectedDifference = m_selectedModel->lastDifference();
 
-    emit setSelection(m_selectedModel, m_selectedDifference);
-    emit setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
+    Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
+    Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
     updateModelListActions();
 }
 
 void KompareModelList::slotApplyDifference(bool apply)
 {
     m_selectedModel->applyDifference(apply);
-    emit applyDifference(apply);
+    Q_EMIT applyDifference(apply);
 }
 
 void KompareModelList::slotApplyAllDifferences(bool apply)
 {
     m_selectedModel->applyAllDifferences(apply);
-    emit applyAllDifferences(apply);
+    Q_EMIT applyAllDifferences(apply);
 }
 
 int KompareModelList::parseDiffOutput(const QString& diff)
 {
     qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::parseDiffOutput";
-    emit diffString(diff);
+    Q_EMIT diffString(diff);
 
     QStringList diffLines = split(diff);
 
@@ -984,13 +984,13 @@ int KompareModelList::parseDiffOutput(const QString& diff)
         if (malformed)
         {
             qCDebug(LIBKOMPAREDIFF2) << "Malformed diff";
-            emit error(i18n("The diff is malformed. Some lines could not be parsed and will not be displayed in the diff view."));
+            Q_EMIT error(i18n("The diff is malformed. Some lines could not be parsed and will not be displayed in the diff view."));
             // proceed anyway with the lines which have been parsed
         }
         m_selectedModel = firstModel();
         qCDebug(LIBKOMPAREDIFF2) << "Ok there are differences...";
         m_selectedDifference = m_selectedModel->firstDifference();
-        emit setStatusBarModelInfo(0, 0, modelCount(), differenceCount(), 0);
+        Q_EMIT setStatusBarModelInfo(0, 0, modelCount(), differenceCount(), 0);
     }
     else
     {
@@ -1290,8 +1290,8 @@ return true;
 void KompareModelList::show()
 {
     qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::Show Number of models = " << m_models->count();
-    emit modelsChanged(m_models);
-    emit setSelection(m_selectedModel, m_selectedDifference);
+    Q_EMIT modelsChanged(m_models);
+    Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
 }
 
 void KompareModelList::clear()
@@ -1299,7 +1299,7 @@ void KompareModelList::clear()
     if (m_models)
         m_models->clear();
 
-    emit modelsChanged(m_models);
+    Q_EMIT modelsChanged(m_models);
 }
 
 void KompareModelList::refresh()

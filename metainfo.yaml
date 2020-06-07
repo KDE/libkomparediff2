@@ -1,0 +1,13 @@
+description: Library to compare files and strings
+type: functional
+public_lib: true
+platforms:
+    - name: Linux
+    - name: FreeBSD
+    - name: Windows
+    #- name: MacOSX
+    #- name: Android
+release: true
+libraries:
+    - cmake: "KompareDiff2"
+cmakename: LibKompareDiff2

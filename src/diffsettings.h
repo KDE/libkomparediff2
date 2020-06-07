@@ -14,6 +14,9 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "settingsbase.h"
 #include "diff2_export.h"
 
+/**
+ * The settings for a diff.
+ */
 class DIFF2_EXPORT  DiffSettings : public SettingsBase
 {
     Q_OBJECT

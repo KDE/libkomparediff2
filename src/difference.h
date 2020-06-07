@@ -21,6 +21,9 @@ class QString;
 namespace Diff2
 {
 
+/**
+ * A difference string.
+ */
 class DIFF2_EXPORT DifferenceString
 {
 public:
@@ -110,6 +113,9 @@ typedef QVector<DifferenceString*> DifferenceStringList;
 typedef QVector<DifferenceString*>::iterator DifferenceStringListIterator;
 typedef QVector<DifferenceString*>::const_iterator DifferenceStringListConstIterator;
 
+/**
+ * A difference.
+ */
 class DIFF2_EXPORT Difference : public QObject
 {
     Q_OBJECT

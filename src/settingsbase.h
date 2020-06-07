@@ -15,6 +15,9 @@ SPDX-License-Identifier: GPL-2.0-or-later
 class QWidget;
 class KConfig;
 
+/**
+ * Base class for settings classes.
+ */
 class DIFF2_EXPORT SettingsBase : public QObject
 {
     Q_OBJECT

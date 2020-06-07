@@ -12,6 +12,9 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 
 namespace Diff2 {
 
+/**
+ * A Marker.
+ */
 class DIFF2_EXPORT Marker
 {
 public:

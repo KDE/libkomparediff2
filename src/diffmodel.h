@@ -19,6 +19,9 @@ class QStringList;
 namespace Diff2
 {
 
+/**
+ * A model describing the differences between two files.
+ */
 class DIFF2_EXPORT DiffModel : public QObject
 {
     Q_OBJECT

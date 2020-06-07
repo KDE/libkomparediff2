@@ -15,8 +15,14 @@ SPDX-License-Identifier: GPL-2.0-or-later
 // Forward declaration needed
 class QTemporaryDir;
 
+/**
+ * Kompare namespace
+ */
 namespace Kompare
 {
+/**
+ * Patch format enum.
+ */
 enum Format {
     Context       = 0,
     Ed            = 1,
@@ -27,6 +33,9 @@ enum Format {
     UnknownFormat = -1
 };
 
+/**
+ * Patch generator enum.
+ */
 enum Generator {
     CVSDiff          = 0,
     Diff             = 1,
@@ -41,6 +50,9 @@ enum Generator {
     UnknownGenerator = -1
 };
 
+/**
+ * Mode
+ */
 enum Mode {
     ComparingFiles,      // compareFiles
     ComparingFileString, // Compare a source file with a destination string
@@ -52,12 +64,18 @@ enum Mode {
     UnknownMode          // Used to initialize the Infoi struct
 };
 
+/**
+ * DiffMode
+ */
 enum DiffMode {
     Default,
     Custom,
     UnknownDiffMode // Use to initialize the Info struct
 };
 
+/**
+ * State
+ */
 enum Status {
     RunningDiff,
     Parsing,
@@ -66,11 +84,17 @@ enum Status {
     ReRunningDiff   // When a change has been detected after diff has run
 };
 
+/**
+ * Target
+ */
 enum Target {
     Source,
     Destination
 };
 
+/**
+ * Info.
+ */
 struct DIFF2_EXPORT Info {
     Info(
         enum Mode _mode = UnknownMode,

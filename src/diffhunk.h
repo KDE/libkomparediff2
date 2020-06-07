@@ -16,6 +16,9 @@ namespace Diff2
 
 class Difference;
 
+/**
+ * DiffHunk
+ */
 class DiffHunk
 {
 public:

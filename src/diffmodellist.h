@@ -12,12 +12,18 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "diffmodel.h"
 #include "diff2_export.h"
 
+/**
+ * Diff2 namespace
+ */
 namespace Diff2
 {
 
 typedef QList<DiffModel*>::Iterator DiffModelListIterator;
 typedef QList<DiffModel*>::ConstIterator DiffModelListConstIterator;
 
+/**
+ * A list of DiffModel.
+ */
 class DIFF2_EXPORT DiffModelList : public QList<DiffModel*>
 {
 public:

@@ -1,10 +1,6 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libkomparediff2\")
 
-ecm_setup_version(${KOMPAREDIFF2_VERSION}
-    VARIABLE_PREFIX LIBKOMPAREDIFF2
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/LibKompareDiff2ConfigVersion.cmake"
-    SOVERSION 5
-)
+set(LibKompareDiff2_SOVERSION 5)
 
 set(komparediff2_SRCS
     kompareprocess.cpp
@@ -51,8 +47,8 @@ target_link_libraries(komparediff2
 target_include_directories(komparediff2 INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}>")
 
 set_target_properties(komparediff2 PROPERTIES
-    VERSION ${LIBKOMPAREDIFF2_VERSION_STRING}
-    SOVERSION ${LIBKOMPAREDIFF2_SOVERSION}
+    VERSION ${LibKompareDiff2_VERSION}
+    SOVERSION ${LibKompareDiff2_SOVERSION}
     EXPORT_NAME "KompareDiff2"
 )
 
@@ -90,6 +86,10 @@ configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/LibKompareDiff2Config.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/LibKompareDiff2Config.cmake"
     INSTALL_DESTINATION  "${_LibKompareDiff2_CONFIG_DEST}"
+)
+write_basic_package_version_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/LibKompareDiff2ConfigVersion.cmake"
+    COMPATIBILITY SameMajorVersion
 )
 
 install( FILES

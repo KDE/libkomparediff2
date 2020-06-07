@@ -52,9 +52,9 @@ private:
     Type           m_type;
 };
 
-typedef QList<DiffHunk*> DiffHunkList;
-typedef QList<DiffHunk*>::iterator DiffHunkListIterator;
-typedef QList<DiffHunk*>::const_iterator DiffHunkListConstIterator;
+using DiffHunkList =              QList<DiffHunk*>;
+using DiffHunkListIterator =      QList<DiffHunk*>::iterator;
+using DiffHunkListConstIterator = QList<DiffHunk*>::const_iterator;
 
 } // End of namespace Diff2
 

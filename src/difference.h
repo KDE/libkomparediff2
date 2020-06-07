@@ -109,9 +109,9 @@ private:
     MarkerList   m_markerList;
 };
 
-typedef QVector<DifferenceString*> DifferenceStringList;
-typedef QVector<DifferenceString*>::iterator DifferenceStringListIterator;
-typedef QVector<DifferenceString*>::const_iterator DifferenceStringListConstIterator;
+using DifferenceStringList =              QVector<DifferenceString*>;
+using DifferenceStringListIterator =      QVector<DifferenceString*>::iterator;
+using DifferenceStringListConstIterator = QVector<DifferenceString*>::const_iterator;
 
 /**
  * A difference.
@@ -201,9 +201,9 @@ private:
     bool                  m_unsaved;
 };
 
-typedef QList<Difference*> DifferenceList;
-typedef QList<Difference*>::iterator DifferenceListIterator;
-typedef QList<Difference*>::const_iterator DifferenceListConstIterator;
+using DifferenceList =              QList<Difference*>;
+using DifferenceListIterator =      QList<Difference*>::iterator;
+using DifferenceListConstIterator = QList<Difference*>::const_iterator;
 
 } // End of namespace Diff2
 

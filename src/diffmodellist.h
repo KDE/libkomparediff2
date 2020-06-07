@@ -18,8 +18,8 @@ SPDX-License-Identifier: GPL-2.0-or-later
 namespace Diff2
 {
 
-typedef QList<DiffModel*>::Iterator DiffModelListIterator;
-typedef QList<DiffModel*>::ConstIterator DiffModelListConstIterator;
+using DiffModelListIterator =      QList<DiffModel*>::iterator;
+using DiffModelListConstIterator = QList<DiffModel*>::const_iterator;
 
 /**
  * A list of DiffModel.

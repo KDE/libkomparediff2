@@ -49,9 +49,9 @@ private:
     unsigned int      m_offset;
 };
 
-typedef QList<Marker*> MarkerList;
-typedef QList<Marker*>::iterator MarkerListIterator;
-typedef QList<Marker*>::const_iterator MarkerListConstIterator;
+using MarkerList =              QList<Marker*>;
+using MarkerListIterator =      QList<Marker*>::iterator;
+using MarkerListConstIterator = QList<Marker*>::const_iterator;
 
 }
 

@@ -269,7 +269,7 @@ bool KompareModelList::openFileAndDiff()
     if (!blendOriginalIntoModelList(m_info->localSource))
     {
         qCDebug(LIBKOMPAREDIFF2) << "Oops cant blend original file into modellist : " << m_info->localSource;
-        emit(i18n("<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</qt>", m_info->destination.url(), m_info->source.url()));
+        emit error(i18n("<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</qt>", m_info->destination.url(), m_info->source.url()));
         return false;
     }
 

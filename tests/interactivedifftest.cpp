@@ -7,9 +7,9 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 #include "interactivedifftest.h"
 
 #include <QTest>
-#include "../diffmodel.h"
-#include "../diffmodellist.h"
-#include "../parser.h"
+#include "diffmodel.h"
+#include "diffmodellist.h"
+#include "parser.h"
 
 using namespace Diff2;
 

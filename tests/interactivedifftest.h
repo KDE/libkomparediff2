@@ -9,7 +9,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include <QObject>
 
-#include "../difference.h"
+#include "difference.h"
 
 class InteractiveDiffTest : public QObject
 {

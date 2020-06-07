@@ -7,10 +7,10 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 #include "levenshteintest.h"
 
 #include <QTest>
-#include "../difference.h"
-#include "../differencestringpair.h"
-#include "../levenshteintable.h"
-#include "../stringlistpair.h"
+#include "difference.h"
+#include "differencestringpair.h"
+#include "levenshteintable.h"
+#include "stringlistpair.h"
 
 using namespace Diff2;
 

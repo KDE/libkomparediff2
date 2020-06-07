@@ -1,5 +1,3 @@
-include_directories(.. ${CMAKE_BINARY_DIR})
-
 include(ECMMarkAsTest)
 
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
@@ -8,21 +6,34 @@ remove_definitions(
     -DQT_NO_CAST_FROM_ASCII
 )
 
+set(LIB_SOURCE_DIR "${CMAKE_SOURCE_DIR}/src")
+set(LIB_BINARY_DIR "${CMAKE_BINARY_DIR}/src")
+include_directories(
+    ${LIB_SOURCE_DIR}
+    ${LIB_BINARY_DIR}
+)
+
+ecm_qt_declare_logging_category(komparediff2_DBG_SRCS
+    HEADER komparediffdebug.h
+    IDENTIFIER LIBKOMPAREDIFF2
+    CATEGORY_NAME "libkomparediff"
+)
+
 set(interactiveDiffTest_SRCS
     interactivedifftest.cpp
-    ../perforceparser.cpp
-    ../cvsdiffparser.cpp
-    ../difference.cpp
-    ../diffhunk.cpp
-    ../diffmodel.cpp
-    ../diffmodellist.cpp
-    ../diffparser.cpp
-    ../komparemodellist.cpp
-    ../kompareprocess.cpp
-    ../parser.cpp
-    ../parserbase.cpp
-    ../stringlistpair.cpp
-    ../kompare.cpp
+    ${LIB_SOURCE_DIR}/perforceparser.cpp
+    ${LIB_SOURCE_DIR}/cvsdiffparser.cpp
+    ${LIB_SOURCE_DIR}/difference.cpp
+    ${LIB_SOURCE_DIR}/diffhunk.cpp
+    ${LIB_SOURCE_DIR}/diffmodel.cpp
+    ${LIB_SOURCE_DIR}/diffmodellist.cpp
+    ${LIB_SOURCE_DIR}/diffparser.cpp
+    ${LIB_SOURCE_DIR}/komparemodellist.cpp
+    ${LIB_SOURCE_DIR}/kompareprocess.cpp
+    ${LIB_SOURCE_DIR}/parser.cpp
+    ${LIB_SOURCE_DIR}/parserbase.cpp
+    ${LIB_SOURCE_DIR}/stringlistpair.cpp
+    ${LIB_SOURCE_DIR}/kompare.cpp
     ${komparediff2_DBG_SRCS}
 )
 
@@ -41,8 +52,8 @@ target_link_libraries(interactiveDiffTest
 
 set(levenshteinTest_SRCS
     levenshteintest.cpp
-    ../difference.cpp
-    ../stringlistpair.cpp
+    ${LIB_SOURCE_DIR}/difference.cpp
+    ${LIB_SOURCE_DIR}/stringlistpair.cpp
     ${komparediff2_DBG_SRCS}
 )
 

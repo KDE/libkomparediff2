@@ -395,8 +395,6 @@ bool KompareModelList::saveDestination(DiffModel* model)
         qCDebug(LIBKOMPAREDIFF2) << "tmp                 : " << tmp;
         KIO::UDSEntry entry;
         QUrl fullDestinationPath = m_info->destination;
-        fullDestinationPath.setPath(fullDestinationPath.path() + QLatin1Char('/') + tmp);
-        qCDebug(LIBKOMPAREDIFF2) << "fullDestinationPath : " << fullDestinationPath;
         KIO::StatJob* statJob = KIO::stat(fullDestinationPath);
         if (!statJob->exec())
         {
@@ -408,6 +406,8 @@ bool KompareModelList::saveDestination(DiffModel* model)
                 return false;
             }
         }
+        fullDestinationPath.setPath(fullDestinationPath.path() + QLatin1Char('/') + tmp);
+        qCDebug(LIBKOMPAREDIFF2) << "fullDestinationPath : " << fullDestinationPath;
         KIO::FileCopyJob* copyJob = KIO::file_copy(QUrl::fromLocalFile(temp.fileName()), fullDestinationPath, -1, KIO::Overwrite);
         result = copyJob->exec();
     }

@@ -2,7 +2,9 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libkomparediff2\")
 
 set(LibKompareDiff2_SOVERSION 5)
 
-set(komparediff2_SRCS
+add_library(komparediff2 SHARED)
+
+target_sources(komparediff2 PRIVATE
     kompareprocess.cpp
     komparemodellist.cpp
     diffmodellist.cpp
@@ -20,7 +22,7 @@ set(komparediff2_SRCS
     kompare.cpp
 )
 
-ecm_qt_declare_logging_category(komparediff2_SRCS
+ecm_qt_declare_logging_category(komparediff2
     HEADER komparediffdebug.h
     IDENTIFIER LIBKOMPAREDIFF2
     CATEGORY_NAME "libkomparediff"
@@ -28,7 +30,6 @@ ecm_qt_declare_logging_category(komparediff2_SRCS
     EXPORT komparediff2
 )
 
-add_library(komparediff2 ${komparediff2_SRCS})
 generate_export_header(komparediff2 BASE_NAME diff2)
 
 target_link_libraries(komparediff2

@@ -19,7 +19,9 @@ ecm_qt_declare_logging_category(komparediff2_DBG_SRCS
     CATEGORY_NAME "libkomparediff"
 )
 
-set(interactiveDiffTest_SRCS
+add_executable(interactiveDiffTest)
+
+target_sources(interactiveDiffTest PRIVATE
     interactivedifftest.cpp
     ${LIB_SOURCE_DIR}/perforceparser.cpp
     ${LIB_SOURCE_DIR}/cvsdiffparser.cpp
@@ -37,7 +39,6 @@ set(interactiveDiffTest_SRCS
     ${komparediff2_DBG_SRCS}
 )
 
-add_executable(interactiveDiffTest ${interactiveDiffTest_SRCS})
 add_test(NAME libkomparediff2-interactiveDiffTest COMMAND interactiveDiffTest)
 ecm_mark_as_test(interactiveDiffTest)
 set_target_properties(interactiveDiffTest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
@@ -50,14 +51,14 @@ target_link_libraries(interactiveDiffTest
     KF5::KIOCore
 )
 
-set(levenshteinTest_SRCS
+add_executable(levenshteintest)
+target_sources(levenshteintest PRIVATE
     levenshteintest.cpp
     ${LIB_SOURCE_DIR}/difference.cpp
     ${LIB_SOURCE_DIR}/stringlistpair.cpp
     ${komparediff2_DBG_SRCS}
 )
 
-add_executable(levenshteintest ${levenshteinTest_SRCS})
 add_test(NAME libkomparediff2-levenshteintest COMMAND levenshteintest)
 ecm_mark_as_test(levenshteintest)
 set_target_properties(levenshteintest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")

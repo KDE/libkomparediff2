@@ -415,7 +415,15 @@ bool KompareModelList::saveDestination(DiffModel* model)
     {
         qCDebug(LIBKOMPAREDIFF2) << "Tempfilename   : " << temp.fileName();
         qCDebug(LIBKOMPAREDIFF2) << "DestinationURL : " << m_info->destination;
-        KIO::FileCopyJob* copyJob = KIO::file_copy(QUrl::fromLocalFile(temp.fileName()), m_info->destination , -1, KIO::Overwrite);
+
+        // Get permissions of existing file and copy temporary file with the same permissions
+        int permissions = -1;
+        KIO::StatJob* statJob = KIO::stat(m_info->destination);
+        result = statJob->exec();
+        if (result)
+            permissions = statJob->statResult().numberValue(KIO::UDSEntry::UDS_ACCESS);
+
+        KIO::FileCopyJob* copyJob = KIO::file_copy(QUrl::fromLocalFile(temp.fileName()), m_info->destination , permissions, KIO::Overwrite);
         result = copyJob->exec();
         qCDebug(LIBKOMPAREDIFF2) << "true or false?" << result;
     }

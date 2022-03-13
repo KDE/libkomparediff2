@@ -388,14 +388,14 @@ bool KompareModelList::saveDestination(DiffModel* model)
         qCDebug(LIBKOMPAREDIFF2) << "Tempfilename (save) : " << temp.fileName();
         qCDebug(LIBKOMPAREDIFF2) << "Model->path+file    : " << model->destinationPath() << model->destinationFile();
         qCDebug(LIBKOMPAREDIFF2) << "info->localdest     : " << m_info->localDestination;
-        QString tmp = model->destinationPath() + model->destinationFile();
+        QString tmp = model->destinationPath();
         if (tmp.startsWith(m_info->localDestination))     // It should, if not serious trouble...
             tmp.remove(0, m_info->localDestination.size());
         qCDebug(LIBKOMPAREDIFF2) << "DestinationURL      : " << m_info->destination;
         qCDebug(LIBKOMPAREDIFF2) << "tmp                 : " << tmp;
         KIO::UDSEntry entry;
         QUrl fullDestinationPath = m_info->destination;
-        fullDestinationPath.setPath(fullDestinationPath.path() + QLatin1Char('/') + tmp);
+        fullDestinationPath.setPath(fullDestinationPath.path() + tmp);
         qCDebug(LIBKOMPAREDIFF2) << "fullDestinationPath : " << fullDestinationPath;
         KIO::StatJob* statJob = KIO::stat(fullDestinationPath);
         if (!statJob->exec())
@@ -408,6 +408,7 @@ bool KompareModelList::saveDestination(DiffModel* model)
                 return false;
             }
         }
+        fullDestinationPath.setPath(fullDestinationPath.path() + model->destinationFile());
         KIO::FileCopyJob* copyJob = KIO::file_copy(QUrl::fromLocalFile(temp.fileName()), fullDestinationPath, -1, KIO::Overwrite);
         result = copyJob->exec();
     }

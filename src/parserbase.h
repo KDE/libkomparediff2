@@ -9,11 +9,11 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #define DIFF2_PARSERBASE_H
 
 #include <QRegExp>
+#include <QStringList>
 
 #include "kompare.h"
 #include "difference.h"
 
-class QStringList;
 class QString;
 
 namespace Diff2

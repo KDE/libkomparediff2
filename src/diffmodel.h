@@ -9,12 +9,10 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #define DIFFMODEL_H
 
 #include <QObject>
-
+#include <QStringList>
 #include "diffhunk.h"
 #include "kompare.h"
 #include "diff2_export.h"
-
-class QStringList;
 
 namespace Diff2
 {
@@ -32,7 +30,7 @@ public:
     ~DiffModel() override;
 
 private:
-    DiffModel(const DiffModel&) : QObject() {};
+    DiffModel(const DiffModel&) : QObject() {}
 
 public:
     int parseDiff(enum Kompare::Format format, const QStringList& list);

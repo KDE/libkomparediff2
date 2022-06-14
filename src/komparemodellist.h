@@ -11,6 +11,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #define KOMPAREMODELLIST_H
 
 #include <QObject>
+#include <QTextCodec>
 
 #include "diffmodel.h"
 #include "diffmodellist.h"

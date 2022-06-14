@@ -43,8 +43,8 @@ add_test(NAME libkomparediff2-interactiveDiffTest COMMAND interactiveDiffTest)
 ecm_mark_as_test(interactiveDiffTest)
 set_target_properties(interactiveDiffTest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
 target_link_libraries(interactiveDiffTest
-    Qt5::Core
-    Qt5::Test
+    Qt::Core
+    Qt::Test
     KF5::CoreAddons
     KF5::I18n
     KF5::XmlGui
@@ -63,6 +63,6 @@ add_test(NAME libkomparediff2-levenshteintest COMMAND levenshteintest)
 ecm_mark_as_test(levenshteintest)
 set_target_properties(levenshteintest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
 target_link_libraries(levenshteintest
-    Qt5::Test
-    Qt5::Core
+    Qt::Test
+    Qt::Core
 )

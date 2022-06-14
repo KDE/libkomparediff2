@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 project(LibKompareDiff2 VERSION "5.2")
 
 set(QT_MIN_VERSION "5.15.0")
-set(KF_MIN_VERSION "5.85.0")
+set(KF_MIN_VERSION "5.90.0")
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
@@ -22,7 +22,7 @@ if(BUILD_TESTING)
     list(APPEND ADDITIONAL_REQUIRED_QT_COMPONENTS Test)
 endif()
 
-find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED
     COMPONENTS
         Core
         Widgets

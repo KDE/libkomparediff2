@@ -36,8 +36,8 @@ target_link_libraries(komparediff2
     PUBLIC
         KF5::XmlGui
         KF5::ConfigCore
-        Qt5::Widgets
-        Qt5::Core
+        Qt::Widgets
+        Qt::Core
     PRIVATE
         KF5::Codecs
         KF5::KIOCore

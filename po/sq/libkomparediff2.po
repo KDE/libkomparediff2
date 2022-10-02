@@ -1,0 +1,341 @@
+# Albanian translation for kdesdk
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the kdesdk package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdesdk\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2009-06-05 03:59+0000\n"
+"Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
+"Language-Team: Albanian <sq@li.org>\n"
+"Language: sq\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2011-04-22 09:06+0000\n"
+"X-Generator: Launchpad (build 12883)\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "&Diferenca"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "&Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "&Diferenca"
+
+#: komparemodellist.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr ""
+
+#: komparemodellist.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr ""
+
+#: komparemodellist.cpp:80
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr ""
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "&File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "&Skedar"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "&Diferenca"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "&Diferenca"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr ""
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr ""
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr ""
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr ""
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "KDE Shqip, Launchpad Contributions: Vilson Gjeci"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kde-shqip@yahoogroups.com,vilsongjeci@gmail.com"
+
+#~ msgid "Navigation"
+#~ msgstr "Eksplorimi"
+
+#~ msgid "Blend"
+#~ msgstr "Blend"
+
+#~ msgid "Source"
+#~ msgstr "Burimi"
+
+#~ msgid "Destination"
+#~ msgstr "Destinacioni"
+
+#~ msgid "Compare"
+#~ msgstr "Krahaso"
+
+#~ msgid "Text View"
+#~ msgstr "Paraqitja e tekstit"
+
+#~ msgid "Source File"
+#~ msgstr "Skedari Burim"
+
+#~ msgid "Unknown"
+#~ msgstr "I Panjohur"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "John Firebaugh"
+
+#~ msgid "Author"
+#~ msgstr "Autori"
+
+#~ msgid "Otto Bruggeman"
+#~ msgstr "Otto Bruggeman"
+
+#~ msgid "File Exists"
+#~ msgstr "Skedari Ekziston"
+
+#~ msgid "Overwrite"
+#~ msgstr "Mbishkruaje"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Kevin Kofler"
+#~ msgstr "Kevin Kofler"
+
+#~ msgid "Unified"
+#~ msgstr "I Unifikuar"
+
+#~ msgid "Context"
+#~ msgstr "Konteksti"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+
+#~ msgid "&Settings"
+#~ msgstr "&Parametrat"
+
+#~ msgid "Preferences"
+#~ msgstr "Preferencat"
+
+#~ msgid "View"
+#~ msgstr "Shfaq"
+
+#~ msgid "Diff"
+#~ msgstr "Diff"
+
+#~ msgid "Command Line"
+#~ msgstr "Rreshti i komandës"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- source destination"
+
+#~ msgid "Options"
+#~ msgstr "Opsionet"
+
+#~ msgid "Format"
+#~ msgstr "Formati"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Shiriti Kryesor"
+
+#~ msgid "Files"
+#~ msgstr "Skedarët"
+
+#~ msgid "Appearance"
+#~ msgstr "Pamja"
+
+#~ msgid "Diff Program"
+#~ msgstr "Diff Program"
+
+#~ msgid "Output Format"
+#~ msgstr "Formati i Rezultatit"
+
+#~ msgid "General"
+#~ msgstr "Të Përgjithshme"
+
+#~ msgid "&Edit..."
+#~ msgstr "&Modifiko..."
+
+#~ msgid "Exclude"
+#~ msgstr "Përjashto"
+
+#~ msgid "Encoding"
+#~ msgstr "Kodimi"
+
+#~ msgid "Colors"
+#~ msgstr "Ngjyrat"
+
+#~ msgid "Text Font"
+#~ msgstr "Gërma e Tekstit"
+
+#~ msgid "Font:"
+#~ msgstr "Gërma:"
+
+#~ msgid "Size:"
+#~ msgstr "Përmasa:"
+
+#~ msgid "Fonts"
+#~ msgstr "Gërmat"
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#~ msgid "Jeff Snyder"
+#~ msgstr "Jeff Snyder"
+
+#~ msgid "Developer"
+#~ msgstr "Zhvillues"
+
+#~ msgid "Maintainer"
+#~ msgstr "Mirëmbajtës"
+
+#~ msgid "Chris Luetchford"
+#~ msgstr "Chris Luetchford"
+
+#~ msgid "Malte Starostik"
+#~ msgstr "Malte Starostik"
+
+#~ msgid "Bernd Gehrmann"
+#~ msgstr "Bernd Gehrmann"

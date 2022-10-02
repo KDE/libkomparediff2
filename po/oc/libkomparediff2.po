@@ -1,0 +1,243 @@
+# translation of kompare.po to Occitan (lengadocian)
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2008-08-05 22:28+0200\n"
+"Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
+"Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"Language: oc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "Diferéncia"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "Diferéncia"
+
+#: komparemodellist.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr ""
+
+#: komparemodellist.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr ""
+
+#: komparemodellist.cpp:80
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr ""
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "&File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "&Fichièr"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "Diferéncia"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "Diferéncia"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr ""
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr ""
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr ""
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr ""
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Yannig Marchegay (Kokoyaya)"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "yannig@marchegay.org"
+
+#~ msgid "Navigation"
+#~ msgstr "Navigacion"
+
+#~ msgid "Source"
+#~ msgstr "Sorga"
+
+#~ msgid "Destination"
+#~ msgstr "Destinacion"
+
+#~ msgid "Compare"
+#~ msgstr "Comparar"
+
+#~ msgid "Text View"
+#~ msgstr "Visualizacion de tèxt"
+
+#~ msgid "Destination Folder"
+#~ msgstr "Dorsièr de destinacion"
+
+#~ msgid "Source File"
+#~ msgstr "Fichièr font"
+
+#~ msgid "Unknown"
+#~ msgstr "Desconegut"
+
+#~ msgid "Author"
+#~ msgstr "Autor"
+
+#~ msgid "File Exists"
+#~ msgstr "Lo fichièr existís"
+
+#~ msgid "Overwrite"
+#~ msgstr "Remplaçar"
+
+#~ msgid "Context"
+#~ msgstr "Contèxte"
+
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid "&Settings"
+#~ msgstr "&Paramètres"
+
+#~ msgid "Preferences"
+#~ msgstr "Preferéncias"
+
+#~ msgid "View"
+#~ msgstr "Visualizacion"
+
+#~ msgid "Command Line"
+#~ msgstr "Linha de comanda"
+
+#~ msgid "Options"
+#~ msgstr "Opcions"
+
+#~ msgid "Format"
+#~ msgstr "Format"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Barra d'espleches principala"
+
+#~ msgid "Files"
+#~ msgstr "Fichièrs"
+
+#~ msgid "Appearance"
+#~ msgstr "Aparéncia"
+
+#~ msgid "General"
+#~ msgstr "General"
+
+#~ msgid "&Edit..."
+#~ msgstr "&Edicion..."
+
+#~ msgid "Encoding"
+#~ msgstr "Encodatge"
+
+#~ msgid "Colors"
+#~ msgstr "Colors"
+
+#~ msgid "Font:"
+#~ msgstr "Poliça :"
+
+#~ msgid "Size:"
+#~ msgstr "Talha :"
+
+#, fuzzy
+#~| msgid "Font:"
+#~ msgid "Fonts"
+#~ msgstr "Poliças"
+
+#~ msgid "Developer"
+#~ msgstr "Desvolopaire"
+
+#~ msgid "Maintainer"
+#~ msgstr "Manteneire"

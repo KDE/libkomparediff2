@@ -1,0 +1,744 @@
+# translation of kompare.po to Hindi
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ravishankar Shrivastava <raviratlami@yahoo.com>, 2008.
+# Sameer Singh <lumarzeli30@gmail.com>, 2021.
+# Raghavendra Kamath <raghu@raghukamath.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2021-06-29 20:38+0530\n"
+"Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
+"Language-Team: kde-hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Lokalize 21.04.2\n"
+
+#: komparemodellist.cpp:58
+#, kde-format
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "भिन्नताएँ लागू करें (&A)"
+
+#: komparemodellist.cpp:62
+#, kde-format
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "भिन्नताएँ लागू न करें (&a)"
+
+#: komparemodellist.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "सभी लागू करें (&l)"
+
+#: komparemodellist.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "सभी लागू न करें (&U)"
+
+#: komparemodellist.cpp:80
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "पिछली फ़ाइल (&r)"
+
+#: komparemodellist.cpp:84
+#, kde-format
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "अगली फ़ाइल (&e)"
+
+#: komparemodellist.cpp:88
+#, kde-format
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "पिछली भिन्नता (&P)"
+
+#: komparemodellist.cpp:92
+#, kde-format
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "अगली भिन्नता (&N)"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>कोई मॉडल नहीं या कोई भिन्नता नहीं, यह फ़ाइल:<b>%1</b>, एक वैध डिफ़ फ़ाइल नहीं है।"
+"</qt>"
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr "<qt>डिफ़ <b>%1</b> को फ़ाइल <b>%2</b> में लागू करने में समस्याएँ हैं।</qt>"
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr "<qt>डिफ़ <b>%1</b> को फ़ोल्डर <b>%2</b> में लागू करने में कुछ समस्याएँ हैं।</qt>"
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "अस्थायी फ़ाइल खोल नहीं सके।"
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr "<qt>अस्थाई फ़ाइल <b>%1</b> पर लिखा नहीं जा सका, इसे मिटाया जा रहा है।</qt>"
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt>इष्ट डायरेक्ट्री का सृजन नहीं हो सका<b>%1</b>।\n"
+"फ़ाइल सहेजी नहीं गयी।</qt>"
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>अस्थायी फ़ाइल को ठिकाने तक नहीं पहूंचा पाए <b>%1</b>। अस्थायी फ़ाइल अभी भी <b>"
+"%2</b> में है। आप उसकी प्रतिलिपि स्वयं सही स्थान पर पहुँचा सकते हैं।</qt>"
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "डिफ़ आउटपुट पार्स नहीं कर सका।"
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "फ़ाइलें एक समान हैं।"
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "अस्थायी फ़ाइल पर लिख नहीं सका।"
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+"डिफ़ विकृत है। कुछ पंक्तियाँ पार्स नहीं हो पाईं हैं इसलिए वह डिफ़ दृश्य मेंप्रदर्शित नहीं की "
+"जाएंगी।"
+
+#, fuzzy
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "रविशंकर श्रीवास्तव, जी. करूणाकर"
+
+#, fuzzy
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "raviratlami@aol.in"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "अपना कॉम्पेयर-व्यू-पार्ट लोड नहीं कर सका."
+
+#~ msgid "Navigation"
+#~ msgstr "नेविगेशन"
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "अपना कॉम्पेयर-नेविगेशन-पार्ट लोड नहीं कर सका."
+
+#~ msgid "&Open Diff..."
+#~ msgstr "डिफ़ खोलें... (&O)"
+
+#~ msgid "&Compare Files..."
+#~ msgstr "फ़ाइलों की तुलना करें... (&C)"
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "डिफ़ के साथ यूआरएल ब्लैंड करें... (&B)"
+
+#~ msgid "Show T&ext View"
+#~ msgstr "पाठ दृश्य दिखाएँ (&e)"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr " 0 में से 0 भिन्नताएं"
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 में से 0 फ़ाइलें"
+
+#, fuzzy
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] "फ़ाइलः"
+#~ msgstr[1] ""
+
+#, fuzzy
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] "फ़ाइलः"
+#~ msgstr[1] ""
+
+#, fuzzy
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] ""
+#~ " %1 भिन्नता, इसमें काः %n , %2 लागू किया\n"
+#~ " %1 भिन्नताएँ, इसमें काः %n , %2 लागू किया"
+#~ msgstr[1] ""
+
+#, fuzzy
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] "भिन्नता"
+#~ msgstr[1] ""
+
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "डिफ़ आउटपुट के साथ फ़ाइल/फ़ोल्डर ब्लैंड करें"
+
+#~ msgid "File/Folder"
+#~ msgstr "फ़ाइल/फ़ोल्डर"
+
+#~ msgid "Diff Output"
+#~ msgstr "डिफ आउटपुट"
+
+#~ msgid "Blend"
+#~ msgstr "ब्लेंड"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "इस फ़ाइल या फ़ोल्डर को डिफ़ आउटपुट के साथ ब्लैंड करें"
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "फ़ाइलों या फ़ोल्डरों में तुलना करें"
+
+#~ msgid "Source"
+#~ msgstr "स्रोत"
+
+#~ msgid "Destination"
+#~ msgstr "गंतव्य"
+
+#~ msgid "Compare"
+#~ msgstr "तुलना करें"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "इन फ़ाइलों या फ़ोल्डरों की तुलना करें"
+
+#~ msgid "Text View"
+#~ msgstr "पाठ दृश्य"
+
+#~ msgid "Source Folder"
+#~ msgstr "स्रोत फ़ोल्डर"
+
+#~ msgid "Destination Folder"
+#~ msgstr "गंतव्य फ़ोल्डर"
+
+#~ msgid "Source File"
+#~ msgstr "स्रोत फ़ाइल"
+
+#~ msgid "Destination File"
+#~ msgstr "गंतव्य फ़ाइल"
+
+#~ msgid "Source Line"
+#~ msgstr "स्रोत पंक्ति"
+
+#~ msgid "Destination Line"
+#~ msgstr "गंतव्य पंक्ति"
+
+#~ msgid "Difference"
+#~ msgstr "भिन्नता"
+
+#, fuzzy
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "<qt>छवि जानकारी में परिवर्तन किया गया है, सचमुच रद्द करें?</qt>"
+#~ msgstr[1] ""
+
+#, fuzzy
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] ""
+#~ "बदला %n पंक्ति\n"
+#~ "बदलीं %n पंक्तियाँ"
+#~ msgstr[1] ""
+
+#, fuzzy
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "अंतिम पूर्ववत् किए क्रिया को दोहराता है"
+#~ msgstr[1] ""
+
+#, fuzzy
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] ""
+#~ "प्रविष्ट किया %n पंक्ति\n"
+#~ "प्रविष्ट कीं %n पंक्तियाँ"
+#~ msgstr[1] ""
+
+#, fuzzy
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] "अंतिम पूर्ववत् किए क्रिया को दोहराता है"
+#~ msgstr[1] ""
+
+#, fuzzy
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] ""
+#~ "मिटाया %n पंक्ति\n"
+#~ "मिटाईँ %n पंक्तियाँ"
+#~ msgstr[1] ""
+
+#~ msgid "Unknown"
+#~ msgstr "अज्ञात"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "कॉम्पेयर-नेव-ट्री-पार्ट"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "जॉन फायरबॉग"
+
+#~ msgid "Author"
+#~ msgstr "लेखक"
+
+#~ msgid "Otto Bruggeman"
+#~ msgstr "ओटो ब्रगमेन"
+
+#~ msgid "Save &All"
+#~ msgstr "सभी सहेजें (&A)"
+
+#, fuzzy
+#~| msgid "Save .&diff..."
+#~ msgid "Save &Diff..."
+#~ msgstr "सहेजें .&diff..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "स्रोत तथा गंतव्य अदला-बदली करें"
+
+#~ msgid "Show Statistics"
+#~ msgstr "आंकड़े दिखाएँ"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>यूआरएल <b>%1</b> डाउनलोड नहीं किया जा सकता..</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>यूआरएल <b>%1</b> आपके तंत्र पर मौज़ूद नहीं है..</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "डिफ विकल्प"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|पैच फ़ाइलें"
+
+#~ msgid "Save .diff"
+#~ msgstr "सहेजें .diff"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr "फ़ाइल मौजूद है या लिखने से संरक्षित है, क्या आप इसे मिटाकर लिखना चाहते हैं?"
+
+#~ msgid "File Exists"
+#~ msgstr "फ़ाइल अस्तित्व में है"
+
+#~ msgid "Overwrite"
+#~ msgstr "मिटाकर लिखें"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "मिटाकर नहीं लिखें"
+
+#~ msgid "KomparePart"
+#~ msgstr "काम्पेयर-पार्ट"
+
+#~ msgid "Running diff..."
+#~ msgstr "डिफ चला रहे..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "डिफ़ आउटपुट पारसिंग कर रहे..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "फ़ाइल %1 को फ़ाइल %2 से तुलना किया जा रहा है"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "फ़ाइलों को %1 में से %2 की फ़ाइलों से तुलना किया जा रहा है"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "%1 से डिफ़ आउटपुट देख रहे"
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "डिफ़ आउटपुट %1 से फ़ाइल %2 में ब्लैंड किया जा रहा है"
+
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "डिफ़ आउटपुट %1 से फ़ोल्डर %2 में ब्लैंड किया जा रहा है"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "आपने गंतव्य फ़ाइलों में परिवर्तन किए हैं.\n"
+#~ "क्या आप इसे सहेजना चाहते हैं?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "परिवर्तन सहेजें?"
+
+#~ msgid "Unified"
+#~ msgstr "एकीकृत"
+
+#~ msgid "Context"
+#~ msgstr "कॉन्टेक्स्ट"
+
+#~ msgid "RCS"
+#~ msgstr "आरसीएस"
+
+#~ msgid "Ed"
+#~ msgstr "ईडी"
+
+#~ msgid "Normal"
+#~ msgstr "सामान्य"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr "कोई डिफ़ फ़ाइल नहीं, या कोई 2 फ़ाइलें डिफ़्ड नहीं. अतः कोई आंकड़े उपलब्ध नहीं."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "डिफ आंकड़े"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "आंकड़े:\n"
+#~ "\n"
+#~ "पुरानी फ़ाइल: %1\n"
+#~ "नई फ़ाइल: %2\n"
+#~ "\n"
+#~ "फ़ार्मेट: %3\n"
+#~ "हंक्स की संख्या: %4\n"
+#~ "भिन्नताओं की संख्या: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "आंकड़े:\n"
+#~ "\n"
+#~ "डिफ़ फ़ाइल में फ़ाइलों की संख्या: %1\n"
+#~ "फ़ार्मेट: %2\n"
+#~ "\n"
+#~ "मौज़ूदा पुरानी फ़ाइल: %3\n"
+#~ "मौज़ूदा नई फ़ाइल: %4\n"
+#~ "\n"
+#~ "हंक्स की संख्या: %5\n"
+#~ "भिन्नताओं की संख्या: %6"
+
+#~ msgid "&File"
+#~ msgstr "फ़ाइल (&F)"
+
+#~ msgid "&Difference"
+#~ msgstr "भिन्नता (&D)"
+
+#~ msgid "&Settings"
+#~ msgstr "विन्यास (&S)"
+
+#~ msgid "Preferences"
+#~ msgstr "प्राथमिकताएँ"
+
+#~ msgid "View"
+#~ msgstr "दृश्य"
+
+#~ msgid "View Settings"
+#~ msgstr "दृश्य विन्यास"
+
+#~ msgid "Diff"
+#~ msgstr "डिफ"
+
+#~ msgid "Diff Settings"
+#~ msgstr "डिफ विन्यास"
+
+#~ msgid "Run Diff In"
+#~ msgstr "डिफ़ इसमें चलाएँ"
+
+#~ msgid "Command Line"
+#~ msgstr "कमांड लाइन"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- स्रोत गंतव्य"
+
+#~ msgid "Options"
+#~ msgstr "विकल्प"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "छोटे परिवर्तनों के लिए देखें"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "विशाल फ़ाइलों के लिए ऑप्टीमाइज़ करें"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "केस में परिवर्तनों को नज़र अंदाज़ करें"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "टैब्स को स्पेसेस के रूप में एक्सपांड करें"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "जोड़ी गई या मिटाई गई खाली पंक्तियोँ को नज़र अंदाज़ करें"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "श्वेतस्थान में परिवर्तनों को नज़र अंदाज़ करें"
+
+#~ msgid "Show function names"
+#~ msgstr "फ़ंक्शन नाम दिखाएँ"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "फ़ोल्डर रीकर्सिवली तुलना करें"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "नई फ़ाइलों को खाली समझें"
+
+#~ msgid "Format"
+#~ msgstr "फॉर्मेट"
+
+#~ msgid "Side-by-side"
+#~ msgstr "अगल-बगल में"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "कॉन्टेक्स्ट पंक्तियोँ की संख्याः"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "मुख्य औज़ार पट्टी"
+
+#~ msgid "Files"
+#~ msgstr "फ़ाइल"
+
+#~ msgid "Here you can enter the files you want to compare."
+#~ msgstr "यहाँ पर आप उन फ़ाइलों को भर सकते हैं जिन्हें आप तुलना करना चाहते हैं."
+
+#~ msgid "Here you can change the options for comparing the files."
+#~ msgstr "यहां पर आप फ़ाइलों की तुलना करने के विकल्पों को बदल सकते हैं."
+
+#~ msgid "Appearance"
+#~ msgstr "रूप"
+
+#~ msgid "Here you can change the options for the view."
+#~ msgstr "यहाँ पर आप दृश्य के विकल्पों को बदल सकते हैं."
+
+#~ msgid "Diff Program"
+#~ msgstr "डिफ़ प्रोग्राम"
+
+#~ msgid "Output Format"
+#~ msgstr "आउटपुट फॉर्मेट"
+
+#~ msgid "Lines of Context"
+#~ msgstr "कॉन्टेक्स्ट की पंक्तियाँ"
+
+#~ msgid "General"
+#~ msgstr "सामान्य"
+
+#, fuzzy
+#~| msgid "Treat new files as empty"
+#~ msgid "&Treat new files as empty"
+#~ msgstr "नई फ़ाइलों को खाली समझें"
+
+#, fuzzy
+#~| msgid "This option corresponds to the -I diff option."
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "यह विकल्प -I diff से संबंधित है."
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "छोटे परिवर्तनों के लिए देखें (&L)"
+
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "यह विकल्प -d diff से संबंधित है."
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "बड़ी फ़ाइलों के लिए ऑप्टीमाइज़ करें (&p)"
+
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "यह विकल्प -H diff से संबंधित है."
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "केस में परिवर्तनों को नज़र अंदाज़ करें (&I)"
+
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "यह विकल्प -i diff से संबंधित है."
+
+#~ msgid "Ignore regexp:"
+#~ msgstr "रेगएक्सपी नज़र अंदाज़ करें:"
+
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "यह विकल्प -I diff से संबंधित है."
+
+#~ msgid "&Edit..."
+#~ msgstr "संपादन... (&E)"
+
+#~ msgid "Whitespace"
+#~ msgstr "व्हाइट-स्पेस"
+
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "आउटपुट में टैब्स को स्पेसेस के रूप में एक्सपांड करें (&x)"
+
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "यह विकल्प -t diff से संबंधित है."
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "जोड़ी गई या मिटाई गई खाली पंक्तियोँ को नज़र अंदाज़ करें (&g)"
+
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "यह विकल्प -B diff से संबंधित है."
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "परिवर्तनों को श्वेतस्थान की मात्रा में नज़र अंदाज़ करें (&n)"
+
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "यह विकल्प -b diff से संबंधित है."
+
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "सभी श्वेतस्थान को नज़र अंदाज़ करें (&o)"
+
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "यह विकल्प -w diff से संबंधित है."
+
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "श्वेतस्थान में परिवर्तनों को नज़र अंदाज़ करें (&r)"
+
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "यह विकल्प -E diff से संबंधित है."
+
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "एक्सक्लूड करने के लिए फ़ाइल पैटर्न"
+
+#~ msgid "File with Filenames to Exclude"
+#~ msgstr "फ़ाइलनाम युक्त फ़ाइलें जिन्हें अलग रखना है"
+
+#, fuzzy
+#~| msgid "&Exclude"
+#~ msgid "Exclude"
+#~ msgstr "एक्सक्लूड (&E)"
+
+#~ msgid "Encoding"
+#~ msgstr "एनकोडिंग"
+
+#~ msgid "Colors"
+#~ msgstr "रंग"
+
+#~ msgid "Removed color:"
+#~ msgstr "मिटाया रंगः"
+
+#~ msgid "Changed color:"
+#~ msgstr "बदला रंगः"
+
+#~ msgid "Added color:"
+#~ msgstr "जोड़ा रंगः"
+
+#~ msgid "Applied color:"
+#~ msgstr "लागू किया रंगः"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "माउस व्हील"
+
+#~ msgid "Number of lines:"
+#~ msgstr "पंक्तियों की संख्याः"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "स्पेसेस में टैब्स"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "स्पेसेस की संख्या जिसे टैब कैरेक्टर में बदलना हैः"
+
+#~ msgid "Text Font"
+#~ msgstr "पाठ फ़ॉन्ट"
+
+#~ msgid "Font:"
+#~ msgstr "फ़ॉन्टः"
+
+#~ msgid "Size:"
+#~ msgstr "आकारः"
+
+#, fuzzy
+#~| msgid "&Fonts"
+#~ msgid "Fonts"
+#~ msgstr "फ़ॉन्ट्स (&F)"
+
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "एक प्रोग्राम जो फ़ाइलों के बीच भिन्नताओं को देखता है तथा वैकल्पिक रूप से डिफ़ तैयार करता "
+#~ "है"
+
+#~ msgid "Kompare"
+#~ msgstr "काम्पेयर"
+
+#, fuzzy
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr "(c) 2001-2004, जॉन फायरबॉग तथा ओटो ब्रगमेन"
+
+#~ msgid "Chris Luetchford"
+#~ msgstr "क्रिस लुएचफ़ोर्ड"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "काम्पेयर प्रतीक कलाकार"
+
+#~ msgid "Malte Starostik"
+#~ msgstr "माल्ते स्टारोस्टिक"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "बहुत से अच्छे परामर्श"
+
+#~ msgid "Bernd Gehrmann"
+#~ msgstr "बर्नद गेहमन"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "सर्विसिया डिफ़ प्रदर्शक"
+
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "यह यूआरएल1 को यूआरएल2 के साथ तुलना करता है"
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "इन फ़ाइलों या फ़ोल्डर में तुलना करें"
+
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "अपना कॉम्पेयर-व्यू-पार्ट ढूंढ नहीं सका."
+
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "अपना कॉम्पेयर-नेविगेशन-पार्ट ढूंढ नहीं सका."
+
+#~ msgid "A&ppearance"
+#~ msgstr "शक्ल-सूरत (&p)"
+
+#~ msgid "&Diff"
+#~ msgstr "डिफ़ (&D)"
+
+#~ msgid "&Format"
+#~ msgstr "फॉर्मेट (&F)"
+
+#~ msgid "O&ptions"
+#~ msgstr "विकल्प (&p)"

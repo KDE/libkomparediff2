@@ -1,0 +1,701 @@
+# translation of kompare.po to Icelandic
+# Björgvin Ragnarsson <nifgraup@hotmail.com>, 2004.
+# Sveinn í Felli <sveinki@nett.is>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2009-07-28 20:22+0000\n"
+"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
+"Language-Team: Icelandic <kde-isl@molar.is>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+"\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Apply Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "&Virkja mismun"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "Un&apply Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "&Afvirkja mismun"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+#| msgid "App&ly All"
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "Virkja a&llt"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+#| msgid "&Unapply All"
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "A&fvirkja allt"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "Fy&rri skrá"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "&Næsta skrá"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Previous Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "Fyrra &mismunur"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Next Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "Næsti m&ismunur"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, fuzzy, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr "Enginn mismunur, Þessi skrá: %1, er ekki gild diff skrá."
+
+#: komparemodellist.cpp:262
+#, fuzzy, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr "Það komu upp vandamál við að virkja diff (%1) í skrána (%2)."
+
+#: komparemodellist.cpp:289
+#, fuzzy, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr "Það komu upp vandamál við að virkja diff (%1) í möppuna (%2)."
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "Gat ekki opnað vinnuskrá."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, fuzzy, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr "Gat ekki skrifað í vinnuskrána."
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:435
+#, fuzzy, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"Gat ekki sent vinnuskrána á áfangastaðinn %2. Vinnuskráin er enn tiltæk í: "
+"%1. Þú getur afritað hana handvirkt á rétta staðinn."
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "Gat ekki þáttað diff úttak."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "Skrárnar eru eins."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Gat ekki skrifað í vinnuskrána."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Björgvin Ragnarsson"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "nifgraup@hotmail.com"
+
+#, fuzzy
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "Gat ekki hlaðið okkar KompareViewPart!"
+
+#, fuzzy
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "Gat ekki hlaðið okkar KompareNavigationPart!"
+
+#~ msgid "&Open Diff..."
+#~ msgstr "&Opna Diff..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "&Bera saman skrár..."
+
+#, fuzzy
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "Slóð með."
+
+#, fuzzy
+#~ msgid "Show T&ext View"
+#~ msgstr "Sýna T&exti Skoða"
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 af 0 skrár "
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] "%2 af %1 skrá "
+#~ msgstr[1] " %2 af %1 skrár "
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] "%1 skrá "
+#~ msgstr[1] "%1 skrár "
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " %2 af %1 mismun, %3 virkjað "
+#~ msgstr[1] " %2 of %1 differences, %3 virkjað "
+
+#, fuzzy
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " %1 mismunur "
+#~ msgstr[1] " %1 differences "
+
+#, fuzzy
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "Blanda skrá/möppu við diff úttak"
+
+#~ msgid "File/Folder"
+#~ msgstr "Skrá/mappa"
+
+#~ msgid "Diff Output"
+#~ msgstr "Diff úttak"
+
+#, fuzzy
+#~ msgid "Blend"
+#~ msgstr "Blanda"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "Blanda þessari skrá eða möppu við diff úttakið"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "Ef þú hefur skrifað skráar- eða möppunafn og skrá sem inniheldur diff "
+#~ "úttak í svæðin á þessum glugga, mun þessi hnappur vera virkjaður og með "
+#~ "því að smella á hann opnast aðalgluggi kompare þar sem úttakið af valdri "
+#~ "skrá eða skrám úr möppu eru blandaðar saman við diff úttakið svo þú getur "
+#~ "síðan virkjað mismuninní skrá eða skrárnar. "
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Bera saman skrár eða möppur"
+
+#, fuzzy
+#~ msgid "Source"
+#~ msgstr "Uppruni"
+
+#, fuzzy
+#~ msgid "Destination"
+#~ msgstr "Áfangastaður"
+
+#~ msgid "Compare"
+#~ msgstr "Bera saman"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "Bera saman þessar skrár eða möppur"
+
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "Ef þú slærð inn 2 skráarnöfn eða 2 möppur í svæðin í þessum glugga verður "
+#~ "þessi hnappur virkur og með því að smella á hann hefst samanburður á "
+#~ "völdum skrám eða möppum."
+
+#~ msgid "Text View"
+#~ msgstr "Textasýn"
+
+#, fuzzy
+#~ msgid "Source Folder"
+#~ msgstr "Upprunaleg mappa"
+
+#, fuzzy
+#~ msgid "Destination Folder"
+#~ msgstr "Áfangastaður Mappa"
+
+#, fuzzy
+#~ msgid "Source File"
+#~ msgstr "Frumskrá"
+
+#, fuzzy
+#~ msgid "Destination File"
+#~ msgstr "Áfangastaður Skrá"
+
+#, fuzzy
+#~ msgid "Source Line"
+#~ msgstr "Uppruni Lína"
+
+#, fuzzy
+#~ msgid "Destination Line"
+#~ msgstr "Áfangastaður Lína"
+
+#~ msgid "Difference"
+#~ msgstr "Mismunur"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "Breytti %1 línu"
+#~ msgstr[1] "Breytti %1 línum"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "Bætti við %1 línu"
+#~ msgstr[1] "Bætti við %1 línum"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "Eyddi %1 línu"
+#~ msgstr[1] "Eyddi %1 línum"
+
+#~ msgid "Unknown"
+#~ msgstr "Óþekkt"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "Author"
+#~ msgstr "Höfundur"
+
+#~ msgid "Save &All"
+#~ msgstr "Vist&a Allt"
+
+#, fuzzy
+#~| msgid "Save .&diff..."
+#~ msgid "Save &Diff..."
+#~ msgstr "Vista .&diff..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Víxla á uppruna og áfangastað"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Sýna tölfræði"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>Tókst ekki að ná í slóðina <b>%1</b>.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>Slóðin <b>%1</b> er ekki til á kerfinu þínu.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "Diff valkostir"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Patch skrár"
+
+#~ msgid "Save .diff"
+#~ msgstr "Vista .diff"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr "Skráin er þegar til eða er ritvarin; viltu skrifa yfir hana?"
+
+#~ msgid "File Exists"
+#~ msgstr "Skrá þegar til"
+
+#~ msgid "Overwrite"
+#~ msgstr "Skrifa yfir"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Ekki skrifa yfir"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Running diff..."
+#~ msgstr "Keyri diff..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "Þátta diff útták..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "Ber skrána %1 saman við skrána %2"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "Ber saman skrár í %1 við skrár í %2"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "Sýni diff úttak frá %1"
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "Blanda diff úttaki frá %1 í skrá %2"
+
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "Blanda diff úttaki frá %1 í möppu %2"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Þú hefur gert breytingar á áfangastað.\n"
+#~ "Viltu vista þær?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "Vista breytingar?"
+
+#~ msgid "Unified"
+#~ msgstr "Sameinað"
+
+#~ msgid "Context"
+#~ msgstr "Samhengi"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Venjulegt"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "Engin diff skrá, eða engar tvær skrár hafa verið athugaðar. Þess vegna "
+#~ "eru engar tölfræðiupplýsingar tiltækar."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Diff tölfræði"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Tölfræði:\n"
+#~ "\n"
+#~ "Gamla skráin: %1\n"
+#~ "Nýja skráin: %2\n"
+#~ "\n"
+#~ "Snið: %3\n"
+#~ "Fjöldi blokka: %4\n"
+#~ "Fjöldi mismuna: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Tölfræði:\n"
+#~ "\n"
+#~ "Fjöldi skráa í diff skrá: %1\n"
+#~ "Snið: %2\n"
+#~ "\n"
+#~ "Núverandi gamla skrá: %3\n"
+#~ "Núverandi nýja skrá: %4\n"
+#~ "\n"
+#~ "Fjöldi blokka: %5\n"
+#~ "Fjöldi mismuna: %6"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "&Næsta skrá"
+
+#~ msgid "&Difference"
+#~ msgstr "&Mismunur"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "Stillingar sýnar"
+
+#~ msgid "Preferences"
+#~ msgstr "Stillingar"
+
+#, fuzzy
+#~ msgid "View"
+#~ msgstr "Textasýn"
+
+#~ msgid "View Settings"
+#~ msgstr "Stillingar sýnar"
+
+#~ msgid "Diff"
+#~ msgstr "Diff"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Stillingar diff"
+
+#, fuzzy
+#~ msgid "Run Diff In"
+#~ msgstr "Keyra Diff í"
+
+#~ msgid "Command Line"
+#~ msgstr "Skipanalína"
+
+#, fuzzy
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- source destination"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "Valk&ostir"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "Leita að smærri breytingum"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "Besta fyrir stórar skrár"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "Hunsa breytingar á há-/lágstöfum"
+
+#, fuzzy
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "Breyta dálkalykli í bil"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "Hunsa viðbættar eða fjarlægðar tómar línur"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Hunsa breytingar í bilum"
+
+#~ msgid "Show function names"
+#~ msgstr "Sýna nöfn falla"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "Bera saman möppur arfgengt"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "Fara með nýjar skrár sem tómar"
+
+#~ msgid "Format"
+#~ msgstr "Snið"
+
+#~ msgid "Side-by-side"
+#~ msgstr "Hlið við hlið"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "Fjöldi samhengislína:"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "&Næsta skrá"
+
+#, fuzzy
+#~| msgid "A&ppearance"
+#~ msgid "Appearance"
+#~ msgstr "Út&lit"
+
+#~ msgid "Diff Program"
+#~ msgstr "Diff forrit"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr "Hér getur þú valið annað diff forrit. Á Solaris "
+
+#~ msgid "Output Format"
+#~ msgstr "Úttakssnið"
+
+#~ msgid "Lines of Context"
+#~ msgstr "Línur af samhengi"
+
+#~ msgid "General"
+#~ msgstr "Almennt"
+
+#, fuzzy
+#~| msgid "Treat new files as empty"
+#~ msgid "&Treat new files as empty"
+#~ msgstr "Fara með nýjar skrár sem tómar"
+
+#, fuzzy
+#~| msgid "This corresponds to the -d diff option."
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "Þetta samsvarar -d diff valkostinum."
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "&Skoða eftir minniháttar breytingum"
+
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "Þetta samsvarar -d diff valkostinum."
+
+#, fuzzy
+#~ msgid "O&ptimize for large files"
+#~ msgstr "fyrir"
+
+#, fuzzy
+#~ msgid "&Ignore changes in case"
+#~ msgstr "Hunsa \""
+
+#~ msgid "Ignore regexp:"
+#~ msgstr "Hunsa regexp:"
+
+#~ msgid "&Edit..."
+#~ msgstr "Br&eyta..."
+
+#~ msgid "Whitespace"
+#~ msgstr "Bil"
+
+#, fuzzy
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "Breyta dálkalykli í bil"
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "&Hunsa viðbættar eða fjarlægðar tómar línur"
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "H&unsa breytingar í fjölda bila"
+
+#, fuzzy
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "Hunsa breytingar í bilum"
+
+#, fuzzy
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "Hunsa breytingar í bilum"
+
+#~ msgid "Colors"
+#~ msgstr "Litir"
+
+#~ msgid "Removed color:"
+#~ msgstr "Fjarlægt litur:"
+
+#~ msgid "Changed color:"
+#~ msgstr "Breytt lítur"
+
+#~ msgid "Added color:"
+#~ msgstr "Bætt við litur:"
+
+#~ msgid "Applied color:"
+#~ msgstr "Virkjað litur:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Músarhjól"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Fjöldi lína:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Tab í bil"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "Fjöldi bila til að breyta tab-stafi í:"
+
+#~ msgid "Text Font"
+#~ msgstr "Textaletur"
+
+#~ msgid "Font:"
+#~ msgstr "Letur:"
+
+#~ msgid "Size:"
+#~ msgstr "Stærð:"
+
+#, fuzzy
+#~ msgid "Fonts"
+#~ msgstr "Letur:"
+
+#, fuzzy
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "Forrit til að skoða mismun á milli skráa auk þess sem hægt er að búa til "
+#~ "diff."
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#, fuzzy
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr "(c) 2001-2003, John Firebaugh og Otto Bruggeman"
+
+#, fuzzy
+#~ msgid "Kompare icon artist"
+#~ msgstr "KomparePart"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "Fullt af góðum ráðum"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Cervisia diff skoðari"
+
+#, fuzzy
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "Þetta mun bera slóð 1 við slóð 2."
+
+#, fuzzy
+#~ msgid ""
+#~ "This will open URL1 and expect it to be diff output. URL1 can also be a "
+#~ "'-' and then it will read from standard input. Can be used for instance "
+#~ "for cvs diff | kompare -o -. Kompare will do a check to see if it can "
+#~ "find the original file(s) and then blend the original file(s) into the "
+#~ "diffoutput and show that in the viewer. -n disables the check."
+#~ msgstr "Þetta mun opna slóð 1 og búast því það að hún sé"
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "Bera saman þessar skrár eða möppu"
+
+#, fuzzy
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "Gat ekki funduð okkar KompareViewPart!"
+
+#, fuzzy
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "Gat ekki fundið okkar KompareNavigationPart!"

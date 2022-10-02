@@ -1,0 +1,975 @@
+# translation of kompare.po to Low Saxon
+# Translation of kompare.po to Low Saxon
+#
+# Heiko Evermann <heiko.evermann@gmx.de>, 2005.
+# Manfred Wiese <m.j.wiese@web.de>, 2006, 2008, 2009, 2010, 2011.
+# Sönke Dibbern <s_dibbern@web.de>, 2006, 2007, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2011-09-05 22:49+0200\n"
+"Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
+"Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
+"Language: nds\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Apply Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "Verscheel &anwennen"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "Un&apply Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "Verscheel &torüchnehmen"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+#| msgid "App&ly All"
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "All a&nwennen"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+#| msgid "&Unapply All"
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "All Ännern &torüchnehmen"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "&Verleden Datei"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "&Nakamen Datei"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Previous Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "&Verleden Verscheel"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Next Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "&Nakamen Verscheel"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>Keen Modellen oder keen Verschelen. De Datei <b>%1</b> is keen gellen "
+"Verscheeldatei.</qt>"
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+"<qt>Bi't Anwennen vun den Verscheel <b>%1</b> op de Datei <b>%2</b> hett dat "
+"Problemen geven.</qt>"
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+"<qt>Bi't Anwennen vun den Verscheel <b>%1</b> na den Orner <b>%2</b> hett "
+"dat Problemen geven.</qt>"
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "Temporeerdatei lett sik nich opmaken."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+"<qt>Nich mööglich, na de Temporeerdatei <b>%1</b> to schrieven. Se warrt "
+"wegdaan.</qt>"
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt>De Teelorner <b>%1</b> lett sik nich opstellen.\n"
+"De Datei wöör nich sekert.</qt>"
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>De Temporeerdatei lett sik nich na den Teeloort <b>%1</b> hoochladen. "
+"Dat gifft de Temporeerdatei noch ünner <b>%2</b>. Du kannst ehr vun Hand na "
+"de richtige Steed koperen.</qt>"
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "Diff-Utgaav lett sik nich inlesen."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "De Dateien sünd liek."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Nich mööglich, na de Temporeerdatei to schrieven."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+"De Verscheel is leeg. En poor Regen laat sik nich inlesen un warrt in de "
+"Verscheelansicht nich wiest."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Heiko Evermann, Manfred Wiese, Sönke Dibbern"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "Heiko.Evermann@gmx.de, m.j.wiese@web.de, s_dibbern@web.de"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "Komponent \"KompareViewPart\" lett sik nich laden."
+
+#~ msgid "Navigation"
+#~ msgstr "Stüern"
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "Komponent \"KompareNavigationPart\" lett sik nich laden."
+
+#~ msgid "&Open Diff..."
+#~ msgstr "Verscheeldatei &opmaken..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "Dateien &verglieken..."
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "URL mit Verscheel &mischen..."
+
+#~ msgid "Show T&ext View"
+#~ msgstr "T&extansicht wiesen"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr " 0 vun 0 Verschelen "
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 vun 0 Dateien "
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] "  %2 vun %1 Datei"
+#~ msgstr[1] " %2 vun %1 Dateien"
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] "  %1 Datei "
+#~ msgstr[1] " %1 Dateien "
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " %2 vun %1 Verscheel, %3 anwendt "
+#~ msgstr[1] " %2 vun %1 Verschelen, %3 anwendt "
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " %1 Verscheel "
+#~ msgstr[1] " %1 Verschelen "
+
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "Datei/Orner mit \"diff\"-Utgaav mischen"
+
+#~ msgid "File/Folder"
+#~ msgstr "Datei/Orner"
+
+#~ msgid "Diff Output"
+#~ msgstr "Diff-Utgaav"
+
+#~ msgid "Blend"
+#~ msgstr "Mischen"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "Disse Datei oder Orner mit de \"diff\"-Utgaav mischen"
+
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "Wenn Du den Naam vun en Datei oder Orner un en Datei, de de \"diff\"-"
+#~ "Utgaav bargt, in disse Dialoogfeller indragen hest, warrt disse Knoop "
+#~ "anmaakt. Wenn Du em denn anklickst, geiht de Hööftansicht vun \"Kompare\" "
+#~ "op, binnen de de Datei oder de Orner mit de Utgaav vun \"diff\" mischt "
+#~ "warrt, so dat Du de Verschelen na de Datei(en) tofögen kannst. "
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Dateien oder Ornern verglieken"
+
+#~ msgid "Source"
+#~ msgstr "Born"
+
+#~ msgid "Destination"
+#~ msgstr "Teel"
+
+#~ msgid "Compare"
+#~ msgstr "Verglieken"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "Disse Dateien oder Orner verglieken"
+
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "Wenn Du twee Dateinaams oder twee Ornern in disse Dialoogfeller ingeven "
+#~ "hest, warrt disse Knoop anmaakt. En Vergliek vun de ingeven Dateien oder "
+#~ "Ornern warrt start, wenn Du dor op klickst."
+
+#~ msgid "Text View"
+#~ msgstr "Textansicht"
+
+#~ msgid "Source Folder"
+#~ msgstr "Bornorner"
+
+#~ msgid "Destination Folder"
+#~ msgstr "Teelorner"
+
+#~ msgid "Source File"
+#~ msgstr "Borndatei"
+
+#~ msgid "Destination File"
+#~ msgstr "Teeldatei"
+
+#~ msgid "Source Line"
+#~ msgstr "Borntextreeg"
+
+#~ msgid "Destination Line"
+#~ msgstr "Teeltextreeg"
+
+#~ msgid "Difference"
+#~ msgstr "Verscheel"
+
+#, fuzzy
+#~| msgid "Applied: Changes made to %1 line undone"
+#~| msgid_plural "Applied: Changes made to  %1 lines undone"
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "Anwendt: Ännern an %1 Reeg torüchnahmen"
+#~ msgstr[1] "Anwendt: Ännern an %1 Regen torüchnahmen"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "%1 Reeg ännert"
+#~ msgstr[1] "%1 Regen ännert"
+
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "Anwendt: Infögen vun %1 Reeg torüchnahmen"
+#~ msgstr[1] "Anwendt: Infögen vun %1 Regen torüchnahmen"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "%1 Reeg toföögt"
+#~ msgstr[1] "%1 Regen toföögt"
+
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] "Anwendt: Wegdoon vun %1 Reeg torüchnahmen"
+#~ msgstr[1] "Anwendt: Wegdoon vun %1 Regen torüchnahmen"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "%1 Reeg wegdaan"
+#~ msgstr[1] "%1 Regen wegdaan"
+
+#~ msgid "Unknown"
+#~ msgstr "Nich begäng"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "John Firebaugh"
+
+#~ msgid "Author"
+#~ msgstr "Autor"
+
+#~ msgid "Otto Bruggeman"
+#~ msgstr "Otto Bruggeman"
+
+#~ msgid "Save &All"
+#~ msgstr "&All sekern"
+
+#~ msgid "Save &Diff..."
+#~ msgstr "Verscheel-&Datei sekern..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Born un Teel tuschen"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Statistik wiesen"
+
+#~ msgid "Refresh Diff"
+#~ msgstr "Verscheel opfrischen"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>De URL <b>%1</b> lett sik nich daalladen.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>De URL <b>%1</b> gifft dat op Dien Systeem nich.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "Verscheel-Optschonen"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Kodeplaster-Dateien"
+
+#~ msgid "Save .diff"
+#~ msgstr "\".diff\"-Datei sekern"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr ""
+#~ "De Datei gifft dat al, oder se is schrievschuult; wullt Du ehr "
+#~ "överschrieven?"
+
+#~ msgid "File Exists"
+#~ msgstr "Gifft Datei al"
+
+#~ msgid "Overwrite"
+#~ msgstr "Överschrieven"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Nich överschrieven"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Kevin Kofler"
+#~ msgstr "Kevin Kofler"
+
+#~ msgid "Running diff..."
+#~ msgstr "\"Diff\" löppt..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "Utgaav vun \"diff\" warrt inleest..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "An't Verglieken vun Datei \"%1\" mit Datei \"%2\""
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr ""
+#~ "An't Verglieken vun de Dateien binnen \"%1\" mit de Dateien binnen \"%2\""
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "Utgaav vun \"diff\" för \"%1\""
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "De Verscheel-Utgaav för \"%1\" warrt na Datei \"%2\" tomischt"
+
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "De Verscheel-Utgaav för \"%1\" warrt na Orner \"%2\" tomischt"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Du hest de Teeldatei(en) ännert.\n"
+#~ "Wullt Du ehr sekern?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "Ännern sekern?"
+
+#~ msgid "Unified"
+#~ msgstr "Liekmaakt"
+
+#~ msgid "Context"
+#~ msgstr "Kontext"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed-Skript"
+
+#~ msgid "Normal"
+#~ msgstr "Normaal"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "Keen Statistik verföögbor, wiel dat keen Verscheel-Datei is oder de "
+#~ "Verschelen nich ut twee Dateien kummt."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Diff-Statistik"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Statistik:\n"
+#~ "\n"
+#~ "Ole Datei: %1\n"
+#~ "Niege Datei: %2\n"
+#~ "\n"
+#~ "Formaat: %3\n"
+#~ "Tall vun Stücken: %4\n"
+#~ "Tall vun Verschelen: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Statistik:\n"
+#~ "\n"
+#~ "Dateien binnen Verscheel-Datei: %1\n"
+#~ "Formaat: %2\n"
+#~ "\n"
+#~ "Aktuelle ole Datei: %3\n"
+#~ "Aktuelle niege Datei: %4\n"
+#~ "\n"
+#~ "Stücken: %5\n"
+#~ "Verschelen: %6"
+
+#~ msgid "&File"
+#~ msgstr "&Datei"
+
+#~ msgid "&Difference"
+#~ msgstr "&Verscheel"
+
+#~ msgid "&Settings"
+#~ msgstr "&Instellen"
+
+#~ msgid "Preferences"
+#~ msgstr "Instellen"
+
+#~ msgid "View"
+#~ msgstr "Ansicht"
+
+#~ msgid "View Settings"
+#~ msgstr "Ansicht-Instellen"
+
+#~ msgid "Diff"
+#~ msgstr "Verscheel"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Verscheel-Instellen"
+
+#~ msgid "Run Diff In"
+#~ msgstr "\"diff\" starten in"
+
+#~ msgid "Command Line"
+#~ msgstr "Befehlsreeg"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- Born Teel"
+
+#~ msgid "Options"
+#~ msgstr "Optschonen"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "Na lüttst Sett vun Ännern söken"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "För grote Dateien topassen"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "Ännern vun Groot-/Lüttschrieven övergahn"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "Tabulator- na Freetekens ümwanneln"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "Toföögte oder wegdaan leddige Regen övergahn"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Freetekenännern övergahn"
+
+#~ msgid "Show function names"
+#~ msgstr "Funkschoonnaams wiesen"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "Ok all Ünnerornern verglieken"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "Niege Dateien as leddig behanneln"
+
+#~ msgid "Format"
+#~ msgstr "Formaat"
+
+#~ msgid "Side-by-side"
+#~ msgstr "Blangenanner"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "Tall vun Kontextregen:"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Hööft-Warktüüchbalken"
+
+#~ msgid "Files"
+#~ msgstr "Dateien"
+
+#~ msgid "Here you can enter the files you want to compare."
+#~ msgstr "Hier kannst Du de Dateien ingeven, de Du verglieken wullt."
+
+#~ msgid "Here you can change the options for comparing the files."
+#~ msgstr "Hier kannst Du de Optschonen för den Dateivergliek ännern."
+
+#~ msgid "Appearance"
+#~ msgstr "Utsehn"
+
+#~ msgid "Here you can change the options for the view."
+#~ msgstr "Hier kannst Du de Optschonen för de Ansicht ännern."
+
+#~ msgid ""
+#~ "File used for excluding files cannot be found, please specify another "
+#~ "file."
+#~ msgstr ""
+#~ "De Datei mit utslaten Dateien lett sik nich finnen, giff bitte en an, de "
+#~ "dat geven deit."
+
+#~ msgid "Diff Program"
+#~ msgstr "Verscheelprogramm"
+
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr ""
+#~ "Hier kannst Du en anner Verscheelprogramm utsöken. Op Solaris ünnerstütt "
+#~ "dat Standard-Verscheelprogramm nich all Optschonen vun de GNU-Verschoon. "
+#~ "Hier kannst Du disse Verschoon utsöken."
+
+#~ msgid ""
+#~ "Select the format of the output generated by diff. Unified is the one "
+#~ "that is used most frequently because it is very readable. The KDE "
+#~ "developers like this format the best so use it for sending patches."
+#~ msgstr ""
+#~ "Söök dat Utgaavformaat vun \"diff\" ut. Dat tomehrst bruukte Formaat is "
+#~ "\"Liekmaakt\", wiel dat eenfach to lesen is. De KDE-Schrieverslüüd möögt "
+#~ "dat Formaat op't Leefst, bruuk dat also bitte för't Insennen vun "
+#~ "Kodeplasters."
+
+#~ msgid "Output Format"
+#~ msgstr "Utgaavformaat"
+
+#~ msgid "Lines of Context"
+#~ msgstr "Kontextregen"
+
+#~ msgid ""
+#~ "The number of context lines is normally 2 or 3. This makes the diff "
+#~ "readable and applicable in most cases. More than 3 lines will only bloat "
+#~ "the diff unnecessarily."
+#~ msgstr ""
+#~ "De Tall vun Kontextregen is normalerwies twee oder dree. So lett sik de "
+#~ "Verscheel tomehrst beter lesen un inspelen. Mehr as dree Regen maakt de "
+#~ "Verscheeldatei bloots grötter as dat noot deit.."
+
+#~ msgid "General"
+#~ msgstr "Allgemeen"
+
+#~ msgid "&Treat new files as empty"
+#~ msgstr "Niege Dateien as leddig &behanneln"
+
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "Dit is liek as de Optschoon \"-N\" vun \"diff\"."
+
+#~ msgid ""
+#~ "With this option enabled diff will treat a file that only exists in one "
+#~ "of the directories as empty in the other directory. This means that the "
+#~ "file is compared with an empty file and because of this will appear as "
+#~ "one big insertion or deletion."
+#~ msgstr ""
+#~ "Mit disse Optschoon behannelt diff en Date, de dat bloots binnen een vun "
+#~ "de Ornern gifft, in den anner Orner as leddig. Dat bedüüdt, dat de Datei "
+#~ "mit en leddig Datei vergleken warrt un dorwegen as een groot Infögen oder "
+#~ "Wegmaak opdukt."
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "Na &lüttst Sett vun Ännern söken"
+
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "Dit is liek as de Optschoon \"-d\" vun \"diff\"."
+
+#~ msgid ""
+#~ "With this option enabled diff will try a little harder (at the cost of "
+#~ "more memory) to find fewer changes."
+#~ msgstr ""
+#~ "Is dit anmaakt, versöcht \"diff\" dat wat stärker, dat sik weniger "
+#~ "Verschelen finnen doot, man dat köst mehr Spieker."
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "För grote Dateien &topassen"
+
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "Dit is liek as de Optschoon \"-H\" vun \"diff\"."
+
+#~ msgid ""
+#~ "This option lets diff makes better diffs when using large files. The "
+#~ "definition of large is nowhere to be found though."
+#~ msgstr ""
+#~ "Mit disse Optschoon maakt \"diff\" bi groot Dateien beter Diffs. Man nüms "
+#~ "weet, wat »groot« nu nau heten deit."
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "Ännern vun Groot-/Lüttschrieven ö&vergahn"
+
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "Dit is liek as de Optschoon \"-i\" vun \"diff\"."
+
+#~ msgid ""
+#~ "With this option to ignore changes in case enabled, diff will not "
+#~ "indicate a difference when something in one file is changed into "
+#~ "SoMEthing in the other file."
+#~ msgstr ""
+#~ "Mit disse Optschoon kiekt \"diff\" nich op Groot- un Lüttschrieven; "
+#~ "»GROOT« binnen de een un »groot« binnen de anner Datei gellt denn as liek."
+
+#~ msgid "Ignore regexp:"
+#~ msgstr "Reguleer Utdruck för't Övergahn:"
+
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "Dit is liek as de Optschoon \"-I\" vun \"diff\"."
+
+#~ msgid ""
+#~ "When this checkbox is enabled, an option to diff is given that will make "
+#~ "diff ignore lines that match the regular expression."
+#~ msgstr ""
+#~ "Is dit anmaakt, övergeiht \"diff\" Regen, op de disse regulere Utdruck "
+#~ "passt."
+
+#~ msgid ""
+#~ "Add the regular expression here that you want to use\n"
+#~ "to ignore lines that match it."
+#~ msgstr ""
+#~ "Föög hier den reguleren Utdruck in, mit den Du de Regen\n"
+#~ "övergahn kannst, op de he passt."
+
+#~ msgid "&Edit..."
+#~ msgstr "&Bewerken..."
+
+#~ msgid ""
+#~ "Clicking this will open a regular expression dialog where\n"
+#~ "you can graphically create regular expressions."
+#~ msgstr ""
+#~ "Wenn Du hier klickst, dukt en Dialoog op, binnen den Du\n"
+#~ "reguleer Utdrück graafsch opstellen kannst."
+
+#~ msgid "Whitespace"
+#~ msgstr "Freetekens"
+
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "För de Utgaav Tabulator- na Freetekens ü&mwanneln"
+
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "Dit is liek as de Optschoon \"-t\" vun \"diff\"."
+
+#~ msgid ""
+#~ "This option does not always produce the right result. Due to this "
+#~ "expansion Kompare may have problems applying the change to the "
+#~ "destination file."
+#~ msgstr ""
+#~ "Mit disse Optschoon is dat Resultaat nich jümmers richtig. Mit disse "
+#~ "Verweidern mag Kompare Problemen bi't Bruken vun de Ännern för de "
+#~ "Teeldatei hebben."
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "Toföögte oder wegdaan leddige Regen över&gahn"
+
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "Dit is liek as de Optschoon \"-B\" vun \"diff\"."
+
+#~ msgid ""
+#~ "This can be very useful in situations where code has been reorganized and "
+#~ "empty lines have been added or removed to improve legibility."
+#~ msgstr ""
+#~ "Dit is bannig goot, wenn Kode nieg organiseert wöör un leddig Regen vun "
+#~ "wegen de Leesborkeit toföögt oder wegmaakt wöörn."
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "Ännern vun de Tall vun Freetekens över&gahn"
+
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "Dit is liek as de Optschoon \"-b\" vun \"diff\"."
+
+#~ msgid ""
+#~ "If you are uninterested in differences arising due to, for example, "
+#~ "changes in indentation, then use this option."
+#~ msgstr ""
+#~ "Bruuk disse Opstchoon, wenn Du keen Vermaak hest an de Ännern bi a.B. de "
+#~ "Inrücken."
+
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "All Freetekens över&gahn"
+
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "Dit is liek as de Optschoon \"-w\" vun \"diff\"."
+
+#~ msgid ""
+#~ "This is useful for seeing the significant changes without being "
+#~ "overwhelmed by all the white space changes."
+#~ msgstr ""
+#~ "Mit disse Optschoon kannst Du beter bekieken, wat sik redig ännert hett, "
+#~ "un bruukst Di nich üm ännert Freerüüm quälen."
+
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "Ännern dör Tabulator-Ümwanneln ö&vergahn"
+
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "Dit is liek as de Optschoon \"-E\" vun \"diff\"."
+
+#~ msgid ""
+#~ "If there is a change because tabs have been expanded into spaces in the "
+#~ "other file, then this option will make sure that these do not show up. "
+#~ "Kompare currently has some problems applying such changes so be careful "
+#~ "when you use this option."
+#~ msgstr ""
+#~ "Gifft dat Ännern, bi de Tab- to Freetekens ännert wöörn, warrt disse "
+#~ "Ännern mit disse Optschoon nich wiest. Kompare hett opstunns Problemen "
+#~ "bi't Bruken vun disse Ännern, wees also man vörsichtig mit disse "
+#~ "Optschoon."
+
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "Dateimuster för't Utsluten"
+
+#~ msgid ""
+#~ "If this is checked you can enter a shell pattern in the text box on the "
+#~ "right or select entries from the list."
+#~ msgstr ""
+#~ "Wenn dit aktiveert is, kannst Du en Konsool-Dateimuster in't Textfeld "
+#~ "rechterhand ingeven, oder Indrääg ut de List utsöken."
+
+#~ msgid ""
+#~ "Here you can enter or remove a shell pattern or select one or more "
+#~ "entries from the list."
+#~ msgstr ""
+#~ "Hier kannst Du Konsool-Dateimustern ingeven oder wegmaken, oder een oder "
+#~ "mehr Indrääg ut de List utsöken."
+
+#~ msgid "File with Filenames to Exclude"
+#~ msgstr "Datei mit Dateinaams för't Utsluten"
+
+#~ msgid "If this is checked you can enter a filename in the combo box below."
+#~ msgstr ""
+#~ "Wenn dit aktiveert is, kannst Du en Dateinaam in't Utsöökfeld nerrn "
+#~ "ingeven."
+
+#~ msgid ""
+#~ "Here you can enter the URL of a file with shell patterns to ignore during "
+#~ "the comparison of the folders."
+#~ msgstr ""
+#~ "Hier kannst Du de Adress vun en Datei mit Konsool-Dateimustern ingeven, "
+#~ "de bi't Verglieken vun de Ornern övergahn warrn schöölt."
+
+#~ msgid ""
+#~ "Any file you select in the dialog that pops up when you click it will be "
+#~ "put in the dialog to the left of this button."
+#~ msgstr ""
+#~ "Elk Datei, de Du binnen den Dialoog utsöchst, de bi't Anklicken opdukt, "
+#~ "warrt na den Dialoog linkerhand vun dissen Knoop toföögt."
+
+#~ msgid "Exclude"
+#~ msgstr "Utsluten"
+
+#~ msgid "Encoding"
+#~ msgstr "Koderen"
+
+#~ msgid "Colors"
+#~ msgstr "Klören"
+
+#~ msgid "Removed color:"
+#~ msgstr "Wegdaan Regen:"
+
+#~ msgid "Changed color:"
+#~ msgstr "Ännerte Regen:"
+
+#~ msgid "Added color:"
+#~ msgstr "Toföögte Regen:"
+
+#~ msgid "Applied color:"
+#~ msgstr "Övernahmen Regen:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Muusrad"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Reegtall:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Tabulatoren na Freetekens ümwanneln"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "Freetekens, de för een Tabulator inwesselt warrt:"
+
+#~ msgid "Text Font"
+#~ msgstr "Text-Schriftoort"
+
+#~ msgid "Font:"
+#~ msgstr "Schriftoort:"
+
+#~ msgid "Size:"
+#~ msgstr "Grött:"
+
+#~ msgid "Fonts"
+#~ msgstr "Schriftoorden"
+
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "En Programm för't Ankieken vun Datei-Verschelen un ok för't Opstellen vun "
+#~ "Verscheel-Dateien"
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#, fuzzy
+#~| msgid ""
+#~| "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~| "2004-2005 Jeff Snyder, (c) 2007-2008 Kevin Kofler"
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr ""
+#~ "© 2001-2004 John Firebaugh, © 2001-2005,2009 Otto Bruggeman, © 2004-2005 "
+#~ "Jeff Snyder, © 2007-2008 Kevin Kofler"
+
+#~ msgid "Jeff Snyder"
+#~ msgstr "Jeff Snyder"
+
+#~ msgid "Developer"
+#~ msgstr "Programmschriever"
+
+#~ msgid "Maintainer"
+#~ msgstr "Pleger"
+
+#~ msgid "Chris Luetchford"
+#~ msgstr "Chris Luetchford"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "Maker vun't Kompare-Lüttbild"
+
+#~ msgid "Malte Starostik"
+#~ msgstr "Malte Starostik"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "Vele gode Raatslääg"
+
+#~ msgid "Bernd Gehrmann"
+#~ msgstr "Bernd Gehrmann"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Cervisia-Verscheelkieker"
+
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "URL1 mit URL2 verglieken"
+
+#~ msgid ""
+#~ "This will open URL1 and expect it to be diff output. URL1 can also be a "
+#~ "'-' and then it will read from standard input. Can be used for instance "
+#~ "for cvs diff | kompare -o -. Kompare will do a check to see if it can "
+#~ "find the original file(s) and then blend the original file(s) into the "
+#~ "diffoutput and show that in the viewer. -n disables the check."
+#~ msgstr ""
+#~ "Dit maakt URL1 op un verwacht, dat se en Utgaav vun \"diff\" is. URL1 "
+#~ "kann ok en \"-\" wesen, denn warrt vun de Standardingaav leest. Dit lett "
+#~ "sik t.B. för \"cvs diff | kompare -o -\" bruken. Kompare pröövt denn, wat "
+#~ "dat de Orginaaldatei(en) finnen kann, mischt ehr mit de Verscheelutgaav, "
+#~ "un wiest denn dat Resultaat. De Optschoon \"-n\" maakt disse Prööv ut."
+
+#~ msgid ""
+#~ "This will blend URL2 into URL1, URL2 is expected to be diff output and "
+#~ "URL1 the file or folder that the diffoutput needs to be blended into. "
+#~ msgstr ""
+#~ "Dit mischt URL2 na URL1. URL2 mutt en Verscheeldatei wesen un URL1 de "
+#~ "Datei oder Orner, na de(n) de Verschelen tomischt warrn schöölt. "
+
+#~ msgid ""
+#~ "Disables the check for automatically finding the original file(s) when "
+#~ "using '-' as URL with the -o option."
+#~ msgstr ""
+#~ "Maakt tosamen mit \"-\" as URL un de Optschoon \"-o\" de Prööv för't "
+#~ "automaatsche Finnen vun de Orginaaldatei(en) ut."
+
+#~ msgid ""
+#~ "Use this to specify the encoding when calling it from the command line. "
+#~ "It will default to the local encoding if not specified."
+#~ msgstr ""
+#~ "Mit disse Optschoon lett sik de Koderen bi't Opropen vun de Befehlsreeg "
+#~ "instellen. Wenn Nix instellt is, warrt de lokale Koderen bruukt."
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "Disse Dateien oder Ornern verglieken"
+
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "Komponent \"KompareViewPart\" lett sik nich finnen."
+
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "Komponent \"KompareNavigationPart\" lett sik nich finnen."
+
+#~ msgid "A&ppearance"
+#~ msgstr "&Utsehn"
+
+#~ msgid "&Diff"
+#~ msgstr "&Diff"
+
+#~ msgid "&Format"
+#~ msgstr "&Formaat"
+
+#~ msgid "O&ptions"
+#~ msgstr "O&ptschonen"

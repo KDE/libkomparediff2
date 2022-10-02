@@ -1,0 +1,314 @@
+# Uyghur translation for kompare.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Sahran <sahran.ug@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2013-09-08 07:05+0900\n"
+"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language: ug\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "پەرق"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "پەرق"
+
+#: komparemodellist.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr ""
+
+#: komparemodellist.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr ""
+
+#: komparemodellist.cpp:80
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr ""
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "&File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "ھۆججەت(&F)"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "پەرق"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "پەرق"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "ۋاقىتلىق ھۆججەتنى ئاچالمىدى."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr "<qt>ۋاقىتلىق ھۆججەت<b>%1</b> كە يازغىلى بولمىدى، ئۆچۈرۈۋاتىدۇ.</qt>"
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "diff نىڭ نەتىجىسىنى تەھلىل قىلالمىدى."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "ھۆججەتلەر ئوپئوخشاش."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "ۋاقىتلىق ھۆججەتكە يازالمىدى."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "ئابدۇقادىر ئابلىز, غەيرەت كەنجى"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "sahran.ug@gmail.com,  gheyret@gmail.com"
+
+#~ msgid "Navigation"
+#~ msgstr "يولباشچى"
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] " %1 ھۆججەت "
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " %1 ئوخشىماسلىق "
+
+#~ msgid "Diff Output"
+#~ msgstr "پەرقىنى چىقىرىش"
+
+#~ msgid "Blend"
+#~ msgstr "ئارىلاشما"
+
+#~ msgid "Source"
+#~ msgstr "مەنبە"
+
+#~ msgid "Destination"
+#~ msgstr "نىشان"
+
+#~ msgid "Compare"
+#~ msgstr "سېلىشتۇر"
+
+#~ msgid "Text View"
+#~ msgstr "تېكىست كۆرۈنۈش"
+
+#~ msgid "Destination Folder"
+#~ msgstr "نىشان قىسقۇچ"
+
+#~ msgid "Source File"
+#~ msgstr "مەنبە ھۆججەت"
+
+#~ msgid "Destination File"
+#~ msgstr "نىشان ھۆججەت"
+
+#~ msgid "Source Line"
+#~ msgstr "مەنبە قۇر"
+
+#~ msgid "Unknown"
+#~ msgstr "نامەلۇم"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "John Firebaugh"
+
+#~ msgid "Author"
+#~ msgstr "ئاپتور"
+
+#~ msgid "Show Statistics"
+#~ msgstr "ستاتىستىكا كۆرسەت"
+
+#~ msgid "File Exists"
+#~ msgstr "ھۆججەت مەۋجۇت"
+
+#~ msgid "Overwrite"
+#~ msgstr "قاپلا"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Save Changes?"
+#~ msgstr "ئۆزگەرتكەننى ساقلامدۇ؟"
+
+#~ msgid "Unified"
+#~ msgstr "بىر تۇتاش"
+
+#~ msgid "Context"
+#~ msgstr "مەزمۇن"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "نورمال"
+
+#~ msgid "&Settings"
+#~ msgstr "تەڭشەك(&S)"
+
+#~ msgid "Preferences"
+#~ msgstr "مايىللىق"
+
+#~ msgid "View"
+#~ msgstr "كۆرۈنۈش"
+
+#~ msgid "View Settings"
+#~ msgstr "كۆرۈنۈش تەڭشىكى"
+
+#~ msgid "Diff"
+#~ msgstr "سېلىشتۇرۇش(Diff)"
+
+#~ msgid "Command Line"
+#~ msgstr "بۇيرۇق قۇرى"
+
+#~ msgid "Options"
+#~ msgstr "تاللانما"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "قوشۇلغان ياكى چىقىرىۋېتىلگەن قۇرۇق قۇرلارغا پەرۋا قىلما"
+
+#~ msgid "Format"
+#~ msgstr "پىچىمى"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "ئاساسىي قورال بالداق"
+
+#~ msgid "Files"
+#~ msgstr "ھۆججەتلەر"
+
+#~ msgid "Appearance"
+#~ msgstr "كۆرۈنۈشى"
+
+#~ msgid "Output Format"
+#~ msgstr "چىقىرىش پىچىمى"
+
+#~ msgid "General"
+#~ msgstr "ئادەتتىكى"
+
+#~ msgid "&Edit..."
+#~ msgstr "تەھرىر(&E)…"
+
+#~ msgid "Exclude"
+#~ msgstr "سىرتىدا"
+
+#~ msgid "Encoding"
+#~ msgstr "كودلاش"
+
+#~ msgid "Colors"
+#~ msgstr "رەڭلەر"
+
+#~ msgid "Number of lines:"
+#~ msgstr "قۇر سانى:"
+
+#~ msgid "Text Font"
+#~ msgstr "تېكىست خەت نۇسخىسى"
+
+#~ msgid "Font:"
+#~ msgstr "خەت نۇسخا:"
+
+#~ msgid "Size:"
+#~ msgstr "چوڭلۇقى:"
+
+#~ msgid "Fonts"
+#~ msgstr "خەت نۇسخا"
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#~ msgid "Developer"
+#~ msgstr "ئىجادىيەتچى"
+
+#~ msgid "Maintainer"
+#~ msgstr "مەسئۇل كىشى"
+
+#~ msgid "Malte Starostik"
+#~ msgstr "Malte Starostik"
+
+#~ msgid "Bernd Gehrmann"
+#~ msgstr "Bernd Gehrmann"

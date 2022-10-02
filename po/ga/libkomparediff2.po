@@ -1,0 +1,653 @@
+# Irish translation of kompare
+# Copyright (C) 2009 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kompare package.
+# Kevin Scannell <kscanne@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdesdk/kompare.po\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2004-12-03 14:52-0500\n"
+"Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
+"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
+"3 : 4\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Apply Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "Cuir Difríocht i bh&Feidhm"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "&Apply Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "Cuir Difríocht i bh&Feidhm"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+#| msgid "App&ly All"
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "&Cuir Gach Ceann i bhFeidhm"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+#| msgid "App&ly All"
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "&Cuir Gach Ceann i bhFeidhm"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "An Comhad &Roimhe Seo"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "An Chéad Chomhad &Eile"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Previous Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "An Difríocht Roimhe &Seo"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Next Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "An &Chéad Difríocht Eile"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "Ní féidir comhad sealadach a oscailt."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "Ní féidir an t-aschur diff a pharsáil."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "Is ionann iad na comhaid seo."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Níorbh fhéidir scríobh sa chomhad sealadach."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Séamus Ó Ciardhuáin,Kevin Scannell"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "seoc@iolfree.ie,kscanne@gmail.com"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "Ní féidir ár KompareViewPart a luchtú."
+
+#~ msgid "Navigation"
+#~ msgstr "Nascleanúint"
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "Ní féidir ár KompareNavigationPart a luchtú."
+
+#~ msgid "&Open Diff..."
+#~ msgstr "&Oscail Diff..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "&Cuir Comhaid i gComparáid..."
+
+#~ msgid "Show T&ext View"
+#~ msgstr "Taisp&eáin Amharc Téacs"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr " 0 as 0 difríochtaí "
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 as 0 comhaid "
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] "%2 as aon chomhad "
+#~ msgstr[1] "%2 as dhá chomhad "
+#~ msgstr[2] "%2 as %1 chomhad "
+#~ msgstr[3] "%2 as %1 gcomhad "
+#~ msgstr[4] "%2 as %1 comhad "
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] " aon chomhad "
+#~ msgstr[1] " dhá chomhad "
+#~ msgstr[2] " %1 chomhad "
+#~ msgstr[3] " %1 gcomhad "
+#~ msgstr[4] " %1 comhad "
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " %2 as %1 difríocht, %3 i bhfeidhm "
+#~ msgstr[1] " %2 as %1 dhifríocht, %3 i bhfeidhm "
+#~ msgstr[2] " %2 as %1 dhifríocht, %3 i bhfeidhm "
+#~ msgstr[3] " %2 as %1 ndifríocht, %3 i bhfeidhm "
+#~ msgstr[4] " %2 as %1 difríocht, %3 i bhfeidhm "
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " aon difríocht "
+#~ msgstr[1] " dhá dhifríocht "
+#~ msgstr[2] " %1 dhifríocht "
+#~ msgstr[3] " %1 ndifríocht "
+#~ msgstr[4] " %1 difríocht "
+
+#~ msgid "File/Folder"
+#~ msgstr "Comhad/Comhadlann"
+
+#~ msgid "Diff Output"
+#~ msgstr "Aschur Diff"
+
+#~ msgid "Blend"
+#~ msgstr "Cumaisc"
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Cuir Comhaid nó Comhadlanna i gcomparáid le chéile"
+
+# better than "Comhad Foinse" here since it could be dir too
+#~ msgid "Source"
+#~ msgstr "Foinse"
+
+# better than "Comhad Sprice" here since it could be dir too
+#~ msgid "Destination"
+#~ msgstr "Sprioc"
+
+#~ msgid "Compare"
+#~ msgstr "Cuir i gComparáid"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "Cuir na comhaid/comhadlanna i gcomparáid le chéile"
+
+#~ msgid "Text View"
+#~ msgstr "Amharc Téacs"
+
+#~ msgid "Source Folder"
+#~ msgstr "Fillteán Foinse"
+
+#~ msgid "Destination Folder"
+#~ msgstr "Fillteán Sprice"
+
+#~ msgid "Source File"
+#~ msgstr "Comhad Foinse"
+
+#~ msgid "Destination File"
+#~ msgstr "Comhad Sprice"
+
+#~ msgid "Source Line"
+#~ msgstr "Líne Fhoinse"
+
+#~ msgid "Destination Line"
+#~ msgstr "Líne Sprice"
+
+#~ msgid "Difference"
+#~ msgstr "Difríocht"
+
+#, fuzzy
+#~| msgid "Applied: Changes made to %1 line undone"
+#~| msgid_plural "Applied: Changes made to  %1 lines undone"
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "Curtha i bhfeidhm: Cealaíodh na hathruithe ar %1 líne"
+#~ msgstr[1] "Curtha i bhfeidhm: Cealaíodh na hathruithe ar %1 líne"
+#~ msgstr[2] "Curtha i bhfeidhm: Cealaíodh na hathruithe ar %1 líne"
+#~ msgstr[3] "Curtha i bhfeidhm: Cealaíodh na hathruithe ar %1 líne"
+#~ msgstr[4] "Curtha i bhfeidhm: Cealaíodh na hathruithe ar %1 líne"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "Athraíodh aon líne amháin"
+#~ msgstr[1] "Athraíodh dhá líne"
+#~ msgstr[2] "Athraíodh %1 líne"
+#~ msgstr[3] "Athraíodh %1 líne"
+#~ msgstr[4] "Athraíodh %1 líne"
+
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "Curtha i bhfeidhm: Cealaíodh ionsá %1 líne"
+#~ msgstr[1] "Curtha i bhfeidhm: Cealaíodh ionsá %1 líne"
+#~ msgstr[2] "Curtha i bhfeidhm: Cealaíodh ionsá %1 líne"
+#~ msgstr[3] "Curtha i bhfeidhm: Cealaíodh ionsá %1 líne"
+#~ msgstr[4] "Curtha i bhfeidhm: Cealaíodh ionsá %1 líne"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "Ionsádh aon líne amháin"
+#~ msgstr[1] "Ionsádh dhá líne"
+#~ msgstr[2] "Ionsádh %1 líne"
+#~ msgstr[3] "Ionsádh %1 líne"
+#~ msgstr[4] "Ionsádh %1 líne"
+
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] "Curtha i bhfeidhm: Cealaíodh scriosadh %1 líne"
+#~ msgstr[1] "Curtha i bhfeidhm: Cealaíodh scriosadh %1 líne"
+#~ msgstr[2] "Curtha i bhfeidhm: Cealaíodh scriosadh %1 líne"
+#~ msgstr[3] "Curtha i bhfeidhm: Cealaíodh scriosadh %1 líne"
+#~ msgstr[4] "Curtha i bhfeidhm: Cealaíodh scriosadh %1 líne"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "Scriosadh aon líne amháin"
+#~ msgstr[1] "Scriosadh dhá líne"
+#~ msgstr[2] "Scriosadh %1 líne"
+#~ msgstr[3] "Scriosadh %1 líne"
+#~ msgstr[4] "Scriosadh %1 líne"
+
+#~ msgid "Unknown"
+#~ msgstr "Anaithnid"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "John Firebaugh"
+
+#~ msgid "Author"
+#~ msgstr "Údar"
+
+#~ msgid "Otto Bruggeman"
+#~ msgstr "Otto Bruggeman"
+
+#~ msgid "Save &All"
+#~ msgstr "Sábháil Uile"
+
+#~ msgid "Save &Diff..."
+#~ msgstr "Sábháil &Diff..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Malartaigh Comhad Foinse agus Comhad Sprice"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Taispeáin Staitisticí"
+
+#~ msgid "Refresh Diff"
+#~ msgstr "Athnuaigh Diff"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>Ní féidir URL <b>%1</b> a íosluchtú.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>Níor aimsíodh URL <b>%1</b> ar do chóras.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "Roghanna Diff"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Comhaid Phaiste"
+
+#~ msgid "Save .diff"
+#~ msgstr "Sábháil .diff"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr ""
+#~ "Tá an comhad ann cheana, nó is scríobh-bhactha é; an bhfuil fonn ort "
+#~ "scríobh air?"
+
+#~ msgid "File Exists"
+#~ msgstr "Tá an comhad ann"
+
+#~ msgid "Overwrite"
+#~ msgstr "Forscríobh"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Ná Forscríobh"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Kevin Kofler"
+#~ msgstr "Kevin Kofler"
+
+#~ msgid "Running diff..."
+#~ msgstr "diff á rith..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "Aschur diff á pharsáil..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "Ag cur comhad %1 i gcomparáid le comhad %2"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "Ag cur na gcomhad i %1 leis na comhaid i %2"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Athraíodh an/na sprioc-chomha(i)d.\n"
+#~ "An bhfuil fonn ort do chuid athruithe a shábháil?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "Sábháil Athruithe?"
+
+#~ msgid "Unified"
+#~ msgstr "Aontaithe"
+
+#~ msgid "Context"
+#~ msgstr "Comhthéacs"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Gnách"
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Staitistic Diff"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Staitistic:\n"
+#~ "\n"
+#~ "Seanchomhad: %1\n"
+#~ "Comhad nua: %2\n"
+#~ "\n"
+#~ "Formáid: %3\n"
+#~ "Líon na gcantaí: %4\n"
+#~ "Líon na ndifríochtaí: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Staitistic:\n"
+#~ "\n"
+#~ "Líon na gcomhad i gcomhad diff: %1\n"
+#~ "Formáid: %2\n"
+#~ "\n"
+#~ "Seanchomhad reatha: %3\n"
+#~ "Comhad nua reatha: %4\n"
+#~ "\n"
+#~ "Líon na gcantaí: %5\n"
+#~ "Líon na ndifríochtaí: %6"
+
+#~ msgid "&File"
+#~ msgstr "&Comhad"
+
+#~ msgid "&Difference"
+#~ msgstr "&Difríocht"
+
+#~ msgid "&Settings"
+#~ msgstr "&Socruithe"
+
+#~ msgid "Preferences"
+#~ msgstr "Sainroghanna"
+
+#~ msgid "View"
+#~ msgstr "Amharc"
+
+#~ msgid "View Settings"
+#~ msgstr "Socruithe Amhairc"
+
+#~ msgid "Diff"
+#~ msgstr "Diff"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Socruithe Diff"
+
+#~ msgid "Run Diff In"
+#~ msgstr "Rith Diff I"
+
+#~ msgid "Command Line"
+#~ msgstr "Ainm Orduithe"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- foinse sprioc"
+
+#~ msgid "Options"
+#~ msgstr "Roghanna"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "Optamaigh le haghaidh comhad mór"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Ná bac le hathruithe sa spás bán"
+
+#~ msgid "Show function names"
+#~ msgstr "Taispeáin ainmneacha feidhme"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "Cuir comhadlanna i gcomparáid go hathchúrsach"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "Déileáil le comhaid nua mar chomhaid fholmha"
+
+#~ msgid "Format"
+#~ msgstr "Formáid"
+
+#~ msgid "Side-by-side"
+#~ msgstr "Taobh le taobh"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Príomhbharra Uirlisí"
+
+#~ msgid "Files"
+#~ msgstr "Comhaid"
+
+#~ msgid "Appearance"
+#~ msgstr "Cuma"
+
+#~ msgid "Here you can change the options for the view."
+#~ msgstr "Anseo is féidir roghanna an amhairc a athrú."
+
+#~ msgid "Diff Program"
+#~ msgstr "Clár Diff"
+
+#~ msgid "Output Format"
+#~ msgstr "Formáid an Aschuir"
+
+#~ msgid "General"
+#~ msgstr "Ginearálta"
+
+#~ msgid "&Treat new files as empty"
+#~ msgstr "&Déileáil le comhaid nua mar chomhaid fholmha"
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "O&ptamaigh le haghaidh comhad mór"
+
+#~ msgid "&Edit..."
+#~ msgstr "&Eagar..."
+
+#~ msgid "Whitespace"
+#~ msgstr "Spás bán"
+
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "Déan neamhshuim ar spás bán uile"
+
+#~ msgid "Exclude"
+#~ msgstr "Fág as"
+
+#~ msgid "Encoding"
+#~ msgstr "Ionchódú"
+
+#~ msgid "Colors"
+#~ msgstr "Dathanna"
+
+#~ msgid "Removed color:"
+#~ msgstr "Dath bainte:"
+
+#~ msgid "Changed color:"
+#~ msgstr "Dath athraithe:"
+
+#~ msgid "Added color:"
+#~ msgstr "Dath nua:"
+
+#~ msgid "Applied color:"
+#~ msgstr "Dath i bhfeidhm:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Roth Luiche"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Líon na línte:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Táib go Spásanna"
+
+#~ msgid "Text Font"
+#~ msgstr "Cló"
+
+#~ msgid "Font:"
+#~ msgstr "Cló:"
+
+#~ msgid "Size:"
+#~ msgstr "Méid:"
+
+#~ msgid "Fonts"
+#~ msgstr "Clónna"
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr ""
+#~ "© 2001-2004 John Firebaugh, © 2001-2005,2009 Otto Bruggeman, © 2004-2005 "
+#~ "Jeff Snyder, © 2007-2012 Kevin Kofler"
+
+#~ msgid "Jeff Snyder"
+#~ msgstr "Jeff Snyder"
+
+#~ msgid "Developer"
+#~ msgstr "Forbróir"
+
+#~ msgid "Maintainer"
+#~ msgstr "Cothaitheoir"
+
+#~ msgid "Chris Luetchford"
+#~ msgstr "Chris Luetchford"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "Ealaíontóir deilbhín Kompare"
+
+#~ msgid "Malte Starostik"
+#~ msgstr "Malte Starostik"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "Go leor comhairle maith"
+
+#~ msgid "Bernd Gehrmann"
+#~ msgstr "Bernd Gehrmann"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Amharcán diff Cervisia"
+
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "Cuir URL1 i gcomparáid le URL2"
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "Cuir na comhaid seo, nó na comhadlanna seo, i gcomparáid le chéile"
+
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "Níor aimsíodh ár KompareViewPart."
+
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "Níor aimsíodh ár KompareNavigationPart."
+
+#~ msgid "A&ppearance"
+#~ msgstr "C&uma"
+
+#~ msgid "&Diff"
+#~ msgstr "&Diff"
+
+#~ msgid "&Format"
+#~ msgstr "&Formáid"
+
+#~ msgid "O&ptions"
+#~ msgstr "R&oghanna"
+
+#~ msgid "My Second Test Page"
+#~ msgstr "Mo Dara Leathanach Tástála"

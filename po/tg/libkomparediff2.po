@@ -1,0 +1,845 @@
+# translation of kompare.po to Tajik
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# 2004, infoDev, a World Bank organization
+# 2004, Khujand Computer Technologies, Inc.
+# 2004, Youth Opportunities, NGO
+# Victor Ibragimov <youth_opportunities@tajikngo.org>, 2005.
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2005-09-23 17:16+0500\n"
+"Last-Translator: Victor Ibragimov <youth_opportunities@tajikngo.org>\n"
+"Language-Team: Tajik\n"
+"Language: tg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Apply Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "&Истифодабарии фарқиятҳо"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "Un&apply Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "&Барҳамдиҳии фарқиятҳо"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+#| msgid "App&ly All"
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "Ҳамаро &истифода баред"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+#| msgid "&Unapply All"
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "Ҳамаро и&стифода набаред"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "&Файли пешина"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "&Файли оянда"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Previous Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "&Фарқиятҳои пешина"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Next Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "&Фарқиятҳои оянда"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, fuzzy, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"На амсила ва на фарқият нест. Ин файл <b>%1</b> файли андозаи diff намебошад."
+
+#: komparemodellist.cpp:262
+#, fuzzy, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+"Чанд проблемаҳо буданд барои истифодабарии diff <b>%1</b> ба файли <b>%2</b>."
+
+#: komparemodellist.cpp:289
+#, fuzzy, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+"Дар вақти истифодаи diff ба чанд проблемаҳо шуд<b>%1</b> ба каталоги <b>%2</"
+"b>."
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "Файли муввақатӣ кашода намешавад."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, fuzzy, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr "Ба файли муввақатӣ навишта намешавад."
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:435
+#, fuzzy, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"Наметавонад файли мувафақро ба ҷои номгуфта<b>%1</b>бор кунед. Файли ҷори "
+"буда ҳоло ҳам ҳақиқатан дар таг: <b>%2</b>. Шумо метавонед дастурро дастӣ "
+"нусхабардорӣ намоед."
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "Баромади diff такмил дода намешавад."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "Файлҳо мутобиқ ҳастанд."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Ба файли муввақатӣ навишта намешавад."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr ""
+#~ "НПО \"Имкониятҳои ҷавонон\" ва Khujand Computer Technologies, Inc. USA, "
+#~ "Роҷер Ковакс, Виктор Ибрагимов, Марина Колючева"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr ""
+#~ "youth_opportunities@tajikngo.org, rkovacs@khujand.org, MarinaKL@tajikngo."
+#~ "org"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "Компоненти KompareViewPart пурбор карда нашуда истодааст."
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "Компоненти KompareNavigationPart пурбор карда намешавад."
+
+#~ msgid "&Open Diff..."
+#~ msgstr "&Кушодани Diff..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "&Муқоисаи Файлҳо..."
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "&Якҷоя кардани URL бо Diff..."
+
+#~ msgid "Show T&ext View"
+#~ msgstr "Ба намуди мат&н нишон додан"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr "0 аз 0 фарқиятҳо "
+
+#~ msgid " 0 of 0 files "
+#~ msgstr "0 аз 0 файлҳо "
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] " %2 аз %1 файл "
+#~ msgstr[1] " %2 аз %1 файлҳо"
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] " %1 файл "
+#~ msgstr[1] " %1 файлҳо"
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " %2 аз %1 фарқият, %3 тақрибан "
+#~ msgstr[1] " %2 аз %1 фарқиятҳо, %3 тақрибан "
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " %1 фарқият "
+#~ msgstr[1] " %1 фарқиятҳо"
+
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "Якҷоя кардани файл/каталог бо diff Output"
+
+#~ msgid "File/Folder"
+#~ msgstr "Файл/каталог"
+
+#~ msgid "Diff Output"
+#~ msgstr "Баромадани Diff"
+
+#~ msgid "Blend"
+#~ msgstr "Якҷоя кардан"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "Якҷоя кардани ин файл ё ин ки каталог бо хулосаи diff "
+
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "Агар шумо ба файл ё номи папка ва файле, ки diff -и хуруҷ дар майдонҳо "
+#~ "дар ин диалог ворид гардед баъд ин тугма тавоно месозад ва зер карда "
+#~ "мешавад,он кушода мешавад намуди kompare-и асоси дар он ҷое,ки хуруҷи "
+#~ "ворид гаштаи файл ё файлҳои папка омехта мешавад бо diff хуруҷ,шумо "
+#~ "метавонед баъд дигаргуниҳоро ба файл ё файлҳо гузоред. "
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Муқоиса кардани файлҳо ё каталогҳо"
+
+#~ msgid "Source"
+#~ msgstr "Манбаъ"
+
+#~ msgid "Destination"
+#~ msgstr "Муайян шуда"
+
+#~ msgid "Compare"
+#~ msgstr "Муқоиса кардан"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "Ин файлҳо ё ин ки каталогҳоро муқоиса кунед"
+
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "Агар шумо 2 файли ё 2 каталоги дар фосилаи ин диалог ворид кардед, он "
+#~ "вақт ин тугма дастрас шуда ва дар вақти пахш кардани ӯ муқоисаи файлҳои ё "
+#~ "каталогҳои нишондодаро сар мекунад. "
+
+#~ msgid "Text View"
+#~ msgstr "Аз назар гузаронидани матн"
+
+#~ msgid "Source Folder"
+#~ msgstr "Каталог-манбаъ"
+
+#~ msgid "Destination Folder"
+#~ msgstr "Каталог-муайянкунӣ"
+
+#~ msgid "Source File"
+#~ msgstr "Файли ибтидоӣ"
+
+#~ msgid "Destination File"
+#~ msgstr "Файли муайянкунӣ"
+
+#~ msgid "Source Line"
+#~ msgstr "Сатри ибтидоӣ"
+
+#~ msgid "Destination Line"
+#~ msgstr "Сатри муайянкунӣ"
+
+#~ msgid "Difference"
+#~ msgstr "Фарқият"
+
+#, fuzzy
+#~| msgid "Applied: Changes made to %1 line undone"
+#~| msgid_plural "Applied: Changes made to  %1 lines undone"
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "Татбиқ карда шуд: Тағйири %1 сатр бекор карда шуд"
+#~ msgstr[1] "Татбиқ карда шуд:Тағйири %1 сатрҳо бекор карда шуданд"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "Тағйири %1 сатр"
+#~ msgstr[1] "Тағйири %1 сатрҳо"
+
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "Татбиқ карда шуд: Вориди %1 сатр бекор карда шуд"
+#~ msgstr[1] "Татбиқ карда шуд: Вориди %1 сатрҳо бекор карда шуданд"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "Ниҳодани %1 сатр"
+#~ msgstr[1] "Ниҳодани %1 сатрҳо"
+
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] "Татбиқ карда шуд: Нобуд кардани of %1 сатр бекор карда шуд"
+#~ msgstr[1] "Татбиқ карда шуд: Нобуд кардани of %1 сатрҳо бекор карда шуданд"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "Сатрро %1 нест кардан"
+#~ msgstr[1] "Сатрҳоро %1 нест кардан"
+
+#~ msgid "Unknown"
+#~ msgstr "Номаълум"
+
+#~ msgid "Author"
+#~ msgstr "Муаллиф"
+
+#~ msgid "Save &All"
+#~ msgstr "Ҳамаро &дар хотир гузоштан"
+
+#, fuzzy
+#~| msgid "Save .&diff..."
+#~ msgid "Save &Diff..."
+#~ msgstr "Дар хотир гузоштани &фарқият..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Ивази ҷойҳои сарчашмаҳо ва таъинот"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Нишон додани статистикаҳо"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>Ин URL <b>%1</b> фаровир карда намешавад.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>Ин URL <b>%1</b> дар системаи Шумо вуҷуд надорад.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "Параметрҳои Diff"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr ".diff *.dif *.patch|Файлҳои фарқиятӣ"
+
+#~ msgid "Save .diff"
+#~ msgstr "Дар хотир гузоштани Diff"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr "Файл аллакай вуҷуд дорад.Шумо мехоҳед онро иваз намоед?"
+
+#~ msgid "File Exists"
+#~ msgstr "Файл аллакай вуҷуд дорад"
+
+#~ msgid "Running diff..."
+#~ msgstr "Сар дода шуд diff..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "Коркарди парвариши diff..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "Муқоиса кардани файли %1 бо файли %2"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "Муқоса кардани файлҳо дар %1 бо файлҳои дар %2"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "Аз назар гузарондани парвариши diff аз %1"
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "Якҷо шавии парвариши diff аз файли %1 ба файли %2"
+
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "Якҷо шавии парвариши diff аз %1 ба папкаи %2"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Таъиноти файл иваз гардидааст \n"
+#~ "Шумо мехоҳед онро дар хотира гузоред?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "Тағиротҳоро хотиргузорӣ кунем?"
+
+#~ msgid "Unified"
+#~ msgstr "Муттаҳид"
+
+#~ msgid "Context"
+#~ msgstr "Контекст"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Оддӣ"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "Файли diff нест ё муқоисашави бароварда шуд на ба ду файлҳо.Статистика "
+#~ "дастрас нест."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Фарқияти статистикави"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Статистикаҳо:\n"
+#~ "\n"
+#~ "Файли кӯҳна: %1\n"
+#~ "Файли нав: %2\n"
+#~ "\n"
+#~ "Формат\t %3\n"
+#~ "Андозаи тағирнашуда: %4\n"
+#~ "Андозаи фарқиятҳо: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Статистикаҳо:\n"
+#~ "\n"
+#~ "Андозаи файлҳо дар файли фарқияти: %1\n"
+#~ "Формат: %2\n"
+#~ "\n"
+#~ "Файли кӯҳнаи ҳозира: %3\n"
+#~ "Файли нави ҳозира: %4\n"
+#~ "\n"
+#~ "Андозаи тағир нашида: %5\n"
+#~ "Андозаи фарқиятҳо: %6"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "&Файлҳо"
+
+#~ msgid "&Difference"
+#~ msgstr "&Фарқият"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "Ҷур кардани намудҳо"
+
+#~ msgid "Preferences"
+#~ msgstr "Параметрҳо"
+
+#, fuzzy
+#~ msgid "View"
+#~ msgstr "Аз назар гузаронидани матн"
+
+#~ msgid "View Settings"
+#~ msgstr "Ҷур кардани намудҳо"
+
+#~ msgid "Diff"
+#~ msgstr "Фарқият"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Ҷур кардани фарқиятҳо"
+
+#~ msgid "Run Diff In"
+#~ msgstr "Сар додани Diff ба"
+
+#~ msgid "Command Line"
+#~ msgstr "Сатри командӣ"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa - манбаъи фармон"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "П&араметрҳо"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "Ҷустуҷӯи дигаргуниҳои хурд"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "Муносиб кардан барои файлҳои калон"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "Аҳамият надодани дигаргунӣ дар феҳристи ҳарфҳо"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "Иваз кардани ҷадвалбандиҳо ба фосилаҳо"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "Аҳамият надодани сатрҳои холии иловашуда ё ин ки нестшуда"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Аҳамият надодани ивазшавии фосилаҳо"
+
+#~ msgid "Show function names"
+#~ msgstr "Номҳои вазифаҳоро нишон додан"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "Муқоиса кардани каталогҳо бозгашт "
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "Аҳамият додани файлҳои нав ба мисли холӣ"
+
+#~ msgid "Format"
+#~ msgstr "Андоза"
+
+#~ msgid "Side-by-side"
+#~ msgstr "Назди якдигар"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "Андозаи хатҳо контексти:"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "&Файлҳо"
+
+#~ msgid "Here you can enter the files you want to compare."
+#~ msgstr "Дар инҷо файл барои муқоиса кардан ворид мешавад."
+
+#~ msgid "Here you can change the options for comparing the files."
+#~ msgstr "Дар инҷо параметрҳо барои муқоиса, танзим карда мешавад."
+
+#, fuzzy
+#~| msgid "A&ppearance"
+#~ msgid "Appearance"
+#~ msgstr "Т&ақдимот"
+
+#~ msgid "Here you can change the options for the view."
+#~ msgstr "Дар инҷо параметрҳои визуалӣ танзим карда мешаванд."
+
+#~ msgid "Diff Program"
+#~ msgstr "барномаи diff"
+
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr ""
+#~ "Шумо метавонед интихоб кунед барномаи diff-и ҳархеларо дар инҷо.Дар "
+#~ "Solaris стандарти барномаи diff тарафдори намекунад ҳамаи интихоботро ,ки "
+#~ "тафсири GNU тарафдори мекунад.Бо ин роҳ шумо метавонед тафсирро интихоб "
+#~ "намоед."
+
+#~ msgid ""
+#~ "Select the format of the output generated by diff. Unified is the one "
+#~ "that is used most frequently because it is very readable. The KDE "
+#~ "developers like this format the best so use it for sending patches."
+#~ msgstr ""
+#~ "Интихоб кунед формати парвариш аз тарафи diff барқарор ёфта шуда. "
+#~ "Муттаҳид онест,ки онро гоҳ-гоҳ истифода бурда мешавад барои он ,ки онро "
+#~ "хондан метавонед. Ба коркунандаҳои KDE ин формат хеле маъқул аст, аз "
+#~ "зуртарин барои фиристондани."
+
+#~ msgid "Output Format"
+#~ msgstr "Формат парвариши"
+
+#~ msgid "Lines of Context"
+#~ msgstr "Хатҳои контекст"
+
+#~ msgid ""
+#~ "The number of context lines is normally 2 or 3. This makes the diff "
+#~ "readable and applicable in most cases. More than 3 lines will only bloat "
+#~ "the diff unnecessarily."
+#~ msgstr ""
+#~ "Андозаи хатҳои контексти оддӣ 2-то ё 3-то мебошанд. Ин имкон медиҳад diff-"
+#~ "ро хондан ва дар бисёр корҳо зарур аст. Зиёда аз 3 хатҳо танҳо diff-ро "
+#~ "беҳуда дам мекунад."
+
+#~ msgid "General"
+#~ msgstr "Ҳамагӣ"
+
+#, fuzzy
+#~| msgid "Treat new files as empty"
+#~ msgid "&Treat new files as empty"
+#~ msgstr "Аҳамият додани файлҳои нав ба мисли холӣ"
+
+#, fuzzy
+#~| msgid "This option corresponds to the -I diff option."
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "Ин интихоб ҷавоб медиҳад ба калиди -I."
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "&Кофтани тағиротҳои хурд"
+
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "Ҷавоб медиҳад ба калидӣ -d."
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "М&уносиб кардан барои файлҳои калон"
+
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "Ҷавоб медиҳад ба калиди -H."
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "&Аҳамият надодан ба тағиротҳо кор"
+
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "Ҷавоб медиҳад ба калиди-i."
+
+#~ msgid "Ignore regexp:"
+#~ msgstr "Аҳамият надодан ба regexp:"
+
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "Ин интихоб ҷавоб медиҳад ба калиди -I."
+
+#~ msgid ""
+#~ "Add the regular expression here that you want to use\n"
+#~ "to ignore lines that match it."
+#~ msgstr ""
+#~ "Якҷо кунед иборози мунтазамро дар инҷо барои ,ки шумо мехоҳед истифода "
+#~ "бурдан \n"
+#~ "аҳамият надодан ба хатҳое,ки онро ҷамъ мекунанд."
+
+#~ msgid "&Edit..."
+#~ msgstr "&Вироиш кунед..."
+
+#~ msgid ""
+#~ "Clicking this will open a regular expression dialog where\n"
+#~ "you can graphically create regular expressions."
+#~ msgstr ""
+#~ "Бо пазш кардани кушода мешавад диалоги ибрози мунтазам дар куҷо\n"
+#~ "шумо метавонед бо графика сохтан иброзиҳои мунтазамро."
+
+#~ msgid "Whitespace"
+#~ msgstr "Фосилаҳо"
+
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "Д&ароред фосилаҳоро аз ҷои нишонаҳои табулясивӣ"
+
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "Ҷавоб медиҳад ба калиди -t."
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "А&ҳамият надодан ба якҷо шудаги ё нест шудагии хатҳо холи"
+
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "Ҷавоб медиҳад ба калиди-B."
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "А&ҳамият надодан ба тағиротҳо дар андозаи фосилаҳо"
+
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "Ҷавоб медиҳад ба калиди -b."
+
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "А&ҳамият надодан ба ҳамаи фосилаҳо"
+
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "Ҷавоб медиҳад ба калиди -w."
+
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "А&ҳамият надодан ба фазои фосила"
+
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "Ҷавоб медиҳад ба калиди -E."
+
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "Қолиб бо ном барои махсус"
+
+#~ msgid ""
+#~ "If this is checked you can enter a shell pattern in the text box on the "
+#~ "right or select entries from the list."
+#~ msgstr ""
+#~ "Агар ин тафтиш шуда бошад шумо метавонед ба намунаи пардозандаи фармонҳо "
+#~ "дар қуттии матнии рост ё аз рӯйхат ҷудокардаи дохилшудаҳоро дохил кунед."
+
+#~ msgid ""
+#~ "Here you can enter or remove a shell pattern or select one or more "
+#~ "entries from the list."
+#~ msgstr ""
+#~ "Дар ин ҷо шумо метавонед ворид гардед ё намунаи пардозандаи фармонҳоро ё "
+#~ "ин ки як ё зиёда воридгаштаҳои ҷудо кардаро аз рӯйхат нест кунед."
+
+#~ msgid "File with Filenames to Exclude"
+#~ msgstr "Файл бо номҳои файл барои хориҷ кардан"
+
+#, fuzzy
+#~| msgid ""
+#~| "If this is checked you can enter a filename in the combo box on the "
+#~| "right."
+#~ msgid "If this is checked you can enter a filename in the combo box below."
+#~ msgstr ""
+#~ "Агар ин тафтиш карда шуда бошад шумо метавонед ба номфайли дар combo "
+#~ "қуттии рост буда дохил шавед."
+
+#~ msgid ""
+#~ "Here you can enter the URL of a file with shell patterns to ignore during "
+#~ "the comparison of the folders."
+#~ msgstr ""
+#~ "Дар ин ҷо шумо метавонед ба файли URL дароед бо варақаи мисолҳо дар вақти "
+#~ "муқоисакунии папкаҳо аҳамият дода нашавад."
+
+#~ msgid ""
+#~ "Any file you select in the dialog that pops up when you click it will be "
+#~ "put in the dialog to the left of this button."
+#~ msgstr ""
+#~ "Ягон файли шумо дар диалог ҷудокарда,ки дар боло ногаҳон пайдо мешавад "
+#~ "вақте,ки шумо онро дар диалог гузошта тугмаи чапи онро пахш мекунед."
+
+#, fuzzy
+#~| msgid "&Exclude"
+#~ msgid "Exclude"
+#~ msgstr "&Хориҷ кардан"
+
+#~ msgid "Colors"
+#~ msgstr "Рангҳо"
+
+#~ msgid "Removed color:"
+#~ msgstr "Ранги дур кардашуда:"
+
+#~ msgid "Changed color:"
+#~ msgstr "Ранги тағир гардида:"
+
+#~ msgid "Added color:"
+#~ msgstr "Ранги якҷо шуда:"
+
+#~ msgid "Applied color:"
+#~ msgstr "Ранги тағир карда шуда:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Чархаки муш"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Андозаи хатҳо:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Табуляторҳо ба фосилаҳо"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "Андозаи фосилаҳо барои табдил додани характери табулясия:"
+
+#~ msgid "Text Font"
+#~ msgstr "Шрифти текст"
+
+#~ msgid "Font:"
+#~ msgstr "Шрифт:"
+
+#~ msgid "Size:"
+#~ msgstr "Андоза:"
+
+#, fuzzy
+#~ msgid "Fonts"
+#~ msgstr "Шрифт:"
+
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "Барнома барои намоиши фарқият байни файлҳо ва эҷод кардани файли diff"
+
+#, fuzzy
+#~| msgid "(c) 2001-2004, John Firebaugh and Otto Bruggeman"
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr ""
+#~ "(c) 2001-2004, Джон Файербаух (John Firebaugh) ва Отто Брюггеман (Otto "
+#~ "Bruggeman)"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "Нишонаҳо"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "Бисёр маслиҳатҳои хуб"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Тамошои фарқият дар Cervisia"
+
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "Баробаркунӣ \"Бадарға1\" бо \"Бадарғаи2\""
+
+#~ msgid ""
+#~ "This will open URL1 and expect it to be diff output. URL1 can also be a "
+#~ "'-' and then it will read from standard input. Can be used for instance "
+#~ "for cvs diff | kompare -o -. Kompare will do a check to see if it can "
+#~ "find the original file(s) and then blend the original file(s) into the "
+#~ "diffoutput and show that in the viewer. -n disables the check."
+#~ msgstr ""
+#~ "Интихоб кунед формати парвариш аз тарафи diff барқарор ёфта шуда. "
+#~ "Муттаҳид онест,ки онро гоҳ-гоҳ истифода бурда мешавад барои он ,ки онро "
+#~ "хондан метавонед. Ба коркунандаҳои KDE ин формат хеле маъқул аст, аз "
+#~ "зуртарин барои фиристондани."
+
+#~ msgid ""
+#~ "This will blend URL2 into URL1, URL2 is expected to be diff output and "
+#~ "URL1 the file or folder that the diffoutput needs to be blended into. "
+#~ msgstr ""
+#~ "Ин метавонад URL2 бо URL1 омехта шавад, URL2 умед дорад, ки diff хуруҷ "
+#~ "шавад ва URL1 файл ё папка, ки diff хуруҷ омехта шуда мӯҳтоҷи мекашад. "
+
+#~ msgid ""
+#~ "Disables the check for automatically finding the original file(s) when "
+#~ "using '-' as URL with the -o option."
+#~ msgstr ""
+#~ "Тафтиши ҷустуҷӯи худкорсозии файл(ҳо) аслӣ дар вақти истифодаи - дар "
+#~ "сифати манба бо интихоби -о, бекор мешавад."
+
+#~ msgid ""
+#~ "Use this to specify the encoding when calling it from the command line. "
+#~ "It will default to the local encoding if not specified."
+#~ msgstr ""
+#~ "Инро барои нишон додани рамз гузори истифода баред,вақто,ки фарохондани "
+#~ "он аз рахи фармон аст.Ин пешфарз ба рамз гузории маҳалӣ агар нишон дода "
+#~ "набошад."
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "Муқоиса кардани ин файлҳо ё каталогҳо"
+
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "Компоненти KompareViewPart ёфта нашуд."
+
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "Компоненти KompareNavigationPart ёфта намешавад."
+
+#~ msgid "A&ppearance"
+#~ msgstr "Т&ақдимот"
+
+#~ msgid "&Format"
+#~ msgstr "&Формат"
+
+#~ msgid "O&ptions"
+#~ msgstr "П&араметрҳо"
+
+#~ msgid "Hide T&ext View"
+#~ msgstr "Пинҳ&он кардани аз назар гузаронии матн"

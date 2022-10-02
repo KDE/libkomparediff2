@@ -1,0 +1,957 @@
+# translation of kompare.po to Estonian
+# Copyright (C) 2002, 2003 Free Software Foundation, Inc.
+#
+# Peeter Russak <pezz@tkwcy.ee>, 2002, 2003.
+# Marek Laane <bald@smail.ee>, 2009, 2010, 2011, 2012, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2020-05-04 11:07+0300\n"
+"Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
+"Language-Team: Estonian <kde-et@lists.linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.12.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: komparemodellist.cpp:58
+#, kde-format
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "&Rakenda erinevus"
+
+#: komparemodellist.cpp:62
+#, kde-format
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "&Eemalda erinevus"
+
+#: komparemodellist.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "&Rakenda kõik"
+
+#: komparemodellist.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "Tü&hista kõigi rakendamine"
+
+#: komparemodellist.cpp:80
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "&Eelmine fail"
+
+#: komparemodellist.cpp:84
+#, kde-format
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "&Järgmine fail"
+
+#: komparemodellist.cpp:88
+#, kde-format
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "Ee&lmine erinevus"
+
+#: komparemodellist.cpp:92
+#, kde-format
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "Jär&gmine erinevus"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>Ei ole mudelit ega erinevusi, sest fail <b>%1</b> ei ole mitte korralik "
+"diff-fail.</qt>"
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+"<qt>Diff-faili <b>%1</b> rakendamisel failile <b>%2</b> tekkis probleeme.</"
+"qt>"
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+"<qt>Diff-faili <b>%1</b> rakendamisel kataloogile <b>%2</b> tekkis probleeme."
+"</qt>"
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "Ajutise faili avamine nurjus."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+"<qt>Ajutisse faili <b>%1</b> kirjutamine nurjus, see kustutatakse.</qt>"
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt>Sihtkataloogi <b>%1</b> loomine nurjus.\n"
+"Faili ei salvestatud.</qt>"
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>Ajutise faili laadimine sihtkohta <b>%1</b> nurjus. Ajutine fail on "
+"endiselt kättesaadav (<b>%2</b>). Kui soovid, võid selle käsitsi õigesse "
+"kohta kopeerida.</qt>"
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "Võrdlemise väljundi parsimine nurjus."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "Failid on identsed."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Ajutisse faili kirjutamine nurjus."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+"Võrdlusfail on vigane. Mõningaid ridu ei õnnestunud parsida ning neid ei "
+"näidata võrdlusvaates."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Peeter Russak"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "pezz@tkwcy.ee"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "Komponendi KompareViewPart laadimine nurjus."
+
+#~ msgid "Navigation"
+#~ msgstr "Liikumine"
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "Komponendi KompareNavigationPart laadimine nurjus."
+
+#~ msgid "&Open Diff..."
+#~ msgstr "&Ava diff..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "&Võrdle faile..."
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "Liida URL di&ffiga..."
+
+#~ msgid "Show T&ext View"
+#~ msgstr "Näita t&ekstivaadet"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr " 0 erinevust 0-st "
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 faili 0-st "
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] " %2 fail %1-st "
+#~ msgstr[1] " %2 faili %1-st "
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] " %1 fail "
+#~ msgstr[1] " %1 faili "
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " %2 erinevus %1-st, %3 rakendatud "
+#~ msgstr[1] " %2 erinevust %1-st, %3 rakendatud "
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " %1 erinevus "
+#~ msgstr[1] " %1 erinevust "
+
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "Faili/kataloogi liitmine võrdlemise väljundiga"
+
+#~ msgid "File/Folder"
+#~ msgstr "Fail/kataloog"
+
+#~ msgid "Diff Output"
+#~ msgstr "Diffi väljund"
+
+#~ msgid "Blend"
+#~ msgstr "Liida"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "Liidab selle faili või kataloogi võrdlemise väljundiga"
+
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "Kui oled määranud faili või kataloogi ja võrdlemise väljundit sisaldava "
+#~ "faili, siis muutub see nupp kasutatavaks ning sellele vajutades ilmub "
+#~ "Kompare peaaken, kus sisestatud faili või kataloogi failide väljund on "
+#~ "liidetud võrdlemise väljundiga, misjärel on võimalik erinevus(ed) failile/"
+#~ "failidele rakendada. "
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Failide või kataloogide võrdlemine"
+
+#~ msgid "Source"
+#~ msgstr "Lähtefail"
+
+#~ msgid "Destination"
+#~ msgstr "Sihtfail"
+
+#~ msgid "Compare"
+#~ msgstr "Võrdle"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "Võrdle neid faile või katalooge"
+
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "Kui sisestasid selle dialoogi väljadesse kahe faili või kataloogi nime, "
+#~ "siis see nupp aktiveerub ning sellele klõpsates käivitub failide või "
+#~ "kataloogide võrdlemine. "
+
+#~ msgid "Text View"
+#~ msgstr "Tekstivaade"
+
+#~ msgid "Source Folder"
+#~ msgstr "Lähtekataloog"
+
+#~ msgid "Destination Folder"
+#~ msgstr "Sihtkataloog"
+
+#~ msgid "Source File"
+#~ msgstr "Lähtefail"
+
+#~ msgid "Destination File"
+#~ msgstr "Sihtfail"
+
+#~ msgid "Source Line"
+#~ msgstr "Lähterida"
+
+#~ msgid "Destination Line"
+#~ msgstr "Sihtrida"
+
+#~ msgid "Difference"
+#~ msgstr "Erinevus"
+
+#, fuzzy
+#~| msgid "Applied: Changes made to %1 line undone"
+#~| msgid_plural "Applied: Changes made to  %1 lines undone"
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "Rakendatud: %1 rea muutmine tagasi võetud"
+#~ msgstr[1] "Rakendatud: %1 rea muutmine tagasi võetud"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "Muudeti %1 rida"
+#~ msgstr[1] "Muudeti %1 rida"
+
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "Rakendatud: %1 rea lisamine tagasi võetud"
+#~ msgstr[1] "Rakendatud: %1 rea lisamine tagasi võetud"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "Lisati %1 rida"
+#~ msgstr[1] "Lisati %1 rida"
+
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] "Rakendatud: %1 rea kustutamine tagasi võetud"
+#~ msgstr[1] "Rakendatud: %1 rea kustutamine tagasi võetud"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "Kustutati %1 rida"
+#~ msgstr[1] "Kustutati %1 rida"
+
+#~ msgid "Unknown"
+#~ msgstr "Tundmatu"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "John Firebaugh"
+
+#~ msgid "Author"
+#~ msgstr "Autor"
+
+#~ msgid "Otto Bruggeman"
+#~ msgstr "Otto Bruggeman"
+
+#~ msgid "Save &All"
+#~ msgstr "S&alvesta kõik"
+
+#~ msgid "Save &Diff..."
+#~ msgstr "Salvesta .&diff..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Vaheta lähtefail sihtfailiga"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Näita statistikat"
+
+#~ msgid "Refresh Diff"
+#~ msgstr "Värskenda võrdlust"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>URL-i <b>%1</b> allalaadimine nurjus.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>URL-i <b>%1</b> ei ole sinu süsteemis olemas.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "Diffi valikud"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Paigafailid"
+
+#~ msgid "Save .diff"
+#~ msgstr "Salvesta .diff"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr ""
+#~ "Fail on olemas või kirjutuskaitsega. Kas soovid selle üle kirjutada?"
+
+#~ msgid "File Exists"
+#~ msgstr "Fail on olemas"
+
+#~ msgid "Overwrite"
+#~ msgstr "Kirjuta üle"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Ära kirjuta üle"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Kevin Kofler"
+#~ msgstr "Kevin Kofle"
+
+#~ msgid "Running diff..."
+#~ msgstr "Diffi täitmine..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "Diffi väljundi parsimine..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "Faili %1 võrdlemine failiga %2"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "%1 ja %2 sisu võrdlemine"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "%1 võrdlemise väljundi vaatamine"
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "%1 võrdlemise väljundi liitmine faili %2"
+
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "%1 võrdlemise väljundi liitmine kataloogi %2"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Sa oled teinud sihtfaili(desse) muudatusi.\n"
+#~ "Kas soovid need salvestada?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "Kas salvestada muudatused?"
+
+#~ msgid "Unified"
+#~ msgstr "Unifitseeritud"
+
+#~ msgid "Context"
+#~ msgstr "Kontekst"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Tavaline"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "DIFF-fail puudub või ei võrreldud kahte faili, seega statistikat pole."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Võrdlemise statistika"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Statistika:\n"
+#~ "\n"
+#~ "Vana fail: %1\n"
+#~ "Uus fail: %2\n"
+#~ "\n"
+#~ "Vorming: %3\n"
+#~ "Tükke: %4\n"
+#~ "Erinevusi: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Statistika:\n"
+#~ "\n"
+#~ "Failide arv diff-failis: %1\n"
+#~ "Vorming: %2\n"
+#~ "\n"
+#~ "Aktiivne vana fail: %3\n"
+#~ "Aktiivne uus fail: %4\n"
+#~ "\n"
+#~ "Tükke: %5\n"
+#~ "Erinevusi: %6"
+
+#~ msgid "&File"
+#~ msgstr "&Fail"
+
+#~ msgid "&Difference"
+#~ msgstr "&Erinevus"
+
+#~ msgid "&Settings"
+#~ msgstr "&Seadistused"
+
+#~ msgid "Preferences"
+#~ msgstr "Seadistused"
+
+#~ msgid "View"
+#~ msgstr "Vaade"
+
+#~ msgid "View Settings"
+#~ msgstr "Vaatamise seadistused"
+
+#~ msgid "Diff"
+#~ msgstr "Diff"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Võrdlemise seadistused"
+
+#~ msgid "Run Diff In"
+#~ msgstr "diff käivitatakse kataloogis"
+
+#~ msgid "Command Line"
+#~ msgstr "Käsurida"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- lähteasukoht"
+
+#~ msgid "Options"
+#~ msgstr "Valikud"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "Otsitakse väiksemaid muudatusi"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "Optimeeritakse suurte failide jaoks"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "Tõstutundetu"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "Tabeldusmärgid muudetakse tühikuteks"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "Ignoreeritakse lisatud või eemaldatud tühje ridu"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Ignoreeritakse muudatusi tühimärkides"
+
+#~ msgid "Show function names"
+#~ msgstr "Näidatakse funktsioonide nimesid"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "Katalooge võrreldakse rekursiivselt"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "Uusi faile koheldakse tühjana"
+
+#~ msgid "Format"
+#~ msgstr "Vorming"
+
+#~ msgid "Side-by-side"
+#~ msgstr "Kõrvuti"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "Kontekstiridade arv:"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Peamine tööriistariba"
+
+#~ msgid "Files"
+#~ msgstr "Failid"
+
+#~ msgid "Here you can enter the files you want to compare."
+#~ msgstr "Siin saab anda failid, mida soovid võrrelda."
+
+#~ msgid "Here you can change the options for comparing the files."
+#~ msgstr "Siin saab muuta failide võrdlemise valikuid."
+
+#~ msgid "Appearance"
+#~ msgstr "Välimus"
+
+#~ msgid "Here you can change the options for the view."
+#~ msgstr "Siin saab muuta vaate valikuid."
+
+#~ msgid ""
+#~ "File used for excluding files cannot be found, please specify another "
+#~ "file."
+#~ msgstr ""
+#~ "Failide välistamiseks kasutatavat faili ei ole olemas. Palun määra mõni "
+#~ "muu fail."
+
+#~ msgid "Diff Program"
+#~ msgstr "Võrdlemisprogramm"
+
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr ""
+#~ "Siin saab valida mõne muu võrdlemisprogrammi. Solarisel ei tunnista "
+#~ "standardsed võrdlemisprogrammid kõiki võtmeid, küll teeb seda GNU "
+#~ "versioon, nii et igati mõttekas oleks just see valida."
+
+#~ msgid ""
+#~ "Select the format of the output generated by diff. Unified is the one "
+#~ "that is used most frequently because it is very readable. The KDE "
+#~ "developers like this format the best so use it for sending patches."
+#~ msgstr ""
+#~ "Vali võrdlemise väljundi vorming. Unifitseeritud on kõige levinum, sest "
+#~ "seda on väga hea jälgida. KDE arendajatele meeldib see ka, nii et just "
+#~ "seda oleks mõttekas kasutada paikade saatmisel."
+
+#~ msgid "Output Format"
+#~ msgstr "Väljundvorming"
+
+#~ msgid "Lines of Context"
+#~ msgstr "Kontekstiread"
+
+#~ msgid ""
+#~ "The number of context lines is normally 2 or 3. This makes the diff "
+#~ "readable and applicable in most cases. More than 3 lines will only bloat "
+#~ "the diff unnecessarily."
+#~ msgstr ""
+#~ "Kontekstiridade arv on tavaliselt 2 või 3, mis muudab väljundi enamasti "
+#~ "loetavaks ja kasutatavaks. Rohkem kui kolme rea korral läheb asi ainult "
+#~ "asjata kirjuks."
+
+#~ msgid "General"
+#~ msgstr "Üldine"
+
+#~ msgid "&Treat new files as empty"
+#~ msgstr "Uusi faile koheldakse &tühjana"
+
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "Vastab võtmele -N."
+
+#~ msgid ""
+#~ "With this option enabled diff will treat a file that only exists in one "
+#~ "of the directories as empty in the other directory. This means that the "
+#~ "file is compared with an empty file and because of this will appear as "
+#~ "one big insertion or deletion."
+#~ msgstr ""
+#~ "Sisselülitamisel koheldakse ainult ühes kataloogis leiduvat faili "
+#~ "võrdlemisel teises kataloogis tühja failina. See tähendab, et faili "
+#~ "võrreldakse tühja failiga ning seetõttu on näha vaid üks suur lisamine "
+#~ "või kustutamine."
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "&Otsitakse väiksemaid muudatusi"
+
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "Vastab võtmele -d."
+
+#~ msgid ""
+#~ "With this option enabled diff will try a little harder (at the cost of "
+#~ "more memory) to find fewer changes."
+#~ msgstr ""
+#~ "Sisselülitamisel püütakse veidi aktiivsemalt (aga rohkem mälu nõudes) "
+#~ "leida ka väiksemaid muudatusi."
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "O&ptimeeritakse suurte failide jaoks"
+
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "Vastab võtmele -H."
+
+#~ msgid ""
+#~ "This option lets diff makes better diffs when using large files. The "
+#~ "definition of large is nowhere to be found though."
+#~ msgstr ""
+#~ "Sisselülitamisel on suurte failide erinevused enamasti paremad. Tõsi, "
+#~ "suure faili mõiste tuleb sul endal määratleda."
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "&Ignoreeritakse suur- ja väiketähe muudatusi"
+
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "Vastab võtmele -i."
+
+#~ msgid ""
+#~ "With this option to ignore changes in case enabled, diff will not "
+#~ "indicate a difference when something in one file is changed into "
+#~ "SoMEthing in the other file."
+#~ msgstr ""
+#~ "Sisselülitamisel eiratakse suur- ja väiketähe erinevusi, nii näiteks ei "
+#~ "anta teada, kui ühe faili MISKI on teises failis miski."
+
+#~ msgid "Ignore regexp:"
+#~ msgstr "Ignoreeritakse regulaaravaldist:"
+
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "Vastab võtmele -I."
+
+#~ msgid ""
+#~ "When this checkbox is enabled, an option to diff is given that will make "
+#~ "diff ignore lines that match the regular expression."
+#~ msgstr ""
+#~ "Sisselülitamisel saab määrata regulaaravaldise, millele vastavaid ridu "
+#~ "erinevuste otsimisel eiratakse."
+
+#~ msgid ""
+#~ "Add the regular expression here that you want to use\n"
+#~ "to ignore lines that match it."
+#~ msgstr ""
+#~ "Anna siin regulaaravaldis, mida soovid kasutada nende\n"
+#~ "ridade ignoreerimiseks, mis sobivad selle regulaaravaldisega."
+
+#~ msgid "&Edit..."
+#~ msgstr "&Muuda..."
+
+#~ msgid ""
+#~ "Clicking this will open a regular expression dialog where\n"
+#~ "you can graphically create regular expressions."
+#~ msgstr ""
+#~ "Klõps sellele nupule avab regulaaravaldiste dialoogi, kus\n"
+#~ "saab graafiliselt regulaaravaldisi koostada."
+
+#~ msgid "Whitespace"
+#~ msgstr "Tühimärk"
+
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "Tabeldusmärgid &muudetakse väljundis tühikuteks"
+
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "Vastab võtmele -t."
+
+#~ msgid ""
+#~ "This option does not always produce the right result. Due to this "
+#~ "expansion Kompare may have problems applying the change to the "
+#~ "destination file."
+#~ msgstr ""
+#~ "See ei anna alati korrektset tulemust. Sisselülitamisel võib Komparel "
+#~ "tekkida probleeme muudatuse rakendamisel sihtfailile."
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "I&gnoreeritakse lisatud või eemaldatud tühje ridu"
+
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "Vastab võtmele -B."
+
+#~ msgid ""
+#~ "This can be very useful in situations where code has been reorganized and "
+#~ "empty lines have been added or removed to improve legibility."
+#~ msgstr ""
+#~ "See võib olla väga kasulik, kui koodi pn ümber korraldatud ning loetavuse "
+#~ "huvides tühje ridu lisatud või eemaldatud."
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "Ig&noreeritakse muudatusi tühimärkide arvus"
+
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "Vastab võtmele -b."
+
+#~ msgid ""
+#~ "If you are uninterested in differences arising due to, for example, "
+#~ "changes in indentation, then use this option."
+#~ msgstr ""
+#~ "Kui sa ei hooli näiteks taandes tehtud muudatustest, tasuks see sisse "
+#~ "lülitada."
+
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "I&gnoreeritakse kõiki tühimärke"
+
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "Vastab võtmele -w."
+
+#~ msgid ""
+#~ "This is useful for seeing the significant changes without being "
+#~ "overwhelmed by all the white space changes."
+#~ msgstr ""
+#~ "Sellest on kasu, kui soovid näha olulisi muudatusi, mitte aga kõiki "
+#~ "erinevusi tühimärkide arvus."
+
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "Igno&reeritakse tabeldusmärkide muutmisest tulenevaid muudatusi"
+
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "Vastab võtmele -E."
+
+#~ msgid ""
+#~ "If there is a change because tabs have been expanded into spaces in the "
+#~ "other file, then this option will make sure that these do not show up. "
+#~ "Kompare currently has some problems applying such changes so be careful "
+#~ "when you use this option."
+#~ msgstr ""
+#~ "Sisselülitamisel ei näidata muudatusi, mis on tekkinud näiteks sellest, "
+#~ "et tabeldusmärgid on asendatud tühikutega. Komparel on praegu selliste "
+#~ "muudatuste rakendamisega probleeme, nii et selle valiku puhul tasuks olla "
+#~ "ettevaatlik."
+
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "Väljajäetavad failimustrid"
+
+#~ msgid ""
+#~ "If this is checked you can enter a shell pattern in the text box on the "
+#~ "right or select entries from the list."
+#~ msgstr ""
+#~ "Selle sisselülitamisel saab sisestada shellimustri paremal asuvasse "
+#~ "tekstikasti või valida mõne kirje nimekirjast."
+
+#~ msgid ""
+#~ "Here you can enter or remove a shell pattern or select one or more "
+#~ "entries from the list."
+#~ msgstr ""
+#~ "Siin saab sisestada või eemaldada shellimustri või valida nimekirjast ühe "
+#~ "või rohkem kirje."
+
+#~ msgid "File with Filenames to Exclude"
+#~ msgstr "Väljajäetavad failinimed"
+
+#~ msgid "If this is checked you can enter a filename in the combo box below."
+#~ msgstr "Sisselülitamisel saab failinime sisestada all asuvasse liitkasti."
+
+#~ msgid ""
+#~ "Here you can enter the URL of a file with shell patterns to ignore during "
+#~ "the comparison of the folders."
+#~ msgstr ""
+#~ "Siia saab sisestada faili URL-i shellimustriga, mida ignoreeritakse "
+#~ "kataloogide võrdlemisel."
+
+#~ msgid ""
+#~ "Any file you select in the dialog that pops up when you click it will be "
+#~ "put in the dialog to the left of this button."
+#~ msgstr ""
+#~ "Kõik klõpsu järel ilmuvas dialoogis valitud failid asetatakse dialoogi "
+#~ "sellest nupust vasakul pool."
+
+#~ msgid "Exclude"
+#~ msgstr "Jäetakse välja"
+
+#~ msgid "Encoding"
+#~ msgstr "Kodeering"
+
+#~ msgid "Colors"
+#~ msgstr "Värvid"
+
+#~ msgid "Removed color:"
+#~ msgstr "Eemaldamise värv:"
+
+#~ msgid "Changed color:"
+#~ msgstr "Muutmise värv:"
+
+#~ msgid "Added color:"
+#~ msgstr "Lisamise värv:"
+
+#~ msgid "Applied color:"
+#~ msgstr "Rakendamise värv:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Hiireratas"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Ridade arv:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Tabeldusmärgid tühikuteks"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "Tabeldusmärgi asendamisel lisatakse tühikuid:"
+
+#~ msgid "Text Font"
+#~ msgstr "Teksti font"
+
+#~ msgid "Font:"
+#~ msgstr "Font:"
+
+#~ msgid "Size:"
+#~ msgstr "Suurus:"
+
+#~ msgid "Fonts"
+#~ msgstr "Fondid"
+
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "Failidevaheliste erinevuste vaatlemise ja .diff-failide genereerimise "
+#~ "rakendus"
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr ""
+#~ "(c) 2001-2004: John Firebaugh, (c) 2001-2005,2009: Otto Bruggeman, (c) "
+#~ "2004-2005: Jeff Snyder, (c) 2007-2012: Kevin Kofler"
+
+#~ msgid "Jeff Snyder"
+#~ msgstr "Jeff Snyder"
+
+#~ msgid "Developer"
+#~ msgstr "Arendaja"
+
+#~ msgid "Maintainer"
+#~ msgstr "Hooldaja"
+
+#~ msgid "Chris Luetchford"
+#~ msgstr "Chris Luetchford"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "Kompare ikooni looja"
+
+#~ msgid "Malte Starostik"
+#~ msgstr "Malte Starostik"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "Palju häid nõuandeid"
+
+#~ msgid "Bernd Gehrmann"
+#~ msgstr "Bernd Gehrmann"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Cervisia diff-failide vaatleja"
+
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "Võrdleb URL1 ja URL2"
+
+#~ msgid ""
+#~ "This will open URL1 and expect it to be diff output. URL1 can also be a "
+#~ "'-' and then it will read from standard input. Can be used for instance "
+#~ "for cvs diff | kompare -o -. Kompare will do a check to see if it can "
+#~ "find the original file(s) and then blend the original file(s) into the "
+#~ "diffoutput and show that in the viewer. -n disables the check."
+#~ msgstr ""
+#~ "See avab URL1 ja eeldab, et tegemist on võrdlemise väljundiga. URL1 võib "
+#~ "olla ka '-', millisel juhul loetakse see standardsisendist. Seda võib "
+#~ "kasutada näiteks cvs diff | kompare -o- jaoks. Kompare uurib, kas suudab "
+#~ "leida originaalfaili(d) ning seejärel liidab originaalfaili(d) võrdlemise "
+#~ "väljundiga ja näidab tulemust. Võti -n keelab uurimise."
+
+#~ msgid ""
+#~ "This will blend URL2 into URL1, URL2 is expected to be diff output and "
+#~ "URL1 the file or folder that the diffoutput needs to be blended into. "
+#~ msgstr ""
+#~ "See liidab URL2 URL1 sisse, kus eeldatakse, et URL2 on võrdlemise väljund "
+#~ "ja URL1 fail või kataloog, millesse võrdlemise väljund tuleb liita. "
+
+#~ msgid ""
+#~ "Disables the check for automatically finding the original file(s) when "
+#~ "using '-' as URL with the -o option."
+#~ msgstr ""
+#~ "Keelab uurimise originaalfaili(de) automaatseks leidmiseks, kui URL on "
+#~ "antud kujul '-' koos võtmega -o."
+
+#~ msgid ""
+#~ "Use this to specify the encoding when calling it from the command line. "
+#~ "It will default to the local encoding if not specified."
+#~ msgstr ""
+#~ "Sellega saab määrata kodeeringu väljakutsumisel käsurealt. Vaikimisi "
+#~ "kohalik kodeering, kui ei ole teisiti määratud."
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "Võrdle neid faile või katalooge"
+
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "Komponenti KompareViewPart ei leitud."
+
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "Komponenti KompareNavigationPart ei leitud."
+
+#~ msgid "A&ppearance"
+#~ msgstr "&Välimus"
+
+#~ msgid "&Diff"
+#~ msgstr "&Diff"
+
+#~ msgid "&Format"
+#~ msgstr "&Vorming"
+
+#~ msgid "O&ptions"
+#~ msgstr "&Valikud"
+
+#~ msgid "Hide T&ext View"
+#~ msgstr "Peida t&ekstivaade"

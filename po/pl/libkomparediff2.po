@@ -1,0 +1,960 @@
+# translation of kompare.po to Polish
+# translation of kompare.po to
+# Version: $Revision: 1344986 $
+# Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2010 Free Software Foundation, Inc.
+#
+# Marta Rybczynska <mrybczynska@poczta.onet.pl>, 2002, 2004, 2005.
+# Krzysztof Lichota <lichota@mimuw.edu.pl>, 2002, 2004, 2005, 2006.
+# Michal Rudolf <mrudolf@kdewebdev.org>, 2003.
+# Marta Rybczyńska <mrybczynsk@poczta.onet.pl>, 2003.
+# Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007, 2008, 2009.
+# Michał Smoczyk <msmoczyk@wp.pl>, 2010.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2013, 2016, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2021-01-02 11:33+0100\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.08.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#: komparemodellist.cpp:58
+#, kde-format
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "Z&astosuj różnicę"
+
+#: komparemodellist.cpp:62
+#, kde-format
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "C&ofnij różnicę"
+
+#: komparemodellist.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "Z&astosuj wszystkie"
+
+#: komparemodellist.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "&Cofnij wszystkie"
+
+#: komparemodellist.cpp:80
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "Pop&rzedni plik"
+
+#: komparemodellist.cpp:84
+#, kde-format
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "&Następny plik"
+
+#: komparemodellist.cpp:88
+#, kde-format
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "&Poprzednia różnica"
+
+#: komparemodellist.cpp:92
+#, kde-format
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "&Następna różnica"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>Brak modeli lub brak różnic. Ten plik: <b>%1</b> nie jest poprawnym "
+"plikiem różnic.</qt>"
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+"<qt>Podczas nakładania poprawki <b>%1</b> na plik <b>%2</b> wystąpiły "
+"problemy.</qt>"
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+"<qt>Podczas nakładania poprawki <b>%1</b> na katalog <b>%2</b> wystąpiły "
+"problemy.</qt>"
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "Nie można otworzyć pliku tymczasowego."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+"<qt>Nie można zapisać pliku tymczasowego <b>%1</b>, zostanie usunięty.</qt>"
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt>Nie można utworzyć katalogu docelowego <b>%1</b>.\n"
+"Plik nie został zapisany.</qt>"
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>Nie można wysłać tymczasowego pliku do lokalizacji docelowej <b>%1</b>. "
+"Plik tymczasowy jest ciągle dostępny: <b>%2</b>. Można go ręcznie skopiować "
+"we właściwe miejsce.</qt>"
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "Nie można przetworzyć wyników diffa."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "Pliki są identyczne."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Nie można zapisać do pliku tymczasowego."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+"Diff jest zdeformowany. Niektóre wiersze nie mogły zostać przetworzone i "
+"przez to nie zostaną wyświetlone w widoku diff."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Marta Rybczyńska"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "mrybczynska@poczta.onet.pl"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "Nie można wczytać elementu programu (KompareViewPart)."
+
+#~ msgid "Navigation"
+#~ msgstr "Nawigacja"
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "Nie można wczytać elementu programu (KompareNavigationPart)."
+
+#~ msgid "&Open Diff..."
+#~ msgstr "&Otwórz diffa..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "&Porównaj pliki..."
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "Połą&cz URL z diffem..."
+
+#~ msgid "Show T&ext View"
+#~ msgstr "Pokaż widok &tekstu"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr " 0 z 0 różnic"
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 z 0 plików"
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] " %2 z %1 pliku "
+#~ msgstr[1] " %2 z %1 plików "
+#~ msgstr[2] " %2 z %1 plików"
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] " %1 plik "
+#~ msgstr[1] " %1 pliki "
+#~ msgstr[2] " %1 plików "
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " %2 z %1 różnicy, zastosowano %3"
+#~ msgstr[1] " %2 z %1 różnic, zastosowano %3"
+#~ msgstr[2] " %2 z %1 różnic, zastosowano %3"
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " %1 różnica "
+#~ msgstr[1] " %1 różnice "
+#~ msgstr[2] " %1 różnic "
+
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "Połącz plik/katalog z wyjściem programu różnicowego"
+
+#~ msgid "File/Folder"
+#~ msgstr "Plik/katalog"
+
+#~ msgid "Diff Output"
+#~ msgstr "Wynik diffa"
+
+#~ msgid "Blend"
+#~ msgstr "Połącz"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "Połącz ten plik lub katalog z wynikiem diffa"
+
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "Jeśli w pola tego okna wpisano nazwę pliku lub katalogu i plik "
+#~ "zawierający wynik diffa, to ten przycisk będzie dostępny i naciśnięcie go "
+#~ "otworzy główne okno kompare, gdzie zawartość wybranego pliku lub plików z "
+#~ "wybranego katalogu będzie połączona z wyjściem diffa tak, aby można było "
+#~ "potem zastosować różnice do pliku lub plików. "
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Porównywanie plików lub katalogów"
+
+#~ msgid "Source"
+#~ msgstr "Źródło"
+
+#~ msgid "Destination"
+#~ msgstr "Cel"
+
+#~ msgid "Compare"
+#~ msgstr "Porównaj"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "Porównaj te pliki albo katalogi"
+
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "Jeśli w pola tego okna dialogowego wpisano 2 nazwy plików lub 2 katalogi, "
+#~ "wtedy ten przycisk będzie dostępny i wciśnięcie go rozpocznie ich "
+#~ "porównywanie. "
+
+#~ msgid "Text View"
+#~ msgstr "Widok jako tekst"
+
+#~ msgid "Source Folder"
+#~ msgstr "Katalog źródłowy"
+
+#~ msgid "Destination Folder"
+#~ msgstr "Katalog wynikowy"
+
+#~ msgid "Source File"
+#~ msgstr "Plik źródłowy"
+
+#~ msgid "Destination File"
+#~ msgstr "Plik wynikowy"
+
+#~ msgid "Source Line"
+#~ msgstr "Linia źródłowa"
+
+#~ msgid "Destination Line"
+#~ msgstr "Linia wynikowa"
+
+#~ msgid "Difference"
+#~ msgstr "Różnica"
+
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "Zastosowano: Zmiany dokonane do %1 wiersza odczynione"
+#~ msgstr[1] "Zastosowano: Zmiany dokonane do %1 wierszy odczynione"
+#~ msgstr[2] "Zastosowano: Zmiany dokonane do %1 wierszy odczynione"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "Zmieniona %1 linia"
+#~ msgstr[1] "Zmienione %1 linie"
+#~ msgstr[2] "Zmienione %1 linii"
+
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "Wycofano wstawienie %1 linii"
+#~ msgstr[1] "Wycofano wstawienie %1 linii"
+#~ msgstr[2] "Wycofano wstawienie %1 linii"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "Wstawiono %1 linię"
+#~ msgstr[1] "Wstawiono %1 linie"
+#~ msgstr[2] "Wstawiono %1 linii"
+
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] "Wycofano usunięcie %1 linii"
+#~ msgstr[1] "Wycofano usunięcie %1 linii"
+#~ msgstr[2] "Wycofano usunięcie %1 linii"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "Usunięto %1 linię"
+#~ msgstr[1] "Usunięto %1 linie"
+#~ msgstr[2] "Usunięto %1 linii"
+
+#~ msgid "Unknown"
+#~ msgstr "Nieznane"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "John Firebaugh"
+
+#~ msgid "Author"
+#~ msgstr "Autor"
+
+#~ msgid "Otto Bruggeman"
+#~ msgstr "Otto Bruggeman"
+
+#~ msgid "Save &All"
+#~ msgstr "Zapisz &wszystkie"
+
+#~ msgid "Save &Diff..."
+#~ msgstr "Zapisz &diff..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Zamień źródło z celem"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Pokaż statystyki"
+
+#~ msgid "Refresh Diff"
+#~ msgstr "Odśwież różnice"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>Nie można pobrać spod adresu URL <b>%1</b>.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>URL <b>%1</b> nie istnieje w tym systemie.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "Opcje diffa"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Pliki łat"
+
+#~ msgid "Save .diff"
+#~ msgstr "Zapisz .diff"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr ""
+#~ "Plik istnieje lub jest zabezpieczony przed zapisem. Czy go nadpisać?"
+
+#~ msgid "File Exists"
+#~ msgstr "Plik istnieje"
+
+#~ msgid "Overwrite"
+#~ msgstr "Nadpisz"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Nie nadpisuj"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Kevin Kofler"
+#~ msgstr "Kevin Kofler"
+
+#~ msgid "Running diff..."
+#~ msgstr "Uruchamianie diffa..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "Parsowanie wyniku diffa..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "Porównywanie pliku %1 z plikiem %2"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "Porównywanie plików w: %1 z plikami w: %2"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "Przeglądanie wyniku diffa z %1"
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "Włączanie wyjścia diffa z %1 do pliku %2"
+
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "Włączanie wyjścia diffa z %1 do katalogu %2"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Wprowadzono zmiany do plików docelowych.\n"
+#~ "Czy je zapisać?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "Czy zapisać zmiany?"
+
+#~ msgid "Unified"
+#~ msgstr "Połączone"
+
+#~ msgid "Context"
+#~ msgstr "Kontekst"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Normalny"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "Brak pliku diff lub diff nie został wykonany na dwóch plikach. Z tego "
+#~ "powodu statystyki nie są dostępne."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Statystyki diffa"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Statystyki:\n"
+#~ "\n"
+#~ "Stary plik: %1\n"
+#~ "Nowy plik: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Liczba części: %4\n"
+#~ "Liczba różnic: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Statystyki:\n"
+#~ "\n"
+#~ "Liczba plików w pliku diff: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Aktualny stary plik: %3\n"
+#~ "Aktualny nowy plik: %4\n"
+#~ "\n"
+#~ "Liczba części: %5\n"
+#~ "Liczba różnic: %6"
+
+#~ msgid "&File"
+#~ msgstr "&Plik"
+
+#~ msgid "&Difference"
+#~ msgstr "&Różnica"
+
+#~ msgid "&Settings"
+#~ msgstr "&Ustawienia"
+
+#~ msgid "Preferences"
+#~ msgstr "Preferencje"
+
+#~ msgid "View"
+#~ msgstr "Widok"
+
+#~ msgid "View Settings"
+#~ msgstr "Ustawienia widoku"
+
+#~ msgid "Diff"
+#~ msgstr "Diff"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Ustawienia diffa"
+
+#~ msgid "Run Diff In"
+#~ msgstr "Uruchom diffa w"
+
+#~ msgid "Command Line"
+#~ msgstr "Wiersz poleceń"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- źródło cel"
+
+#~ msgid "Options"
+#~ msgstr "Opcje"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "Obejrzyj mniejsze zmiany"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "Optymalizuj dla dużych plików"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "Zignoruj zmianę wielkości liter"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "Zamień tabulatory na odstępy"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "Zignoruj dodane lub usunięte puste linie"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Zignoruj zmiany w białych znakach"
+
+#~ msgid "Show function names"
+#~ msgstr "Pokaż nazwy funkcji"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "Porównaj katalogi rekursywnie"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "Traktuj nowe pliki jako puste"
+
+#~ msgid "Format"
+#~ msgstr "Format"
+
+#~ msgid "Side-by-side"
+#~ msgstr "Strona po stronie"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "Liczba linii kontekstu:"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Główny pasek"
+
+#~ msgid "Files"
+#~ msgstr "Pliki"
+
+#~ msgid "Here you can enter the files you want to compare."
+#~ msgstr "Tutaj można podać pliki, które mają być porównane."
+
+#~ msgid "Here you can change the options for comparing the files."
+#~ msgstr "Tutaj można zmienić opcje porównywania plików."
+
+#~ msgid "Appearance"
+#~ msgstr "Wygląd"
+
+#~ msgid "Here you can change the options for the view."
+#~ msgstr "Tutaj można zmienić opcje widoku."
+
+#~ msgid ""
+#~ "File used for excluding files cannot be found, please specify another "
+#~ "file."
+#~ msgstr ""
+#~ "Nie można znaleźć pliku używanego do wyłączania plików, proszę podać inny."
+
+#~ msgid "Diff Program"
+#~ msgstr "Program diff"
+
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr ""
+#~ "Tutaj można wybrać inny program diff. Na Solarisie domyślny program nie "
+#~ "obsługuje wszystkich opcji wersji GNU. W ten sposób można wybrać tą "
+#~ "wersję."
+
+#~ msgid ""
+#~ "Select the format of the output generated by diff. Unified is the one "
+#~ "that is used most frequently because it is very readable. The KDE "
+#~ "developers like this format the best so use it for sending patches."
+#~ msgstr ""
+#~ "Wybór formatu wyjściowego diffa. Zunifikowany jest używany najczęściej, "
+#~ "ponieważ jest czytelny. Twórcy KDE najbardziej go lubią, więc dobrym "
+#~ "pomysłem jest używanie go przy przysyłaniu łat."
+
+#~ msgid "Output Format"
+#~ msgstr "Format wyjściowy"
+
+#~ msgid "Lines of Context"
+#~ msgstr "Linie kontekstu"
+
+#~ msgid ""
+#~ "The number of context lines is normally 2 or 3. This makes the diff "
+#~ "readable and applicable in most cases. More than 3 lines will only bloat "
+#~ "the diff unnecessarily."
+#~ msgstr ""
+#~ "Liczba linii kontekstu to zazwyczaj 2 lub 3. To powoduje, że plik diff "
+#~ "jest czytelny i możliwy do zastosowania w większości przypadków. Liczba "
+#~ "linii większa niż 3 spowoduje nadmierne zwiększenie wielkości pliku."
+
+#~ msgid "General"
+#~ msgstr "Ogólne"
+
+#~ msgid "&Treat new files as empty"
+#~ msgstr "&Traktuj nowe pliki jako puste"
+
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "To odpowiada opcji -N diffa."
+
+#~ msgid ""
+#~ "With this option enabled diff will treat a file that only exists in one "
+#~ "of the directories as empty in the other directory. This means that the "
+#~ "file is compared with an empty file and because of this will appear as "
+#~ "one big insertion or deletion."
+#~ msgstr ""
+#~ "Jeśli ta opcja jest włączona, diff będzie traktował plik istniejący tylko "
+#~ "w jednym katalogu jako pusty w innych. Oznacza to, że plik będzie "
+#~ "porównywany z pustym plikiem i w ten sposób będzie pojawiać się jako "
+#~ "jedna duża zmiana polegająca na wstawieniu lub usunięciu."
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "&Obejrzyj mniejsze zmiany"
+
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "To odpowiada opcji -d diffa."
+
+#~ msgid ""
+#~ "With this option enabled diff will try a little harder (at the cost of "
+#~ "more memory) to find fewer changes."
+#~ msgstr ""
+#~ "Jeśli ta opcja jest włączona, diff będzie próbować (za cenę większej "
+#~ "ilości pamięci) znaleźć mniej zmian."
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "O&ptymalizuj dla dużych plików"
+
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "To odpowiada opcji -H diffa."
+
+#~ msgid ""
+#~ "This option lets diff makes better diffs when using large files. The "
+#~ "definition of large is nowhere to be found though."
+#~ msgstr ""
+#~ "Ta opcja powoduje, że diff wykonuje lepsze pliki różnic dla większych "
+#~ "plików. Niestety, nie istnieje definicja większych plików."
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "Z&ignoruj zmianę wielkości liter"
+
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "To odpowiada opcji -i diffa."
+
+#~ msgid ""
+#~ "With this option to ignore changes in case enabled, diff will not "
+#~ "indicate a difference when something in one file is changed into "
+#~ "SoMEthing in the other file."
+#~ msgstr ""
+#~ "Jeśli włączona jest opcja ignorowania zmian wielkości znaków, diff nie "
+#~ "pokaże zmiany kiedy \"coś\" w pliku zmieniło się na \"coŚ\" w drugim "
+#~ "pliku."
+
+#~ msgid "Ignore regexp:"
+#~ msgstr "Ignoruj wyrażenia regularne:"
+
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "To odpowiada opcji -l diffa."
+
+#~ msgid ""
+#~ "When this checkbox is enabled, an option to diff is given that will make "
+#~ "diff ignore lines that match the regular expression."
+#~ msgstr ""
+#~ "Jeśli to pole jest zaznaczone, diffowi zostanie podana opcja, która "
+#~ "spowoduje zignorowanie wierszy, które pasują do wyrażenia regularnego."
+
+#~ msgid ""
+#~ "Add the regular expression here that you want to use\n"
+#~ "to ignore lines that match it."
+#~ msgstr ""
+#~ "Tutaj można dodać wyrażenie regularne.\n"
+#~ "Spełniające je wiersze będą ignorowane."
+
+#~ msgid "&Edit..."
+#~ msgstr "&Modyfikuj..."
+
+#~ msgid ""
+#~ "Clicking this will open a regular expression dialog where\n"
+#~ "you can graphically create regular expressions."
+#~ msgstr ""
+#~ "Kliknięcie tego otworzy okno dialogowe wyrażeń regularnych,\n"
+#~ "gdzie można je tworzyć graficznie."
+
+#~ msgid "Whitespace"
+#~ msgstr "Biały znak"
+
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "&Zamień tabulatory na odstępy"
+
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "To odpowiada opcji -t diffa."
+
+#~ msgid ""
+#~ "This option does not always produce the right result. Due to this "
+#~ "expansion Kompare may have problems applying the change to the "
+#~ "destination file."
+#~ msgstr ""
+#~ "Ta opcja nie zawsze daje dobry wynik. Z powodu tego rozszerzenia Kompare "
+#~ "może mieć problemy podczas zastosowania zmiany do pliku celu."
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "Zi&gnoruj dodane lub usunięte puste linie"
+
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "To odpowiada opcji -B diffa."
+
+#~ msgid ""
+#~ "This can be very useful in situations where code has been reorganized and "
+#~ "empty lines have been added or removed to improve legibility."
+#~ msgstr ""
+#~ "To może być użyteczne w sytuacjach kiedy kod został poddany reorganizacji "
+#~ "i wstawiano i usuwano puste wiersze w celu poprawy czytelności kodu."
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "Zig&noruj zmiany w liczbie białych znaków"
+
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "To odpowiada opcji -b diffa."
+
+#~ msgid ""
+#~ "If you are uninterested in differences arising due to, for example, "
+#~ "changes in indentation, then use this option."
+#~ msgstr ""
+#~ "Jeśli nie są interesujące zmiany wynikające na przykład ze zmian we "
+#~ "wcięciach, użyj tej opcji."
+
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "Zignoruj &białe znaki"
+
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "To odpowiada opcji -w diffa."
+
+#~ msgid ""
+#~ "This is useful for seeing the significant changes without being "
+#~ "overwhelmed by all the white space changes."
+#~ msgstr ""
+#~ "Jest to użyteczne jeśli chce się zobaczyć istotne zmiany bez modyfikacji "
+#~ "dotyczących białych znaków."
+
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "Zignoruj &zmiany tabulacji w odstępy"
+
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "To odpowiada opcji -E diffa."
+
+#~ msgid ""
+#~ "If there is a change because tabs have been expanded into spaces in the "
+#~ "other file, then this option will make sure that these do not show up. "
+#~ "Kompare currently has some problems applying such changes so be careful "
+#~ "when you use this option."
+#~ msgstr ""
+#~ "Jeśli w pliku zmieniono tabulacje na odstępy, to ta opcja spowoduje, że "
+#~ "takie zmiany nie zostaną pokazane. Kompare ma obecnie problemy przy "
+#~ "zastosowaniu takich zmian, więc opcji tej należy używać ostrożnie."
+
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "Pliki do wyłączenia"
+
+#~ msgid ""
+#~ "If this is checked you can enter a shell pattern in the text box on the "
+#~ "right or select entries from the list."
+#~ msgstr ""
+#~ "Jest zaznaczone, jeśli wprowadzony został wzorzec do pola tekstowego po "
+#~ "prawej lub wybrano element z listy."
+
+#~ msgid ""
+#~ "Here you can enter or remove a shell pattern or select one or more "
+#~ "entries from the list."
+#~ msgstr ""
+#~ "Tu można wpisać lub usunąć wzorzec albo wybrać jeden lub więcej elementów "
+#~ "z listy."
+
+#~ msgid "File with Filenames to Exclude"
+#~ msgstr "Plik z listą nieuwzględnianych plików"
+
+#~ msgid "If this is checked you can enter a filename in the combo box below."
+#~ msgstr ""
+#~ "Jeśli to jest odhaczone, to możesz podać nazwę pliku na liście rozwijanej "
+#~ "poniżej."
+
+#~ msgid ""
+#~ "Here you can enter the URL of a file with shell patterns to ignore during "
+#~ "the comparison of the folders."
+#~ msgstr ""
+#~ "Tu można wpisać URL pliku z wzorcami. Pasujące do nich pliki nie będą "
+#~ "uwzględniane podczas porównywania katalogów."
+
+#~ msgid ""
+#~ "Any file you select in the dialog that pops up when you click it will be "
+#~ "put in the dialog to the left of this button."
+#~ msgstr ""
+#~ "Każdy plik wybrany z okna dialogowego pojawiającego się po kliknięciu "
+#~ "zostanie wstawiony do okna dialogowego po lewej stronie przycisku."
+
+#~ msgid "Exclude"
+#~ msgstr "Wyłącz"
+
+#~ msgid "Encoding"
+#~ msgstr "Kodowanie"
+
+#~ msgid "Colors"
+#~ msgstr "Kolory"
+
+#~ msgid "Removed color:"
+#~ msgstr "Usunięte:"
+
+#~ msgid "Changed color:"
+#~ msgstr "Zmienione:"
+
+#~ msgid "Added color:"
+#~ msgstr "Dodane:"
+
+#~ msgid "Applied color:"
+#~ msgstr "Stosowane:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Rolka myszy"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Liczba linii:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Zamień tabulatory na odstępy"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "Liczba odstępów do zastąpienia tabulatorem:"
+
+#~ msgid "Text Font"
+#~ msgstr "Czcionka dla tekstu"
+
+#~ msgid "Font:"
+#~ msgstr "Czcionka:"
+
+#~ msgid "Size:"
+#~ msgstr "Rozmiar:"
+
+#~ msgid "Fonts"
+#~ msgstr "Czcionki"
+
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "Program do oglądania różnic między plikami i opcjonalnego tworzenia "
+#~ "plików różnicowych"
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+
+#~ msgid "Jeff Snyder"
+#~ msgstr "Jeff Snyder"
+
+#~ msgid "Developer"
+#~ msgstr "Programista"
+
+#~ msgid "Maintainer"
+#~ msgstr "Opiekun"
+
+#~ msgid "Chris Luetchford"
+#~ msgstr "Chris Luetchford"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "Twórca ikon Kompare"
+
+#~ msgid "Malte Starostik"
+#~ msgstr "Malte Starostik"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "Dużo dobrych rad"
+
+#~ msgid "Bernd Gehrmann"
+#~ msgstr "Bernd Gehrmann"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Przeglądarka różnic Cervisii"
+
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "To porówna URL1 z URL2"
+
+#~ msgid ""
+#~ "This will open URL1 and expect it to be diff output. URL1 can also be a "
+#~ "'-' and then it will read from standard input. Can be used for instance "
+#~ "for cvs diff | kompare -o -. Kompare will do a check to see if it can "
+#~ "find the original file(s) and then blend the original file(s) into the "
+#~ "diffoutput and show that in the viewer. -n disables the check."
+#~ msgstr ""
+#~ "To spowoduje otwarcie URL1 jako wyjścia diffa. URL1 może także być '-', a "
+#~ "wtedy odczyt nastąpi ze standardowego wejścia. Może być to użyte na "
+#~ "przykład do cvs diff | kompare -o -. Kompare sprawdzi, czy może znaleźć "
+#~ "oryginalne pliki i włączy je do wyniku diffa oraz pokaże w przeglądarce. -"
+#~ "n wyłącza to sprawdzenie."
+
+#~ msgid ""
+#~ "This will blend URL2 into URL1, URL2 is expected to be diff output and "
+#~ "URL1 the file or folder that the diffoutput needs to be blended into. "
+#~ msgstr ""
+#~ "Spowoduje to włączenie URL2 do URL1, URL2 powinien być wyjściem diffa a "
+#~ "URL1 plikiem lub katalogiem, do którego ma być dołączone. "
+
+#~ msgid ""
+#~ "Disables the check for automatically finding the original file(s) when "
+#~ "using '-' as URL with the -o option."
+#~ msgstr ""
+#~ "Wyłącza automatyczne wyszukiwanie oryginalnych plików przy użyciu '-' "
+#~ "jako URL z opcją '-o'."
+
+#~ msgid ""
+#~ "Use this to specify the encoding when calling it from the command line. "
+#~ "It will default to the local encoding if not specified."
+#~ msgstr ""
+#~ "Umożliwia ustawienie używanego kodowania znaków, kiedy wywołanie programu "
+#~ "następuje z wiersza komend. Domyślną wartością, jeśli inna nie zostanie "
+#~ "podana, jest kodowanie lokalne."
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "Porównaj te pliki albo katalogi"
+
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "Nie można odnaleźć elementu programu (KompareViewPart)."
+
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "Nie można odnaleźć elementu programu (KompareNavigationPart)."

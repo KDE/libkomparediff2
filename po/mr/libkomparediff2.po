@@ -1,0 +1,292 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Chetan Khona <chetan@kompkin.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2013-03-28 14:37+0530\n"
+"Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
+"Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
+"Language: mr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "फरक"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "फरक"
+
+#: komparemodellist.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr ""
+
+#: komparemodellist.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr ""
+
+#: komparemodellist.cpp:80
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr ""
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "फाईल (&F)"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "फरक"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "फरक"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, fuzzy, kde-format
+msgid "Could not open a temporary file."
+msgstr "तात्पुरती फाईल उघडता आली नाही."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr ""
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr ""
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr ""
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "चेतन खोना"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "chetan@kompkin.com"
+
+#, fuzzy
+#~ msgid "Navigation"
+#~ msgstr "संचारण"
+
+#, fuzzy
+#~ msgid "&Compare Files..."
+#~ msgstr "फाईलची तुलना करा"
+
+#, fuzzy
+#~ msgid " 0 of 0 files "
+#~ msgstr "%2%, %1 फाईल पैकी"
+
+#, fuzzy
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] "%2%, 1 फाईल पैकी"
+#~ msgstr[1] "%2%, %1 फाईल पैकी"
+
+#, fuzzy
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] "फाईल"
+#~ msgstr[1] "%1 फाईल्स"
+
+#, fuzzy
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] "फरक"
+#~ msgstr[1] ""
+
+#~ msgid "Source"
+#~ msgstr "स्रोत"
+
+#~ msgid "Destination"
+#~ msgstr "लक्ष्य"
+
+#, fuzzy
+#~ msgid "Source Folder"
+#~ msgstr "स्रोत संचयीका"
+
+#~ msgid "Source File"
+#~ msgstr "स्रोत फाईल"
+
+#~ msgid "Difference"
+#~ msgstr "फरक"
+
+#, fuzzy
+#~ msgid "Unknown"
+#~ msgstr "अपरिचीत"
+
+#~ msgid "Author"
+#~ msgstr "लेखक"
+
+#, fuzzy
+#~ msgid "Save &All"
+#~ msgstr "सर्व साठवा"
+
+#~ msgid "File Exists"
+#~ msgstr "फाईल अस्तित्वात आहे"
+
+#, fuzzy
+#~ msgid "Overwrite"
+#~ msgstr "खोडून लिहा"
+
+#, fuzzy
+#~ msgid "Save Changes?"
+#~ msgstr "बदल साठवा"
+
+#~ msgid "Context"
+#~ msgstr "संदर्भ"
+
+#~ msgid "Normal"
+#~ msgstr "सामान्य"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "संयोजना (&S)"
+
+#, fuzzy
+#~ msgid "Preferences"
+#~ msgstr "प्राधान्ये"
+
+#~ msgid "View"
+#~ msgstr "दृश्य"
+
+#~ msgid "Diff"
+#~ msgstr "Diff"
+
+#~ msgid "Command Line"
+#~ msgstr "आदेश ओळ"
+
+#~ msgid "Options"
+#~ msgstr "पर्याय"
+
+#, fuzzy
+#~ msgid "Format"
+#~ msgstr "स्वरूप"
+
+#, fuzzy
+#~ msgid "Main Toolbar"
+#~ msgstr "मुख्य साधनपट्टी"
+
+#~ msgid "Files"
+#~ msgstr "फाईल्स"
+
+#, fuzzy
+#~ msgid "Appearance"
+#~ msgstr "दर्शनीयता"
+
+#, fuzzy
+#~ msgid "General"
+#~ msgstr "सामान्य"
+
+#, fuzzy
+#~ msgid "&Edit..."
+#~ msgstr "संपादित करा (&E)..."
+
+#, fuzzy
+#~ msgid "Encoding"
+#~ msgstr "एन्कोडिंग"
+
+#~ msgid "Colors"
+#~ msgstr "रंग"
+
+#, fuzzy
+#~ msgid "Mouse Wheel"
+#~ msgstr "माउस चक्र"
+
+#~ msgid "Text Font"
+#~ msgstr "पाठ्य फॉन्ट"
+
+#, fuzzy
+#~ msgid "Font:"
+#~ msgstr "फॉन्ट :"
+
+#, fuzzy
+#~ msgid "Size:"
+#~ msgstr "आकार :"
+
+#~ msgid "Fonts"
+#~ msgstr "फॉन्ट"
+
+#, fuzzy
+#~ msgid "Developer"
+#~ msgstr "विकासकर्ता"
+
+#, fuzzy
+#~ msgid "Maintainer"
+#~ msgstr "पालक"

@@ -1,0 +1,818 @@
+# translation of kompare.po to Persian
+# Nazanin Kazemi <kazemi@itland.ir>, 2006, 2007.
+# Nasim Daniarzadeh <daniarzadeh@itland.ir>, 2006.
+# Tahereh Dadkhahfar <dadkhahfar@itland.ir>, 2006.
+# translation of kompare.po to
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2007-06-30 17:00+0330\n"
+"Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
+"Language-Team: Persian <kde-i18n-fa@kde.org>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Apply Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "&اعمال تفاوت‌"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "Un&apply Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "تفاوت &اعمال نشود‌"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+#| msgid "App&ly All"
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "&اعمال همه‌"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+#| msgid "&Unapply All"
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "همه &اعمال نشود‌"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "پرونده &قبلی‌"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "پرونده &بعدی‌"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Previous Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "تفاوت &قبلی‌"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Next Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "تفاوت &بعدی‌"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>هیچ مدل یا تفاوتی وجود ندارد، این پرونده <b>%1</b>،یک پرونده تفاوت معتبر "
+"نیست.</qt>"
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr "<qt>مسائلی در اعمال تفاوت وجود دارد<b>%1</b>به پرونده<b>%2</b>.</qt>"
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr "<qt>مسائلی در اعمال تفاوت وجود دارد <b>%1</b>به پوشه<b>%2</b>.</qt>"
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "نتوانست پرونده موقت را باز کند."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr "<qt>نتوانست در پرونده موقت بنویسد <b>%1</b>، حذف آن.</qt>"
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt>نتوانست فهرست راهنمای مقصد را ایجاد کند<b>%1</b>.\n"
+"این پرونده ذخیره نشده است.</qt>"
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>نتوانست پرونده موقت را در محل مقصد بارگذاری کند<b>%1</b>. پرونده موقت "
+"هنوز در دسترس است تحت :<b>%2</b>. می‌توانید به طور دستی آن را در مکان درست "
+"رونوشت کنید. </qt>"
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "نتوانست خروجی تفاوت را تجزیه کند."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "پرونده‌ها یکسانند."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "نتوانست در پرونده موقت بنویسد."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "نوشین آسیایی"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "asiaie@itland.ir"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "نتوانست جزء نمای Kompare ما را بار کند."
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "نتوانست جزء ناوش Kompare ما را بار کند."
+
+#~ msgid "&Open Diff..."
+#~ msgstr "&باز‌ کردن تفاوت...‌"
+
+#~ msgid "&Compare Files..."
+#~ msgstr "&مقایسه پرونده‌ها...‌"
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "&ترکیب نشانی وب با تفاوت...‌"
+
+#~ msgid "Show T&ext View"
+#~ msgstr "نمایش نمای &متن‌"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr "۰ از ۰ تفاوت"
+
+#~ msgid " 0 of 0 files "
+#~ msgstr "۰ از ۰ پرونده"
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] " %2 از %1 پرونده"
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] "%1 پرونده"
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " %2 از %1 تفاوت، %3‌   اعمال شد"
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] "%1 تفاوت"
+
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "ترکیب پرونده/پوشه با خروجی تفاوت"
+
+#~ msgid "File/Folder"
+#~ msgstr "پرونده/پوشه"
+
+#~ msgid "Diff Output"
+#~ msgstr "خروجی تفاوت"
+
+#~ msgid "Blend"
+#~ msgstr "ترکیب کردن"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "ترکیب این پرونده یا پوشه با خروجی تفاوت"
+
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "اگر نام یک پرونده یا پوشه و یک پرونده‌ای که حاوی خروجی تفاوت است را در "
+#~ "حوزه محاوره وارد کرده باشید، این دکمه فعال خواهد شد، و فشار دادن آن باعث "
+#~ "باز شدن نمای اصلی kompare خواهد شد، که در آن خروجی پرونده یا پرونده‌ها از "
+#~ "پوشه با خروجی تفاوت آمیخته می‌شود؛ بنابراین، بعداً می‌توانید تفاوت)ها( را در "
+#~ "پرونده یا پرونده‌ها به کار ببرید."
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "مقایسه پرونده‌ها یا پوشه‌ها"
+
+#~ msgid "Source"
+#~ msgstr "مبدأ"
+
+#~ msgid "Destination"
+#~ msgstr "مقصد"
+
+#~ msgid "Compare"
+#~ msgstr "مقایسه‌ کردن"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "مقایسه این پرونده‌ها یا پوشه‌ها"
+
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "اگر نام ۲  پرونده یا پوشه را در حوزه‌های محاوره وارد کنید، این دکمه فعال "
+#~ "خواهد شد، و فشار دادن آن موجب شروع مقایسه پرونده‌ها و پوشه‌های وارد شده "
+#~ "می‌شود."
+
+#~ msgid "Text View"
+#~ msgstr "نمای متن"
+
+#~ msgid "Source Folder"
+#~ msgstr "پوشه مبدأ"
+
+#~ msgid "Destination Folder"
+#~ msgstr "پوشه مقصد"
+
+#~ msgid "Source File"
+#~ msgstr "پرونده مبدأ"
+
+#~ msgid "Destination File"
+#~ msgstr "پرونده مقصد"
+
+#~ msgid "Source Line"
+#~ msgstr "خط مبدأ"
+
+#~ msgid "Destination Line"
+#~ msgstr "خط مقصد"
+
+#~ msgid "Difference"
+#~ msgstr "تفاوت"
+
+#, fuzzy
+#~| msgid "Applied: Changes made to %1 line undone"
+#~| msgid_plural "Applied: Changes made to  %1 lines undone"
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "اعمال شده: تغییرات ایجادشده برای %1 خط انجام‌نشده"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "%1 خط تغییریافته"
+
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "اعمال شده: درج %1 خط انجام‌نشده"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "%1 خط درج‌شده"
+
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] "اعمال شده: حذف %1 خط انجام‌نشده"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "%1 خط حذف‌شده"
+
+#~ msgid "Unknown"
+#~ msgstr "ناشناخته"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "بخش درخت ناوشگر Kompare"
+
+#~ msgid "Author"
+#~ msgstr "نویسنده"
+
+#~ msgid "Save &All"
+#~ msgstr "ذخیره &همه‌"
+
+#, fuzzy
+#~| msgid "Save .&diff..."
+#~ msgid "Save &Diff..."
+#~ msgstr "ذخیره &تفاوت...‌"
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "مبادله مبدأ با مقصد"
+
+#~ msgid "Show Statistics"
+#~ msgstr "نمایش آمار"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>نشانی وب<b>%1</b> نمی‌تواند بارگذاری رو به پایین شود.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>نشانی وب <b>%1</b> روی سیستم شما وجود ندارد.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "گزینه‌های تفاوت"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|پرونده‌های کژنه"
+
+#~ msgid "Save .diff"
+#~ msgstr "ذخیره تفاوت"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr "پرونده وجود دارد یا غیرقابل نوشتن است؛ می‌خواهید آن را جای‌نوشت کنید؟"
+
+#~ msgid "File Exists"
+#~ msgstr "پرونده وجود دارد"
+
+#~ msgid "Overwrite"
+#~ msgstr "جای‌نوشت"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "جای‌نوشت نشود"
+
+#~ msgid "KomparePart"
+#~ msgstr "جزء Kompare"
+
+#~ msgid "Running diff..."
+#~ msgstr "اجرای تفاوت..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "تجزیه خروجی تفاوت..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "مقایسه پرونده %1 با پرونده %2"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "مقایسه پرونده‌ها در %1 با پرونده‌ها در %2"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "مشاهده خروجی تفاوت از %1"
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "ترکیب خروجی تفاوت از %1 در پرونده %2"
+
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "ترکیب خروجی تفاوت از %1 در پوشه %2"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ " تغییراتی را در پرونده)های( مقصد ایجاد کرده‌اید.‌\n"
+#~ "مایل به ذخیره آنها هستید؟"
+
+#~ msgid "Save Changes?"
+#~ msgstr " تغییرات ذخیره شود؟"
+
+#~ msgid "Unified"
+#~ msgstr "یکی‌شده"
+
+#~ msgid "Context"
+#~ msgstr "متن"
+
+#~ msgid "Normal"
+#~ msgstr "عادی"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "هیچ پرونده تفاوتی نیست، یا هیچ ۲ پرونده‌ای متفاوت نیستند. بنابراین، هیچ "
+#~ "آماری موجود نیست."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "آمار تفاوت"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "آمار:\n"
+#~ "‌ \n"
+#~ "پرونده قدیمی: %1\n"
+#~ "‌ پرونده جدید: %2\n"
+#~ "\n"
+#~ "قالب: %3\n"
+#~ "تعداد کمینگاهها: %4\n"
+#~ "تعداد تفاوتها: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "آمار:\n"
+#~ "‌ \n"
+#~ "تعداد پرونده‌ها در پرونده تفاوت: %1\n"
+#~ "قالب: %2\n"
+#~ "\n"
+#~ "پرونده قدیمی جاری: %3\n"
+#~ "پرونده جدید جاری: %4\n"
+#~ "\n"
+#~ "تعداد کمینگاهها: %5\n"
+#~ "تعداد تفاوتها: %6"
+
+#~ msgid "&File"
+#~ msgstr "&پرونده‌"
+
+#~ msgid "&Difference"
+#~ msgstr "&تفاوت‌"
+
+#~ msgid "&Settings"
+#~ msgstr "&تنظیمات‌"
+
+#~ msgid "Preferences"
+#~ msgstr "تنظیمات"
+
+#~ msgid "View"
+#~ msgstr "نما"
+
+#~ msgid "View Settings"
+#~ msgstr "تنظیمات نما"
+
+#~ msgid "Diff"
+#~ msgstr "تفاوت"
+
+#~ msgid "Diff Settings"
+#~ msgstr "تنظیمات تفاوت"
+
+#~ msgid "Run Diff In"
+#~ msgstr "اجرای تفاوت در"
+
+#~ msgid "Command Line"
+#~ msgstr "سطر فرمان"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa --مبدأ مقصد"
+
+#~ msgid "Options"
+#~ msgstr "گزینه‌ها"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "جستجو برای تغییرات کوچک‌تر"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "بهینه‌سازی برای پرونده‌های بزرگ"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "چشم‌پوشی از تغییرات در حالت"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "بسط تبها نسبت به فاصله‌ها"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "چشم‌پوشی از خطوط خالی اضافه‌شده یا حذف‌شده"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "چشم‌پوشی از تغییرات در فاصله سفید"
+
+#~ msgid "Show function names"
+#~ msgstr "نمایش نام توابع"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "مقایسه پوشه‌ها به طور بازگشتی"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "رفتار پرونده‌های جدید به عنوان خالی"
+
+#~ msgid "Format"
+#~ msgstr "قالب"
+
+#~ msgid "Side-by-side"
+#~ msgstr "پهلو به پهلو"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "تعداد خطوط متن:"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "&پرونده‌"
+
+#, fuzzy
+#~ msgid "Appearance"
+#~ msgstr "&ظاهر‌"
+
+#~ msgid "Diff Program"
+#~ msgstr "برنامه تفاوت"
+
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr ""
+#~ "می‌توانید اینجا یک برنامه تفاوت متفاوت انتخاب کنید. در Solaris برنامه "
+#~ "تفاوت استاندارد همه گزینه‌هایی که نسخه GNU پشتیبانی می‌کند را پشتیبانی "
+#~ "نمی‌کند. در این صورت می‌توانید آن نسخه را انتخاب کنید."
+
+#~ msgid ""
+#~ "Select the format of the output generated by diff. Unified is the one "
+#~ "that is used most frequently because it is very readable. The KDE "
+#~ "developers like this format the best so use it for sending patches."
+#~ msgstr ""
+#~ "قالب خروجی تولیدشده توسط تفاوت را برگزینید. یکی‌شده یکی از قالبهایی است که "
+#~ "به دلیل قابل خواندن بودن بیشتر استفاده می‌شود. توسعه‌دهندگانKDE این قالب را "
+#~ "به عنوان بهترین قالب دوست دارند، بنابراین، برای ارسال کژنه‌ها از آن "
+#~ "استفاده می‌کنند."
+
+#~ msgid "Output Format"
+#~ msgstr "قالب خروجی"
+
+#~ msgid "Lines of Context"
+#~ msgstr "خطوط متن"
+
+#~ msgid ""
+#~ "The number of context lines is normally 2 or 3. This makes the diff "
+#~ "readable and applicable in most cases. More than 3 lines will only bloat "
+#~ "the diff unnecessarily."
+#~ msgstr ""
+#~ "تعداد خطوط متن به طور عادی ۲ یا ۳ است. این موجب قابل خواندن و کاربردی شدن "
+#~ "تفاوت در بسیاری از حالات خواهد شد. فقط بیش از ۳ خطط باعث بیهوده شدن تفاوت "
+#~ "خواهد شد."
+
+#~ msgid "General"
+#~ msgstr "عمومی"
+
+#, fuzzy
+#~| msgid "Treat new files as empty"
+#~ msgid "&Treat new files as empty"
+#~ msgstr "رفتار پرونده‌های جدید به عنوان خالی"
+
+#, fuzzy
+#~| msgid "This option corresponds to the -I diff option."
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "این گزینه به گزینه -I تفاوت مربوط است."
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "&جستجو‌ برای تغییرات کوچک‌تر‌"
+
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "این به گزینه -d‌‌ تفاوت مربوط است."
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "&بهینه‌سازی برای پرونده‌های بزرگ‌"
+
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "این به گزینه‌ -H تفاوت‌ مربوط است‌."
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "&چشم‌پوشی از تغییرات در حالت‌"
+
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "این به گزینه -i تفاوت ‌مربوط است."
+
+#~ msgid "Ignore regexp:"
+#~ msgstr "چشم‌پوشی از عبارت منظم:"
+
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "این گزینه به گزینه -I تفاوت مربوط است."
+
+#~ msgid ""
+#~ "Add the regular expression here that you want to use\n"
+#~ "to ignore lines that match it."
+#~ msgstr ""
+#~ "عبارت منظمی که برای چشم‌پوشی از خطوطی که با آن تطابق دارند و استفاده "
+#~ "خواهید کرد را اینجا اضافه کنید."
+
+#~ msgid "&Edit..."
+#~ msgstr "&ویرایش...‌"
+
+#~ msgid ""
+#~ "Clicking this will open a regular expression dialog where\n"
+#~ "you can graphically create regular expressions."
+#~ msgstr ""
+#~ "با فشار این، محاوره عبارت منظم باز می‌شود، که در آن\n"
+#~ " می‌توانید به طور گرافیکی عبارتهای منظم ایجاد کنید."
+
+#~ msgid "Whitespace"
+#~ msgstr "فاصله سفید"
+
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "&بسط تبها نسبت به فاصله‌ها در خروجی‌"
+
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "این گزینه به گزینه -t تفاوت مربوط است."
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "&چشم‌پوشی از خطوط خالی اضافه‌شده یا حذف‌شده‌"
+
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "این گزینه به گزینه -B تفاوت مربوط است."
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "&چشم‌پوشی از تغییرات در مقدار فاصلِه سفید‌"
+
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "این گزینه به گزینه -b تفاوت مربوط است."
+
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "&چشم‌پوشی ‌از همه فاصله‌های سفید‌"
+
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "این گزینه به گزینه -w تفاوت مربوط است."
+
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "&چشم‌پوشی از تغییرات به منظور بسط تب‌"
+
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "این گزینه به گزینه  -E تفاوت مربوط است."
+
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "الگوی پرونده برای مستثنی کردن"
+
+#~ msgid ""
+#~ "If this is checked you can enter a shell pattern in the text box on the "
+#~ "right or select entries from the list."
+#~ msgstr ""
+#~ "اگر این علامت زده شود، می‌توانید الگوی پوسته را در جعبه متن سمت راست وارد "
+#~ "کنید، یا مدخلها را از فهرست برگزینید."
+
+#~ msgid ""
+#~ "Here you can enter or remove a shell pattern or select one or more "
+#~ "entries from the list."
+#~ msgstr ""
+#~ "اینجا می‌توانید یک الگوی پوسته را وارد یا حذف کنید، یا یک مدخل یا بیشتر را "
+#~ "از فهرست برگزینید."
+
+#~ msgid "File with Filenames to Exclude"
+#~ msgstr "پرونده با نام پرونده‌ها برای مستثنی کردن"
+
+#, fuzzy
+#~| msgid ""
+#~| "If this is checked you can enter a filename in the combo box on the "
+#~| "right."
+#~ msgid "If this is checked you can enter a filename in the combo box below."
+#~ msgstr ""
+#~ "اگر این علامت زده شود، می‌توانید یک نام پرونده را در جعبه ترکیب سمت راست "
+#~ "وارد کنید."
+
+#~ msgid ""
+#~ "Here you can enter the URL of a file with shell patterns to ignore during "
+#~ "the comparison of the folders."
+#~ msgstr ""
+#~ "اینجا می‌توانید نشانی وب‌ یک پرونده با الگوی پوسته‌ها را برای چشم‌پوشی، هنگام "
+#~ "مقایسه پوشه‌ها وارد کنید."
+
+#~ msgid ""
+#~ "Any file you select in the dialog that pops up when you click it will be "
+#~ "put in the dialog to the left of this button."
+#~ msgstr ""
+#~ "هر پرونده‌ای که در محاوره انتخاب می‌کنید، و زمانی که آن را فشار می‌دهید،  "
+#~ "بالا پرانده می‌شود و در محاوره سمت چپ این دکمه قرار خواهد گرفت."
+
+#, fuzzy
+#~| msgid "&Exclude"
+#~ msgid "Exclude"
+#~ msgstr "&مستثنی کردن‌"
+
+#~ msgid "Encoding"
+#~ msgstr "کدبندی"
+
+#~ msgid "Colors"
+#~ msgstr "رنگها"
+
+#~ msgid "Removed color:"
+#~ msgstr "رنگ حذف‌شده:"
+
+#~ msgid "Changed color:"
+#~ msgstr "رنگ تغییریافته:"
+
+#~ msgid "Added color:"
+#~ msgstr "رنگ اضافه‌شده:"
+
+#~ msgid "Applied color:"
+#~ msgstr "رنگ اعمال‌شده:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "چرخ موشی"
+
+#~ msgid "Number of lines:"
+#~ msgstr "تعداد خطوط:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "تبها نسبت به فاصله‌ها"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "تعداد فاصله‌ها برای تبدیل یک تب به:"
+
+#~ msgid "Text Font"
+#~ msgstr "قلم متن"
+
+#~ msgid "Font:"
+#~ msgstr "قلم:"
+
+#~ msgid "Size:"
+#~ msgstr "اندازه‌:"
+
+#, fuzzy
+#~| msgid "&Fonts"
+#~ msgid "Fonts"
+#~ msgstr "&قلمها‌"
+
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr "برنامه‌ای برای نمایش تفاوتهای بین پرونده‌ها و تولید یک تفاوت اختیاری"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "هنرمند شمایل Kompare"
+
+#~ msgid "A lot of good advice"
+#~ msgstr " نظرهای خوب بسیار"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "مشاهده‌گر تفاوت Cervisia"
+
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "نشانی وب ۱ را با نشانی وب ۲ مقایسه می‌کند"
+
+#~ msgid ""
+#~ "This will open URL1 and expect it to be diff output. URL1 can also be a "
+#~ "'-' and then it will read from standard input. Can be used for instance "
+#~ "for cvs diff | kompare -o -. Kompare will do a check to see if it can "
+#~ "find the original file(s) and then blend the original file(s) into the "
+#~ "diffoutput and show that in the viewer. -n disables the check."
+#~ msgstr ""
+#~ "نشانی وب۱ را باز می‌کند و انتظار دارد که خروجی تفاوت باشد. همچنین، نشانی "
+#~ "وب ۱ می‌تواند یک »ـ« باشد، و از یک ورودی استاندارد خوانده شود. می‌تواند به "
+#~ "عنوان مثال برای  cvs diff | kompare -o - استفاده شود. Kompare یک بررسی را "
+#~ "برای این که ببیند آیا می‌تواند پرونده)های( اصلی را پیدا کند انجام می‌دهد، و "
+#~ "پرونده)های( اصلی را در خروجی تفاوت ترکیب می‌کند و در مشاهده‌گر نمایش می‌دهد. "
+#~ "-n بررسی را غیرفعال می‌کند."
+
+#~ msgid ""
+#~ "This will blend URL2 into URL1, URL2 is expected to be diff output and "
+#~ "URL1 the file or folder that the diffoutput needs to be blended into. "
+#~ msgstr ""
+#~ "نشانی وب ۱ را در ۲ ترکیب می‌کند، انتظار می‌رود نشانی وب ۲ خروجی تفاوت و "
+#~ "نشانی وب ۱ پرونده یا پوشه‌ای که احتیاج است در آن ترکیب شود، باشد."
+
+#~ msgid ""
+#~ "Disables the check for automatically finding the original file(s) when "
+#~ "using '-' as URL with the -o option."
+#~ msgstr ""
+#~ "زمانی که با گزینه -o، از »-« عنوان نشانی وب استفاده می‌شود، بررسی برای "
+#~ "یافتن خودکار پرونده)های( اصلی غیرفعال می‌شو‌د."
+
+#~ msgid ""
+#~ "Use this to specify the encoding when calling it from the command line. "
+#~ "It will default to the local encoding if not specified."
+#~ msgstr ""
+#~ "از این برای مشخص کردن کدبندی در زمان فراخوانی آن از سطر فرمان استفاده "
+#~ "می‌شود. اگر مشخص نشود به طور پیش‌فرض کدبندی محلی خواهد بود."
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "مقایسه این پرونده‌ها یا پوشه"
+
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "نتوانست جزء نمای Kompare ما را پیدا کند."
+
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "نتوانست جزء ناوش Kompare ما را پیدا کند‌."
+
+#~ msgid "A&ppearance"
+#~ msgstr "&ظاهر‌"
+
+#~ msgid "&Diff"
+#~ msgstr "&تفاوت‌"
+
+#~ msgid "&Format"
+#~ msgstr "&قالب‌"
+
+#~ msgid "O&ptions"
+#~ msgstr "&گزینه‌ها‌"
+
+#~ msgid "Hide T&ext View"
+#~ msgstr "مخفی کردن نمای &متن‌"

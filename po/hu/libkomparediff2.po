@@ -1,0 +1,954 @@
+#
+# Tamas Szanto <tszanto@interware.hu>, 2001.
+# Tamas Krutki, 2011.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2011.
+# Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: KDE 4.2\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2013-04-09 23:49+0200\n"
+"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Apply Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "Az eltérés al&kalmazása"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "Un&apply Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "Eltérés alkalmazásának v&isszavonása"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+#| msgid "App&ly All"
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "Alkalma&zás (teljes)"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+#| msgid "&Unapply All"
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "Az alkalmazások &visszavonása"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "Az &előző fájl"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "A következő &fájl"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Previous Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "Az e&lőző eltérés"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Next Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "A köve&tkező eltérés"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>Nincs modell vagy különbség, a(z) <b>%1</b> fájl nem diff-fájl.</qt>"
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+"<qt>Nem sikerült alkalmazni a(z) <b>%1</b> diff-fájlt a(z) <b>%2</b> fájlra."
+"</qt>"
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+"<qt>Nem sikerült alkalmazni a(z) <b>%1</b> diff-kimenetet a(z) <b>%2</b> "
+"mappára.</qt>"
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "Az egyik ideiglenes fájlt nem sikerült megnyitni."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+"<qt>Nem sikerült írni a(z) <b>%1</b> ideiglenes fájlba, ezért le lesz "
+"törölve.</qt>"
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt>Nem sikerült létrehozni a célmappát: <b>%1</b>.\n"
+"A fájl nem lett elmentve.</qt>"
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>Nem sikerült feltölteni egy ideiglenes fájlt a távoli <b>%1</b> címre. "
+"Az ideiglenes fájl még található itt: <b>%2</b>. Próbálja meg átmásolni a "
+"fájlt a megfelelő helyre.</qt>"
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "A diff kimenet feldolgozása nem sikerült."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "A fájlok teljesen egyformák."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Nem sikerült írni egy ideiglenes fájlba."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+"A diff formázása hibás. Néhány sort nem lehetett feldolgozni, ezért ezek nem "
+"lesznek láthatóak megjelenítéskor."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Szántó Tamás"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "tszanto@interware.hu"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "A KompareViewPart objektumot nem sikerült betölteni."
+
+#~ msgid "Navigation"
+#~ msgstr "Navigálás"
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "A KompareNavigationPart objektumot nem sikerült betölteni."
+
+#~ msgid "&Open Diff..."
+#~ msgstr "Diff fájl me&gnyitása..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "Fájlok össze&hasonlítása..."
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "URL össze&olvasztása diff fájllal..."
+
+#~ msgid "Show T&ext View"
+#~ msgstr "Szöveges né&zet"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr " 0 / 0 eltérés "
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 / 0 fájl "
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] " %2 / %1 fájl "
+#~ msgstr[1] " %2 / %1 fájl "
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] " %1 fájl "
+#~ msgstr[1] " %1 fájl "
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " %2 / %1 eltérés, %3 alkalmazva "
+#~ msgstr[1] " %2 / %1 eltérés, %3 alkalmazva "
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " %1 eltérés "
+#~ msgstr[1] " %1 eltérés "
+
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "Fájl vagy mappa összeolvasztása diff-kimenettel"
+
+#~ msgid "File/Folder"
+#~ msgstr "Fájl/mappa"
+
+#~ msgid "Diff Output"
+#~ msgstr "Diff-kimenet"
+
+#~ msgid "Blend"
+#~ msgstr "Összeolvasztás"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "Ez a fájl vagy mappa lesz összeolvasztva a diff-kimenettel"
+
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "Ha megadott egy fájl- vagy mappanevet és egy diff-kimenetet tartalmazó "
+#~ "fájl nevét, akkor ez a gomb lenyomhatóvá válik. Lenyomásakor a program "
+#~ "összeolvasztja a fájl(ok) és a diff-kimenet tartalmát, és az eredményt "
+#~ "megjeleníti a program főablakában."
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Fájlok vagy mappák összehasonlítása"
+
+#~ msgid "Source"
+#~ msgstr "Forrás"
+
+#~ msgid "Destination"
+#~ msgstr "Cél"
+
+#~ msgid "Compare"
+#~ msgstr "Összehasonlítás"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "A fájlok vagy mappák összehasonlítása"
+
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "Ha 2 fájlnevet vagy mappanevet adott meg ebben az ablakban, akkor ez a "
+#~ "gomb lenyomhatóvá válik. Lenyomásakor a program összehasonlítja a két "
+#~ "fájl vagy mappa tartalmát. "
+
+#~ msgid "Text View"
+#~ msgstr "Szöveges nézet"
+
+#~ msgid "Source Folder"
+#~ msgstr "Forrásmappa"
+
+#~ msgid "Destination Folder"
+#~ msgstr "Célmappa"
+
+#~ msgid "Source File"
+#~ msgstr "Forrásfájl"
+
+#~ msgid "Destination File"
+#~ msgstr "Célfájl"
+
+#~ msgid "Source Line"
+#~ msgstr "Forrássor"
+
+#~ msgid "Destination Line"
+#~ msgstr "Célsor"
+
+#~ msgid "Difference"
+#~ msgstr "Eltérés"
+
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "Végrehajtva: %1 sor módosítása visszavonva"
+#~ msgstr[1] "Végrehajtva: %1 sor módosítása visszavonva"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "%1 sor változott meg"
+#~ msgstr[1] "%1 sor változott meg"
+
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "Végrehajtva: %1 sor beszúrása visszavonva"
+#~ msgstr[1] "Végrehajtva: %1 sor beszúrása visszavonva"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "%1 sor lett beszúrva"
+#~ msgstr[1] "%1 sor lett beszúrva"
+
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] "Végrehajtva: %1 sor törlése visszavonva"
+#~ msgstr[1] "Végrehajtva: %1 sor törlése visszavonva"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "%1 sor lett kitörölve"
+#~ msgstr[1] "%1 sor lett kitörölve"
+
+#~ msgid "Unknown"
+#~ msgstr "Ismeretlen"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "John Firebaugh"
+
+#~ msgid "Author"
+#~ msgstr "Szerző"
+
+#~ msgid "Otto Bruggeman"
+#~ msgstr "Otto Bruggeman"
+
+#~ msgid "Save &All"
+#~ msgstr "Minden m&entése"
+
+#~ msgid "Save &Diff..."
+#~ msgstr "&Diff fájl mentése..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "A forrás és a cél felcserélése"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Statisztika megjelenítése"
+
+#~ msgid "Refresh Diff"
+#~ msgstr "Az eltérések frissítése"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>A(z) <b>%1</b> URL-t nem lehet letölteni.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>A(z) <b>%1</b> URL nem létezik a rendszerben.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "Összehasonlítási beállítások"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Patch fájlok"
+
+#~ msgid "Save .diff"
+#~ msgstr "A .diff fájl mentése"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr ""
+#~ "Már létezik ilyen fájl (lehet, hogy írásvédett) - felül szeretné írni?"
+
+#~ msgid "File Exists"
+#~ msgstr "A fájl már létezik"
+
+#~ msgid "Overwrite"
+#~ msgstr "Felülírás"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Nem kell felülírni"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Kevin Kofler"
+#~ msgstr "Kevin Kofler"
+
+#~ msgid "Running diff..."
+#~ msgstr "A diff futtatása..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "A diff kimenetének feldolgozása..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "Fájlok összehasonlítása: %1 és %2"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "Fájlok összehasonlítása - 1. mappa: %1, 2. mappa: %2"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "%1 diff kimenetének megtekintése"
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "A(z) %1 diff fájl összeolvasztása a(z) %2 fájllal"
+
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "A(z) %1 diff-kimenet beolvasztása ebbe a mappába: %2"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Módosításokat hajtott végre a célfájl(ok)ban.\n"
+#~ "El szeretné menteni a változásokat?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "El szeretné menteni a módosításokat?"
+
+#~ msgid "Unified"
+#~ msgstr "Egyesített"
+
+#~ msgid "Context"
+#~ msgstr "Kontextus"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "normál"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "Nincs .diff fájl vagy nem 2 fájl volt összehasonlítva, ezért nem "
+#~ "számolható statisztika."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Diff statisztika"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Statisztika:\n"
+#~ "\n"
+#~ "A régi fájl: %1\n"
+#~ "Az új fájl: %2\n"
+#~ "\n"
+#~ "Formátum: %3\n"
+#~ "A blokkok száma: %4\n"
+#~ "Az eltérések száma: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Statisztika:\n"
+#~ "\n"
+#~ "A diff fájlban található fájlok száma: %1\n"
+#~ "Formátum: %2\n"
+#~ "\n"
+#~ "Az aktuális régi fájl: %3\n"
+#~ "Az aktuális új fájl: %4\n"
+#~ "\n"
+#~ "A blokkok száma: %5\n"
+#~ "Az eltérések száma: %6"
+
+#~ msgid "&File"
+#~ msgstr "&Fájl"
+
+#~ msgid "&Difference"
+#~ msgstr "El&térés"
+
+#~ msgid "&Settings"
+#~ msgstr "&Beállítások"
+
+#~ msgid "Preferences"
+#~ msgstr "Beállítások"
+
+#~ msgid "View"
+#~ msgstr "Nézet"
+
+#~ msgid "View Settings"
+#~ msgstr "Nézeti beállítások"
+
+#~ msgid "Diff"
+#~ msgstr "Diff"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Diff-beállítások"
+
+#~ msgid "Run Diff In"
+#~ msgstr "A diff futtatási mappája"
+
+#~ msgid "Command Line"
+#~ msgstr "Parancssor"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd mappanév && diff -udHprNa -- forrás cél"
+
+#~ msgid "Options"
+#~ msgstr "Beállítások"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "Kisebb változások keresése"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "Optimalizálás nagy fájlokra"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "Nem nagybetűérzékeny"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "A tabulátorok szóközökké konvertálása"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "A felvett/eltávolított üres sorok figyelmen kívül hagyása"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Az üres helyek változásainak figyelmen kívül hagyása"
+
+#~ msgid "Show function names"
+#~ msgstr "A függvénynevek megjelenítése"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "Mappák összehasonlítása (az almappákat is)"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "Az új fájlok üresnek tekintése"
+
+#~ msgid "Format"
+#~ msgstr "Formátum"
+
+#~ msgid "Side-by-side"
+#~ msgstr "Egymás mellett"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "A kontextussorok száma:"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Alap eszköztár"
+
+#~ msgid "Files"
+#~ msgstr "Fájlok"
+
+#~ msgid "Here you can enter the files you want to compare."
+#~ msgstr "Itt lehet megadni az összehasonlítani kívánt fájlok neveit."
+
+#~ msgid "Here you can change the options for comparing the files."
+#~ msgstr "Itt lehet beállítani a fájlok összehasonlítási opcióit."
+
+#~ msgid "Appearance"
+#~ msgstr "Megjelenés"
+
+#~ msgid "Here you can change the options for the view."
+#~ msgstr "Itt lehet megváltoztatni a nézet beállításait."
+
+#~ msgid ""
+#~ "File used for excluding files cannot be found, please specify another "
+#~ "file."
+#~ msgstr ""
+#~ "A kihagyandó fájlok neveit tartalmazó fájl nem található, kérem adjon meg "
+#~ "egy másikat."
+
+#~ msgid "Diff Program"
+#~ msgstr "Diff program"
+
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr ""
+#~ "Itt lehet másik diff programot választani. Például a Solaris operációs "
+#~ "rendszerhez adott diff program nem támogatja a GNU-s változat összes "
+#~ "argumentumát. Így viszont könnyen lehet más programot használni."
+
+#~ msgid ""
+#~ "Select the format of the output generated by diff. Unified is the one "
+#~ "that is used most frequently because it is very readable. The KDE "
+#~ "developers like this format the best so use it for sending patches."
+#~ msgstr ""
+#~ "Válassza ki, mi legyen a diff kimeneti formátuma. Az 'egyesített' "
+#~ "formátumot használják leggyakrabban, mert az a legolvashatóbb. A KDE "
+#~ "fejlesztői is ezt a formátumot preferálják patch-ek küldésekor."
+
+#~ msgid "Output Format"
+#~ msgstr "Kimeneti formátum"
+
+#~ msgid "Lines of Context"
+#~ msgstr "Kontextussorok"
+
+#~ msgid ""
+#~ "The number of context lines is normally 2 or 3. This makes the diff "
+#~ "readable and applicable in most cases. More than 3 lines will only bloat "
+#~ "the diff unnecessarily."
+#~ msgstr ""
+#~ "A kontextussorok száma általában 2 vagy 3. Így a diff kiemenet könynen "
+#~ "felhasználható és olvasható lesz. 3-nál több kontextussor általában nem "
+#~ "indokolt, mert a fájlméretet túlzottan megnöveli."
+
+#~ msgid "General"
+#~ msgstr "Általános"
+
+#~ msgid "&Treat new files as empty"
+#~ msgstr "Az új fájlok üresnek &tekintése"
+
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "Ez a diff -N opciónak felel meg."
+
+#~ msgid ""
+#~ "With this option enabled diff will treat a file that only exists in one "
+#~ "of the directories as empty in the other directory. This means that the "
+#~ "file is compared with an empty file and because of this will appear as "
+#~ "one big insertion or deletion."
+#~ msgstr ""
+#~ "Ha ez az opció be van kapcsolva, a diff a csak egyik mappában létező "
+#~ "fájlokat üres fájlnak fogja tekinteni a másik mappában. Ez azt jelenti, "
+#~ "hogy a létező fájl egy üres fájllal lesz összehasonlítva, így egy nagy "
+#~ "beszúrásként vagy törlésként fog feltűnni."
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "K&isebb változások keresése"
+
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "Ez a diff -d opciónak felel meg."
+
+#~ msgid ""
+#~ "With this option enabled diff will try a little harder (at the cost of "
+#~ "more memory) to find fewer changes."
+#~ msgstr ""
+#~ "Ha ez az opció be van kapcsolva, a diff megpróbál kevesebb változtatást "
+#~ "találni (nagyobb memóriahasználat árán)."
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "Optimalizálás n&agy fájlokra"
+
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "Ez a diff -H opciónak felel meg."
+
+#~ msgid ""
+#~ "This option lets diff makes better diffs when using large files. The "
+#~ "definition of large is nowhere to be found though."
+#~ msgstr ""
+#~ "Ezzel az opcióval a diff jobb diff-fájlokat tud létrehozni nagy fájlok "
+#~ "használatakor. A nagy fájl pontos definíciójáról nincs információ."
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "Nem nagy&betűérzékeny"
+
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "Ez a diff -i opciónak felel meg."
+
+#~ msgid ""
+#~ "With this option to ignore changes in case enabled, diff will not "
+#~ "indicate a difference when something in one file is changed into "
+#~ "SoMEthing in the other file."
+#~ msgstr ""
+#~ "Ha ez az opció be van kapcsolva, a diff figyelmen kívül hagyja a kis- és "
+#~ "nagybetűk közti különbséget, így ha egy fájlban valami megváltozik "
+#~ "VaLAmiRe, a diff nem fog különbséget észlelni."
+
+#~ msgid "Ignore regexp:"
+#~ msgstr "Reg. kif. figyelmen kívül hagyása:"
+
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "Ez a diff -I opciónak felel meg."
+
+#~ msgid ""
+#~ "When this checkbox is enabled, an option to diff is given that will make "
+#~ "diff ignore lines that match the regular expression."
+#~ msgstr ""
+#~ "Ha engedélyezve van, akkor a diff meg fog kapni egy paramétert ami a "
+#~ "reguláris kifejezésre illeszkedő sorok kihagyására utasítja."
+
+#~ msgid ""
+#~ "Add the regular expression here that you want to use\n"
+#~ "to ignore lines that match it."
+#~ msgstr ""
+#~ "Ide kell beírni a reguláris kifejezést, amelyhez illeszkedő\n"
+#~ "sorok ki lesznek hagyva a feldolgozásból."
+
+#~ msgid "&Edit..."
+#~ msgstr "Szer&kesztés..."
+
+#~ msgid ""
+#~ "Clicking this will open a regular expression dialog where\n"
+#~ "you can graphically create regular expressions."
+#~ msgstr ""
+#~ "Ha ide kattint, megnyílik egy ablak, melyben grafikus\n"
+#~ "módon lehet reguláris kifejezéseket összeállítani."
+
+#~ msgid "Whitespace"
+#~ msgstr "Elválasztókarakterek"
+
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "A tab&ulátorok szóközökké alakítása a kimenetben"
+
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "Ez a diff -t opciónak felel meg."
+
+#~ msgid ""
+#~ "This option does not always produce the right result. Due to this "
+#~ "expansion Kompare may have problems applying the change to the "
+#~ "destination file."
+#~ msgstr ""
+#~ "Ez az opció nem mindig ad jó eredményt. Emiatt a kiterjesztés miatt a "
+#~ "Kompare-nek lehetnek problémái a változtatás alkalmazásával a célfájlon."
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "A hozzáadott/törölt üres sorok figye&lmen kívül hagyása"
+
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "Ez a diff -B opciónak felel meg."
+
+#~ msgid ""
+#~ "This can be very useful in situations where code has been reorganized and "
+#~ "empty lines have been added or removed to improve legibility."
+#~ msgstr ""
+#~ "Ez nagyon hasznos lehet azokban az esetekben amikor egy adott kód át lett "
+#~ "szervezve és üres sorok lettek hozzáadva vagy eltávolítva az olvashatóság "
+#~ "érdekében."
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr ""
+#~ "Nem kell &változásnak tekinteni, ha csak az elválasztókarakterek száma "
+#~ "változott meg"
+
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "Ez a diff -b opciónak felel meg."
+
+#~ msgid ""
+#~ "If you are uninterested in differences arising due to, for example, "
+#~ "changes in indentation, then use this option."
+#~ msgstr ""
+#~ "Használja ezt az opciót ha nem fontosak a például a behúzás "
+#~ "megváltoztatásakor keletkezett különbségek."
+
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "Az üres karakterek f&igyelmen kívül hagyása"
+
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "Ez a diff -w opciónak felel meg."
+
+#~ msgid ""
+#~ "This is useful for seeing the significant changes without being "
+#~ "overwhelmed by all the white space changes."
+#~ msgstr ""
+#~ "Ez hasznos a valóban lényeges változtatások áttekintéséhez, amelyek így "
+#~ "nem vesznek el a sok, üreshely-karaktereket érintő változtatás között."
+
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "A tab&ulátorok kibontása miatti változások figyelmen kívül hagyása"
+
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "Ez a diff -E opciónak felel meg."
+
+#~ msgid ""
+#~ "If there is a change because tabs have been expanded into spaces in the "
+#~ "other file, then this option will make sure that these do not show up. "
+#~ "Kompare currently has some problems applying such changes so be careful "
+#~ "when you use this option."
+#~ msgstr ""
+#~ "Ez az opció gondoskodik arról, hogy a tabok szóközökre való cseréjéből "
+#~ "adódó eltérések ne jelenjenek meg. Jelenleg a Kompare-rel előfordulhatnak "
+#~ "problémák ilyen változások alkalmazásakor, ezért legyen óvatos amikor ezt "
+#~ "az opciót használja."
+
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "Kizárandó fájlminták"
+
+#~ msgid ""
+#~ "If this is checked you can enter a shell pattern in the text box on the "
+#~ "right or select entries from the list."
+#~ msgstr ""
+#~ "Ha ez az opció be van jelölve, a jobb oldali szövegmezőben megadható egy "
+#~ "névminta vagy kiválaszthatók bejegyzések a listából."
+
+#~ msgid ""
+#~ "Here you can enter or remove a shell pattern or select one or more "
+#~ "entries from the list."
+#~ msgstr ""
+#~ "Itt lehet fájlnévmintákat felvenni vagy eltávolítani, ill. bejegyzéseket "
+#~ "a listából kiválasztani."
+
+#~ msgid "File with Filenames to Exclude"
+#~ msgstr "Fájlok kizárása névminta alapján"
+
+#~ msgid "If this is checked you can enter a filename in the combo box below."
+#~ msgstr ""
+#~ "Ha bejelöli ezt az opciót, a lenti kombinált listában meg lehet adni egy "
+#~ "fájlnevet."
+
+#~ msgid ""
+#~ "Here you can enter the URL of a file with shell patterns to ignore during "
+#~ "the comparison of the folders."
+#~ msgstr ""
+#~ "Itt lehet megadni egy olyan fájl URL-jét, mely mappák összehasonlításakor "
+#~ "figyelmen kívül hagyni kívánt fájlok névmintáit tartalmazza."
+
+#~ msgid ""
+#~ "Any file you select in the dialog that pops up when you click it will be "
+#~ "put in the dialog to the left of this button."
+#~ msgstr ""
+#~ "Az itt kiválasztott fájlok (rákattintás után) nevei a nyomógombtól balra "
+#~ "látható részre kerülnek."
+
+#~ msgid "Exclude"
+#~ msgstr "Kizárás"
+
+#~ msgid "Encoding"
+#~ msgstr "Kódolás"
+
+#~ msgid "Colors"
+#~ msgstr "Színek"
+
+#~ msgid "Removed color:"
+#~ msgstr "Az eltávolított részek színe:"
+
+#~ msgid "Changed color:"
+#~ msgstr "A módosított részek színe:"
+
+#~ msgid "Added color:"
+#~ msgstr "A hozzáadott részek színe:"
+
+#~ msgid "Applied color:"
+#~ msgstr "Az alkalmazási szín:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Egérgörgő"
+
+#~ msgid "Number of lines:"
+#~ msgstr "A sorok száma:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "A tabulátorok szóközökké konvertálása"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "Ennyi szóköz legyen egy tabulátorból:"
+
+#~ msgid "Text Font"
+#~ msgstr "A szöveg betűtípusa"
+
+#~ msgid "Font:"
+#~ msgstr "Betűtípus:"
+
+#~ msgid "Size:"
+#~ msgstr "Méret:"
+
+#~ msgid "Fonts"
+#~ msgstr "Betűtípusok"
+
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "Fájlok közötti eltérések megjelenítésére és az eltérések diff formátumban "
+#~ "történő elkészítésére alkalmas program"
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr ""
+#~ "© John Firebaugh, 2001-2004., © Otto Bruggeman, 2001-2005,2009., © Jeff "
+#~ "Snyder, 2004-2005., © Kevin Kofler, 2007-2012."
+
+#~ msgid "Jeff Snyder"
+#~ msgstr "Jeff Snyder"
+
+#~ msgid "Developer"
+#~ msgstr "Fejlesztő"
+
+#~ msgid "Maintainer"
+#~ msgstr "Karbantartó"
+
+#~ msgid "Chris Luetchford"
+#~ msgstr "Chris Luetchford"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "A Kompare ikonjainak készítője"
+
+#~ msgid "Malte Starostik"
+#~ msgstr "Malte Starostik"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "Sok-sok jótanács"
+
+#~ msgid "Bernd Gehrmann"
+#~ msgstr "Bernd Gehrmann"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Diff-nézegető a Cervisiához"
+
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "URL1 és URL2 lesz összehasonlítva"
+
+#~ msgid ""
+#~ "This will open URL1 and expect it to be diff output. URL1 can also be a "
+#~ "'-' and then it will read from standard input. Can be used for instance "
+#~ "for cvs diff | kompare -o -. Kompare will do a check to see if it can "
+#~ "find the original file(s) and then blend the original file(s) into the "
+#~ "diffoutput and show that in the viewer. -n disables the check."
+#~ msgstr ""
+#~ "Megnyitja az URL1 címet diff-kimenetként. Az URL1 helyére '-' is írható - "
+#~ "ilyenkor a standard kimenetről fog a program olvasni. Használható például "
+#~ "így: cvs diff | kompare -o -. A program leellenőrzi, hogy az eredeti "
+#~ "fájlok megtalálhatók-e, összeolvasztja azokat a diff-kimenettel és az "
+#~ "eredményt megjeleníti. A -n opcióval le lehet tiltani ezt az ellenőrzést."
+
+#~ msgid ""
+#~ "This will blend URL2 into URL1, URL2 is expected to be diff output and "
+#~ "URL1 the file or folder that the diffoutput needs to be blended into. "
+#~ msgstr ""
+#~ "Beolvasztja az URL2 tartalmát az URL1-be. Az URL2 a feltételezés szerint "
+#~ "diff-kimenetre mutat, az URL1 pedig arra a fájlra vagy mappára, amelynek "
+#~ "tartalmával össze kell olvasztani a diff fájlt. "
+
+#~ msgid ""
+#~ "Disables the check for automatically finding the original file(s) when "
+#~ "using '-' as URL with the -o option."
+#~ msgstr ""
+#~ "Letiltja az ellenőrzést az eredeti fájlok automatikus megkeresésekor, ha "
+#~ "a '-' URL-ként van megadva, az -o opcióval."
+
+#~ msgid ""
+#~ "Use this to specify the encoding when calling it from the command line. "
+#~ "It will default to the local encoding if not specified."
+#~ msgstr ""
+#~ "Parancssoros indítás esetén itt lehet megadni a kívánt kódolást. Ha nem "
+#~ "ad meg semmit, a helyi kódolást használja majd a program."
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "A fájlok vagy mappák összehasonlítása"
+
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "A KompareViewPart objektum nem található."
+
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "A KompareNavigationPart objektum nem található."

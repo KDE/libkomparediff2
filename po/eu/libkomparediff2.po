@@ -1,0 +1,958 @@
+# Translation for libkomparediff2.po to Euskara/Basque (eu).
+# Copyright (C) 2003, 2005, 2009 Free Software Foundation, Inc.
+# Copyright (C) 2010-2021, This file is copyright:
+# This file is distributed under the same license as the libkomparediff2 package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
+#
+# Translators:
+# Marcos  <marcos@euskalgnu.org>, 2003, 2005.
+# Ion Gaztañaga <ion_g_m@hotmail.com>, 2005.
+# Ion Gaztañaga <igaztanaga@gmail.com>, 2005.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2009, 2011, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkomparediff2\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2021-08-12 00:06+0200\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.04.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: komparemodellist.cpp:58
+#, kde-format
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "&Aplikatu ezberdintasuna"
+
+#: komparemodellist.cpp:62
+#, kde-format
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "Ezberdintasuna &aplikatzea desegin"
+
+#: komparemodellist.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "Ap&likatu dena"
+
+#: komparemodellist.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "&Desegin dena aplikatzea"
+
+#: komparemodellist.cpp:80
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "Au&rreko fitxategia"
+
+#: komparemodellist.cpp:84
+#, kde-format
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "Hurr&engo fitxategia"
+
+#: komparemodellist.cpp:88
+#, kde-format
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "A&urreko ezberdintasuna"
+
+#: komparemodellist.cpp:92
+#, kde-format
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "Hurre&ngo ezberdintasuna"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>Ez dago eredu edo desberdintasunik, fitxategi hau: <b>%1</b>, ez da "
+"baliozko diff fitxategia.</qt>"
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+"<qt>Arazoak <b>%1</b> diff fitxategia <b>%2</b> fitxategiari aplikatzean.</"
+"qt>"
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr "<qt>Arazoak <b>%1</b> diff-a <b>%2</b> direktorioari aplikatzean.</qt>"
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "Ezin izan da behin-behineko fitxategirik ireki."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+"<qt>Ezin izan da <b>%1</b> behin behineko fitxategian idatzi, ezabatzen.</qt>"
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt>Ezin izan da <b>%1</b> helburu direktorioa sortu.\n"
+"Fitxategia ez da gorde.</qt>"
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>Ezin izan da behin behineko fitxategia helburu <b>%1</b> kokalekura "
+"kargatu. Behin behineko fitxategia oraindik eskuragarri dago hemen: <b>%2</"
+"b>. Eskuz kopia dezakezu kokaleku zuzenera.</qt>"
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "Ezin izan da diff irteera analizatu."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "Fitxategiak berdinak dira."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Ezin izan da behin behineko fitxategian idatzi."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+"Diff-a gaizki osatuta dago. Lerro batzuk ezin izan dira sintaktikoki aztertu "
+"eta ez dira bistaratuko diff ikuspegian."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Ion Gaztañaga"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "igaztanaga@gmail.com"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "Ezin izan da gure KompareViewPart-a kargatu"
+
+#~ msgid "Navigation"
+#~ msgstr "Nabigazioa"
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "Ezin izan da gure KompareNavigationPart-a kargatu"
+
+#~ msgid "&Open Diff..."
+#~ msgstr "&Ireki diff-a..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "&Konparatu fitxategiak..."
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "&Fusionatu URL-a diff-arekin..."
+
+#~ msgid "Show T&ext View"
+#~ msgstr "Erakutsi t&estu ikuspegia"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr "0 desberdintasunetik 0"
+
+#~ msgid " 0 of 0 files "
+#~ msgstr "0 fitxategietatik 0"
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] "fitxategi %1-etik %2"
+#~ msgstr[1] " %2 fitxategietatik %1"
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] "fitxategi %1"
+#~ msgstr[1] "%1 fitxategi"
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " desberdintasun %1-etik %2, %3 aplikatua"
+#~ msgstr[1] " %2 desberdintasunetik %1, %3 aplikatuta "
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " desberdintasun %1"
+#~ msgstr[1] "%1 desberdintasun "
+
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "Fusionatu fitxategia/direktorioa konparaketa irteerarekin"
+
+#~ msgid "File/Folder"
+#~ msgstr "Fitxategia/direktorioa"
+
+#~ msgid "Diff Output"
+#~ msgstr "Konparaketaren irteera"
+
+#~ msgid "Blend"
+#~ msgstr "Fusionatu"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "Fusionatu fitxategi edo direktorio hau konparaketaren irteerarekin"
+
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "Fitxategi edo direktorio izen bat eta konparaketa irteera duen fitxategi "
+#~ "bat sartu baduzu, botoi hau gaitu egingo da eta hau sakatzean Konpare "
+#~ "abiatuko da ikuspegi nagusian. Bertan sartutako fitxategi edo "
+#~ "direktorioko fitxategiak konparaketa irteerarekin nahastuko dira. "
+#~ "Horrela, desberdintasunak fitxategi edo fitxategiei aplika diezazkiekezu."
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Konparatu fitxategiak edo direktorioak"
+
+#~ msgid "Source"
+#~ msgstr "Iturburua"
+
+#~ msgid "Destination"
+#~ msgstr "Helburua"
+
+#~ msgid "Compare"
+#~ msgstr "Konparatu"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "Konparatu fitxategi edo direktorio hauek"
+
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "2 fitxategi-izen edo 2 direktorio sartu badituzu elkarrizkea-koadro "
+#~ "honetan, botoi hau gaituko egingo da eta sakatzean sartutako fitxategi "
+#~ "edo direktorioen arteko konparaketa hasiko da."
+
+#~ msgid "Text View"
+#~ msgstr "Testu ikuspegia"
+
+#~ msgid "Source Folder"
+#~ msgstr "Iturburu direktorioa"
+
+#~ msgid "Destination Folder"
+#~ msgstr "Helburu direktorioa"
+
+#~ msgid "Source File"
+#~ msgstr "Iturburu fitxategia"
+
+#~ msgid "Destination File"
+#~ msgstr "Helburu fitxategia"
+
+#~ msgid "Source Line"
+#~ msgstr "Iturburu lerroa"
+
+#~ msgid "Destination Line"
+#~ msgstr "Helburu lerroa"
+
+#~ msgid "Difference"
+#~ msgstr "Desberdintasuna"
+
+#, fuzzy
+#~| msgid "Applied: Changes made to %1 line undone"
+#~| msgid_plural "Applied: Changes made to  %1 lines undone"
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "Aplikatuta: lerro %1-i egindako aldaketak desegin"
+#~ msgstr[1] "da.Aplikatuta: %1 lerroei egindako aldaketak desegin da."
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "Lerro %1 aldatu da"
+#~ msgstr[1] "%1 lerro aldatu dira"
+
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "Aplikatuta: lerro %1-en txertatzea desegin da"
+#~ msgstr[1] "Aplikatuta: %1 lerroen txertatzea desegin da"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "lerro %1 txertatu da"
+#~ msgstr[1] "%1 lerro txertatu dira"
+
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] " Aplikatuta: lerro %1-en ezabaketa desegin da"
+#~ msgstr[1] "Aplikatuta: %1 lerroen ezabaketa desegin da"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "lerro %1 ezabatu da"
+#~ msgstr[1] "%1 lerro ezabatu dira"
+
+#~ msgid "Unknown"
+#~ msgstr "Ezezaguna"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "John Firebaugh"
+
+#~ msgid "Author"
+#~ msgstr "Egilea"
+
+#~ msgid "Otto Bruggeman"
+#~ msgstr "Otto Bruggeman"
+
+#~ msgid "Save &All"
+#~ msgstr "Guztia &gorde"
+
+#~ msgid "Save &Diff..."
+#~ msgstr "Gorde &Diff..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Trukatu iturburua jomugarekin"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Estatistikak erakutsi"
+
+#~ msgid "Refresh Diff"
+#~ msgstr "Diff freskatu"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt><b>%1</b> URL-a ezin da jaitsi.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt><b>%1</b> URL-a ez da zure sisteman existitzen.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "Diff aukerak"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Adabaki fitxategiak"
+
+#~ msgid "Save .diff"
+#~ msgstr "Gorde .diff"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr ""
+#~ "Fitxategia dagoeneko existitzen da edo idazketa aurka babesturik dago; "
+#~ "gainidatzi nahi duzu?"
+
+#~ msgid "File Exists"
+#~ msgstr "Fitxategia existitzen da"
+
+#~ msgid "Overwrite"
+#~ msgstr "Gainidatzi"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Ez gainidatzi"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Kevin Kofler"
+#~ msgstr "Kevin Kofler"
+
+#~ msgid "Running diff..."
+#~ msgstr "Diff martxan..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "Diff irteera analizatzen..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "%1 fitxategia %2 fitxategiarekin konparatzen"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "%1-(e)ko fitxategiak %2-(e)ko fitxategiekin konparatzen"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "%1-(r)en diff irteera ikusten"
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "%1-(r)en diff irteera %2 fitxategian fusionatzen"
+
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "%1-(r)en diff irteera %2 direktorioan fusionatzen"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Helburu fitxategietan aldaketak egin dituzu.\n"
+#~ "Gorde nahi dituzu?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "Aldaketak gorde?"
+
+#~ msgid "Unified"
+#~ msgstr "Bateratua"
+
+#~ msgid "Context"
+#~ msgstr "Testuingurua"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Normala"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "Ez dago diff fitxategirik, edo ez da 2 fitxategirik konparatu. Beraz, ez "
+#~ "estatistikarik egongo eskuragarri."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Diff estatistikak"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Estatistikak:\n"
+#~ "\n"
+#~ "Fitxategi zaharra:%1\n"
+#~ "Fitxategi berria:%2\n"
+#~ "\n"
+#~ "Formatua:%3\n"
+#~ "Zati kopurua:%4\n"
+#~ "Ezberdintasun kopurua:%5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Estatistikak:\n"
+#~ "\n"
+#~ "Diff fitxategiko fitxategi kopurua: %1\n"
+#~ "Formatua:%2\n"
+#~ "\n"
+#~ "Uneko fitxategi zaharra:%3\n"
+#~ "Uneko fitxategi berria:%4\n"
+#~ "\n"
+#~ "Zati kopurua:%5\n"
+#~ "Desberdintasun kopurua:%6"
+
+#~ msgid "&File"
+#~ msgstr "&Fitxategia"
+
+#~ msgid "&Difference"
+#~ msgstr "&Desberdintasuna"
+
+#~ msgid "&Settings"
+#~ msgstr "&Ezarpenak"
+
+#~ msgid "Preferences"
+#~ msgstr "Hobespenak"
+
+#~ msgid "View"
+#~ msgstr "Ikusi"
+
+#~ msgid "View Settings"
+#~ msgstr "Ezarpenak ikusi"
+
+#~ msgid "Diff"
+#~ msgstr "Diff"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Diff ezarpenak"
+
+#~ msgid "Run Diff In"
+#~ msgstr "Abiatu diff hemen:"
+
+#~ msgid "Command Line"
+#~ msgstr "Komando lerroa"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- iturburuaren helburua"
+
+#~ msgid "Options"
+#~ msgstr "Aukerak"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "Bilatu aldaketa txikiak"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "Optimizat fitxategi handientzat"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "Ez ikusi maiuskula/minuskula aldaketak"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "Zabaldu tabulatzaileak espaziotara"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "Ez ikusi gehitutako edo kendutako lerro hutsak"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Ez ikusi zurigune aldaketak"
+
+#~ msgid "Show function names"
+#~ msgstr "Erakutsi funtzioen izenak"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "Konparatu direktorioak errekurtsiboki"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "Tratatu fitxategi berriak hutsak bezala"
+
+#~ msgid "Format"
+#~ msgstr "Formatua"
+
+#~ msgid "Side-by-side"
+#~ msgstr "Aalboz albo"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "Testuinguru lerro kopurua:"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Tresnabarra nagusia"
+
+#~ msgid "Files"
+#~ msgstr "Fitxategiak"
+
+#~ msgid "Here you can enter the files you want to compare."
+#~ msgstr "Hemen konparatu nahi dituzun fitxategiak sar ditzakezu."
+
+#~ msgid "Here you can change the options for comparing the files."
+#~ msgstr "Hemen fitxategi konparaketaren aukerak alda ditzakezu."
+
+#~ msgid "Appearance"
+#~ msgstr "Itxura"
+
+#~ msgid "Here you can change the options for the view."
+#~ msgstr "Hemen ikuspegiaren aukerak alda ditzakezu."
+
+#~ msgid ""
+#~ "File used for excluding files cannot be found, please specify another "
+#~ "file."
+#~ msgstr ""
+#~ "Ezin da aurkitu fitxategiak baztertzeko fitxategia, mesedez zehaztu beste "
+#~ "fitxategi bat."
+
+#~ msgid "Diff Program"
+#~ msgstr "Diff programa"
+
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr ""
+#~ "Hemen diff programa ezberdin bat hauta dezakezu. Solaris-en konparaketa "
+#~ "programa estandarrak ez ditu GNU bertsioaren aukera guztiak onartzen. "
+#~ "Honela, bertsio hura hauta dezakezu."
+
+#~ msgid ""
+#~ "Select the format of the output generated by diff. Unified is the one "
+#~ "that is used most frequently because it is very readable. The KDE "
+#~ "developers like this format the best so use it for sending patches."
+#~ msgstr ""
+#~ "Hautatu diff programak sortuko duen irteeraren formatua. Bateratua, "
+#~ "gehien erabiltzen den formatua da, oso irakurterreza delako. KDE "
+#~ "garatzaileek formatu hau dute gustoko adabakiak bidaltzeko garaian."
+
+#~ msgid "Output Format"
+#~ msgstr "Irteeraren formatua"
+
+#~ msgid "Lines of Context"
+#~ msgstr "Testuinguru lerroak"
+
+#~ msgid ""
+#~ "The number of context lines is normally 2 or 3. This makes the diff "
+#~ "readable and applicable in most cases. More than 3 lines will only bloat "
+#~ "the diff unnecessarily."
+#~ msgstr ""
+#~ "Normalean, testuinguru kopuru 2 edo 3 izan ohi da. Honek konparaketa "
+#~ "irakurgarria egiten du eta kasu gehienetan aplika daiteke. 3 lerro baina "
+#~ "gehiago hautatzen bada, konparaketa gehiegi handituko litzateke."
+
+#~ msgid "General"
+#~ msgstr "Orokorra"
+
+#~ msgid "&Treat new files as empty"
+#~ msgstr "&Tratatu fitxategi berriak huts bezala"
+
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "Aukera hau -N diff aukerari dagokio."
+
+#~ msgid ""
+#~ "With this option enabled diff will treat a file that only exists in one "
+#~ "of the directories as empty in the other directory. This means that the "
+#~ "file is compared with an empty file and because of this will appear as "
+#~ "one big insertion or deletion."
+#~ msgstr ""
+#~ "Aukera hau gaituta diff-ek direktorioetako bakarrean existitzen den "
+#~ "fitxategi bat beste direktorioan huts bezala tratatuko du. Honek esan "
+#~ "nahi du fitxategia fitxategi huts batekin alderatuko duela eta horregatik "
+#~ "txertatutako edo ezabatutako handi bat bezala azalduko da."
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "&Bilatu aldaketa txikiak"
+
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "Hau -d konparaketa aukerari dagokio."
+
+#~ msgid ""
+#~ "With this option enabled diff will try a little harder (at the cost of "
+#~ "more memory) to find fewer changes."
+#~ msgstr ""
+#~ "Haukera hau gaituta diff gogorrago saiatuko da (memoria gehiagoren "
+#~ "kostuan) aldaketa gutxiago aurkitzeko."
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "O&ptimizatu fitxategi handientzat"
+
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "Hau -H konparaketa aukerari dagokio."
+
+#~ msgid ""
+#~ "This option lets diff makes better diffs when using large files. The "
+#~ "definition of large is nowhere to be found though."
+#~ msgstr ""
+#~ "Haukera honek diff-eri diff hobeak egiteko aukera eskaintzen dio "
+#~ "fitxategi handiak erabiltzerakoan. Handiaren definizioa inon aurkituko ez "
+#~ "den arren."
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "Ez &ikusi aldaketak maiuskula/minuskuletan"
+
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "Hau -i konparaketa aukerari dagokio."
+
+#~ msgid ""
+#~ "With this option to ignore changes in case enabled, diff will not "
+#~ "indicate a difference when something in one file is changed into "
+#~ "SoMEthing in the other file."
+#~ msgstr ""
+#~ "Maius/minus aldaketak baztertzeko aukera hau gaituta, diff-ek ez du "
+#~ "adieraziko aldaketa bat fitxategi bateko zerbait beste fitxategiko "
+#~ "ZeRBait-era aldatzen denean."
+
+#~ msgid "Ignore regexp:"
+#~ msgstr "Ez ikusi regexp:"
+
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "Aukera hau -l konparaketa aukerari dagokio."
+
+#~ msgid ""
+#~ "When this checkbox is enabled, an option to diff is given that will make "
+#~ "diff ignore lines that match the regular expression."
+#~ msgstr ""
+#~ "Egiaztapen-lauki hau gaituta dagoenean, diff-eri aukera bat pasatuko zaio "
+#~ "adierazpen erregularraren lerro parekideak baztertzera eramango duena."
+
+#~ msgid ""
+#~ "Add the regular expression here that you want to use\n"
+#~ "to ignore lines that match it."
+#~ msgstr ""
+#~ "Gehitu erabili bat datozen lerroak ez ikusteko erabili\n"
+#~ "nahi duzun espresio erregularra."
+
+#~ msgid "&Edit..."
+#~ msgstr "&Editatu"
+
+#~ msgid ""
+#~ "Clicking this will open a regular expression dialog where\n"
+#~ "you can graphically create regular expressions."
+#~ msgstr ""
+#~ "Hemen klikatuz gero, espresio erregular elkarrizketa-koadro \n"
+#~ "bat irekiki da, non grafikoki espresio erregularrak sor ditzakezun."
+
+#~ msgid "Whitespace"
+#~ msgstr "Zurigunea"
+
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "&Zabaldu tabulatzaileak espaziotara irteeran"
+
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "Aukera hau -t konparaketa aukerari dagokio."
+
+#~ msgid ""
+#~ "This option does not always produce the right result. Due to this "
+#~ "expansion Kompare may have problems applying the change to the "
+#~ "destination file."
+#~ msgstr ""
+#~ "Aukera honek ez ditu beti emaitza zuzenak ematen. Hedapen honen ondorioz "
+#~ "Kompare-k arazoak izan ditzake helburu fitxategiari aldaketa aplikatzen."
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "Ez i&kusi gehitutako edo kendutako lerro hutsak"
+
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "Aukera hau -B konparaketa aukerari dagokio."
+
+#~ msgid ""
+#~ "This can be very useful in situations where code has been reorganized and "
+#~ "empty lines have been added or removed to improve legibility."
+#~ msgstr ""
+#~ "Hau oso erabilgarria izan daiteke irakurgarritasuna hobetzeko kodea "
+#~ "berrantolatu eta lerro hutsak erantsi edo kendu diren egoeratan."
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "Ez ik&usi zurigune kopuru aldaketak"
+
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "Aukera hau -b konparaketa aukerari dagokio."
+
+#~ msgid ""
+#~ "If you are uninterested in differences arising due to, for example, "
+#~ "changes in indentation, then use this option."
+#~ msgstr ""
+#~ "Ez bazaude interesatuta, adibidez, koskaduren aldaketengatik agertzen "
+#~ "diren desberdintasunekin, orduan erabili aukera hau."
+
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "Ez iku&si zurigune guztiak"
+
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "Aukera hau -w konparaketa aukerari dagokio."
+
+#~ msgid ""
+#~ "This is useful for seeing the significant changes without being "
+#~ "overwhelmed by all the white space changes."
+#~ msgstr ""
+#~ "Hau erabilgarria da aldaketa esanguratsuak ikusteko zuriune aldaketa "
+#~ "guztiek ito zaitzaten gabe."
+
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "Ez ikus&i tabulatzaile zabalkuntza aldaketak"
+
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "Aukera hau -E konparaketa aukerari dagokio."
+
+#~ msgid ""
+#~ "If there is a change because tabs have been expanded into spaces in the "
+#~ "other file, then this option will make sure that these do not show up. "
+#~ "Kompare currently has some problems applying such changes so be careful "
+#~ "when you use this option."
+#~ msgstr ""
+#~ "Aldaketa bat badago tab-ak zuriunetara hedatu direlako beste fitxategian, "
+#~ "orduan aukera honek ziurtatuko du hauek ez direla azaltzen. Komparek "
+#~ "arazo batzuk ditu horrelako aldaketak ezartzerakoan beraz kontu izan "
+#~ "aukera hau erabiltzen duzunean."
+
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "Baztertzeko fitxategi eredua"
+
+#~ msgid ""
+#~ "If this is checked you can enter a shell pattern in the text box on the "
+#~ "right or select entries from the list."
+#~ msgstr ""
+#~ "Hau hautatzen bada, shell eredu bat sar dezakezu testu-koadroan edo "
+#~ "zerrenda sarrerak hauta ditzakezu."
+
+#~ msgid ""
+#~ "Here you can enter or remove a shell pattern or select one or more "
+#~ "entries from the list."
+#~ msgstr ""
+#~ "Hemen shell eredu bat sar edo kendu dezakezu edo zerrendako sarrera bat "
+#~ "edo gehiago hauta dezakezu."
+
+#~ msgid "File with Filenames to Exclude"
+#~ msgstr "Baztertzeko fitxategi-izenak dituen fitxategia"
+
+#~ msgid "If this is checked you can enter a filename in the combo box below."
+#~ msgstr ""
+#~ "Hau  markatzen bada, fitxategi-izen bat sar dezakezu beheko lauki "
+#~ "konbinatuan."
+
+#~ msgid ""
+#~ "Here you can enter the URL of a file with shell patterns to ignore during "
+#~ "the comparison of the folders."
+#~ msgstr ""
+#~ "Hemen direktorioen konparaketetan baztertuko diren shell eredudun "
+#~ "fitxategi baten URL-a sar dezakezu."
+
+#~ msgid ""
+#~ "Any file you select in the dialog that pops up when you click it will be "
+#~ "put in the dialog to the left of this button."
+#~ msgstr ""
+#~ "Hemen hautatzen duzun eta klik egitean agertzen den edozein fitxategi, "
+#~ "botoi honen ezkerrean dagoen elkarrizketa-koadroan jarriko da."
+
+#~ msgid "Exclude"
+#~ msgstr "Baztertu"
+
+#~ msgid "Encoding"
+#~ msgstr "Kodeketa"
+
+#~ msgid "Colors"
+#~ msgstr "Koloreak"
+
+#~ msgid "Removed color:"
+#~ msgstr "Kendutakoen kolorea:"
+
+#~ msgid "Changed color:"
+#~ msgstr "Aldatutakoen kolorea"
+
+#~ msgid "Added color:"
+#~ msgstr "Erantsitakoen kolorea"
+
+#~ msgid "Applied color:"
+#~ msgstr "Aplikatutako kolorea"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Saguaren gurpila"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Lerro kopurua:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Tabulatzaileak zuriguneetara"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "Tabulatzailearen ordez idatziko den zurigune kopurua:"
+
+#~ msgid "Text Font"
+#~ msgstr "Testuaren letra-tipoa"
+
+#~ msgid "Font:"
+#~ msgstr "Letra-tipoa:"
+
+#~ msgid "Size:"
+#~ msgstr "Tamaina:"
+
+#~ msgid "Fonts"
+#~ msgstr "Letra-tipoak:"
+
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "Fitxategien arteko desberdintasunak ikusteko eta diff fitxategiak "
+#~ "sortzeko gaitasuna duen programa bat."
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#, fuzzy
+#~| msgid ""
+#~| "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~| "2004-2005 Jeff Snyder, (c) 2007-2008 Kevin Kofler"
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2008 Kevin Kofler"
+
+#~ msgid "Jeff Snyder"
+#~ msgstr "Jeff Snyder"
+
+#~ msgid "Developer"
+#~ msgstr "Garatzailea"
+
+#~ msgid "Maintainer"
+#~ msgstr "Mantentzailea"
+
+#~ msgid "Chris Luetchford"
+#~ msgstr "Chris Luetchford"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "Konpare ikono artista"
+
+#~ msgid "Malte Starostik"
+#~ msgstr "Malte Starostik"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "Aholku on asko"
+
+#~ msgid "Bernd Gehrmann"
+#~ msgstr "Bernd Gehrmann"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Cervisia diff ikustailea"
+
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "URL1 eta URL2 konparatuko ditu"
+
+#~ msgid ""
+#~ "This will open URL1 and expect it to be diff output. URL1 can also be a "
+#~ "'-' and then it will read from standard input. Can be used for instance "
+#~ "for cvs diff | kompare -o -. Kompare will do a check to see if it can "
+#~ "find the original file(s) and then blend the original file(s) into the "
+#~ "diffoutput and show that in the viewer. -n disables the check."
+#~ msgstr ""
+#~ "Honek URL1 irekiko du eta konparaketaren irteera izatea espero du. URL1 "
+#~ "'-' ere izan daiteke eta orduan irteera estandarretik irakurriko da. "
+#~ "Adibidez, \"cvs diff | konpare -o - \" aginduan erabil daiteke. Konpare-k "
+#~ "jartorrizko fitxategiak aurki ditzakeen egiaztatuko du eta orduan "
+#~ "jatorrizko fitxategiak konparaketa irteerara fusionatu xeta ikustailean "
+#~ "bistaratuko dituss. \"-n\"-k egiaztapena ezgaituko du.s"
+
+#~ msgid ""
+#~ "This will blend URL2 into URL1, URL2 is expected to be diff output and "
+#~ "URL1 the file or folder that the diffoutput needs to be blended into. "
+#~ msgstr ""
+#~ "Honek URL2 URL1-ean fusionatuko du URL2 konparaketa irteera izatea eta "
+#~ "URL1 konparaketa irteera fusionatuko den fitxategi edo direktorioa izatea "
+#~ "espero da. "
+
+#~ msgid ""
+#~ "Disables the check for automatically finding the original file(s) when "
+#~ "using '-' as URL with the -o option."
+#~ msgstr ""
+#~ "'-' URL-a -o akerarekin erabiltzen denean automatikoki jatorrizko "
+#~ "fitxategia(k) aurkitzeko egiaztapena ezgaitzen du."
+
+#~ msgid ""
+#~ "Use this to specify the encoding when calling it from the command line. "
+#~ "It will default to the local encoding if not specified."
+#~ msgstr ""
+#~ "Erabili hau komando-lerrotik deitzean erabiliko den kodeketa zehazteko. "
+#~ "Ezer zehazten ez bada, lehenetsia kodeketa lokala erabiltzea da."
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "Konparatu fitxategi edo direktorio hauek"
+
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "Ezin izan da gure KompareViewPart-a aurkitu"
+
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "Ezin izan da gure KompareNavigationPart.-a aurkitu"

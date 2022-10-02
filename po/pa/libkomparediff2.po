@@ -1,0 +1,606 @@
+# translation of kompare.po to Punjabi
+#
+# Amanpreet Singh Brar <aalam@redhat.com>, 2005.
+# Amanpreet Singh Alam <amanpreetalam@yahoo.com>, 2005.
+# A S Alam <aalam@users.sf.net>, 2007, 2009, 2010, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2012-07-05 07:33+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Apply Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "ਅੰਤਰ ਲਾਗੂ(&A)"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "Un&apply Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "ਅੰਤਰ ਲਾਗੂ ਕਰਨਾ ਵਾਪਸ(&a)"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+#| msgid "App&ly All"
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "ਸਭ ਲਾਗੂ(&l)"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+#| msgid "&Unapply All"
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "ਸਭ ਲਾਗੂ ਵਾਪਸ(&U)"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "ਪਿੱਛੇ ਫਾਇਲ(&r)"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "ਅੱਗੇ ਫਾਇਲ(&e)"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Previous Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "ਪਿੱਛੇ ਅੰਤਰ(&P)"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Next Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "ਅੱਗੇ ਅੰਤਰ(&N)"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "ਇੱਕ ਆਰਜ਼ੀ ਫਾਇਲ ਖੋਲੀ ਨਹੀਂ ਜਾ ਸਕੀ ਹੈ।"
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "ਅੰਤਰ ਆਉਟਪੁੱਟ ਨੂੰ ਪਾਰਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ ਹੈ।"
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "ਫਾਇਲਾਂ ਇੱਕੋ ਜਿਹੀਆਂ ਹੀ ਹਨ।"
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "ਫਾਰਮੈਟਫਾਇਲ ਲਿਖੀ ਨਹੀਂ ਜਾ ਸਕੀ ਹੈ।"
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "aalam@users.sf.net"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "ਸਾਡਾ KompareViewPart ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ ਹੈ।"
+
+#~ msgid "Navigation"
+#~ msgstr "ਨੇਵੀਗੇਸ਼ਨ"
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "ਸਾਡਾ KompareNavigationPart ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ ਹੈ।"
+
+#~ msgid "&Open Diff..."
+#~ msgstr "ਅੰਤਰ ਖੋਲ੍ਹੋ(&O)..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "ਫਾਇਲ ਤੁਲਨਾ(&C)..."
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "ਅੰਤਰ ਨਾਲ URL ਰਲਾਓ(&B)..."
+
+#~ msgid "Show T&ext View"
+#~ msgstr "ਪਾਠ ਵੇਖਣ ਵੇਖਾਓ(&e)"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr " 0 ਵਿੱਚੋਂ 0 ਅੰਤਰ "
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 ਵਿੱਚੋਂ 0 ਫਾਇਲਾਂ "
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] "  %1 ਵਿੱਚੋਂ %2 ਫਾਇਲ "
+#~ msgstr[1] " %1 ਫਾਇਲਾਂ ਵਿੱਚੋਂ %2 "
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] "  %1 ਫਾਇਲ "
+#~ msgstr[1] " %1 ਫਾਇਲਾਂ "
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] "%1 ਅੰਤਰ ਵਿੱਚੋਂ %2, %3 ਲਾਗੂ "
+#~ msgstr[1] "%1 ਅੰਤਰਾਂ ਵਿੱਚੋਂ %2, %3 ਲਾਗੂ "
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] "  %1 ਅੰਤਰ "
+#~ msgstr[1] " %1 ਅੰਤਰ "
+
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "ਫਾਇਲ/ਫੋਲਡਰ ਨੂੰ ਅੰਤਰ ਆਉਟਪੁੱਟ ਨਾਲ ਘੋਲੋ"
+
+#~ msgid "File/Folder"
+#~ msgstr "ਫਾਇਲ/ਫੋਲਡਰ"
+
+#~ msgid "Diff Output"
+#~ msgstr "ਅੰਤਰ ਆਉਟਪੁੱਟ"
+
+#~ msgid "Blend"
+#~ msgstr "ਘੋਲੋ"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "ਇਸ ਫਾਇਲ ਜਾਂ ਫੋਲਡਰ ਨੂੰ ਅੰਤਰ ਆਉਟਪੁੱਟ ਨਾਲ ਘੋਲੋ"
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "ਫਾਇਲ ਜਾਂ ਫੋਲਡਰ ਤੁਲਨਾ"
+
+#~ msgid "Source"
+#~ msgstr "ਸਰੋਤ"
+
+#~ msgid "Destination"
+#~ msgstr "ਨਿਯਤ"
+
+#~ msgid "Compare"
+#~ msgstr "ਤੁਲਨਾ"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "ਇਹ ਫਾਇਲਾਂ ਜਾਂ ਫੋਲਡਰਾਂ ਦੀ ਤੁਲਨਾ"
+
+#~ msgid "Text View"
+#~ msgstr "ਪਾਠ ਝਲਕ"
+
+#~ msgid "Source Folder"
+#~ msgstr "ਸਰੋਤ ਫੋਲਡਰ"
+
+#~ msgid "Destination Folder"
+#~ msgstr "ਨਿਯਤ ਫੋਲਡਰ"
+
+#~ msgid "Source File"
+#~ msgstr "ਸਰੋਤ ਫਾਇਲ"
+
+#~ msgid "Destination File"
+#~ msgstr "ਨਿਯਤ ਫਾਇਲ"
+
+#~ msgid "Source Line"
+#~ msgstr "ਸਰੋਤ ਸਤਰ"
+
+#~ msgid "Destination Line"
+#~ msgstr "ਨਿਯਤ ਸਤਰ"
+
+#~ msgid "Difference"
+#~ msgstr "ਅੰਤਰ"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "%1 ਲਾਇਨ ਬਦਲੀ"
+#~ msgstr[1] "%1 ਲਾਇਨਾਂ ਬਦਲੀਆਂ"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "%1 ਲਾਇਨ ਸ਼ਾਮਿਲ ਕੀਤੀ"
+#~ msgstr[1] "%1 ਲਾਇਨਾਂ ਸ਼ਾਮਿਲ ਕੀਤੀਆਂ"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "%1 ਸਤਰ ਹਟਾਈ"
+#~ msgstr[1] "%1 ਸਤਰਾਂ ਹਟਾਈਆਂ"
+
+#~ msgid "Unknown"
+#~ msgstr "ਅਣਜਾਣ"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "ਜੋਨ ਫਾਇਰਬਾਉਘ"
+
+#~ msgid "Author"
+#~ msgstr "ਲੇਖਕ"
+
+#~ msgid "Save &All"
+#~ msgstr "ਸਭ ਸੰਭਾਲੋ(&A)"
+
+#~ msgid "Save &Diff..."
+#~ msgstr "&Diff ਸੰਭਾਲੋ..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "ਟਿਕਾਣੇ ਨੂੰ ਸਰੋਤ ਨਾਲ ਬਦਲੋ"
+
+#~ msgid "Show Statistics"
+#~ msgstr "ਅੰਕੜੇ ਵੇਖੋ"
+
+#~ msgid "Refresh Diff"
+#~ msgstr "ਅੰਤਰ ਤਾਜ਼ਾ"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>URL <b>%1</b> ਡਾਊਨਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>URL <b>%1</b> ਤੁਹਾਡੇ ਸਿਸਟਮ ਉੱਤੇ ਮੌਜੂਦ ਨਹੀਂ ਹੈ।</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "ਅੰਤਰ ਚੋਣਾਂ"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|ਪੈਂਚ ਫਾਇਲਾਂ"
+
+#~ msgid "Save .diff"
+#~ msgstr ".diff ਸੰਭਾਲੋ"
+
+#~ msgid "File Exists"
+#~ msgstr "ਫਾਇਲ ਮੌਜੂਦ ਹੈ"
+
+#~ msgid "Overwrite"
+#~ msgstr "ਉੱਤੇ ਲਿਖੋ"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "ਉੱਤੇ ਨਾ ਲਿਖੋ"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Kevin Kofler"
+#~ msgstr "ਕੇਵਿਨ ਕੋਫਲਰ"
+
+#~ msgid "Running diff..."
+#~ msgstr "ਅੰਤਰ (diff) ਚੱਲ ਰਿਹਾ ਹੈ..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "ਅੰਤਰ ਆਉਟਪੁੱਟ ਪਾਰਸ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "ਫਾਇਲ %1 ਦੀ ਫਾਇਲ %2 ਨਾਲ ਤੁਲਨਾ..."
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "%1 ਵਿੱਚੋਂ ਫਾਇਲਾਂ ਦੀ %2 ਵਿਚਲੀਆਂ ਫਾਇਲਾਂ ਨਾਲ ਤੁਲਨਾ"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "%1 ਤੋਂ ਅੰਤਰ ਆਉਟਪੁੱਟ ਵੇਖੋ"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "ਤੁਸੀਂ ਟਿਕਾਣਾ ਫਾਇਲਾਂ ਵਿੱਚ ਬਦਲਾਅ ਕੀਤੇ ਹਨ।\n"
+#~ "ਕੀ ਤੁਸੀਂ ਉਨ੍ਹਾਂ ਨੂੰ ਸੰਭਾਲਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "ਕੀ ਤਬਦੀਲੀਆਂ ਸੰਭਾਲਣੀਆਂ ਹਨ?"
+
+#~ msgid "Unified"
+#~ msgstr "ਇਕਸਾਰ"
+
+#~ msgid "Context"
+#~ msgstr "ਪਾਠ"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "ਸਧਾਰਨ"
+
+#~ msgid "Diff Statistics"
+#~ msgstr "ਅੰਤਰ ਅੰਕੜੇ"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "ਅੰਕੜੇ:\n"
+#~ "\n"
+#~ "ਪੁਰਾਣੀ ਫਾਇਲ: %1\n"
+#~ "ਨਵੀਂ ਫਾਇਲ: %2\n"
+#~ "\n"
+#~ "ਫਾਰਮੈਟ: %3\n"
+#~ "ਟੁਕੜਿਆਂ ਦੀ ਗਿਣਤੀ: %4\n"
+#~ "ਅੰਤਰਾਂ ਦੀ ਗਿਣਤੀ: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "ਅੰਕੜੇ:\n"
+#~ "\n"
+#~ "ਅੰਤਰ ਫਾਇਲਾਂ ਵਿੱਚ ਫਾਇਲਾਂ ਦੀ ਗਿਣਤੀ: %1\n"
+#~ "ਫਾਰਮੈਟ: %2\n"
+#~ "\n"
+#~ "ਮੌਜੂਦਾ ਪੁਰਾਣੀ ਫਾਇਲ: %3\n"
+#~ "ਮੌਜੂਦਾ ਨਵੀਂ ਫਾਇਲ: %4\n"
+#~ "\n"
+#~ "ਟੁਕੜਿਆਂ ਦੀ ਗਿਣਤੀ: %5\n"
+#~ "ਅੰਤਰਾਂ ਗਿਣਤੀ: %6"
+
+#~ msgid "&File"
+#~ msgstr "ਫਾਇਲ(&F)"
+
+#~ msgid "&Difference"
+#~ msgstr "ਅੰਤਰ(&D)"
+
+#~ msgid "&Settings"
+#~ msgstr "ਸੈਟਿੰਗ(&S)"
+
+#~ msgid "Preferences"
+#~ msgstr "ਮੇਰੀ ਪਸੰਦ"
+
+#~ msgid "View"
+#~ msgstr "ਝਲਕ"
+
+#~ msgid "View Settings"
+#~ msgstr "ਵੇਖਣ ਸੈਟਿੰਗ"
+
+#~ msgid "Diff"
+#~ msgstr "ਅੰਤਰ(Diff)"
+
+#~ msgid "Diff Settings"
+#~ msgstr "ਅੰਤਰ ਸੈਟਿੰਗ"
+
+#~ msgid "Run Diff In"
+#~ msgstr "ਅੰਤਰ ਚਲਾਓ"
+
+#~ msgid "Command Line"
+#~ msgstr "ਕਮਾਂਡ ਲਾਈਨ"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- source destination"
+
+#~ msgid "Options"
+#~ msgstr "ਚੋਣਾਂ"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "ਛੋਟੀਆਂ ਤਬਦੀਲੀਆਂ ਵੇਖਾਓ"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "ਵੱਡੀਆਂ ਫਾਇਲਾਂ ਲਈ ਅਨੁਕੂਲ"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "ਅੱਖਰ ਅਕਾਰ ਅਣਡਿੱਠਾ"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "ਟੈਬਾਂ ਨੂੰ ਖਾਲੀ ਥਾਂ ਦੇ ਰੂਪ ਵਿੱਚ ਫੈਲਾਓ"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "ਜੋੜੀਆਂ ਜਾਂ ਹਟਾਈਆਂ ਖਾਲੀ ਸਤਰਾਂ ਅਣਡਿੱਠੀਆਂ"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "ਖਾਲੀ ਥਾਂ ਵਿੱਚ ਤਬਦੀਲੀਆਂ ਅਣਡਿੱਠੀਆਂ"
+
+#~ msgid "Show function names"
+#~ msgstr "ਫੰਕਸ਼ਨ ਨਾਂ ਵੇਖਾਓ"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "ਅੰਦਰੂਨੀ ਫੋਲਡਰਾਂ ਦੀ ਤੁਲਨਾ"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "ਨਵੀਂਆਂ ਫਾਇਲਾਂ ਨੂੰ ਖਾਲੀ ਮੰਨੋ"
+
+#~ msgid "Format"
+#~ msgstr "ਫਾਰਮੈਟ"
+
+#~ msgid "Side-by-side"
+#~ msgstr "ਨਾਲੋ ਨਾਲ"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "ਪਰਸੰਗ ਸਤਰਾਂ ਦੀ ਗਿਣਤੀ:"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "ਮੁੱਖ ਟੂਲਬਾਰ"
+
+#~ msgid "Files"
+#~ msgstr "ਫਾਇਲਾਂ"
+
+#~ msgid "Here you can enter the files you want to compare."
+#~ msgstr "ਇੱਥੇ ਤੁਸੀਂ ਤੁਲਨਾ ਕਰਨ ਲਈ ਫਾਇਲਾਂ ਦੇ ਸਕਦੇ ਹੋ।"
+
+#~ msgid "Appearance"
+#~ msgstr "ਦਿੱਖ"
+
+#~ msgid "Diff Program"
+#~ msgstr "ਅੰਤਰ ਪਰੋਗਰਾਮ"
+
+#~ msgid "Output Format"
+#~ msgstr "ਆਉਟਪੁੱਟ ਫਾਰਮੈਟ"
+
+#~ msgid "Lines of Context"
+#~ msgstr "ਪਰਸੰਗ ਦੀਆਂ ਲਾਈਨਾਂ"
+
+#~ msgid "General"
+#~ msgstr "ਸਧਾਰਨ"
+
+#~ msgid "&Treat new files as empty"
+#~ msgstr "ਨਵੀਂਆਂ ਫਾਇਲਾਂ ਨੂੰ ਖਾਲੀ ਮੰਨੋ(&T)"
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "ਛੋਟੀਆਂ ਤਬਦੀਲੀਆਂ ਲਈ ਖੋਜ(&L)"
+
+#~ msgid "&Edit..."
+#~ msgstr "ਸੋਧ(&E)..."
+
+#~ msgid "Whitespace"
+#~ msgstr "ਖਾਲੀ ਥਾਂ"
+
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "ਅੱਡ ਰੱਖਣ ਲਈ ਫਾਇਲ ਤਰਤੀਬ"
+
+#~ msgid "File with Filenames to Exclude"
+#~ msgstr "ਅੱਡ ਰੱਖਣ ਲਈ ਫਾਇਲ ਨਾਂ ਨਾਲ ਫਾਇਲ"
+
+#~ msgid "Exclude"
+#~ msgstr "ਅੱਡ ਰੱਖੋ"
+
+#~ msgid "Encoding"
+#~ msgstr "ਇਕੋਡਿੰਗ"
+
+#~ msgid "Colors"
+#~ msgstr "ਰੰਗ"
+
+#~ msgid "Removed color:"
+#~ msgstr "ਹਟਾਉਣ ਰੰਗ:"
+
+#~ msgid "Changed color:"
+#~ msgstr "ਤਬਦੀਲੀ ਰੰਗ:"
+
+#~ msgid "Added color:"
+#~ msgstr "ਜੋੜਨ ਰੰਗ:"
+
+#~ msgid "Applied color:"
+#~ msgstr "ਲਾਗੂ ਰੰਗ:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "ਮਾਊਸ ਪਹੀਆ"
+
+#~ msgid "Number of lines:"
+#~ msgstr "ਸਤਰਾਂ ਦੀ ਗਿਣਤੀ:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "ਟੈਬਾਂ ਤੋਂ ਸਪੇਸ"
+
+#~ msgid "Text Font"
+#~ msgstr "ਟੈਕਸਟ ਫੋਂਟ"
+
+#~ msgid "Font:"
+#~ msgstr "ਫੋਂਟ:"
+
+#~ msgid "Size:"
+#~ msgstr "ਸਾਈਜ਼:"
+
+#~ msgid "Fonts"
+#~ msgstr "ਫੋਂਟ"
+
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "ਇੱਕ ਪਰੋਗਰਾਮ, ਜੋ ਕਿ ਤੁਹਾਨੂੰ ਫਾਇਲਾਂ ਵਿੱਚ ਅੰਤਰ ਵੇਖਾ ਸਕਦਾ ਹੈ ਅਤੇ ਚੋਣਵੇਂ ਰੂਪ ਵਿੱਚ ਅੰਤਰ ਤਿਆਰ ਕਰ "
+#~ "ਸਕਦਾ ਹੈ।"
+
+#~ msgid "Kompare"
+#~ msgstr "ਕੇ-ਅੰਤਰ"
+
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+
+#~ msgid "Developer"
+#~ msgstr "ਡਿਵੈਲਪਰ"
+
+#~ msgid "Maintainer"
+#~ msgstr "ਪਰਬੰਧਕ"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "ਕੇ-ਤੁਲਨਾ ਆਈਕਾਨ ਕਲਾਕਾਰ"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "ਕਾਫ਼ੀ ਚੰਗੀਆਂ ਸਲਾਹਾਂ"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "ਸਰਵੀਸੀਆ diff ਦਰਸ਼ਕ"
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "ਇਹਨਾ ਫਾਇਲਾਂ ਜਾਂ ਫੋਲਡਰਾਂ ਦੀ ਤੁਲਨਾ"
+
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "ਸਾਡਾ KompareViewPart ਨਹੀਂ ਮਿਲ ਸਕਿਆ ਹੈ।"
+
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "ਸਾਡਾ KompareNavigationPart ਖੋਜਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ ਹੈ।"

@@ -1,0 +1,405 @@
+# KDE breton translation
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Thierry Vignaud <tvignaud@mandriva.com>, 2004-2005
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2002-07-02 08:32+200\n"
+"Last-Translator: Thierry Vignaud <tvignaud@mandriva.com>\n"
+"Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
+"Language: br\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "&Difereñs"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "&Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "&Difereñs"
+
+#: komparemodellist.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr ""
+
+#: komparemodellist.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr ""
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "Restr dia&raok"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "Restr a h&eul"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "&Difereñs"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "&Difereñs"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "N'hellan ket digeriñ ur restr padennek."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+"<qt>Ne m'eus ket gallet skrivañ d'ar restr padennek <b>%1</b>, emaon o lemel "
+"anezhañ.</qt>"
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr ""
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "Heñvel eo ar restroù."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Ne m'eus ket skrivañ d'ar restr padennek."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Thierry Vignaud, Jañ-Mai Drapier"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "tvignaud@mandriva.com, jdrapier@club-internet.fr"
+
+#~ msgid "Navigation"
+#~ msgstr "Merdeadurezh"
+
+#~ msgid "Show T&ext View"
+#~ msgstr "Diskouez ar gwell skr&id"
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 diwar 0 restr "
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] "%2 diwar %1 restroù"
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] " %1 restr "
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " %1 diforzh "
+
+#~ msgid "File/Folder"
+#~ msgstr "Restr/Renkell"
+
+#~ msgid "Source"
+#~ msgstr "Tarzh"
+
+#~ msgid "Destination"
+#~ msgstr "Dehaezadur"
+
+#~ msgid "Text View"
+#~ msgstr "Gwel ar skrid"
+
+#~ msgid "Source Folder"
+#~ msgstr "Renkell tarzh"
+
+#~ msgid "Destination Folder"
+#~ msgstr "Renkell dehaezadur"
+
+#~ msgid "Source File"
+#~ msgstr "Restr an tarzh"
+
+#~ msgid "Destination File"
+#~ msgstr "Restr dehaezadur"
+
+#~ msgid "Source Line"
+#~ msgstr "Linenn tarzh"
+
+#~ msgid "Destination Line"
+#~ msgstr "Linenn dehaezadur"
+
+#~ msgid "Difference"
+#~ msgstr "Difereñs"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "%1 linenn cheñchet"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "%1 linenn enlakaet"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "%1 linenn lemet"
+
+#~ msgid "Unknown"
+#~ msgstr "Dianav"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "Author"
+#~ msgstr "Oberour"
+
+#~ msgid "Save &All"
+#~ msgstr "Enrol&lañ an holl re"
+
+#, fuzzy
+#~| msgid "Save .diff"
+#~ msgid "Save &Diff..."
+#~ msgstr "Enrollañ .diff"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Diskouez ar stadegoù"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>N'em eus ket enkargañ an URL <b>%1</b>.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>N'eo ket endeo an URL <b>%1</b> e-barzh ho reizhiad.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "Dibaboù diff"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Restroù Patch"
+
+#~ msgid "Save .diff"
+#~ msgstr "Enrollañ .diff"
+
+#~ msgid "File Exists"
+#~ msgstr "Ar restr a zo endeo"
+
+#~ msgid "Overwrite"
+#~ msgstr "Rasklañ"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Ne rasklit ket"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Running diff..."
+#~ msgstr "Emaon o seveniñ diff ..."
+
+#~ msgid "Save Changes?"
+#~ msgstr "Enrollañ ar c'hemmoù ?"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Normal"
+#~ msgstr "Boas"
+
+#~ msgid "&File"
+#~ msgstr "&Restr"
+
+#~ msgid "&Settings"
+#~ msgstr "&Kefluniadur"
+
+#~ msgid "Preferences"
+#~ msgstr "Dibaboù"
+
+#~ msgid "View"
+#~ msgstr "Gwel"
+
+#~ msgid "View Settings"
+#~ msgstr "Sell ouzh an dibarzhoù"
+
+#~ msgid "Diff"
+#~ msgstr "Diff"
+
+#~ msgid "Command Line"
+#~ msgstr "Linenn urzhiañ"
+
+#~ msgid "Options"
+#~ msgstr "Dibarzhoù"
+
+#~ msgid "Format"
+#~ msgstr "Furmadiñ"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Barrenn kentañ an ostilhoù"
+
+#, fuzzy
+#~| msgid "&File"
+#~ msgid "Files"
+#~ msgstr "&Restr"
+
+#, fuzzy
+#~| msgid "Here you can change the options for the view."
+#~ msgid "Here you can enter the files you want to compare."
+#~ msgstr "Amañ e c'hellit kemmañ dibarzhoù ar gwell."
+
+#, fuzzy
+#~| msgid "Here you can change the options for the view."
+#~ msgid "Here you can change the options for comparing the files."
+#~ msgstr "Amañ e c'hellit kemmañ dibarzhoù ar gwell."
+
+#, fuzzy
+#~| msgid "A&ppearance"
+#~ msgid "Appearance"
+#~ msgstr "&Neuziadur"
+
+#~ msgid "Here you can change the options for the view."
+#~ msgstr "Amañ e c'hellit kemmañ dibarzhoù ar gwell."
+
+#~ msgid "Diff Program"
+#~ msgstr "Goulev Diff"
+
+#~ msgid "Output Format"
+#~ msgstr "Furmad ezkas"
+
+#~ msgid "General"
+#~ msgstr "Pennañ"
+
+#~ msgid "&Edit..."
+#~ msgstr "&Aozañ ..."
+
+#~ msgid "Whitespace"
+#~ msgstr "Egor"
+
+#~ msgid "Encoding"
+#~ msgstr "Kodadur"
+
+#~ msgid "Colors"
+#~ msgstr "Livioù"
+
+#~ msgid "Removed color:"
+#~ msgstr "Liv dilemet :"
+
+#~ msgid "Changed color:"
+#~ msgstr "Liv kemmet :"
+
+#~ msgid "Added color:"
+#~ msgstr "Liv ouzhpennet :"
+
+#~ msgid "Applied color:"
+#~ msgstr "Liv arloet :"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Logodenn gant ur rodell"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Niver a linennoù :"
+
+#~ msgid "Text Font"
+#~ msgstr "Nodrezh ar skrid"
+
+#~ msgid "Font:"
+#~ msgstr "Nodrezh :"
+
+#~ msgid "Size:"
+#~ msgstr "Ment :"
+
+#, fuzzy
+#~| msgid "&Fonts"
+#~ msgid "Fonts"
+#~ msgstr "&Nodrezhoù"
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#, fuzzy
+#~| msgid "(c) 2001-2004, John Firebaugh and Otto Bruggeman"
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr "(c) 2001-2004, John Firebaugh hag Otto Bruggeman"
+
+#~ msgid "A&ppearance"
+#~ msgstr "&Neuziadur"
+
+#~ msgid "&Diff"
+#~ msgstr "&Diff"
+
+#~ msgid "&Format"
+#~ msgstr "&Furmadiñ"
+
+#~ msgid "O&ptions"
+#~ msgstr "&Dibaboù"
+
+#~ msgid "Hide T&ext View"
+#~ msgstr "Kuzhat ar gwell skr&id"

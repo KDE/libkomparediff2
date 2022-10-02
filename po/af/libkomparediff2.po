@@ -1,0 +1,608 @@
+# WEB-Translator generated file. UTF-8 test:äëïöü
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# Frikkie Thirion <frix@expertron.co.za>, 2001,2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare VERSION\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2002-11-07 11:40+0200\n"
+"Last-Translator: WEB-Translator <http://kde.af.org.za>\n"
+"Language-Team: AFRIKAANS <AF@lia.org.za>\n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Apply Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "Wend aan Verskil"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "Un&apply Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "Herstel Verskil"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+#| msgid "App&ly All"
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "Wend aan Alle"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "Herstel Alle"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "Vorige Lêer"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "Volgende Lêer"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Previous Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "Vorige Verskil"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Next Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "Volgende Verskil"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, fuzzy, kde-format
+msgid "Could not open a temporary file."
+msgstr "Kon nie open lêer."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, fuzzy, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr "Kon nie skryf na lêer."
+
+#: komparemodellist.cpp:407
+#, fuzzy, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr "Kon nie skryf na lêer."
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "Kon nie lees diff uitset."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "Die lêers word identies."
+
+#: komparemodellist.cpp:712
+#, fuzzy, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Kon nie skryf na lêer."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "WEB-Vertaler (http://kde.af.org.za)"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "frix@expertron.co.za"
+
+#, fuzzy
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "Kon nie soek ons Deel!"
+
+#, fuzzy
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "Kon nie soek ons Deel!"
+
+#~ msgid "&Compare Files..."
+#~ msgstr "Vergelyk Lêers..."
+
+#, fuzzy
+#~ msgid "Show T&ext View"
+#~ msgstr "Vertoon Teks Besigtig"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr " 0 van 0 verskille "
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 van 0 lêers "
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] "%2 van %1 lêer "
+#~ msgstr[1] " %2 van %1 lêers "
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] "%1 lêer "
+#~ msgstr[1] " %1 lêers "
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] "%2 van %1 verskil, %3 aangewend "
+#~ msgstr[1] " %2 van %1 verskille, %3 aangewend "
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] "%1 verskil "
+#~ msgstr[1] " %1 verskille "
+
+#, fuzzy
+#~ msgid "Diff Output"
+#~ msgstr "Diff Opsies"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "As jy het ingevoerde 2 lêername van 2 gidse in die velde in hierdie "
+#~ "dialoog dan word hierdie knoppie sal wees geaktiveer en gedruk dit sal "
+#~ "begin 'n vergelyking van die ingevoerde lêers van gidse. "
+
+#, fuzzy
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Vergelyk Lêers of Gidse"
+
+#~ msgid "Source"
+#~ msgstr "Bron"
+
+#~ msgid "Destination"
+#~ msgstr "Bestemming"
+
+#~ msgid "Compare"
+#~ msgstr "Vergelyk"
+
+#, fuzzy
+#~ msgid "Compare these files or folders"
+#~ msgstr "Vergelyk hierdie lêers of gidse"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "As jy het ingevoerde 2 lêername van 2 gidse in die velde in hierdie "
+#~ "dialoog dan word hierdie knoppie sal wees geaktiveer en gedruk dit sal "
+#~ "begin 'n vergelyking van die ingevoerde lêers van gidse. "
+
+#~ msgid "Text View"
+#~ msgstr "Teks Besigtig"
+
+#, fuzzy
+#~ msgid "Source Folder"
+#~ msgstr "Bron Lêer"
+
+#, fuzzy
+#~ msgid "Destination Folder"
+#~ msgstr "Bestemming Lêer"
+
+#~ msgid "Source File"
+#~ msgstr "Bron Lêer"
+
+#~ msgid "Destination File"
+#~ msgstr "Bestemming Lêer"
+
+#~ msgid "Source Line"
+#~ msgstr "Bron Lyn"
+
+#~ msgid "Destination Line"
+#~ msgstr "Bestemming Lyn"
+
+#~ msgid "Difference"
+#~ msgstr "Verskil"
+
+#, fuzzy
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "Het verander %1 lyn"
+#~ msgstr[1] "Het verander %1 lyne"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "Het verander %1 lyn"
+#~ msgstr[1] "Het verander %1 lyne"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "Ingesit %1 lyn"
+#~ msgstr[1] "Ingesit %1 lyne"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "Uitgevee %1 lyn"
+#~ msgstr[1] "Uitgevee %1 lyne"
+
+#~ msgid "Unknown"
+#~ msgstr "Onbekende"
+
+#~ msgid "Save &All"
+#~ msgstr "Stoor Alle"
+
+#, fuzzy
+#~ msgid "Save &Diff..."
+#~ msgstr "Stoor .diff"
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Uitruil Bron met Bestemming"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Vertoon Statistieke"
+
+#~ msgid "Diff Options"
+#~ msgstr "Diff Opsies"
+
+#~ msgid "Save .diff"
+#~ msgstr "Stoor .diff"
+
+#~ msgid "KomparePart"
+#~ msgstr "K-vergelyk-deel"
+
+#~ msgid "Running diff..."
+#~ msgstr "Wat loop diff..."
+
+#, fuzzy
+#~ msgid "Parsing diff output..."
+#~ msgstr "Verwerking diff..."
+
+#, fuzzy
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "Vergelyk lêers in %1 met lêers in %2"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "Vergelyk lêers in %1 met lêers in %2"
+
+#, fuzzy
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "Verwerking diff..."
+
+#, fuzzy
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "Verwerking diff..."
+
+#, fuzzy
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Jy het gemaak verander na die bestemming.\n"
+#~ "Sal Jy hou van na stoor hulle?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "Stoor Verander?"
+
+#~ msgid "Unified"
+#~ msgstr "Vereenselwig"
+
+#~ msgid "Context"
+#~ msgstr "Konteks"
+
+#~ msgid "RCS"
+#~ msgstr "Rcs"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Normale"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "Nee diff lêer, of Nee 2 lêers het al gediff. Daarom Nee statistiek word "
+#~ "beskikbaar."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Diff Statistieke"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Statistieke:\n"
+#~ "\n"
+#~ "Ou lêer: %1\n"
+#~ "Nuwe lêer: %2\n"
+#~ "\n"
+#~ "Formaat: %3\n"
+#~ "Nommer van hunks: %4\n"
+#~ "Nommer van verskille: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Statistieke:\n"
+#~ "\n"
+#~ "Nommer van lêers in diff lêer: %1\n"
+#~ "Formaat: %2\n"
+#~ "\n"
+#~ "Huidige ou lêer: %3\n"
+#~ "Huidige nuwe lêer: %4\n"
+#~ "\n"
+#~ "Nommer van hunks: %5\n"
+#~ "Nommer van verskille: %6"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "Volgende Lêer"
+
+#~ msgid "&Difference"
+#~ msgstr "Verskil"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "Diff Instellings"
+
+#~ msgid "Preferences"
+#~ msgstr "Voorkeure"
+
+#, fuzzy
+#~ msgid "View"
+#~ msgstr "Teks Besigtig"
+
+#, fuzzy
+#~ msgid "View Settings"
+#~ msgstr "Diff Instellings"
+
+#~ msgid "Diff"
+#~ msgstr "Diff"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Diff Instellings"
+
+#~ msgid "Run Diff In"
+#~ msgstr "Hardloop Diff In"
+
+#~ msgid "Command Line"
+#~ msgstr "Opdrag Lyn"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd gids && diff -udHprNa -- bron bestemming"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "Opsies"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "Kyk vir kleiner verander"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "Optimiseer vir groot lêers"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "Ignoreer verander in kas"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "Vergroot oortjies na spasies"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "Ignoreer bygevoeg of verwyder leeg lyne"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Ignoreer verander in spasie"
+
+#~ msgid "Show function names"
+#~ msgstr "Vertoon funksie name"
+
+#, fuzzy
+#~ msgid "Compare folders recursively"
+#~ msgstr "Vergelyk gidse rekursief"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "Behandel nuwe lêers as leeg"
+
+#~ msgid "Format"
+#~ msgstr "Formaat"
+
+#~ msgid "Side-by-side"
+#~ msgstr "Side-by-side"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "Nommer van konteks lyne:"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Volgende Lêer"
+
+#, fuzzy
+#~| msgid "A&ppearance"
+#~ msgid "Appearance"
+#~ msgstr "Voorkoms"
+
+#~ msgid "Output Format"
+#~ msgstr "Uitset Formaat"
+
+#~ msgid "Lines of Context"
+#~ msgstr "Lyne van Konteks"
+
+#~ msgid "General"
+#~ msgstr "Algemeen"
+
+#, fuzzy
+#~| msgid "Treat new files as empty"
+#~ msgid "&Treat new files as empty"
+#~ msgstr "Behandel nuwe lêers as leeg"
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "Kyk vir kleiner verander"
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "Optimiseer vir groot lêers"
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "Ignoreer verander in kas"
+
+#~ msgid "Whitespace"
+#~ msgstr "Spasie"
+
+#, fuzzy
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "Vergroot oortjies na spasies in uitset"
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "Ignoreer bygevoeg of verwyder leeg lyne"
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "Ignoreer verander in die hoeveelheid van spasie"
+
+#, fuzzy
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "Ignoreer verander in spasie"
+
+#, fuzzy
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "Ignoreer verander in spasie"
+
+#~ msgid "Colors"
+#~ msgstr "Kleure"
+
+#~ msgid "Removed color:"
+#~ msgstr "Verwyder kleur:"
+
+#~ msgid "Changed color:"
+#~ msgstr "Het verander kleur:"
+
+#~ msgid "Added color:"
+#~ msgstr "Bygevoeg kleur:"
+
+#~ msgid "Applied color:"
+#~ msgstr "Aangewend kleur:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Muis Wiel"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Nommer van lyne:"
+
+#, fuzzy
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Vergroot oortjies na spasies"
+
+#, fuzzy
+#~ msgid "Fonts"
+#~ msgstr "Formaat"
+
+#, fuzzy
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "'n program na besigtig die verskille tussen lêers en optioneel genereer "
+#~ "'n diff."
+
+#~ msgid "Kompare"
+#~ msgstr "K-vergelyk"
+
+#, fuzzy
+#~ msgid "Kompare icon artist"
+#~ msgstr "K-vergelyk-deel"
+
+#, fuzzy
+#~ msgid "Compare these files or folder"
+#~ msgstr "Vergelyk hierdie lêers of gidse"
+
+#, fuzzy
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "Kon nie soek ons Deel!"
+
+#, fuzzy
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "Kon nie soek ons Deel!"
+
+#~ msgid "A&ppearance"
+#~ msgstr "Voorkoms"
+
+#, fuzzy
+#~ msgid "&Diff"
+#~ msgstr "Diff"
+
+#~ msgid "&Format"
+#~ msgstr "Formaat"
+
+#~ msgid "O&ptions"
+#~ msgstr "Opsies"
+
+#, fuzzy
+#~ msgid "Hide T&ext View"
+#~ msgstr "Teks Besigtig"

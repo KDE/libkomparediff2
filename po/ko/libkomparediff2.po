@@ -1,0 +1,755 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Shinjo Park <kde@peremen.name>, 2008, 2010, 2014, 2020, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2022-05-07 02:15+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: komparemodellist.cpp:58
+#, kde-format
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "차이점 적용(&A)"
+
+#: komparemodellist.cpp:62
+#, kde-format
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "차이점 적용 취소(&A)"
+
+#: komparemodellist.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "모두 적용(&L)"
+
+#: komparemodellist.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "모두 적용 취소(&U)"
+
+#: komparemodellist.cpp:80
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "이전 파일(&R)"
+
+#: komparemodellist.cpp:84
+#, kde-format
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "다음 파일(&E)"
+
+#: komparemodellist.cpp:88
+#, kde-format
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "이전 차이점(&P)"
+
+#: komparemodellist.cpp:92
+#, kde-format
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "다음 차이점(&N)"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>모델이나 차이점이 없습니다. 파일 <b>%1</b>이(가) 올바른 차이점 파일이 아"
+"닙니다.</qt>"
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+"<qt>파일 <b>%2</b>에 차이점 <b>%1</b>을(를) 적용하는 중 오류가 발생했습니다."
+"</qt>"
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+"<qt>폴더 <b>%2</b>에 차이점 <b>%1</b>을(를) 적용하는 중 오류가 발생했습니다."
+"</qt>"
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "임시 파일을 열 수 없습니다."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr "<qt>임시 파일 <b>%1</b>에 쓸 수 없어서 삭제합니다.</qt>"
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt>대상 디렉터리 <b>%1</b>을(를) 만들 수 없습니다.\n"
+"파일이 저장되지 않았습니다.</qt>"
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>임시 파일을 대상 위치 <b>%1</b>에 업로드할 수 없습니다. 임시 파일은 다음 "
+"위치에 저장되어 있습니다: <b>%2</b>. 직접 업로드할 수 있습니다.</qt>"
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "diff 출력을 해석할 수 없습니다."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "파일이 같습니다."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "임시 파일에 쓸 수 없습니다."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+"차이점 파일이 올바르지 않습니다. 일부 줄을 해석할 수 없어서 표시되지 않습니"
+"다."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Shinjo Park"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kde@peremen.name"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "KompareViewPart를 불러올 수 없습니다."
+
+#~ msgid "Navigation"
+#~ msgstr "탐색"
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "KompareNavigationPart를 불러올 수 없습니다."
+
+#~ msgid "&Open Diff..."
+#~ msgstr "Diff 파일 열기(&O)..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "파일 비교하기(&C)..."
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "URL에 Diff 파일 내용 반영하기(&B)..."
+
+#~ msgid "Show T&ext View"
+#~ msgstr "텍스트 보기 보이기(&E)"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr "차이점 0개 중 0번째"
+
+#~ msgid " 0 of 0 files "
+#~ msgstr "파일 0개 중 0번째"
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] "파일 %1개 중 %2번째"
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] "파일 %1개"
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] "차이점 %1개 중 %2번째, %3개 적용됨"
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] "차이점 %1개"
+
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "파일/폴더에 Diff 출력 반영하기"
+
+#~ msgid "File/Folder"
+#~ msgstr "파일/폴더"
+
+#~ msgid "Diff Output"
+#~ msgstr "Diff 출력"
+
+#~ msgid "Blend"
+#~ msgstr "반영하기"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "이 파일이나 폴더에 diff 출력 반영하기"
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "파일과 폴더 비교하기"
+
+#~ msgid "Source"
+#~ msgstr "원본"
+
+#~ msgid "Destination"
+#~ msgstr "대상"
+
+#~ msgid "Compare"
+#~ msgstr "비교하기"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "이 파일이나 폴더 비교하기"
+
+#~ msgid "Text View"
+#~ msgstr "텍스트 보기"
+
+#~ msgid "Source Folder"
+#~ msgstr "원본 폴더"
+
+#~ msgid "Destination Folder"
+#~ msgstr "대상 폴더"
+
+#~ msgid "Source File"
+#~ msgstr "원본 파일"
+
+#~ msgid "Destination File"
+#~ msgstr "대상 파일"
+
+#~ msgid "Source Line"
+#~ msgstr "원본 줄"
+
+#~ msgid "Destination Line"
+#~ msgstr "대상 줄"
+
+#~ msgid "Difference"
+#~ msgstr "차이점"
+
+#, fuzzy
+#~| msgid "Applied: Changes made to %1 line undone"
+#~| msgid_plural "Applied: Changes made to  %1 lines undone"
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "적용됨: %1줄에 바뀐 점은 취소할 수 없습니다"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "%1줄 바꿈"
+
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "적용됨: %1줄을 삽입한 것은 취소할 수 없습니다"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "%1줄 삽입함"
+
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] "적용됨: %1줄을 삭제한 것은 취소할 수 없습니다"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "%1줄 삭제함"
+
+#~ msgid "Unknown"
+#~ msgstr "알 수 없음"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "John Firebaugh"
+
+#~ msgid "Author"
+#~ msgstr "작성자"
+
+#~ msgid "Otto Bruggeman"
+#~ msgstr "Otto Bruggerman"
+
+#~ msgid "Save &All"
+#~ msgstr "모두 저장하기(&A)"
+
+#, fuzzy
+#~| msgid "Save .&diff..."
+#~ msgid "Save &Diff..."
+#~ msgstr ".diff 저장하기"
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "원본과 대상 바꾸기"
+
+#~ msgid "Show Statistics"
+#~ msgstr "통계 보이기"
+
+#~ msgid "Refresh Diff"
+#~ msgstr "차이점 새로 고치기"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>URL <b>%1</b>을(를) 가져올 수 없습니다.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>URL <b>%1</b>이(가) 시스템에 존재하지 않습니다.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "차이점 옵션"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|패치 파일"
+
+#~ msgid "Save .diff"
+#~ msgstr ".diff 저장하기"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr "파일이 이미 존재하거나 읽기 전용입니다. 덮어쓰시겠습니까?"
+
+#~ msgid "File Exists"
+#~ msgstr "파일이 존재합니다"
+
+#~ msgid "Overwrite"
+#~ msgstr "덮어쓰기"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "덮어쓰지 않기"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Kevin Kofler"
+#~ msgstr "Kevin Kofler"
+
+#~ msgid "Running diff..."
+#~ msgstr "diff 실행 중..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "diff 출력 처리 중..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "파일 %1와(과) %2 비교하기"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "%1에 있는 파일과 %2에 있는 파일 비교하기"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "%1의 diff 출력 보기"
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "%1의 diff 출력 결과를 %2에 반영하는 중"
+
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "%1의 diff 출력 결과를 폴더 %2에 반영하는 중"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "대상 파일을 수정하였습니다.\n"
+#~ " 저장하시겠습니까?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "변경 사항을 저장하시겠습니까?"
+
+#~ msgid "Unified"
+#~ msgstr "통합된"
+
+#~ msgid "Context"
+#~ msgstr "컨텍스트"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "일반"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr "diff 파일이 없거나 파일 두 개의 차이를 비교하지 않았습니다. 따라서  통계 정보가 없습니다."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "차이점 통계"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "통계:\n"
+#~ " \n"
+#~ " 원본 파일: %1\n"
+#~ " 새 파일: %2\n"
+#~ " \n"
+#~ " 형식: %3\n"
+#~ " Hunk 개수: %4\n"
+#~ " 차이점 개수: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "통계:\n"
+#~ " \n"
+#~ " diff 파일에 있는 파일의 개수: %1\n"
+#~ " 형식: %2\n"
+#~ " \n"
+#~ " 현재 원본 파일: %3\n"
+#~ " 현재 새 파일: %4\n"
+#~ " \n"
+#~ " Hunk 개수: %5\n"
+#~ " 차이점 개수: %6"
+
+#~ msgid "&File"
+#~ msgstr "파일(&F)"
+
+#~ msgid "&Difference"
+#~ msgstr "차이점(&D)"
+
+#~ msgid "&Settings"
+#~ msgstr "설정(&S)"
+
+#~ msgid "Preferences"
+#~ msgstr "환경 설정"
+
+#~ msgid "View"
+#~ msgstr "보기"
+
+#~ msgid "View Settings"
+#~ msgstr "보기 설정"
+
+#~ msgid "Diff"
+#~ msgstr "차이점"
+
+#~ msgid "Diff Settings"
+#~ msgstr "차이점 설정"
+
+#~ msgid "Run Diff In"
+#~ msgstr "다음에 Diff 실행하기"
+
+#~ msgid "Command Line"
+#~ msgstr "명령행"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- 원본 대상"
+
+#~ msgid "Options"
+#~ msgstr "옵션"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "작은 변경 사항 찾기"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "큰 파일에 최적화하기"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "대소문자 변경 사항 무시하기"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "탭 문자를 공백 문자로 확장하기"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "추가되거나 삭제된 빈 줄 무시하기"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "공백 문자 변경 사항 무시하기"
+
+#~ msgid "Show function names"
+#~ msgstr "함수 이름 보이기"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "재귀적으로 폴더를 비교하기"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "새 파일을 빈 것으로 간주하기"
+
+#~ msgid "Format"
+#~ msgstr "형식"
+
+#, fuzzy
+#~ msgid "Side-by-side"
+#~ msgstr "양쪽으로"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "문맥을 나타내는 줄 수:"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "주 도구 모음"
+
+#~ msgid "Files"
+#~ msgstr "파일"
+
+#~ msgid "Appearance"
+#~ msgstr "모양"
+
+#~ msgid "Diff Program"
+#~ msgstr "Diff 프로그램"
+
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr ""
+#~ "다른 diff 프로그램을 선택할 수 있습니다. 솔라리스의 기본 diff 프로그램은  GNU 버전이 지원하는 모든 옵션을 지정하지 않습니다. 이 경우, 이 옵션을  사용해서 GNU 버전을 선택할 수 있습니다."
+
+#~ msgid ""
+#~ "Select the format of the output generated by diff. Unified is the one "
+#~ "that is used most frequently because it is very readable. The KDE "
+#~ "developers like this format the best so use it for sending patches."
+#~ msgstr ""
+#~ "diff 프로그램이 생성할 출력물의 형식을 선택하십시오. 통합된 형식은 읽기  쉽기 때문에 자주 사용됩니다. KDE 개발자들에게 패치를 보내는 경우 이  형식을 사용하는 것을 추천합니다."
+
+#~ msgid "Output Format"
+#~ msgstr "출력 형식"
+
+#~ msgid "Lines of Context"
+#~ msgstr "문맥 줄"
+
+#~ msgid ""
+#~ "The number of context lines is normally 2 or 3. This makes the diff "
+#~ "readable and applicable in most cases. More than 3 lines will only bloat "
+#~ "the diff unnecessarily."
+#~ msgstr ""
+#~ "문맥을 나타내는 줄은 일반적으로 2~3줄입니다. 대개의 경우 이 설정을 사용하"
+#~ "면  diff 파일을 읽고 적용하기 쉬워집니다. 3줄 이상으로 문맥을 나타내는 경우 "
+#~ "diff  파일의 크기만 키울 수도 있습니다."
+
+#~ msgid "General"
+#~ msgstr "일반"
+
+#, fuzzy
+#~| msgid "Treat new files as empty"
+#~ msgid "&Treat new files as empty"
+#~ msgstr "새 파일을 빈 것으로 간주하기"
+
+#, fuzzy
+#~| msgid "This option corresponds to the -I diff option."
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "diff의 옵션 -I에 해당합니다."
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "더 작은 변화 찾기(&L)"
+
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "diff의 옵션 -d에 해당합니다."
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "큰 파일에 최적화하기(&P)"
+
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "diff의 옵션 -H에 해당합니다."
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "대소문자 변경 사항 무시하기(&I)"
+
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "diff의 옵션 -i에 해당합니다."
+
+#~ msgid "Ignore regexp:"
+#~ msgstr "정규 표현식 무시하기:"
+
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "diff의 옵션 -I에 해당합니다."
+
+#~ msgid ""
+#~ "Add the regular expression here that you want to use\n"
+#~ "to ignore lines that match it."
+#~ msgstr "다음 정규 표현식과 일치하는 줄의 경우 무시합니다."
+
+#~ msgid "&Edit..."
+#~ msgstr "편집(&E)..."
+
+#~ msgid ""
+#~ "Clicking this will open a regular expression dialog where\n"
+#~ "you can graphically create regular expressions."
+#~ msgstr ""
+#~ "이 단추를 누르면 정규 표현식 편집기 대화상자를 열어서\n"
+#~ " GUI 환경에서 정규 표현식을 편집할 수 있습니다."
+
+#~ msgid "Whitespace"
+#~ msgstr "공백 문자"
+
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "출력의 탭 문자를 공백 문자로 바꾸기(&X)"
+
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "diff의 옵션 -t에 해당합니다."
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "빈 줄 추가/제거 무시하기(&G)"
+
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "diff의 옵션 -B에 해당합니다."
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "공백 문자의 변경 사항 무시하기(&N)"
+
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "diff의 옵션 -b에 해당합니다."
+
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "모든 공백 문자 무시하기(&O)"
+
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "diff의 옵션 -w에 해당합니다."
+
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "탭 문자 확장으로 인한 변경 사항 무시하기(&R)"
+
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "diff의 옵션 -E에 해당합니다."
+
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "제외할 파일 패턴"
+
+#~ msgid ""
+#~ "If this is checked you can enter a shell pattern in the text box on the "
+#~ "right or select entries from the list."
+#~ msgstr ""
+#~ "오른쪽에 있는 텍스트 상자에 셸 패턴을 입력하거나 목록에서 항목을 선택할 "
+#~ "수 있습니다."
+
+#, fuzzy
+#~| msgid ""
+#~| "If this is checked you can enter a shell pattern in the text box on the "
+#~| "right or select entries from the list."
+#~ msgid "If this is checked you can enter a filename in the combo box below."
+#~ msgstr ""
+#~ "오른쪽에 있는 텍스트 상자에 셸 패턴을 입력하거나 목록에서 항목을 선택할 "
+#~ "수 있습니다."
+
+#~ msgid "Exclude"
+#~ msgstr "제외"
+
+#~ msgid "Encoding"
+#~ msgstr "인코딩"
+
+#~ msgid "Colors"
+#~ msgstr "색상"
+
+#~ msgid "Removed color:"
+#~ msgstr "삭제된 부분 색상:"
+
+#~ msgid "Changed color:"
+#~ msgstr "변경된 부분 색상:"
+
+#~ msgid "Added color:"
+#~ msgstr "추가된 부분 색상:"
+
+#~ msgid "Applied color:"
+#~ msgstr "적용된 부분 색상:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "마우스 휠"
+
+#~ msgid "Number of lines:"
+#~ msgstr "줄 수"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "탭을 공백으로 변환하기"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "탭 문자를 변환할 공백 문자의 개수:"
+
+#~ msgid "Text Font"
+#~ msgstr "텍스트 글꼴"
+
+#~ msgid "Font:"
+#~ msgstr "글꼴:"
+
+#~ msgid "Size:"
+#~ msgstr "크기:"
+
+#~ msgid "Fonts"
+#~ msgstr "글꼴"
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#, fuzzy
+#~| msgid ""
+#~| "(c) 2001-2004 John Firebaugh and Otto Bruggeman, (c) 2004-2005 Jeff "
+#~| "Snyder, (c) 2007-2008 Kevin Kofler"
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr ""
+#~ "(c) 2001-2004 John Firebaugh, Otto Bruggeman, (c) 2004-2005 Jeff Snyder,  (c) 2007-2008 Kevin Kofler"
+
+#~ msgid "Jeff Snyder"
+#~ msgstr "Jeff Snyder"
+
+#~ msgid "Developer"
+#~ msgstr "개발자"
+
+#~ msgid "Maintainer"
+#~ msgstr "관리자"
+
+#~ msgid "Chris Luetchford"
+#~ msgstr "Chris Luetchford"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "Kompare 아이콘 작성자"
+
+#~ msgid "Malte Starostik"
+#~ msgstr "Malte Starostik"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "많은 좋은 조언"
+
+#~ msgid "Bernd Gehrmann"
+#~ msgstr "Bernd Gehrmahn"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Cervisia diff 뷰어"
+
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "URL1과 URL2의 내용을 비교합니다"
+
+#~ msgid ""
+#~ "Use this to specify the encoding when calling it from the command line. "
+#~ "It will default to the local encoding if not specified."
+#~ msgstr ""
+#~ "명령행에서 호출할 때의 인코딩을 지정합니다. 지정하지 않은 경우 지역 인코딩"
+#~ "을 사용합니다."
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "이 파일이나 폴더 비교하기"

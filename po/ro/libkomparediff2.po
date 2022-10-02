@@ -1,0 +1,278 @@
+# translation of kompare.po to Romanian
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Claudiu Costin <claudiuc@kde.org>, 2003.
+# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2012.
+# Laurenţiu Buzdugan <lbuz@rolix.org>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2012-12-22 11:55+0200\n"
+"Last-Translator: Sergiu Bivol <sergiu@ase.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+
+#: komparemodellist.cpp:58
+#, kde-format
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr ""
+
+#: komparemodellist.cpp:62
+#, kde-format
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr ""
+
+#: komparemodellist.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr ""
+
+#: komparemodellist.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr ""
+
+#: komparemodellist.cpp:80
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr ""
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "&File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "&Fișier"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "Preferences"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "Preferințe"
+
+#: komparemodellist.cpp:92
+#, kde-format
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr ""
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr ""
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr ""
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr ""
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr ""
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgid "Unknown"
+#~ msgstr "Necunoscut"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "John Firebaugh"
+
+#~ msgid "Author"
+#~ msgstr "Autor"
+
+#~ msgid "Otto Bruggeman"
+#~ msgstr "Otto Bruggeman"
+
+#~ msgid "Save &All"
+#~ msgstr "Salvează t&ot"
+
+#, fuzzy
+#~| msgid "Save .&diff..."
+#~ msgid "Save &Diff..."
+#~ msgstr "Salvare .&diff..."
+
+#~ msgid "Show Statistics"
+#~ msgstr "Arată statistici"
+
+#~ msgid "Diff Options"
+#~ msgstr "Opțiuni Diff"
+
+#~ msgid "Save .diff"
+#~ msgstr "Salvează .diff"
+
+#~ msgid "File Exists"
+#~ msgstr "Fișierul există"
+
+#~ msgid "Overwrite"
+#~ msgstr "Suprascrie"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Nu suprascrie"
+
+#~ msgid "KomparePart"
+#~ msgstr "Componentă Kompare"
+
+#~ msgid "Running diff..."
+#~ msgstr "Rulare diff..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "Parcurgere rezultat diff..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "Comparare fișier %1 cu fișierul %2"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "Comparare fișiere din %1 cu cele din %2"
+
+#~ msgid "Save Changes?"
+#~ msgstr "Salvați modificările?"
+
+#~ msgid "Unified"
+#~ msgstr "Unificat"
+
+#~ msgid "Context"
+#~ msgstr "Context"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Statistici Diff"
+
+#~ msgid "&Settings"
+#~ msgstr "&Configurări"
+
+#~ msgid "View"
+#~ msgstr "Vizualizare"
+
+#~ msgid "View Settings"
+#~ msgstr "Configurări vizualizare"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Configurări Diff"
+
+#~ msgid "Format"
+#~ msgstr "Format"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Bara de unelte principală"
+
+#~ msgid "Appearance"
+#~ msgstr "Aspect"
+
+#~ msgid "Diff Program"
+#~ msgstr "Program Diff"
+
+#~ msgid "Output Format"
+#~ msgstr "Format de ieșire"
+
+#~ msgid "General"
+#~ msgstr "General"
+
+#~ msgid "Colors"
+#~ msgstr "Culori"
+
+#~ msgid "Removed color:"
+#~ msgstr "Culoare eliminat:"
+
+#~ msgid "Changed color:"
+#~ msgstr "Culoare modificat:"
+
+#~ msgid "Added color:"
+#~ msgstr "Culoare adăugat:"
+
+#~ msgid "Applied color:"
+#~ msgstr "Culoare aplicat:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Rotiță maus"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Număr de linii:"
+
+#~ msgid "Text Font"
+#~ msgstr "Font text"
+
+#~ msgid "Font:"
+#~ msgstr "Font:"
+
+#~ msgid "Size:"
+#~ msgstr "Dimensiune:"
+
+#~ msgid "Fonts"
+#~ msgstr "Fonturi"
+
+#~ msgid "Maintainer"
+#~ msgstr "Responsabil"

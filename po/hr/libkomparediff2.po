@@ -1,0 +1,704 @@
+# Translation of kompare to Croatian
+#
+# Translators: Diana Ćorluka <dina@iskrameco.hr>,Robert Pezer <rpezer@phy.hr>,
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare 0\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2004-04-20 13:26+CEST\n"
+"Last-Translator: auto\n"
+"Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: TransDict server\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "&Priizbornik razliku"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "&Poništi primenjenu razliku"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "Prime&ni sve"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "&Poništi sve primenjeno"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "P&rethodni datoteka"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "S&ledeći datoteka"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "&Prethodna razlika"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "&Sljedeća razlika"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, fuzzy, kde-format
+msgid "Could not open a temporary file."
+msgstr "Nisam mogao otvoriti privreizbornik datoteka."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, fuzzy, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr "Nisam mogao da pišem u privreizbornik datoteka."
+
+#: komparemodellist.cpp:407
+#, fuzzy, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr "Nisam mogao da pišem u privreizbornik datoteka."
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, fuzzy, kde-format
+msgid "Could not parse diff output."
+msgstr "Nisam mogao da analiziram diff izlaz."
+
+#: komparemodellist.cpp:530
+#, fuzzy, kde-format
+msgid "The files are identical."
+msgstr "Datoteke su identični."
+
+#: komparemodellist.cpp:712
+#, fuzzy, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Nisam mogao da pišem u privreizbornik datoteka."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgid "Preferences"
+#~ msgstr "Podešenja"
+
+#, fuzzy
+#~ msgid "View"
+#~ msgstr "Pogled teksta"
+
+#~ msgid "View Settings"
+#~ msgstr "Postavke pogleda"
+
+#~ msgid "Diff"
+#~ msgstr "Razlika"
+
+#, fuzzy
+#~ msgid "Diff Settings"
+#~ msgstr "Diff podešavanja"
+
+#~ msgid "Save &All"
+#~ msgstr "&Spremi sve"
+
+#, fuzzy
+#~ msgid "Save &Diff..."
+#~ msgstr "Snimi .diff"
+
+#, fuzzy
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Zaizbornik izvor odredištem"
+
+#, fuzzy
+#~ msgid "Show Statistics"
+#~ msgstr "Pokaži statistiku"
+
+#, fuzzy
+#~ msgid "Diff Options"
+#~ msgstr "Diff opcije"
+
+#, fuzzy
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Datoteke zakrpe"
+
+#, fuzzy
+#~ msgid "Save .diff"
+#~ msgstr "Snimi .diff"
+
+#, fuzzy
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Author"
+#~ msgstr "Autor"
+
+#, fuzzy
+#~ msgid "Running diff..."
+#~ msgstr "Pokrećem diff..."
+
+#, fuzzy
+#~ msgid "Parsing diff output..."
+#~ msgstr "Raščlanjujem diff izlaz..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "Upoređujem datoteka %1 sa datotekaom %2"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "Upoređujem datotekaove u %1 sa datotekema u %2"
+
+#, fuzzy
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "Prikazujem diff izlaz iz %1"
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "Stapam diff izlaz iz %1 u datoteka %2"
+
+#, fuzzy
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "Stapam diff izlaz iz %1 u direktorij %2"
+
+#, fuzzy
+#~ msgid "Save Changes?"
+#~ msgstr "Da li da snimim izmjene?"
+
+#, fuzzy
+#~ msgid "Unified"
+#~ msgstr "Ujedinjeno"
+
+#~ msgid "Context"
+#~ msgstr "Kontekst"
+
+#, fuzzy
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#, fuzzy
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Obično"
+
+#~ msgid "Unknown"
+#~ msgstr "Nepoznato"
+
+#, fuzzy
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "Nema diff datotekaa, ili nikoja dva datotekaa nisu diff-ovana. Stoga, "
+#~ "nije dostupna statistika."
+
+#, fuzzy
+#~ msgid "Diff Statistics"
+#~ msgstr "Diff statistika"
+
+#, fuzzy
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Statistika:\n"
+#~ "\n"
+#~ "Stari datoteka: %1\n"
+#~ "Novi datoteka: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Broj komada: %4\n"
+#~ "Broj razlika: %5"
+
+#, fuzzy
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Statistika:\n"
+#~ "\n"
+#~ "Broj datotekaova u diff datoteku: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Trenutni stari datoteka: %3\n"
+#~ "Trenutni novi datoteka: %4\n"
+#~ "\n"
+#~ "Broj komada: %5\n"
+#~ "Broj razlika: %6"
+
+#, fuzzy
+#~ msgid "Diff Program"
+#~ msgstr "Diff program"
+
+#, fuzzy
+#~ msgid "Output Format"
+#~ msgstr "Format prosleđivanja"
+
+#, fuzzy
+#~ msgid "Lines of Context"
+#~ msgstr "Linije konteksta"
+
+#, fuzzy
+#~ msgid "Number of context lines:"
+#~ msgstr "Broj linija konteksta:"
+
+#~ msgid "Format"
+#~ msgstr "Oblikovanje"
+
+#~ msgid "General"
+#~ msgstr "Općenito"
+
+#, fuzzy
+#~ msgid "&Treat new files as empty"
+#~ msgstr "Tretiraj nove datotekaove kao prazne"
+
+#, fuzzy
+#~ msgid "&Look for smaller changes"
+#~ msgstr "&Traži manje izmjene"
+
+#, fuzzy
+#~ msgid "O&ptimize for large files"
+#~ msgstr "O&ptimizuj za velike datotekaove"
+
+#, fuzzy
+#~ msgid "&Ignore changes in case"
+#~ msgstr "&Ignoriši izmjene koje se odnose na veličinu slova"
+
+#, fuzzy
+#~ msgid "Ignore regexp:"
+#~ msgstr "Ignoriši reg.iz.:"
+
+#~ msgid "&Edit..."
+#~ msgstr "&Uredi …"
+
+#~ msgid "Whitespace"
+#~ msgstr "Praznina"
+
+#, fuzzy
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "I&gnoriši dodate ili uklonjene prazne linije"
+
+#, fuzzy
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "Ig&noriši izmjene u količini praznog prostora"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "Podešavanje FTP-a"
+
+#~ msgid "Colors"
+#~ msgstr "Boje"
+
+#, fuzzy
+#~ msgid "Removed color:"
+#~ msgstr "Uklonjena boja:"
+
+#, fuzzy
+#~ msgid "Changed color:"
+#~ msgstr "Izmjenjena boja:"
+
+#~ msgid "Added color:"
+#~ msgstr "Dodana boja:"
+
+#, fuzzy
+#~ msgid "Applied color:"
+#~ msgstr "Primenjena boja:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Kotačić na mišu"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Broj redaka:"
+
+#, fuzzy
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Tabulatori u razmake"
+
+#, fuzzy
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "Broj razmaka u koje se pretvara znaka tabulatora:"
+
+#, fuzzy
+#~| msgid "A&ppearance"
+#~ msgid "Appearance"
+#~ msgstr "&Izgled"
+
+#, fuzzy
+#~ msgid "Fonts"
+#~ msgstr "&Format"
+
+#, fuzzy
+#~ msgid "Source Folder"
+#~ msgstr "Izvorni direktorij"
+
+#, fuzzy
+#~ msgid "Destination Folder"
+#~ msgstr "Odredišni direktorij"
+
+#~ msgid "Source File"
+#~ msgstr "Izvorna datoteka"
+
+#, fuzzy
+#~ msgid "Destination File"
+#~ msgstr "Odredišni datoteka"
+
+#, fuzzy
+#~ msgid "Source Line"
+#~ msgstr "Izvorna linija"
+
+#, fuzzy
+#~ msgid "Destination Line"
+#~ msgstr "Odredišna linija"
+
+#~ msgid "Difference"
+#~ msgstr "Razlika"
+
+#, fuzzy
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "Promijenjena je %1 linija"
+#~ msgstr[1] "Promijenjene su %1 linije"
+#~ msgstr[2] "Promijenjeno je %1 linija"
+
+#, fuzzy
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "Ubačena je %1 linija"
+#~ msgstr[1] "Ubačene su %1 linije"
+#~ msgstr[2] "Ubačeno je %1 linija"
+
+#, fuzzy
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "Obrisana je %1 linija"
+#~ msgstr[1] "Obrisane su %1 linije"
+#~ msgstr[2] "Obrisano je %1 linija"
+
+#, fuzzy
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "S&ledeći datoteka"
+
+#, fuzzy
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "Program za pregledanje razlika među datotekema i opciono pravljenje diff-"
+#~ "a."
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "Mnoštvo dobrih savjeta"
+
+#, fuzzy
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Cervisia-in dio za pregeled diff-ova"
+
+#, fuzzy
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "Ovo će uporediti URL1 sa URL2."
+
+#, fuzzy
+#~ msgid ""
+#~ "This will open URL1 and expect it to be diff output. URL1 can also be a "
+#~ "'-' and then it will read from standard input. Can be used for instance "
+#~ "for cvs diff | kompare -o -. Kompare will do a check to see if it can "
+#~ "find the original file(s) and then blend the original file(s) into the "
+#~ "diffoutput and show that in the viewer. -n disables the check."
+#~ msgstr ""
+#~ "Ovo će otvoriti URL1 u očekivanju da je to diff izlaz. URL1 također može "
+#~ "biti „-“ i u tom slučaju će čitati iz standardnog ulaza. Može se na "
+#~ "primjer koristiti za cvs diff | kompare -o -. Kompare će izvršiti "
+#~ "provjeru da vidi da li može da nađe originalne datotekaove i onda će "
+#~ "stopiti originalne datotekaove u diff izlaz i to prikazati u dijelu za "
+#~ "pregled. -n isključuje provjeru."
+
+#, fuzzy
+#~ msgid ""
+#~ "This will blend URL2 into URL1, URL2 is expected to be diff output and "
+#~ "URL1 the file or folder that the diffoutput needs to be blended into. "
+#~ msgstr ""
+#~ "Ovo će stopiti URL2 u URL1, gdje se očekuje da je URL2 diff izlaz, a URL1 "
+#~ "datoteka ili direktorij u koji treba stopiti diff izlaz."
+
+#, fuzzy
+#~ msgid ""
+#~ "Disables the check for automatically finding the original file(s) when "
+#~ "using '-' as URL with the -o option."
+#~ msgstr ""
+#~ "Isključuje provjeru za automatsko pronalaženje originalnih datotekaova "
+#~ "kada se sa opcijom -o koristi „-“ kao URL."
+
+#, fuzzy
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Uporedi datotekaove ili direktorije"
+
+#~ msgid "Source"
+#~ msgstr "Izvor"
+
+#~ msgid "Destination"
+#~ msgstr "Odredište"
+
+#~ msgid "Compare"
+#~ msgstr "Usporedba"
+
+#, fuzzy
+#~ msgid "Compare these files or folder"
+#~ msgstr "Uporedi ove datotekaove ili direktorije"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "Ako ste unijeli 2 imena datotekaa ili 2 direktorija u poljima u ovom "
+#~ "prozoru, ovo gumb će biti uključeno i njegovim pritiskanjem će započeti "
+#~ "upoređivanje unijetih datotekaova ili direktorija. "
+
+#, fuzzy
+#~ msgid "&Open Diff..."
+#~ msgstr "&Otvori diff..."
+
+#, fuzzy
+#~ msgid "&Compare Files..."
+#~ msgstr "&Uporedi datotekaove..."
+
+#, fuzzy
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "&Stopi URL sa diff-om..."
+
+#, fuzzy
+#~ msgid "Show T&ext View"
+#~ msgstr "Pokaži te&kstualni pogled"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr "0 od 0 razlike"
+
+#~ msgid " 0 of 0 files "
+#~ msgstr "0 od 0 datoteke"
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] " %2 od %1 datoteka "
+#~ msgstr[1] " %2 od %1 datotekaa "
+#~ msgstr[2] " %2 od %1 datotekaova "
+
+#, fuzzy
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] " %1 datoteka "
+#~ msgstr[1] " %1 datotekaa "
+#~ msgstr[2] " %1 datotekaova "
+
+#, fuzzy
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " %2 od %1 razlika, %3 primenjena "
+#~ msgstr[1] " %2 od %1 razlike, %3 primenjene "
+#~ msgstr[2] " %2 od %1 razlika, %3 primenjeno "
+
+#, fuzzy
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " %1 razlika "
+#~ msgstr[1] " %1 razlike "
+#~ msgstr[2] " %1 razlika "
+
+#, fuzzy
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "Stopi datoteka/direktorij sa diff izlazom"
+
+#, fuzzy
+#~ msgid "File/Folder"
+#~ msgstr "Datoteka/direktorij"
+
+#, fuzzy
+#~ msgid "Diff Output"
+#~ msgstr "Diff izlaz"
+
+#~ msgid "Blend"
+#~ msgstr "Miješanje"
+
+#, fuzzy
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "Stopi ovaj datoteka ili direktorij sa diff izlazom"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "Ako ste unijeli ime datotekaa ili direktorija i datoteka koji sadrži diff "
+#~ "izlaz u poljima u ovom prozoru onda će ovo gumb biti omogućeno i njegovim "
+#~ "pritiskanjem će se otvoriti glavni pogled kompare-a gdje su izlazi unetog "
+#~ "datotekaa ili datotekaova iz direktorija pomešani sa diff izlazom tako da "
+#~ "možete priizbornikti razlike na datoteka ili datotekaove."
+
+#, fuzzy
+#~ msgid "Compare these files or folders"
+#~ msgstr "Uporedi ove datotekaove ili direktorije"
+
+#~ msgid "Text View"
+#~ msgstr "Pogled teksta"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Diana Ćorluka, Robert Pezer"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "lokalizacija@linux.hr, lokalizacija@linux.hr"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "S&ledeći datoteka"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "Postavke pogleda"
+
+#~ msgid "&Difference"
+#~ msgstr "&Razlika"
+
+#, fuzzy
+#~ msgid "Run Diff In"
+#~ msgstr "Pokreni diff u"
+
+#~ msgid "Command Line"
+#~ msgstr "Ime domene"
+
+#, fuzzy
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- izvor odredište"
+
+#, fuzzy
+#~ msgid "Look for smaller changes"
+#~ msgstr "Izgled za manje izmjene"
+
+#, fuzzy
+#~ msgid "Optimize for large files"
+#~ msgstr "Optimizuj za velike datotekaove"
+
+#, fuzzy
+#~ msgid "Ignore changes in case"
+#~ msgstr "Ignoriši izmjene koje se odnose na veličinu slova"
+
+#, fuzzy
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "Proširi tabulatore u razmake"
+
+#, fuzzy
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "Ignoriši dodate ili uklonjene prazne linije"
+
+#, fuzzy
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Ignoriši izmjene u praznom prostoru"
+
+#, fuzzy
+#~ msgid "Show function names"
+#~ msgstr "Pokaži imena funkcija"
+
+#, fuzzy
+#~ msgid "Compare folders recursively"
+#~ msgstr "Uporedi direktorije rekurzivno"
+
+#, fuzzy
+#~ msgid "Treat new files as empty"
+#~ msgstr "Tretiraj nove datotekaove kao prazne"
+
+#~ msgid "Side-by-side"
+#~ msgstr "Jedno uz drugo"
+
+#~ msgid "A&ppearance"
+#~ msgstr "&Izgled"
+
+#~ msgid "&Diff"
+#~ msgstr "Razlika"
+
+#~ msgid "&Format"
+#~ msgstr "&Format"
+
+#~ msgid "O&ptions"
+#~ msgstr "Podešavanje FTP-a"
+
+#, fuzzy
+#~ msgid "Hide T&ext View"
+#~ msgstr "Pogled teksta"

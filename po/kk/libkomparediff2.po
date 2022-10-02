@@ -1,0 +1,934 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sairan Kikkarin <sairan@computer.org>, 2010, 2011, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2013-06-27 04:14+0600\n"
+"Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Apply Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "&Айырмашылығын толықтыру"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "Un&apply Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "Айырмашылықты толықтырудан &айну"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+#| msgid "App&ly All"
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "Барлығын қос&у"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+#| msgid "&Unapply All"
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "Бүкіл т&олықтырулардан айну"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "Ал&дыңғы файл"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "&Келесі файл"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Previous Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "А&лдыңғы айырмашылық"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Next Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "К&елесі айырмашылық"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>Үлгісі не айырмашылығы жоқ. Бұл <b>%1</b> файлы жарамды diff файлы емес."
+"</qt>"
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+"<qt>diff <b>%1</b> айырмашылық файлымен <b>%2</b> деген файлды толықтырғанда "
+"мәселелер туды.</qt>"
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+"<qt>diff <b>%1</b> айырмашылық файлымен <b>%2</b> деген қапшықтағыны "
+"толықтырғанда мәселелер туды.</qt>"
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "Уақытша файлы ашылмады."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr "<qt><b>%1</b> деген уақытша файлға жазу болмады, ол өшіріледі.</qt>"
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt><b>%1</b> деген мақсаттаған қапшық құрылмады.\n"
+"Файл сақталған жоқ.</qt>"
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>Уақытша файл мақсатталған <b>%1</b> деген орынына жүктелмеді. <b>%2</b> "
+"деген уақытша файл әлі бар. Өзіңіз керек жерге көшіріп көріңіз.</qt>"
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "diff шығысы талдауға келмеді."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "Файлдар бірдей."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Уақытша файл жазылмады."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+"diff шығысы қате. Кейбір жолдар талдауға келмейді де, айырмашылықтар "
+"көрінісінде көрсетілмейді."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Сайран Киккарин"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "sairan@computer.org"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "KompareViewPart бөлшегі жүктелмеді."
+
+#~ msgid "Navigation"
+#~ msgstr "Шарлау"
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "KompareNavigationPart бөлшегі жүктелмеді."
+
+#~ msgid "&Open Diff..."
+#~ msgstr "Diff-ті &ашу..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "&Файлдарды салыстыру..."
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "URL-ді Diff-пен а&раластыру..."
+
+#~ msgid "Show T&ext View"
+#~ msgstr "&Мәтін көрінісін көрсету"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr " 0 / 0 айырмашылық "
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 / 0 файл "
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] " %2 / %1 файл "
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] " %1 файл "
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " %2 / %1 айырмашылық, %3 толықтырылды "
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " %1 айырмашылық "
+
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "Файл/Қапшықты diff шығысымен араластыру"
+
+#~ msgid "File/Folder"
+#~ msgstr "Файл/Қапшық"
+
+#~ msgid "Diff Output"
+#~ msgstr "Diff шығысы"
+
+#~ msgid "Blend"
+#~ msgstr "Араластыру"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "Осы файл не қапшықты diff шығысымен араластыру"
+
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "Егер осы диалогтың өрістеріне файл не қапшықтың атауын және diff-тің "
+#~ "шығысынан тұратын файл атауын келтірсеңіз, онда бұл батырманың бұғаты "
+#~ "шешіліп, оны басқанда Kompare-нің негізгі көрінісі ашылып, онда "
+#~ "келтірілген файл не қапшықтың файлдары келтірілген diff-тің шығысымен "
+#~ "араласқан түрде көрсетіледі. Сонымен Сіз сол файл не файлдарды "
+#~ "көрсетілген айырмашылықтарымен толықтыра аласыз. "
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Файл не қапшықтарды салыстыру"
+
+#~ msgid "Source"
+#~ msgstr "Көзі"
+
+#~ msgid "Destination"
+#~ msgstr "Мақсаты"
+
+#~ msgid "Compare"
+#~ msgstr "Салыстыру"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "Осы файлдарды не қапшқықтарды салыстыру"
+
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "Егер осы диалогтың өрістеріне 2 файл не 2 қапшықтың атауын келтірсеңіз, "
+#~ "онда бұл батырманың бұғаты шешіліп, оны басқанда көрсетілген файл не "
+#~ "қапшықтар салыстырылады."
+
+#~ msgid "Text View"
+#~ msgstr "Мәтін көрінісі"
+
+#~ msgid "Source Folder"
+#~ msgstr "Көз қапшығы"
+
+#~ msgid "Destination Folder"
+#~ msgstr "Мақсат қапшығы"
+
+#~ msgid "Source File"
+#~ msgstr "Көз файлы"
+
+#~ msgid "Destination File"
+#~ msgstr "Мақсат файлы"
+
+#~ msgid "Source Line"
+#~ msgstr "Көз жолы"
+
+#~ msgid "Destination Line"
+#~ msgstr "Мақсат жолы"
+
+#~ msgid "Difference"
+#~ msgstr "Айырмашылығы"
+
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "%1 жолдағы өзгерісті толықтыруы қайтарылды"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "%1 жол өзгертілді"
+
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "%1 жол енгізуі қайтарылды"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "%1 жол енгізілді"
+
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] "%1 жол өшіруі қайтарылды"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "%1 жол өшірілді"
+
+#~ msgid "Unknown"
+#~ msgstr "Беймәлім"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "John Firebaugh"
+
+#~ msgid "Author"
+#~ msgstr "Авторы"
+
+#~ msgid "Otto Bruggeman"
+#~ msgstr "Otto Bruggeman"
+
+#~ msgid "Save &All"
+#~ msgstr "Бү&кілін сақтау"
+
+#~ msgid "Save &Diff..."
+#~ msgstr "&Diff файлын сақтау..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Көзі мен мақсаттағанын алмастыру"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Сатистикасын көрсету"
+
+#~ msgid "Refresh Diff"
+#~ msgstr "Айырмашылығын жаңарту"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt><b>%1</b> URL-і жүктеп алынбайды.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt><b>%1</b> деген URL жүйеңізде жоқ.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "Diff параметрлері"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Жамау файлдары"
+
+#~ msgid "Save .diff"
+#~ msgstr "diff-файлын сақтау"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr "Бұндай файл бар не жазудан қорғалған, үстінен жаза бермексіз бе?"
+
+#~ msgid "File Exists"
+#~ msgstr "Файл бар екен"
+
+#~ msgid "Overwrite"
+#~ msgstr "Үстінен жазу"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Үстінен жазбау"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Kevin Kofler"
+#~ msgstr "Kevin Kofler"
+
+#~ msgid "Running diff..."
+#~ msgstr "diff орындалып жатыр..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "diff шығысын талдау..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "%1 файлын %2 дегенмен салыстыру"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "%1 дегендегі файлдарды %2 дегендегілермен салыстыру"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "%1 дегеннен diff шығысын қарау"
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "%1 дегеннен diff шығысын %2 файлына араластыру"
+
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "%1 дегеннен diff шығысын %2 қапшығына араластыру"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Мақсаттаған файл(дар)ы өзгерілген.\n"
+#~ "Оларды сақтайсыз ба?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "Өзгерістерді сақтайық па?"
+
+#~ msgid "Unified"
+#~ msgstr "Әмбебап"
+
+#~ msgid "Context"
+#~ msgstr "Контекст"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Кәдімгі"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "diff файлы жоқ, немесе салыстырғаны 2 файл емес. Сондықтан сатистикасы "
+#~ "жоқ."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Diff статистикасы"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Статистикасы:\n"
+#~ "\n"
+#~ "Ескі файл: %1\n"
+#~ "Жаңа файл: %2\n"
+#~ "\n"
+#~ "Пішімі: %3\n"
+#~ "Өзгерген үзінділер: %4\n"
+#~ "Айырмашылықтар: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Статистикасы:\n"
+#~ "\n"
+#~ "diff файла қанша файлдар: %1\n"
+#~ "Пішімі: %2\n"
+#~ "\n"
+#~ "Назардағы ескі файлы: %3\n"
+#~ "Назардағы жаңа файлы: %4\n"
+#~ "\n"
+#~ "Өзгерген үзінділер: %5\n"
+#~ "Айырмашылықтар: %6"
+
+#~ msgid "&File"
+#~ msgstr "&Файл"
+
+#~ msgid "&Difference"
+#~ msgstr "&Айырмашылық"
+
+#~ msgid "&Settings"
+#~ msgstr "&Баптау"
+
+#~ msgid "Preferences"
+#~ msgstr "Параметрлері"
+
+#~ msgid "View"
+#~ msgstr "Көрініс"
+
+#~ msgid "View Settings"
+#~ msgstr "Көрініс параметрлері"
+
+#~ msgid "Diff"
+#~ msgstr "Айырмашылықтар"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Айырмашылықтар параметрлері"
+
+#~ msgid "Run Diff In"
+#~ msgstr "Diff-ті келесінде жегу"
+
+#~ msgid "Command Line"
+#~ msgstr "Команда жолы"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- көзі мақсаты"
+
+#~ msgid "Options"
+#~ msgstr "Параметрлері"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "Шағынрақ өзгерістері қарастырылсын"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "Үлкен файлдарға оңтайландырылсын"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "Әріптің үлкен-кішілігі ескерілмесін"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "Кестелеуі бос орындарға тарқатылсын"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "Қосылған не өшірілген бос жолдары елемей қалсын"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Бос орындардағы өзгерістері елемей қалсын"
+
+#~ msgid "Show function names"
+#~ msgstr "Функция атаулары көрсетілсін"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "Ішіндегі қапшықтары қоса салыстырылсін"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "Жаңа файлдар бос деп саналсын"
+
+#~ msgid "Format"
+#~ msgstr "Пішімі"
+
+#~ msgid "Side-by-side"
+#~ msgstr "Қатарлап"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "Айнала жолдар саны:"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Негізгі құралдар"
+
+#~ msgid "Files"
+#~ msgstr "Файлдар"
+
+#~ msgid "Here you can enter the files you want to compare."
+#~ msgstr "Мұнда салыстыруыңыз келген файлдарды келтіріңіз."
+
+#~ msgid "Here you can change the options for comparing the files."
+#~ msgstr "Мұнда файлдарды салыстыру параметрлерін өзгерте аласыз."
+
+#~ msgid "Appearance"
+#~ msgstr "Сыртқы көрінісі"
+
+#~ msgid "Here you can change the options for the view."
+#~ msgstr "Мұнда көрініс параметрлерін өзгерте аласыз."
+
+#~ msgid ""
+#~ "File used for excluding files cannot be found, please specify another "
+#~ "file."
+#~ msgstr ""
+#~ "Өткізіп жіберетіндері жазылған файл табылған жоқ, басқасын келтіріңіз."
+
+#~ msgid "Diff Program"
+#~ msgstr "Diff бағдарламасы"
+
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr ""
+#~ "Мұнда алуан diff бағдарламалардан біреуін таңдай аласыз. Solaris-те "
+#~ "стандартты diff бағдарламасында GNU нұсқасымен салыстырғанда, көп "
+#~ "мүмкіндіктері жоқ. Мұнда соңғысын таңдай аласыз."
+
+#~ msgid ""
+#~ "Select the format of the output generated by diff. Unified is the one "
+#~ "that is used most frequently because it is very readable. The KDE "
+#~ "developers like this format the best so use it for sending patches."
+#~ msgstr ""
+#~ "Diff шығысының пішімін таңдаңыз. Әмбебап пішімі оқуға ыңғайлы "
+#~ "болғандықтан жиі қолданылады. Бұны KDE құрастырушылар да, жамауларды "
+#~ "жіберуге ыңғайлығы үшін, ұнатады."
+
+#~ msgid "Output Format"
+#~ msgstr "Шығыс пішімі"
+
+#~ msgid "Lines of Context"
+#~ msgstr "Контекст жолдары"
+
+#~ msgid ""
+#~ "The number of context lines is normally 2 or 3. This makes the diff "
+#~ "readable and applicable in most cases. More than 3 lines will only bloat "
+#~ "the diff unnecessarily."
+#~ msgstr ""
+#~ "Өзгерген жолдан арі-бері тұрған өзгермеген сүйемелдеу жолдар. Әдетте, 2 "
+#~ "не 3 болған жеткілікті. 3-тен артық болғаны diff файлын тек бекер "
+#~ "қампитып  жібереді."
+
+#~ msgid "General"
+#~ msgstr "Жалпы"
+
+#~ msgid "&Treat new files as empty"
+#~ msgstr "Жаңа файлдар бос деп &саналсын"
+
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "Бұл diff -N деген параметріне сәйкес келеді."
+
+#~ msgid ""
+#~ "With this option enabled diff will treat a file that only exists in one "
+#~ "of the directories as empty in the other directory. This means that the "
+#~ "file is compared with an empty file and because of this will appear as "
+#~ "one big insertion or deletion."
+#~ msgstr ""
+#~ "Рұқсат етілсе, diff файлды бір қапшықта ғана бар деп, қалғандарда бас деп "
+#~ "санайды. Бұл файл бос файлмен салыстырылып айырмашылық бір үлкен енгізу "
+#~ "не өшіру деп көрінеді."
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "&Шағынрақ өзгерістері қарастырылсын"
+
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "Бұл diff -d деген параметріне сәйкес келеді."
+
+#~ msgid ""
+#~ "With this option enabled diff will try a little harder (at the cost of "
+#~ "more memory) to find fewer changes."
+#~ msgstr ""
+#~ "Белгісі қойылса, diff табылған өзгерістерін мейілінше азайтуға тырысады "
+#~ "(көбірек жадын жұмсап, әрине)"
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "Үлкен файлдарға &оңтайлансын"
+
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "Бұл diff -H деген параметріне сәйкес келеді."
+
+#~ msgid ""
+#~ "This option lets diff makes better diffs when using large files. The "
+#~ "definition of large is nowhere to be found though."
+#~ msgstr ""
+#~ "Бұл параметр, diff-ті үлкен файлдармен жұмысын оңтайландырады. Бірақ, "
+#~ "\"үлкен\" дегені қаншадан басталатыны анықсыз."
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "Әріптің үлкен-кішілігі &ескерілмесін"
+
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "Бұл diff -i деген параметріне сәйкес келеді."
+
+#~ msgid ""
+#~ "With this option to ignore changes in case enabled, diff will not "
+#~ "indicate a difference when something in one file is changed into "
+#~ "SoMEthing in the other file."
+#~ msgstr ""
+#~ "Бұл параметр, diff-ті үлкен әріптерді кіші әріптерді айырмайтын қылады, "
+#~ "сонымен, \"бірдеме\" деген \"БірДЕме\" дегенге тең деп саналады."
+
+#~ msgid "Ignore regexp:"
+#~ msgstr "Елемейтінің үлгі өрнегі:"
+
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "Бұл diff -I деген параметріне сәйкес келеді."
+
+#~ msgid ""
+#~ "When this checkbox is enabled, an option to diff is given that will make "
+#~ "diff ignore lines that match the regular expression."
+#~ msgstr ""
+#~ "Белгісі қойылса, diff, келтірілген үлгі өрнегіне сәйкесті жолдарын "
+#~ "елемейді."
+
+#~ msgid ""
+#~ "Add the regular expression here that you want to use\n"
+#~ "to ignore lines that match it."
+#~ msgstr ""
+#~ "Мұнда diff елемей қалдыратын жолдарына сәйкесті үлгі өрнегін келтіріңіз."
+
+#~ msgid "&Edit..."
+#~ msgstr "&Өңдеу..."
+
+#~ msgid ""
+#~ "Clicking this will open a regular expression dialog where\n"
+#~ "you can graphically create regular expressions."
+#~ msgstr ""
+#~ "Түртсеңіз, үлгі өрнегін құрып беруге көмектесетін графикалық интерфейсті "
+#~ "диалогы шыға келеді."
+
+#~ msgid "Whitespace"
+#~ msgstr "Бос орындар"
+
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "Шығысында кестелеу белгісі бос орындарға &тарқатылсын"
+
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "Бұл diff -t деген параметріне сәйкес келеді."
+
+#~ msgid ""
+#~ "This option does not always produce the right result. Due to this "
+#~ "expansion Kompare may have problems applying the change to the "
+#~ "destination file."
+#~ msgstr ""
+#~ "Бұл параметр кейбірде оңды нәтиже бермейді. Бұның салдары,Kompare "
+#~ "мақсатты файлды өзгерістерімен толықтырғанда, мәселелерді туғыза алады."
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "Бос жолдарды қосқан-өшіргені е&лемей қалсын"
+
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "Бұл diff -B деген параметріне сәйкес келеді."
+
+#~ msgid ""
+#~ "This can be very useful in situations where code has been reorganized and "
+#~ "empty lines have been added or removed to improve legibility."
+#~ msgstr ""
+#~ "Бұл мәтіннің анық-қанықтығын арттырып, бос жолдарды қосып-өшіргенде "
+#~ "ыңғайлы параметр."
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "Бос орындар қосқан-өшіргені еле&мей қалсын"
+
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "Бұл diff -b деген параметріне сәйкес келеді."
+
+#~ msgid ""
+#~ "If you are uninterested in differences arising due to, for example, "
+#~ "changes in indentation, then use this option."
+#~ msgstr ""
+#~ "Егерде бос орындардағы айырмашылықтарды, мысалы, жолдар шегінуін "
+#~ "өзгерткенде пайда болған, елемей қалдырам десеңіз, осы параметрді "
+#~ "пайдаланыңыз."
+
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "Бүкіл бос орындар елемей &қалсын"
+
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "Бұл diff -w деген параметріне сәйкес келеді."
+
+#~ msgid ""
+#~ "This is useful for seeing the significant changes without being "
+#~ "overwhelmed by all the white space changes."
+#~ msgstr ""
+#~ "Толған бос орындардағы айырмашылықтарына қарамай, елеулі айырмашылықтарға "
+#~ "көңіл болем десеңіз - осы параметрді пайдаланыңыз."
+
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "Кестелеуді тарқатудан туындаған өзгерістер е&лемей қалсын"
+
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "Бұл diff -E деген параметріне сәйкес келеді."
+
+#~ msgid ""
+#~ "If there is a change because tabs have been expanded into spaces in the "
+#~ "other file, then this option will make sure that these do not show up. "
+#~ "Kompare currently has some problems applying such changes so be careful "
+#~ "when you use this option."
+#~ msgstr ""
+#~ "Егерде кестелеуді тарқатудан туындаған өзгерістер пайда болса - осы "
+#~ "параметр оларды көрсетуін болдырмайды. Байқаңыз, қазіргі Kompare мақсатты "
+#~ "файлды өзгерістерімен толықтырғанда, мәселелерді туғызатыны бар"
+
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "Өткізіп жіберетін файлдар үлгісі"
+
+#~ msgid ""
+#~ "If this is checked you can enter a shell pattern in the text box on the "
+#~ "right or select entries from the list."
+#~ msgstr ""
+#~ "Белгісі қойылса, оң жақтағы өрісіне қалқасын, теріп не тізімінен таңдап, "
+#~ "келтіріңіз."
+
+#~ msgid ""
+#~ "Here you can enter or remove a shell pattern or select one or more "
+#~ "entries from the list."
+#~ msgstr ""
+#~ "Мұнда файл атауының қалқасын теріп не тізімінен біреуін таңдап, келтіре "
+#~ "аласыз."
+
+#~ msgid "File with Filenames to Exclude"
+#~ msgstr "Өткізіп жіберетін файл атаулары"
+
+#~ msgid "If this is checked you can enter a filename in the combo box below."
+#~ msgstr ""
+#~ "Белгісі қойылса, төмендегі ашылмалы тізімінің өрісіне файл атауын "
+#~ "келтіріңіз."
+
+#~ msgid ""
+#~ "Here you can enter the URL of a file with shell patterns to ignore during "
+#~ "the comparison of the folders."
+#~ msgstr ""
+#~ "Мұнда қапшықтарды салыстырғанда елемейтін файл қалқалары жазылған файлдың "
+#~ "URL-ін келтіріңіз."
+
+#~ msgid ""
+#~ "Any file you select in the dialog that pops up when you click it will be "
+#~ "put in the dialog to the left of this button."
+#~ msgstr ""
+#~ "Шыға келген диалогында таңдап алған файлдар сол жақтағы тізімінде "
+#~ "көрсетіледі."
+
+#~ msgid "Exclude"
+#~ msgstr "Өткізіп жіберу"
+
+#~ msgid "Encoding"
+#~ msgstr "Кодтамасы"
+
+#~ msgid "Colors"
+#~ msgstr "Түстер"
+
+#~ msgid "Removed color:"
+#~ msgstr "Өшірілгеннің түсі:"
+
+#~ msgid "Changed color:"
+#~ msgstr "Өзгертілгеннің түсі:"
+
+#~ msgid "Added color:"
+#~ msgstr "Қосылғанның түсі:"
+
+#~ msgid "Applied color:"
+#~ msgstr "Толықтырғанның түсі:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Тышқанның тегіршігі"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Жолдар саны:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Кестелеу -> Бос орындар"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "Кестелеу белгісін қанша бос орындарға аудару:"
+
+#~ msgid "Text Font"
+#~ msgstr "Мәтін қаріпі"
+
+#~ msgid "Font:"
+#~ msgstr "Қаріпі:"
+
+#~ msgid "Size:"
+#~ msgstr "Өлшемі:"
+
+#~ msgid "Fonts"
+#~ msgstr "Қаріптері"
+
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "Файлдар арасындағы айырмашылықтарын көрсетіп, керегінде diff файлын құрып "
+#~ "беретін бағдарлама"
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+
+#~ msgid "Jeff Snyder"
+#~ msgstr "Jeff Snyder"
+
+#~ msgid "Developer"
+#~ msgstr "Құрастырушысы"
+
+#~ msgid "Maintainer"
+#~ msgstr "Жетілдірушісі"
+
+#~ msgid "Chris Luetchford"
+#~ msgstr "Chris Luetchford"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "Kompare таңбашасын салған"
+
+#~ msgid "Malte Starostik"
+#~ msgstr "Malte Starostik"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "Көп пайдалы кеңес берген"
+
+#~ msgid "Bernd Gehrmann"
+#~ msgstr "Bernd Gehrmann"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Cervisia diff қарау құралы"
+
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "URL1 мен URL2-ні салыстырып береді"
+
+#~ msgid ""
+#~ "This will open URL1 and expect it to be diff output. URL1 can also be a "
+#~ "'-' and then it will read from standard input. Can be used for instance "
+#~ "for cvs diff | kompare -o -. Kompare will do a check to see if it can "
+#~ "find the original file(s) and then blend the original file(s) into the "
+#~ "diffoutput and show that in the viewer. -n disables the check."
+#~ msgstr ""
+#~ "Бұнда URL1 diff-тің шығысы деп есептеп ашылады. URL1 орнына '-' деп қоюға "
+#~ "болады, онда ол стандартты кірістен оқылады. Бұны, мысалы былай қолдануға "
+#~ "болады: cvs diff | kompare -o -. Kompare түпнұсқа файл(дар)ы бар-жоғын "
+#~ "тексереді де, оны diff-тің шығысымен араластырып, көрсетеді.  -n "
+#~ "тексерісін болдырмайды."
+
+#~ msgid ""
+#~ "This will blend URL2 into URL1, URL2 is expected to be diff output and "
+#~ "URL1 the file or folder that the diffoutput needs to be blended into. "
+#~ msgstr ""
+#~ "Бұнда URL2 деген URL1 дегенге араластырылады, URL2 diff шығысы деп "
+#~ "есептеледі, URL1 - diff шығысын араластыруды қажет ететін файл не қапшық."
+
+#~ msgid ""
+#~ "Disables the check for automatically finding the original file(s) when "
+#~ "using '-' as URL with the -o option."
+#~ msgstr ""
+#~ "Бұл '-' дегенді -o деген параметрімен автоматты түрде түпнұсқа файлдар "
+#~ "URL-і ретінде пайдаланғанда, тексерісін рұқсат етпеуі.."
+
+#~ msgid ""
+#~ "Use this to specify the encoding when calling it from the command line. "
+#~ "It will default to the local encoding if not specified."
+#~ msgstr ""
+#~ "Бұны, команда жолынан шақырғанда, керек кодтамасын келтіруге қолданыңыз. "
+#~ "Келтірілмесе - әдетті кодтамасы қолданылады."
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "Осы файл не қапшықтарды салыстыру"
+
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "KompareViewPart бөлшегі табылмады."
+
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "KompareNavigationPart бөлшегі табылмады."

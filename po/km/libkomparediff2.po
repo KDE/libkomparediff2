@@ -1,0 +1,278 @@
+# translation of kompare.po to Khmer
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2008.
+# Auk Piseth <piseth_dv@khmeros.info>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2008-12-19 10:22+0700\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer <support@khmeros.info>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "ផលដក"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "ផលដក"
+
+#: komparemodellist.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr ""
+
+#: komparemodellist.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr ""
+
+#: komparemodellist.cpp:80
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr ""
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "ឯកសារ"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "ផលដក"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "ផលដក"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr ""
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr ""
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr ""
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr ""
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "ខឹម សុខែម, អេង វណ្ណៈ, អោក ពិសិដ្ឋ​​"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr ""
+#~ "khoemsokhem@khmeros.info,​​evannak@khmeros.info,piseth_dv@khmeros.info"
+
+#, fuzzy
+#~ msgid "Navigation"
+#~ msgstr "ការ​រុករក"
+
+#, fuzzy
+#~ msgid "Source"
+#~ msgstr "ប្រភព"
+
+#, fuzzy
+#~ msgid "Destination"
+#~ msgstr "ទិស​ដៅ"
+
+#, fuzzy
+#~ msgid "Compare"
+#~ msgstr "ប្រៀប​ធៀប"
+
+#, fuzzy
+#~ msgid "Destination Folder"
+#~ msgstr "ថត​ទិសដៅ"
+
+#, fuzzy
+#~ msgid "Source File"
+#~ msgstr "ឯកសា​ប្រភព"
+
+#, fuzzy
+#~ msgid "Unknown"
+#~ msgstr "មិន​ស្គាល់"
+
+#, fuzzy
+#~ msgid "Author"
+#~ msgstr "អ្នក​និពន្ធ"
+
+#, fuzzy
+#~ msgid "File Exists"
+#~ msgstr "មាន​ឯកសារ​រួច​ហើយ"
+
+#, fuzzy
+#~ msgid "Overwrite"
+#~ msgstr "សរសេរ​ជាន់​លើ"
+
+#, fuzzy
+#~ msgid "Do Not Overwrite"
+#~ msgstr "កុំ​សរសេរ​ជាន់លើ"
+
+#, fuzzy
+#~ msgid "Save Changes?"
+#~ msgstr "រក្សា​ទុក​ការ​ផ្លាស់ប្ដូរ ?"
+
+#, fuzzy
+#~ msgid "Context"
+#~ msgstr "បរិបទ"
+
+#, fuzzy
+#~ msgid "Normal"
+#~ msgstr "ធម្មតា"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "ការ​កំណត់"
+
+#, fuzzy
+#~ msgid "Preferences"
+#~ msgstr "ចំណង់​ចំណូល​ចិត្ត"
+
+#, fuzzy
+#~ msgid "View"
+#~ msgstr "ទិដ្ឋភាព"
+
+#, fuzzy
+#~ msgid "View Settings"
+#~ msgstr "ការ​កំណត់​ទិដ្ឋភាព"
+
+#, fuzzy
+#~ msgid "Diff"
+#~ msgstr "Diff"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "ជម្រើស​"
+
+#, fuzzy
+#~ msgid "Format"
+#~ msgstr "ទ្រង់ទ្រាយ"
+
+#, fuzzy
+#~ msgid "Main Toolbar"
+#~ msgstr "របារ​ឧបករណ៍​មេ"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "ឯកសារ"
+
+#, fuzzy
+#~ msgid "Appearance"
+#~ msgstr "រូបរាង"
+
+#, fuzzy
+#~ msgid "General"
+#~ msgstr "ទូទៅ"
+
+#, fuzzy
+#~ msgid "&Edit..."
+#~ msgstr "កែសម្រួល..."
+
+#, fuzzy
+#~ msgid "Encoding"
+#~ msgstr "ការ​អ៊ិនកូដ"
+
+#, fuzzy
+#~ msgid "Colors"
+#~ msgstr "ពណ៌"
+
+#, fuzzy
+#~ msgid "Number of lines:"
+#~ msgstr "ចំនួន​បន្ទាត់ ៖"
+
+#, fuzzy
+#~ msgid "Text Font"
+#~ msgstr "ពុម្ព​អក្សរ​អត្ថបទ"
+
+#, fuzzy
+#~ msgid "Font:"
+#~ msgstr "ពុម្ពអក្សរ ៖"
+
+#, fuzzy
+#~ msgid "Size:"
+#~ msgstr "ទំហំ ៖"
+
+#, fuzzy
+#~ msgid "Fonts"
+#~ msgstr "ពុម្ពអក្សរ "

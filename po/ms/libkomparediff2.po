@@ -1,0 +1,725 @@
+# Copyright (C)
+# Muhammad Najmi bin Ahmad Zabidi <mnajem@linuxmail.org>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2006-12-03 15:38+0800\n"
+"Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
+"Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+"Plural-Forms: nplurals=2; plural=1;\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Apply Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "Ter&ap Perubahan"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "Un&apply Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "Nyah Ter&ap Perbezaan"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+#| msgid "App&ly All"
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "Tera&p Semua"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "Semua Pakej"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "Fail Te&rdahulu"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "Fail S&eterusnya"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Previous Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "&Perbezaan Terdahulu"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Next Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "Perbezaan Seterus&nya"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, fuzzy, kde-format
+msgid "Could not open a temporary file."
+msgstr "tidak dapat membuka fail tetapan `%s': %s"
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, fuzzy, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr "Tidak dapat tulis kepada fail."
+
+#: komparemodellist.cpp:407
+#, fuzzy, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr "Tidak dapat tulis kepada fail."
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "Tidak dapat huraikan diff output."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "Fail adalah sama."
+
+#: komparemodellist.cpp:712
+#, fuzzy, kde-format
+msgid "Could not write to the temporary file."
+msgstr ""
+"Tidak dapat menulis ke fail %1:\n"
+"\"%2\" adalah huraian terperinci ralat."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Muhammad Najmi bin Ahmad Zabidi"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "mnajem@linuxmail.org"
+
+#, fuzzy
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "[gagal muat modul appletalk]\n"
+
+#, fuzzy
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "[gagal muat modul appletalk]\n"
+
+#, fuzzy
+#~ msgid "&Open Diff..."
+#~ msgstr "%s: diff gagal: "
+
+#~ msgid "&Compare Files..."
+#~ msgstr "Bandin&g Fail..."
+
+#, fuzzy
+#~ msgid "Show T&ext View"
+#~ msgstr "Lihat status faks"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr " 0 dari 0 perbezaan"
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 dari 0 fail"
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] " %2 dari %1 fail "
+#~ msgstr[1] " %2 dari %1 fail-fail"
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] " %1 fail "
+#~ msgstr[1] " %1 fail-fail"
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " %2 dari %1 perbezaan, %3 telah diterapkan "
+#~ msgstr[1] " %2 dari %1 perbezaan, %3 telah diterapkan"
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] "%1 perbezaan "
+#~ msgstr[1] " %1 perbezaan"
+
+#, fuzzy
+#~ msgid "File/Folder"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Diff Output"
+#~ msgstr "--normal  Keluarkan diff normal."
+
+#, fuzzy
+#~ msgid "Blend"
+#~ msgstr "Name=Smooth Blend"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "Jika anda telah memasukkan 2 nama fail atau 2 direktori di dalam ruangan "
+#~ "pada dialog ini, butang ini akan dihidupkan, dan jika ditekan "
+#~ "perbandingan di antara fail atau direktori dimasukkan akan dimulakan."
+
+#, fuzzy
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Padam fail atau tidak?"
+
+#~ msgid "Source"
+#~ msgstr "Sumber"
+
+#~ msgid "Destination"
+#~ msgstr "Destinasi"
+
+#~ msgid "Compare"
+#~ msgstr "Banding"
+
+#, fuzzy
+#~ msgid "Compare these files or folders"
+#~ msgstr "Bandingkan fail atau direktori ini"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "Jika anda telah memasukkan 2 nama fail atau 2 direktori di dalam ruangan "
+#~ "pada dialog ini, butang ini akan dihidupkan, dan jika ditekan "
+#~ "perbandingan di antara fail atau direktori dimasukkan akan dimulakan."
+
+#~ msgid "Text View"
+#~ msgstr "Lihat Teks"
+
+#, fuzzy
+#~ msgid "Source Folder"
+#~ msgstr "Tambah _direktori"
+
+#, fuzzy
+#~ msgid "Destination Folder"
+#~ msgstr "Tambah _direktori"
+
+#~ msgid "Source File"
+#~ msgstr "Fail Sumber"
+
+#~ msgid "Destination File"
+#~ msgstr "Fail Destinasi"
+
+#~ msgid "Source Line"
+#~ msgstr "Baris Sumber"
+
+#~ msgid "Destination Line"
+#~ msgstr "Baris Destinasi"
+
+#~ msgid "Difference"
+#~ msgstr "Perbezaan"
+
+#, fuzzy
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "Telah tukar %1 baris"
+#~ msgstr[1] "Telah tukar %1 baris-baris"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "Telah tukar %1 baris"
+#~ msgstr[1] "Telah tukar %1 baris-baris"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "Telah masukkan %1 baris"
+#~ msgstr[1] "Telah masukkan %1 baris-baris"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "Telah padam %1 baris"
+#~ msgstr[1] "Telah padam %1 baris-baris"
+
+#~ msgid "Unknown"
+#~ msgstr "Tidak Diketahui"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "Author"
+#~ msgstr "Penulis"
+
+#~ msgid "Save &All"
+#~ msgstr "Simp&an Semua"
+
+#, fuzzy
+#~ msgid "Save &Diff..."
+#~ msgstr "%s: diff gagal: "
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Swap Sumber dengan Destinasi"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Papar Statistik"
+
+#~ msgid "Diff Options"
+#~ msgstr "Pilihan Diff"
+
+#, fuzzy
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "--diff-program=PROGRAM  Guna PROGRAM untuk membanding fail."
+
+#~ msgid "Save .diff"
+#~ msgstr "Simpan .diff"
+
+#~ msgid "File Exists"
+#~ msgstr "Fail Wujud"
+
+#~ msgid "Overwrite"
+#~ msgstr "Tindih"
+
+#, fuzzy
+#~ msgid "Do Not Overwrite"
+#~ msgstr "_Jangan Format"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Running diff..."
+#~ msgstr "Laksana diff..."
+
+#, fuzzy
+#~ msgid "Parsing diff output..."
+#~ msgstr "--normal  Keluarkan diff normal."
+
+#, fuzzy
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "%s: tidak sepadan dengan fail gmon pertama\n"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "Membandingkan fail dalam %1 dengan fail dalam %2"
+
+#, fuzzy
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "-n  --rcs  Keluarkan diff format RCS."
+
+#, fuzzy
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Anda telah membuat perubahan pada destinasi.\n"
+#~ "Anda mahu simpan perubahan?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "Simpan Perubahan?"
+
+#~ msgid "Unified"
+#~ msgstr "Disatukan"
+
+#~ msgid "Context"
+#~ msgstr "Konteks"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Normal"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "Tiada fail diff, atau tiada 2 fail yang telah dibandingkan. Oleh itu, "
+#~ "tiada stat dapatditunjukkan."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Statistik Diff"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Statistik:\n"
+#~ "\n"
+#~ "Fail lama %1\n"
+#~ "Fail baru %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Jumlah perbezaan: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Statistik:\n"
+#~ "\n"
+#~ "Jumlah fail dalam fail diff: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Fail lama semasa: %3\n"
+#~ "Fail baru semasa: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Jumlah perbezaan: %6"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "Fail"
+
+#~ msgid "&Difference"
+#~ msgstr "Per&bezaaan"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "Tetapan Lain-lain"
+
+#~ msgid "Preferences"
+#~ msgstr "Keutamaan"
+
+#, fuzzy
+#~ msgid "View"
+#~ msgstr "Lihat Teks"
+
+#, fuzzy
+#~ msgid "View Settings"
+#~ msgstr "Tetapan Lain-lain"
+
+#~ msgid "Diff"
+#~ msgstr "Diff"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Tetapan Diff"
+
+#~ msgid "Run Diff In"
+#~ msgstr "Laksana Diff Dalam"
+
+#~ msgid "Command Line"
+#~ msgstr "Baris Arahan"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- destinasi sumber"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "Pili&han"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "Lihat kepada perubahan kecil"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "Optimumkan untuk fail besar"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "Abaikan perubahan pada 'case'"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "Lebarkan tab kepada senggang"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "Abaikan tambahan atau pemadaman baris kosong"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Abaikan perubahan di dalam ruang kosong"
+
+#~ msgid "Show function names"
+#~ msgstr "Paparkan nama fungsi"
+
+#, fuzzy
+#~ msgid "Compare folders recursively"
+#~ msgstr "Patutkah saya buat secara rekursif ?"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "Layan fail sebagai kosong"
+
+#~ msgid "Format"
+#~ msgstr "Format"
+
+#~ msgid "Side-by-side"
+#~ msgstr "Sebelah-sebelah"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "Nombor dari baris konteks:"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Fail"
+
+#, fuzzy
+#~| msgid "A&ppearance"
+#~ msgid "Appearance"
+#~ msgstr "&Paparan"
+
+#, fuzzy
+#~ msgid "Diff Program"
+#~ msgstr "Keluar program"
+
+#~ msgid "Output Format"
+#~ msgstr "Format Keluaran"
+
+#~ msgid "Lines of Context"
+#~ msgstr "Baris Konteks"
+
+#~ msgid "General"
+#~ msgstr "Umum"
+
+#, fuzzy
+#~| msgid "Treat new files as empty"
+#~ msgid "&Treat new files as empty"
+#~ msgstr "Layan fail sebagai kosong"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "Pilihan %s %s tidak dapat ditambah ke %s ini: %s."
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "&Lihat pada perubahan kecil"
+
+#, fuzzy
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "Pilihan %s %s tidak dapat ditambah ke %s ini: %s."
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "O&ptimumkan untuk fail besar"
+
+#, fuzzy
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "Pilihan %s %s tidak dapat ditambah ke %s ini: %s."
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "Aba&ikan perubahan"
+
+#, fuzzy
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "Pilihan %s %s tidak dapat ditambah ke %s ini: %s."
+
+#, fuzzy
+#~ msgid "Ignore regexp:"
+#~ msgstr "Pencarian Regexp %s%s"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "Pilihan %s %s tidak dapat ditambah ke %s ini: %s."
+
+#~ msgid "&Edit..."
+#~ msgstr "&Sunting..."
+
+#~ msgid "Whitespace"
+#~ msgstr "Selang"
+
+#, fuzzy
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "-t  --expand-tabs  Kembang tab kepada ruang dalam keluaran."
+
+#, fuzzy
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "Pilihan %s %s tidak dapat ditambah ke %s ini: %s."
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "Abaikan tambahan atau buang baris koson&g"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "Pilihan %s %s tidak dapat ditambah ke %s ini: %s."
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "Abaika&n perubahan di dalam ruang kosong"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "Pilihan %s %s tidak dapat ditambah ke %s ini: %s."
+
+#, fuzzy
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "Abaikan perubahan di dalam ruang kosong"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "Pilihan %s %s tidak dapat ditambah ke %s ini: %s."
+
+#, fuzzy
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "Abaikan perubahan di dalam ruang kosong"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "Pilihan %s %s tidak dapat ditambah ke %s ini: %s."
+
+#, fuzzy
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "gagal untuk glob corak %s: %s\n"
+
+#, fuzzy
+#~ msgid "Exclude"
+#~ msgstr "Laluan untuk diabaikan"
+
+#, fuzzy
+#~ msgid "Encoding"
+#~ msgstr "pengekodan tidak diketahui `%s'"
+
+#~ msgid "Colors"
+#~ msgstr "Warna"
+
+#~ msgid "Removed color:"
+#~ msgstr "Warna dibuang"
+
+#~ msgid "Changed color:"
+#~ msgstr "Warna diubah:"
+
+#~ msgid "Added color:"
+#~ msgstr "Warna ditambah:"
+
+#~ msgid "Applied color:"
+#~ msgstr "Warna diterap:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Roda Tetikus"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Nombor dari baris:"
+
+#, fuzzy
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Penukaran tab ditaip kepada ruang"
+
+#, fuzzy
+#~ msgid "Text Font"
+#~ msgstr "Tetap Font"
+
+#~ msgid "Font:"
+#~ msgstr "Font:"
+
+#~ msgid "Size:"
+#~ msgstr "Saiz:"
+
+#, fuzzy
+#~ msgid "Fonts"
+#~ msgstr "Font:"
+
+#, fuzzy
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "Program untuk melihat perbezaan di antara fail dan menjana diff jika "
+#~ "dipilih."
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#, fuzzy
+#~| msgid "(c) 2001-2004, John Firebaugh and Otto Bruggeman"
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr "(c) 2001-2004, John Firebaugh and Otto Bruggeman"
+
+#, fuzzy
+#~ msgid "Kompare icon artist"
+#~ msgstr "KomparePart"
+
+#, fuzzy
+#~ msgid "A lot of good advice"
+#~ msgstr "Selamat berjaya dengan Mandriva Linux!"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Peninjau diff Cervisia"
+
+#, fuzzy
+#~ msgid "Compare these files or folder"
+#~ msgstr "Bandingkan fail atau direktori ini"
+
+#, fuzzy
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "Tidak dapat menjumpai  konfigurasi X"
+
+#, fuzzy
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "Tidak dapat menjumpai  konfigurasi X"
+
+#~ msgid "A&ppearance"
+#~ msgstr "&Paparan"
+
+#, fuzzy
+#~ msgid "&Diff"
+#~ msgstr "%s: diff gagal: "
+
+#~ msgid "&Format"
+#~ msgstr "&Format"
+
+#~ msgid "O&ptions"
+#~ msgstr "Pili&han"
+
+#, fuzzy
+#~ msgid "Hide T&ext View"
+#~ msgstr "Lihat status faks"

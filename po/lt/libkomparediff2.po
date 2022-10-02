@@ -1,0 +1,653 @@
+# translation of kompare.po to Lithuanian
+#
+# Ričardas Čepas <rch@online.lt>, 2003.
+# Donatas Glodenis <dgvirtual@akl.lt>, 2004-2005.
+# Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>, 2011.
+# Liudas Ališauskas <liudas@akmc.lt>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2013-05-03 19:16+0300\n"
+"Last-Translator: Liudas Ališauskas <liudas@akmc.lt>\n"
+"Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Apply Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "Prit&aikyti skirtumą"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "Un&apply Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "Pa&naikinti skirtumo pritaikymą"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+#| msgid "App&ly All"
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "Pritaik&yti viską"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+#| msgid "&Unapply All"
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "&Panaikinti visko pritaikymą"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "&Ankstesnis failas"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "K&itas failas"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Previous Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "A&nkstesnis skirtumas"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Next Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "&Kitas skirtumas"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "Negalima atidaryti laikino failo."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "Negalima išnagrinėti diff išvesties."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "Failai yra identiški."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Negalima įrašyti į laikiną failą."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Eugenijus Paulauskas, Ričardas Čepas"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "eugenijus@agvila.lt, rch@online.lt"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "Nepavyko įkelti mūsų KompareViewPart."
+
+#~ msgid "Navigation"
+#~ msgstr "Navigacija"
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "Nepavyko įkelti mūsų KompareNavigationPart."
+
+#~ msgid "&Open Diff..."
+#~ msgstr "&Atverti skirtumą..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "&Palyginti failus..."
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "&Sumaišyti URL su skirtumu..."
+
+#~ msgid "Show T&ext View"
+#~ msgstr "&Teksto rodinys"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr " 0 iš 0 skirtumų"
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 iš 0 failų "
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] " %2 iš %1 failo "
+#~ msgstr[1] " %2 iš %1 failų "
+#~ msgstr[2] " %2 iš %1 failų "
+#~ msgstr[3] " %2 iš %1 failo "
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] " %1 failas "
+#~ msgstr[1] " %1 failai "
+#~ msgstr[2] " %1 failų "
+#~ msgstr[3] " %1 failas "
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " %2 iš %1 skirtumo, %3 pritaikyta "
+#~ msgstr[1] " %2 iš %1 skirtumų, %3 pritaikyta "
+#~ msgstr[2] " %2 iš %1 skirtumų, %3 pritaikyta "
+#~ msgstr[3] " %2 iš %1 skirtumo, %3 pritaikyta "
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " %1 skirtumas "
+#~ msgstr[1] " %1 skirtumai "
+#~ msgstr[2] " %1 skirtumų "
+#~ msgstr[3] " %1 skirtumas "
+
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "Maišyti failą/aplanką su skirtumo išvestimi"
+
+#~ msgid "File/Folder"
+#~ msgstr "Failas/Aplankas"
+
+#~ msgid "Diff Output"
+#~ msgstr "Diff rezultatas (skirtumai)"
+
+#~ msgid "Blend"
+#~ msgstr "Maišyti"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "Maišyti šį failą ar aplanką su skirtumo išvestimi"
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Palyginti failus arba aplankus"
+
+#~ msgid "Source"
+#~ msgstr "Šaltinis"
+
+#~ msgid "Destination"
+#~ msgstr "Paskirties vieta"
+
+#~ msgid "Compare"
+#~ msgstr "Palyginti"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "Palyginti šiuos failus arba aplankus"
+
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "Jei įvedėte dviejų failų vardus ar du aplankus šio dialogo laukuose, tada "
+#~ "šis mygtukas pasidarys prieinamu ir jį paspaudus bus pradėtas įvestų "
+#~ "failų ar aplankų palyginimas."
+
+#~ msgid "Text View"
+#~ msgstr "Teksto vaizdas"
+
+#~ msgid "Source Folder"
+#~ msgstr "Šaltinio aplankas"
+
+#~ msgid "Destination Folder"
+#~ msgstr "Paskirties aplankas"
+
+#~ msgid "Source File"
+#~ msgstr "Šaltinio failas"
+
+#~ msgid "Destination File"
+#~ msgstr "Paskirties failas"
+
+#~ msgid "Source Line"
+#~ msgstr "Šaltinio eilutė"
+
+#~ msgid "Destination Line"
+#~ msgstr "Paskirties eilutė"
+
+#~ msgid "Difference"
+#~ msgstr "Skirtumas"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "Pakeista %1 eilutė"
+#~ msgstr[1] "Pakeistos %1 eilutės"
+#~ msgstr[2] "Pakeista %1 eilučių"
+#~ msgstr[3] "Pakeista %1 eilutė"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "Įterpta %1 eilutė"
+#~ msgstr[1] "Įterptos %1 eilutės"
+#~ msgstr[2] "Įterptų %1 eilučių"
+#~ msgstr[3] "Įterpta %1 eilutė"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "Pašalinta %1 eilutė"
+#~ msgstr[1] "Pašalintos %1 eilutės"
+#~ msgstr[2] "Pašalinta %1 eilučių"
+#~ msgstr[3] "Pašalinta %1 eilutė"
+
+#~ msgid "Unknown"
+#~ msgstr "Nežinoma"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "John Firebaugh"
+
+#~ msgid "Author"
+#~ msgstr "Autorius"
+
+#~ msgid "Otto Bruggeman"
+#~ msgstr "Otto Bruggeman"
+
+#~ msgid "Save &All"
+#~ msgstr "Į&rašyti viską"
+
+#~ msgid "Save &Diff..."
+#~ msgstr "Įrašyti &Diff..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Sukeisti šaltinį su paskirtimi"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Rodyti statistiką"
+
+#~ msgid "Refresh Diff"
+#~ msgstr "Atnaujinti skirtumą"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>URL <b>%1</b> negali būti atsiųstas.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>URL <b>%1</b> neegzistuoja Jūsų sistemoje.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "Diff parinktys"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Pataisų failai"
+
+#~ msgid "Save .diff"
+#~ msgstr "Įrašyti .diff"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr ""
+#~ "Failas egzistuoja arba apsaugotas nuo įrašymo; ar norite jį perrašyti?"
+
+#~ msgid "File Exists"
+#~ msgstr "Failas jau yra"
+
+#~ msgid "Overwrite"
+#~ msgstr "Perrašyti"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Neperrašyti"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Kevin Kofler"
+#~ msgstr "Kevin Kofler"
+
+#~ msgid "Running diff..."
+#~ msgstr "Paleidžiamas diff..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "Nagrinėjamas diff..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "Palyginamas failas %1 su failu %2"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "Palyginami failai iš %1 su failais iš %2"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Jūs padarėte pakeitimų paskirties vietoje.\n"
+#~ "Ar norite juos išsaugoti?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "Įrašyti pakeitimus?"
+
+#~ msgid "Unified"
+#~ msgstr "Unifikuotas"
+
+#~ msgid "Context"
+#~ msgstr "Kontekstas"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Normalus"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "Nėra diff failo arba nebuvo palyginta dviejų failų, todėl nėra prieinamos "
+#~ "statistikos."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Diff statistika"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Statistika:\n"
+#~ "\n"
+#~ "Senas failas : %1\n"
+#~ "Naujas failas : %2\n"
+#~ "\n"
+#~ "Formatas : %3\n"
+#~ "Gabalų skaičius : %4\n"
+#~ "Skirtumų skaičius : %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Statistika:\n"
+#~ "\n"
+#~ "Failų skaičius diff  faile: %1\n"
+#~ "Formatas: %2\n"
+#~ "\n"
+#~ "Dabartinis senas failas: %3\n"
+#~ "Dabartinis naujas failas: %4\n"
+#~ "\n"
+#~ "Gabalų skaičius: %5\n"
+#~ "Skirtumų skaičius: %6"
+
+#~ msgid "&File"
+#~ msgstr "&Failas"
+
+#~ msgid "&Difference"
+#~ msgstr "&Skirtumai"
+
+#~ msgid "&Settings"
+#~ msgstr "&Nuostatos"
+
+#~ msgid "Preferences"
+#~ msgstr "Pasirinkimai"
+
+#~ msgid "View"
+#~ msgstr "Rodymas"
+
+#~ msgid "View Settings"
+#~ msgstr "Rodymo nuostatos"
+
+#~ msgid "Diff"
+#~ msgstr "Diff"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Diff nuostatos"
+
+#~ msgid "Run Diff In"
+#~ msgstr "Paleisti diff"
+
+#~ msgid "Command Line"
+#~ msgstr "Komandų eilutė"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- šaltinis paskirtis"
+
+#~ msgid "Options"
+#~ msgstr "Parinktys"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "Žiūrėti smulkesnių pakeitimų"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "Optimizuoti dideliems failams"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "Ignoruoti raidžių dydžio pokyčius"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "Išplėsti tab'us į tarpus"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "Ignoruoti įdėtas arba pašalintas tuščias eilutes"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Ignoruoti pokyčius tarpuose"
+
+#~ msgid "Show function names"
+#~ msgstr "Rodyti funkcijų vardus"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "Lyginti aplankus rekursyviniu būdu"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "Naujus failus laikyti tuščiais"
+
+#~ msgid "Format"
+#~ msgstr "Formatas"
+
+#~ msgid "Side-by-side"
+#~ msgstr "Šonas prie šono"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "Konteksto eilučių skaičius:"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Pagrindinė įrankinė"
+
+#~ msgid "Files"
+#~ msgstr "Failai"
+
+#~ msgid "Appearance"
+#~ msgstr "Išvaizda"
+
+#~ msgid "Diff Program"
+#~ msgstr "Diff programa"
+
+#~ msgid "Output Format"
+#~ msgstr "Išvesties formatas"
+
+#~ msgid "Lines of Context"
+#~ msgstr "Konteksto eilutės"
+
+#~ msgid "General"
+#~ msgstr "Bendros"
+
+#~ msgid "&Treat new files as empty"
+#~ msgstr "Naujus failus laikyti tuščiais"
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "&Žiūrėti smulkius pakeitimus"
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "O&ptimizuoti dideliems failams"
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "&Ignoruoti raidžių dydžio pokyčius"
+
+#~ msgid "&Edit..."
+#~ msgstr "&Keisti..."
+
+#~ msgid "Whitespace"
+#~ msgstr "Tarpai"
+
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "Išpl&ėsti tabuliacijas į tarpus išvedime"
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "I&gnoruoti įdėtas arba pašalintas tuščias eilutes"
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "Ig&noruoti pokyčius tarpuose"
+
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "Ignoruoti pokyčius tarpuose"
+
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "Ignoruoti pokyčius tabuliacijų išplėtimuose"
+
+#~ msgid "Exclude"
+#~ msgstr "Neįtraukti"
+
+#~ msgid "Encoding"
+#~ msgstr "Kodavimas"
+
+#~ msgid "Colors"
+#~ msgstr "Spalvos"
+
+#~ msgid "Removed color:"
+#~ msgstr "Pašalinta spalva:"
+
+#~ msgid "Changed color:"
+#~ msgstr "Pakeista spalva:"
+
+#~ msgid "Added color:"
+#~ msgstr "Įdėta spalva:"
+
+#~ msgid "Applied color:"
+#~ msgstr "Pritaikyta spalva:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Pelės ratukas"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Eilučių skaičius:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Tabuliacijas pakeisti tarpais"
+
+#~ msgid "Text Font"
+#~ msgstr "Teksto šriftas"
+
+#~ msgid "Font:"
+#~ msgstr "Šriftas:"
+
+#~ msgid "Size:"
+#~ msgstr "Dydis:"
+
+#~ msgid "Fonts"
+#~ msgstr "Šriftai"
+
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "Programa, skirta skirtumų tarp failų peržiūrai, gali generuoti „diff“."
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+
+#~ msgid "Jeff Snyder"
+#~ msgstr "Jeff Snyder"
+
+#~ msgid "Developer"
+#~ msgstr "Programuotojas"
+
+#~ msgid "Maintainer"
+#~ msgstr "Prižiūrėtojas"
+
+#~ msgid "Chris Luetchford"
+#~ msgstr "Chris Luetchford"
+
+#~ msgid "Malte Starostik"
+#~ msgstr "Malte Starostik"
+
+#~ msgid "Bernd Gehrmann"
+#~ msgstr "Bernd Gehrmann"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Cervisia „diff“ skirtumų žiūriklis"
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "Palyginti šiuos failus arba aplankus"

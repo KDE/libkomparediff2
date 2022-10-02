@@ -1,0 +1,566 @@
+# Copyright (C) 2006, 2007 Free Software Foundation, Inc.
+# translation of kompare.po to Macedonian
+#
+# Bozidar Proevski <bobibobi@freemail.com.mk>, 2005, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2006-01-26 23:14+0100\n"
+"Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
+"Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
+"Language: mk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+"Plural-Forms: Plural-Forms: nplurals=3; plural=n%10==1 ? 0 : n%10==2 ? 1 : "
+"2;\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "&Разлика"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "&Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "&Разлика"
+
+#: komparemodellist.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr ""
+
+#: komparemodellist.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr ""
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "П&ретходна датотека"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "Сл&една датотека"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Previous Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "&Претходна разлика"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Next Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "След&на разлика"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>Нема модели или нема разлики, оваа датотека: <b>%1</b> не е валидна "
+"датотека со разлики.</qt>"
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+"<qt>Имаше проблеми при применувањето на разликата <b>%1</b> на датотеката <b>"
+"%2</b>.</qt>"
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+"<qt>Имаше проблеми при применувањето на разликата <b>%1</b> на папката <b>"
+"%2</b>.</qt>"
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "Не можев да отворам привремена датотека."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+"<qt>Не можев да запишам во привремената датотека <b>%1</b>, ја бришам.</qt>"
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt>Не можев да ја креирам одредишната папка <b>%1</b>.\n"
+"Датотеката не беше зачувана.</qt>"
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "Не можев да го анализирам излезот на diff."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "Датотеките се идентични."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Не можев да запишам во привремената датотека."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Божидар Проевски"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "bobibobi@freemail.com.mk"
+
+#~ msgid "&Open Diff..."
+#~ msgstr "&Отвори разлика..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "&Спореди датотеки..."
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr " 0 од 0 разлики "
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 од 0 датотеки "
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] " %2 од %1 датотека "
+#~ msgstr[1] " %2 од %1 датотеки "
+#~ msgstr[2] " %2 од %1 датотеки "
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] " %1 датотека "
+#~ msgstr[1] " %1 датотеки "
+#~ msgstr[2] " %1 датотеки "
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " %2 од %1 разлика, %3 применети "
+#~ msgstr[1] " %2 од %1 разлики, %3 применети "
+#~ msgstr[2] " %2 од %1 разлики, %3 применети "
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " %1 разлика "
+#~ msgstr[1] " %1 разлики "
+#~ msgstr[2] " %1 разлики "
+
+#~ msgid "File/Folder"
+#~ msgstr "Датотека/папка"
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Споредете датотеки или папки"
+
+#~ msgid "Source"
+#~ msgstr "Извор"
+
+#~ msgid "Destination"
+#~ msgstr "Одредиште"
+
+#~ msgid "Source Folder"
+#~ msgstr "Изворишна папка"
+
+#~ msgid "Destination Folder"
+#~ msgstr "Одредишна папка"
+
+#~ msgid "Source File"
+#~ msgstr "Изворишна датотека"
+
+#~ msgid "Destination File"
+#~ msgstr "Одредишна датотека"
+
+#~ msgid "Source Line"
+#~ msgstr "Изворишна линија"
+
+#~ msgid "Destination Line"
+#~ msgstr "Одредишна линија"
+
+#~ msgid "Difference"
+#~ msgstr "Разлика"
+
+#, fuzzy
+#~| msgid "Applied: Changes made to %1 line undone"
+#~| msgid_plural "Applied: Changes made to  %1 lines undone"
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "Применето: Измените на %1 линија се вратени назад"
+#~ msgstr[1] "Применето: Измените на %1 линии се вратени назад"
+#~ msgstr[2] "Применето: Измените на %1 линии се вратени назад"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "Изменета е %1 линија"
+#~ msgstr[1] "Изменети се %1 линии"
+#~ msgstr[2] "Изменети се %1 линии"
+
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "Применето: Вметнувањето на %1 линија е вратено назад"
+#~ msgstr[1] "Применето: Вметнувањето на %1 линии е вратено назад"
+#~ msgstr[2] "Применето: Вметнувањето на %1 линии е вратено назад"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "Вметната е %1 линија"
+#~ msgstr[1] "Вметнати се %1 линии"
+#~ msgstr[2] "Вметнати се %1 линии"
+
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] "Применето: Бришењето на %1 линија е вратено назад"
+#~ msgstr[1] "Применето: Бришењето на %1 линии е вратено назад"
+#~ msgstr[2] "Применето: Бришењето на %1 линии е вратено назад"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "Избришана е %1 линија"
+#~ msgstr[1] "Избришани се %1 линии"
+#~ msgstr[2] "Избришани се %1 линии"
+
+#~ msgid "Unknown"
+#~ msgstr "Непознат"
+
+#~ msgid "Author"
+#~ msgstr "Автор"
+
+#~ msgid "Save &All"
+#~ msgstr "З&ачувај ги сите"
+
+#, fuzzy
+#~| msgid "Save .&diff..."
+#~ msgid "Save &Diff..."
+#~ msgstr "Зачу&вај .diff..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Размени извор со одредиште"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Прикажи статистика"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>URL <b>%1</b> не може да биде симнато.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>URL <b>%1</b> не постои на вашиот систем.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "Опции за разлики"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Датотеки со закрпи"
+
+#~ msgid "Save .diff"
+#~ msgstr "Зачувајте .diff"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr ""
+#~ "Датотеката постои или е заштитена од запис. Дали сакате да запишете врз "
+#~ "неа?"
+
+#~ msgid "File Exists"
+#~ msgstr "Датотеката постои"
+
+#~ msgid "Overwrite"
+#~ msgstr "Запиши"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Не запишувај"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Running diff..."
+#~ msgstr "Извршувам diff..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "Анализирам излез од diff..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "Ја споредувам датотеката %1 со датотеката %2"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "Ги споредувам датотеките во %1 со датотеките во %2"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "Прегледувам излез на diff од %1"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Направивте измени во одредишните датотеки.\n"
+#~ "Дали сакате да ги зачувате?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "Зачувувате промени"
+
+#~ msgid "Unified"
+#~ msgstr "Унифициран"
+
+#~ msgid "Context"
+#~ msgstr "Контекстуален"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Нормален"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "Нема diff-датотека или не биле споредени 2 датотеки. Поради тоа нема "
+#~ "достапна статистика."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Статистика за разликите"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Статистика:\n"
+#~ "\n"
+#~ "Стара датотека: %1\n"
+#~ "Нова датотека: %2\n"
+#~ "\n"
+#~ "Формат: %3\n"
+#~ "Број на парчиња: %4\n"
+#~ "Број на разлики: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Статистика:\n"
+#~ "\n"
+#~ "Број на линии во дат. со разлика: %1\n"
+#~ "Формат: %2\n"
+#~ "\n"
+#~ "Тековна стара датотека: %3\n"
+#~ "Тековна нова датотека: %4\n"
+#~ "\n"
+#~ "Број на парчиња: %5\n"
+#~ "Број на разлики: %6"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "&Датотеки"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "Поставувања за преглед"
+
+#~ msgid "Preferences"
+#~ msgstr "Параметри"
+
+#~ msgid "View Settings"
+#~ msgstr "Поставувања за преглед"
+
+#~ msgid "Diff"
+#~ msgstr "Разлика"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Поставувања за разлика"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "О&пции"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "Спореди ги папките рекурзивно"
+
+#~ msgid "Format"
+#~ msgstr "Формат"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "Број на контекстни линии:"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "&Датотеки"
+
+#~ msgid "Here you can enter the files you want to compare."
+#~ msgstr "Тука може да ги внесете датотеките што сакате да ги споредите."
+
+#~ msgid "Here you can change the options for comparing the files."
+#~ msgstr "Тука може да ги смените опциите за споредбата на датотеките."
+
+#, fuzzy
+#~| msgid "A&ppearance"
+#~ msgid "Appearance"
+#~ msgstr "&Изглед"
+
+#~ msgid "Here you can change the options for the view."
+#~ msgstr "Тука може да ги смените опциите за прегледот."
+
+#~ msgid "Diff Program"
+#~ msgstr "Програма за разлики"
+
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr ""
+#~ "Тука може да изберете друга програма за правење разлики. Стандардната "
+#~ "програма diff на Соларис не ги поддржува сите опции што ги има верзијата "
+#~ "на ГНУ."
+
+#~ msgid "Output Format"
+#~ msgstr "Излезен формат"
+
+#~ msgid "Lines of Context"
+#~ msgstr "Контекстни линии"
+
+#~ msgid "General"
+#~ msgstr "Општо"
+
+#~ msgid "&Edit..."
+#~ msgstr "Ур&еди..."
+
+#~ msgid "Whitespace"
+#~ msgstr "Празни места"
+
+#~ msgid "Encoding"
+#~ msgstr "Кодирање"
+
+#~ msgid "Colors"
+#~ msgstr "Бои"
+
+#~ msgid "Removed color:"
+#~ msgstr "Боја за избришано:"
+
+#~ msgid "Changed color:"
+#~ msgstr "Боја за изменето:"
+
+#~ msgid "Added color:"
+#~ msgstr "Боја за додадено:"
+
+#~ msgid "Applied color:"
+#~ msgstr "Боја за применето:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Тркалце на глушецот"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Број на линии:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Табулатори во празни места"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "Број на празни места за претворање на знак за табулатор:"
+
+#~ msgid "Text Font"
+#~ msgstr "Фонт за текст"
+
+#~ msgid "Font:"
+#~ msgstr "Фонт:"
+
+#~ msgid "Size:"
+#~ msgstr "Големина:"
+
+#, fuzzy
+#~ msgid "Fonts"
+#~ msgstr "Фонт:"
+
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "Програма за прегледување на разликите меѓу датотеки и евентуално "
+#~ "генерирање на разлика"
+
+#, fuzzy
+#~| msgid "(c) 2001-2004, John Firebaugh and Otto Bruggeman"
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr "(c) 2001-2004, John Firebaugh и Otto Bruggeman"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "Уметникот што ја изработи иконата на Kompare"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "Многу добри совети"
+
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "Ова ќе го спореди URL1 со URL2"
+
+#~ msgid "A&ppearance"
+#~ msgstr "&Изглед"
+
+#~ msgid "&Diff"
+#~ msgstr "&Разлика"
+
+#~ msgid "&Format"
+#~ msgstr "&Формат"
+
+#~ msgid "O&ptions"
+#~ msgstr "О&пции"

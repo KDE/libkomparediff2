@@ -1,0 +1,922 @@
+# translation of kompare.po to
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+# Nuriddin S. Aminagha <nuriddin@haydarlinux.org>, 2003.
+# Ahmad M. Zawawi <azawawi@emirates.net.ae>, 2004.
+# Youssef Chahibi <chahibi@gmail.com>, 2007.
+# Abdalrahim Fakhouri <abdilra7eem@yahoo.com>, 2012.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2022-02-05 14:38+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 21.07.70\n"
+
+#: komparemodellist.cpp:58
+#, kde-format
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "&طبّق الاختلاف"
+
+#: komparemodellist.cpp:62
+#, kde-format
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "ألغ &تطبيق الاختلاف"
+
+#: komparemodellist.cpp:66
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "طبّق ال&كل"
+
+#: komparemodellist.cpp:70
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "أل&غ تطبيق الكل"
+
+#: komparemodellist.cpp:80
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "الملف ال&سابق"
+
+#: komparemodellist.cpp:84
+#, kde-format
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "الملف ال&تالي"
+
+#: komparemodellist.cpp:88
+#, kde-format
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "ال&تغيّر السابق"
+
+#: komparemodellist.cpp:92
+#, kde-format
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "التغيّّر التال&ي"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "فشل فتح ملف مؤقَت."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "فشل إعراب مخرجات الإختلافات."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "هذه الملفات متطابقة."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "فشل الكتابة إلى الملف المؤقَت."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Isam Bayazidi, Nuriddin Aminagha,أحمد محمد زواوي"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr ""
+#~ "bayazidi@arabeyes.org, nuriddin@haydarlinux.org,azawawi@emirates.net.ae"
+
+#, fuzzy
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "يمكن أن ليس التحميل."
+
+#, fuzzy
+#~ msgid "Navigation"
+#~ msgstr "الملاحة"
+
+#, fuzzy
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "يمكن أن ليس التحميل."
+
+#~ msgid "&Open Diff..."
+#~ msgstr "فتح الا&ختلافات."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "&مقارنة ملفات ..."
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "إ&خلط عنوان الموقع مع الاختلافات."
+
+#~ msgid "Show T&ext View"
+#~ msgstr "إظهار عارض ال&نص "
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr "0 من 0 إختلاف"
+
+#~ msgid " 0 of 0 files "
+#~ msgstr "0 من 0 ملف"
+
+#, fuzzy
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] "من ملفّ "
+#~ msgstr[1] "من ملفّ "
+#~ msgstr[2] ""
+#~ msgstr[3] ""
+#~ msgstr[4] ""
+#~ msgstr[5] ""
+
+#, fuzzy
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] "ملفّ "
+#~ msgstr[1] "ملفّ "
+#~ msgstr[2] ""
+#~ msgstr[3] ""
+#~ msgstr[4] ""
+#~ msgstr[5] ""
+
+#, fuzzy
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] "من اختلاف "
+#~ msgstr[1] "من اختلاف "
+#~ msgstr[2] ""
+#~ msgstr[3] ""
+#~ msgstr[4] ""
+#~ msgstr[5] ""
+
+#, fuzzy
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] "اختلاف "
+#~ msgstr[1] "اختلاف "
+#~ msgstr[2] ""
+#~ msgstr[3] ""
+#~ msgstr[4] ""
+#~ msgstr[5] ""
+
+#, fuzzy
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "الخليط ملف مجلّد مع مخرجات"
+
+#~ msgid "File/Folder"
+#~ msgstr "ملف أو المجلد"
+
+#~ msgid "Diff Output"
+#~ msgstr "مخرجات الاختلافات"
+
+#~ msgid "Blend"
+#~ msgstr "الخليط"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "إخلط هذا الملف أو المجلَد مع مخرجات الإختلافات"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "إذا a ملفّ أو مجلد الاسم و a ملفّ يحتوي مخرجات بوصة بوصة حوار زر ممكن و "
+#~ "الإيطالية فتح s رئيسي اعرض مخرجات من ملفّ أو ملفات من مجلد مع مخرجات تطبيق "
+#~ "اختلاف s إلى a ملفّ أو إلى ملفات "
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "مقارنة ملفات أو مجلدات"
+
+#~ msgid "Source"
+#~ msgstr "المصدر"
+
+#~ msgid "Destination"
+#~ msgstr "الهدف"
+
+#~ msgid "Compare"
+#~ msgstr "قارن"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "قارن هذه الملفَات أو المجلَدات"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr "إذا أو بوصة بوصة حوار زر ممكن و الإيطالية تشغيل a من ملفات أو "
+
+#~ msgid "Text View"
+#~ msgstr "مشهد النص"
+
+#~ msgid "Source Folder"
+#~ msgstr "المجلد المصدر"
+
+#~ msgid "Destination Folder"
+#~ msgstr "المجلد الهدف "
+
+#~ msgid "Source File"
+#~ msgstr "الملف المصدر"
+
+#~ msgid "Destination File"
+#~ msgstr "ملف الهدف"
+
+#~ msgid "Source Line"
+#~ msgstr "سطر المصدر"
+
+#~ msgid "Destination Line"
+#~ msgstr "سطر الهدف"
+
+#~ msgid "Difference"
+#~ msgstr "إختلاف"
+
+#, fuzzy
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "انطبق التغييرات إلى سطر"
+#~ msgstr[1] "انطبق التغييرات إلى سطر"
+#~ msgstr[2] ""
+#~ msgstr[3] ""
+#~ msgstr[4] ""
+#~ msgstr[5] ""
+
+#, fuzzy
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "غُيِّر سطر"
+#~ msgstr[1] "غُيِّر سطر"
+#~ msgstr[2] ""
+#~ msgstr[3] ""
+#~ msgstr[4] ""
+#~ msgstr[5] ""
+
+#, fuzzy
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "انطبق إدراج من سطر"
+#~ msgstr[1] "انطبق إدراج من سطر"
+#~ msgstr[2] ""
+#~ msgstr[3] ""
+#~ msgstr[4] ""
+#~ msgstr[5] ""
+
+#, fuzzy
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "مدخل سطر"
+#~ msgstr[1] "مدخل سطر"
+#~ msgstr[2] ""
+#~ msgstr[3] ""
+#~ msgstr[4] ""
+#~ msgstr[5] ""
+
+#, fuzzy
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] "انطبق حذف من سطر"
+#~ msgstr[1] "انطبق حذف من سطر"
+#~ msgstr[2] ""
+#~ msgstr[3] ""
+#~ msgstr[4] ""
+#~ msgstr[5] ""
+
+#, fuzzy
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "محذوف سطر"
+#~ msgstr[1] "محذوف سطر"
+#~ msgstr[2] ""
+#~ msgstr[3] ""
+#~ msgstr[4] ""
+#~ msgstr[5] ""
+
+#~ msgid "Unknown"
+#~ msgstr "مجهزل"
+
+#, fuzzy
+#~ msgid "John Firebaugh"
+#~ msgstr "John Firebaugh"
+
+#~ msgid "Author"
+#~ msgstr "المؤلف"
+
+#, fuzzy
+#~ msgid "Otto Bruggeman"
+#~ msgstr "Otto Bruggeman"
+
+#~ msgid "Save &All"
+#~ msgstr "حفظ ال&كل"
+
+#, fuzzy
+#~ msgid "Save &Diff..."
+#~ msgstr "احفظ."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "تبديل المصدر مع الهدف"
+
+#~ msgid "Show Statistics"
+#~ msgstr "عرض الإحصائيات"
+
+#, fuzzy
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt> الـ URL<b></b></qt>"
+
+#, fuzzy
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt> الـ URL<b></b> ليس يعمل نظام</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "خيارات الاختلافات"
+
+#, fuzzy
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "patch الرقعة ملفات"
+
+#~ msgid "Save .diff"
+#~ msgstr "حفظ الإختلافات"
+
+#, fuzzy
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr ""
+#~ "الـ ملفّ موجود أو هو كتابة محمي إلى كتابة فوقية :: كتابة على الإيطالية?"
+
+#, fuzzy
+#~ msgid "File Exists"
+#~ msgstr "الملف موجود"
+
+#, fuzzy
+#~ msgid "Overwrite"
+#~ msgstr "الكتابة فوقه"
+
+#, fuzzy
+#~ msgid "Do Not Overwrite"
+#~ msgstr "عدم الكتابة فوقه"
+
+#~ msgid "KomparePart"
+#~ msgstr "برنامج KomparePart"
+
+#~ msgid "Running diff..."
+#~ msgstr "جاري البحث عن الإختلافات..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "جاري إعراب مخرجات الإختلافات..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "جاري مقارنة الملف %1 مع الملف %2"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "جاري مقارنة الملفات في %1 مع الملفات في %2"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "جاري عرض مخرجات الإختلافات من %1"
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "جاري مزج مخرجات الإختلافات من %1 إلى الملف %2"
+
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "جاري مزج مخرجات الإختلافات من %1 إلى المجلَد %2"
+
+#, fuzzy
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr "أنت إلى مقصد ملفّ s مثل إلى حفظ?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "حفظ التغييرات؟"
+
+#~ msgid "Unified"
+#~ msgstr "موحّد"
+
+#~ msgid "Context"
+#~ msgstr "سياق"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "عادي"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "لا تتوفر أي إحصاءات إما لعدم وجود ملف الإختلافات، أو لعدم مقارنة أي ملفين."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "إحصائيات الاختلافات"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "إحصائيات:\n"
+#~ "\n"
+#~ "ملف قديم: %1\n"
+#~ "ملف جديد: %2\n"
+#~ "\n"
+#~ "هيئة: %3\n"
+#~ "عدد الكتل: %4\n"
+#~ "عدد الإختلافات: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "إحصائيات:\n"
+#~ "\n"
+#~ "عدد الملفات في ملف الإختلافات: %1\n"
+#~ "هيئة: %2\n"
+#~ "\n"
+#~ "الملف القديم الحالي: %3\n"
+#~ "الملف الجديد الحالي: %4\n"
+#~ "\n"
+#~ "عدد الكتل: %5\n"
+#~ "عدد الإختلافات: %6"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "&ملف"
+
+#~ msgid "&Difference"
+#~ msgstr "اختلاف"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "إ&عدادات"
+
+#~ msgid "Preferences"
+#~ msgstr "خصائص"
+
+#, fuzzy
+#~ msgid "View"
+#~ msgstr "عرض"
+
+#~ msgid "View Settings"
+#~ msgstr "عرض الإعدادات"
+
+#~ msgid "Diff"
+#~ msgstr "الاختلافات"
+
+#~ msgid "Diff Settings"
+#~ msgstr "إعدادات الاختلافات"
+
+#~ msgid "Run Diff In"
+#~ msgstr "تشغيل الاختلافات داخل"
+
+#~ msgid "Command Line"
+#~ msgstr "سطر الأوامر"
+
+#, fuzzy
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "قرص مدمج dir مصدر مقصد"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "خيارات"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "ابحث على تغيرات أصغر"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "إجر التحسينات المثلى للملفات الكبيرة"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "تجاهل الاختلاف في حالة"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "توسيع علامات الجدولة إلى فراغات"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "تجاهل الأسطر الفارغة المضافة أو المزالة"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "تجاهل التغييرات في المسافة البيضاء"
+
+#~ msgid "Show function names"
+#~ msgstr "اظهر أسماء الدوال"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "مقارنة المجلدات بشكل متكرر"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "معاملة الملفات الجديدة كفارغة"
+
+#~ msgid "Format"
+#~ msgstr "هيئة"
+
+#~ msgid "Side-by-side"
+#~ msgstr "جنبًا إلى جنب"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "عدد سطور السَياق:"
+
+#, fuzzy
+#~ msgid "Main Toolbar"
+#~ msgstr "شريط الأدوات الرئيسي"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "&ملف"
+
+#, fuzzy
+#~| msgid "A&ppearance"
+#~ msgid "Appearance"
+#~ msgstr "المظهر"
+
+#~ msgid "Diff Program"
+#~ msgstr "برنامج الاختلافات"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr ""
+#~ "أنت تحديد a مختلف برنامج تشغيل Solaris قياسي برنامج ليس دعم الكل خيارات "
+#~ "جينو النسخة هذا تحديد النسخة."
+
+#, fuzzy
+#~ msgid ""
+#~ "Select the format of the output generated by diff. Unified is the one "
+#~ "that is used most frequently because it is very readable. The KDE "
+#~ "developers like this format the best so use it for sending patches."
+#~ msgstr ""
+#~ "انتقِ تنسيق من مخرجات أداء موحّد هو هو مُستخدَم الإيطالية هو مقروء الـ كدي "
+#~ "مثل تنسيق استخدام الإيطالية لـ."
+
+#~ msgid "Output Format"
+#~ msgstr "هيئة المخرجات"
+
+#~ msgid "Lines of Context"
+#~ msgstr "خطوط السَياق"
+
+#, fuzzy
+#~ msgid ""
+#~ "The number of context lines is normally 2 or 3. This makes the diff "
+#~ "readable and applicable in most cases. More than 3 lines will only bloat "
+#~ "the diff unnecessarily."
+#~ msgstr "الـ رقم من سياق سطور هو أو هذا مقروء و بوصة المزيد سطور."
+
+#~ msgid "General"
+#~ msgstr "عام"
+
+#, fuzzy
+#~| msgid "Treat new files as empty"
+#~ msgid "&Treat new files as empty"
+#~ msgstr "معاملة الملفات الجديدة كفارغة"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "هذا خيار إلى I خيار."
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "انظر إلى تغيّرات أصغر"
+
+#, fuzzy
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "هذا إلى d خيار."
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "إجر ال&تحسينات المثلى للملفات الكبيرة"
+
+#, fuzzy
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "هذا إلى H خيار."
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "تجاهل التغيرات في حالة"
+
+#, fuzzy
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "هذا إلى i خيار."
+
+#~ msgid "Ignore regexp:"
+#~ msgstr "تجاهل الشكل:"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "هذا خيار إلى I خيار."
+
+#, fuzzy
+#~ msgid ""
+#~ "Add the regular expression here that you want to use\n"
+#~ "to ignore lines that match it."
+#~ msgstr "إضافة عادي تعبير إلى استخدام تجاهل سطور طابق الإيطالية."
+
+#~ msgid "&Edit..."
+#~ msgstr "&حرر..."
+
+#, fuzzy
+#~ msgid ""
+#~ "Clicking this will open a regular expression dialog where\n"
+#~ "you can graphically create regular expressions."
+#~ msgstr "النقر فتح a عادي تعبير حوار إ_نشئ عادي."
+
+#~ msgid "Whitespace"
+#~ msgstr "مساحة بيضاء"
+
+#, fuzzy
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "توسيع إلى فراغات بوصة مخرجات"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "هذا خيار إلى t خيار."
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "تجاهل الأسطر الفارغة المضافة أو المزالة"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "هذا خيار إلى B خيار."
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "تجاهل التغيرات في حدود المساحة البيضاء"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "هذا خيار إلى b خيار."
+
+#, fuzzy
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "تجاهل الكل فراغ ، فاصل"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "هذا خيار إلى w خيار."
+
+#, fuzzy
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "تجاهل إلى لسان توسيع"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "هذا خيار إلى E خيار."
+
+#, fuzzy
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "ملف نمط إلى إستثنِ"
+
+#, fuzzy
+#~ msgid ""
+#~ "If this is checked you can enter a shell pattern in the text box on the "
+#~ "right or select entries from the list."
+#~ msgstr ""
+#~ "إذا هو مؤكّد أدخل a صدَفة التشكيلة بوصة نص مربّع يعمل يمين أو تحديد خانات من "
+#~ "قائمة."
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can enter or remove a shell pattern or select one or more "
+#~ "entries from the list."
+#~ msgstr "هنا أدخل أو أزِل a صدَفة التشكيلة أو تحديد أو المزيد خانات من قائمة."
+
+#, fuzzy
+#~ msgid "File with Filenames to Exclude"
+#~ msgstr "ملف مع أسماء الملفات إلى إستثنِ"
+
+#, fuzzy
+#~ msgid "If this is checked you can enter a filename in the combo box below."
+#~ msgstr "إذا هو مؤكّد أدخل a اسم الملف بوصة مربّع يعمل يمين."
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can enter the URL of a file with shell patterns to ignore during "
+#~ "the comparison of the folders."
+#~ msgstr "هنا أدخل URL من a ملفّ مع صدَفة إلى تجاهل من."
+
+#, fuzzy
+#~ msgid ""
+#~ "Any file you select in the dialog that pops up when you click it will be "
+#~ "put in the dialog to the left of this button."
+#~ msgstr ""
+#~ "أيّ ملفّ تحديد بوصة حوار أعلى انقر الإيطالية put بوصة حوار إلى يسار من زر."
+
+#, fuzzy
+#~ msgid "Exclude"
+#~ msgstr "إستثنِ"
+
+#, fuzzy
+#~ msgid "Encoding"
+#~ msgstr "الترميز"
+
+#~ msgid "Colors"
+#~ msgstr "الألوان"
+
+#~ msgid "Removed color:"
+#~ msgstr "اللون المزال:"
+
+#~ msgid "Changed color:"
+#~ msgstr "اللون المغيّر:"
+
+#~ msgid "Added color:"
+#~ msgstr "اللون المضاف:"
+
+#~ msgid "Applied color:"
+#~ msgstr "اللون المطبّق:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "عجلة الفأرة"
+
+#~ msgid "Number of lines:"
+#~ msgstr "عدد الأسطر:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "علامة جدولة إلى الفراغات"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "عدد الفراغات في حرف علامة الجدولة:"
+
+#, fuzzy
+#~ msgid "Text Font"
+#~ msgstr "نص الخط"
+
+#, fuzzy
+#~ msgid "Font:"
+#~ msgstr "الخط:"
+
+#, fuzzy
+#~ msgid "Size:"
+#~ msgstr "الحجم:"
+
+#, fuzzy
+#~ msgid "Fonts"
+#~ msgstr "&خطوط"
+
+#, fuzzy
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr "A برنامج إلى اعرض بين ملفات و توليد a"
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#, fuzzy
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr "c جون و العطر"
+
+#, fuzzy
+#~ msgid "Chris Luetchford"
+#~ msgstr "كريس"
+
+#, fuzzy
+#~ msgid "Kompare icon artist"
+#~ msgstr "Kompare أيقونة"
+
+#, fuzzy
+#~ msgid "Malte Starostik"
+#~ msgstr "Malte Starostik"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "كثيراَ من النصيحة الجيَدة"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "عارض الإختلافات Cervisia"
+
+#, fuzzy
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "هذا مقارنة مع"
+
+#, fuzzy
+#~ msgid ""
+#~ "This will open URL1 and expect it to be diff output. URL1 can also be a "
+#~ "'-' and then it will read from standard input. Can be used for instance "
+#~ "for cvs diff | kompare -o -. Kompare will do a check to see if it can "
+#~ "find the original file(s) and then blend the original file(s) into the "
+#~ "diffoutput and show that in the viewer. -n disables the check."
+#~ msgstr ""
+#~ "هذا فتح و الإيطالية إلى مخرجات a و الإيطالية قراءة من قياسي دَخْل يمكن أن "
+#~ "مُستخدَم لـ مرة لـ o Kompare a تفقّد إلى IF الإيطالية ابحث أصلي ملفّ s و أصلي "
+#~ "ملفّ s و إظهار بوصة مُظهر n تفقّد."
+
+#, fuzzy
+#~ msgid ""
+#~ "This will blend URL2 into URL1, URL2 is expected to be diff output and "
+#~ "URL1 the file or folder that the diffoutput needs to be blended into. "
+#~ msgstr "هذا هو إلى مخرجات و ملفّ أو مجلد إلى "
+
+#, fuzzy
+#~ msgid ""
+#~ "Disables the check for automatically finding the original file(s) when "
+#~ "using '-' as URL with the -o option."
+#~ msgstr "يعطّل تفقّد لـ أصلي ملفّ s URL مع o خيار."
+
+#, fuzzy
+#~ msgid ""
+#~ "Use this to specify the encoding when calling it from the command line. "
+#~ "It will default to the local encoding if not specified."
+#~ msgstr ""
+#~ "إستعمل إلى تحديد ترميز الإيطالية من أمر سطر itإيطالياهو افتراضي إلى محليّ "
+#~ "ترميز IF ليس."
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "مقارنة هذه الملفَات أو المجلَد"
+
+#, fuzzy
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "يمكن أن ليس ابحث."
+
+#, fuzzy
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "يمكن أن ليس ابحث."
+
+#~ msgid "A&ppearance"
+#~ msgstr "المظهر"
+
+#~ msgid "&Diff"
+#~ msgstr "ال&اختلافات"
+
+#~ msgid "&Format"
+#~ msgstr "هيئة"
+
+#~ msgid "O&ptions"
+#~ msgstr "خيارات"
+
+#, fuzzy
+#~ msgid "My Second Test Page"
+#~ msgstr "خاصتي الثّانية اختبار صفحة"
+
+#, fuzzy
+#~ msgid "Hide T&ext View"
+#~ msgstr "إخفاء نص عرض"

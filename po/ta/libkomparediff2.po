@@ -1,0 +1,856 @@
+# translation of kompare.po to 
+# translation of kompare.po to
+# translation of kompare.po to
+# translation of kompare.po to
+# translation of kompare.po to Tamil
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Vasee Vaseeharan <vasee@ieee.org>, 2004.
+# Ambalam <tamilpc@ambalam.com>, 2004.
+# root <root@localhost.localdomain>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2004-08-06 04:51-0800\n"
+"Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
+"Language-Team:  <ta@li.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Apply Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "மாறுபாட்டை பயன்படுத்து"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "Un&apply Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "பயன்படுத்திய மாறுபாட்டை ரத்து செய்"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+#| msgid "App&ly All"
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "அனைத்தையும் பயன்படுத்து"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+#| msgid "&Unapply All"
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "பயன்படுத்திய அனைத்தையும் ரத்து செய்"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "முன்னிருக்கும் கோப்பு"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "அடுத்திருக்கும் கோப்பு"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Previous Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "முன்னிருக்கும் மாறுபாடு"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Next Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "அடுத்திருக்கும் மாறுபாடு"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, fuzzy, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"மாதிரிகளோ அல்லது மாறுபாடுகளோ இல்லை, இந்த கோப்பு: <b>%1</b>, ஒரு தக்க diff கோப்பு "
+"அல்ல"
+
+#: komparemodellist.cpp:262
+#, fuzzy, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+"<b>%1</b>diffல் இருந்து <b>%2</b> கோப்புக்கு பயன்படுத்தும்போது பிரச்சினைகள் ஏற்பட்டன."
+
+#: komparemodellist.cpp:289
+#, fuzzy, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+"<b>%1</b> diffல் இருந்து <b>%2</b> ஆவணத்திருக்கு பயன்படுத்தும்போது பிரச்சினைகள் "
+"ஏற்பட்டன."
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "ஒரு தற்காலிக கோப்பினை திறக்க இயலவில்லை."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, fuzzy, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr "தற்காலிக கோப்புக்குள் எழுத இயலவில்லை."
+
+#: komparemodellist.cpp:407
+#, fuzzy, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr "தற்காலிக கோப்புக்குள் எழுத இயலவில்லை."
+
+#: komparemodellist.cpp:435
+#, fuzzy, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<b>%1</b> சேருமிடத்தில் தற்காலிக கோப்பினை ஏற்ற இயலவில்லை. எனினும் தற்காலிக கோப்பு <b>"
+"%2</b> கீழ் இன்னும் உள்ளது. இதனை நீங்கள் கைமுறையாக சரியான இடத்துக்கு படியேடுக்கலாம்."
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "diffன் வெளியீட்டை பிரித்தாய இயலவில்லை."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "இந்த கோப்புகள் ஒரே மாதிரியாக உள்ளன."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "தற்காலிக கோப்புக்குள் எழுத இயலவில்லை."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "மு. கோபிகிருஷ்ணன்"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "m_gopikrishnan@hotmail.com"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "நம் Kompare பார்வைப் பகுதியை ஏற்ற இயலவில்லை."
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "நம் KompareNavigationPartஐ ஏற்ற இயலவில்லை."
+
+#~ msgid "&Open Diff..."
+#~ msgstr "Diffஐ திற..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "கோப்புகளை ஒப்பிடு..."
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "URL லில் Diffஐ கலக்கு..."
+
+#~ msgid "Show T&ext View"
+#~ msgstr "உரைக்காட்சி காட்டு"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr "0 of 0 மாறபாடுகள்"
+
+#~ msgid " 0 of 0 files "
+#~ msgstr "0 of 0 கோப்புகள்"
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] "%1 இல் %2 கோப்பு"
+#~ msgstr[1] "%1 இல் %2 கோப்புகள் "
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] "%1 கோப்பு "
+#~ msgstr[1] "%1 கோப்புகள் "
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] "மாறுபாடு %1 ன் %2, %3 பயன்படுத்தப்பட்டது"
+#~ msgstr[1] "மாறுபாடுகள் %1 ன் %2, %3 பயன்படுத்தப்பட்டது"
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] "%1 வித்தியாசம் "
+#~ msgstr[1] "%1 வித்தியாசங்கள்"
+
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "கோப்பு அல்லது அடைவில் diffன் வெளியீட்டை கலக்கு"
+
+#~ msgid "File/Folder"
+#~ msgstr "கோப்பு அல்லது ஆவணம்"
+
+#~ msgid "Diff Output"
+#~ msgstr "Diffன் வெளியீடு"
+
+#~ msgid "Blend"
+#~ msgstr "கலவை"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "இந்த கோப்பு அல்லது ஆவணத்தில் diffன் வெளியீட்டை கலக்கு"
+
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "இந்த உரையாடலின் புலங்களில் நீங்கள் ஒரு கோப்பின் அல்லது ஆவணத்தின் பெயரையும், diffன் "
+#~ "வெளியீட்டை கொண்டிருக்கும் ஒரு கோப்பின் பெயரையும் உள்ளிட்டிருந்தால் இந்தப் பொத்தான் "
+#~ "செயல்படுத்த ஏதுவாகும். இதனை அழுத்தினால், Kompareன் பிரதான காட்சி திறக்கப்பட்டு, "
+#~ "நீங்கள் உள்ளிட்ட கோப்பின் அல்லது ஆவணத்திலிருக்கும் கோப்புகளின் வெளியீடுகள் diffன் "
+#~ "வெளியீட்டோடு கலக்கப்படும். பிறகு நீங்கள் மாறுபாடுகளை ஒரு கோப்புக்கோ/ கோப்புகளுக்கோ "
+#~ "பயன்படுத்தலாம்."
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "ஆவணங்களையோ கோப்புகளையோ ஒப்பிடு"
+
+#~ msgid "Source"
+#~ msgstr "மூலம்"
+
+#~ msgid "Destination"
+#~ msgstr "சேருமிடம்"
+
+#~ msgid "Compare"
+#~ msgstr "ஒப்பிடு"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "இந்த கோப்புகளையோ ஆவணங்களையோ ஒப்பிடு"
+
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "இந்த உரையாடலின் புலங்களில் இரண்டு கோப்புகளின் அல்லது இரண்டு ஆவணங்களின் பெயர்களை நீங்கள் "
+#~ "உள்ளிட்டிருந்தால், இந்த பொத்தான் செயல்படுத்த ஏதுவாகும். இதனை அழுத்தினால், உள்ளிட்ட "
+#~ "கோப்புகளின் அல்லது ஆவணங்களின் ஒப்பீடு ஆரம்பமாகும்."
+
+#~ msgid "Text View"
+#~ msgstr "உரைக்காட்சி"
+
+#~ msgid "Source Folder"
+#~ msgstr "மூல ஆவணம்"
+
+#~ msgid "Destination Folder"
+#~ msgstr "சேரும் ஆவணம்"
+
+#~ msgid "Source File"
+#~ msgstr "மூலக்கோப்பு"
+
+#~ msgid "Destination File"
+#~ msgstr "சேரும் கோப்பு"
+
+#~ msgid "Source Line"
+#~ msgstr "மூல வரி"
+
+#~ msgid "Destination Line"
+#~ msgstr "சேரும் வரி"
+
+#~ msgid "Difference"
+#~ msgstr "மாறுபாடு"
+
+#, fuzzy
+#~| msgid "Applied: Changes made to %1 line undone"
+#~| msgid_plural "Applied: Changes made to  %1 lines undone"
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "அமைக்கபட்ட: %1 வரி மாற்றங்களை அமைத்தது நிறைவேறவில்லை"
+#~ msgstr[1] "அமைக்கபட்ட: %1 வரி மாற்றங்களை அமைத்தது நிறைவேறவில்லை"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "%1 வரி மாற்றப்பட்டது"
+#~ msgstr[1] "%1 வரிகள் மாற்றப்பட்டன"
+
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "அமைக்கப்பட்ட: %1 வரி சேர்க்கை நடக்கவில்லை"
+#~ msgstr[1] "அமைக்கப்பட்ட: %1 வரி சேர்க்கை நடக்கவில்லை"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "%1 வரி சொருகப்பட்டது"
+#~ msgstr[1] "%1 வரிகள் சொருகப்பட்டன"
+
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] "அமைக்கப்பட்ட: %1 வரி நீக்கம் நடக்கவில்லை"
+#~ msgstr[1] "அமைக்கப்பட்ட: %1 வரிகள் நீக்கம் நடக்கவில்லை"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "%1 நீக்கப்பட்ட வரி"
+#~ msgstr[1] "%1 நீக்கப்பட்ட வரிகள்"
+
+#~ msgid "Unknown"
+#~ msgstr "தெரியாத"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "Author"
+#~ msgstr "எழுதியவர்"
+
+#~ msgid "Save &All"
+#~ msgstr "அனைத்தையும் சேமி"
+
+#, fuzzy
+#~| msgid "Save .&diff..."
+#~ msgid "Save &Diff..."
+#~ msgstr "சேமி. &வேறுபாடு..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "மூலத்தையும் சேருமிடத்தையும் இடமாற்றம் செய்"
+
+#~ msgid "Show Statistics"
+#~ msgstr "புள்ளிவிவரம் காட்டு"
+
+#, fuzzy
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "URL <b>%1</b>ஐ இறக்குமதி செய்ய முடியவில்லை."
+
+#, fuzzy
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr " URL <b>%1</b> உங்கள் முறைமையில் இல்லை."
+
+#~ msgid "Diff Options"
+#~ msgstr "Diff விருப்பங்கள்"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Patch files"
+
+#~ msgid "Save .diff"
+#~ msgstr ".வித்தியாசத்தையை சேமி"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr ""
+#~ "கோப்பு உள்ளது அல்லது எழுது பாதுக்காக்கப்பட்டுள்ளது; அதின் மீது எழுத விரும்புகிறீர்களா?"
+
+#~ msgid "File Exists"
+#~ msgstr "கோப்பு உள்ளது"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Running diff..."
+#~ msgstr "diff இயக்கப்படுகிறது..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "diffன் வெளியீடு பிரித்தாயப்படுகிறது..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "கோப்பு %1ம்  கோப்பு %2ம் ஒப்பிடப்படுகின்றன "
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "%1ல் உள்ள கோப்புகள் %2ல் உள்ள கோப்புகளோடு ஒப்பிடப்படுகின்றன"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "%1லிருந்து diffன் வெளியீடு காணப்பிக்கப்படுகிறது"
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "%1ல் இருக்கும் diffன் வெளியீடு கோப்பு %2க்குள் கலக்கப்படுகிறது"
+
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "%1ல் இருக்கும் diffன் வெளியீடு ஆவணம் %2க்குள் கலக்கப்படுகிறது"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "கோப்பு(கள்)  சேருமிடத்துக்கு மாற்றங்கள் நீங்கள் செய்துள்ளீர்.\n"
+#~ "அவற்றை நீங்கள் சேமிக்க விரும்புகிறீர்களா?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "மாற்றங்களை சேமிக்கவா?"
+
+#~ msgid "Unified"
+#~ msgstr "ஒருங்கிணைக்கப்பட்ட"
+
+#~ msgid "Context"
+#~ msgstr "சூழல்"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "இயல்பான"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "diff கோப்பு இல்லை, அல்லது எந்த இரு கோப்புகளும் diff  செய்யப்படவில்லை. எனவே "
+#~ "புள்ளிவிவரங்கள் கிடையாது."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Diff புள்ளிவிவரம்"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "புள்ளிவிவரங்கள்:\n"
+#~ "\n"
+#~ "பழைய கோப்பு: %1\n"
+#~ "புதிய கோப்பு: %2\n"
+#~ "\n"
+#~ "வடிவம்: %3\n"
+#~ "hunkகளின் எண்ணிக்கை: %4\n"
+#~ "மாறுபாடுகளின் எண்ணிக்கை: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "புள்ளிவிவரம்:\n"
+#~ "\n"
+#~ "diff கோப்பில் உள்ள கோப்புகளின் எண்ணிக்கை: %1\n"
+#~ "வடிவம்: %2\n"
+#~ "\n"
+#~ "த்ற்போதைய பழைய கோப்பு: %3 \n"
+#~ "தற்போதைய புதிய கோப்பு: %4\n"
+#~ "\n"
+#~ "hunkகளின் எண்ணிக்கை: %5\n"
+#~ "மாறுபாடுகளின் எண்ணிக்கை: %6"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "&கோப்புகள்"
+
+#~ msgid "&Difference"
+#~ msgstr "மாறுபாடு"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "அமைப்புகளை காணுங்கள்"
+
+#~ msgid "Preferences"
+#~ msgstr "விருப்பங்கள்"
+
+#, fuzzy
+#~ msgid "View"
+#~ msgstr "உரைக்காட்சி"
+
+#~ msgid "View Settings"
+#~ msgstr "அமைப்புகளை காணுங்கள்"
+
+#~ msgid "Diff"
+#~ msgstr "வித்தியாசம்"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Diffன் அமைப்புகள்"
+
+#~ msgid "Run Diff In"
+#~ msgstr "Diffஐ இதில் இயக்கு"
+
+#~ msgid "Command Line"
+#~ msgstr "ஆணை வரி"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- source destination"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "விருப்பங்கள்"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "சிறு மாறுபாடுகளையும் எடுத்துக்கொள்"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "பெரிய கோப்புகளுக்காக உகப்பாக்கு"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "எழுத்து வகை மாறுபாடுகளை தவிர்"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "தத்தல்களை இடைவெளிகளாக விரிவாக்கு"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "சேர்க்கப்பட்ட அல்லது நீக்கப்பட்ட வெற்று வரிகளை தவிர்"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "இடைவெளி மாறுபாடுகளை தவிர்"
+
+#~ msgid "Show function names"
+#~ msgstr "செயல்பாடுகளின் பெயர்களை காட்டு"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "ஆவணங்களுக்குள் உள்ள ஆவணங்களையும் ஒப்பிடு"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "புது கோப்புகளை காலி எனக்கொள்"
+
+#~ msgid "Format"
+#~ msgstr "வடிவம்"
+
+#~ msgid "Side-by-side"
+#~ msgstr "கூடவே சேர்த்து"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "சூழல் வரிகளின் எண்ணிக்கை:"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "&கோப்புகள்"
+
+#~ msgid "Here you can enter the files you want to compare."
+#~ msgstr "இங்கு நீங்கள் ஒப்பிட விரும்புகிற கோப்புகளை பதிவு செய்யலாம்"
+
+#~ msgid "Here you can change the options for comparing the files."
+#~ msgstr "கோப்புகளை ஒப்பிடுதலுக்கான விருப்பங்களை இங்கு மாற்றலாம்"
+
+#, fuzzy
+#~| msgid "A&ppearance"
+#~ msgid "Appearance"
+#~ msgstr "தோற்றம்"
+
+#~ msgid "Here you can change the options for the view."
+#~ msgstr "காட்சி மாற்றத்திற்கான விருப்பங்களை இங்கு மாற்றலாம்."
+
+#~ msgid "Diff Program"
+#~ msgstr "Diff நிரல்"
+
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr ""
+#~ "பலவித diff நிரலை இங்கே நீங்கள் தேர்வு செய்யலாம். சொலாரிஸில் நிரந்தர diff நிரல் GNU "
+#~ "பதிப்பு தரும் அனைத்து தேர்வுகளையும் அனுமதிக்காது. இதில் நீங்கள் அந்த பதிப்பை தேர்வு "
+#~ "செய்யலாம்."
+
+#~ msgid ""
+#~ "Select the format of the output generated by diff. Unified is the one "
+#~ "that is used most frequently because it is very readable. The KDE "
+#~ "developers like this format the best so use it for sending patches."
+#~ msgstr ""
+#~ "diff உருவாக்கிய வெளியீட்டின் வடிவத்தை தேர்வு செய்யவும். ஒன்றுசேர்ப்பு இதுதான் அதிகமாக "
+#~ "உபயோகிக்கப்படுகிறது ஏனென்றால் அது படிக்க சுலபமானது. ஒட்டுகளை அனுப்ப KDE "
+#~ "உருவாக்காளர் இந்த வடிவங்களை மிகவும் விரும்புவார்கள்."
+
+#~ msgid "Output Format"
+#~ msgstr "வெளியீட்டு வடிவம்"
+
+#~ msgid "Lines of Context"
+#~ msgstr "சூழல் வரிகள்"
+
+#~ msgid ""
+#~ "The number of context lines is normally 2 or 3. This makes the diff "
+#~ "readable and applicable in most cases. More than 3 lines will only bloat "
+#~ "the diff unnecessarily."
+#~ msgstr ""
+#~ "சாதரணமாக சுழல் உறையில் 2 அல்லது 3 வரிகள் இருக்கும். இது diffஐ படிக்க மற்றும் இணைக்க "
+#~ "மிகவும் உதவுகிறது. 3 வரிகளுக்கு மேல் இருந்தால் தான் diff தேவையில்லாமல் "
+#~ "பாதிக்கப்படும்."
+
+#~ msgid "General"
+#~ msgstr "பொது"
+
+#, fuzzy
+#~| msgid "Treat new files as empty"
+#~ msgid "&Treat new files as empty"
+#~ msgstr "புது கோப்புகளை காலி எனக்கொள்"
+
+#, fuzzy
+#~| msgid "This option corresponds to the -I diff option."
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "இந்த தேர்வு -I வித்தியாச விருப்பத்தை குறிக்கும்"
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "சிறு மாறுபாடுகளையும் எடுத்துக்கொள்"
+
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "இந்த தேர்வு -d வித்தியாச விருப்பத்தைக் குறிக்கும்"
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "பெரிய கோப்புகளுக்காக உகப்பாக்கு"
+
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "இந்த தேர்வு -H வித்தியாச விருப்பத்தைக் குறிக்கும்"
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "எழுத்து வகை மாறுபாடுகளை தவிர்"
+
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "இந்த தேர்வு -i வித்தியாச விருப்பத்தைக் குறிக்கும்"
+
+#~ msgid "Ignore regexp:"
+#~ msgstr "regexp ஐ தவிர்:"
+
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "இந்த தேர்வு -I வித்தியாச விருப்பத்தை குறிக்கும்"
+
+#~ msgid ""
+#~ "Add the regular expression here that you want to use\n"
+#~ "to ignore lines that match it."
+#~ msgstr ""
+#~ "நீங்கள் பொருந்திய வரிகளை நீக்க பயன்படுத்த விரும்பும்\n"
+#~ "சாதரன தொடர்களை இங்கு உள்ளிடவும்."
+
+#~ msgid "&Edit..."
+#~ msgstr "திருத்து..."
+
+#~ msgid ""
+#~ "Clicking this will open a regular expression dialog where\n"
+#~ "you can graphically create regular expressions."
+#~ msgstr ""
+#~ "இதை சொடுக்குவதால் சாதாரண தொடர் உரையாடலை திறந்து விடும்\n"
+#~ "அதில் நீங்கள் வரைகலையாக சாதாரன் தொடர்களை நீங்கள் உருவாக்கலாம்."
+
+#~ msgid "Whitespace"
+#~ msgstr "வெள்ளை இடைவெளி"
+
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "வெளியீட்டில் தத்தல்களை இடைவெளிகளாக விரி&வாக்கு"
+
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "இந்த விருப்பம் -டி வித்தியாச விருப்பத்தைக் குறிக்கும்"
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "சேர்க்கப்பட்ட அல்லது நீக்கப்பட்ட வெற்று வரிகளை தவிர்"
+
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "இந்த விருப்பம் -B வித்தியாச விருப்பத்தை குறிக்கும்"
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "வெள்ளை இடைவெளியின் தொகையில் மாறுபாடுகளை தவிர்"
+
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "இந்த விருப்பம் -b வித்தியாச விருப்பத்தைக் குறிக்கும்"
+
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "இடைவெளிகள் அனைத்தையும் தவிர்"
+
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "இந்த விருப்பம் -w வித்தியாச விருப்பத்தைக் குறிக்கும்"
+
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "தத்தல் விரிவாக்கத்தினால் ஆன மாற்றங்களை தவிர்"
+
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "இந்த விருப்பம் -E வித்தியாச விருப்பத்தைக் குறிக்கும்"
+
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "அகற்ற வேண்டிய கோப்பு மாதிரி"
+
+#~ msgid ""
+#~ "If this is checked you can enter a shell pattern in the text box on the "
+#~ "right or select entries from the list."
+#~ msgstr ""
+#~ "இது குறிக்கப்பட்டால் வலது உரை பெட்டியில் உறையக தோரணத்தை உள்ளிடலாம் அல்லது பட்டியில் "
+#~ "இருந்து உள்ளிடுகலை தேர்வு செய்யலாம்."
+
+#~ msgid ""
+#~ "Here you can enter or remove a shell pattern or select one or more "
+#~ "entries from the list."
+#~ msgstr ""
+#~ "இங்கு நீங்கள் உறையக தோரணத்தை நீக்கவோ அல்லது உள்ளிடலாம் அல்லது ஒன்றுக்கு மேற்பட்ட "
+#~ "உள்ளிடுதலை பட்டியலில் இருந்து தேர்வு செய்யலாம்."
+
+#~ msgid "File with Filenames to Exclude"
+#~ msgstr "அகற்றப்படவேண்டிய கோப்புப்பெயர்களுடன் கூடிய கோப்புகள்"
+
+#, fuzzy
+#~| msgid ""
+#~| "If this is checked you can enter a filename in the combo box on the "
+#~| "right."
+#~ msgid "If this is checked you can enter a filename in the combo box below."
+#~ msgstr ""
+#~ "நீங்கள் இதனை தேர்வு செய்து இருந்தால் வலது பக்கத்தில் இருக்கும் சேர்க்கைப் பெட்டியில் "
+#~ "கோப்பின் பெயரை பதிவு செய்யவும்"
+
+#~ msgid ""
+#~ "Here you can enter the URL of a file with shell patterns to ignore during "
+#~ "the comparison of the folders."
+#~ msgstr ""
+#~ "அடைவு ஒற்றுமை பார்க்கையில் தவிர்க்க உறையக தோரணத்துடன் கோப்பின் URLலை நீங்கள் இங்கேயே "
+#~ "உள்ளிடலாம்."
+
+#~ msgid ""
+#~ "Any file you select in the dialog that pops up when you click it will be "
+#~ "put in the dialog to the left of this button."
+#~ msgstr ""
+#~ "தோன்றும் உரையாடலில் தேர்வு செய்யும் எந்த புலமாக இருந்தாலும் நீங்கள் சொடுக்கும் பொழுது "
+#~ "அது உரையாடலில் உள்ள இடது பொத்தானில் போடப்படும்."
+
+#, fuzzy
+#~| msgid "&Exclude"
+#~ msgid "Exclude"
+#~ msgstr "சேர்க்காத"
+
+#~ msgid "Colors"
+#~ msgstr "வண்ணங்கள்"
+
+#~ msgid "Removed color:"
+#~ msgstr "நீக்கப்பட்ட வண்ணம்:"
+
+#~ msgid "Changed color:"
+#~ msgstr "மாற்றப்பட்ட வண்ணம்:"
+
+#~ msgid "Added color:"
+#~ msgstr "சேர்க்கப்பட்ட வண்ணம்:"
+
+#~ msgid "Applied color:"
+#~ msgstr "பயன்படுத்தப்பட்ட வண்ணம்:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "சுட்டியின் சக்கரம்"
+
+#~ msgid "Number of lines:"
+#~ msgstr "வரிகளின் எண்ணிக்கை:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "தத்தல்களை இடைவெளிகளாக்க"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "ஒரு தத்தல் எழுத்தை மாற்ற தேவையான இடைவெளிகளின் எண்ணிக்கை:"
+
+#~ msgid "Text Font"
+#~ msgstr "உரை எழுத்துருக்கள்"
+
+#~ msgid "Font:"
+#~ msgstr "எழுத்துரு:"
+
+#~ msgid "Size:"
+#~ msgstr "அளவு:"
+
+#, fuzzy
+#~ msgid "Fonts"
+#~ msgstr "எழுத்துரு:"
+
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "கோப்புகளுக்கிடையே மாறுபாடுகளை கண்டறிய, தேவையானால் ஒரு diff ஐ உருவாக்க, உதவும் "
+#~ "ஒரு நிரல்."
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#, fuzzy
+#~| msgid "(c) 2001-2004, John Firebaugh and Otto Bruggeman"
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr "(c) 2001-2004,  ஜான் பையர்பாக் மற்றும் ஒட்டோ பிரக்மேன்"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "கோம்பேர் சின்னத்தின் கலைஞர்"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "நிறைந்த நல்லறிவுரைகள்"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Cervisia diff காட்டீ"
+
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "இது URL1ஐ URL2வோடு ஒப்பிடும்."
+
+#~ msgid ""
+#~ "This will open URL1 and expect it to be diff output. URL1 can also be a "
+#~ "'-' and then it will read from standard input. Can be used for instance "
+#~ "for cvs diff | kompare -o -. Kompare will do a check to see if it can "
+#~ "find the original file(s) and then blend the original file(s) into the "
+#~ "diffoutput and show that in the viewer. -n disables the check."
+#~ msgstr ""
+#~ "இது URL1ஐ diffன் வெளியீடாகக்கருதி திறக்கும். URL1 '-' ஆகவும் இருக்கலாம். அப்போது "
+#~ "இது வழக்க உள்ளீட்டுக்கருவியிலிருந்து படிக்கும். உதாரணமாக,  cvs diff | kompare -o "
+#~ "- என்று உபயோகிக்கலாம். இந்த உபயோகத்தில், Kompare மூல கோப்புகளை கண்டுபிடிக்க "
+#~ "முடியுமா என சோதித்துவிட்டு, கண்டுபிடித்த மூல கோப்புகளை diffன் வெளியீட்டோடு கலவை "
+#~ "செய்து காட்சிகாட்டியில் காண்பிக்கும். -n சோதனையை செயலிழக்கச் செய்துவிடும்."
+
+#~ msgid ""
+#~ "This will blend URL2 into URL1, URL2 is expected to be diff output and "
+#~ "URL1 the file or folder that the diffoutput needs to be blended into. "
+#~ msgstr ""
+#~ "இது URL2ஐ URL1க்குள் கலக்கும். URL2 diffன் வெளியீடாகவும்,  URL1 இவ்வெளியீடு "
+#~ "கலக்கப்பட வேண்டிய கோப்பு அல்லது ஆவணமாகவும் இருக்கும் என எதிர்பார்க்கப்படுகிறது."
+
+#~ msgid ""
+#~ "Disables the check for automatically finding the original file(s) when "
+#~ "using '-' as URL with the -o option."
+#~ msgstr ""
+#~ "-o தேர்வுடன் '-'ஐ URL ஆக பயன்படுத்தும் போது,  மூலமான கோப்புகளை தானே கண்டுபிடிக்கச் "
+#~ "செய்யும் சோதனையை செயலிழக்கச் செய்துவிடும்."
+
+#~ msgid ""
+#~ "Use this to specify the encoding when calling it from the command line. "
+#~ "It will default to the local encoding if not specified."
+#~ msgstr ""
+#~ "கட்டளை வரியில் இருந்து அழைக்கும் பொழுது செயலாக்கலை குறிப்பிட இதை பயன்படுத்து. "
+#~ "குறிப்பிடாவிடில் சாதாரண செயலாக்கத்திற்கு இது முன்னிருப்பாக இருக்கும்."
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "இந்த கோப்புகளையோ ஆவணங்களையோ ஒப்பிடு"
+
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "நம் Kompare பார்வைப் பகுதியை கண்டுபிடிக்க இயலவில்லை."
+
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "நம் KompareNavigationPartஐ கண்டுபிடிக்க இயலவில்லை."
+
+#~ msgid "A&ppearance"
+#~ msgstr "தோற்றம்"
+
+#~ msgid "&Diff"
+#~ msgstr "&Diff"
+
+#~ msgid "&Format"
+#~ msgstr "வடிவம்"
+
+#~ msgid "O&ptions"
+#~ msgstr "விருப்பங்கள்"
+
+#~ msgid "Hide T&ext View"
+#~ msgstr "உரைக்காட்சியை மறைத்திடுக"

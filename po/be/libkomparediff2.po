@@ -1,0 +1,1082 @@
+# translation of kompare.po to Belarusian
+#
+# Siarhei Liantsevich <serzh.by@gmail.com>, 2007.
+# Darafei Praliaskouski <komzpa@licei2.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2007-10-28 14:03+0200\n"
+"Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
+"Language-Team: Belarusian <i18n@mova.org>\n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
+"%100>=11 && n%100<=14 ? 2 : 3);\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "Ужыць адрозненні"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "Адмяніць адрозненні"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "Ужыць усё"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "Адмяніць усё"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "Папярэдні файл"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "Наступны файл"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "Папярэдняе адрозненне"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "Наступнае адрозненне"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, fuzzy, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>Няма макетаў або адрозненняў. Файл  <b>%1</b> не з'яўляецца файлам "
+"фармату diff.</qt>"
+
+#: komparemodellist.cpp:262
+#, fuzzy, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+"<qt>Паўсталі праблемы падчас ужывання diff <b>%1</b> да файла <b>%2</b>.</qt>"
+
+#: komparemodellist.cpp:289
+#, fuzzy, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+"<qt>Паўсталі праблемы падчас ужывання diff <b>%1</b> да тэчкі <b>%2</b>.</qt>"
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, fuzzy, kde-format
+msgid "Could not open a temporary file."
+msgstr "Не атрымліваецца адкрыць часовы файл."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, fuzzy, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+"<qt>Не атрымліваецца запісаць у часовы файл <b>%1</b>, выдаляемы яго.</qt>"
+
+#: komparemodellist.cpp:407
+#, fuzzy, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt>Не атрымалася стварыць канчатковую тэчку <b>%1</b>.\n"
+"Файл не захаваны.</qt>"
+
+#: komparemodellist.cpp:435
+#, fuzzy, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>Не атрымліваецца загрузіць часовы файл у кропку прызначэння <b>%1</b>. "
+"Часовы файл усё яшчэ даступны пад імем <b>%2</b>. Вы можаце ўручную "
+"скапіраваць яго ў патрэбнае месца.</qt>"
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, fuzzy, kde-format
+msgid "Could not parse diff output."
+msgstr "Не атрымліваецца апрацаваць выснову diff."
+
+#: komparemodellist.cpp:530
+#, fuzzy, kde-format
+msgid "The files are identical."
+msgstr "Усе файлы ідэнтычныя."
+
+#: komparemodellist.cpp:712
+#, fuzzy, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Не атрымліваецца запісаць у часовы файл."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#, fuzzy
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "Не атрымліваецца загрузіць кампанент KompareViewPart."
+
+#, fuzzy
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "Не атрымліваецца загрузіць кампанент KompareNavigationPart."
+
+#, fuzzy
+#~ msgid "&Open Diff..."
+#~ msgstr "Адкрыць Diff..."
+
+#, fuzzy
+#~ msgid "&Compare Files..."
+#~ msgstr "Параўнаць файлы..."
+
+#, fuzzy
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "Зліць спасылку з Diff"
+
+#, fuzzy
+#~ msgid "Show T&ext View"
+#~ msgstr "Паказаць у выглядзе тэксту"
+
+#, fuzzy
+#~ msgid " 0 of 0 differences "
+#~ msgstr " 0 з 0 адрозненняў "
+
+#, fuzzy
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 з 0 файлаў "
+
+#, fuzzy
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] " 0 з 0 файлаў "
+#~ msgstr[1] " 0 з 0 файлаў "
+#~ msgstr[2] " 0 з 0 файлаў "
+
+#, fuzzy
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] " 0 з 0 файлаў "
+#~ msgstr[1] " 0 з 0 файлаў "
+#~ msgstr[2] " 0 з 0 файлаў "
+
+#, fuzzy
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " 0 з 0 адрозненняў "
+#~ msgstr[1] " 0 з 0 адрозненняў "
+#~ msgstr[2] " 0 з 0 адрозненняў "
+
+#, fuzzy
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " 0 з 0 адрозненняў "
+#~ msgstr[1] " 0 з 0 адрозненняў "
+#~ msgstr[2] " 0 з 0 адрозненняў "
+
+#, fuzzy
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "Зліць файл/тэчку з высновай diff"
+
+#, fuzzy
+#~ msgid "File/Folder"
+#~ msgstr "Файл/тэчка"
+
+#, fuzzy
+#~ msgid "Diff Output"
+#~ msgstr "Выснова Diff"
+
+#, fuzzy
+#~ msgid "Blend"
+#~ msgstr "Зліць"
+
+#, fuzzy
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "Зліць гэты файл або тэчку з высновай diff"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "Калі вы паказалі імя файла або тэчкі і файл, у якім утрымоўваецца выснова "
+#~ "diff, у гэтым дыялогу, гэтая кнопка стане даступная і націск на яе адкрые "
+#~ "галоўнае акно Kompare, дзе выснова паказанага файла або файлаў з тэчкі "
+#~ "змяшаецца з высновай diff так, што вы зможаце \"ужыць\" адрозненні да "
+#~ "файлаў."
+
+#, fuzzy
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Параўнанне файлаў або тэчак"
+
+#, fuzzy
+#~ msgid "Source"
+#~ msgstr "Крыніца"
+
+#, fuzzy
+#~ msgid "Destination"
+#~ msgstr "Прызначэнне"
+
+#, fuzzy
+#~ msgid "Compare"
+#~ msgstr "Параўнаць"
+
+#, fuzzy
+#~ msgid "Compare these files or folders"
+#~ msgstr "Параўнаць файлы або тэчкі"
+
+#, fuzzy
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "Калі вы паказалі файлы або тэчкі ў палях гэтага дыялогу, гэтая кнопка "
+#~ "стане даступная і націск на яе пачне параўнанне паказаных файлаў або "
+#~ "тэчак."
+
+#, fuzzy
+#~ msgid "Text View"
+#~ msgstr "Прагляд тэксту"
+
+#, fuzzy
+#~ msgid "Source Folder"
+#~ msgstr "Тэчка-крыніца"
+
+#, fuzzy
+#~ msgid "Destination Folder"
+#~ msgstr "Тэчка-прызначэнне"
+
+#, fuzzy
+#~ msgid "Source File"
+#~ msgstr "Зыходны файл"
+
+#, fuzzy
+#~ msgid "Destination File"
+#~ msgstr "Файл прызначэння"
+
+#, fuzzy
+#~ msgid "Source Line"
+#~ msgstr "Зыходны радок"
+
+#, fuzzy
+#~ msgid "Destination Line"
+#~ msgstr "Радок прызначэння"
+
+#, fuzzy
+#~ msgid "Difference"
+#~ msgstr "Адрозненне"
+
+#, fuzzy
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] ""
+#~ "Ужыта: Змены %n радкі скасаваныя\n"
+#~ "Ужыта: Змены %n радкоў скасаваныя\n"
+#~ "Ужыта: Змены %n радкоў скасаваныя"
+#~ msgstr[1] ""
+#~ "Ужыта: Змены %n радкі скасаваныя\n"
+#~ "Ужыта: Змены %n радкоў скасаваныя\n"
+#~ "Ужыта: Змены %n радкоў скасаваныя"
+#~ msgstr[2] ""
+#~ "Ужыта: Змены %n радкі скасаваныя\n"
+#~ "Ужыта: Змены %n радкоў скасаваныя\n"
+#~ "Ужыта: Змены %n радкоў скасаваныя"
+
+#, fuzzy
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "Колер змененага радка:"
+#~ msgstr[1] "Колер змененага радка:"
+#~ msgstr[2] "Колер змененага радка:"
+
+#, fuzzy
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] ""
+#~ "Ужыта: Устаўка %n радкі скасаваная\n"
+#~ "Ужыта: Устаўка %n радкоў скасаваная\n"
+#~ "Ужыта: Устаўка %n радкоў скасаваная"
+#~ msgstr[1] ""
+#~ "Ужыта: Устаўка %n радкі скасаваная\n"
+#~ "Ужыта: Устаўка %n радкоў скасаваная\n"
+#~ "Ужыта: Устаўка %n радкоў скасаваная"
+#~ msgstr[2] ""
+#~ "Ужыта: Устаўка %n радкі скасаваная\n"
+#~ "Ужыта: Устаўка %n радкоў скасаваная\n"
+#~ "Ужыта: Устаўка %n радкоў скасаваная"
+
+#, fuzzy
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] ""
+#~ "Ужыта: Выдаленне %n радкі скасавана\n"
+#~ "Ужыта: Выдаленне %n радкоў скасавана\n"
+#~ "Ужыта: Выдаленне %n радкоў скасавана"
+#~ msgstr[1] ""
+#~ "Ужыта: Выдаленне %n радкі скасавана\n"
+#~ "Ужыта: Выдаленне %n радкоў скасавана\n"
+#~ "Ужыта: Выдаленне %n радкоў скасавана"
+#~ msgstr[2] ""
+#~ "Ужыта: Выдаленне %n радкі скасавана\n"
+#~ "Ужыта: Выдаленне %n радкоў скасавана\n"
+#~ "Ужыта: Выдаленне %n радкоў скасавана"
+
+#, fuzzy
+#~ msgid "Unknown"
+#~ msgstr "Невядомы"
+
+#, fuzzy
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#, fuzzy
+#~ msgid "Author"
+#~ msgstr "Аўтар"
+
+#, fuzzy
+#~ msgid "Save &All"
+#~ msgstr "Захаваць усё"
+
+#, fuzzy
+#~ msgid "Save &Diff..."
+#~ msgstr "Захаваць адрозненні ў файл .diff..."
+
+#, fuzzy
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Памяняць месцамі крыніца і прызначэнне"
+
+#, fuzzy
+#~ msgid "Show Statistics"
+#~ msgstr "Паказаць статыстыку"
+
+#, fuzzy
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>Немагчыма загрузіць спасылку <b>%1</b>.</qt>"
+
+#, fuzzy
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>Немагчыма адкрыць <b>%1</b>.</qt>"
+
+#, fuzzy
+#~ msgid "Diff Options"
+#~ msgstr "Параметры Diff"
+
+#, fuzzy
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Файлы адрозненняў (*.diff *.dif *.patch)"
+
+#, fuzzy
+#~ msgid "Save .diff"
+#~ msgstr "Захаваць .diff"
+
+#, fuzzy
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr "Файл ужо існуе. Замяніць яго?"
+
+#, fuzzy
+#~ msgid "File Exists"
+#~ msgstr "Файл ужо існуе"
+
+#, fuzzy
+#~ msgid "Overwrite"
+#~ msgstr "Замяніць"
+
+#, fuzzy
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Не замяняць"
+
+#, fuzzy
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#, fuzzy
+#~ msgid "Running diff..."
+#~ msgstr "Запушчаны diff..."
+
+#, fuzzy
+#~ msgid "Parsing diff output..."
+#~ msgstr "Апрацоўваецца выснова diff..."
+
+#, fuzzy
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "Параўноўваюцца файл %1 з файлам %2"
+
+#, fuzzy
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "Параўноўваюцца файлы ў %1 з файламі ў %2"
+
+#, fuzzy
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "Прагляд высновы diff з %1"
+
+#, fuzzy
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "Змешванне высновы diff з файла %1 у файл %2"
+
+#, fuzzy
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "Змешванне высновы diff з файла %1 у тэчку %2"
+
+#, fuzzy
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Файл прызначэння быў зменены.\n"
+#~ "Вы жадаеце яго захаваць?"
+
+#, fuzzy
+#~ msgid "Save Changes?"
+#~ msgstr "Захаваць змены?"
+
+#, fuzzy
+#~ msgid "Unified"
+#~ msgstr "Аб'яднаны"
+
+#, fuzzy
+#~ msgid "Context"
+#~ msgstr "Кантэкст"
+
+#, fuzzy
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#, fuzzy
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#, fuzzy
+#~ msgid "Normal"
+#~ msgstr "Звычайны"
+
+#, fuzzy
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "Няма файла diff або параўнанне выраблена не па двух файлам. Статыстыка "
+#~ "недаступная."
+
+#, fuzzy
+#~ msgid "Diff Statistics"
+#~ msgstr "Статыстыка адрозненняў"
+
+#, fuzzy
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Статыстыка:\n"
+#~ "\n"
+#~ "Стары файл: %1\n"
+#~ "Новы файл: %2\n"
+#~ "\n"
+#~ "Фармат: %3\n"
+#~ "Колькасць не змененых: %4\n"
+#~ "Колькасць адрозненняў: %5"
+
+#, fuzzy
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Статыстыка:\n"
+#~ "\n"
+#~ "Колькасць файлаў у файле адрозненняў: %1\n"
+#~ "Фармат: %2\n"
+#~ "\n"
+#~ "Бягучы стары файл: %3\n"
+#~ "Бягучы новы файл: %4\n"
+#~ "\n"
+#~ "Колькасць не змененых: %5\n"
+#~ "Колькасць адрозненняў: %6"
+
+#, fuzzy
+#~ msgid "&File"
+#~ msgstr "Файлы"
+
+#, fuzzy
+#~ msgid "&Difference"
+#~ msgstr "Адрозненне"
+
+#, fuzzy
+#~ msgid "&Settings"
+#~ msgstr "Налады выгляду"
+
+#, fuzzy
+#~ msgid "Preferences"
+#~ msgstr "Параметры"
+
+#, fuzzy
+#~ msgid "View"
+#~ msgstr "Прагляд тэксту"
+
+#, fuzzy
+#~ msgid "View Settings"
+#~ msgstr "Налады выгляду"
+
+#, fuzzy
+#~ msgid "Diff"
+#~ msgstr "Адрозненні"
+
+#, fuzzy
+#~ msgid "Diff Settings"
+#~ msgstr "Налады адрозненняў"
+
+#, fuzzy
+#~ msgid "Run Diff In"
+#~ msgstr "Запусціць Diff у"
+
+#, fuzzy
+#~ msgid "Command Line"
+#~ msgstr "Камандны радок"
+
+#, fuzzy
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir  diff -udHprNa -- <крыніца> <прызначэнне>"
+
+#, fuzzy
+#~ msgid "Options"
+#~ msgstr "Параметры"
+
+#, fuzzy
+#~ msgid "Look for smaller changes"
+#~ msgstr "Пошук найменшых змен"
+
+#, fuzzy
+#~ msgid "Optimize for large files"
+#~ msgstr "Аптымізацыя для вялікіх файлаў"
+
+#, fuzzy
+#~ msgid "Ignore changes in case"
+#~ msgstr "Ігнараваць змены ў рэгістры літар"
+
+#, fuzzy
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "Замяніць табуляцыю прабеламі"
+
+#, fuzzy
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "Ігнараваць дададзеныя і выдаленыя пустыя радкі"
+
+#, fuzzy
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Ігнараваць змены прабелаў"
+
+#, fuzzy
+#~ msgid "Show function names"
+#~ msgstr "Паказваць імёны функцый"
+
+#, fuzzy
+#~ msgid "Compare folders recursively"
+#~ msgstr "Параўнаць тэчкі рэкурсіўна"
+
+#, fuzzy
+#~ msgid "Treat new files as empty"
+#~ msgstr "Лічыць новыя файлы як пустыя"
+
+#, fuzzy
+#~ msgid "Format"
+#~ msgstr "Фармат"
+
+#, fuzzy
+#~ msgid "Side-by-side"
+#~ msgstr "Побач сябар з сябрам"
+
+#, fuzzy
+#~ msgid "Number of context lines:"
+#~ msgstr "Колькасць радкоў кантэксту:"
+
+#, fuzzy
+#~ msgid "Files"
+#~ msgstr "Файлы"
+
+#, fuzzy
+#~ msgid "Here you can enter the files you want to compare."
+#~ msgstr "Тут можна ўвесці файла для параўнання"
+
+#, fuzzy
+#~ msgid "Here you can change the options for comparing the files."
+#~ msgstr "Тут можна наладзіць параметры параўнання"
+
+#, fuzzy
+#~ msgid "Appearance"
+#~ msgstr "Паданне:"
+
+#, fuzzy
+#~ msgid "Here you can change the options for the view."
+#~ msgstr "Тут можна наладзіць візуальныя параметры"
+
+#, fuzzy
+#~ msgid "Diff Program"
+#~ msgstr "Праграма diff"
+
+#, fuzzy
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr ""
+#~ "Вы можаце вылучыць подграмму diff тут. На сістэмах Solaris стандартная "
+#~ "праграма diff не падтрымлівае ўсе ключы версіі GNU. Так вы можаце "
+#~ "вылучыць патрэбную версію праграмы."
+
+#, fuzzy
+#~ msgid ""
+#~ "Select the format of the output generated by diff. Unified is the one "
+#~ "that is used most frequently because it is very readable. The KDE "
+#~ "developers like this format the best so use it for sending patches."
+#~ msgstr ""
+#~ "Вылучыце фармат высновы, генеруемы diff. Найболей часта выкарыстоўваным "
+#~ "з'яўляецца Unified, т.к. ён лёгкі для чытання. Калі ласка, выкарыстайце "
+#~ "менавіта яго для латак, якія вы адпраўляеце распрацоўнікам KDE."
+
+#, fuzzy
+#~ msgid "Output Format"
+#~ msgstr "Фармат высновы"
+
+#, fuzzy
+#~ msgid "Lines of Context"
+#~ msgstr "Радкі кантэксту"
+
+#, fuzzy
+#~ msgid ""
+#~ "The number of context lines is normally 2 or 3. This makes the diff "
+#~ "readable and applicable in most cases. More than 3 lines will only bloat "
+#~ "the diff unnecessarily."
+#~ msgstr ""
+#~ "Колькасць радкоў, якія стаяць побач з змененай. Звычайна гэта  2 або 3."
+
+#, fuzzy
+#~ msgid "General"
+#~ msgstr "Агульныя"
+
+#, fuzzy
+#~ msgid "&Treat new files as empty"
+#~ msgstr "Лічыць новыя файлы як пустыя"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "Адказвае ключу -l."
+
+#, fuzzy
+#~ msgid "&Look for smaller changes"
+#~ msgstr "Шукаць найменшыя змены"
+
+#, fuzzy
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "Адказвае ключу -d."
+
+#, fuzzy
+#~ msgid "O&ptimize for large files"
+#~ msgstr "Аптымізацыя для вялікіх файлаў"
+
+#, fuzzy
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "Адказвае ключу -H."
+
+#, fuzzy
+#~ msgid "&Ignore changes in case"
+#~ msgstr "Ігнараваць змены ў рэгістры знакаў"
+
+#, fuzzy
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "Адказвае ключу -i."
+
+#, fuzzy
+#~ msgid "Ignore regexp:"
+#~ msgstr "Ігнараваць радкі па рэгулярным выразе:"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "Адказвае ключу -l."
+
+#, fuzzy
+#~ msgid ""
+#~ "Add the regular expression here that you want to use\n"
+#~ "to ignore lines that match it."
+#~ msgstr "Дадайце рэгулярны выраз для ігнаруемых радкоў тут."
+
+#, fuzzy
+#~ msgid "&Edit..."
+#~ msgstr "Змяніць..."
+
+#, fuzzy
+#~ msgid ""
+#~ "Clicking this will open a regular expression dialog where\n"
+#~ "you can graphically create regular expressions."
+#~ msgstr "Адкрыць рэдактар рэгулярных выразаў."
+
+#, fuzzy
+#~ msgid "Whitespace"
+#~ msgstr "Прабелы"
+
+#, fuzzy
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "У выснове прабелы замест знакаў табуляцыі"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "Адказвае ключу -t."
+
+#, fuzzy
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "Ігнараваць дададзеныя або выдаленыя пустыя радкі"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "Адказвае ключу -B."
+
+#, fuzzy
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "Ігнараваць змену колькасці прабелаў"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "Адказвае ключу -b."
+
+#, fuzzy
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "Ігнараваць пробельное прастора"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "Адказвае ключу -w."
+
+#, fuzzy
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "Ігнараваць змены па замене табуляцыі прабеламі"
+
+#, fuzzy
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "Адказвае ключу -E."
+
+#, fuzzy
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "Шаблон імя для выключэння"
+
+#, fuzzy
+#~ msgid ""
+#~ "If this is checked you can enter a shell pattern in the text box on the "
+#~ "right or select entries from the list."
+#~ msgstr ""
+#~ "Калі гэта ўключана, вы зможаце ўвесці маску файла ў тэкставым полі справа "
+#~ "або вылучыць адно з значэнняў з спісу."
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can enter or remove a shell pattern or select one or more "
+#~ "entries from the list."
+#~ msgstr ""
+#~ "Тут вы можаце ўвесці маску файла, або вылучыць наканаваныя значэнні."
+
+#, fuzzy
+#~ msgid "File with Filenames to Exclude"
+#~ msgstr "Файл з імёнамі файлаў для выключэння"
+
+#, fuzzy
+#~ msgid "If this is checked you can enter a filename in the combo box below."
+#~ msgstr ""
+#~ "Калі гэта ўключана, вы зможаце ўвесці імя файла ў выпадальным спісе "
+#~ "справа."
+
+#, fuzzy
+#~ msgid ""
+#~ "Here you can enter the URL of a file with shell patterns to ignore during "
+#~ "the comparison of the folders."
+#~ msgstr ""
+#~ "Тут вы можаце ўвесці шлях да файла, які змяшчае маскі файлаў, якія трэба "
+#~ "ігнараваць пры параўнанні тэчак."
+
+#, fuzzy
+#~ msgid ""
+#~ "Any file you select in the dialog that pops up when you click it will be "
+#~ "put in the dialog to the left of this button."
+#~ msgstr ""
+#~ "Файлы, якія вы вылучыце ў які з'явіўся дыялогу, будуць бачныя ў спісе "
+#~ "злева."
+
+#, fuzzy
+#~ msgid "Exclude"
+#~ msgstr "Выключыць"
+
+#, fuzzy
+#~ msgid "Encoding"
+#~ msgstr "Кадыроўка"
+
+#, fuzzy
+#~ msgid "Colors"
+#~ msgstr "Колеры"
+
+#, fuzzy
+#~ msgid "Removed color:"
+#~ msgstr "Колер выдаленага радка:"
+
+#, fuzzy
+#~ msgid "Changed color:"
+#~ msgstr "Колер змененага радка:"
+
+#, fuzzy
+#~ msgid "Added color:"
+#~ msgstr "Колер дададзенага радка:"
+
+#, fuzzy
+#~ msgid "Applied color:"
+#~ msgstr "Колер зробленых змен:"
+
+#, fuzzy
+#~ msgid "Mouse Wheel"
+#~ msgstr "Кола мышы"
+
+#, fuzzy
+#~ msgid "Number of lines:"
+#~ msgstr "Колькасць радкоў:"
+
+#, fuzzy
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Ператварэнне знакаў <b>табуляцыі</b> у знакі <b>прабел</b>."
+
+#, fuzzy
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "Колькасць прабелаў, у якія перакладаць знак <b>табуляцыі</b>:"
+
+#, fuzzy
+#~ msgid "Text Font"
+#~ msgstr "Шрыфт тэксту"
+
+#, fuzzy
+#~ msgid "Font:"
+#~ msgstr "Шрыфт:"
+
+#, fuzzy
+#~ msgid "Size:"
+#~ msgstr "Памер:"
+
+#, fuzzy
+#~ msgid "Fonts"
+#~ msgstr "Шрыфт:"
+
+#, fuzzy
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "Праграма для прагляду адрозненняў паміж файламі і стварэнні файла diff."
+
+#, fuzzy
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#, fuzzy
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr ""
+#~ "(c) 2001-2004, Джон Файербаух (John Firebaugh) і Отто Брюггеман (Otto "
+#~ "Bruggeman)"
+
+#, fuzzy
+#~ msgid "Kompare icon artist"
+#~ msgstr "Значкі"
+
+#, fuzzy
+#~ msgid "A lot of good advice"
+#~ msgstr "Шмат добрых рад"
+
+#, fuzzy
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Прагляд адрозненняў у Cervisia"
+
+#, fuzzy
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "Параўнанне \"Спасылкі1\" з \"Спасылкай2\""
+
+#, fuzzy
+#~ msgid ""
+#~ "This will open URL1 and expect it to be diff output. URL1 can also be a "
+#~ "'-' and then it will read from standard input. Can be used for instance "
+#~ "for cvs diff | kompare -o -. Kompare will do a check to see if it can "
+#~ "find the original file(s) and then blend the original file(s) into the "
+#~ "diffoutput and show that in the viewer. -n disables the check."
+#~ msgstr ""
+#~ "Адкрыць URL1, лічачы,што гэта выснова diff. URL1 таксама можа быць '-'. "
+#~ "Гэта можна выкарыстаць, напрыклад, так: cvs diff | kompare -o -. Kompare "
+#~ "праверыць, ці існуе арыгінальны файл, а затым змяшае з высновай diff і "
+#~ "пакажа вынік. Ключ -n адмяняе праверку."
+
+#, fuzzy
+#~ msgid ""
+#~ "This will blend URL2 into URL1, URL2 is expected to be diff output and "
+#~ "URL1 the file or folder that the diffoutput needs to be blended into. "
+#~ msgstr ""
+#~ "Змяшаць URL2 і URL1, URL2 павінен быць высновай diff, а URL1 - "
+#~ "(арыгінальны) файл або тэчка."
+
+#, fuzzy
+#~ msgid ""
+#~ "Disables the check for automatically finding the original file(s) when "
+#~ "using '-' as URL with the -o option."
+#~ msgstr ""
+#~ "Адключае праверку аўтаматычнага пошуку арыгінальнага файла(ов) пры "
+#~ "выкарыстанні '-' у якасці крыніцы з опцыяй -o."
+
+#, fuzzy
+#~ msgid ""
+#~ "Use this to specify the encoding when calling it from the command line. "
+#~ "It will default to the local encoding if not specified."
+#~ msgstr ""
+#~ "Паказаць кадыроўку. Па змаўчанні будзе выкарыстоўвацца кадыроўка лакалі."
+
+#, fuzzy
+#~ msgid "Compare these files or folder"
+#~ msgstr "Параўнаць файлы або тэчку"
+
+#, fuzzy
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "Не атрымліваецца знайсці кампанент KompareViewPart."
+
+#, fuzzy
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "Не атрымліваецца знайсці кампанент KompareNavigationPart."
+
+#, fuzzy
+#~ msgid "A&ppearance"
+#~ msgstr "Паданне:"
+
+#, fuzzy
+#~ msgid "&Diff"
+#~ msgstr "Diff"
+
+#, fuzzy
+#~ msgid "&Format"
+#~ msgstr "Фармат"
+
+#, fuzzy
+#~ msgid "O&ptions"
+#~ msgstr "Параметры"
+
+#, fuzzy
+#~ msgid "Hide T&ext View"
+#~ msgstr "Схаваць прагляд тэксту"
+
+#~ msgid ""
+#~ "_: NAME OF TRANSLATORS\n"
+#~ "Your names"
+#~ msgstr "Сяржук Лянцэвіч"
+
+#~ msgid ""
+#~ "_: EMAIL OF TRANSLATORS\n"
+#~ "Your emails"
+#~ msgstr "serzh.by@gmail.com"
+
+#, fuzzy
+#~ msgid ""
+#~ "_n: Changed %n line\n"
+#~ "Changed %n lines"
+#~ msgstr ""
+#~ "Змененая %n радок\n"
+#~ "Зменена %n радкі\n"
+#~ "Зменена %n радкоў"
+
+#, fuzzy
+#~ msgid ""
+#~ "_n: Inserted %n line\n"
+#~ "Inserted %n lines"
+#~ msgstr ""
+#~ "Устаўленая %n радок\n"
+#~ "Устаўлена %n радкі\n"
+#~ "Устаўлена %n радкоў"
+
+#, fuzzy
+#~ msgid ""
+#~ "_n: Deleted %n line\n"
+#~ "Deleted %n lines"
+#~ msgstr ""
+#~ "Выдаленая %n радок\n"
+#~ "Выдаленае %n радкі\n"
+#~ "Выдаленае %n радкоў"
+
+#, fuzzy
+#~ msgid ""
+#~ "_n:  %1 of %n file \n"
+#~ " %1 of %n files "
+#~ msgstr ""
+#~ " %1 з %n файла \n"
+#~ " %1 з %n файлаў \n"
+#~ " %1 з %n файлаў "
+
+#, fuzzy
+#~ msgid ""
+#~ "_n:  %n file \n"
+#~ " %n files "
+#~ msgstr ""
+#~ " %n файл \n"
+#~ " %n файла \n"
+#~ " %n файлаў "
+
+#, fuzzy
+#~ msgid ""
+#~ "_n:  %1 of %n difference, %2 applied \n"
+#~ " %1 of %n differences, %2 applied "
+#~ msgstr ""
+#~ " %1 з %n адрозненні, %2 ужыта \n"
+#~ " %1 з %n адрозненняў, %2 ужыта \n"
+#~ " %1 з %n адрозненняў, %2 ужыта "
+
+#, fuzzy
+#~ msgid ""
+#~ "_n:  %n difference \n"
+#~ " %n differences "
+#~ msgstr ""
+#~ " %n адрозненне \n"
+#~ " %n адрозненні \n"
+#~ " %n адрозненняў "

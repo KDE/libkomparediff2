@@ -1,0 +1,980 @@
+# translation of kompare.po to Lavtian
+# Copyright (C) 2007, 2008 Free Software Foundation, Inc.
+#
+# Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2007, 2008.
+# Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kompare\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"PO-Revision-Date: 2009-06-04 12:04+0300\n"
+"Last-Translator: Viesturs Zariņš <viesturs.zarins@mii.lu.lv>\n"
+"Language-Team: Latvian <locale@laka.lv>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+
+#: komparemodellist.cpp:58
+#, fuzzy, kde-format
+#| msgid "&Apply Difference"
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "&Pielietot atšķirību"
+
+#: komparemodellist.cpp:62
+#, fuzzy, kde-format
+#| msgid "Un&apply Difference"
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "&Atcelt atšķirību"
+
+#: komparemodellist.cpp:66
+#, fuzzy, kde-format
+#| msgid "App&ly All"
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "Pie&lietot visas"
+
+#: komparemodellist.cpp:70
+#, fuzzy, kde-format
+#| msgid "&Unapply All"
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "A&tcelt visas"
+
+#: komparemodellist.cpp:80
+#, fuzzy, kde-format
+#| msgid "P&revious File"
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "Iep&riekšējais fails"
+
+#: komparemodellist.cpp:84
+#, fuzzy, kde-format
+#| msgid "N&ext File"
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "Nā&kamais fails"
+
+#: komparemodellist.cpp:88
+#, fuzzy, kde-format
+#| msgid "&Previous Difference"
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "&Iepriekšējā atšķirība"
+
+#: komparemodellist.cpp:92
+#, fuzzy, kde-format
+#| msgid "&Next Difference"
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "&Nākamā atšķirība"
+
+#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>Šajā failā nav ne modeļu ne atšķirību: <b>%1</b>, nav derīgs diff fails."
+"</qt>"
+
+#: komparemodellist.cpp:262
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+"<qt>Gadījās problēmas diff <b>%1</b> pielietošanāto uz failu <b>%2</b>.</qt>"
+
+#: komparemodellist.cpp:289
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+"<qt>Gadījās problēmas diff <b>%1</b> pielietošanā uz mapi <b>%2</b>.</qt>"
+
+#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "Neizdevās atvērt pagaidu failu."
+
+#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr "<qt>Neizdevas rakstīt pagaidu failā <b>%1</b>, izdzēš to.</qt>"
+
+#: komparemodellist.cpp:407
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt>Neizdevās izveidot mērķa mapi <b>%1</b>.\n"
+"Fails netika saglabāts.</qt>"
+
+#: komparemodellist.cpp:435
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>Neizdevās saglabāt pagaidu failu mērķa vietā <b>%1</b>. Pagaidu fails "
+"joprojām atrodas iekš: <b>%2</b>. Jūs varat to pārkopēt pats uz pareizo "
+"vietu.</qt>"
+
+#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "Neizdevās analizēt diff izvadu."
+
+#: komparemodellist.cpp:530
+#, kde-format
+msgid "The files are identical."
+msgstr "Faili ir identiski."
+
+#: komparemodellist.cpp:712
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "Neizdevās rakstīt pagaidu failā."
+
+#: komparemodellist.cpp:986
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Andris Maziks,Viesturs Zariņš"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "andzha@latnet.lv,viesturs.zarins@mi.lu.lv"
+
+#~ msgid "Could not load our KompareViewPart."
+#~ msgstr "Neizdevās ielādēt KompareViewPart."
+
+#~ msgid "Navigation"
+#~ msgstr "Navigācija"
+
+#~ msgid "Could not load our KompareNavigationPart."
+#~ msgstr "Neizdevās ielādēt KompareNavigationPart."
+
+#~ msgid "&Open Diff..."
+#~ msgstr "&Atvērt diff..."
+
+#~ msgid "&Compare Files..."
+#~ msgstr "&Salīdzināt failus"
+
+#~ msgid "&Blend URL with Diff..."
+#~ msgstr "&Pielietot diff uz URL..."
+
+#~ msgid "Show T&ext View"
+#~ msgstr "Rādīt t&eksta skatu"
+
+#~ msgid " 0 of 0 differences "
+#~ msgstr " 0 no 0 atšķirībām"
+
+#~ msgid " 0 of 0 files "
+#~ msgstr " 0 no 0 failiem "
+
+#~ msgid " %2 of %1 file "
+#~ msgid_plural " %2 of %1 files "
+#~ msgstr[0] " %2 no %1 faila "
+#~ msgstr[1] " %2 no %1 failiem "
+#~ msgstr[2] " %2 no %1 failu "
+
+#~ msgid " %1 file "
+#~ msgid_plural " %1 files "
+#~ msgstr[0] " %1 fails "
+#~ msgstr[1] " %1 faili "
+#~ msgstr[2] " %1 failu "
+
+#~ msgid " %2 of %1 difference, %3 applied "
+#~ msgid_plural " %2 of %1 differences, %3 applied "
+#~ msgstr[0] " %2 no %1 atšķirības, %3 pielietotas "
+#~ msgstr[1] " %2 no %1 atšķirībām, %3 pielietotas "
+#~ msgstr[2] " %2 no %1 atšķirību, %3 pielietotas "
+
+#~ msgid " %1 difference "
+#~ msgid_plural " %1 differences "
+#~ msgstr[0] " %1 atšķirība "
+#~ msgstr[1] " %1 atšķirības "
+#~ msgstr[2] " %1 atšķirību "
+
+#~ msgid "Blend File/Folder with diff Output"
+#~ msgstr "Pielietot diff izvadu failam/mapei"
+
+#~ msgid "File/Folder"
+#~ msgstr "Fails/Mape"
+
+#~ msgid "Diff Output"
+#~ msgstr "Diff izvads"
+
+#~ msgid "Blend"
+#~ msgstr "Pielietot"
+
+#~ msgid "Blend this file or folder with the diff output"
+#~ msgstr "Pielietot diff izvadu šim failam vai mapei"
+
+#~ msgid ""
+#~ "If you have entered a file or folder name and a file that contains diff "
+#~ "output in the fields in this dialog then this button will be enabled and "
+#~ "pressing it will open kompare's main view where the output of the entered "
+#~ "file or files from the folder are mixed with the diff output so you can "
+#~ "then apply the difference(s) to a file or to the files. "
+#~ msgstr ""
+#~ "Šī poga tiks aktivizēta, ja šī loga laukos būs ievadīti faila vai mapes "
+#~ "nosaukums un diff izvada faila nosaukums. Nospiežot to, tiks atvērts "
+#~ "Kompare galvenais skats, kur tiks parādīts failu sākotnējais stāvoklis un "
+#~ "izmaiņas tajos un jūs varēsiet pielietot vai atcelt izmaiņas. "
+
+#~ msgid "Compare Files or Folders"
+#~ msgstr "Salīdzināt failus vai mapes"
+
+#~ msgid "Source"
+#~ msgstr "Avots"
+
+#~ msgid "Destination"
+#~ msgstr "Mērķis"
+
+#~ msgid "Compare"
+#~ msgstr "Salīdzīnāt"
+
+#~ msgid "Compare these files or folders"
+#~ msgstr "Salīdzināt šos failus vai mapes"
+
+#~ msgid ""
+#~ "If you have entered 2 filenames or 2 folders in the fields in this dialog "
+#~ "then this button will be enabled and pressing it will start a comparison "
+#~ "of the entered files or folders. "
+#~ msgstr ""
+#~ "Šī poga tiks aktivizēta, kad laukos būs ievadīti divi faili vai divas "
+#~ "mapes. Nospiežot to tiks veikta norādīto failu vai mapju satura "
+#~ "salīdzināšana. "
+
+#~ msgid "Text View"
+#~ msgstr "Teksta skats"
+
+#~ msgid "Source Folder"
+#~ msgstr "Avota fails"
+
+#~ msgid "Destination Folder"
+#~ msgstr "Mērķa fails"
+
+#~ msgid "Source File"
+#~ msgstr "Avota fails"
+
+#~ msgid "Destination File"
+#~ msgstr "Mērķa fails"
+
+#~ msgid "Source Line"
+#~ msgstr "Avota finda"
+
+#~ msgid "Destination Line"
+#~ msgstr "Mērķa finda"
+
+#~ msgid "Difference"
+#~ msgstr "Atšķirības"
+
+#, fuzzy
+#~| msgid "Applied: Changes made to %1 line undone"
+#~| msgid_plural "Applied: Changes made to  %1 lines undone"
+#~ msgid "Applied: Changes made to %1 line undone"
+#~ msgid_plural "Applied: Changes made to %1 lines undone"
+#~ msgstr[0] "Pielietots: Atceltas izmaiņas %1 rindā"
+#~ msgstr[1] "Pielietots: Atceltas izmaiņas %1 rindās"
+#~ msgstr[2] "Pielietots: Atceltas izmaiņas %1 rindās"
+
+#~ msgid "Changed %1 line"
+#~ msgid_plural "Changed %1 lines"
+#~ msgstr[0] "Izmainīta %1 rinda"
+#~ msgstr[1] "Izmainītas %1 rindas"
+#~ msgstr[2] "Izmainīts %1 rindu"
+
+#~ msgid "Applied: Insertion of %1 line undone"
+#~ msgid_plural "Applied: Insertion of %1 lines undone"
+#~ msgstr[0] "Pielietots: Atcelta %1 rindas ievietošana"
+#~ msgstr[1] "Pielietots: Atcelta %1 rindu ievietošana"
+#~ msgstr[2] "Pielietots: Atcelta %1 rindu ievietošana"
+
+#~ msgid "Inserted %1 line"
+#~ msgid_plural "Inserted %1 lines"
+#~ msgstr[0] "Ievietota %1 rinda"
+#~ msgstr[1] "Ievietotas %1 rindas"
+#~ msgstr[2] "Ievietots %1 rindu"
+
+#~ msgid "Applied: Deletion of %1 line undone"
+#~ msgid_plural "Applied: Deletion of %1 lines undone"
+#~ msgstr[0] "Pielietots: Atcelta %1 rindas dzēšana"
+#~ msgstr[1] "Pielietots: Atcelta %1 rindu dzēšana"
+#~ msgstr[2] "Pielietots: Atcelta %1 rindu dzēšana"
+
+#~ msgid "Deleted %1 line"
+#~ msgid_plural "Deleted %1 lines"
+#~ msgstr[0] "Dzēsta %1 rinda"
+#~ msgstr[1] "Dzēstas %1 rindas"
+#~ msgstr[2] "Dzēsts %1 rindu"
+
+#~ msgid "Unknown"
+#~ msgstr "Nezināms"
+
+#~ msgid "KompareNavTreePart"
+#~ msgstr "KompareNavTreePart"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "Džons Faierbohs (John Firebaugh)"
+
+#~ msgid "Author"
+#~ msgstr "Autors"
+
+#~ msgid "Otto Bruggeman"
+#~ msgstr "Otto Bruggeman"
+
+#~ msgid "Save &All"
+#~ msgstr "Saglabāt &visus"
+
+#~ msgid "Save &Diff..."
+#~ msgstr "Saglabāt &Diff..."
+
+#~ msgid "Swap Source with Destination"
+#~ msgstr "Apmainīt avotu ar mērķi"
+
+#~ msgid "Show Statistics"
+#~ msgstr "Rādīt statistiku"
+
+#~ msgid "Refresh Diff"
+#~ msgstr "Atsvaidzināt atšķirības"
+
+#~ msgid "<qt>The URL <b>%1</b> cannot be downloaded.</qt>"
+#~ msgstr "<qt>Neizdevās ielādēt URL <b>%1</b> saturu.</qt>"
+
+#~ msgid "<qt>The URL <b>%1</b> does not exist on your system.</qt>"
+#~ msgstr "<qt>Jūsu sistēmā nepastāv URL <b>%1</b>.</qt>"
+
+#~ msgid "Diff Options"
+#~ msgstr "Diff opcijas"
+
+#~ msgid "*.diff *.dif *.patch|Patch Files"
+#~ msgstr "*.diff *.dif *.patch|Ielāpu faili"
+
+#~ msgid "Save .diff"
+#~ msgstr "Saglabāt .diff"
+
+#~ msgid "The file exists or is write-protected; do you want to overwrite it?"
+#~ msgstr ""
+#~ "Fails pastāv vai ir aizsargāts pret rakstīšanu; vai vēlaties to "
+#~ "pārrakstīt?"
+
+#~ msgid "File Exists"
+#~ msgstr "Fails eksistē"
+
+#~ msgid "Overwrite"
+#~ msgstr "Pārrakstīt"
+
+#~ msgid "Do Not Overwrite"
+#~ msgstr "Nerakstīt"
+
+#~ msgid "KomparePart"
+#~ msgstr "KomparePart"
+
+#~ msgid "Kevin Kofler"
+#~ msgstr "Kevin Kofler"
+
+#~ msgid "Running diff..."
+#~ msgstr "Darbina diff..."
+
+#~ msgid "Parsing diff output..."
+#~ msgstr "Analizē diff izvadu..."
+
+#~ msgid "Comparing file %1 with file %2"
+#~ msgstr "Salīdzina failu %1 ar failu %2"
+
+#~ msgid "Comparing files in %1 with files in %2"
+#~ msgstr "Salīdzina fails mapē %1 ar failiem mapē %2"
+
+#~ msgid "Viewing diff output from %1"
+#~ msgstr "Rāda diff izvadu no %1"
+
+#~ msgid "Blending diff output from %1 into file %2"
+#~ msgstr "Pielieto diff izvadu no %1 failam %2"
+
+#~ msgid "Blending diff output from %1 into folder %2"
+#~ msgstr "Pielieto diff izvadu no %1 mapei %2"
+
+#~ msgid ""
+#~ "You have made changes to the destination file(s).\n"
+#~ "Would you like to save them?"
+#~ msgstr ""
+#~ "Mērķa failā(os) ir veiktas izmaiņas.\n"
+#~ "Vai vēlaties tās saglabāt?"
+
+#~ msgid "Save Changes?"
+#~ msgstr "Saglabāt izmaiņas?"
+
+#~ msgid "Unified"
+#~ msgstr "Apvienots"
+
+#~ msgid "Context"
+#~ msgstr "Konteksts"
+
+#~ msgid "RCS"
+#~ msgstr "RCS"
+
+#~ msgid "Ed"
+#~ msgstr "Ed"
+
+#~ msgid "Normal"
+#~ msgstr "Normāls"
+
+#~ msgid ""
+#~ "No diff file, or no 2 files have been diffed. Therefore no stats are "
+#~ "available."
+#~ msgstr ""
+#~ "Nav diff faila, vai nav nevienas atķširības. Tāpēc statisktika nav "
+#~ "pieejama."
+
+#~ msgid "Diff Statistics"
+#~ msgstr "Diff statistika"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Old file: %1\n"
+#~ "New file: %2\n"
+#~ "\n"
+#~ "Format: %3\n"
+#~ "Number of hunks: %4\n"
+#~ "Number of differences: %5"
+#~ msgstr ""
+#~ "Statistika:\n"
+#~ "\n"
+#~ "Vecais fails: %1\n"
+#~ "Jaunais fails: %2\n"
+#~ "\n"
+#~ "Formāts: %3\n"
+#~ "Gabalu skaits: %4\n"
+#~ "Atšķirību skaits: %5"
+
+#~ msgid ""
+#~ "Statistics:\n"
+#~ "\n"
+#~ "Number of files in diff file: %1\n"
+#~ "Format: %2\n"
+#~ "\n"
+#~ "Current old file: %3\n"
+#~ "Current new file: %4\n"
+#~ "\n"
+#~ "Number of hunks: %5\n"
+#~ "Number of differences: %6"
+#~ msgstr ""
+#~ "Statistika:\n"
+#~ "\n"
+#~ "Failu skaits: %1\n"
+#~ "Formāts: %2\n"
+#~ "\n"
+#~ "Aktīvais jaunais fails: %3\n"
+#~ "Aktīvais vecais fails: %4\n"
+#~ "\n"
+#~ "Gabalu skaits: %5\n"
+#~ "Atšķirību skaits: %6"
+
+#~ msgid "&File"
+#~ msgstr "&Fails"
+
+#~ msgid "&Difference"
+#~ msgstr "&Atšķirības"
+
+#~ msgid "&Settings"
+#~ msgstr "&Iestatījumi"
+
+#~ msgid "Preferences"
+#~ msgstr "Iestatījumi"
+
+#~ msgid "View"
+#~ msgstr "Skats"
+
+#~ msgid "View Settings"
+#~ msgstr "Skata iestatījumi"
+
+#~ msgid "Diff"
+#~ msgstr "Diff"
+
+#~ msgid "Diff Settings"
+#~ msgstr "Diff iestatījumi"
+
+#~ msgid "Run Diff In"
+#~ msgstr "Radbināt diff iekš"
+
+#~ msgid "Command Line"
+#~ msgstr "Komandrindas"
+
+#~ msgid "cd dir && diff -udHprNa -- source destination"
+#~ msgstr "cd dir && diff -udHprNa -- avots mērķis"
+
+#~ msgid "Options"
+#~ msgstr "Opcijas"
+
+#~ msgid "Look for smaller changes"
+#~ msgstr "Meklēt mazākas izmaiņas"
+
+#~ msgid "Optimize for large files"
+#~ msgstr "Optimizēt lieliem failiem"
+
+#~ msgid "Ignore changes in case"
+#~ msgstr "Ignorēt reģistra atšķirības"
+
+#~ msgid "Expand tabs to spaces"
+#~ msgstr "Pārveidot tabus par atstarpēm"
+
+#~ msgid "Ignore added or removed empty lines"
+#~ msgstr "Ignorēt pievienotas/izņemtas tukšas rindas"
+
+#~ msgid "Ignore changes in whitespace"
+#~ msgstr "Ignorēt atstarpju izmaiņas"
+
+#~ msgid "Show function names"
+#~ msgstr "Rādīt funkciju nosaulumus"
+
+#~ msgid "Compare folders recursively"
+#~ msgstr "Salīdzināt mapes rekursīvi"
+
+#~ msgid "Treat new files as empty"
+#~ msgstr "Uzskatīt jaunus failus par tukšiem"
+
+#~ msgid "Format"
+#~ msgstr "Formāts"
+
+#~ msgid "Side-by-side"
+#~ msgstr "Blakus"
+
+#~ msgid "Number of context lines:"
+#~ msgstr "Konteksta rindu skaits:"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Galvenā rīkjosla "
+
+#~ msgid "Files"
+#~ msgstr "Faili"
+
+#~ msgid "Here you can enter the files you want to compare."
+#~ msgstr "Šeit var ievadīt salīdzināmos failus."
+
+#~ msgid "Here you can change the options for comparing the files."
+#~ msgstr "Šeit var izmainīt failu salīdzināšanas režīmu."
+
+#~ msgid "Appearance"
+#~ msgstr "Izskats"
+
+#~ msgid "Here you can change the options for the view."
+#~ msgstr "Šeit var izmainīt skata režīmu."
+
+#~ msgid ""
+#~ "File used for excluding files cannot be found, please specify another "
+#~ "file."
+#~ msgstr ""
+#~ "Neizdevās atrast failu, ko izmantot failu izlaišanai, lūdzu norādie citu "
+#~ "failu."
+
+#~ msgid "Diff Program"
+#~ msgstr "Diff programma"
+
+#~ msgid ""
+#~ "You can select a different diff program here. On Solaris the standard "
+#~ "diff program does not support all the options that the GNU version does. "
+#~ "This way you can select that version."
+#~ msgstr ""
+#~ "Šeit jūs varat izvēlēties citu diff programmu. Solaris sistēmās standarta "
+#~ "diff programma neatbalsta visas GNU versijas iespējas. Šādā veidā jūs "
+#~ "varat izvēlēties citu versiju."
+
+#~ msgid ""
+#~ "Select the format of the output generated by diff. Unified is the one "
+#~ "that is used most frequently because it is very readable. The KDE "
+#~ "developers like this format the best so use it for sending patches."
+#~ msgstr ""
+#~ "Izvēlieties diff ģenerētā izvada formātu. Apvienotais ir visbiežāk "
+#~ "lietotais, jo tas ir viegli lasāms. KDE izstrādātājiem patiks, ja jūs "
+#~ "iesūtīsiet ielāpus šajā formātā."
+
+#~ msgid "Output Format"
+#~ msgstr "Izvada formāts"
+
+#~ msgid "Lines of Context"
+#~ msgstr "Konteksta rindas"
+
+#~ msgid ""
+#~ "The number of context lines is normally 2 or 3. This makes the diff "
+#~ "readable and applicable in most cases. More than 3 lines will only bloat "
+#~ "the diff unnecessarily."
+#~ msgstr ""
+#~ "Parasti tiek izmantotas 2 vai 3 konteksta rindas. Tas padara diff izvadu "
+#~ "lasāmu un gandrīz vienmēr pielietojamu. Vairāk par 3 rindām tikai padarīs "
+#~ "diff izvadu nevajadzīgi lielu."
+
+#~ msgid "General"
+#~ msgstr "Pamata"
+
+#~ msgid "&Treat new files as empty"
+#~ msgstr "&Uzskatīt jaunus failus par tukšiem"
+
+#~ msgid "This option corresponds to the -N diff option."
+#~ msgstr "Šis atbilst -N diff parametram."
+
+#~ msgid ""
+#~ "With this option enabled diff will treat a file that only exists in one "
+#~ "of the directories as empty in the other directory. This means that the "
+#~ "file is compared with an empty file and because of this will appear as "
+#~ "one big insertion or deletion."
+#~ msgstr ""
+#~ "Ar šo ieslēgtu diff failus kas pastās tikai vienā no mapēm, otrā uzskatīs "
+#~ "par tukšiem. Tas nozīmē ka fails tiks salīdzināts ar tukšu failu un "
+#~ "izskatīsies kā liels dzēsums vai ievietojums."
+
+#~ msgid "&Look for smaller changes"
+#~ msgstr "&Meklēt mazākas izmaiņas"
+
+#~ msgid "This corresponds to the -d diff option."
+#~ msgstr "Šis atbilst -d diff parametram."
+
+#~ msgid ""
+#~ "With this option enabled diff will try a little harder (at the cost of "
+#~ "more memory) to find fewer changes."
+#~ msgstr ""
+#~ "Ar šo ieslēgtu diff centīsies nedaudz labāk (tas prasīs vairāk atmiņas) "
+#~ "samazināt izmaiņu daudzumu."
+
+#~ msgid "O&ptimize for large files"
+#~ msgstr "O&ptimizēt lieliem failiem"
+
+#~ msgid "This corresponds to the -H diff option."
+#~ msgstr "Šis atbilst -H diff parametram."
+
+#~ msgid ""
+#~ "This option lets diff makes better diffs when using large files. The "
+#~ "definition of large is nowhere to be found though."
+#~ msgstr ""
+#~ "Šī iespēja liek diff veidot labākas atšķirības lielos failus. Diemžēl "
+#~ "lielu failu definīcija nekur nav atrodama."
+
+#~ msgid "&Ignore changes in case"
+#~ msgstr "&Ignorēt reģistra atšķirības"
+
+#~ msgid "This corresponds to the -i diff option."
+#~ msgstr "Šis atbilst -i diff parametram."
+
+#~ msgid ""
+#~ "With this option to ignore changes in case enabled, diff will not "
+#~ "indicate a difference when something in one file is changed into "
+#~ "SoMEthing in the other file."
+#~ msgstr ""
+#~ "Šī iespēja ignorēs lielo/mazo burtu atšķirības. Diff neparādīt izmaiņas "
+#~ "ja kautkas failā ir izmanīts uz KauTKas otrā failā."
+
+#~ msgid "Ignore regexp:"
+#~ msgstr "Ignorēt regexp:"
+
+#~ msgid "This option corresponds to the -I diff option."
+#~ msgstr "Šis atbilst -I diff parametram."
+
+#~ msgid ""
+#~ "When this checkbox is enabled, an option to diff is given that will make "
+#~ "diff ignore lines that match the regular expression."
+#~ msgstr ""
+#~ "Kad ieslēgts, diff tiek dots parametrs, kas tam liek ignorēt rindas, kas "
+#~ "atbilst regulārajai izteiksmei."
+
+#~ msgid ""
+#~ "Add the regular expression here that you want to use\n"
+#~ "to ignore lines that match it."
+#~ msgstr ""
+#~ "Šeit ievadiet regulāro izteiksmi, ko lietot,\n"
+#~ "lai atrastu ignorējamās rindas."
+
+#~ msgid "&Edit..."
+#~ msgstr "R&ediģēt..."
+
+#~ msgid ""
+#~ "Clicking this will open a regular expression dialog where\n"
+#~ "you can graphically create regular expressions."
+#~ msgstr ""
+#~ "Nospiežot šo tiks atvērts regulāru izteiksmu rediģēšanas logs,\n"
+#~ "kas ļaus grafiski izveidot regulāru izteiksmi."
+
+#~ msgid "Whitespace"
+#~ msgstr "Tukšumsimboli"
+
+#~ msgid "E&xpand tabs to spaces in output"
+#~ msgstr "&Pārveidot tabus par atstarpēm"
+
+#~ msgid "This option corresponds to the -t diff option."
+#~ msgstr "Šis atbilst -t diff parametram."
+
+#~ msgid ""
+#~ "This option does not always produce the right result. Due to this "
+#~ "expansion Kompare may have problems applying the change to the "
+#~ "destination file."
+#~ msgstr ""
+#~ "Šī iespēja ne vienmēr izdod korektu rezultātu. Tās rezultātā Kompare var "
+#~ "rasties grūtības izmaiņu pielietošanā mērķa failam."
+
+#~ msgid "I&gnore added or removed empty lines"
+#~ msgstr "&Ignorēt pievienotas/noņemtas tukšas rindas"
+
+#~ msgid "This option corresponds to the -B diff option."
+#~ msgstr "Šis atbilst -B diff parametram."
+
+#~ msgid ""
+#~ "This can be very useful in situations where code has been reorganized and "
+#~ "empty lines have been added or removed to improve legibility."
+#~ msgstr ""
+#~ "Šis var noderēt, ja koda bloki ir pārkārtoti un pievienotas vai izmestas "
+#~ "tukšas rindas."
+
+#~ msgid "Ig&nore changes in the amount of whitespace"
+#~ msgstr "Ig&norēt izmaiņas tukšumsimbolu daudzumā"
+
+#~ msgid "This option corresponds to the -b diff option."
+#~ msgstr "Šis atbilst -b diff parametram."
+
+#~ msgid ""
+#~ "If you are uninterested in differences arising due to, for example, "
+#~ "changes in indentation, then use this option."
+#~ msgstr ""
+#~ "Ja jums neinteresē izmaiņas, piemēram, atkāpēs, ieslēdziet šo iespēju."
+
+#~ msgid "Ign&ore all whitespace"
+#~ msgstr "Ign&orēt visus tukšumsimbolus"
+
+#~ msgid "This option corresponds to the -w diff option."
+#~ msgstr "Šis atbilst -w diff parametram."
+
+#~ msgid ""
+#~ "This is useful for seeing the significant changes without being "
+#~ "overwhelmed by all the white space changes."
+#~ msgstr ""
+#~ "Šis noder lai redzētu svarīgas izmaiņas, nerādot visas tukšumsimbolu "
+#~ "izmaiņas."
+
+#~ msgid "Igno&re changes due to tab expansion"
+#~ msgstr "Igno&rēt tabu/atstarpju atšķirības"
+
+#~ msgid "This option corresponds to the -E diff option."
+#~ msgstr "Šis atbilst -E diff parametram."
+
+#~ msgid ""
+#~ "If there is a change because tabs have been expanded into spaces in the "
+#~ "other file, then this option will make sure that these do not show up. "
+#~ "Kompare currently has some problems applying such changes so be careful "
+#~ "when you use this option."
+#~ msgstr ""
+#~ "Ja ir izmaiņas, kad tabulācijas ir pārvērstas par atstarpēm, šī iespēja "
+#~ "tās noslēps. Komare šobrīd gan ir grūtības pielietot šādas izmaiņas, "
+#~ "tāpēc esiet uzmanīgs ar šo."
+
+#~ msgid "File Pattern to Exclude"
+#~ msgstr "Izlaižamo failu paraugs"
+
+#~ msgid ""
+#~ "If this is checked you can enter a shell pattern in the text box on the "
+#~ "right or select entries from the list."
+#~ msgstr ""
+#~ "Ieslēdzot šo, jūs varat ievadīt čaulas paraugu teksta laukā, vai "
+#~ "izvēlēties no saraksta."
+
+#~ msgid ""
+#~ "Here you can enter or remove a shell pattern or select one or more "
+#~ "entries from the list."
+#~ msgstr ""
+#~ "Šeit var ievadīt vai noņemt čaulas paraugu, vai izvēlēties vienu vai "
+#~ "vairākus failus no saraksta."
+
+#~ msgid "File with Filenames to Exclude"
+#~ msgstr "Izlaišamo failu nosaukumi"
+
+#, fuzzy
+#~| msgid ""
+#~| "If this is checked you can enter a filename in the combo box on the "
+#~| "right."
+#~ msgid "If this is checked you can enter a filename in the combo box below."
+#~ msgstr "Ieslēdzot šo, rāmītī pa labi var ievadīt faila nosaukumu."
+
+#~ msgid ""
+#~ "Here you can enter the URL of a file with shell patterns to ignore during "
+#~ "the comparison of the folders."
+#~ msgstr ""
+#~ "Šeit jūs varat ievadīt izlaišamā faila URL, kas var saturēt čaulas "
+#~ "paraugus. Tas tiks izmantots, salīdzinot mapju saturu."
+
+#~ msgid ""
+#~ "Any file you select in the dialog that pops up when you click it will be "
+#~ "put in the dialog to the left of this button."
+#~ msgstr ""
+#~ "Katrs, šo pogu nospiežot izlecošajā dialogā izvēlētais, fails tiks "
+#~ "pievienots sarakstam pa kreisi no pogas."
+
+#~ msgid "Exclude"
+#~ msgstr "Izslēgt"
+
+#~ msgid "Encoding"
+#~ msgstr "Kodējums"
+
+#~ msgid "Colors"
+#~ msgstr "Krāsas"
+
+#~ msgid "Removed color:"
+#~ msgstr "Noņemta krāsa:"
+
+#~ msgid "Changed color:"
+#~ msgstr "Izmainīta krāsa:"
+
+#~ msgid "Added color:"
+#~ msgstr "Pievienota krāsa:"
+
+#~ msgid "Applied color:"
+#~ msgstr "Pielietota krāsa:"
+
+#~ msgid "Mouse Wheel"
+#~ msgstr "Peles ritenis"
+
+#~ msgid "Number of lines:"
+#~ msgstr "Rindu skaits:"
+
+#~ msgid "Tabs to Spaces"
+#~ msgstr "Tabus uz atstarpēm"
+
+#~ msgid "Number of spaces to convert a tab character to:"
+#~ msgstr "Atstarpju skaits, ko ievietot taba vietā:"
+
+#~ msgid "Text Font"
+#~ msgstr "Teksta fonts"
+
+#~ msgid "Font:"
+#~ msgstr "Fonts:"
+
+#~ msgid "Size:"
+#~ msgstr "Izmērs:"
+
+#~ msgid "Fonts"
+#~ msgstr "Fonti"
+
+#~ msgid ""
+#~ "A program to view the differences between files and optionally generate a "
+#~ "diff"
+#~ msgstr ""
+#~ "Programma failu atšķirību apskatīšanai, kas spēj arī ģenerēt diff failus"
+
+#~ msgid "Kompare"
+#~ msgstr "Kompare"
+
+#, fuzzy
+#~| msgid ""
+#~| "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~| "2004-2005 Jeff Snyder, (c) 2007-2008 Kevin Kofler"
+#~ msgid ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2012 Kevin Kofler"
+#~ msgstr ""
+#~ "(c) 2001-2004 John Firebaugh, (c) 2001-2005,2009 Otto Bruggeman, (c) "
+#~ "2004-2005 Jeff Snyder, (c) 2007-2008 Kevin Kofler"
+
+#~ msgid "Jeff Snyder"
+#~ msgstr "Jeff Snyder"
+
+#~ msgid "Developer"
+#~ msgstr "Izstrādātājs"
+
+#~ msgid "Maintainer"
+#~ msgstr "Uzturētājs"
+
+#~ msgid "Chris Luetchford"
+#~ msgstr "Chris Luetchford"
+
+#~ msgid "Kompare icon artist"
+#~ msgstr "Kompare ikonu mākslinieks"
+
+#~ msgid "Malte Starostik"
+#~ msgstr "Malte Starostik"
+
+#~ msgid "A lot of good advice"
+#~ msgstr "Daudz labu padomu"
+
+#~ msgid "Bernd Gehrmann"
+#~ msgstr "Bernd Gehrmann"
+
+#~ msgid "Cervisia diff viewer"
+#~ msgstr "Cervisia diff skatītājs"
+
+#~ msgid "This will compare URL1 with URL2"
+#~ msgstr "Šis salīdzinās URL1 ar URL2"
+
+#~ msgid ""
+#~ "This will open URL1 and expect it to be diff output. URL1 can also be a "
+#~ "'-' and then it will read from standard input. Can be used for instance "
+#~ "for cvs diff | kompare -o -. Kompare will do a check to see if it can "
+#~ "find the original file(s) and then blend the original file(s) into the "
+#~ "diffoutput and show that in the viewer. -n disables the check."
+#~ msgstr ""
+#~ "Šis atvērs URL1 un uztvers to kā diff izvadu. URL1 var būt arī '-', tad "
+#~ "tiks lasīts no standarta ievada. To var izmantot, piemēram šādi: cvs diff "
+#~ "| kompare -o -. Kompare mēģinās atrast orģinālos failus un parādīs "
+#~ "skatītājā izmaiņas, pielietotas uz tiem. -n atslēdz šo pārbaudi."
+
+#~ msgid ""
+#~ "This will blend URL2 into URL1, URL2 is expected to be diff output and "
+#~ "URL1 the file or folder that the diffoutput needs to be blended into. "
+#~ msgstr ""
+#~ "Šis pielietos URL2 uz URL1, URL2 tiks uztverts kā diff izvads un URL1 kā "
+#~ "fails vai mape, kam diff izvads pielietojams. "
+
+#~ msgid ""
+#~ "Disables the check for automatically finding the original file(s) when "
+#~ "using '-' as URL with the -o option."
+#~ msgstr ""
+#~ "Atslēdz automātisku orģinālo failu meklēšanu, kad par URL tiek izmantots "
+#~ "'-', ar opciju -o."
+
+#~ msgid ""
+#~ "Use this to specify the encoding when calling it from the command line. "
+#~ "It will default to the local encoding if not specified."
+#~ msgstr ""
+#~ "Lietojiet šo, lai norādītu kodējumu, darbinot no komandrindas. Ja nav "
+#~ "norādīts, tiks lietots lokālais kodēmums."
+
+#~ msgid "Compare these files or folder"
+#~ msgstr "Salīdzināt šos failus vai mapes"
+
+#~ msgid "Could not find our KompareViewPart."
+#~ msgstr "Neizdevās atrast KompareViewPart."
+
+#~ msgid "Could not find our KompareNavigationPart."
+#~ msgstr "Neizdevas atrast KompareNavigationPart."
+
+#, fuzzy
+#~| msgid "Appearance"
+#~ msgid "A&ppearance"
+#~ msgstr "Izskats"
+
+#, fuzzy
+#~| msgid "Diff"
+#~ msgid "&Diff"
+#~ msgstr "Diff"
+
+#, fuzzy
+#~| msgid "Format"
+#~ msgid "&Format"
+#~ msgstr "Formāts"
+
+#, fuzzy
+#~| msgid "Options"
+#~ msgid "O&ptions"
+#~ msgstr "Opcijas"

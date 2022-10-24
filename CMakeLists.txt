@@ -29,7 +29,7 @@ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED
         ${ADDITIONAL_REQUIRED_QT_COMPONENTS}
 )
 
-find_package(KF5 ${KF_MIN_VERSION} REQUIRED
+find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED
     COMPONENTS
         CoreAddons
         Codecs
@@ -38,6 +38,10 @@ find_package(KF5 ${KF_MIN_VERSION} REQUIRED
         I18n
         KIO
 )
+
+if (QT_MAJOR_VERSION STREQUAL "6")
+    find_package(Qt6Core5Compat)
+endif()
 
 add_definitions(
     -DQT_DISABLE_DEPRECATED_BEFORE=0x050F00

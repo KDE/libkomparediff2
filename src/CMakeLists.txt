@@ -45,8 +45,8 @@ target_link_libraries(komparediff2
         KF5::CoreAddons
 )
 
-if (target Qt6::Core5Compat)
-    target_link_libraries(kcomparediff2 Qt6::Core5Compat)
+if (TARGET Qt6::Core5Compat)
+    target_link_libraries(komparediff2 PRIVATE Qt6::Core5Compat)
 endif()
 
 target_include_directories(komparediff2 INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}>")

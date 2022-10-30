@@ -82,9 +82,9 @@ ParserBase::ParserBase(const KompareModelList* list, const QStringList& diff) :
     // This regexp sucks... i'll see what happens
     m_normalDiffHeader.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("diff (?:(?:-|--)[a-zA-Z0-9=\\\"]+ )*(?:|-- +)(.*) +(.*)\\n")));
 
-    m_normalHunkHeaderAdded.setPattern(QStringLiteral("([0-9]+)a([0-9]+)(|,[0-9]+)(.*)\\n"));
-    m_normalHunkHeaderRemoved.setPattern(QStringLiteral("([0-9]+)(|,[0-9]+)d([0-9]+)(.*)\\n"));
-    m_normalHunkHeaderChanged.setPattern(QStringLiteral("([0-9]+)(|,[0-9]+)c([0-9]+)(|,[0-9]+)(.*)\\n"));
+    m_normalHunkHeaderAdded.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("([0-9]+)a([0-9]+)(|,[0-9]+)(.*)\\n")));
+    m_normalHunkHeaderRemoved.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("([0-9]+)(|,[0-9]+)d([0-9]+)(.*)\\n")));
+    m_normalHunkHeaderChanged.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("([0-9]+)(|,[0-9]+)c([0-9]+)(|,[0-9]+)(.*)\\n")));
 
     m_normalHunkBodyRemoved.setPattern(QStringLiteral("< (.*)"));
     m_normalHunkBodyAdded.setPattern(QStringLiteral("> (.*)"));
@@ -314,15 +314,15 @@ bool ParserBase::parseNormalHunkHeader()
     if (m_diffIterator != m_diffLines.end())
     {
 //         qCDebug(LIBKOMPAREDIFF2) << "Header = " << *m_diffIterator;
-        if (m_normalHunkHeaderAdded.exactMatch(*m_diffIterator))
+        if (m_normalHunkHeaderAddedMatch = m_normalHunkHeaderAdded.match(*m_diffIterator); m_normalHunkHeaderAddedMatch.hasMatch())
         {
             m_normalDiffType = Difference::Insert;
         }
-        else if (m_normalHunkHeaderRemoved.exactMatch(*m_diffIterator))
+        else if (m_normalHunkHeaderRemovedMatch = m_normalHunkHeaderRemoved.match(*m_diffIterator); m_normalHunkHeaderRemovedMatch.hasMatch())
         {
             m_normalDiffType = Difference::Delete;
         }
-        else if (m_normalHunkHeaderChanged.exactMatch(*m_diffIterator))
+        else if (m_normalHunkHeaderChangedMatch = m_normalHunkHeaderChanged.match(*m_diffIterator); m_normalHunkHeaderChangedMatch.hasMatch())
         {
             m_normalDiffType = Difference::Change;
         }
@@ -523,18 +523,18 @@ bool ParserBase::parseNormalHunkBody()
 
     if (m_normalDiffType == Difference::Insert)
     {
-        linenoA = m_normalHunkHeaderAdded.cap(1).toInt();
-        linenoB = m_normalHunkHeaderAdded.cap(2).toInt();
+        linenoA = m_normalHunkHeaderAddedMatch.captured(1).toInt();
+        linenoB = m_normalHunkHeaderAddedMatch.captured(2).toInt();
     }
     else if (m_normalDiffType == Difference::Delete)
     {
-        linenoA = m_normalHunkHeaderRemoved.cap(1).toInt();
-        linenoB = m_normalHunkHeaderRemoved.cap(3).toInt();
+        linenoA = m_normalHunkHeaderRemovedMatch.captured(1).toInt();
+        linenoB = m_normalHunkHeaderRemovedMatch.captured(3).toInt();
     }
     else if (m_normalDiffType == Difference::Change)
     {
-        linenoA = m_normalHunkHeaderChanged.cap(1).toInt();
-        linenoB = m_normalHunkHeaderChanged.cap(3).toInt();
+        linenoA = m_normalHunkHeaderChangedMatch.captured(1).toInt();
+        linenoB = m_normalHunkHeaderChangedMatch.captured(3).toInt();
     }
 
     DiffHunk* hunk = new DiffHunk(linenoA, linenoB);

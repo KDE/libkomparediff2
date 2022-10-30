@@ -90,9 +90,12 @@ protected:
     // Regexps for normal parsing
     QRegularExpression m_normalDiffHeader;
 
-    QRegExp m_normalHunkHeaderAdded;
-    QRegExp m_normalHunkHeaderRemoved;
-    QRegExp m_normalHunkHeaderChanged;
+    QRegularExpression m_normalHunkHeaderAdded;
+    QRegularExpression m_normalHunkHeaderRemoved;
+    QRegularExpression m_normalHunkHeaderChanged;
+    QRegularExpressionMatch m_normalHunkHeaderAddedMatch;
+    QRegularExpressionMatch m_normalHunkHeaderRemovedMatch;
+    QRegularExpressionMatch m_normalHunkHeaderChangedMatch;
 
     QRegExp m_normalHunkBodyRemoved;
     QRegExp m_normalHunkBodyAdded;

@@ -12,7 +12,6 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <QAction>
 #include <QFile>
 #include <QDir>
-#include <QRegExp>
 #include <QTextCodec>
 #include <QTextStream>
 #include <QList>

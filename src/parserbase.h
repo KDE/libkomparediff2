@@ -75,9 +75,11 @@ protected:
     QRegularExpression m_contextDiffHeader1;
     QRegularExpression m_contextDiffHeader2;
 
-    QRegExp m_contextHunkHeader1;
-    QRegExp m_contextHunkHeader2;
-    QRegExp m_contextHunkHeader3;
+    QRegularExpression m_contextHunkHeader1;
+    QRegularExpression m_contextHunkHeader2;
+    QRegularExpression m_contextHunkHeader3;
+    QRegularExpressionMatch m_contextHunkHeader1Match;
+    QRegularExpressionMatch m_contextHunkHeader2Match;
 
     QRegExp m_contextHunkBodyRemoved;
     QRegExp m_contextHunkBodyAdded;

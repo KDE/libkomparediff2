@@ -68,10 +68,10 @@ ParserBase::ParserBase(const KompareModelList* list, const QStringList& diff) :
     m_models = new DiffModelList();
 
     // used in contexthunkheader
-    m_contextHunkHeader1.setPattern(QStringLiteral("\\*{15} ?(.*)\\n"));  // capture is for function name
-    m_contextHunkHeader2.setPattern(QStringLiteral("\\*\\*\\* ([0-9]+),([0-9]+) \\*\\*\\*\\*.*\\n"));
+    m_contextHunkHeader1.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("\\*{15} ?(.*)\\n")));  // capture is for function name
+    m_contextHunkHeader2.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("\\*\\*\\* ([0-9]+),([0-9]+) \\*\\*\\*\\*.*\\n")));
     // used in contexthunkbody
-    m_contextHunkHeader3.setPattern(QStringLiteral("--- ([0-9]+),([0-9]+) ----\\n"));
+    m_contextHunkHeader3.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("--- ([0-9]+),([0-9]+) ----\\n")));
 
     m_contextHunkBodyRemoved.setPattern(QStringLiteral("- (.*)"));
     m_contextHunkBodyAdded.setPattern(QStringLiteral("\\+ (.*)"));
@@ -285,7 +285,8 @@ bool ParserBase::parseContextHunkHeader()
     if (m_diffIterator == m_diffLines.end())
         return false;
 
-    if (!m_contextHunkHeader1.exactMatch(*(m_diffIterator)))
+    m_contextHunkHeader1Match = m_contextHunkHeader1.match(*(m_diffIterator));
+    if (!m_contextHunkHeader1Match.hasMatch())
         return false; // big fat trouble, aborting...
 
     ++m_diffIterator;
@@ -293,7 +294,8 @@ bool ParserBase::parseContextHunkHeader()
     if (m_diffIterator == m_diffLines.end())
         return false;
 
-    if (!m_contextHunkHeader2.exactMatch(*(m_diffIterator)))
+    m_contextHunkHeader2Match = m_contextHunkHeader2.match(*(m_diffIterator));
+    if (!m_contextHunkHeader2Match.hasMatch())
         return false; // big fat trouble, aborting...
 
     ++m_diffIterator;
@@ -367,7 +369,8 @@ bool ParserBase::parseContextHunkBody()
         oldLines.append(*m_diffIterator);
     }
 
-    if (!m_contextHunkHeader3.exactMatch(*m_diffIterator))
+    const auto contextHunkHeader3Match = m_contextHunkHeader3.match(*m_diffIterator);
+    if (!contextHunkHeader3Match.hasMatch())
         return false;
 
     ++m_diffIterator;
@@ -379,11 +382,11 @@ bool ParserBase::parseContextHunkBody()
         newLines.append(*m_diffIterator);
     }
 
-    QString function = m_contextHunkHeader1.cap(1);
+    QString function = m_contextHunkHeader1Match.captured(1);
 //     qCDebug(LIBKOMPAREDIFF2) << "Captured function: " << function;
-    int linenoA      = m_contextHunkHeader2.cap(1).toInt();
+    int linenoA      = m_contextHunkHeader2Match.captured(1).toInt();
 //     qCDebug(LIBKOMPAREDIFF2) << "Source line number: " << linenoA;
-    int linenoB      = m_contextHunkHeader3.cap(1).toInt();
+    int linenoB      = contextHunkHeader3Match.captured(1).toInt();
 //     qCDebug(LIBKOMPAREDIFF2) << "Dest   line number: " << linenoB;
 
     DiffHunk* hunk = new DiffHunk(linenoA, linenoB, function);

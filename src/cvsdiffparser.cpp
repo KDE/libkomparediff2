@@ -17,10 +17,10 @@ CVSDiffParser::CVSDiffParser(const KompareModelList* list, const QStringList& di
 {
     // The regexps needed for context cvs diff parsing, the rest is the same as in parserbase.cpp
     // third capture in header1 is non optional for cvs diff, it is the revision
-    m_contextDiffHeader1.setPattern(QStringLiteral("\\*\\*\\* ([^\\t]+)\\t([^\\t]+)\\t(.*)\\n"));
-    m_contextDiffHeader2.setPattern(QStringLiteral("--- ([^\\t]+)\\t([^\\t]+)(|\\t(.*))\\n"));
+    m_contextDiffHeader1.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("\\*\\*\\* ([^\\t]+)\\t([^\\t]+)\\t(.*)\\n")));
+    m_contextDiffHeader2.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("--- ([^\\t]+)\\t([^\\t]+)(|\\t(.*))\\n")));
 
-    m_normalDiffHeader.setPattern(QStringLiteral("Index: (.*)\\n"));
+    m_normalDiffHeader.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("Index: (.*)\\n")));
 }
 
 CVSDiffParser::~CVSDiffParser()
@@ -81,14 +81,15 @@ bool CVSDiffParser::parseNormalDiffHeader()
 
     while (m_diffIterator != diffEnd)
     {
-        if (m_normalDiffHeader.exactMatch(*m_diffIterator))
+        const auto normalDiffHeaderMatch = m_normalDiffHeader.match(*m_diffIterator);
+        if (normalDiffHeaderMatch.hasMatch())
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Matched length Header = " << m_normalDiffHeader.matchedLength();
-            qCDebug(LIBKOMPAREDIFF2) << "Matched string Header = " << m_normalDiffHeader.cap(0);
+            qCDebug(LIBKOMPAREDIFF2) << "Matched length Header = " << normalDiffHeaderMatch.capturedLength();
+            qCDebug(LIBKOMPAREDIFF2) << "Matched string Header = " << normalDiffHeaderMatch.captured(0);
 
             m_currentModel = new DiffModel();
-            m_currentModel->setSourceFile(m_normalDiffHeader.cap(1));
-            m_currentModel->setDestinationFile(m_normalDiffHeader.cap(1));
+            m_currentModel->setSourceFile(normalDiffHeaderMatch.captured(1));
+            m_currentModel->setDestinationFile(normalDiffHeaderMatch.captured(1));
 
             result = true;
 

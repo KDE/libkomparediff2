@@ -8,6 +8,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef DIFF2_PARSERBASE_H
 #define DIFF2_PARSERBASE_H
 
+#include <QRegularExpression>
 #include <QRegExp>
 #include <QStringList>
 
@@ -63,7 +64,7 @@ protected:
 
 protected: // Helper methods to speed things up
     bool matchesUnifiedHunkLine(const QString& line) const;
-    void checkHeader(const QRegExp& header);
+    void checkHeader(const QRegularExpression& header);
 
 protected:
     /** What is format of the diff */
@@ -71,8 +72,8 @@ protected:
 
 protected:
     // Regexps for context parsing
-    QRegExp m_contextDiffHeader1;
-    QRegExp m_contextDiffHeader2;
+    QRegularExpression m_contextDiffHeader1;
+    QRegularExpression m_contextDiffHeader2;
 
     QRegExp m_contextHunkHeader1;
     QRegExp m_contextHunkHeader2;
@@ -85,7 +86,7 @@ protected:
     QRegExp m_contextHunkBodyLine; // Added for convenience
 
     // Regexps for normal parsing
-    QRegExp m_normalDiffHeader;
+    QRegularExpression m_normalDiffHeader;
 
     QRegExp m_normalHunkHeaderAdded;
     QRegExp m_normalHunkHeaderRemoved;
@@ -98,11 +99,11 @@ protected:
     enum Difference::Type m_normalDiffType;
 
     // RegExps for rcs parsing
-    QRegExp m_rcsDiffHeader;
+    QRegularExpression m_rcsDiffHeader;
 
     // Regexps for unified parsing
-    QRegExp m_unifiedDiffHeader1;
-    QRegExp m_unifiedDiffHeader2;
+    QRegularExpression m_unifiedDiffHeader1;
+    QRegularExpression m_unifiedDiffHeader2;
 
     QRegExp m_unifiedHunkHeader;
 

@@ -80,7 +80,7 @@ ParserBase::ParserBase(const KompareModelList* list, const QStringList& diff) :
     m_contextHunkBodyLine.setPattern(QStringLiteral("[-\\+! ] (.*)"));
 
     // This regexp sucks... i'll see what happens
-    m_normalDiffHeader.setPattern(QStringLiteral("diff (?:(?:-|--)[a-zA-Z0-9=\\\"]+ )*(?:|-- +)(.*) +(.*)\\n"));
+    m_normalDiffHeader.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("diff (?:(?:-|--)[a-zA-Z0-9=\\\"]+ )*(?:|-- +)(.*) +(.*)\\n")));
 
     m_normalHunkHeaderAdded.setPattern(QStringLiteral("([0-9]+)a([0-9]+)(|,[0-9]+)(.*)\\n"));
     m_normalHunkHeaderRemoved.setPattern(QStringLiteral("([0-9]+)(|,[0-9]+)d([0-9]+)(.*)\\n"));
@@ -90,8 +90,8 @@ ParserBase::ParserBase(const KompareModelList* list, const QStringList& diff) :
     m_normalHunkBodyAdded.setPattern(QStringLiteral("> (.*)"));
     m_normalHunkBodyDivider.setPattern(QStringLiteral("---\\n"));
 
-    m_unifiedDiffHeader1.setPattern(QStringLiteral("--- ([^\\t]+)(?:\\t([^\\t]+)(?:\\t?)(.*))?\\n"));
-    m_unifiedDiffHeader2.setPattern(QStringLiteral("\\+\\+\\+ ([^\\t]+)(?:\\t([^\\t]+)(?:\\t?)(.*))?\\n"));
+    m_unifiedDiffHeader1.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("--- ([^\\t]+)(?:\\t([^\\t]+)(?:\\t?)(.*))?\\n")));
+    m_unifiedDiffHeader2.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("\\+\\+\\+ ([^\\t]+)(?:\\t([^\\t]+)(?:\\t?)(.*))?\\n")));
     m_unifiedHunkHeader.setPattern(QStringLiteral("@@ -([0-9]+)(|,([0-9]+)) \\+([0-9]+)(|,([0-9]+)) @@(?: ?)(.*)\\n"));
     m_unifiedHunkBodyAdded.setPattern(QStringLiteral("\\+(.*)"));
     m_unifiedHunkBodyRemoved.setPattern(QStringLiteral("-(.*)"));
@@ -151,22 +151,24 @@ bool ParserBase::parseContextDiffHeader()
 
     while (m_diffIterator != m_diffLines.end())
     {
-        if (!m_contextDiffHeader1.exactMatch(*(m_diffIterator)++))
+        const auto contextDiffHeader1Match = m_contextDiffHeader1.match(*(m_diffIterator)++);
+        if (!contextDiffHeader1Match.hasMatch())
         {
             continue;
         }
-//         qCDebug(LIBKOMPAREDIFF2) << "Matched length Header1 = " << m_contextDiffHeader1.matchedLength();
-//         qCDebug(LIBKOMPAREDIFF2) << "Matched string Header1 = " << m_contextDiffHeader1.cap( 0 );
-        if (m_diffIterator != m_diffLines.end() && m_contextDiffHeader2.exactMatch(*m_diffIterator))
+//         qCDebug(LIBKOMPAREDIFF2) << "Matched length Header1 = " << contextDiffHeader1Match.capturedLength();
+//         qCDebug(LIBKOMPAREDIFF2) << "Matched string Header1 = " << contextDiffHeader1Match.captured( 0 );
+        const auto contextDiffHeader2Match = m_contextDiffHeader2.match(*m_diffIterator);
+        if (m_diffIterator != m_diffLines.end() && contextDiffHeader2Match.hasMatch())
         {
-//             qCDebug(LIBKOMPAREDIFF2) << "Matched length Header2 = " << m_contextDiffHeader2.matchedLength();
-//             qCDebug(LIBKOMPAREDIFF2) << "Matched string Header2 = " << m_contextDiffHeader2.cap( 0 );
+//             qCDebug(LIBKOMPAREDIFF2) << "Matched length Header2 = " << contextDiffHeader2Match.capturedLength();
+//             qCDebug(LIBKOMPAREDIFF2) << "Matched string Header2 = " << contextDiffHeader2Match.captured( 0 );
 
-            m_currentModel = new DiffModel(unescapePath(m_contextDiffHeader1.cap(1)), unescapePath(m_contextDiffHeader2.cap(1)));
-            m_currentModel->setSourceTimestamp(m_contextDiffHeader1.cap(3));
-            m_currentModel->setSourceRevision(m_contextDiffHeader1.cap(5));
-            m_currentModel->setDestinationTimestamp(m_contextDiffHeader2.cap(3));
-            m_currentModel->setDestinationRevision(m_contextDiffHeader2.cap(5));
+            m_currentModel = new DiffModel(unescapePath(contextDiffHeader1Match.captured(1)), unescapePath(contextDiffHeader2Match.captured(1)));
+            m_currentModel->setSourceTimestamp(contextDiffHeader1Match.captured(3));
+            m_currentModel->setSourceRevision(contextDiffHeader1Match.captured(5));
+            m_currentModel->setDestinationTimestamp(contextDiffHeader2Match.captured(3));
+            m_currentModel->setDestinationRevision(contextDiffHeader2Match.captured(5));
 
             ++m_diffIterator;
             result = true;
@@ -198,14 +200,15 @@ bool ParserBase::parseNormalDiffHeader()
 
     while (m_diffIterator != m_diffLines.end())
     {
-        if (m_normalDiffHeader.exactMatch(*m_diffIterator))
+        const auto normalDiffHeaderMatch = m_normalDiffHeader.match(*m_diffIterator);
+        if (normalDiffHeaderMatch.hasMatch())
         {
-//             qCDebug(LIBKOMPAREDIFF2) << "Matched length Header = " << m_normalDiffHeader.matchedLength();
-//             qCDebug(LIBKOMPAREDIFF2) << "Matched string Header = " << m_normalDiffHeader.cap( 0 );
+//             qCDebug(LIBKOMPAREDIFF2) << "Matched length Header = " << normalDiffHeaderMatch.capturedLength();
+//             qCDebug(LIBKOMPAREDIFF2) << "Matched string Header = " << normalDiffHeaderMatch.captured( 0 );
 
             m_currentModel = new DiffModel();
-            m_currentModel->setSourceFile(unescapePath(m_normalDiffHeader.cap(1)));
-            m_currentModel->setDestinationFile(unescapePath(m_normalDiffHeader.cap(2)));
+            m_currentModel->setSourceFile(unescapePath(normalDiffHeaderMatch.captured(1)));
+            m_currentModel->setDestinationFile(unescapePath(normalDiffHeaderMatch.captured(2)));
 
             result = true;
 
@@ -242,21 +245,23 @@ bool ParserBase::parseUnifiedDiffHeader()
 
     while (m_diffIterator != m_diffLines.end())   // do not assume we start with the diffheader1 line
     {
-        if (!m_unifiedDiffHeader1.exactMatch(*m_diffIterator))
+        const auto unifiedDiffHeader1Match = m_unifiedDiffHeader1.match(*m_diffIterator);
+        if (!unifiedDiffHeader1Match.hasMatch())
         {
             ++m_diffIterator;
             continue;
         }
-//         qCDebug(LIBKOMPAREDIFF2) << "Matched length Header1 = " << m_unifiedDiffHeader1.matchedLength();
-//         qCDebug(LIBKOMPAREDIFF2) << "Matched string Header1 = " << m_unifiedDiffHeader1.cap( 0 );
+//         qCDebug(LIBKOMPAREDIFF2) << "Matched length Header1 = " << unifiedDiffHeader1Match.capturedLength();
+//         qCDebug(LIBKOMPAREDIFF2) << "Matched string Header1 = " << unifiedDiffHeader1Match.captured( 0 );
         ++m_diffIterator;
-        if (m_diffIterator != m_diffLines.end() && m_unifiedDiffHeader2.exactMatch(*m_diffIterator))
+        const auto unifiedDiffHeader2Match = m_unifiedDiffHeader2.match(*m_diffIterator);
+        if (m_diffIterator != m_diffLines.end() && unifiedDiffHeader2Match.hasMatch())
         {
-            m_currentModel = new DiffModel(unescapePath(m_unifiedDiffHeader1.cap(1)), unescapePath(m_unifiedDiffHeader2.cap(1)));
-            m_currentModel->setSourceTimestamp(m_unifiedDiffHeader1.cap(2));
-            m_currentModel->setSourceRevision(m_unifiedDiffHeader1.cap(4));
-            m_currentModel->setDestinationTimestamp(m_unifiedDiffHeader2.cap(2));
-            m_currentModel->setDestinationRevision(m_unifiedDiffHeader2.cap(4));
+            m_currentModel = new DiffModel(unescapePath(unifiedDiffHeader1Match.captured(1)), unescapePath(unifiedDiffHeader2Match.captured(1)));
+            m_currentModel->setSourceTimestamp(unifiedDiffHeader1Match.captured(2));
+            m_currentModel->setSourceRevision(unifiedDiffHeader1Match.captured(4));
+            m_currentModel->setDestinationTimestamp(unifiedDiffHeader2Match.captured(2));
+            m_currentModel->setDestinationRevision(unifiedDiffHeader2Match.captured(4));
 
             ++m_diffIterator;
             result = true;
@@ -660,10 +665,10 @@ bool ParserBase::parseUnifiedHunkBody()
     return true;
 }
 
-void ParserBase::checkHeader(const QRegExp& header)
+void ParserBase::checkHeader(const QRegularExpression& header)
 {
     if (m_diffIterator != m_diffLines.end()
-            && !header.exactMatch(*m_diffIterator)
+            && !header.match(*m_diffIterator).hasMatch()
             && !m_diffIterator->startsWith(QLatin1String("Index: ")) /* SVN diff */
             && !m_diffIterator->startsWith(QLatin1String("diff ")) /* concatenated diff */
             && !m_diffIterator->startsWith(QLatin1String("-- ")) /* git format-patch */)

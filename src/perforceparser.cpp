@@ -76,8 +76,8 @@ bool PerforceParser::parseContextDiffHeader()
 
     QStringList::ConstIterator itEnd = m_diffLines.end();
 
-    QRegExp sourceFileRE(QStringLiteral("([^\\#]+)#(\\d+)"));
-    QRegExp destinationFileRE(QStringLiteral("([^\\#]+)#(|\\d+)"));
+    const QRegularExpression sourceFileRE(QRegularExpression::anchoredPattern(QStringLiteral("([^\\#]+)#(\\d+)")));
+    const QRegularExpression destinationFileRE(QRegularExpression::anchoredPattern(QStringLiteral("([^\\#]+)#(|\\d+)")));
 
     while (m_diffIterator != itEnd)
     {
@@ -89,16 +89,16 @@ bool PerforceParser::parseContextDiffHeader()
 //             qCDebug(LIBKOMPAREDIFF2) << "Second capture Header1 = " << m_contextDiffHeader1.cap( 2 );
 
             m_currentModel = new DiffModel();
-            sourceFileRE.exactMatch(m_contextDiffHeader1.cap(1));
-            destinationFileRE.exactMatch(m_contextDiffHeader1.cap(2));
-            qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << sourceFileRE.matchedLength();
-            qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << destinationFileRE.matchedLength();
-            qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << sourceFileRE.capturedTexts();
-            qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << destinationFileRE.capturedTexts();
-            qCDebug(LIBKOMPAREDIFF2) << "Source File      : " << sourceFileRE.cap(1);
-            qCDebug(LIBKOMPAREDIFF2) << "Destination File : " << destinationFileRE.cap(1);
-            m_currentModel->setSourceFile(sourceFileRE.cap(1));
-            m_currentModel->setDestinationFile(destinationFileRE.cap(1));
+            const auto sourceFileREMatch = sourceFileRE.match(m_contextDiffHeader1.cap(1));
+            const auto destinationFileREMatch = destinationFileRE.match(m_contextDiffHeader1.cap(2));
+            qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << sourceFileREMatch.capturedLength();
+            qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << destinationFileREMatch.capturedLength();
+            qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << sourceFileREMatch.capturedTexts();
+            qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << destinationFileREMatch.capturedTexts();
+            qCDebug(LIBKOMPAREDIFF2) << "Source File      : " << sourceFileREMatch.captured(1);
+            qCDebug(LIBKOMPAREDIFF2) << "Destination File : " << destinationFileREMatch.captured(1);
+            m_currentModel->setSourceFile(sourceFileREMatch.captured(1));
+            m_currentModel->setDestinationFile(destinationFileREMatch.captured(1));
 
             result = true;
 
@@ -120,8 +120,8 @@ bool PerforceParser::parseNormalDiffHeader()
 
     QStringList::ConstIterator itEnd = m_diffLines.end();
 
-    QRegExp sourceFileRE(QStringLiteral("([^\\#]+)#(\\d+)"));
-    QRegExp destinationFileRE(QStringLiteral("([^\\#]+)#(|\\d+)"));
+    QRegularExpression sourceFileRE(QRegularExpression::anchoredPattern(QStringLiteral("([^\\#]+)#(\\d+)")));
+    QRegularExpression destinationFileRE(QRegularExpression::anchoredPattern(QStringLiteral("([^\\#]+)#(|\\d+)")));
 
     while (m_diffIterator != itEnd)
     {
@@ -135,16 +135,16 @@ bool PerforceParser::parseNormalDiffHeader()
             qCDebug(LIBKOMPAREDIFF2) << "Second capture Header1 = \"" << m_normalDiffHeader.cap(2) << "\"";
 
             m_currentModel = new DiffModel();
-            sourceFileRE.exactMatch(m_normalDiffHeader.cap(1));
-            destinationFileRE.exactMatch(m_normalDiffHeader.cap(2));
-            qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << sourceFileRE.matchedLength();
-            qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << destinationFileRE.matchedLength();
-            qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << sourceFileRE.capturedTexts();
-            qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << destinationFileRE.capturedTexts();
-            qCDebug(LIBKOMPAREDIFF2) << "Source File      : " << sourceFileRE.cap(1);
-            qCDebug(LIBKOMPAREDIFF2) << "Destination File : " << destinationFileRE.cap(1);
-            m_currentModel->setSourceFile(sourceFileRE.cap(1));
-            m_currentModel->setDestinationFile(destinationFileRE.cap(1));
+            const auto sourceFileREMatch = sourceFileRE.match(m_normalDiffHeader.cap(1));
+            const auto destinationFileREMatch = destinationFileRE.match(m_normalDiffHeader.cap(2));
+            qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << sourceFileREMatch.capturedLength();
+            qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << destinationFileREMatch.capturedLength();
+            qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << sourceFileREMatch.capturedTexts();
+            qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << destinationFileREMatch.capturedTexts();
+            qCDebug(LIBKOMPAREDIFF2) << "Source File      : " << sourceFileREMatch.captured(1);
+            qCDebug(LIBKOMPAREDIFF2) << "Destination File : " << destinationFileREMatch.captured(1);
+            m_currentModel->setSourceFile(sourceFileREMatch.captured(1));
+            m_currentModel->setDestinationFile(destinationFileREMatch.captured(1));
 
             result = true;
 
@@ -171,8 +171,8 @@ bool PerforceParser::parseUnifiedDiffHeader()
 
     QStringList::ConstIterator itEnd = m_diffLines.end();
 
-    QRegExp sourceFileRE(QStringLiteral("([^\\#]+)#(\\d+)"));
-    QRegExp destinationFileRE(QStringLiteral("([^\\#]+)#(|\\d+)"));
+    QRegularExpression sourceFileRE(QRegularExpression::anchoredPattern(QStringLiteral("([^\\#]+)#(\\d+)")));
+    QRegularExpression destinationFileRE(QRegularExpression::anchoredPattern(QStringLiteral("([^\\#]+)#(|\\d+)")));
 
     while (m_diffIterator != itEnd)
     {
@@ -186,16 +186,16 @@ bool PerforceParser::parseUnifiedDiffHeader()
 //             qCDebug(LIBKOMPAREDIFF2) << "Second capture Header1 = \"" << m_unifiedDiffHeader1.cap( 2 ) << "\"";
 
             m_currentModel = new DiffModel();
-            sourceFileRE.exactMatch(m_unifiedDiffHeader1.cap(1));
-            destinationFileRE.exactMatch(m_unifiedDiffHeader1.cap(2));
-//             qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << sourceFileRE.matchedLength();
-//             qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << destinationFileRE.matchedLength();
-//             qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << sourceFileRE.capturedTexts();
-//             qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << destinationFileRE.capturedTexts();
-//             qCDebug(LIBKOMPAREDIFF2) << "Source File      : " << sourceFileRE.cap( 1 );
-//             qCDebug(LIBKOMPAREDIFF2) << "Destination File : " << destinationFileRE.cap( 1 );
-            m_currentModel->setSourceFile(sourceFileRE.cap(1));
-            m_currentModel->setDestinationFile(destinationFileRE.cap(1));
+            const auto sourceFileREMatch = sourceFileRE.match(m_unifiedDiffHeader1.cap(1));
+            const auto destinationFileREMatch = destinationFileRE.match(m_unifiedDiffHeader1.cap(2));
+//             qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << sourceFileREMatch.capturedLength();
+//             qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << destinationFileREMatch.capturedLength();
+//             qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << sourceFileREMatch.capturedTexts();
+//             qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << destinationFileREMatch.capturedTexts();
+//             qCDebug(LIBKOMPAREDIFF2) << "Source File      : " << sourceFileREMatch.captured( 1 );
+//             qCDebug(LIBKOMPAREDIFF2) << "Destination File : " << destinationFileREMatch.captured( 1 );
+            m_currentModel->setSourceFile(sourceFileREMatch.captured(1));
+            m_currentModel->setDestinationFile(destinationFileREMatch.captured(1));
 
             result = true;
 

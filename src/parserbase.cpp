@@ -93,10 +93,6 @@ ParserBase::ParserBase(const KompareModelList* list, const QStringList& diff) :
     m_unifiedDiffHeader1.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("--- ([^\\t]+)(?:\\t([^\\t]+)(?:\\t?)(.*))?\\n")));
     m_unifiedDiffHeader2.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("\\+\\+\\+ ([^\\t]+)(?:\\t([^\\t]+)(?:\\t?)(.*))?\\n")));
     m_unifiedHunkHeader.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("@@ -([0-9]+)(|,([0-9]+)) \\+([0-9]+)(|,([0-9]+)) @@(?: ?)(.*)\\n")));
-    m_unifiedHunkBodyAdded.setPattern(QStringLiteral("\\+(.*)"));
-    m_unifiedHunkBodyRemoved.setPattern(QStringLiteral("-(.*)"));
-    m_unifiedHunkBodyContext.setPattern(QStringLiteral(" (.*)"));
-    m_unifiedHunkBodyLine.setPattern(QStringLiteral("([-+ ])(.*)"));
 }
 
 ParserBase::~ParserBase()

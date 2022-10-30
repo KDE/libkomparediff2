@@ -9,7 +9,6 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #define DIFF2_PARSERBASE_H
 
 #include <QRegularExpression>
-#include <QRegExp>
 #include <QStringList>
 
 #include "kompare.h"
@@ -112,11 +111,6 @@ protected:
 
     QRegularExpression m_unifiedHunkHeader;
     QRegularExpressionMatch m_unifiedHunkHeaderMatch;
-
-    QRegExp m_unifiedHunkBodyAdded;
-    QRegExp m_unifiedHunkBodyRemoved;
-    QRegExp m_unifiedHunkBodyContext;
-    QRegExp m_unifiedHunkBodyLine; // Added for convenience
 
 protected:
     const QStringList&         m_diffLines;

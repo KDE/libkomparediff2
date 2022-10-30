@@ -81,11 +81,11 @@ protected:
     QRegularExpressionMatch m_contextHunkHeader1Match;
     QRegularExpressionMatch m_contextHunkHeader2Match;
 
-    QRegExp m_contextHunkBodyRemoved;
-    QRegExp m_contextHunkBodyAdded;
-    QRegExp m_contextHunkBodyChanged;
-    QRegExp m_contextHunkBodyContext;
-    QRegExp m_contextHunkBodyLine; // Added for convenience
+    QRegularExpression m_contextHunkBodyRemoved;
+    QRegularExpression m_contextHunkBodyAdded;
+    QRegularExpression m_contextHunkBodyChanged;
+    QRegularExpression m_contextHunkBodyContext;
+    QRegularExpression m_contextHunkBodyLine; // Added for convenience
 
     // Regexps for normal parsing
     QRegularExpression m_normalDiffHeader;

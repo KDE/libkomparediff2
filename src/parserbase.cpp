@@ -73,11 +73,11 @@ ParserBase::ParserBase(const KompareModelList* list, const QStringList& diff) :
     // used in contexthunkbody
     m_contextHunkHeader3.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("--- ([0-9]+),([0-9]+) ----\\n")));
 
-    m_contextHunkBodyRemoved.setPattern(QStringLiteral("- (.*)"));
-    m_contextHunkBodyAdded.setPattern(QStringLiteral("\\+ (.*)"));
-    m_contextHunkBodyChanged.setPattern(QStringLiteral("! (.*)"));
-    m_contextHunkBodyContext.setPattern(QStringLiteral("  (.*)"));
-    m_contextHunkBodyLine.setPattern(QStringLiteral("[-\\+! ] (.*)"));
+    m_contextHunkBodyRemoved.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("- (.*)\\n")));
+    m_contextHunkBodyAdded.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("\\+ (.*)\\n")));
+    m_contextHunkBodyChanged.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("! (.*)\\n")));
+    m_contextHunkBodyContext.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("  (.*)\\n")));
+    m_contextHunkBodyLine.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("[-\\+! ] (.*)\\n")));
 
     // This regexp sucks... i'll see what happens
     m_normalDiffHeader.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("diff (?:(?:-|--)[a-zA-Z0-9=\\\"]+ )*(?:|-- +)(.*) +(.*)\\n")));
@@ -364,7 +364,7 @@ bool ParserBase::parseContextHunkBody()
 
     // Storing the src part of the hunk for later use
     QStringList oldLines;
-    for (; m_diffIterator != m_diffLines.end() && m_contextHunkBodyLine.exactMatch(*m_diffIterator); ++m_diffIterator) {
+    for (; m_diffIterator != m_diffLines.end() && m_contextHunkBodyLine.match(*m_diffIterator).hasMatch(); ++m_diffIterator) {
 //         qCDebug(LIBKOMPAREDIFF2) << "Added old line: " << *m_diffIterator;
         oldLines.append(*m_diffIterator);
     }
@@ -377,7 +377,7 @@ bool ParserBase::parseContextHunkBody()
 
     // Storing the dest part of the hunk for later use
     QStringList newLines;
-    for (; m_diffIterator != m_diffLines.end() && m_contextHunkBodyLine.exactMatch(*m_diffIterator); ++m_diffIterator) {
+    for (; m_diffIterator != m_diffLines.end() && m_contextHunkBodyLine.match(*m_diffIterator).hasMatch(); ++m_diffIterator) {
 //         qCDebug(LIBKOMPAREDIFF2) << "Added new line: " << *m_diffIterator;
         newLines.append(*m_diffIterator);
     }
@@ -399,7 +399,7 @@ bool ParserBase::parseContextHunkBody()
     Difference* diff;
     while (oldIt != oldLines.end() || newIt != newLines.end())
     {
-        if (oldIt != oldLines.end() && m_contextHunkBodyRemoved.exactMatch(*oldIt))
+        if (oldIt != oldLines.end() && m_contextHunkBodyRemoved.match(*oldIt).hasMatch())
         {
 //             qCDebug(LIBKOMPAREDIFF2) << "Delete: ";
             diff = new Difference(linenoA, linenoB);
@@ -407,14 +407,18 @@ bool ParserBase::parseContextHunkBody()
             m_currentModel->addDiff(diff);
 //             qCDebug(LIBKOMPAREDIFF2) << "Difference added";
             hunk->add(diff);
-            for (; oldIt != oldLines.end() && m_contextHunkBodyRemoved.exactMatch(*oldIt); ++oldIt)
+            for (; oldIt != oldLines.end(); ++oldIt)
             {
-//                 qCDebug(LIBKOMPAREDIFF2) << " " << m_contextHunkBodyRemoved.cap( 1 );
-                diff->addSourceLine(m_contextHunkBodyRemoved.cap(1));
+                const auto contextHunkBodyRemovedMatch = m_contextHunkBodyRemoved.match(*oldIt);
+                if (!contextHunkBodyRemovedMatch.hasMatch()) {
+                    break;
+                }
+//                 qCDebug(LIBKOMPAREDIFF2) << " " << contextHunkBodyRemovedMatch.captured( 1 );
+                diff->addSourceLine(contextHunkBodyRemovedMatch.captured(1));
                 ++linenoA;
             }
         }
-        else if (newIt != newLines.end() && m_contextHunkBodyAdded.exactMatch(*newIt))
+        else if (newIt != newLines.end() && m_contextHunkBodyAdded.match(*newIt).hasMatch())
         {
 //             qCDebug(LIBKOMPAREDIFF2) << "Insert: ";
             diff = new Difference(linenoA, linenoB);
@@ -422,35 +426,39 @@ bool ParserBase::parseContextHunkBody()
             m_currentModel->addDiff(diff);
 //             qCDebug(LIBKOMPAREDIFF2) << "Difference added";
             hunk->add(diff);
-            for (; newIt != newLines.end() && m_contextHunkBodyAdded.exactMatch(*newIt); ++newIt)
+            for (; newIt != newLines.end(); ++newIt)
             {
-//                 qCDebug(LIBKOMPAREDIFF2) << " " << m_contextHunkBodyAdded.cap( 1 );
-                diff->addDestinationLine(m_contextHunkBodyAdded.cap(1));
+                const auto contextHunkBodyAddedMatch = m_contextHunkBodyAdded.match(*newIt);
+                if (!contextHunkBodyAddedMatch.hasMatch()) {
+                    break;
+                }
+//                 qCDebug(LIBKOMPAREDIFF2) << " " << contextHunkBodyAddedMatch.captured( 1 );
+                diff->addDestinationLine(contextHunkBodyAddedMatch.captured(1));
                 ++linenoB;
             }
         }
-        else if ((oldIt == oldLines.end() || m_contextHunkBodyContext.exactMatch(*oldIt)) &&
-                 (newIt == newLines.end() || m_contextHunkBodyContext.exactMatch(*newIt)))
+        else if ((oldIt == oldLines.end() || m_contextHunkBodyContext.match(*oldIt).hasMatch()) &&
+                 (newIt == newLines.end() || m_contextHunkBodyContext.match(*newIt).hasMatch()))
         {
 //             qCDebug(LIBKOMPAREDIFF2) << "Unchanged: ";
             diff = new Difference(linenoA, linenoB);
             // Do not add this diff with addDiff to the model... no unchanged differences allowed in there...
             diff->setType(Difference::Unchanged);
             hunk->add(diff);
-            while ((oldIt == oldLines.end() || m_contextHunkBodyContext.exactMatch(*oldIt)) &&
-                    (newIt == newLines.end() || m_contextHunkBodyContext.exactMatch(*newIt)) &&
+            while ((oldIt == oldLines.end() || m_contextHunkBodyContext.match(*oldIt).hasMatch()) &&
+                    (newIt == newLines.end() || m_contextHunkBodyContext.match(*newIt).hasMatch()) &&
                     (oldIt != oldLines.end() || newIt != newLines.end()))
             {
                 QString l;
                 if (oldIt != oldLines.end())
                 {
-                    l = m_contextHunkBodyContext.cap(1);
+                    l = m_contextHunkBodyContext.match(*oldIt).captured(1);
 //                     qCDebug(LIBKOMPAREDIFF2) << "old: " << l;
                     ++oldIt;
                 }
                 if (newIt != newLines.end())
                 {
-                    l = m_contextHunkBodyContext.cap(1);
+                    l = m_contextHunkBodyContext.match(*newIt).captured(1);
 //                     qCDebug(LIBKOMPAREDIFF2) << "new: " << l;
                     ++newIt;
                 }
@@ -460,8 +468,8 @@ bool ParserBase::parseContextHunkBody()
                 ++linenoB;
             }
         }
-        else if ((oldIt != oldLines.end() && m_contextHunkBodyChanged.exactMatch(*oldIt)) ||
-                 (newIt != newLines.end() && m_contextHunkBodyChanged.exactMatch(*newIt)))
+        else if ((oldIt != oldLines.end() && m_contextHunkBodyChanged.match(*oldIt).hasMatch()) ||
+                 (newIt != newLines.end() && m_contextHunkBodyChanged.match(*newIt).hasMatch()))
         {
 //             qCDebug(LIBKOMPAREDIFF2) << "Changed: ";
             diff = new Difference(linenoA, linenoB);
@@ -469,17 +477,25 @@ bool ParserBase::parseContextHunkBody()
             m_currentModel->addDiff(diff);
 //             qCDebug(LIBKOMPAREDIFF2) << "Difference added";
             hunk->add(diff);
-            while (oldIt != oldLines.end() && m_contextHunkBodyChanged.exactMatch(*oldIt))
+            while (oldIt != oldLines.end())
             {
-//                 qCDebug(LIBKOMPAREDIFF2) << " " << m_contextHunkBodyChanged.cap( 1 );
-                diff->addSourceLine(m_contextHunkBodyChanged.cap(1));
+                const auto contextHunkBodyChangedMatch = m_contextHunkBodyChanged.match(*oldIt);
+                if (!contextHunkBodyChangedMatch.hasMatch()) {
+                    break;
+                }
+//                 qCDebug(LIBKOMPAREDIFF2) << " " << contextHunkBodyChangedMatch.captured( 1 );
+                diff->addSourceLine(contextHunkBodyChangedMatch.captured(1));
                 ++linenoA;
                 ++oldIt;
             }
-            while (newIt != newLines.end() && m_contextHunkBodyChanged.exactMatch(*newIt))
+            while (newIt != newLines.end())
             {
-//                 qCDebug(LIBKOMPAREDIFF2) << " " << m_contextHunkBodyChanged.cap( 1 );
-                diff->addDestinationLine(m_contextHunkBodyChanged.cap(1));
+                const auto contextHunkBodyChangedMatch = m_contextHunkBodyChanged.match(*newIt);
+                if (!contextHunkBodyChangedMatch.hasMatch()) {
+                    break;
+                }
+//                 qCDebug(LIBKOMPAREDIFF2) << " " << contextHunkBodyChangedMatch.captured( 1 );
+                diff->addDestinationLine(contextHunkBodyChangedMatch.captured(1));
                 ++linenoB;
                 ++newIt;
             }

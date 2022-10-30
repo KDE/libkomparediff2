@@ -6,7 +6,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "diffparser.h"
 
-#include <QRegExp>
+#include <QRegularExpression>
 
 #include <komparediffdebug.h>
 
@@ -27,11 +27,11 @@ enum Kompare::Format DiffParser::determineFormat()
 {
     qCDebug(LIBKOMPAREDIFF2) << "Determining the format of the diff Diff" << m_diffLines;
 
-    QRegExp normalRE(QStringLiteral("[0-9]+[0-9,]*[acd][0-9]+[0-9,]*"));
-    QRegExp unifiedRE(QStringLiteral("^--- "));
-    QRegExp contextRE(QStringLiteral("^\\*\\*\\* "));
-    QRegExp rcsRE(QStringLiteral("^[acd][0-9]+ [0-9]+"));
-    QRegExp edRE(QStringLiteral("^[0-9]+[0-9,]*[acd]"));
+    QRegularExpression normalRE(QStringLiteral("[0-9]+[0-9,]*[acd][0-9]+[0-9,]*"));
+    QRegularExpression unifiedRE(QStringLiteral("^--- "));
+    QRegularExpression contextRE(QStringLiteral("^\\*\\*\\* "));
+    QRegularExpression rcsRE(QStringLiteral("^[acd][0-9]+ [0-9]+"));
+    QRegularExpression edRE(QStringLiteral("^[0-9]+[0-9,]*[acd]"));
 
     QStringList::ConstIterator it = m_diffLines.begin();
 

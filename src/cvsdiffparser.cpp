@@ -6,7 +6,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "cvsdiffparser.h"
 
-#include <QRegExp>
+#include <QRegularExpression>
 
 #include <komparediffdebug.h>
 #include "komparemodellist.h"
@@ -31,11 +31,11 @@ enum Kompare::Format CVSDiffParser::determineFormat()
 {
 //     qCDebug(LIBKOMPAREDIFF2) << "Determining the format of the CVSDiff";
 
-    QRegExp normalRE(QStringLiteral("[0-9]+[0-9,]*[acd][0-9]+[0-9,]*"));
-    QRegExp unifiedRE(QStringLiteral("^--- [^\\t]+\\t"));
-    QRegExp contextRE(QStringLiteral("^\\*\\*\\* [^\\t]+\\t"));
-    QRegExp rcsRE(QStringLiteral("^[acd][0-9]+ [0-9]+"));
-    QRegExp edRE(QStringLiteral("^[0-9]+[0-9,]*[acd]"));
+    QRegularExpression normalRE(QStringLiteral("[0-9]+[0-9,]*[acd][0-9]+[0-9,]*"));
+    QRegularExpression unifiedRE(QStringLiteral("^--- [^\\t]+\\t"));
+    QRegularExpression contextRE(QStringLiteral("^\\*\\*\\* [^\\t]+\\t"));
+    QRegularExpression rcsRE(QStringLiteral("^[acd][0-9]+ [0-9]+"));
+    QRegularExpression edRE(QStringLiteral("^[0-9]+[0-9,]*[acd]"));
 
     QStringList::ConstIterator it = m_diffLines.begin();
 

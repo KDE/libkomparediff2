@@ -6,7 +6,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "perforceparser.h"
 
-#include <QRegExp>
+#include <QRegularExpression>
 
 #include <komparediffdebug.h>
 #include "diffmodel.h"
@@ -33,10 +33,10 @@ enum Kompare::Format PerforceParser::determineFormat()
 {
     qCDebug(LIBKOMPAREDIFF2) << "Determining the format of the Perforce Diff";
 
-    QRegExp unifiedRE(QStringLiteral("^@@"));
-    QRegExp contextRE(QStringLiteral("^\\*{15}"));
-    QRegExp normalRE(QStringLiteral("^\\d+(|,\\d+)[acd]\\d+(|,\\d+)"));
-    QRegExp rcsRE(QStringLiteral("^[acd]\\d+ \\d+"));
+    QRegularExpression unifiedRE(QStringLiteral("^@@"));
+    QRegularExpression contextRE(QStringLiteral("^\\*{15}"));
+    QRegularExpression normalRE(QStringLiteral("^\\d+(|,\\d+)[acd]\\d+(|,\\d+)"));
+    QRegularExpression rcsRE(QStringLiteral("^[acd]\\d+ \\d+"));
     // Summary is not supported since it gives no useful parsable info
 
     QStringList::ConstIterator it = m_diffLines.begin();

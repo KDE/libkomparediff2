@@ -92,7 +92,7 @@ ParserBase::ParserBase(const KompareModelList* list, const QStringList& diff) :
 
     m_unifiedDiffHeader1.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("--- ([^\\t]+)(?:\\t([^\\t]+)(?:\\t?)(.*))?\\n")));
     m_unifiedDiffHeader2.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("\\+\\+\\+ ([^\\t]+)(?:\\t([^\\t]+)(?:\\t?)(.*))?\\n")));
-    m_unifiedHunkHeader.setPattern(QStringLiteral("@@ -([0-9]+)(|,([0-9]+)) \\+([0-9]+)(|,([0-9]+)) @@(?: ?)(.*)\\n"));
+    m_unifiedHunkHeader.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("@@ -([0-9]+)(|,([0-9]+)) \\+([0-9]+)(|,([0-9]+)) @@(?: ?)(.*)\\n")));
     m_unifiedHunkBodyAdded.setPattern(QStringLiteral("\\+(.*)"));
     m_unifiedHunkBodyRemoved.setPattern(QStringLiteral("-(.*)"));
     m_unifiedHunkBodyContext.setPattern(QStringLiteral(" (.*)"));
@@ -345,17 +345,16 @@ bool ParserBase::parseUnifiedHunkHeader()
 {
 //     qCDebug(LIBKOMPAREDIFF2) << "ParserBase::parseUnifiedHunkHeader()";
 
-    if (m_diffIterator != m_diffLines.end() && m_unifiedHunkHeader.exactMatch(*m_diffIterator))
+    if (m_diffIterator != m_diffLines.end())
     {
-        ++m_diffIterator;
-        return true;
+        m_unifiedHunkHeaderMatch = m_unifiedHunkHeader.match(*m_diffIterator);
+        if (m_unifiedHunkHeaderMatch.hasMatch()) {
+            ++m_diffIterator;
+            return true;
+        }
     }
-    else
-    {
-//         qCDebug(LIBKOMPAREDIFF2) << "This is not a unified hunk header : " << (*m_diffIterator);
-        return false;
-    }
-
+//     qCDebug(LIBKOMPAREDIFF2) << "This is not a unified hunk header : " << (*m_diffIterator);
+    return false;
 }
 
 bool ParserBase::parseContextHunkBody()
@@ -605,11 +604,11 @@ bool ParserBase::parseUnifiedHunkBody()
     bool wasNum;
 
     // Fetching the stuff we need from the hunkheader regexp that was parsed in parseUnifiedHunkHeader();
-    linenoA = m_unifiedHunkHeader.cap(1).toInt();
+    linenoA = m_unifiedHunkHeaderMatch.captured(1).toInt();
     int lineCountA = 1, lineCountB = 1; // an omitted line count in the header implies a line count of 1
-    if (!m_unifiedHunkHeader.cap(3).isEmpty())
+    if (!m_unifiedHunkHeaderMatch.captured(3).isEmpty())
     {
-        lineCountA = m_unifiedHunkHeader.cap(3).toInt(&wasNum);
+        lineCountA = m_unifiedHunkHeaderMatch.captured(3).toInt(&wasNum);
         if (!wasNum)
             return false;
 
@@ -618,16 +617,16 @@ bool ParserBase::parseUnifiedHunkBody()
         if (lineCountA == 0)
             ++linenoA;
     }
-    linenoB = m_unifiedHunkHeader.cap(4).toInt();
-    if (!m_unifiedHunkHeader.cap(6).isEmpty()) {
-        lineCountB = m_unifiedHunkHeader.cap(6).toInt(&wasNum);
+    linenoB = m_unifiedHunkHeaderMatch.captured(4).toInt();
+    if (!m_unifiedHunkHeaderMatch.captured(6).isEmpty()) {
+        lineCountB = m_unifiedHunkHeaderMatch.captured(6).toInt(&wasNum);
         if (!wasNum)
             return false;
 
         if (lineCountB == 0) // see above
             ++linenoB;
     }
-    QString function = m_unifiedHunkHeader.cap(7);
+    QString function = m_unifiedHunkHeaderMatch.captured(7);
 
     DiffHunk* hunk = new DiffHunk(linenoA, linenoB, function);
     m_currentModel->addHunk(hunk);

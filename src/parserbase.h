@@ -110,7 +110,8 @@ protected:
     QRegularExpression m_unifiedDiffHeader1;
     QRegularExpression m_unifiedDiffHeader2;
 
-    QRegExp m_unifiedHunkHeader;
+    QRegularExpression m_unifiedHunkHeader;
+    QRegularExpressionMatch m_unifiedHunkHeaderMatch;
 
     QRegExp m_unifiedHunkBodyAdded;
     QRegExp m_unifiedHunkBodyRemoved;

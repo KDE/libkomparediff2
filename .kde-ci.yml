@@ -11,3 +11,6 @@ Dependencies:
     'frameworks/kxmlgui': '@stable'
     'frameworks/ki18n': '@stable'
     'frameworks/kio': '@stable'
+
+Options:
+  require-passing-tests-on: [ '@all' ]

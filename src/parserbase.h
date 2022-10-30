@@ -97,9 +97,9 @@ protected:
     QRegularExpressionMatch m_normalHunkHeaderRemovedMatch;
     QRegularExpressionMatch m_normalHunkHeaderChangedMatch;
 
-    QRegExp m_normalHunkBodyRemoved;
-    QRegExp m_normalHunkBodyAdded;
-    QRegExp m_normalHunkBodyDivider;
+    QRegularExpression m_normalHunkBodyRemoved;
+    QRegularExpression m_normalHunkBodyAdded;
+    QRegularExpression m_normalHunkBodyDivider;
 
     enum Difference::Type m_normalDiffType;
 

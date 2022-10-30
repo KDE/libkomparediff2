@@ -86,9 +86,9 @@ ParserBase::ParserBase(const KompareModelList* list, const QStringList& diff) :
     m_normalHunkHeaderRemoved.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("([0-9]+)(|,[0-9]+)d([0-9]+)(.*)\\n")));
     m_normalHunkHeaderChanged.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("([0-9]+)(|,[0-9]+)c([0-9]+)(|,[0-9]+)(.*)\\n")));
 
-    m_normalHunkBodyRemoved.setPattern(QStringLiteral("< (.*)"));
-    m_normalHunkBodyAdded.setPattern(QStringLiteral("> (.*)"));
-    m_normalHunkBodyDivider.setPattern(QStringLiteral("---\\n"));
+    m_normalHunkBodyRemoved.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("< (.*)\\n")));
+    m_normalHunkBodyAdded.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("> (.*)\\n")));
+    m_normalHunkBodyDivider.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("---\\n")));
 
     m_unifiedDiffHeader1.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("--- ([^\\t]+)(?:\\t([^\\t]+)(?:\\t?)(.*))?\\n")));
     m_unifiedDiffHeader2.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("\\+\\+\\+ ([^\\t]+)(?:\\t([^\\t]+)(?:\\t?)(.*))?\\n")));
@@ -546,15 +546,19 @@ bool ParserBase::parseNormalHunkBody()
     diff->setType(m_normalDiffType);
 
     if (m_normalDiffType == Difference::Change || m_normalDiffType == Difference::Delete)
-        for (; m_diffIterator != m_diffLines.end() && m_normalHunkBodyRemoved.exactMatch(*m_diffIterator); ++m_diffIterator)
+        for (; m_diffIterator != m_diffLines.end(); ++m_diffIterator)
         {
+            const auto normalHunkBodyRemovedMatch = m_normalHunkBodyRemoved.match(*m_diffIterator);
+            if (!normalHunkBodyRemovedMatch.hasMatch()) {
+                break;
+            }
 //             qCDebug(LIBKOMPAREDIFF2) << "Line = " << *m_diffIterator;
-            diff->addSourceLine(m_normalHunkBodyRemoved.cap(1));
+            diff->addSourceLine(normalHunkBodyRemovedMatch.captured(1));
         }
 
     if (m_normalDiffType == Difference::Change)
     {
-        if (m_diffIterator != m_diffLines.end() && m_normalHunkBodyDivider.exactMatch(*m_diffIterator))
+        if (m_diffIterator != m_diffLines.end() && m_normalHunkBodyDivider.match(*m_diffIterator).hasMatch())
         {
 //             qCDebug(LIBKOMPAREDIFF2) << "Line = " << *m_diffIterator;
             ++m_diffIterator;
@@ -564,10 +568,14 @@ bool ParserBase::parseNormalHunkBody()
     }
 
     if (m_normalDiffType == Difference::Insert || m_normalDiffType == Difference::Change)
-        for (; m_diffIterator != m_diffLines.end() && m_normalHunkBodyAdded.exactMatch(*m_diffIterator); ++m_diffIterator)
+        for (; m_diffIterator != m_diffLines.end(); ++m_diffIterator)
         {
+             const auto normalHunkBodyAddedMatch = m_normalHunkBodyAdded.match(*m_diffIterator);
+             if (!normalHunkBodyAddedMatch.hasMatch()) {
+                 break;
+             }
 //             qCDebug(LIBKOMPAREDIFF2) << "Line = " << *m_diffIterator;
-            diff->addDestinationLine(m_normalHunkBodyAdded.cap(1));
+            diff->addDestinationLine(normalHunkBodyAddedMatch.captured(1));
         }
 
     return true;

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"POT-Creation-Date: 2022-11-01 00:49+0000\n"
 "PO-Revision-Date: 2007-06-30 17:00+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -18,63 +18,63 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: komparemodellist.cpp:58
+#: komparemodellist.cpp:57
 #, fuzzy, kde-format
 #| msgid "&Apply Difference"
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "&اعمال تفاوت‌"
 
-#: komparemodellist.cpp:62
+#: komparemodellist.cpp:61
 #, fuzzy, kde-format
 #| msgid "Un&apply Difference"
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "تفاوت &اعمال نشود‌"
 
-#: komparemodellist.cpp:66
+#: komparemodellist.cpp:65
 #, fuzzy, kde-format
 #| msgid "App&ly All"
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "&اعمال همه‌"
 
-#: komparemodellist.cpp:70
+#: komparemodellist.cpp:69
 #, fuzzy, kde-format
 #| msgid "&Unapply All"
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "همه &اعمال نشود‌"
 
-#: komparemodellist.cpp:80
+#: komparemodellist.cpp:79
 #, fuzzy, kde-format
 #| msgid "P&revious File"
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "پرونده &قبلی‌"
 
-#: komparemodellist.cpp:84
+#: komparemodellist.cpp:83
 #, fuzzy, kde-format
 #| msgid "N&ext File"
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "پرونده &بعدی‌"
 
-#: komparemodellist.cpp:88
+#: komparemodellist.cpp:87
 #, fuzzy, kde-format
 #| msgid "&Previous Difference"
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "تفاوت &قبلی‌"
 
-#: komparemodellist.cpp:92
+#: komparemodellist.cpp:91
 #, fuzzy, kde-format
 #| msgid "&Next Difference"
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "تفاوت &بعدی‌"
 
-#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#: komparemodellist.cpp:252 komparemodellist.cpp:277
 #, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
@@ -83,31 +83,31 @@ msgstr ""
 "<qt>هیچ مدل یا تفاوتی وجود ندارد، این پرونده <b>%1</b>،یک پرونده تفاوت معتبر "
 "نیست.</qt>"
 
-#: komparemodellist.cpp:262
+#: komparemodellist.cpp:261
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
 "qt>"
 msgstr "<qt>مسائلی در اعمال تفاوت وجود دارد<b>%1</b>به پرونده<b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:289
+#: komparemodellist.cpp:288
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
 "</qt>"
 msgstr "<qt>مسائلی در اعمال تفاوت وجود دارد <b>%1</b>به پوشه<b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#: komparemodellist.cpp:320 komparemodellist.cpp:679
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "نتوانست پرونده موقت را باز کند."
 
-#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#: komparemodellist.cpp:368 komparemodellist.cpp:375
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr "<qt>نتوانست در پرونده موقت بنویسد <b>%1</b>، حذف آن.</qt>"
 
-#: komparemodellist.cpp:407
+#: komparemodellist.cpp:406
 #, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
@@ -116,7 +116,7 @@ msgstr ""
 "<qt>نتوانست فهرست راهنمای مقصد را ایجاد کند<b>%1</b>.\n"
 "این پرونده ذخیره نشده است.</qt>"
 
-#: komparemodellist.cpp:435
+#: komparemodellist.cpp:434
 #, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -127,22 +127,22 @@ msgstr ""
 "هنوز در دسترس است تحت :<b>%2</b>. می‌توانید به طور دستی آن را در مکان درست "
 "رونوشت کنید. </qt>"
 
-#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "نتوانست خروجی تفاوت را تجزیه کند."
 
-#: komparemodellist.cpp:530
+#: komparemodellist.cpp:529
 #, kde-format
 msgid "The files are identical."
 msgstr "پرونده‌ها یکسانند."
 
-#: komparemodellist.cpp:712
+#: komparemodellist.cpp:711
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "نتوانست در پرونده موقت بنویسد."
 
-#: komparemodellist.cpp:986
+#: komparemodellist.cpp:985
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

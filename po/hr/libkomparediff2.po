@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare 0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"POT-Creation-Date: 2022-11-01 00:49+0000\n"
 "PO-Revision-Date: 2004-04-20 13:26+CEST\n"
 "Last-Translator: auto\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -20,93 +20,93 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: komparemodellist.cpp:58
+#: komparemodellist.cpp:57
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "&Priizbornik razliku"
 
-#: komparemodellist.cpp:62
+#: komparemodellist.cpp:61
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "&Poništi primenjenu razliku"
 
-#: komparemodellist.cpp:66
+#: komparemodellist.cpp:65
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "Prime&ni sve"
 
-#: komparemodellist.cpp:70
+#: komparemodellist.cpp:69
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "&Poništi sve primenjeno"
 
-#: komparemodellist.cpp:80
+#: komparemodellist.cpp:79
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "P&rethodni datoteka"
 
-#: komparemodellist.cpp:84
+#: komparemodellist.cpp:83
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "S&ledeći datoteka"
 
-#: komparemodellist.cpp:88
+#: komparemodellist.cpp:87
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "&Prethodna razlika"
 
-#: komparemodellist.cpp:92
+#: komparemodellist.cpp:91
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "&Sljedeća razlika"
 
-#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#: komparemodellist.cpp:252 komparemodellist.cpp:277
 #, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
 "file.</qt>"
 msgstr ""
 
-#: komparemodellist.cpp:262
+#: komparemodellist.cpp:261
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
 "qt>"
 msgstr ""
 
-#: komparemodellist.cpp:289
+#: komparemodellist.cpp:288
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
 "</qt>"
 msgstr ""
 
-#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#: komparemodellist.cpp:320 komparemodellist.cpp:679
 #, fuzzy, kde-format
 msgid "Could not open a temporary file."
 msgstr "Nisam mogao otvoriti privreizbornik datoteka."
 
-#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#: komparemodellist.cpp:368 komparemodellist.cpp:375
 #, fuzzy, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr "Nisam mogao da pišem u privreizbornik datoteka."
 
-#: komparemodellist.cpp:407
+#: komparemodellist.cpp:406
 #, fuzzy, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
 "The file has not been saved.</qt>"
 msgstr "Nisam mogao da pišem u privreizbornik datoteka."
 
-#: komparemodellist.cpp:435
+#: komparemodellist.cpp:434
 #, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -114,22 +114,22 @@ msgid ""
 "copy it to the right place.</qt>"
 msgstr ""
 
-#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
 #, fuzzy, kde-format
 msgid "Could not parse diff output."
 msgstr "Nisam mogao da analiziram diff izlaz."
 
-#: komparemodellist.cpp:530
+#: komparemodellist.cpp:529
 #, fuzzy, kde-format
 msgid "The files are identical."
 msgstr "Datoteke su identični."
 
-#: komparemodellist.cpp:712
+#: komparemodellist.cpp:711
 #, fuzzy, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Nisam mogao da pišem u privreizbornik datoteka."
 
-#: komparemodellist.cpp:986
+#: komparemodellist.cpp:985
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

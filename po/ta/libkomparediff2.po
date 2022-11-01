@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"POT-Creation-Date: 2022-11-01 00:49+0000\n"
 "PO-Revision-Date: 2004-08-06 04:51-0800\n"
 "Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
 "Language-Team:  <ta@li.org>\n"
@@ -22,63 +22,63 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: komparemodellist.cpp:58
+#: komparemodellist.cpp:57
 #, fuzzy, kde-format
 #| msgid "&Apply Difference"
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "மாறுபாட்டை பயன்படுத்து"
 
-#: komparemodellist.cpp:62
+#: komparemodellist.cpp:61
 #, fuzzy, kde-format
 #| msgid "Un&apply Difference"
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "பயன்படுத்திய மாறுபாட்டை ரத்து செய்"
 
-#: komparemodellist.cpp:66
+#: komparemodellist.cpp:65
 #, fuzzy, kde-format
 #| msgid "App&ly All"
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "அனைத்தையும் பயன்படுத்து"
 
-#: komparemodellist.cpp:70
+#: komparemodellist.cpp:69
 #, fuzzy, kde-format
 #| msgid "&Unapply All"
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "பயன்படுத்திய அனைத்தையும் ரத்து செய்"
 
-#: komparemodellist.cpp:80
+#: komparemodellist.cpp:79
 #, fuzzy, kde-format
 #| msgid "P&revious File"
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "முன்னிருக்கும் கோப்பு"
 
-#: komparemodellist.cpp:84
+#: komparemodellist.cpp:83
 #, fuzzy, kde-format
 #| msgid "N&ext File"
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "அடுத்திருக்கும் கோப்பு"
 
-#: komparemodellist.cpp:88
+#: komparemodellist.cpp:87
 #, fuzzy, kde-format
 #| msgid "&Previous Difference"
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "முன்னிருக்கும் மாறுபாடு"
 
-#: komparemodellist.cpp:92
+#: komparemodellist.cpp:91
 #, fuzzy, kde-format
 #| msgid "&Next Difference"
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "அடுத்திருக்கும் மாறுபாடு"
 
-#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#: komparemodellist.cpp:252 komparemodellist.cpp:277
 #, fuzzy, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
@@ -87,7 +87,7 @@ msgstr ""
 "மாதிரிகளோ அல்லது மாறுபாடுகளோ இல்லை, இந்த கோப்பு: <b>%1</b>, ஒரு தக்க diff கோப்பு "
 "அல்ல"
 
-#: komparemodellist.cpp:262
+#: komparemodellist.cpp:261
 #, fuzzy, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
@@ -95,7 +95,7 @@ msgid ""
 msgstr ""
 "<b>%1</b>diffல் இருந்து <b>%2</b> கோப்புக்கு பயன்படுத்தும்போது பிரச்சினைகள் ஏற்பட்டன."
 
-#: komparemodellist.cpp:289
+#: komparemodellist.cpp:288
 #, fuzzy, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
@@ -104,24 +104,24 @@ msgstr ""
 "<b>%1</b> diffல் இருந்து <b>%2</b> ஆவணத்திருக்கு பயன்படுத்தும்போது பிரச்சினைகள் "
 "ஏற்பட்டன."
 
-#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#: komparemodellist.cpp:320 komparemodellist.cpp:679
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "ஒரு தற்காலிக கோப்பினை திறக்க இயலவில்லை."
 
-#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#: komparemodellist.cpp:368 komparemodellist.cpp:375
 #, fuzzy, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr "தற்காலிக கோப்புக்குள் எழுத இயலவில்லை."
 
-#: komparemodellist.cpp:407
+#: komparemodellist.cpp:406
 #, fuzzy, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
 "The file has not been saved.</qt>"
 msgstr "தற்காலிக கோப்புக்குள் எழுத இயலவில்லை."
 
-#: komparemodellist.cpp:435
+#: komparemodellist.cpp:434
 #, fuzzy, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -131,22 +131,22 @@ msgstr ""
 "<b>%1</b> சேருமிடத்தில் தற்காலிக கோப்பினை ஏற்ற இயலவில்லை. எனினும் தற்காலிக கோப்பு <b>"
 "%2</b> கீழ் இன்னும் உள்ளது. இதனை நீங்கள் கைமுறையாக சரியான இடத்துக்கு படியேடுக்கலாம்."
 
-#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "diffன் வெளியீட்டை பிரித்தாய இயலவில்லை."
 
-#: komparemodellist.cpp:530
+#: komparemodellist.cpp:529
 #, kde-format
 msgid "The files are identical."
 msgstr "இந்த கோப்புகள் ஒரே மாதிரியாக உள்ளன."
 
-#: komparemodellist.cpp:712
+#: komparemodellist.cpp:711
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "தற்காலிக கோப்புக்குள் எழுத இயலவில்லை."
 
-#: komparemodellist.cpp:986
+#: komparemodellist.cpp:985
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

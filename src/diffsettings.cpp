@@ -72,7 +72,7 @@ void DiffSettings::saveSettings(KConfig* config)
     KConfigGroup group(config, "Diff Options");
     group.writeEntry("DiffProgram",                    m_diffProgram);
     group.writeEntry("LinesOfContext",                 m_linesOfContext);
-    group.writeEntry("Format",                         QString(m_format));
+    group.writeEntry("Format",                         (int)m_format);
     group.writeEntry("LargeFiles",                     m_largeFiles);
     group.writeEntry("IgnoreWhiteSpace",               m_ignoreWhiteSpace);
     group.writeEntry("IgnoreAllWhiteSpace",            m_ignoreAllWhiteSpace);

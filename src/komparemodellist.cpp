@@ -593,15 +593,17 @@ QString KompareModelList::readFile(const QString& fileName)
     QFile file(fileName);
     file.open(QIODevice::ReadOnly);
 
-    QTextStream stream(&file);
     qCDebug(LIBKOMPAREDIFF2) << "Codec = " << m_textCodec;
-
     if (!m_textCodec)
         m_textCodec = QTextCodec::codecForLocale();
+    std::unique_ptr<QTextDecoder> decoder(m_textCodec->makeDecoder());
 
-    stream.setCodec(m_textCodec);
-
-    QString contents = stream.readAll();
+    QString contents;
+    while (!file.atEnd()) {
+        char buffer[4096];
+        const auto len = file.read(buffer, 4096);
+        contents += decoder->toUnicode(buffer, len);
+    }
 
     file.close();
 

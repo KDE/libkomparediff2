@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2007-10-28 14:03+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -92,7 +92,7 @@ msgid ""
 msgstr ""
 "<qt>Паўсталі праблемы падчас ужывання diff <b>%1</b> да тэчкі <b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, fuzzy, kde-format
 msgid "Could not open a temporary file."
 msgstr "Не атрымліваецца адкрыць часовы файл."
@@ -123,7 +123,7 @@ msgstr ""
 "Часовы файл усё яшчэ даступны пад імем <b>%2</b>. Вы можаце ўручную "
 "скапіраваць яго ў патрэбнае месца.</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, fuzzy, kde-format
 msgid "Could not parse diff output."
 msgstr "Не атрымліваецца апрацаваць выснову diff."
@@ -133,12 +133,12 @@ msgstr "Не атрымліваецца апрацаваць выснову diff
 msgid "The files are identical."
 msgstr "Усе файлы ідэнтычныя."
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, fuzzy, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Не атрымліваецца запісаць у часовы файл."
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

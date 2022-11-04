@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2007-06-30 17:00+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -97,7 +97,7 @@ msgid ""
 "</qt>"
 msgstr "<qt>مسائلی در اعمال تفاوت وجود دارد <b>%1</b>به پوشه<b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "نتوانست پرونده موقت را باز کند."
@@ -127,7 +127,7 @@ msgstr ""
 "هنوز در دسترس است تحت :<b>%2</b>. می‌توانید به طور دستی آن را در مکان درست "
 "رونوشت کنید. </qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "نتوانست خروجی تفاوت را تجزیه کند."
@@ -137,12 +137,12 @@ msgstr "نتوانست خروجی تفاوت را تجزیه کند."
 msgid "The files are identical."
 msgstr "پرونده‌ها یکسانند."
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "نتوانست در پرونده موقت بنویسد."
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

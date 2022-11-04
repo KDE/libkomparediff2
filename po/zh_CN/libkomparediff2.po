@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2022-10-30 07:48\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -87,7 +87,7 @@ msgid ""
 "</qt>"
 msgstr "<qt>应用 diff 结果<b>%1</b>到文件夹<b>%2</b>时出现问题。</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "无法打开临时文件。"
@@ -116,7 +116,7 @@ msgstr ""
 "<qt>无法上传临时文件到目标位置<b>%1</b>。在<b>%2</b>下的临时文件仍然可用，可"
 "以手工复制到正确的地方。</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "无法分析 diff 输出。"
@@ -126,12 +126,12 @@ msgstr "无法分析 diff 输出。"
 msgid "The files are identical."
 msgstr "文件是相同的。"
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "无法写入临时文件。"
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

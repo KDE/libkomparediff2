@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2022-06-19 17:59+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -93,7 +93,7 @@ msgstr ""
 "<qt>Има проблеми при прилагането на разлика <b>%1</b> към папка <b>%2</b>.</"
 "qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Временният файл не може да бъде творен."
@@ -124,7 +124,7 @@ msgstr ""
 "зареден. Той е достъпен като: <b>%2</b>. Можете ръчно да го копирате в "
 "подходящото място..</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Данните за разликите не могат да бъдат обработени."
@@ -134,12 +134,12 @@ msgstr "Данните за разликите не могат да бъдат �
 msgid "The files are identical."
 msgstr "Файловете са същите."
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Записът във временния файл е невъзможен."
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

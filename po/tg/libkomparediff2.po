@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2005-09-23 17:16+0500\n"
 "Last-Translator: Victor Ibragimov <youth_opportunities@tajikngo.org>\n"
 "Language-Team: Tajik\n"
@@ -100,7 +100,7 @@ msgstr ""
 "Дар вақти истифодаи diff ба чанд проблемаҳо шуд<b>%1</b> ба каталоги <b>%2</"
 "b>."
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Файли муввақатӣ кашода намешавад."
@@ -128,7 +128,7 @@ msgstr ""
 "буда ҳоло ҳам ҳақиқатан дар таг: <b>%2</b>. Шумо метавонед дастурро дастӣ "
 "нусхабардорӣ намоед."
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Баромади diff такмил дода намешавад."
@@ -138,12 +138,12 @@ msgstr "Баромади diff такмил дода намешавад."
 msgid "The files are identical."
 msgstr "Файлҳо мутобиқ ҳастанд."
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Ба файли муввақатӣ навишта намешавад."
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2020-05-04 19:36+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -92,7 +92,7 @@ msgstr ""
 "<qt>Det uppstod problem att applicera jämförelsen <b>%1</b> med katalogen <b>"
 "%2</b>.</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Kunde inte öppna en tillfällig fil."
@@ -124,7 +124,7 @@ msgstr ""
 "tillfälliga filen är fortfarande tillgänglig under <b>%2</b>. Du kan kopiera "
 "den till rätt plats för hand.</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Kunde inte tolka jämförelseutmatning."
@@ -134,12 +134,12 @@ msgstr "Kunde inte tolka jämförelseutmatning."
 msgid "The files are identical."
 msgstr "Filerna är identiska."
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Kunde inte skriva till den tillfälliga filen."
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

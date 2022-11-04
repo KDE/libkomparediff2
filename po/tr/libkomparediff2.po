@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesdk-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2022-04-26 11:12+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -97,7 +97,7 @@ msgstr ""
 "<qt><b>%1</b> diff çıktısı <b>%2</b> dizinine uygulanırken bazı sorunlar "
 "oluştu.</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Geçici dosya açılamadı."
@@ -126,7 +126,7 @@ msgstr ""
 "<qt>Geçici dosya <b>%1</b> hedef konumuna yüklenemedi.Buna rağmen geçici "
 "dosya <b>%2</b> altında mevcut.Lütfen dosyayı elle yerine kopyalayın.</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Diff çıktısı ayrıştırılamıyor."
@@ -136,12 +136,12 @@ msgstr "Diff çıktısı ayrıştırılamıyor."
 msgid "The files are identical."
 msgstr "Dosyalar birbiri ile aynı."
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Geçici dosya yazılamıyor."
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

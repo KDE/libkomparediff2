@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2020-05-13 07:48+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -95,7 +95,7 @@ msgstr ""
 "<qt>Des problèmes ont été rencontrés lors de l'application du « diff » <b>"
 "%1</b> pour le dossier <b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Impossible d'ouvrir un fichier temporaire."
@@ -127,7 +127,7 @@ msgstr ""
 "destination <b>%1</b>. Le fichier temporaire est toujours disponible dans <b>"
 "%2</b>. Vous pouvez le copier manuellement vers son emplacement correct.</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Impossible d'analyser la sortie du « diff »."
@@ -137,12 +137,12 @@ msgstr "Impossible d'analyser la sortie du « diff »."
 msgid "The files are identical."
 msgstr "Les fichiers sont identiques."
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Impossible d'écrire dans le fichier temporaire."
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

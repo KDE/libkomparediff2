@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkomparediff2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2022-04-09 19:27+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -92,7 +92,7 @@ msgstr ""
 "<qt>Nastali problémy pri použití rozdielu <b>%1</b> na priečinok <b>%2</b>.</"
 "qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Nepodarilo sa otvoriť dočasný súbor."
@@ -123,7 +123,7 @@ msgstr ""
 "Dočasný súbor je k dispozícii pod: <b>%2</b>. Môžete ho na správne miesto "
 "skopírovať ručne.</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Nepodarilo sa spracovať výstup diff."
@@ -133,12 +133,12 @@ msgstr "Nepodarilo sa spracovať výstup diff."
 msgid "The files are identical."
 msgstr "Súbory sú rovnaké."
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Nepodaril sa zápis do dočasného súboru."
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

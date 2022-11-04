@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2009-06-04 12:04+0300\n"
 "Last-Translator: Viesturs Zariņš <viesturs.zarins@mii.lu.lv>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -100,7 +100,7 @@ msgid ""
 msgstr ""
 "<qt>Gadījās problēmas diff <b>%1</b> pielietošanā uz mapi <b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Neizdevās atvērt pagaidu failu."
@@ -130,7 +130,7 @@ msgstr ""
 "joprojām atrodas iekš: <b>%2</b>. Jūs varat to pārkopēt pats uz pareizo "
 "vietu.</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Neizdevās analizēt diff izvadu."
@@ -140,12 +140,12 @@ msgstr "Neizdevās analizēt diff izvadu."
 msgid "The files are identical."
 msgstr "Faili ir identiski."
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Neizdevās rakstīt pagaidu failā."
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

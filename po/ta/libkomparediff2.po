@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2004-08-06 04:51-0800\n"
 "Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
 "Language-Team:  <ta@li.org>\n"
@@ -104,7 +104,7 @@ msgstr ""
 "<b>%1</b> diffல் இருந்து <b>%2</b> ஆவணத்திருக்கு பயன்படுத்தும்போது பிரச்சினைகள் "
 "ஏற்பட்டன."
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "ஒரு தற்காலிக கோப்பினை திறக்க இயலவில்லை."
@@ -131,7 +131,7 @@ msgstr ""
 "<b>%1</b> சேருமிடத்தில் தற்காலிக கோப்பினை ஏற்ற இயலவில்லை. எனினும் தற்காலிக கோப்பு <b>"
 "%2</b> கீழ் இன்னும் உள்ளது. இதனை நீங்கள் கைமுறையாக சரியான இடத்துக்கு படியேடுக்கலாம்."
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "diffன் வெளியீட்டை பிரித்தாய இயலவில்லை."
@@ -141,12 +141,12 @@ msgstr "diffன் வெளியீட்டை பிரித்தாய �
 msgid "The files are identical."
 msgstr "இந்த கோப்புகள் ஒரே மாதிரியாக உள்ளன."
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "தற்காலிக கோப்புக்குள் எழுத இயலவில்லை."
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

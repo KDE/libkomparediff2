@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2007-08-20 13:09+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -96,7 +96,7 @@ msgid ""
 msgstr ""
 "<qt>त्यहाँ फोल्डर <b>%2</b> मा भिन्नता <b>%1</b> लागू गर्दा समस्याहरू थियो ।</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "अस्थायी फाइल खोल्न सकेन ।"
@@ -126,7 +126,7 @@ msgstr ""
 "%2</b> अन्तर्गत उपलब्ध छ । तपाईँ यसलाई म्यानुअल तरिकाले दायाँपट्टि प्रतिलिपि गर्न "
 "सक्नुहुन्छ ।</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "फरक निर्गात पद वर्णन गर्न सकेन ।"
@@ -136,12 +136,12 @@ msgstr "फरक निर्गात पद वर्णन गर्न स�
 msgid "The files are identical."
 msgstr "फाइलहरू समान छन् ।"
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "अस्थायी फाइलमा लेख्न सकेन ।"
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

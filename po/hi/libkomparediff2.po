@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2021-06-29 20:38+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -91,7 +91,7 @@ msgid ""
 "</qt>"
 msgstr "<qt>डिफ़ <b>%1</b> को फ़ोल्डर <b>%2</b> में लागू करने में कुछ समस्याएँ हैं।</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "अस्थायी फ़ाइल खोल नहीं सके।"
@@ -120,7 +120,7 @@ msgstr ""
 "<qt>अस्थायी फ़ाइल को ठिकाने तक नहीं पहूंचा पाए <b>%1</b>। अस्थायी फ़ाइल अभी भी <b>"
 "%2</b> में है। आप उसकी प्रतिलिपि स्वयं सही स्थान पर पहुँचा सकते हैं।</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "डिफ़ आउटपुट पार्स नहीं कर सका।"
@@ -130,12 +130,12 @@ msgstr "डिफ़ आउटपुट पार्स नहीं कर स�
 msgid "The files are identical."
 msgstr "फ़ाइलें एक समान हैं।"
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "अस्थायी फ़ाइल पर लिख नहीं सका।"
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

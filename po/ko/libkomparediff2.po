@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2022-05-07 02:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -92,7 +92,7 @@ msgstr ""
 "<qt>폴더 <b>%2</b>에 차이점 <b>%1</b>을(를) 적용하는 중 오류가 발생했습니다."
 "</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "임시 파일을 열 수 없습니다."
@@ -121,7 +121,7 @@ msgstr ""
 "<qt>임시 파일을 대상 위치 <b>%1</b>에 업로드할 수 없습니다. 임시 파일은 다음 "
 "위치에 저장되어 있습니다: <b>%2</b>. 직접 업로드할 수 있습니다.</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "diff 출력을 해석할 수 없습니다."
@@ -131,12 +131,12 @@ msgstr "diff 출력을 해석할 수 없습니다."
 msgid "The files are identical."
 msgstr "파일이 같습니다."
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "임시 파일에 쓸 수 없습니다."
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

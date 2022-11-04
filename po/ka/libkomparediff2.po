@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkomparediff2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2022-05-22 05:37+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -88,7 +88,7 @@ msgid ""
 "</qt>"
 msgstr "<qt>diff-ის <b>%1</b> გადატარების შეცდომა საქაღალდეზე<b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "დროებითი ფაილის გახსნის შეცდომა."
@@ -118,7 +118,7 @@ msgstr ""
 "დროებითი ფაილი ჯერ კიდევ ხელმისაწვდომია: <b>%2</b>. შეგიძლიათ ის ხელით "
 "დააკოპიროთ.</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Diff-ის გამოტანის დამუშავების შეცდომა."
@@ -128,12 +128,12 @@ msgstr "Diff-ის გამოტანის დამუშავები�
 msgid "The files are identical."
 msgstr "ფაილები ერთნაირია."
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "დროებით ფაილში ჩაწერის შეცდომა."
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

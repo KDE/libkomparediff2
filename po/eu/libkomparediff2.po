@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkomparediff2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-01 00:49+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2021-08-12 00:06+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -97,7 +97,7 @@ msgid ""
 "</qt>"
 msgstr "<qt>Arazoak <b>%1</b> diff-a <b>%2</b> direktorioari aplikatzean.</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:679
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Ezin izan da behin-behineko fitxategirik ireki."
@@ -128,7 +128,7 @@ msgstr ""
 "kargatu. Behin behineko fitxategia oraindik eskuragarri dago hemen: <b>%2</"
 "b>. Eskuz kopia dezakezu kokaleku zuzenera.</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:626 komparemodellist.cpp:646
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Ezin izan da diff irteera analizatu."
@@ -138,12 +138,12 @@ msgstr "Ezin izan da diff irteera analizatu."
 msgid "The files are identical."
 msgstr "Fitxategiak berdinak dira."
 
-#: komparemodellist.cpp:711
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Ezin izan da behin behineko fitxategian idatzi."
 
-#: komparemodellist.cpp:985
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

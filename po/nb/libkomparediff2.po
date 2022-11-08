@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-03-14 00:46+0000\n"
+"POT-Creation-Date: 2022-11-04 00:48+0000\n"
 "PO-Revision-Date: 2013-04-08 21:44+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -22,55 +22,55 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: komparemodellist.cpp:58
+#: komparemodellist.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr ""
 
-#: komparemodellist.cpp:62
+#: komparemodellist.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr ""
 
-#: komparemodellist.cpp:66
+#: komparemodellist.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "App&ly All"
 msgstr ""
 
-#: komparemodellist.cpp:70
+#: komparemodellist.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr ""
 
-#: komparemodellist.cpp:80
+#: komparemodellist.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "P&revious File"
 msgstr ""
 
-#: komparemodellist.cpp:84
+#: komparemodellist.cpp:83
 #, kde-format
 msgctxt "@action"
 msgid "N&ext File"
 msgstr ""
 
-#: komparemodellist.cpp:88
+#: komparemodellist.cpp:87
 #, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr ""
 
-#: komparemodellist.cpp:92
+#: komparemodellist.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr ""
 
-#: komparemodellist.cpp:253 komparemodellist.cpp:278
+#: komparemodellist.cpp:252 komparemodellist.cpp:277
 #, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
@@ -79,7 +79,7 @@ msgstr ""
 "<qt>Ingen modeller eller ingen forskjeller, denne fila: <b>%1</b>, er ikke "
 "en gyldig diff-fil.</qt>"
 
-#: komparemodellist.cpp:262
+#: komparemodellist.cpp:261
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
@@ -87,7 +87,7 @@ msgid ""
 msgstr ""
 "<qt>Det var problemer med å legge på diff <b>%1</b> på fila <b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:289
+#: komparemodellist.cpp:288
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
@@ -95,18 +95,18 @@ msgid ""
 msgstr ""
 "<qt>Det var problemer med å legge på diff <b>%1</b> på mappa <b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:321 komparemodellist.cpp:680
+#: komparemodellist.cpp:320 komparemodellist.cpp:681
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Klarte ikke åpne en midlertidig fil."
 
-#: komparemodellist.cpp:369 komparemodellist.cpp:376
+#: komparemodellist.cpp:368 komparemodellist.cpp:375
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr ""
 "<qt>Klarte ikke skrive til den midlertidige fila <b>%1</b>, sletter den.</qt>"
 
-#: komparemodellist.cpp:407
+#: komparemodellist.cpp:406
 #, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
@@ -115,7 +115,7 @@ msgstr ""
 "<qt>Kunne ikke opprette målmappa <b>%1</b>.\n"
 "Fila ble ikke lagret.</qt>"
 
-#: komparemodellist.cpp:435
+#: komparemodellist.cpp:434
 #, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -126,22 +126,22 @@ msgstr ""
 "fremdeles tilgjengelig under: <b>%2</b>. Du kan kopiere den manuelt til det "
 "riktige stedet.</qt>"
 
-#: komparemodellist.cpp:514 komparemodellist.cpp:627 komparemodellist.cpp:647
+#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Klarte ikke tolke utdata fra diff."
 
-#: komparemodellist.cpp:530
+#: komparemodellist.cpp:529
 #, kde-format
 msgid "The files are identical."
 msgstr "Filene er identiske."
 
-#: komparemodellist.cpp:712
+#: komparemodellist.cpp:713
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Klarte ikke skrive til den midlertidige fila."
 
-#: komparemodellist.cpp:986
+#: komparemodellist.cpp:987
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

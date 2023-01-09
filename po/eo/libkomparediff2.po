@@ -1,13 +1,16 @@
-# Translation of kompare into esperanto.
+# Translation of libkomparediff2.pot to esperanto.
+# Copyright (C) 2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the libkomparediff2 package.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-04 00:48+0000\n"
-"PO-Revision-Date: 2009-11-15 12:06+0100\n"
-"Last-Translator: Axel Rousseau <axel@esperanto-jeunes.org>\n"
+"PO-Revision-Date: 2023-01-08 12:30+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -20,51 +23,49 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
-msgstr ""
+msgstr "&Apliki Diferencon"
 
 #: komparemodellist.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
-msgstr ""
+msgstr "Mal&apliki Diferencon"
 
 #: komparemodellist.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "App&ly All"
-msgstr ""
+msgstr "Ap&liki Ĉiujn"
 
 #: komparemodellist.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
-msgstr ""
+msgstr "Malapliki Ĉi&ujn"
 
 #: komparemodellist.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "P&revious File"
-msgstr ""
+msgstr "Antaŭa Dosie&ro"
 
 #: komparemodellist.cpp:83
-#, fuzzy, kde-format
-#| msgid "&File"
+#, kde-format
 msgctxt "@action"
 msgid "N&ext File"
-msgstr "&Dosiero"
+msgstr "S&ekva Dosiero"
 
 #: komparemodellist.cpp:87
-#, fuzzy, kde-format
-#| msgid "Preferences"
+#, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
-msgstr "Preferaĵoj"
+msgstr "&Antaŭa Diferenco"
 
 #: komparemodellist.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
-msgstr ""
+msgstr "Sekva Difere&nco"
 
 #: komparemodellist.cpp:252 komparemodellist.cpp:277
 #, kde-format
@@ -133,146 +134,3 @@ msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "
 "displayed in the diff view."
 msgstr ""
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Axel Rousseau"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "axel@esperanto-jeunes.org"
-
-#~ msgid "Navigation"
-#~ msgstr "Navigado"
-
-#~ msgid "Diff Output"
-#~ msgstr "Eligo de diff"
-
-#~ msgid "Source"
-#~ msgstr "Fonto"
-
-#~ msgid "Destination"
-#~ msgstr "Celo"
-
-#~ msgid "Source File"
-#~ msgstr "Fontdosiero"
-
-#~ msgid "Unknown"
-#~ msgstr "Nekonata"
-
-#~ msgid "John Firebaugh"
-#~ msgstr "John Firebaugh"
-
-#~ msgid "Author"
-#~ msgstr "Aŭtoro"
-
-#~ msgid "Otto Bruggeman"
-#~ msgstr "Otto Bruggeman"
-
-#~ msgid "Show Statistics"
-#~ msgstr "Montri la statistikojn"
-
-#~ msgid "File Exists"
-#~ msgstr "La dosiero ekzistas"
-
-#~ msgid "Overwrite"
-#~ msgstr "Anstataŭigu"
-
-#~ msgid "Kevin Kofler"
-#~ msgstr "Kevin Kofler"
-
-#~ msgid "Unified"
-#~ msgstr "Unuigita"
-
-#~ msgid "Context"
-#~ msgstr "Kunteksto"
-
-#~ msgid "RCS"
-#~ msgstr "RCS"
-
-#~ msgid "Ed"
-#~ msgstr "Ed"
-
-#~ msgid "Normal"
-#~ msgstr "Normala"
-
-#~ msgid "&Settings"
-#~ msgstr "A&gordo"
-
-#~ msgid "View"
-#~ msgstr "Vido"
-
-#~ msgid "View Settings"
-#~ msgstr "Vida agordo"
-
-#~ msgid "Options"
-#~ msgstr "Opcioj"
-
-#~ msgid "Ignore changes in case"
-#~ msgstr "Ignori ŝanĝojn de uskleco"
-
-#~ msgid "Ignore added or removed empty lines"
-#~ msgstr "Ignori aldonitajn aŭ forigitajn malplenajn liniojn"
-
-#~ msgid "Format"
-#~ msgstr "Formato"
-
-#~ msgid "Main Toolbar"
-#~ msgstr "Ĉefa ilobreto"
-
-#~ msgid "Files"
-#~ msgstr "Dosieroj"
-
-#~ msgid "Appearance"
-#~ msgstr "Aspekto"
-
-#~ msgid "Output Format"
-#~ msgstr "Eligoformato"
-
-#~ msgid "General"
-#~ msgstr "Ĝeneralo"
-
-#~ msgid "&Edit..."
-#~ msgstr "&Redakto"
-
-#~ msgid "Exclude"
-#~ msgstr "Eskludi"
-
-#~ msgid "Encoding"
-#~ msgstr "Kodoprezento"
-
-#~ msgid "Colors"
-#~ msgstr "Koloroj"
-
-#~ msgid "Number of lines:"
-#~ msgstr "Nombro de linioj:"
-
-#~ msgid "Font:"
-#~ msgstr "Tiparo:"
-
-#~ msgid "Size:"
-#~ msgstr "Grandeco:"
-
-#~ msgid "Fonts"
-#~ msgstr "Tiparoj"
-
-#~ msgid "Kompare"
-#~ msgstr "Kompare"
-
-#~ msgid "Jeff Snyder"
-#~ msgstr "Jeff Snyder"
-
-#~ msgid "Developer"
-#~ msgstr "Kreinto"
-
-#~ msgid "Maintainer"
-#~ msgstr "Prizorganto"
-
-#~ msgid "Chris Luetchford"
-#~ msgstr "Chris Luetchford"
-
-#~ msgid "Malte Starostik"
-#~ msgstr "Malte Starostik"
-
-#~ msgid "Bernd Gehrmann"
-#~ msgstr "Bernd Gehrmann"

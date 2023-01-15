@@ -12,7 +12,6 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <QStringList>
 #include <QTextCodec>
 
-#include <KCharsets>
 #include <KIO/Global>
 
 #include <komparediffdebug.h>
@@ -246,7 +245,7 @@ void KompareProcess::setEncoding(const QString& encoding)
     }
     else
     {
-        m_codec = KCharsets::charsets()->codecForName(encoding);
+        m_codec = QTextCodec::codecForName(encoding.toUtf8());
         if (m_codec)
             m_textDecoder = m_codec->makeDecoder();
         else

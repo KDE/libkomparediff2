@@ -20,7 +20,6 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <QMimeDatabase>
 
 #include <KActionCollection>
-#include <KCharsets>
 #include <KDirWatch>
 #include <KIO/UDSEntry>
 #include <KIO/StatJob>
@@ -481,7 +480,7 @@ void KompareModelList::setEncoding(const QString& encoding)
     else
     {
         qCDebug(LIBKOMPAREDIFF2) << "Encoding : " << encoding;
-        m_textCodec = KCharsets::charsets()->codecForName(encoding);
+        m_textCodec = QTextCodec::codecForName(encoding.toUtf8());
         qCDebug(LIBKOMPAREDIFF2) << "TextCodec: " << m_textCodec;
         if (!m_textCodec)
             m_textCodec = QTextCodec::codecForLocale();

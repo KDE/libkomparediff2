@@ -39,7 +39,6 @@ target_link_libraries(komparediff2
         Qt::Widgets
         Qt::Core
     PRIVATE
-        KF5::Codecs
         KF5::KIOCore
         KF5::I18n
         KF5::CoreAddons

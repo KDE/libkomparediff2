@@ -32,7 +32,6 @@ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED
 find_package(KF5 ${KF_MIN_VERSION} REQUIRED
     COMPONENTS
         CoreAddons
-        Codecs
         Config
         XmlGui
         I18n

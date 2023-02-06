@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-04 00:48+0000\n"
+"POT-Creation-Date: 2023-02-06 01:02+0000\n"
 "PO-Revision-Date: 2020-05-04 11:07+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -18,55 +18,55 @@ msgstr ""
 "X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: komparemodellist.cpp:57
+#: komparemodellist.cpp:56
 #, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "&Rakenda erinevus"
 
-#: komparemodellist.cpp:61
+#: komparemodellist.cpp:60
 #, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "&Eemalda erinevus"
 
-#: komparemodellist.cpp:65
+#: komparemodellist.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "&Rakenda kõik"
 
-#: komparemodellist.cpp:69
+#: komparemodellist.cpp:68
 #, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "Tü&hista kõigi rakendamine"
 
-#: komparemodellist.cpp:79
+#: komparemodellist.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "&Eelmine fail"
 
-#: komparemodellist.cpp:83
+#: komparemodellist.cpp:82
 #, kde-format
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "&Järgmine fail"
 
-#: komparemodellist.cpp:87
+#: komparemodellist.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "Ee&lmine erinevus"
 
-#: komparemodellist.cpp:91
+#: komparemodellist.cpp:90
 #, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "Jär&gmine erinevus"
 
-#: komparemodellist.cpp:252 komparemodellist.cpp:277
+#: komparemodellist.cpp:251 komparemodellist.cpp:276
 #, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
@@ -75,7 +75,7 @@ msgstr ""
 "<qt>Ei ole mudelit ega erinevusi, sest fail <b>%1</b> ei ole mitte korralik "
 "diff-fail.</qt>"
 
-#: komparemodellist.cpp:261
+#: komparemodellist.cpp:260
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
@@ -84,7 +84,7 @@ msgstr ""
 "<qt>Diff-faili <b>%1</b> rakendamisel failile <b>%2</b> tekkis probleeme.</"
 "qt>"
 
-#: komparemodellist.cpp:288
+#: komparemodellist.cpp:287
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
@@ -93,18 +93,18 @@ msgstr ""
 "<qt>Diff-faili <b>%1</b> rakendamisel kataloogile <b>%2</b> tekkis probleeme."
 "</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:681
+#: komparemodellist.cpp:319 komparemodellist.cpp:680
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Ajutise faili avamine nurjus."
 
-#: komparemodellist.cpp:368 komparemodellist.cpp:375
+#: komparemodellist.cpp:367 komparemodellist.cpp:374
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr ""
 "<qt>Ajutisse faili <b>%1</b> kirjutamine nurjus, see kustutatakse.</qt>"
 
-#: komparemodellist.cpp:406
+#: komparemodellist.cpp:405
 #, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
@@ -113,7 +113,7 @@ msgstr ""
 "<qt>Sihtkataloogi <b>%1</b> loomine nurjus.\n"
 "Faili ei salvestatud.</qt>"
 
-#: komparemodellist.cpp:434
+#: komparemodellist.cpp:433
 #, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -124,22 +124,22 @@ msgstr ""
 "endiselt kättesaadav (<b>%2</b>). Kui soovid, võid selle käsitsi õigesse "
 "kohta kopeerida.</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
+#: komparemodellist.cpp:512 komparemodellist.cpp:627 komparemodellist.cpp:647
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Võrdlemise väljundi parsimine nurjus."
 
-#: komparemodellist.cpp:529
+#: komparemodellist.cpp:528
 #, kde-format
 msgid "The files are identical."
 msgstr "Failid on identsed."
 
-#: komparemodellist.cpp:713
+#: komparemodellist.cpp:712
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Ajutisse faili kirjutamine nurjus."
 
-#: komparemodellist.cpp:987
+#: komparemodellist.cpp:986
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

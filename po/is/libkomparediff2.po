@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-04 00:48+0000\n"
+"POT-Creation-Date: 2023-02-06 01:02+0000\n"
 "PO-Revision-Date: 2009-07-28 20:22+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -18,101 +18,101 @@ msgstr ""
 "\n"
 "\n"
 
-#: komparemodellist.cpp:57
+#: komparemodellist.cpp:56
 #, fuzzy, kde-format
 #| msgid "&Apply Difference"
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "&Virkja mismun"
 
-#: komparemodellist.cpp:61
+#: komparemodellist.cpp:60
 #, fuzzy, kde-format
 #| msgid "Un&apply Difference"
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "&Afvirkja mismun"
 
-#: komparemodellist.cpp:65
+#: komparemodellist.cpp:64
 #, fuzzy, kde-format
 #| msgid "App&ly All"
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "Virkja a&llt"
 
-#: komparemodellist.cpp:69
+#: komparemodellist.cpp:68
 #, fuzzy, kde-format
 #| msgid "&Unapply All"
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "A&fvirkja allt"
 
-#: komparemodellist.cpp:79
+#: komparemodellist.cpp:78
 #, fuzzy, kde-format
 #| msgid "P&revious File"
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "Fy&rri skrá"
 
-#: komparemodellist.cpp:83
+#: komparemodellist.cpp:82
 #, fuzzy, kde-format
 #| msgid "N&ext File"
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "&Næsta skrá"
 
-#: komparemodellist.cpp:87
+#: komparemodellist.cpp:86
 #, fuzzy, kde-format
 #| msgid "&Previous Difference"
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "Fyrra &mismunur"
 
-#: komparemodellist.cpp:91
+#: komparemodellist.cpp:90
 #, fuzzy, kde-format
 #| msgid "&Next Difference"
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "Næsti m&ismunur"
 
-#: komparemodellist.cpp:252 komparemodellist.cpp:277
+#: komparemodellist.cpp:251 komparemodellist.cpp:276
 #, fuzzy, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
 "file.</qt>"
 msgstr "Enginn mismunur, Þessi skrá: %1, er ekki gild diff skrá."
 
-#: komparemodellist.cpp:261
+#: komparemodellist.cpp:260
 #, fuzzy, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
 "qt>"
 msgstr "Það komu upp vandamál við að virkja diff (%1) í skrána (%2)."
 
-#: komparemodellist.cpp:288
+#: komparemodellist.cpp:287
 #, fuzzy, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
 "</qt>"
 msgstr "Það komu upp vandamál við að virkja diff (%1) í möppuna (%2)."
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:681
+#: komparemodellist.cpp:319 komparemodellist.cpp:680
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Gat ekki opnað vinnuskrá."
 
-#: komparemodellist.cpp:368 komparemodellist.cpp:375
+#: komparemodellist.cpp:367 komparemodellist.cpp:374
 #, fuzzy, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr "Gat ekki skrifað í vinnuskrána."
 
-#: komparemodellist.cpp:406
+#: komparemodellist.cpp:405
 #, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
 "The file has not been saved.</qt>"
 msgstr ""
 
-#: komparemodellist.cpp:434
+#: komparemodellist.cpp:433
 #, fuzzy, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -122,22 +122,22 @@ msgstr ""
 "Gat ekki sent vinnuskrána á áfangastaðinn %2. Vinnuskráin er enn tiltæk í: "
 "%1. Þú getur afritað hana handvirkt á rétta staðinn."
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
+#: komparemodellist.cpp:512 komparemodellist.cpp:627 komparemodellist.cpp:647
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Gat ekki þáttað diff úttak."
 
-#: komparemodellist.cpp:529
+#: komparemodellist.cpp:528
 #, kde-format
 msgid "The files are identical."
 msgstr "Skrárnar eru eins."
 
-#: komparemodellist.cpp:713
+#: komparemodellist.cpp:712
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Gat ekki skrifað í vinnuskrána."
 
-#: komparemodellist.cpp:987
+#: komparemodellist.cpp:986
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

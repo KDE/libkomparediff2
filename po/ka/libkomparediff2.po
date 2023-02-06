@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkomparediff2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-04 00:48+0000\n"
+"POT-Creation-Date: 2023-02-06 01:02+0000\n"
 "PO-Revision-Date: 2022-05-22 05:37+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,55 +18,55 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: komparemodellist.cpp:57
+#: komparemodellist.cpp:56
 #, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "&სხვაობის გადატარება"
 
-#: komparemodellist.cpp:61
+#: komparemodellist.cpp:60
 #, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "&სხვაობის გადატარების გაუქმება"
 
-#: komparemodellist.cpp:65
+#: komparemodellist.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "&ყველას გადატარება"
 
-#: komparemodellist.cpp:69
+#: komparemodellist.cpp:68
 #, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "&ყველას გადატარების გაუქმება"
 
-#: komparemodellist.cpp:79
+#: komparemodellist.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "&წინა ფაილი"
 
-#: komparemodellist.cpp:83
+#: komparemodellist.cpp:82
 #, kde-format
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "&შემდეგი ფაილი"
 
-#: komparemodellist.cpp:87
+#: komparemodellist.cpp:86
 #, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "&წინა სხვაობა"
 
-#: komparemodellist.cpp:91
+#: komparemodellist.cpp:90
 #, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "&შემდეგი სხვაობა"
 
-#: komparemodellist.cpp:252 komparemodellist.cpp:277
+#: komparemodellist.cpp:251 komparemodellist.cpp:276
 #, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
@@ -74,31 +74,31 @@ msgid ""
 msgstr ""
 "<qt>მოდელის ან სხვაობის გარეშე. ფაილი: <b>%1</b>, სწორი diff ფაილი არაა.</qt>"
 
-#: komparemodellist.cpp:261
+#: komparemodellist.cpp:260
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
 "qt>"
 msgstr "<qt>diff-ის <b>%1</b> გადატარების შეცდომა ფაილზე<b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:288
+#: komparemodellist.cpp:287
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
 "</qt>"
 msgstr "<qt>diff-ის <b>%1</b> გადატარების შეცდომა საქაღალდეზე<b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:681
+#: komparemodellist.cpp:319 komparemodellist.cpp:680
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "დროებითი ფაილის გახსნის შეცდომა."
 
-#: komparemodellist.cpp:368 komparemodellist.cpp:375
+#: komparemodellist.cpp:367 komparemodellist.cpp:374
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr "<qt>დროებით ფაილში <b>%1</b> ჩაწერის შეცდომა. ფაილი წაიშლება.</qt>"
 
-#: komparemodellist.cpp:406
+#: komparemodellist.cpp:405
 #, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
@@ -107,7 +107,7 @@ msgstr ""
 "<qt>სამიზნე საქაღალდის შექმნის შეცდომა: <b>%1</b>.\n"
 "ფაილი შენახული არაა.</qt>"
 
-#: komparemodellist.cpp:434
+#: komparemodellist.cpp:433
 #, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -118,22 +118,22 @@ msgstr ""
 "დროებითი ფაილი ჯერ კიდევ ხელმისაწვდომია: <b>%2</b>. შეგიძლიათ ის ხელით "
 "დააკოპიროთ.</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
+#: komparemodellist.cpp:512 komparemodellist.cpp:627 komparemodellist.cpp:647
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Diff-ის გამოტანის დამუშავების შეცდომა."
 
-#: komparemodellist.cpp:529
+#: komparemodellist.cpp:528
 #, kde-format
 msgid "The files are identical."
 msgstr "ფაილები ერთნაირია."
 
-#: komparemodellist.cpp:713
+#: komparemodellist.cpp:712
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "დროებით ფაილში ჩაწერის შეცდომა."
 
-#: komparemodellist.cpp:987
+#: komparemodellist.cpp:986
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

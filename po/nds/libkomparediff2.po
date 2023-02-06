@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-04 00:48+0000\n"
+"POT-Creation-Date: 2023-02-06 01:02+0000\n"
 "PO-Revision-Date: 2011-09-05 22:49+0200\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -19,63 +19,63 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: komparemodellist.cpp:57
+#: komparemodellist.cpp:56
 #, fuzzy, kde-format
 #| msgid "&Apply Difference"
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "Verscheel &anwennen"
 
-#: komparemodellist.cpp:61
+#: komparemodellist.cpp:60
 #, fuzzy, kde-format
 #| msgid "Un&apply Difference"
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "Verscheel &torüchnehmen"
 
-#: komparemodellist.cpp:65
+#: komparemodellist.cpp:64
 #, fuzzy, kde-format
 #| msgid "App&ly All"
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "All a&nwennen"
 
-#: komparemodellist.cpp:69
+#: komparemodellist.cpp:68
 #, fuzzy, kde-format
 #| msgid "&Unapply All"
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "All Ännern &torüchnehmen"
 
-#: komparemodellist.cpp:79
+#: komparemodellist.cpp:78
 #, fuzzy, kde-format
 #| msgid "P&revious File"
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "&Verleden Datei"
 
-#: komparemodellist.cpp:83
+#: komparemodellist.cpp:82
 #, fuzzy, kde-format
 #| msgid "N&ext File"
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "&Nakamen Datei"
 
-#: komparemodellist.cpp:87
+#: komparemodellist.cpp:86
 #, fuzzy, kde-format
 #| msgid "&Previous Difference"
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "&Verleden Verscheel"
 
-#: komparemodellist.cpp:91
+#: komparemodellist.cpp:90
 #, fuzzy, kde-format
 #| msgid "&Next Difference"
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "&Nakamen Verscheel"
 
-#: komparemodellist.cpp:252 komparemodellist.cpp:277
+#: komparemodellist.cpp:251 komparemodellist.cpp:276
 #, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
@@ -84,7 +84,7 @@ msgstr ""
 "<qt>Keen Modellen oder keen Verschelen. De Datei <b>%1</b> is keen gellen "
 "Verscheeldatei.</qt>"
 
-#: komparemodellist.cpp:261
+#: komparemodellist.cpp:260
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
@@ -93,7 +93,7 @@ msgstr ""
 "<qt>Bi't Anwennen vun den Verscheel <b>%1</b> op de Datei <b>%2</b> hett dat "
 "Problemen geven.</qt>"
 
-#: komparemodellist.cpp:288
+#: komparemodellist.cpp:287
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
@@ -102,19 +102,19 @@ msgstr ""
 "<qt>Bi't Anwennen vun den Verscheel <b>%1</b> na den Orner <b>%2</b> hett "
 "dat Problemen geven.</qt>"
 
-#: komparemodellist.cpp:320 komparemodellist.cpp:681
+#: komparemodellist.cpp:319 komparemodellist.cpp:680
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Temporeerdatei lett sik nich opmaken."
 
-#: komparemodellist.cpp:368 komparemodellist.cpp:375
+#: komparemodellist.cpp:367 komparemodellist.cpp:374
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr ""
 "<qt>Nich mööglich, na de Temporeerdatei <b>%1</b> to schrieven. Se warrt "
 "wegdaan.</qt>"
 
-#: komparemodellist.cpp:406
+#: komparemodellist.cpp:405
 #, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
@@ -123,7 +123,7 @@ msgstr ""
 "<qt>De Teelorner <b>%1</b> lett sik nich opstellen.\n"
 "De Datei wöör nich sekert.</qt>"
 
-#: komparemodellist.cpp:434
+#: komparemodellist.cpp:433
 #, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -134,22 +134,22 @@ msgstr ""
 "Dat gifft de Temporeerdatei noch ünner <b>%2</b>. Du kannst ehr vun Hand na "
 "de richtige Steed koperen.</qt>"
 
-#: komparemodellist.cpp:513 komparemodellist.cpp:628 komparemodellist.cpp:648
+#: komparemodellist.cpp:512 komparemodellist.cpp:627 komparemodellist.cpp:647
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Diff-Utgaav lett sik nich inlesen."
 
-#: komparemodellist.cpp:529
+#: komparemodellist.cpp:528
 #, kde-format
 msgid "The files are identical."
 msgstr "De Dateien sünd liek."
 
-#: komparemodellist.cpp:713
+#: komparemodellist.cpp:712
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Nich mööglich, na de Temporeerdatei to schrieven."
 
-#: komparemodellist.cpp:987
+#: komparemodellist.cpp:986
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

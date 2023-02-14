@@ -1,109 +1,107 @@
 # translation of kompare.po to Icelandic
 # Björgvin Ragnarsson <nifgraup@hotmail.com>, 2004.
-# Sveinn í Felli <sveinki@nett.is>, 2009.
+# Sveinn í Felli <sveinki@nett.is>, 2009, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-06 01:02+0000\n"
-"PO-Revision-Date: 2009-07-28 20:22+0000\n"
-"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
-"Language-Team: Icelandic <kde-isl@molar.is>\n"
+"PO-Revision-Date: 2023-02-13 17:45+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 "\n"
 
 #: komparemodellist.cpp:56
-#, fuzzy, kde-format
-#| msgid "&Apply Difference"
+#, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
-msgstr "&Virkja mismun"
+msgstr "Virkj&a mismun"
 
 #: komparemodellist.cpp:60
-#, fuzzy, kde-format
-#| msgid "Un&apply Difference"
+#, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "&Afvirkja mismun"
 
 #: komparemodellist.cpp:64
-#, fuzzy, kde-format
-#| msgid "App&ly All"
+#, kde-format
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "Virkja a&llt"
 
 #: komparemodellist.cpp:68
-#, fuzzy, kde-format
-#| msgid "&Unapply All"
+#, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "A&fvirkja allt"
 
 #: komparemodellist.cpp:78
-#, fuzzy, kde-format
-#| msgid "P&revious File"
+#, kde-format
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "Fy&rri skrá"
 
 #: komparemodellist.cpp:82
-#, fuzzy, kde-format
-#| msgid "N&ext File"
+#, kde-format
 msgctxt "@action"
 msgid "N&ext File"
-msgstr "&Næsta skrá"
+msgstr "Næsta s&krá"
 
 #: komparemodellist.cpp:86
-#, fuzzy, kde-format
-#| msgid "&Previous Difference"
+#, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
-msgstr "Fyrra &mismunur"
+msgstr "Fyrri &mismunur"
 
 #: komparemodellist.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Next Difference"
+#, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
-msgstr "Næsti m&ismunur"
+msgstr "&Næsti mismunur"
 
 #: komparemodellist.cpp:251 komparemodellist.cpp:276
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
 "file.</qt>"
-msgstr "Enginn mismunur, Þessi skrá: %1, er ekki gild diff skrá."
+msgstr ""
+"<qt>Engin líkön eða mismunur, þessi skrá: <b>%1</b>, er ekki gild diff-skrá."
+"</qt>"
 
 #: komparemodellist.cpp:260
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
 "qt>"
-msgstr "Það komu upp vandamál við að virkja diff (%1) í skrána (%2)."
+msgstr ""
+"<qt>Það komu upp vandamál við að virkja mismuninn <b>%1</b> í skrána <b>%2</"
+"b>.</qt>"
 
 #: komparemodellist.cpp:287
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
 "</qt>"
-msgstr "Það komu upp vandamál við að virkja diff (%1) í möppuna (%2)."
+msgstr ""
+"<qt>Það komu upp vandamál við að virkja mismuninn %1 í möppuna <b>%2</b>.</"
+"qt>"
 
 #: komparemodellist.cpp:319 komparemodellist.cpp:680
 #, kde-format
 msgid "Could not open a temporary file."
-msgstr "Gat ekki opnað vinnuskrá."
+msgstr "Get ekki opnað bráðabirgðaskrá."
 
 #: komparemodellist.cpp:367 komparemodellist.cpp:374
-#, fuzzy, kde-format
+#, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
-msgstr "Gat ekki skrifað í vinnuskrána."
+msgstr "<qt>Gat ekki skrifað í bráðabirgðaskrána <b>%1</b>, eyði henni.</qt>"
 
 #: komparemodellist.cpp:405
 #, kde-format
@@ -111,21 +109,24 @@ msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
 "The file has not been saved.</qt>"
 msgstr ""
+"<qt>Gat ekki búið til móttökumöppu <b>%1</b>.\n"
+"Ekki var hægt að vista skrána.</qt>"
 
 #: komparemodellist.cpp:433
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
 "b>. The temporary file is still available under: <b>%2</b>. You can manually "
 "copy it to the right place.</qt>"
 msgstr ""
-"Gat ekki sent vinnuskrána á áfangastaðinn %2. Vinnuskráin er enn tiltæk í: "
-"%1. Þú getur afritað hana handvirkt á rétta staðinn."
+"<qt>Gat ekki sent bráðabirgðaskrána á áfangastaðinn <b>%1</b>. "
+"Bráðabirgðaskráin er enn tiltæk í: <b>%2</b>. Þú getur afritað hana "
+"handvirkt á rétta staðinn.</qt>"
 
 #: komparemodellist.cpp:512 komparemodellist.cpp:627 komparemodellist.cpp:647
 #, kde-format
 msgid "Could not parse diff output."
-msgstr "Gat ekki þáttað diff úttak."
+msgstr "Gat ekki þáttað diff-mismunaúttak."
 
 #: komparemodellist.cpp:528
 #, kde-format
@@ -135,7 +136,7 @@ msgstr "Skrárnar eru eins."
 #: komparemodellist.cpp:712
 #, kde-format
 msgid "Could not write to the temporary file."
-msgstr "Gat ekki skrifað í vinnuskrána."
+msgstr "Gat ekki skrifað í bráðabirgðaskrána."
 
 #: komparemodellist.cpp:986
 #, kde-format
@@ -143,6 +144,8 @@ msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "
 "displayed in the diff view."
 msgstr ""
+"Mismunurinn er rangt formaður. Sumar línur var ekki hægt að þátta og verða "
+"því ekki birtar í mismunasýninni."
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

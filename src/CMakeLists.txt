@@ -1,3 +1,5 @@
+set(KOMPAREDIFF2_INSTALL_INCLUDEDIR "${KDE_INSTALL_INCLUDEDIR}/KompareDiff2")
+
 add_definitions(-DTRANSLATION_DOMAIN=\"libkomparediff2\")
 
 set(LibKompareDiff2_SOVERSION 5)
@@ -44,7 +46,7 @@ target_link_libraries(komparediff2
         KF5::CoreAddons
 )
 
-target_include_directories(komparediff2 INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}>")
+target_include_directories(komparediff2 INTERFACE "$<INSTALL_INTERFACE:${KOMPAREDIFF2_INSTALL_INCLUDEDIR}>")
 
 set_target_properties(komparediff2 PROPERTIES
     VERSION ${LibKompareDiff2_VERSION}
@@ -67,7 +69,7 @@ install(
         kompare.h
         diffhunk.h
     DESTINATION
-        ${KDE_INSTALL_INCLUDEDIR}/libkomparediff2
+        ${KOMPAREDIFF2_INSTALL_INCLUDEDIR}/libkomparediff2
     COMPONENT
         Devel
 )

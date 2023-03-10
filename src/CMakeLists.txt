@@ -1,11 +1,12 @@
 set(KOMPAREDIFF2_INSTALL_INCLUDEDIR "${KDE_INSTALL_INCLUDEDIR}/KompareDiff2")
+set(KOMPAREDIFF2_CMAKECONFIG_NAME "LibKompareDiff2")
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libkomparediff2\")
 
 ecm_setup_version(PROJECT
     VARIABLE_PREFIX      KOMPAREDIFF2
     VERSION_HEADER       "komparediff2_version.h"
-    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/LibKompareDiff2ConfigVersion.cmake"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/${KOMPAREDIFF2_CMAKECONFIG_NAME}ConfigVersion.cmake"
     COMPATIBILITY        SameMajorVersion
     SOVERSION            5
 )
@@ -96,18 +97,18 @@ ecm_qt_install_logging_categories(
 
 
 # CMake config files
-set(_LibKompareDiff2_CONFIG_DEST "${KDE_INSTALL_CMAKEPACKAGEDIR}/LibKompareDiff2")
+set(_LibKompareDiff2_CONFIG_DEST "${KDE_INSTALL_CMAKEPACKAGEDIR}/${KOMPAREDIFF2_CMAKECONFIG_NAME}")
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/LibKompareDiff2Config.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/LibKompareDiff2Config.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/${KOMPAREDIFF2_CMAKECONFIG_NAME}Config.cmake"
     INSTALL_DESTINATION  "${_LibKompareDiff2_CONFIG_DEST}"
 )
 
 install( FILES
-        "${CMAKE_CURRENT_BINARY_DIR}/LibKompareDiff2ConfigVersion.cmake"
-        "${CMAKE_CURRENT_BINARY_DIR}/LibKompareDiff2Config.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/${KOMPAREDIFF2_CMAKECONFIG_NAME}ConfigVersion.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/${KOMPAREDIFF2_CMAKECONFIG_NAME}Config.cmake"
         DESTINATION "${_LibKompareDiff2_CONFIG_DEST}" )
 install( EXPORT LibKompareDiff2Targets
          DESTINATION "${_LibKompareDiff2_CONFIG_DEST}"
-         FILE LibKompareDiff2Targets.cmake )
+         FILE ${KOMPAREDIFF2_CMAKECONFIG_NAME}Targets.cmake )

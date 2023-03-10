@@ -12,6 +12,7 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
+include(ECMSetupVersion)
 
 include(CMakePackageConfigHelpers)
 include(FeatureSummary)

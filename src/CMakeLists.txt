@@ -45,7 +45,24 @@ ecm_qt_declare_logging_category(komparediff2
     EXPORT komparediff2
 )
 
-generate_export_header(komparediff2 BASE_NAME diff2)
+if (QT_MAJOR_VERSION STREQUAL "5")
+    set(_generate_export_header_version_args)
+else()
+    # For Qt6/KF6 world transitively include the version header
+    if(ECM_VERSION VERSION_LESS "5.106")
+        set(include_version_header_code "#include <komparediff2_version.h>\n")
+        set(_generate_export_header_version_args CUSTOM_CONTENT_FROM_VARIABLE include_version_header_code)
+    else()
+        set(_generate_export_header_version_args USE_VERSION_HEADER VERSION_BASE_NAME KOMPAREDIFF2)
+    endif()
+endif()
+
+ecm_generate_export_header(komparediff2
+    BASE_NAME diff2
+    VERSION ${KOMPAREDIFF2_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    ${_generate_export_header_version_args}
+)
 
 target_link_libraries(komparediff2
     PUBLIC

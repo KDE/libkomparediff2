@@ -13,10 +13,10 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(ECMSetupVersion)
+include(ECMGenerateExportHeader)
 
 include(CMakePackageConfigHelpers)
 include(FeatureSummary)
-include(GenerateExportHeader)
 
 set(ADDITIONAL_REQUIRED_QT_COMPONENTS)
 if(BUILD_TESTING)

@@ -11,7 +11,6 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #define KOMPAREMODELLIST_H
 
 #include <QObject>
-#include <QTextCodec>
 
 #include "diffmodel.h"
 #include "diffmodellist.h"
@@ -20,6 +19,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 class QAction;
 class QTemporaryFile;
+class QTextCodec;
 class KActionCollection;
 
 class DiffSettings;

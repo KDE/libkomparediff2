@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.16)
 
 project(LibKompareDiff2 VERSION "5.3.0")
 
-set(QT_MIN_VERSION "5.15.0")
-set(KF_MIN_VERSION "5.90.0")
+set(QT_MIN_VERSION "5.15.2")
+set(KF_MIN_VERSION "5.91.0")
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
@@ -14,6 +14,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(ECMSetupVersion)
 include(ECMGenerateExportHeader)
+include(ECMDeprecationSettings)
 
 include(CMakePackageConfigHelpers)
 include(FeatureSummary)
@@ -39,11 +40,9 @@ find_package(KF5 ${KF_MIN_VERSION} REQUIRED
         KIO
 )
 
-add_definitions(
-    -DQT_DISABLE_DEPRECATED_BEFORE=0x050F00
-    -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
-    -DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055400
-    -DKF_DEPRECATED_WARNINGS_SINCE=0x060000
+ecm_set_disabled_deprecation_versions(
+    QT 5.15.2
+    KF 5.91
 )
 
 add_subdirectory(src)

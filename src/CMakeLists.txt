@@ -76,6 +76,10 @@ target_link_libraries(komparediff2
         KF5::CoreAddons
 )
 
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(komparediff2 PRIVATE Qt6::Core5Compat)
+endif()
+
 target_include_directories(komparediff2 INTERFACE "$<INSTALL_INTERFACE:${KOMPAREDIFF2_INSTALL_INCLUDEDIR}>")
 
 install(TARGETS komparediff2 EXPORT LibKompareDiff2Targets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

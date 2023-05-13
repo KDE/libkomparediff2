@@ -50,6 +50,9 @@ target_link_libraries(interactiveDiffTest
     KF5::XmlGui
     KF5::KIOCore
 )
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(interactiveDiffTest Qt6::Core5Compat)
+endif()
 
 add_executable(levenshteintest)
 target_sources(levenshteintest PRIVATE

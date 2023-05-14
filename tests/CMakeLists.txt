@@ -45,10 +45,10 @@ set_target_properties(interactiveDiffTest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPO
 target_link_libraries(interactiveDiffTest
     Qt::Core
     Qt::Test
-    KF5::CoreAddons
-    KF5::I18n
-    KF5::XmlGui
-    KF5::KIOCore
+    KF${KF_MAJOR_VERSION}::CoreAddons
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::XmlGui
+    KF${KF_MAJOR_VERSION}::KIOCore
 )
 if (QT_MAJOR_VERSION STREQUAL "6")
     target_link_libraries(interactiveDiffTest Qt6::Core5Compat)

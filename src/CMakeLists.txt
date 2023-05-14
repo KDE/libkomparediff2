@@ -66,14 +66,14 @@ ecm_generate_export_header(komparediff2
 
 target_link_libraries(komparediff2
     PUBLIC
-        KF5::XmlGui
-        KF5::ConfigCore
+        KF${KF_MAJOR_VERSION}::XmlGui
+        KF${KF_MAJOR_VERSION}::ConfigCore
         Qt::Widgets
         Qt::Core
     PRIVATE
-        KF5::KIOCore
-        KF5::I18n
-        KF5::CoreAddons
+        KF${KF_MAJOR_VERSION}::KIOCore
+        KF${KF_MAJOR_VERSION}::I18n
+        KF${KF_MAJOR_VERSION}::CoreAddons
 )
 
 if (QT_MAJOR_VERSION STREQUAL "6")

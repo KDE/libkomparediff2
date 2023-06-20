@@ -221,8 +221,9 @@ void KompareProcess::writeCommandLine()
 
     if (m_diffSettings->m_excludeFilePattern)
     {
-        for (const QString& it : qAsConst(m_diffSettings->m_excludeFilePatternList)) {
-            *this << QStringLiteral("-x") << it;
+        for (const QString &it :
+             std::as_const(m_diffSettings->m_excludeFilePatternList)) {
+          *this << QStringLiteral("-x") << it;
         }
     }
 

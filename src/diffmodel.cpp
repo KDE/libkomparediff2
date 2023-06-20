@@ -330,7 +330,7 @@ static int GetDifferenceDelta(Difference* diff)
 void DiffModel::slotDifferenceApplied(Difference* diff)
 {
     int delta = GetDifferenceDelta(diff);
-    for (Difference* current : qAsConst(m_differences)) {
+    for (Difference *current : std::as_const(m_differences)) {
         if (current->destinationLineNumber() > diff->destinationLineNumber())
         {
             current->setTrackingDestinationLineNumber(current->trackingDestinationLineNumber() + delta);

@@ -147,7 +147,7 @@ msgid ""
 "displayed in the diff view."
 msgstr ""
 "O formato do ficheiro de diferenza é incorrecto. Algunhas das liñas non "
-"puideron analizarse, e non se mostrarán na vista das diferenzas."
+"puideron analizarse, e non se amosarán na vista das diferenzas."
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

@@ -571,4 +571,6 @@ void DiffModel::processStartMarker(Difference* diff, const QStringList& lines, M
     currentListLine = nextDestinationListLine;
 }
 
+#include "moc_diffmodel.cpp"
+
 /* vim: set ts=4 sw=4 noet: */

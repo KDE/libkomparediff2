@@ -835,3 +835,5 @@ void InteractiveDiffTest::testNormalDiff()
 }
 
 QTEST_GUILESS_MAIN(InteractiveDiffTest);
+
+#include "moc_interactivedifftest.cpp"

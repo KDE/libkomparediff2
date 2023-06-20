@@ -98,3 +98,4 @@ void DiffSettings::saveSettings(KConfig* config)
     config->sync();
 }
 
+#include "moc_diffsettings.cpp"

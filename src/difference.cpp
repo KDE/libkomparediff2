@@ -161,3 +161,4 @@ QString Difference::recreateDifference() const
     return difference;
 }
 
+#include "moc_difference.cpp"

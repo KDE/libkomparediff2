@@ -140,3 +140,5 @@ void LevenshteinTest::testSmth()
 
 
 QTEST_GUILESS_MAIN(LevenshteinTest);
+
+#include "moc_levenshteintest.cpp"

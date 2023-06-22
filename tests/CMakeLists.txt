@@ -12,11 +12,6 @@ include_directories(
     ${LIB_SOURCE_DIR}
     ${LIB_BINARY_DIR}
 )
-if(NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURRENT" AND EXCLUDE_DEPRECATED_BEFORE_AND_AT VERSION_LESS 5.4.0)
-    include_directories(
-        ${LIB_SOURCE_DIR}/compat
-    )
-endif()
 
 ecm_qt_declare_logging_category(komparediff2_DBG_SRCS
     HEADER komparediffdebug.h

@@ -13,9 +13,6 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "diffhunk.h"
 #include "kompare.h"
 #include "komparediff2_export.h"
-#if KOMPAREDIFF2_ENABLE_DEPRECATED_SINCE(5, 4)
-#include "diff2_export_p.h"
-#endif
 
 namespace Diff2
 {

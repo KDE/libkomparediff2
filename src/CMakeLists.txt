@@ -88,11 +88,38 @@ endif()
 
 install(TARGETS komparediff2 EXPORT LibKompareDiff2Targets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
-set(compat_headers)
+# provide compat headers for old include path prefix libkomparediff2/
 if(NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURRENT" AND EXCLUDE_DEPRECATED_BEFORE_AND_AT VERSION_LESS 5.4.0)
-    list(APPEND compat_headers
+    set(compat_headers
         compat/diff2_export.h
         compat/diff2_export_p.h
+    )
+
+    function(generate_compat_headers)
+        foreach(header_name ${ARGV})
+            set(compat_header "${CMAKE_CURRENT_BINARY_DIR}/compat/${header_name}")
+            configure_file(compat/header.h.in ${compat_header} @ONLY)
+            list(APPEND compat_headers ${compat_header})
+        endforeach()
+        set(compat_headers ${compat_headers} PARENT_SCOPE)
+    endfunction()
+
+    generate_compat_headers(
+        settingsbase.h
+        diffsettings.h
+        komparemodellist.h
+        difference.h
+        diffmodel.h
+        diffmodellist.h
+        marker.h
+        kompare.h
+        diffhunk.h
+    )
+
+    install(
+        FILES ${compat_headers}
+        DESTINATION ${KOMPAREDIFF2_INSTALL_INCLUDEDIR}/libkomparediff2
+        COMPONENT Devel
     )
 endif()
 
@@ -108,9 +135,8 @@ install(
         marker.h
         kompare.h
         diffhunk.h
-        ${compat_headers}
     DESTINATION
-        ${KOMPAREDIFF2_INSTALL_INCLUDEDIR}/libkomparediff2
+        ${KOMPAREDIFF2_INSTALL_INCLUDEDIR}/komparediff2
     COMPONENT
         Devel
 )

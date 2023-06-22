@@ -9,9 +9,6 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include <QList>
 #include "komparediff2_export.h"
-#if KOMPAREDIFF2_ENABLE_DEPRECATED_SINCE(5, 4)
-#include "diff2_export_p.h"
-#endif
 
 namespace Diff2 {
 

@@ -61,6 +61,8 @@ ecm_generate_export_header(komparediff2
     BASE_NAME diff2
     VERSION ${KOMPAREDIFF2_VERSION}
     DEPRECATED_BASE_VERSION 0
+    DEPRECATION_VERSIONS 5.4
+    EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
     ${_generate_export_header_version_args}
 )
 

@@ -14,6 +14,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(ECMSetupVersion)
 include(ECMGenerateExportHeader)
+include(ECMGenerateHeaders)
 include(ECMDeprecationSettings)
 
 include(CMakePackageConfigHelpers)

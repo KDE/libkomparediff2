@@ -88,6 +88,21 @@ endif()
 
 install(TARGETS komparediff2 EXPORT LibKompareDiff2Targets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
+ecm_generate_headers(komparediff2_CamelCase_HEADERS
+    HEADER_NAMES
+        Difference,DifferenceString
+        DiffHunk
+        DiffModel
+        DiffModelList
+        DiffSettings
+        Kompare
+        KompareModelList
+        Marker
+        SettingsBase
+    PREFIX KompareDiff2
+    REQUIRED_HEADERS komparediff2_HEADERS
+)
+
 # provide compat headers for old include path prefix libkomparediff2/
 if(NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURRENT" AND EXCLUDE_DEPRECATED_BEFORE_AND_AT VERSION_LESS 5.4.0)
     set(compat_headers
@@ -96,7 +111,9 @@ if(NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURRENT" AND EXCLUDE_DEPRECATE
     )
 
     function(generate_compat_headers)
-        foreach(header_name ${ARGV})
+        foreach(classname ${ARGV})
+            string(TOLOWER ${classname} classname_lc)
+            set(header_name "${classname_lc}.h")
             set(compat_header "${CMAKE_CURRENT_BINARY_DIR}/compat/${header_name}")
             configure_file(compat/header.h.in ${compat_header} @ONLY)
             list(APPEND compat_headers ${compat_header})
@@ -105,15 +122,15 @@ if(NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURRENT" AND EXCLUDE_DEPRECATE
     endfunction()
 
     generate_compat_headers(
-        settingsbase.h
-        diffsettings.h
-        komparemodellist.h
-        difference.h
-        diffmodel.h
-        diffmodellist.h
-        marker.h
-        kompare.h
-        diffhunk.h
+        Difference
+        DiffHunk
+        DiffModel
+        DiffModelList
+        DiffSettings
+        Kompare
+        KompareModelList
+        Marker
+        SettingsBase
     )
 
     install(
@@ -126,17 +143,17 @@ endif()
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/komparediff2_export.h
-        settingsbase.h
-        diffsettings.h
-        komparemodellist.h
-        difference.h
-        diffmodel.h
-        diffmodellist.h
-        marker.h
-        kompare.h
-        diffhunk.h
+        ${komparediff2_HEADERS}
     DESTINATION
         ${KOMPAREDIFF2_INSTALL_INCLUDEDIR}/komparediff2
+    COMPONENT
+        Devel
+)
+install(
+    FILES
+        ${komparediff2_CamelCase_HEADERS}
+    DESTINATION
+        ${KOMPAREDIFF2_INSTALL_INCLUDEDIR}/KompareDiff2
     COMPONENT
         Devel
 )

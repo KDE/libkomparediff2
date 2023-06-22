@@ -58,7 +58,6 @@ else()
 endif()
 
 ecm_generate_export_header(komparediff2
-    BASE_NAME diff2
     VERSION ${KOMPAREDIFF2_VERSION}
     DEPRECATED_BASE_VERSION 0
     DEPRECATION_VERSIONS 5.4
@@ -83,12 +82,23 @@ if (QT_MAJOR_VERSION STREQUAL "6")
 endif()
 
 target_include_directories(komparediff2 INTERFACE "$<INSTALL_INTERFACE:${KOMPAREDIFF2_INSTALL_INCLUDEDIR}>")
+if(NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURRENT" AND EXCLUDE_DEPRECATED_BEFORE_AND_AT VERSION_LESS 5.4.0)
+    target_include_directories(komparediff2 PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/compat>")
+endif()
 
 install(TARGETS komparediff2 EXPORT LibKompareDiff2Targets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
+set(compat_headers)
+if(NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURRENT" AND EXCLUDE_DEPRECATED_BEFORE_AND_AT VERSION_LESS 5.4.0)
+    list(APPEND compat_headers
+        compat/diff2_export.h
+        compat/diff2_export_p.h
+    )
+endif()
+
 install(
     FILES
-        ${CMAKE_CURRENT_BINARY_DIR}/diff2_export.h
+        ${CMAKE_CURRENT_BINARY_DIR}/komparediff2_export.h
         settingsbase.h
         diffsettings.h
         komparemodellist.h
@@ -98,6 +108,7 @@ install(
         marker.h
         kompare.h
         diffhunk.h
+        ${compat_headers}
     DESTINATION
         ${KOMPAREDIFF2_INSTALL_INCLUDEDIR}/libkomparediff2
     COMPONENT

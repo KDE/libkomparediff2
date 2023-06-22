@@ -12,6 +12,11 @@ include_directories(
     ${LIB_SOURCE_DIR}
     ${LIB_BINARY_DIR}
 )
+if(NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURRENT" AND EXCLUDE_DEPRECATED_BEFORE_AND_AT VERSION_LESS 5.4.0)
+    include_directories(
+        ${LIB_SOURCE_DIR}/compat
+    )
+endif()
 
 ecm_qt_declare_logging_category(komparediff2_DBG_SRCS
     HEADER komparediffdebug.h
@@ -41,7 +46,13 @@ target_sources(interactiveDiffTest PRIVATE
 
 add_test(NAME libkomparediff2-interactiveDiffTest COMMAND interactiveDiffTest)
 ecm_mark_as_test(interactiveDiffTest)
-set_target_properties(interactiveDiffTest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
+# Configure export macros to be setup as with a static lib
+# as the source files are reused for the tests.
+# Saves doing a separate export header.
+target_compile_definitions(interactiveDiffTest
+  PUBLIC
+    KOMPAREDIFF2_STATIC_DEFINE
+)
 target_link_libraries(interactiveDiffTest
     Qt::Core
     Qt::Test
@@ -64,7 +75,13 @@ target_sources(levenshteintest PRIVATE
 
 add_test(NAME libkomparediff2-levenshteintest COMMAND levenshteintest)
 ecm_mark_as_test(levenshteintest)
-set_target_properties(levenshteintest PROPERTIES COMPILE_FLAGS "-DDIFF2_EXPORT=")
+# Configure export macros to be setup as with a static lib
+# as the source files are reused for the tests.
+# Saves doing a separate export header.
+target_compile_definitions(interactiveDiffTest
+  PUBLIC
+    KOMPAREDIFF2_STATIC_DEFINE
+)
 target_link_libraries(levenshteintest
     Qt::Test
     Qt::Core

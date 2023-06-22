@@ -12,12 +12,15 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "kompare.h"
 #include "settingsbase.h"
-#include "diff2_export.h"
+#include "komparediff2_export.h"
+#if KOMPAREDIFF2_ENABLE_DEPRECATED_SINCE(5, 4)
+#include "diff2_export_p.h"
+#endif
 
 /**
  * The settings for a diff.
  */
-class DIFF2_EXPORT  DiffSettings : public SettingsBase
+class KOMPAREDIFF2_EXPORT  DiffSettings : public SettingsBase
 {
     Q_OBJECT
 public:

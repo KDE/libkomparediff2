@@ -12,7 +12,10 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <QStringList>
 #include "diffhunk.h"
 #include "kompare.h"
-#include "diff2_export.h"
+#include "komparediff2_export.h"
+#if KOMPAREDIFF2_ENABLE_DEPRECATED_SINCE(5, 4)
+#include "diff2_export_p.h"
+#endif
 
 namespace Diff2
 {
@@ -20,7 +23,7 @@ namespace Diff2
 /**
  * A model describing the differences between two files.
  */
-class DIFF2_EXPORT DiffModel : public QObject
+class KOMPAREDIFF2_EXPORT DiffModel : public QObject
 {
     Q_OBJECT
 public:

@@ -15,7 +15,10 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "diffmodel.h"
 #include "diffmodellist.h"
 #include "kompare.h"
-#include "diff2_export.h"
+#include "komparediff2_export.h"
+#if KOMPAREDIFF2_ENABLE_DEPRECATED_SINCE(5, 4)
+#include "diff2_export_p.h"
+#endif
 
 class QAction;
 class QTemporaryFile;
@@ -31,7 +34,7 @@ namespace Diff2
 /**
  * KompareModelList
  */
-class DIFF2_EXPORT KompareModelList : public QObject
+class KOMPAREDIFF2_EXPORT KompareModelList : public QObject
 {
     Q_OBJECT
 public:

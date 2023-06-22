@@ -10,7 +10,10 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <QUrl>
 
-#include "diff2_export.h"
+#include "komparediff2_export.h"
+#if KOMPAREDIFF2_ENABLE_DEPRECATED_SINCE(5, 4)
+#include "diff2_export_p.h"
+#endif
 
 // Forward declaration needed
 class QTemporaryDir;
@@ -95,7 +98,7 @@ enum Target {
 /**
  * Info.
  */
-struct DIFF2_EXPORT Info {
+struct KOMPAREDIFF2_EXPORT Info {
     Info(
         enum Mode _mode = UnknownMode,
         enum DiffMode _diffMode = UnknownDiffMode,

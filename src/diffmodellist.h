@@ -10,7 +10,10 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <QList> // include for the base class
 
 #include "diffmodel.h"
-#include "diff2_export.h"
+#include "komparediff2_export.h"
+#if KOMPAREDIFF2_ENABLE_DEPRECATED_SINCE(5, 4)
+#include "diff2_export_p.h"
+#endif
 
 /**
  * Diff2 namespace
@@ -24,7 +27,7 @@ using DiffModelListConstIterator = QList<DiffModel*>::const_iterator;
 /**
  * A list of DiffModel.
  */
-class DIFF2_EXPORT DiffModelList : public QList<DiffModel*>
+class KOMPAREDIFF2_EXPORT DiffModelList : public QList<DiffModel*>
 {
 public:
     DiffModelList() {}

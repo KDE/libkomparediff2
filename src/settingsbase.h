@@ -10,7 +10,10 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <QObject>
 
-#include "diff2_export.h"
+#include "komparediff2_export.h"
+#if KOMPAREDIFF2_ENABLE_DEPRECATED_SINCE(5, 4)
+#include "diff2_export_p.h"
+#endif
 
 class QWidget;
 class KConfig;
@@ -18,7 +21,7 @@ class KConfig;
 /**
  * Base class for settings classes.
  */
-class DIFF2_EXPORT SettingsBase : public QObject
+class KOMPAREDIFF2_EXPORT SettingsBase : public QObject
 {
     Q_OBJECT
 public:

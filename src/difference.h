@@ -11,7 +11,10 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <QVector>
 #include <QObject>
 
-#include "diff2_export.h"
+#include "komparediff2_export.h"
+#if KOMPAREDIFF2_ENABLE_DEPRECATED_SINCE(5, 4)
+#include "diff2_export_p.h"
+#endif
 #include "marker.h"
 
 // #include <komparediffdebug.h>
@@ -24,7 +27,7 @@ namespace Diff2
 /**
  * A difference string.
  */
-class DIFF2_EXPORT DifferenceString
+class KOMPAREDIFF2_EXPORT DifferenceString
 {
 public:
     DifferenceString()
@@ -116,7 +119,7 @@ using DifferenceStringListConstIterator = QVector<DifferenceString*>::const_iter
 /**
  * A difference.
  */
-class DIFF2_EXPORT Difference : public QObject
+class KOMPAREDIFF2_EXPORT Difference : public QObject
 {
     Q_OBJECT
 public:

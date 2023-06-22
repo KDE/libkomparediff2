@@ -8,14 +8,17 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 #define MARKER_H
 
 #include <QList>
-#include "diff2_export.h"
+#include "komparediff2_export.h"
+#if KOMPAREDIFF2_ENABLE_DEPRECATED_SINCE(5, 4)
+#include "diff2_export_p.h"
+#endif
 
 namespace Diff2 {
 
 /**
  * A Marker.
  */
-class DIFF2_EXPORT Marker
+class KOMPAREDIFF2_EXPORT Marker
 {
 public:
     enum Type { Start = 0, End = 1 };

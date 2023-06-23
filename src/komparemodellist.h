@@ -35,7 +35,13 @@ class KOMPAREDIFF2_EXPORT KompareModelList : public QObject
 {
     Q_OBJECT
 public:
+#if KOMPAREDIFF2_ENABLE_DEPRECATED_SINCE(5, 4)
+    /// @deprecated Since 5.4, use the overload without widgetForKIO arg, widgetForKIO is unused
+    KOMPAREDIFF2_DEPRECATED_VERSION(5, 4, "Use KompareModelList constructor without widgetForKIO arg instead")
     KompareModelList(DiffSettings* diffSettings, QWidget* widgetForKIO, QObject* parent, const char* name = nullptr, bool supportReadWrite = true);
+#endif
+    /// @since 5.4
+    KompareModelList(DiffSettings* diffSettings, QObject* parent, const char* name = nullptr, bool supportReadWrite = true);
     ~KompareModelList() override;
 
 public:
@@ -202,7 +208,14 @@ private: // ### an exported class without a d pointer? Really? What about BC?
     QString               m_encoding;
     QTextCodec*           m_textCodec;
 
+#if KOMPAREDIFF2_BUILD_DEPRECATED_SINCE(5, 4)
+    QT_WARNING_PUSH
+    QT_WARNING_DISABLE_CLANG("-Wunused-private-field")
+    // Unused, kept for ABI compatibility
     QWidget*              m_widgetForKIO;
+    QT_WARNING_POP
+ #endif
+
     bool                  m_isReadWrite;
 };
 

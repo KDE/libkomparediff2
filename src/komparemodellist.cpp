@@ -35,7 +35,15 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 using namespace Diff2;
 
+#if KOMPAREDIFF2_BUILD_DEPRECATED_SINCE(5, 4)
 KompareModelList::KompareModelList(DiffSettings* diffSettings, QWidget* widgetForKIO, QObject* parent, const char* name, bool supportReadWrite)
+    : KompareModelList(diffSettings, parent, name, supportReadWrite)
+{
+    Q_UNUSED(widgetForKIO)
+}
+#endif
+
+KompareModelList::KompareModelList(DiffSettings* diffSettings, QObject* parent, const char* name, bool supportReadWrite)
     : QObject(parent),
       m_diffProcess(nullptr),
       m_diffSettings(diffSettings),
@@ -45,10 +53,9 @@ KompareModelList::KompareModelList(DiffSettings* diffSettings, QWidget* widgetFo
       m_modelIndex(0),
       m_info(nullptr),
       m_textCodec(nullptr),
-      m_widgetForKIO(widgetForKIO),
       m_isReadWrite(supportReadWrite)
 {
-    qCDebug(LIBKOMPAREDIFF2) << "Show me the arguments: " << diffSettings << ", " << widgetForKIO << ", " << parent << ", " << name;
+    qCDebug(LIBKOMPAREDIFF2) << "Show me the arguments: " << diffSettings << ", " << parent << ", " << name;
     m_actionCollection = new KActionCollection(this);
     if (supportReadWrite) {
         m_applyDifference = m_actionCollection->addAction(QStringLiteral("difference_apply"), this, &KompareModelList::slotActionApplyDifference);

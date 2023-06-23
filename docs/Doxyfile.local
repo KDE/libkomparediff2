@@ -1,0 +1,11 @@
+### KApiDox Project-specific Overrides File
+
+# define so that deprecated API is not skipped
+PREDEFINED += \
+    KOMPAREDIFF2_EXPORT= \
+    "KOMPAREDIFF2_ENABLE_DEPRECATED_SINCE(x, y)=1" \
+    "KOMPAREDIFF2_BUILD_DEPRECATED_SINCE(x, y)=1" \
+    "KOMPAREDIFF2_DEPRECATED_VERSION(x, y, t)=" \
+    "KOMPAREDIFF2_DEPRECATED_VERSION_BELATED(x, y, tx, ty, t)=" \
+    "KOMPAREDIFF2_ENUMERATOR_DEPRECATED_VERSION(x, y, t)=" \
+    "KOMPAREDIFF2_ENUMERATOR_DEPRECATED_VERSION_BELATED(x, y, tx, ty, t)="

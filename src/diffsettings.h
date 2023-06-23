@@ -15,6 +15,8 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "komparediff2_export.h"
 
 /**
+ * @class DiffSettings diffsettings.h <KompareDiff2/DiffSettings>
+ *
  * The settings for a diff.
  */
 class KOMPAREDIFF2_EXPORT  DiffSettings : public SettingsBase

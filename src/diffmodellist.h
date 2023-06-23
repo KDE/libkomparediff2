@@ -22,6 +22,8 @@ using DiffModelListIterator =      QList<DiffModel*>::iterator;
 using DiffModelListConstIterator = QList<DiffModel*>::const_iterator;
 
 /**
+ * @class DiffModelList diffmodellist.h <KompareDiff2/DiffModelList>
+ *
  * A list of DiffModel.
  */
 class KOMPAREDIFF2_EXPORT DiffModelList : public QList<DiffModel*>

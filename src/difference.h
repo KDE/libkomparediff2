@@ -22,6 +22,8 @@ namespace Diff2
 {
 
 /**
+ * @class DifferenceString difference.h <KompareDiff2/Difference>
+ *
  * A difference string.
  */
 class KOMPAREDIFF2_EXPORT DifferenceString
@@ -114,6 +116,8 @@ using DifferenceStringListIterator =      QVector<DifferenceString*>::iterator;
 using DifferenceStringListConstIterator = QVector<DifferenceString*>::const_iterator;
 
 /**
+ * @class Difference difference.h <KompareDiff2/Difference>
+ *
  * A difference.
  */
 class KOMPAREDIFF2_EXPORT Difference : public QObject

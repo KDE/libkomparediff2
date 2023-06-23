@@ -13,6 +13,8 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 namespace Diff2 {
 
 /**
+ * @class Marker marker.h <KompareDiff2/Marker>
+ *
  * A Marker.
  */
 class KOMPAREDIFF2_EXPORT Marker

@@ -18,6 +18,8 @@ namespace Diff2
 {
 
 /**
+ * @class DiffModel diffmodel.h <KompareDiff2/DiffModel>
+ *
  * A model describing the differences between two files.
  */
 class KOMPAREDIFF2_EXPORT DiffModel : public QObject

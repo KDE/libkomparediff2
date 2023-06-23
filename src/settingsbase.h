@@ -16,6 +16,8 @@ class QWidget;
 class KConfig;
 
 /**
+ * @class SettingsBase settingsbase.h <KompareDiff2/SettingsBase>
+ *
  * Base class for settings classes.
  */
 class KOMPAREDIFF2_EXPORT SettingsBase : public QObject

@@ -93,6 +93,8 @@ enum Target {
 };
 
 /**
+ * @class Info kompare.h <KompareDiff2/Kompare>
+ *
  * Info.
  */
 struct KOMPAREDIFF2_EXPORT Info {

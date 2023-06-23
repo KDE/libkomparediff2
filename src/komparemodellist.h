@@ -29,6 +29,8 @@ namespace Diff2
 {
 
 /**
+ * @class KompareModelList komparemodellist.h <KompareDiff2/KompareModelList>
+ *
  * KompareModelList
  */
 class KOMPAREDIFF2_EXPORT KompareModelList : public QObject

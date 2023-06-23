@@ -73,7 +73,7 @@ ecm_mark_as_test(levenshteintest)
 # Configure export macros to be setup as with a static lib
 # as the source files are reused for the tests.
 # Saves doing a separate export header.
-target_compile_definitions(interactiveDiffTest
+target_compile_definitions(levenshteintest
   PUBLIC
     KOMPAREDIFF2_STATIC_DEFINE
 )

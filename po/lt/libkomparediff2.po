@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:02+0000\n"
+"POT-Creation-Date: 2023-06-23 00:50+0000\n"
 "PO-Revision-Date: 2013-05-03 19:16+0300\n"
 "Last-Translator: Liudas Ališauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -20,101 +20,101 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: komparemodellist.cpp:56
+#: komparemodellist.cpp:63
 #, fuzzy, kde-format
 #| msgid "&Apply Difference"
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "Prit&aikyti skirtumą"
 
-#: komparemodellist.cpp:60
+#: komparemodellist.cpp:67
 #, fuzzy, kde-format
 #| msgid "Un&apply Difference"
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "Pa&naikinti skirtumo pritaikymą"
 
-#: komparemodellist.cpp:64
+#: komparemodellist.cpp:71
 #, fuzzy, kde-format
 #| msgid "App&ly All"
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "Pritaik&yti viską"
 
-#: komparemodellist.cpp:68
+#: komparemodellist.cpp:75
 #, fuzzy, kde-format
 #| msgid "&Unapply All"
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "&Panaikinti visko pritaikymą"
 
-#: komparemodellist.cpp:78
+#: komparemodellist.cpp:85
 #, fuzzy, kde-format
 #| msgid "P&revious File"
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "&Ankstesnis failas"
 
-#: komparemodellist.cpp:82
+#: komparemodellist.cpp:89
 #, fuzzy, kde-format
 #| msgid "N&ext File"
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "K&itas failas"
 
-#: komparemodellist.cpp:86
+#: komparemodellist.cpp:93
 #, fuzzy, kde-format
 #| msgid "&Previous Difference"
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "A&nkstesnis skirtumas"
 
-#: komparemodellist.cpp:90
+#: komparemodellist.cpp:97
 #, fuzzy, kde-format
 #| msgid "&Next Difference"
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "&Kitas skirtumas"
 
-#: komparemodellist.cpp:251 komparemodellist.cpp:276
+#: komparemodellist.cpp:258 komparemodellist.cpp:283
 #, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
 "file.</qt>"
 msgstr ""
 
-#: komparemodellist.cpp:260
+#: komparemodellist.cpp:267
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
 "qt>"
 msgstr ""
 
-#: komparemodellist.cpp:287
+#: komparemodellist.cpp:294
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
 "</qt>"
 msgstr ""
 
-#: komparemodellist.cpp:319 komparemodellist.cpp:680
+#: komparemodellist.cpp:326 komparemodellist.cpp:687
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Negalima atidaryti laikino failo."
 
-#: komparemodellist.cpp:367 komparemodellist.cpp:374
+#: komparemodellist.cpp:374 komparemodellist.cpp:381
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr ""
 
-#: komparemodellist.cpp:405
+#: komparemodellist.cpp:412
 #, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
 "The file has not been saved.</qt>"
 msgstr ""
 
-#: komparemodellist.cpp:433
+#: komparemodellist.cpp:440
 #, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -122,22 +122,22 @@ msgid ""
 "copy it to the right place.</qt>"
 msgstr ""
 
-#: komparemodellist.cpp:512 komparemodellist.cpp:627 komparemodellist.cpp:647
+#: komparemodellist.cpp:519 komparemodellist.cpp:634 komparemodellist.cpp:654
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Negalima išnagrinėti diff išvesties."
 
-#: komparemodellist.cpp:528
+#: komparemodellist.cpp:535
 #, kde-format
 msgid "The files are identical."
 msgstr "Failai yra identiški."
 
-#: komparemodellist.cpp:712
+#: komparemodellist.cpp:719
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Negalima įrašyti į laikiną failą."
 
-#: komparemodellist.cpp:986
+#: komparemodellist.cpp:993
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

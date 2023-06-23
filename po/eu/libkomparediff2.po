@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkomparediff2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:02+0000\n"
+"POT-Creation-Date: 2023-06-23 00:50+0000\n"
 "PO-Revision-Date: 2021-08-12 00:06+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -24,55 +24,55 @@ msgstr ""
 "X-Generator: Lokalize 21.04.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: komparemodellist.cpp:56
+#: komparemodellist.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "&Aplikatu ezberdintasuna"
 
-#: komparemodellist.cpp:60
+#: komparemodellist.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "Ezberdintasuna &aplikatzea desegin"
 
-#: komparemodellist.cpp:64
+#: komparemodellist.cpp:71
 #, kde-format
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "Ap&likatu dena"
 
-#: komparemodellist.cpp:68
+#: komparemodellist.cpp:75
 #, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "&Desegin dena aplikatzea"
 
-#: komparemodellist.cpp:78
+#: komparemodellist.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "Au&rreko fitxategia"
 
-#: komparemodellist.cpp:82
+#: komparemodellist.cpp:89
 #, kde-format
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "Hurr&engo fitxategia"
 
-#: komparemodellist.cpp:86
+#: komparemodellist.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "A&urreko ezberdintasuna"
 
-#: komparemodellist.cpp:90
+#: komparemodellist.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "Hurre&ngo ezberdintasuna"
 
-#: komparemodellist.cpp:251 komparemodellist.cpp:276
+#: komparemodellist.cpp:258 komparemodellist.cpp:283
 #, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
@@ -81,7 +81,7 @@ msgstr ""
 "<qt>Ez dago eredu edo desberdintasunik, fitxategi hau: <b>%1</b>, ez da "
 "baliozko diff fitxategia.</qt>"
 
-#: komparemodellist.cpp:260
+#: komparemodellist.cpp:267
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
@@ -90,25 +90,25 @@ msgstr ""
 "<qt>Arazoak <b>%1</b> diff fitxategia <b>%2</b> fitxategiari aplikatzean.</"
 "qt>"
 
-#: komparemodellist.cpp:287
+#: komparemodellist.cpp:294
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
 "</qt>"
 msgstr "<qt>Arazoak <b>%1</b> diff-a <b>%2</b> direktorioari aplikatzean.</qt>"
 
-#: komparemodellist.cpp:319 komparemodellist.cpp:680
+#: komparemodellist.cpp:326 komparemodellist.cpp:687
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Ezin izan da behin-behineko fitxategirik ireki."
 
-#: komparemodellist.cpp:367 komparemodellist.cpp:374
+#: komparemodellist.cpp:374 komparemodellist.cpp:381
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr ""
 "<qt>Ezin izan da <b>%1</b> behin behineko fitxategian idatzi, ezabatzen.</qt>"
 
-#: komparemodellist.cpp:405
+#: komparemodellist.cpp:412
 #, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
@@ -117,7 +117,7 @@ msgstr ""
 "<qt>Ezin izan da <b>%1</b> helburu direktorioa sortu.\n"
 "Fitxategia ez da gorde.</qt>"
 
-#: komparemodellist.cpp:433
+#: komparemodellist.cpp:440
 #, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -128,22 +128,22 @@ msgstr ""
 "kargatu. Behin behineko fitxategia oraindik eskuragarri dago hemen: <b>%2</"
 "b>. Eskuz kopia dezakezu kokaleku zuzenera.</qt>"
 
-#: komparemodellist.cpp:512 komparemodellist.cpp:627 komparemodellist.cpp:647
+#: komparemodellist.cpp:519 komparemodellist.cpp:634 komparemodellist.cpp:654
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Ezin izan da diff irteera analizatu."
 
-#: komparemodellist.cpp:528
+#: komparemodellist.cpp:535
 #, kde-format
 msgid "The files are identical."
 msgstr "Fitxategiak berdinak dira."
 
-#: komparemodellist.cpp:712
+#: komparemodellist.cpp:719
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Ezin izan da behin behineko fitxategian idatzi."
 
-#: komparemodellist.cpp:986
+#: komparemodellist.cpp:993
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

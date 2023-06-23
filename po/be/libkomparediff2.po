@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:02+0000\n"
+"POT-Creation-Date: 2023-06-23 00:50+0000\n"
 "PO-Revision-Date: 2007-10-28 14:03+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -19,55 +19,55 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
 "%100>=11 && n%100<=14 ? 2 : 3);\n"
 
-#: komparemodellist.cpp:56
+#: komparemodellist.cpp:63
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "Ужыць адрозненні"
 
-#: komparemodellist.cpp:60
+#: komparemodellist.cpp:67
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "Адмяніць адрозненні"
 
-#: komparemodellist.cpp:64
+#: komparemodellist.cpp:71
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "Ужыць усё"
 
-#: komparemodellist.cpp:68
+#: komparemodellist.cpp:75
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "Адмяніць усё"
 
-#: komparemodellist.cpp:78
+#: komparemodellist.cpp:85
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "Папярэдні файл"
 
-#: komparemodellist.cpp:82
+#: komparemodellist.cpp:89
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "Наступны файл"
 
-#: komparemodellist.cpp:86
+#: komparemodellist.cpp:93
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "Папярэдняе адрозненне"
 
-#: komparemodellist.cpp:90
+#: komparemodellist.cpp:97
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "Наступнае адрозненне"
 
-#: komparemodellist.cpp:251 komparemodellist.cpp:276
+#: komparemodellist.cpp:258 komparemodellist.cpp:283
 #, fuzzy, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
@@ -76,7 +76,7 @@ msgstr ""
 "<qt>Няма макетаў або адрозненняў. Файл  <b>%1</b> не з'яўляецца файлам "
 "фармату diff.</qt>"
 
-#: komparemodellist.cpp:260
+#: komparemodellist.cpp:267
 #, fuzzy, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
@@ -84,7 +84,7 @@ msgid ""
 msgstr ""
 "<qt>Паўсталі праблемы падчас ужывання diff <b>%1</b> да файла <b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:287
+#: komparemodellist.cpp:294
 #, fuzzy, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
@@ -92,18 +92,18 @@ msgid ""
 msgstr ""
 "<qt>Паўсталі праблемы падчас ужывання diff <b>%1</b> да тэчкі <b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:319 komparemodellist.cpp:680
+#: komparemodellist.cpp:326 komparemodellist.cpp:687
 #, fuzzy, kde-format
 msgid "Could not open a temporary file."
 msgstr "Не атрымліваецца адкрыць часовы файл."
 
-#: komparemodellist.cpp:367 komparemodellist.cpp:374
+#: komparemodellist.cpp:374 komparemodellist.cpp:381
 #, fuzzy, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr ""
 "<qt>Не атрымліваецца запісаць у часовы файл <b>%1</b>, выдаляемы яго.</qt>"
 
-#: komparemodellist.cpp:405
+#: komparemodellist.cpp:412
 #, fuzzy, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
@@ -112,7 +112,7 @@ msgstr ""
 "<qt>Не атрымалася стварыць канчатковую тэчку <b>%1</b>.\n"
 "Файл не захаваны.</qt>"
 
-#: komparemodellist.cpp:433
+#: komparemodellist.cpp:440
 #, fuzzy, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -123,22 +123,22 @@ msgstr ""
 "Часовы файл усё яшчэ даступны пад імем <b>%2</b>. Вы можаце ўручную "
 "скапіраваць яго ў патрэбнае месца.</qt>"
 
-#: komparemodellist.cpp:512 komparemodellist.cpp:627 komparemodellist.cpp:647
+#: komparemodellist.cpp:519 komparemodellist.cpp:634 komparemodellist.cpp:654
 #, fuzzy, kde-format
 msgid "Could not parse diff output."
 msgstr "Не атрымліваецца апрацаваць выснову diff."
 
-#: komparemodellist.cpp:528
+#: komparemodellist.cpp:535
 #, fuzzy, kde-format
 msgid "The files are identical."
 msgstr "Усе файлы ідэнтычныя."
 
-#: komparemodellist.cpp:712
+#: komparemodellist.cpp:719
 #, fuzzy, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Не атрымліваецца запісаць у часовы файл."
 
-#: komparemodellist.cpp:986
+#: komparemodellist.cpp:993
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

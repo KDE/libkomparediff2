@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:02+0000\n"
+"POT-Creation-Date: 2023-06-23 00:50+0000\n"
 "PO-Revision-Date: 2021-06-29 20:38+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -20,55 +20,55 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Lokalize 21.04.2\n"
 
-#: komparemodellist.cpp:56
+#: komparemodellist.cpp:63
 #, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "भिन्नताएँ लागू करें (&A)"
 
-#: komparemodellist.cpp:60
+#: komparemodellist.cpp:67
 #, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "भिन्नताएँ लागू न करें (&a)"
 
-#: komparemodellist.cpp:64
+#: komparemodellist.cpp:71
 #, kde-format
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "सभी लागू करें (&l)"
 
-#: komparemodellist.cpp:68
+#: komparemodellist.cpp:75
 #, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "सभी लागू न करें (&U)"
 
-#: komparemodellist.cpp:78
+#: komparemodellist.cpp:85
 #, kde-format
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "पिछली फ़ाइल (&r)"
 
-#: komparemodellist.cpp:82
+#: komparemodellist.cpp:89
 #, kde-format
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "अगली फ़ाइल (&e)"
 
-#: komparemodellist.cpp:86
+#: komparemodellist.cpp:93
 #, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "पिछली भिन्नता (&P)"
 
-#: komparemodellist.cpp:90
+#: komparemodellist.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "अगली भिन्नता (&N)"
 
-#: komparemodellist.cpp:251 komparemodellist.cpp:276
+#: komparemodellist.cpp:258 komparemodellist.cpp:283
 #, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
@@ -77,31 +77,31 @@ msgstr ""
 "<qt>कोई मॉडल नहीं या कोई भिन्नता नहीं, यह फ़ाइल:<b>%1</b>, एक वैध डिफ़ फ़ाइल नहीं है।"
 "</qt>"
 
-#: komparemodellist.cpp:260
+#: komparemodellist.cpp:267
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
 "qt>"
 msgstr "<qt>डिफ़ <b>%1</b> को फ़ाइल <b>%2</b> में लागू करने में समस्याएँ हैं।</qt>"
 
-#: komparemodellist.cpp:287
+#: komparemodellist.cpp:294
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
 "</qt>"
 msgstr "<qt>डिफ़ <b>%1</b> को फ़ोल्डर <b>%2</b> में लागू करने में कुछ समस्याएँ हैं।</qt>"
 
-#: komparemodellist.cpp:319 komparemodellist.cpp:680
+#: komparemodellist.cpp:326 komparemodellist.cpp:687
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "अस्थायी फ़ाइल खोल नहीं सके।"
 
-#: komparemodellist.cpp:367 komparemodellist.cpp:374
+#: komparemodellist.cpp:374 komparemodellist.cpp:381
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr "<qt>अस्थाई फ़ाइल <b>%1</b> पर लिखा नहीं जा सका, इसे मिटाया जा रहा है।</qt>"
 
-#: komparemodellist.cpp:405
+#: komparemodellist.cpp:412
 #, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
@@ -110,7 +110,7 @@ msgstr ""
 "<qt>इष्ट डायरेक्ट्री का सृजन नहीं हो सका<b>%1</b>।\n"
 "फ़ाइल सहेजी नहीं गयी।</qt>"
 
-#: komparemodellist.cpp:433
+#: komparemodellist.cpp:440
 #, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -120,22 +120,22 @@ msgstr ""
 "<qt>अस्थायी फ़ाइल को ठिकाने तक नहीं पहूंचा पाए <b>%1</b>। अस्थायी फ़ाइल अभी भी <b>"
 "%2</b> में है। आप उसकी प्रतिलिपि स्वयं सही स्थान पर पहुँचा सकते हैं।</qt>"
 
-#: komparemodellist.cpp:512 komparemodellist.cpp:627 komparemodellist.cpp:647
+#: komparemodellist.cpp:519 komparemodellist.cpp:634 komparemodellist.cpp:654
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "डिफ़ आउटपुट पार्स नहीं कर सका।"
 
-#: komparemodellist.cpp:528
+#: komparemodellist.cpp:535
 #, kde-format
 msgid "The files are identical."
 msgstr "फ़ाइलें एक समान हैं।"
 
-#: komparemodellist.cpp:712
+#: komparemodellist.cpp:719
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "अस्थायी फ़ाइल पर लिख नहीं सका।"
 
-#: komparemodellist.cpp:986
+#: komparemodellist.cpp:993
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

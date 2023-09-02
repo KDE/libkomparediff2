@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(LibKompareDiff2 VERSION "5.4.0")
+project(LibKompareDiff2 VERSION "6.0.0")
 
 set(QT_MIN_VERSION "6.5.0")
 set(KF_MIN_VERSION "5.240.0")

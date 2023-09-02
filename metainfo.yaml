@@ -11,4 +11,4 @@ platforms:
 release: true
 libraries:
     - cmake: "KompareDiff2"
-cmakename: LibKompareDiff2
+cmakename: KompareDiff2

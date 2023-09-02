@@ -1,5 +1,5 @@
 set(KOMPAREDIFF2_INSTALL_INCLUDEDIR "${KDE_INSTALL_INCLUDEDIR}/KompareDiff2")
-set(KOMPAREDIFF2_CMAKECONFIG_NAME "LibKompareDiff2")
+set(KOMPAREDIFF2_CMAKECONFIG_NAME "KompareDiff2")
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libkomparediff2\")
 
@@ -122,7 +122,7 @@ ecm_qt_install_logging_categories(
 set(_LibKompareDiff2_CONFIG_DEST "${KDE_INSTALL_CMAKEPACKAGEDIR}/${KOMPAREDIFF2_CMAKECONFIG_NAME}")
 
 configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/LibKompareDiff2Config.cmake.in"
+    "${CMAKE_CURRENT_SOURCE_DIR}/KompareDiff2Config.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/${KOMPAREDIFF2_CMAKECONFIG_NAME}Config.cmake"
     INSTALL_DESTINATION  "${_LibKompareDiff2_CONFIG_DEST}"
 )

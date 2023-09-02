@@ -49,16 +49,14 @@ target_compile_definitions(interactiveDiffTest
     KOMPAREDIFF2_STATIC_DEFINE
 )
 target_link_libraries(interactiveDiffTest
-    Qt::Core
-    Qt::Test
-    KF${KF_MAJOR_VERSION}::CoreAddons
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::XmlGui
-    KF${KF_MAJOR_VERSION}::KIOCore
+    Qt6::Core
+    Qt6::Core5Compat
+    Qt6::Test
+    KF6::CoreAddons
+    KF6::I18n
+    KF6::XmlGui
+    KF6::KIOCore
 )
-if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(interactiveDiffTest Qt6::Core5Compat)
-endif()
 
 add_executable(levenshteintest)
 target_sources(levenshteintest PRIVATE
@@ -78,6 +76,6 @@ target_compile_definitions(levenshteintest
     KOMPAREDIFF2_STATIC_DEFINE
 )
 target_link_libraries(levenshteintest
-    Qt::Test
-    Qt::Core
+    Qt6::Test
+    Qt6::Core
 )

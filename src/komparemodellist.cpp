@@ -35,14 +35,6 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 using namespace Diff2;
 
-#if KOMPAREDIFF2_BUILD_DEPRECATED_SINCE(5, 4)
-KompareModelList::KompareModelList(DiffSettings* diffSettings, QWidget* widgetForKIO, QObject* parent, const char* name, bool supportReadWrite)
-    : KompareModelList(diffSettings, parent, name, supportReadWrite)
-{
-    Q_UNUSED(widgetForKIO)
-}
-#endif
-
 KompareModelList::KompareModelList(DiffSettings* diffSettings, QObject* parent, const char* name, bool supportReadWrite)
     : QObject(parent),
       m_diffProcess(nullptr),

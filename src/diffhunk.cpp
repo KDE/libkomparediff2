@@ -9,7 +9,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <komparediffdebug.h>
 
-using namespace Diff2;
+using namespace KompareDiff2;
 
 DiffHunk::DiffHunk(int sourceLine, int destinationLine, const QString& function, Type type) :
     m_sourceLine(sourceLine),

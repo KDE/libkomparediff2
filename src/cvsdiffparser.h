@@ -9,7 +9,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "parserbase.h"
 
-namespace Diff2
+namespace KompareDiff2
 {
 
 class KompareModelList;
@@ -43,6 +43,6 @@ protected:
 //     virtual bool parseUnifiedHunkBody();
 };
 
-} // End of namespace Diff2
+} // End of namespace KompareDiff2
 
 #endif

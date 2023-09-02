@@ -11,7 +11,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 #include "diffmodellist.h"
 #include "parser.h"
 
-using namespace Diff2;
+using namespace KompareDiff2;
 
 typedef QHash<int, QPair<QStringList, QStringList> > DifferenceHash;
 Q_DECLARE_METATYPE(DifferenceHash);

@@ -14,7 +14,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "diffmodel.h"
 #include "diffmodellist.h"
 
-using namespace Diff2;
+using namespace KompareDiff2;
 
 Parser::Parser(const KompareModelList* list) :
     m_list(list)

@@ -11,7 +11,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "difference.h"
 
 
-namespace Diff2
+namespace KompareDiff2
 {
 
 class Difference;
@@ -56,6 +56,6 @@ using DiffHunkList =              QList<DiffHunk*>;
 using DiffHunkListIterator =      QList<DiffHunk*>::iterator;
 using DiffHunkListConstIterator = QList<DiffHunk*>::const_iterator;
 
-} // End of namespace Diff2
+} // End of namespace KompareDiff2
 
 #endif

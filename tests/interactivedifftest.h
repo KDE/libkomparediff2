@@ -29,7 +29,7 @@ private Q_SLOTS:
     void testContextDiff();
     void testNormalDiff();
 private:
-    void CompareDifferenceStringList(const Diff2::DifferenceStringList& actual, const QStringList& expected);
+    void CompareDifferenceStringList(const KompareDiff2::DifferenceStringList& actual, const QStringList& expected);
 };
 
 #endif //  INTERACTIVEDIFFTEST_H

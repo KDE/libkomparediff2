@@ -12,7 +12,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 #include "levenshteintable.h"
 #include "stringlistpair.h"
 
-using namespace Diff2;
+using namespace KompareDiff2;
 
 namespace QTest {
 

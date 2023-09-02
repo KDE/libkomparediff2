@@ -9,7 +9,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "differencestringpair.h"
 #include "levenshteintable.h"
 
-using namespace Diff2;
+using namespace KompareDiff2;
 
 Difference::Difference(int sourceLineNo, int destinationLineNo, int type) :
     QObject(),

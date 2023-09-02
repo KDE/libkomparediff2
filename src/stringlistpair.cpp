@@ -8,7 +8,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include <QHash>
 
-using namespace Diff2;
+using namespace KompareDiff2;
 
 unsigned int StringListPair::lengthFirst() const
 {

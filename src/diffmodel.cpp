@@ -13,7 +13,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "stringlistpair.h"
 #include "parserbase.h"
 
-using namespace Diff2;
+using namespace KompareDiff2;
 
 /**  */
 DiffModel::DiffModel(const QString& source, const QString& destination) :

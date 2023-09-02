@@ -9,7 +9,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "parserbase.h"
 
-namespace Diff2
+namespace KompareDiff2
 {
 
 class DiffParser : public ParserBase
@@ -22,6 +22,6 @@ protected:
     enum Kompare::Format determineFormat() override;
 };
 
-} // End of namespace Diff2
+} // End of namespace KompareDiff2
 
 #endif

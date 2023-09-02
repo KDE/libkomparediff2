@@ -6,7 +6,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "diffmodellist.h"
 
-using namespace Diff2;
+using namespace KompareDiff2;
 
 static bool diffModelCompare(DiffModel* model1, DiffModel* model2)
 {

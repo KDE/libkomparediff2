@@ -16,7 +16,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 class QString;
 
-namespace Diff2
+namespace KompareDiff2
 {
 
 class KompareModelList;
@@ -125,6 +125,6 @@ protected:
     const KompareModelList* m_list;
 };
 
-} // End of namespace Diff2
+} // End of namespace KompareDiff2
 
 #endif

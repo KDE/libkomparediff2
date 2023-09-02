@@ -16,7 +16,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "difference.h"
 #include "komparemodellist.h"
 
-using namespace Diff2;
+using namespace KompareDiff2;
 
 // static
 QString ParserBase::unescapePath(QString path)

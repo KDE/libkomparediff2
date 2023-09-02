@@ -33,7 +33,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "kompareprocess.h"
 #include "parser.h"
 
-using namespace Diff2;
+using namespace KompareDiff2;
 
 KompareModelList::KompareModelList(DiffSettings* diffSettings, QObject* parent, const char* name, bool supportReadWrite)
     : QObject(parent),
@@ -233,7 +233,7 @@ static QString lstripSeparators(const QString& from, uint count)
 void KompareModelList::setDepthAndApplied()
 {
     // Splice to avoid calling ~DiffModelList
-    const QList<Diff2::DiffModel*> splicedModelList(*m_models);
+    const QList<KompareDiff2::DiffModel*> splicedModelList(*m_models);
     for (DiffModel* model : splicedModelList) {
         model->setSourceFile(lstripSeparators(model->source(), m_info->depth));
         model->setDestinationFile(lstripSeparators(model->destination(), m_info->depth));
@@ -727,7 +727,7 @@ void KompareModelList::slotWriteDiffOutput(bool success)
     m_diffProcess = nullptr;
 }
 
-void KompareModelList::slotSelectionChanged(const Diff2::DiffModel* model, const Diff2::Difference* diff)
+void KompareModelList::slotSelectionChanged(const KompareDiff2::DiffModel* model, const KompareDiff2::Difference* diff)
 {
 // This method will signal all the other objects about a change in selection,
 // it will Q_EMIT setSelection( const DiffModel*, const Difference* ) to all who are connected
@@ -762,7 +762,7 @@ void KompareModelList::slotSelectionChanged(const Diff2::DiffModel* model, const
     updateModelListActions();
 }
 
-void KompareModelList::slotSelectionChanged(const Diff2::Difference* diff)
+void KompareModelList::slotSelectionChanged(const KompareDiff2::Difference* diff)
 {
 // This method will Q_EMIT setSelection( const Difference* ) to whomever is listening
 // when for instance in kompareview the selection has changed

@@ -15,7 +15,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 /**
  * Diff2 namespace
  */
-namespace Diff2
+namespace KompareDiff2
 {
 
 using DiffModelListIterator =      QList<DiffModel*>::iterator;

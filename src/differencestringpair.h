@@ -11,7 +11,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "difference.h"
 
-namespace Diff2 {
+namespace KompareDiff2 {
 
 class Marker;
 class DifferenceString;

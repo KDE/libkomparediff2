@@ -10,7 +10,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <komparediffdebug.h>
 
-using namespace Diff2;
+using namespace KompareDiff2;
 
 DiffParser::DiffParser(const KompareModelList* list, const QStringList& diff) : ParserBase(list, diff)
 {

@@ -11,7 +11,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <komparediffdebug.h>
 #include "komparemodellist.h"
 
-using namespace Diff2;
+using namespace KompareDiff2;
 
 CVSDiffParser::CVSDiffParser(const KompareModelList* list, const QStringList& diff) : ParserBase(list, diff)
 {

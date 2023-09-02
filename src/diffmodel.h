@@ -14,7 +14,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "kompare.h"
 #include "komparediff2_export.h"
 
-namespace Diff2
+namespace KompareDiff2
 {
 
 /**
@@ -140,7 +140,7 @@ private Q_SLOTS:
     void slotDifferenceApplied(Difference* diff);
 };
 
-} // End of namespace Diff2
+} // End of namespace KompareDiff2
 
 #endif
 

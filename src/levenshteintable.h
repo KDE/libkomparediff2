@@ -12,7 +12,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 // #include <QString>
 // #include <komparediffdebug.h>
 
-namespace Diff2 {
+namespace KompareDiff2 {
 
 class Marker;
 
@@ -385,6 +385,6 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 //     qCDebug(LIBKOMPAREDIFF2) << "Destination Resulting string : " << list.join("\n");
 }
 
-} // namespace Diff2
+} // namespace KompareDiff2
 
 #endif // KOMPAREDIFF2_LEVENSHTEINTABLE_H

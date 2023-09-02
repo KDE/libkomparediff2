@@ -25,7 +25,7 @@ class KActionCollection;
 class DiffSettings;
 class KompareProcess;
 
-namespace Diff2
+namespace KompareDiff2
 {
 
 /**
@@ -105,12 +105,12 @@ public:
     void clear();
 
 private:
-    Diff2::DiffModel* firstModel();
-    Diff2::DiffModel* lastModel();
-    Diff2::DiffModel* prevModel();
-    Diff2::DiffModel* nextModel();
+    KompareDiff2::DiffModel* firstModel();
+    KompareDiff2::DiffModel* lastModel();
+    KompareDiff2::DiffModel* prevModel();
+    KompareDiff2::DiffModel* nextModel();
 
-    bool setSelectedModel(Diff2::DiffModel* model);
+    bool setSelectedModel(KompareDiff2::DiffModel* model);
 
     void updateModelListActions();
 
@@ -121,18 +121,18 @@ Q_SIGNALS:
     void status(Kompare::Status status);
     void setStatusBarModelInfo(int modelIndex, int differenceIndex, int modelCount, int differenceCount, int appliedCount);
     void error(QString error);
-    void modelsChanged(const Diff2::DiffModelList* models);
-    void setSelection(const Diff2::DiffModel* model, const Diff2::Difference* diff);
-    void setSelection(const Diff2::Difference* diff);
+    void modelsChanged(const KompareDiff2::DiffModelList* models);
+    void setSelection(const KompareDiff2::DiffModel* model, const KompareDiff2::Difference* diff);
+    void setSelection(const KompareDiff2::Difference* diff);
     void applyDifference(bool apply);
     void applyAllDifferences(bool apply);
-    void applyDifference(const Diff2::Difference* diff, bool apply);
+    void applyDifference(const KompareDiff2::Difference* diff, bool apply);
     void diffString(const QString&);
     void updateActions();
 
 public Q_SLOTS:
-    void slotSelectionChanged(const Diff2::DiffModel* model, const Diff2::Difference* diff);
-    void slotSelectionChanged(const Diff2::Difference* diff);
+    void slotSelectionChanged(const KompareDiff2::DiffModel* model, const KompareDiff2::Difference* diff);
+    void slotSelectionChanged(const KompareDiff2::Difference* diff);
 
     void slotApplyDifference(bool apply);
     void slotApplyAllDifferences(bool apply);
@@ -208,6 +208,6 @@ private: // ### an exported class without a d pointer? Really? What about BC?
     bool                  m_isReadWrite;
 };
 
-} // End of namespace Diff2
+} // End of namespace KompareDiff2
 
 #endif

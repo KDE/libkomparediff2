@@ -10,7 +10,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 #include <QList>
 #include "komparediff2_export.h"
 
-namespace Diff2 {
+namespace KompareDiff2 {
 
 /**
  * @class Marker marker.h <KompareDiff2/Marker>

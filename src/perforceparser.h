@@ -4,8 +4,8 @@ SPDX-FileCopyrightText: 2002-2004 Otto Bruggeman <otto.bruggeman@home.nl>
 SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef PERFORCE_PARSER_H
-#define PERFORCE_PARSER_H
+#ifndef KOMPAREDIFF2_PERFORCEPARSER_H
+#define KOMPAREDIFF2_PERFORCEPARSER_H
 
 #include "parserbase.h"
 

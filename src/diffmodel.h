@@ -5,8 +5,8 @@ SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
 SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef DIFFMODEL_H
-#define DIFFMODEL_H
+#ifndef KOMPAREDIFF2_DIFFMODEL_H
+#define KOMPAREDIFF2_DIFFMODEL_H
 
 #include <QObject>
 #include <QStringList>

@@ -5,8 +5,8 @@ SPDX-FileCopyrightText: 2011 Dmitry Risenberg <dmitry.risenberg@gmail.com>
 SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef LEVENSHTEIN_H
-#define LEVENSHTEIN_H
+#ifndef KOMPAREDIFF2_LEVENSHTEINTABLE_H
+#define KOMPAREDIFF2_LEVENSHTEINTABLE_H
 
 #include <iostream>
 // #include <QString>
@@ -387,4 +387,4 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 
 } // namespace Diff2
 
-#endif // LEVENSHTEIN_H
+#endif // KOMPAREDIFF2_LEVENSHTEINTABLE_H

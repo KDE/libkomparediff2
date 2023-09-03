@@ -5,8 +5,8 @@ SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
 SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef DIFFERENCE_H
-#define DIFFERENCE_H
+#ifndef KOMPAREDIFF2_DIFFERENCE_H
+#define KOMPAREDIFF2_DIFFERENCE_H
 
 #include <QVector>
 #include <QObject>

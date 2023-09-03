@@ -7,8 +7,8 @@ SPDX-FileCopyrightText: 2012 Jean -Nicolas Artaud <jeannicolasartaud@gmail.com>
 SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef KOMPAREMODELLIST_H
-#define KOMPAREMODELLIST_H
+#ifndef KOMPAREDIFF2_KOMPAREMODELLIST_H
+#define KOMPAREDIFF2_KOMPAREMODELLIST_H
 
 #include <QObject>
 

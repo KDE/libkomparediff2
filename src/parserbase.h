@@ -5,8 +5,8 @@ SPDX-FileCopyrightText: 2010 Kevin Kofler <kevin.kofler@chello.at>
 SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef DIFF2_PARSERBASE_H
-#define DIFF2_PARSERBASE_H
+#ifndef KOMPAREDIFF2_PARSERBASE_H
+#define KOMPAREDIFF2_PARSERBASE_H
 
 #include <QRegularExpression>
 #include <QStringList>

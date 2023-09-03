@@ -4,8 +4,8 @@ SPDX-FileCopyrightText: 2011 Dmitry Risenberg <dmitry.risenberg@gmail.com>
 SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef STRINGLISTPAIR_H
-#define STRINGLISTPAIR_H
+#ifndef KOMPAREDIFF2_STRINGLISTPAIR_H
+#define KOMPAREDIFF2_STRINGLISTPAIR_H
 
 #include <QStringList>
 #include "marker.h"
@@ -39,4 +39,4 @@ private:
 
 }
 
-#endif // STRINGLISTPAIR_H
+#endif // KOMPAREDIFF2_STRINGLISTPAIR_H

@@ -4,8 +4,8 @@ SPDX-FileCopyrightText: 2004-2005, 2009 Otto Bruggeman <bruggie@gmail.com>
 SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef DIFFMODELLIST_H
-#define DIFFMODELLIST_H
+#ifndef KOMPAREDIFF2_DIFFMODELLIST_H
+#define KOMPAREDIFF2_DIFFMODELLIST_H
 
 #include <QList> // include for the base class
 
@@ -43,4 +43,4 @@ public:
 
 } // End of Namespace Diff2
 
-#endif // DIFFMODELLIST_H
+#endif // KOMPAREDIFF2_DIFFMODELLIST_H

@@ -5,8 +5,8 @@ SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
 SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef DIFFHUNK_H
-#define DIFFHUNK_H
+#ifndef KOMPAREDIFF2_DIFFHUNK_H
+#define KOMPAREDIFF2_DIFFHUNK_H
 
 #include "difference.h"
 

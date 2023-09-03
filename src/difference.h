@@ -8,15 +8,17 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef KOMPAREDIFF2_DIFFERENCE_H
 #define KOMPAREDIFF2_DIFFERENCE_H
 
-#include <QObject>
-
+// lib
 #include "komparediff2_export.h"
 #include "differencestring.h"
-
-// #include <komparediffdebug.h>
+// Qt
+#include <QObject>
+// Std
+#include <memory>
 
 namespace KompareDiff2
 {
+class DifferencePrivate;
 
 /**
  * @class Difference difference.h <KompareDiff2/Difference>
@@ -34,10 +36,10 @@ public:
     ~Difference() override;
 
 public:
-    int type() const { return m_type; };
+    int type() const;
 
-    int sourceLineNumber() const { return m_sourceLineNo; }
-    int destinationLineNumber() const { return m_destinationLineNo; }
+    int sourceLineNumber() const;
+    int destinationLineNumber() const;
 
     int sourceLineCount() const;
     int destinationLineCount() const;
@@ -47,40 +49,28 @@ public:
 
     /// Destination line number that tracks applying/unapplying of other differences
     /// Essentially a line number in a patch consisting of applied diffs only
-    int trackingDestinationLineNumber() const { return m_trackingDestinationLineNo; }
+    int trackingDestinationLineNumber() const;
     int trackingDestinationLineEnd() const;
-    void setTrackingDestinationLineNumber(int i) { m_trackingDestinationLineNo = i; }
+    void setTrackingDestinationLineNumber(int i);
 
-    DifferenceString* sourceLineAt(int i) const { return m_sourceLines[i]; }
-    DifferenceString* destinationLineAt(int i) const { return m_destinationLines[i]; }
+    DifferenceString* sourceLineAt(int i) const;
+    DifferenceString* destinationLineAt(int i) const;
 
-    const DifferenceStringList sourceLines() const { return m_sourceLines; }
-    const DifferenceStringList destinationLines() const { return m_destinationLines; }
+    const DifferenceStringList sourceLines() const;
+    const DifferenceStringList destinationLines() const;
 
-    bool hasConflict() const
-    {
-        return m_conflicts;
-    }
-    void setConflict(bool conflicts)
-    {
-        m_conflicts = conflicts;
-    }
+    bool hasConflict() const;
+    void setConflict(bool conflicts);
 
-    bool isUnsaved() const
-    {
-        return m_unsaved;
-    }
-    void setUnsaved(bool unsaved)
-    {
-        m_unsaved = unsaved;
-    }
+    bool isUnsaved() const;
+    void setUnsaved(bool unsaved);
 
     void apply(bool apply);
     /// Apply without emitting any signals
     void applyQuietly(bool apply);
-    bool applied() const { return m_applied; }
+    bool applied() const;
 
-    void setType(int type) { m_type = type; }
+    void setType(int type);
 
     void addSourceLine(const QString &line);
     void addDestinationLine(const QString &line);
@@ -94,18 +84,8 @@ Q_SIGNALS:
     void differenceApplied(Difference*);
 
 private:
-    int                   m_type;
-
-    int                   m_sourceLineNo;
-    int                   m_destinationLineNo;
-    int                   m_trackingDestinationLineNo;
-
-    DifferenceStringList  m_sourceLines;
-    DifferenceStringList  m_destinationLines;
-
-    bool                  m_applied;
-    bool                  m_conflicts;
-    bool                  m_unsaved;
+    Q_DECLARE_PRIVATE(Difference)
+    std::unique_ptr<DifferencePrivate> const d_ptr;
 };
 
 using DifferenceList =              QList<Difference*>;

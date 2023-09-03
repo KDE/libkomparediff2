@@ -6,86 +6,205 @@ SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "difference.h"
+#include "difference_p.h"
+
+// lib
 #include "differencestringpair.h"
 #include "levenshteintable.h"
 
 using namespace KompareDiff2;
 
 Difference::Difference(int sourceLineNo, int destinationLineNo, int type) :
-    QObject(),
-    m_type(type),
-    m_sourceLineNo(sourceLineNo),
-    m_destinationLineNo(destinationLineNo),
-    m_trackingDestinationLineNo(sourceLineNo),      // The whole patch starts as unapplied
-    m_applied(false),
-    m_conflicts(false),
-    m_unsaved(false)
+    d_ptr(new DifferencePrivate(sourceLineNo, destinationLineNo, type))
 {
 }
 
-Difference::~Difference()
+Difference::~Difference() = default;
+
+int Difference::type() const
 {
-    qDeleteAll(m_sourceLines);
-    qDeleteAll(m_destinationLines);
+    Q_D(const Difference);
+
+    return d->type;
+};
+
+int Difference::sourceLineNumber() const
+{
+    Q_D(const Difference);
+
+    return d->sourceLineNo;
+}
+
+int Difference::destinationLineNumber() const
+{
+    Q_D(const Difference);
+
+    return d->destinationLineNo;
+}
+
+int Difference::trackingDestinationLineNumber() const
+{
+    Q_D(const Difference);
+
+    return d->trackingDestinationLineNo;
+}
+
+void Difference::setTrackingDestinationLineNumber(int i)
+{
+    Q_D(Difference);
+
+    d->trackingDestinationLineNo = i;
+}
+
+DifferenceString* Difference::sourceLineAt(int i) const
+{
+    Q_D(const Difference);
+
+    return d->sourceLines[i];
+}
+
+DifferenceString* Difference::destinationLineAt(int i) const
+{
+    Q_D(const Difference);
+
+    return d->destinationLines[i];
+}
+
+const DifferenceStringList Difference::sourceLines() const
+{
+    Q_D(const Difference);
+
+    return d->sourceLines;
+}
+
+const DifferenceStringList Difference::destinationLines() const
+{
+    Q_D(const Difference);
+
+    return d->destinationLines;
+}
+
+bool Difference::hasConflict() const
+{
+    Q_D(const Difference);
+
+    return d->conflicts;
+}
+
+void Difference::setConflict(bool conflicts)
+{
+    Q_D(Difference);
+
+    d->conflicts = conflicts;
+}
+
+bool Difference::isUnsaved() const
+{
+    Q_D(const Difference);
+
+    return d->unsaved;
+}
+
+void Difference::setUnsaved(bool unsaved)
+{
+    Q_D(Difference);
+
+    d->unsaved = unsaved;
+}
+
+bool Difference::applied() const
+{
+    Q_D(const Difference);
+
+    return d->applied;
+}
+
+void Difference::setType(int type)
+{
+    Q_D(Difference);
+
+    d->type = type;
 }
 
 void Difference::addSourceLine(const QString &line)
 {
-    m_sourceLines.append(new DifferenceString(line));
+    Q_D(Difference);
+
+    d->sourceLines.append(new DifferenceString(line));
 }
 
 void Difference::addDestinationLine(const QString &line)
 {
-    m_destinationLines.append(new DifferenceString(line));
+    Q_D(Difference);
+
+    d->destinationLines.append(new DifferenceString(line));
 }
 
 int Difference::sourceLineCount() const
 {
-    return m_sourceLines.count();
+    Q_D(const Difference);
+
+    return d->sourceLines.count();
 }
 
 int Difference::destinationLineCount() const
 {
-    return m_destinationLines.count();
+    Q_D(const Difference);
+
+    return d->destinationLines.count();
 }
 
 int Difference::sourceLineEnd() const
 {
-    return m_sourceLineNo + m_sourceLines.count();
+    Q_D(const Difference);
+
+    return d->sourceLineNo + d->sourceLines.count();
 }
 
 int Difference::destinationLineEnd() const
 {
-    return m_destinationLineNo + m_destinationLines.count();
+    Q_D(const Difference);
+
+    return d->destinationLineNo + d->destinationLines.count();
 }
 
 int Difference::trackingDestinationLineEnd() const
 {
-    return m_trackingDestinationLineNo + m_destinationLines.count();
+    Q_D(const Difference);
+
+    return d->trackingDestinationLineNo + d->destinationLines.count();
 }
 
 void Difference::apply(bool apply)
 {
-    if (apply != m_applied)
-    {
-        m_applied = apply;
-        m_unsaved = !m_unsaved;
-        Q_EMIT differenceApplied(this);
+    Q_D(Difference);
+
+    if (apply == d->applied) {
+        return;
     }
+
+    d->applied = apply;
+    d->unsaved = !d->unsaved;
+    Q_EMIT differenceApplied(this);
 }
 
 void Difference::applyQuietly(bool apply)
 {
-    if (m_applied != apply)
-    {
-        m_unsaved = !m_unsaved;
-        m_applied = apply;
+    Q_D(Difference);
+
+    if (d->applied == apply) {
+        return;
     }
+
+    d->unsaved = !d->unsaved;
+    d->applied = apply;
 }
 
 void Difference::determineInlineDifferences()
 {
-    if (m_type != Difference::Change)
+    Q_D(Difference);
+
+    if (d->type != Difference::Change)
         return;
 
     // Do nothing for now when the slc != dlc
@@ -112,15 +231,17 @@ void Difference::determineInlineDifferences()
 
 QString Difference::recreateDifference() const
 {
+    Q_D(const Difference);
+
     QString difference;
 
     // source
-    DifferenceStringListConstIterator stringIt = m_sourceLines.begin();
-    DifferenceStringListConstIterator sEnd     = m_sourceLines.end();
+    DifferenceStringListConstIterator stringIt = d->sourceLines.begin();
+    DifferenceStringListConstIterator sEnd     = d->sourceLines.end();
 
     for (; stringIt != sEnd; ++stringIt)
     {
-        switch (m_type)
+        switch (d->type)
         {
         case Change:
         case Delete:
@@ -137,12 +258,12 @@ QString Difference::recreateDifference() const
     }
 
     //destination
-    stringIt = m_destinationLines.begin();
-    sEnd     = m_destinationLines.end();
+    stringIt = d->destinationLines.begin();
+    sEnd     = d->destinationLines.end();
 
     for (; stringIt != sEnd; ++stringIt)
     {
-        switch (m_type)
+        switch (d->type)
         {
         case Change:
         case Insert:

@@ -49,7 +49,7 @@ public:
     /* Comparing methods */
     bool compare();
 
-    bool compare(Kompare::Mode);
+    bool compare(Mode);
 
     bool openDiff(const QString& diff);
 
@@ -82,7 +82,7 @@ public:
     bool blendOriginalIntoModelList(const QString& localURL);
 
     // This mode() method is superfluous now so FIXME
-    enum Kompare::Mode    mode()   const { return m_info->mode; };
+    enum Mode    mode()   const { return m_info->mode; };
     const DiffModelList*  models() const { return m_models; };
 
     KActionCollection* actionCollection() const;
@@ -118,7 +118,7 @@ protected:
     bool blendFile(DiffModel* model, const QString& lines);
 
 Q_SIGNALS:
-    void status(Kompare::Status status);
+    void status(KompareDiff2::Status status);
     void setStatusBarModelInfo(int modelIndex, int differenceIndex, int modelCount, int differenceCount, int appliedCount);
     void error(QString error);
     void modelsChanged(const KompareDiff2::DiffModelList* models);
@@ -141,7 +141,7 @@ public Q_SLOTS:
     void slotPreviousDifference();
     void slotNextDifference();
 
-    void slotKompareInfo(struct Kompare::Info*);
+    void slotKompareInfo(struct KompareDiff2::Info*);
 
 protected Q_SLOTS:
     void slotDiffProcessFinished(bool success);
@@ -188,7 +188,7 @@ private: // ### an exported class without a d pointer? Really? What about BC?
 
     int                   m_modelIndex;
 
-    struct Kompare::Info* m_info;
+    struct Info*          m_info;
 
     KActionCollection*    m_actionCollection;
     QAction*              m_applyDifference;

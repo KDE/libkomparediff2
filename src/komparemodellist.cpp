@@ -135,7 +135,7 @@ bool KompareModelList::compare()
 
     if (sourceIsDirectory && destinationIsDirectory)
     {
-        m_info->mode = Kompare::ComparingDirs;
+        m_info->mode = ComparingDirs;
         result = compare(m_info->mode);
     }
     else if (!sourceIsDirectory && !destinationIsDirectory)
@@ -157,13 +157,13 @@ bool KompareModelList::compare()
         if (!isDiff(sourceMimeType) && isDiff(destinationMimeType))
         {
             qCDebug(LIBKOMPAREDIFF2) << "Blending destination into source...";
-            m_info->mode = Kompare::BlendingFile;
+            m_info->mode = BlendingFile;
             result = openFileAndDiff();
         }
         else if (isDiff(sourceMimeType) && !isDiff(destinationMimeType))
         {
             qCDebug(LIBKOMPAREDIFF2) << "Blending source into destination...";
-            m_info->mode = Kompare::BlendingFile;
+            m_info->mode = BlendingFile;
             // Swap source and destination before calling this
             m_info->swapSourceWithDestination();
             // Do we need to notify anyone we swapped source and destination?
@@ -173,18 +173,18 @@ bool KompareModelList::compare()
         else
         {
             qCDebug(LIBKOMPAREDIFF2) << "Comparing source with destination";
-            m_info->mode = Kompare::ComparingFiles;
+            m_info->mode = ComparingFiles;
             result = compare(m_info->mode);
         }
     }
     else if (sourceIsDirectory && !destinationIsDirectory)
     {
-        m_info->mode = Kompare::BlendingDir;
+        m_info->mode = BlendingDir;
         result = openDirAndDiff();
     }
     else
     {
-        m_info->mode = Kompare::BlendingDir;
+        m_info->mode = BlendingDir;
         // Swap source and destination first in m_info
         m_info->swapSourceWithDestination();
         // Do we need to notify anyone we swapped source and destination?
@@ -195,17 +195,17 @@ bool KompareModelList::compare()
     return result;
 }
 
-bool KompareModelList::compare(Kompare::Mode mode)
+bool KompareModelList::compare(Mode mode)
 {
     clear(); // Destroy the old models...
 
-    m_diffProcess = new KompareProcess(m_diffSettings, Kompare::Custom, m_info->localSource, m_info->localDestination, QString(), mode);
+    m_diffProcess = new KompareProcess(m_diffSettings, Custom, m_info->localSource, m_info->localDestination, QString(), mode);
     m_diffProcess->setEncoding(m_encoding);
 
     connect(m_diffProcess, &KompareProcess::diffHasFinished,
             this, &KompareModelList::slotDiffProcessFinished);
 
-    Q_EMIT status(Kompare::RunningDiff);
+    Q_EMIT status(RunningDiff);
     m_diffProcess->start();
 
     return true;
@@ -378,7 +378,7 @@ bool KompareModelList::saveDestination(DiffModel* model)
     bool result = false;
 
     // Make sure the destination directory exists, it is possible when using -N to not have the destination dir/file available
-    if (m_info->mode == Kompare::ComparingDirs)
+    if (m_info->mode == ComparingDirs)
     {
         // Don't use destination which was used for creating the diff directly, use the original URL!!!
         // FIXME!!! Wrong destination this way! Need to add the sub directory to the url!!!!
@@ -505,14 +505,14 @@ void KompareModelList::slotDiffProcessFinished(bool success)
 {
     if (success)
     {
-        Q_EMIT status(Kompare::Parsing);
+        Q_EMIT status(Parsing);
         if (parseDiffOutput(m_diffProcess->diffOutput()) != 0)
         {
             Q_EMIT error(i18n("Could not parse diff output."));
         }
         else
         {
-            if (m_info->mode != Kompare::ShowingDiff)
+            if (m_info->mode != ShowingDiff)
             {
                 qCDebug(LIBKOMPAREDIFF2) << "Blend this crap please and do not give me any conflicts...";
                 blendOriginalIntoModelList(m_info->localSource);
@@ -520,7 +520,7 @@ void KompareModelList::slotDiffProcessFinished(bool success)
             updateModelListActions();
             show();
         }
-        Q_EMIT status(Kompare::FinishedParsing);
+        Q_EMIT status(FinishedParsing);
     }
     else if (m_diffProcess->exitStatus() == 0)
     {
@@ -541,7 +541,7 @@ void KompareModelList::slotDirectoryChanged(const QString& /*dir*/)
     qCDebug(LIBKOMPAREDIFF2) << "Yippie directories are being watched !!! :)";
     if (m_diffProcess)
     {
-        Q_EMIT status(Kompare::ReRunningDiff);
+        Q_EMIT status(ReRunningDiff);
         m_diffProcess->start();
     }
 }
@@ -552,7 +552,7 @@ void KompareModelList::slotFileChanged(const QString& /*file*/)
     qCDebug(LIBKOMPAREDIFF2) << "Yippie files are being watched !!! :)";
     if (m_diffProcess)
     {
-        Q_EMIT status(Kompare::ReRunningDiff);
+        Q_EMIT status(ReRunningDiff);
         m_diffProcess->start();
     }
 }
@@ -619,7 +619,7 @@ bool KompareModelList::openDiff(const QString& diffFile)
 
     clear(); // Clear the current models
 
-    Q_EMIT status(Kompare::Parsing);
+    Q_EMIT status(Parsing);
 
     if (parseDiffOutput(diff) != 0)
     {
@@ -630,7 +630,7 @@ bool KompareModelList::openDiff(const QString& diffFile)
     updateModelListActions();
     show();
 
-    Q_EMIT status(Kompare::FinishedParsing);
+    Q_EMIT status(FinishedParsing);
 
     return true;
 }
@@ -639,7 +639,7 @@ bool KompareModelList::parseAndOpenDiff(const QString& diff)
 {
     clear(); // Clear the current models
 
-    Q_EMIT status(Kompare::Parsing);
+    Q_EMIT status(Parsing);
 
     if (parseDiffOutput(diff) != 0)
     {
@@ -650,7 +650,7 @@ bool KompareModelList::parseAndOpenDiff(const QString& diff)
     updateModelListActions();
     show();
 
-    Q_EMIT status(Kompare::FinishedParsing);
+    Q_EMIT status(FinishedParsing);
     return true;
 }
 
@@ -683,13 +683,13 @@ bool KompareModelList::saveDiff(const QString& url, QString directory, DiffSetti
         return false;
     }
 
-    m_diffProcess = new KompareProcess(diffSettings, Kompare::Custom, m_info->localSource, m_info->localDestination, directory);
+    m_diffProcess = new KompareProcess(diffSettings, Custom, m_info->localSource, m_info->localDestination, directory);
     m_diffProcess->setEncoding(m_encoding);
 
     connect(m_diffProcess, &KompareProcess::diffHasFinished,
             this, &KompareModelList::slotWriteDiffOutput);
 
-    Q_EMIT status(Kompare::RunningDiff);
+    Q_EMIT status(RunningDiff);
     m_diffProcess->start();
     return true;
 }
@@ -714,7 +714,7 @@ void KompareModelList::slotWriteDiffOutput(bool success)
         KIO::FileCopyJob* copyJob = KIO::file_copy(QUrl::fromLocalFile(m_diffTemp->fileName()), m_diffURL);
         copyJob->exec();
 
-        Q_EMIT status(Kompare::FinishedWritingDiff);
+        Q_EMIT status(FinishedWritingDiff);
     }
 
     m_diffURL = QUrl();
@@ -1309,9 +1309,9 @@ void KompareModelList::refresh()
 void KompareModelList::swap()
 {
     //FIXME Not sure if any mode could be swapped
-    if (m_info->mode == Kompare::ComparingFiles)
+    if (m_info->mode == ComparingFiles)
         compare(m_info->mode);
-    else if (m_info->mode == Kompare::ComparingDirs)
+    else if (m_info->mode == ComparingDirs)
         compare(m_info->mode);
 }
 
@@ -1346,7 +1346,7 @@ int KompareModelList::appliedCount() const
     return m_selectedModel ? m_selectedModel->appliedCount() : -1;
 }
 
-void KompareModelList::slotKompareInfo(struct Kompare::Info* info)
+void KompareModelList::slotKompareInfo(Info* info)
 {
     m_info = info;
 }

@@ -15,7 +15,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 DiffSettings::DiffSettings(QWidget* parent)
     : SettingsBase(parent),
       m_linesOfContext(0),
-      m_format(Kompare::Unified),
+      m_format(KompareDiff2::Unified),
       m_largeFiles(false),
       m_ignoreWhiteSpace(false),
       m_ignoreAllWhiteSpace(false),
@@ -57,7 +57,7 @@ void DiffSettings::loadSettings(KConfig* config)
     m_recursive                      = group.readEntry("CompareRecursively", true);
     m_newFiles                       = group.readEntry("NewFiles", true);
 
-    m_format = static_cast<Kompare::Format>(group.readEntry("Format", (int) Kompare::Unified));
+    m_format = static_cast<KompareDiff2::Format>(group.readEntry("Format", (int) KompareDiff2::Unified));
 
     KConfigGroup group2(config, "Exclude File Options");
     m_excludeFilePattern             = group2.readEntry("Pattern", false);

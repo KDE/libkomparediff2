@@ -29,7 +29,7 @@ PerforceParser::~PerforceParser()
 {
 }
 
-enum Kompare::Format PerforceParser::determineFormat()
+enum Format PerforceParser::determineFormat()
 {
     qCDebug(LIBKOMPAREDIFF2) << "Determining the format of the Perforce Diff";
 
@@ -46,27 +46,27 @@ enum Kompare::Format PerforceParser::determineFormat()
         if (it->indexOf(unifiedRE, 0) == 0)
         {
             qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Unified diff...";
-            return Kompare::Unified;
+            return Unified;
         }
         else if (it->indexOf(contextRE, 0) == 0)
         {
             qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Context diff...";
-            return Kompare::Context;
+            return Context;
         }
         else if (it->indexOf(normalRE, 0) == 0)
         {
             qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Normal diff...";
-            return Kompare::Normal;
+            return Normal;
         }
         else if (it->indexOf(rcsRE, 0) == 0)
         {
             qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a RCS diff...";
-            return Kompare::RCS;
+            return RCS;
         }
         ++it;
     }
     qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an unknown diff...";
-    return Kompare::UnknownFormat;
+    return UnknownFormat;
 }
 
 bool PerforceParser::parseContextDiffHeader()

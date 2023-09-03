@@ -21,7 +21,7 @@ public:
     ~CVSDiffParser() override;
 
 protected:
-    enum Kompare::Format determineFormat() override;
+    enum Format determineFormat() override;
 
 protected:
 //     virtual bool parseContextDiffHeader();

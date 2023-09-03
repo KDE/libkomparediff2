@@ -23,8 +23,8 @@ class KompareProcess : public KProcess
     Q_OBJECT
 
 public:
-    KompareProcess(DiffSettings* diffSettings, enum Kompare::DiffMode mode, const QString& source,
-                   const QString& destination, const QString& directory = QString(), enum Kompare::Mode = Kompare::UnknownMode);
+    KompareProcess(DiffSettings* diffSettings, enum KompareDiff2::DiffMode mode, const QString& source,
+                   const QString& destination, const QString& directory = QString(), enum KompareDiff2::Mode = KompareDiff2::UnknownMode);
     ~KompareProcess() override;
 
     void start();
@@ -47,7 +47,7 @@ protected Q_SLOTS:
 
 private:
     DiffSettings*          m_diffSettings;
-    enum Kompare::DiffMode m_mode;
+    enum KompareDiff2::DiffMode m_mode;
     const QString*         m_customString; // Used when a comparison between a file and a string is requested
     QString                m_stdout;
     QString                m_stderr;

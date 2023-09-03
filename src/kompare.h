@@ -15,10 +15,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 // Forward declaration needed
 class QTemporaryDir;
 
-/**
- * Kompare namespace
- */
-namespace Kompare
+namespace KompareDiff2
 {
 /**
  * Patch format enum.
@@ -127,6 +124,7 @@ struct KOMPAREDIFF2_EXPORT Info {
     uint           depth;
     bool           applied;
 };
-} // End of namespace Kompare
+
+} // End of namespace KompareDiff2
 
 #endif

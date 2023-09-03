@@ -101,10 +101,10 @@ ParserBase::~ParserBase()
         m_models = nullptr; // do not delete this, i pass it around...
 }
 
-enum Kompare::Format ParserBase::determineFormat()
+enum Format ParserBase::determineFormat()
 {
     // Write your own format detection routine damn it :)
-    return Kompare::UnknownFormat;
+    return UnknownFormat;
 }
 
 DiffModelList* ParserBase::parse(bool* malformed)
@@ -112,19 +112,19 @@ DiffModelList* ParserBase::parse(bool* malformed)
     DiffModelList* result;
     switch (determineFormat())
     {
-    case Kompare::Context :
+    case Context :
         result = parseContext();
         break;
-    case Kompare::Ed :
+    case Ed :
         result = parseEd();
         break;
-    case Kompare::Normal :
+    case Normal :
         result = parseNormal();
         break;
-    case Kompare::RCS :
+    case RCS :
         result = parseRCS();
         break;
-    case Kompare::Unified :
+    case Unified :
         result = parseUnified();
         break;
     default: // Unknown and SideBySide for now

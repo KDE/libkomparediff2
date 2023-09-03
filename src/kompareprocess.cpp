@@ -45,7 +45,7 @@ static QString constructRelativePath(const QString& from, const QString& to)
 }
 }
 
-KompareProcess::KompareProcess(DiffSettings* diffSettings, Kompare::DiffMode diffMode, const QString& source, const QString& destination, const QString& dir, Kompare::Mode mode)
+KompareProcess::KompareProcess(DiffSettings* diffSettings, KompareDiff2::DiffMode diffMode, const QString& source, const QString& destination, const QString& dir, KompareDiff2::Mode mode)
     : KProcess(),
       m_diffSettings(diffSettings),
       m_mode(diffMode),
@@ -59,7 +59,7 @@ KompareProcess::KompareProcess(DiffSettings* diffSettings, Kompare::DiffMode dif
     setEnv(QStringLiteral("LANG"), QStringLiteral("C"));
 
     // Write command and options
-    if (m_mode == Kompare::Default)
+    if (m_mode == KompareDiff2::Default)
     {
         writeDefaultCommandLine();
     }
@@ -76,7 +76,7 @@ KompareProcess::KompareProcess(DiffSettings* diffSettings, Kompare::DiffMode dif
     *this << QStringLiteral("--");
 
     //Add the option for diff to read from stdin(QIODevice::write), and save a pointer to the string
-    if (mode == Kompare::ComparingStringFile)
+    if (mode == KompareDiff2::ComparingStringFile)
     {
         *this << QStringLiteral("-");
         m_customString = &source;
@@ -86,7 +86,7 @@ KompareProcess::KompareProcess(DiffSettings* diffSettings, Kompare::DiffMode dif
         *this << constructRelativePath(dir, source);
     }
 
-    if (mode == Kompare::ComparingFileString)
+    if (mode == KompareDiff2::ComparingFileString)
     {
         *this << QStringLiteral("-");
         m_customString = &destination;
@@ -126,23 +126,23 @@ void KompareProcess::writeCommandLine()
     }
 
     switch (m_diffSettings->m_format) {
-    case Kompare::Unified :
+    case KompareDiff2::Unified :
         *this << QStringLiteral("-U") << QString::number(m_diffSettings->m_linesOfContext);
         break;
-    case Kompare::Context :
+    case KompareDiff2::Context :
         *this << QStringLiteral("-C") << QString::number(m_diffSettings->m_linesOfContext);
         break;
-    case Kompare::RCS :
+    case KompareDiff2::RCS :
         *this << QStringLiteral("-n");
         break;
-    case Kompare::Ed :
+    case KompareDiff2::Ed :
         *this << QStringLiteral("-e");
         break;
-    case Kompare::SideBySide:
+    case KompareDiff2::SideBySide:
         *this << QStringLiteral("-y");
         break;
-    case Kompare::Normal :
-    case Kompare::UnknownFormat :
+    case KompareDiff2::Normal :
+    case KompareDiff2::UnknownFormat :
     default:
         break;
     }

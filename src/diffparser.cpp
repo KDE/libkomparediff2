@@ -23,7 +23,7 @@ DiffParser::~DiffParser()
 {
 }
 
-enum Kompare::Format DiffParser::determineFormat()
+enum Format DiffParser::determineFormat()
 {
     qCDebug(LIBKOMPAREDIFF2) << "Determining the format of the diff Diff" << m_diffLines;
 
@@ -41,30 +41,30 @@ enum Kompare::Format DiffParser::determineFormat()
         if (it->indexOf(normalRE, 0) == 0)
         {
             qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Normal diff...";
-            return Kompare::Normal;
+            return Normal;
         }
         else if (it->indexOf(unifiedRE, 0) == 0)
         {
             qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Unified diff...";
-            return Kompare::Unified;
+            return Unified;
         }
         else if (it->indexOf(contextRE, 0) == 0)
         {
             qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Context diff...";
-            return Kompare::Context;
+            return Context;
         }
         else if (it->indexOf(rcsRE, 0) == 0)
         {
             qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an RCS diff...";
-            return Kompare::RCS;
+            return RCS;
         }
         else if (it->indexOf(edRE, 0) == 0)
         {
             qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an ED diff...";
-            return Kompare::Ed;
+            return Ed;
         }
         ++it;
     }
     qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an unknown diff...";
-    return Kompare::UnknownFormat;
+    return UnknownFormat;
 }

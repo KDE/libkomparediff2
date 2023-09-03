@@ -62,15 +62,15 @@ DiffModelList* Parser::parse(QStringList& diffLines, bool* malformed)
 
     switch (m_generator)
     {
-    case Kompare::CVSDiff :
+    case CVSDiff :
         qCDebug(LIBKOMPAREDIFF2) << "It is a CVS generated diff...";
         parser = new CVSDiffParser(m_list, diffLines);
         break;
-    case Kompare::Diff :
+    case Diff :
         qCDebug(LIBKOMPAREDIFF2) << "It is a diff generated diff...";
         parser = new DiffParser(m_list, diffLines);
         break;
-    case Kompare::Perforce :
+    case Perforce :
         qCDebug(LIBKOMPAREDIFF2) << "It is a Perforce generated diff...";
         parser = new PerforceParser(m_list, diffLines);
         break;
@@ -98,7 +98,7 @@ DiffModelList* Parser::parse(QStringList& diffLines, bool* malformed)
     return modelList;
 }
 
-enum Kompare::Generator Parser::determineGenerator(const QStringList& diffLines)
+enum Generator Parser::determineGenerator(const QStringList& diffLines)
 {
     // Shit have to duplicate some code with this method and the ParserBase derived classes
     QLatin1String cvsDiff("Index: ");
@@ -112,12 +112,12 @@ enum Kompare::Generator Parser::determineGenerator(const QStringList& diffLines)
         if ((*it).startsWith(cvsDiff))
         {
             qCDebug(LIBKOMPAREDIFF2) << "Diff is a CVSDiff";
-            return Kompare::CVSDiff;
+            return CVSDiff;
         }
         else if ((*it).startsWith(perforceDiff))
         {
             qCDebug(LIBKOMPAREDIFF2) << "Diff is a Perforce Diff";
-            return Kompare::Perforce;
+            return Perforce;
         }
         ++it;
     }
@@ -126,5 +126,5 @@ enum Kompare::Generator Parser::determineGenerator(const QStringList& diffLines)
 
     // For now we'll assume it is a diff file diff, later we might
     // try to really determine if it is a diff file diff.
-    return Kompare::Diff;
+    return Diff;
 }

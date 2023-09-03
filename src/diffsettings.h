@@ -33,7 +33,7 @@ public:
 public:
     QString m_diffProgram;
     int m_linesOfContext;
-    Kompare::Format m_format;
+    KompareDiff2::Format m_format;
     bool m_largeFiles;                           // -H
     bool m_ignoreWhiteSpace;                     // -b
     bool m_ignoreAllWhiteSpace;                  // -w

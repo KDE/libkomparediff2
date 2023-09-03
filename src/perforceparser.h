@@ -25,7 +25,7 @@ protected:
     bool parseUnifiedDiffHeader() override;
 
 protected:
-    enum Kompare::Format determineFormat() override;
+    enum Format determineFormat() override;
 };
 
 } // End of namespace KompareDiff2

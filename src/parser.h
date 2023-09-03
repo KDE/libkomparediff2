@@ -25,18 +25,18 @@ public:
 public:
     DiffModelList* parse(QStringList& diffLines, bool* malformed = nullptr);
 
-    enum Kompare::Generator generator() const { return m_generator; };
-    enum Kompare::Format    format() const    { return m_format; };
+    enum Generator generator() const { return m_generator; };
+    enum Format    format() const    { return m_format; };
 
 private:
     /** Which program was used to generate the output */
-    enum Kompare::Generator determineGenerator(const QStringList& diffLines);
+    enum Generator determineGenerator(const QStringList& diffLines);
 
     int cleanUpCrap(QStringList& diffLines);
 
 private:
-    enum Kompare::Generator m_generator;
-    enum Kompare::Format    m_format;
+    enum Generator m_generator;
+    enum Format    m_format;
 
     const KompareModelList* m_list;
 };

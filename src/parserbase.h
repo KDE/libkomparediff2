@@ -33,7 +33,7 @@ public:
     static QString unescapePath(QString path);
 
 public:
-    enum Kompare::Format format() { return determineFormat(); };
+    enum Format format() { return determineFormat(); };
     DiffModelList* parse(bool* malformed = nullptr);
 
 protected:
@@ -67,7 +67,7 @@ protected: // Helper methods to speed things up
 
 protected:
     /** What is format of the diff */
-    virtual enum Kompare::Format determineFormat();
+    virtual enum Format determineFormat();
 
 protected:
     // Regexps for context parsing

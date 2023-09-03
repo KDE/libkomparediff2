@@ -35,7 +35,7 @@ private:
     DiffModel(const DiffModel&) : QObject() {}
 
 public:
-    int parseDiff(enum Kompare::Format format, const QStringList& list);
+    int parseDiff(enum Format format, const QStringList& list);
 
     QString recreateDiff() const;
 

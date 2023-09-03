@@ -25,6 +25,7 @@ target_sources(komparediff2 PRIVATE
     diffmodellist.cpp
     diffmodel.cpp
     difference.cpp
+    differencestring.cpp
     diffhunk.cpp
     diffsettings.cpp
     info.cpp

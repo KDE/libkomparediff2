@@ -26,6 +26,7 @@ target_sources(interactiveDiffTest PRIVATE
     ${LIB_SOURCE_DIR}/perforceparser.cpp
     ${LIB_SOURCE_DIR}/cvsdiffparser.cpp
     ${LIB_SOURCE_DIR}/difference.cpp
+    ${LIB_SOURCE_DIR}/differencestring.cpp
     ${LIB_SOURCE_DIR}/diffhunk.cpp
     ${LIB_SOURCE_DIR}/diffmodel.cpp
     ${LIB_SOURCE_DIR}/diffmodellist.cpp
@@ -62,6 +63,7 @@ add_executable(levenshteintest)
 target_sources(levenshteintest PRIVATE
     levenshteintest.cpp
     ${LIB_SOURCE_DIR}/difference.cpp
+    ${LIB_SOURCE_DIR}/differencestring.cpp
     ${LIB_SOURCE_DIR}/stringlistpair.cpp
     ${komparediff2_DBG_SRCS}
 )

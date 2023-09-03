@@ -22,6 +22,7 @@ set_target_properties(komparediff2 PROPERTIES
 target_sources(komparediff2 PRIVATE
     kompareprocess.cpp
     modellist.cpp
+    modellist_p.cpp
     diffmodellist.cpp
     diffmodel.cpp
     difference.cpp

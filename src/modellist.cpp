@@ -8,17 +8,14 @@ SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "modellist.h"
+#include "modellist_p.h"
 
-#include <QAction>
-#include <QFile>
-#include <QDir>
-#include <QTextCodec>
-#include <QTextStream>
-#include <QList>
-#include <QTemporaryFile>
-#include <QMimeType>
-#include <QMimeDatabase>
-
+// lib
+#include "diffhunk.h"
+#include "kompareprocess.h"
+#include "parser.h"
+#include <komparediffdebug.h>
+// KF
 #include <KActionCollection>
 #include <KDirWatch>
 #include <KIO/UDSEntry>
@@ -27,145 +24,122 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <KIO/FileCopyJob>
 #include <KLocalizedString>
 #include <KStandardAction>
-
-#include <komparediffdebug.h>
-#include "diffhunk.h"
-#include "kompareprocess.h"
-#include "parser.h"
+// Qt
+#include <QFile>
+#include <QDir>
+#include <QTextStream>
+#include <QList>
+#include <QTemporaryFile>
+#include <QMimeType>
+#include <QMimeDatabase>
+#include <QTextCodec>
 
 using namespace KompareDiff2;
 
 ModelList::ModelList(DiffSettings* diffSettings, QObject* parent, bool supportReadWrite)
-    : QObject(parent),
-      m_diffProcess(nullptr),
-      m_diffSettings(diffSettings),
-      m_models(nullptr),
-      m_selectedModel(nullptr),
-      m_selectedDifference(nullptr),
-      m_modelIndex(0),
-      m_info(nullptr),
-      m_textCodec(nullptr),
-      m_isReadWrite(supportReadWrite)
+    : QObject(parent)
+    , d_ptr(new ModelListPrivate(diffSettings, supportReadWrite))
 {
+    Q_D(ModelList);
+
     qCDebug(LIBKOMPAREDIFF2) << "Show me the arguments: " << diffSettings << ", " << parent;
-    m_actionCollection = new KActionCollection(this);
+    d->actionCollection = new KActionCollection(this);
     if (supportReadWrite) {
-        m_applyDifference = m_actionCollection->addAction(QStringLiteral("difference_apply"), this, &ModelList::slotActionApplyDifference);
-        m_applyDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right")));
-        m_applyDifference->setText(i18nc("@action", "&Apply Difference"));
-        m_actionCollection->setDefaultShortcut(m_applyDifference, QKeySequence(Qt::Key_Space));
-        m_unApplyDifference = m_actionCollection->addAction(QStringLiteral("difference_unapply"), this, &ModelList::slotActionUnApplyDifference);
-        m_unApplyDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-left")));
-        m_unApplyDifference->setText(i18nc("@action", "Un&apply Difference"));
-        m_actionCollection->setDefaultShortcut(m_unApplyDifference, QKeySequence(Qt::Key_Backspace));
-        m_applyAll = m_actionCollection->addAction(QStringLiteral("difference_applyall"), this, &ModelList::slotActionApplyAllDifferences);
-        m_applyAll->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")));
-        m_applyAll->setText(i18nc("@action", "App&ly All"));
-        m_actionCollection->setDefaultShortcut(m_applyAll, QKeySequence(Qt::CTRL | Qt::Key_A));
-        m_unapplyAll = m_actionCollection->addAction(QStringLiteral("difference_unapplyall"), this, &ModelList::slotActionUnapplyAllDifferences);
-        m_unapplyAll->setIcon(QIcon::fromTheme(QStringLiteral("arrow-left-double")));
-        m_unapplyAll->setText(i18nc("@action", "&Unapply All"));
-        m_actionCollection->setDefaultShortcut(m_unapplyAll, QKeySequence(Qt::CTRL | Qt::Key_U));
+        d->applyDifference = d->actionCollection->addAction(QStringLiteral("difference_apply"), this, &ModelList::slotActionApplyDifference);
+        d->applyDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right")));
+        d->applyDifference->setText(i18nc("@action", "&Apply Difference"));
+        d->actionCollection->setDefaultShortcut(d->applyDifference, QKeySequence(Qt::Key_Space));
+        d->unApplyDifference = d->actionCollection->addAction(QStringLiteral("difference_unapply"), this, &ModelList::slotActionUnApplyDifference);
+        d->unApplyDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-left")));
+        d->unApplyDifference->setText(i18nc("@action", "Un&apply Difference"));
+        d->actionCollection->setDefaultShortcut(d->unApplyDifference, QKeySequence(Qt::Key_Backspace));
+        d->applyAll = d->actionCollection->addAction(QStringLiteral("difference_applyall"), this, &ModelList::slotActionApplyAllDifferences);
+        d->applyAll->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")));
+        d->applyAll->setText(i18nc("@action", "App&ly All"));
+        d->actionCollection->setDefaultShortcut(d->applyAll, QKeySequence(Qt::CTRL | Qt::Key_A));
+        d->unapplyAll = d->actionCollection->addAction(QStringLiteral("difference_unapplyall"), this, &ModelList::slotActionUnapplyAllDifferences);
+        d->unapplyAll->setIcon(QIcon::fromTheme(QStringLiteral("arrow-left-double")));
+        d->unapplyAll->setText(i18nc("@action", "&Unapply All"));
+        d->actionCollection->setDefaultShortcut(d->unapplyAll, QKeySequence(Qt::CTRL | Qt::Key_U));
     } else {
-        m_applyDifference = nullptr;
-        m_unApplyDifference = nullptr;
-        m_applyAll = nullptr;
-        m_unapplyAll = nullptr;
+        d->applyDifference = nullptr;
+        d->unApplyDifference = nullptr;
+        d->applyAll = nullptr;
+        d->unapplyAll = nullptr;
     }
-    m_previousFile = m_actionCollection->addAction(QStringLiteral("difference_previousfile"), this, &ModelList::slotPreviousModel);
-    m_previousFile->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up-double")));
-    m_previousFile->setText(i18nc("@action", "P&revious File"));
-    m_actionCollection->setDefaultShortcut(m_previousFile, QKeySequence(Qt::CTRL | Qt::Key_PageUp));
-    m_nextFile = m_actionCollection->addAction(QStringLiteral("difference_nextfile"), this, &ModelList::slotNextModel);
-    m_nextFile->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down-double")));
-    m_nextFile->setText(i18nc("@action", "N&ext File"));
-    m_actionCollection->setDefaultShortcut(m_nextFile, QKeySequence(Qt::CTRL | Qt::Key_PageDown));
-    m_previousDifference = m_actionCollection->addAction(QStringLiteral("difference_previous"), this, &ModelList::slotPreviousDifference);
-    m_previousDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up")));
-    m_previousDifference->setText(i18nc("@action", "&Previous Difference"));
-    m_actionCollection->setDefaultShortcut(m_previousDifference, QKeySequence(Qt::CTRL | Qt::Key_Up));
-    m_nextDifference = m_actionCollection->addAction(QStringLiteral("difference_next"), this, &ModelList::slotNextDifference);
-    m_nextDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
-    m_nextDifference->setText(i18nc("@action", "&Next Difference"));
-    m_actionCollection->setDefaultShortcut(m_nextDifference, QKeySequence(Qt::CTRL | Qt::Key_Down));
-    m_previousDifference->setEnabled(false);
-    m_nextDifference->setEnabled(false);
+    d->previousFile = d->actionCollection->addAction(QStringLiteral("difference_previousfile"), this, &ModelList::slotPreviousModel);
+    d->previousFile->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up-double")));
+    d->previousFile->setText(i18nc("@action", "P&revious File"));
+    d->actionCollection->setDefaultShortcut(d->previousFile, QKeySequence(Qt::CTRL | Qt::Key_PageUp));
+    d->nextFile = d->actionCollection->addAction(QStringLiteral("difference_nextfile"), this, &ModelList::slotNextModel);
+    d->nextFile->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down-double")));
+    d->nextFile->setText(i18nc("@action", "N&ext File"));
+    d->actionCollection->setDefaultShortcut(d->nextFile, QKeySequence(Qt::CTRL | Qt::Key_PageDown));
+    d->previousDifference = d->actionCollection->addAction(QStringLiteral("difference_previous"), this, &ModelList::slotPreviousDifference);
+    d->previousDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up")));
+    d->previousDifference->setText(i18nc("@action", "&Previous Difference"));
+    d->actionCollection->setDefaultShortcut(d->previousDifference, QKeySequence(Qt::CTRL | Qt::Key_Up));
+    d->nextDifference = d->actionCollection->addAction(QStringLiteral("difference_next"), this, &ModelList::slotNextDifference);
+    d->nextDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
+    d->nextDifference->setText(i18nc("@action", "&Next Difference"));
+    d->actionCollection->setDefaultShortcut(d->nextDifference, QKeySequence(Qt::CTRL | Qt::Key_Down));
+    d->previousDifference->setEnabled(false);
+    d->nextDifference->setEnabled(false);
 
     if (supportReadWrite) {
-        m_save = KStandardAction::save(this, &ModelList::slotSaveDestination, m_actionCollection);
-        m_save->setEnabled(false);
+        d->save = KStandardAction::save(this, &ModelList::slotSaveDestination, d->actionCollection);
+        d->save->setEnabled(false);
     } else {
-        m_save = nullptr;
+        d->save = nullptr;
     }
 
-    updateModelListActions();
+    d->updateModelListActions();
 }
 
-ModelList::~ModelList()
-{
-    m_selectedModel = nullptr;
-    m_selectedDifference = nullptr;
-    m_info = nullptr;
-    delete m_models;
-}
-
-bool ModelList::isDirectory(const QString& url) const
-{
-    QFileInfo fi(url);
-    if (fi.isDir())
-        return true;
-    else
-        return false;
-}
-
-bool ModelList::isDiff(const QString& mimeType) const
-{
-    if (mimeType == QLatin1String("text/x-patch"))
-        return true;
-    else
-        return false;
-}
+ModelList::~ModelList() = default;
 
 bool ModelList::compare()
 {
+    Q_D(ModelList);
+
     bool result = false;
 
-    bool sourceIsDirectory = isDirectory(m_info->localSource);
-    bool destinationIsDirectory = isDirectory(m_info->localDestination);
+    bool sourceIsDirectory = ModelListPrivate::isDirectory(d->info->localSource);
+    bool destinationIsDirectory = ModelListPrivate::isDirectory(d->info->localDestination);
 
     if (sourceIsDirectory && destinationIsDirectory)
     {
-        m_info->mode = ComparingDirs;
-        result = compare(m_info->mode);
+        d->info->mode = ComparingDirs;
+        result = compare(d->info->mode);
     }
     else if (!sourceIsDirectory && !destinationIsDirectory)
     {
-        QFile sourceFile(m_info->localSource);
+        QFile sourceFile(d->info->localSource);
         sourceFile.open(QIODevice::ReadOnly);
         QMimeDatabase db;
         QString sourceMimeType = (db.mimeTypeForData(sourceFile.readAll())).name();
         sourceFile.close();
         qCDebug(LIBKOMPAREDIFF2) << "Mimetype source     : " << sourceMimeType;
 
-        QFile destinationFile(m_info->localDestination);
+        QFile destinationFile(d->info->localDestination);
         destinationFile.open(QIODevice::ReadOnly);
         QString destinationMimeType = (db.mimeTypeForData(destinationFile.readAll())).name();
         destinationFile.close();
         qCDebug(LIBKOMPAREDIFF2) << "Mimetype destination: " << destinationMimeType;
 
         // Not checking if it is a text file/something diff can even compare, we'll let diff handle that
-        if (!isDiff(sourceMimeType) && isDiff(destinationMimeType))
+        if (!ModelListPrivate::isDiff(sourceMimeType) && ModelListPrivate::isDiff(destinationMimeType))
         {
             qCDebug(LIBKOMPAREDIFF2) << "Blending destination into source...";
-            m_info->mode = BlendingFile;
+            d->info->mode = BlendingFile;
             result = openFileAndDiff();
         }
-        else if (isDiff(sourceMimeType) && !isDiff(destinationMimeType))
+        else if (ModelListPrivate::isDiff(sourceMimeType) && !ModelListPrivate::isDiff(destinationMimeType))
         {
             qCDebug(LIBKOMPAREDIFF2) << "Blending source into destination...";
-            m_info->mode = BlendingFile;
+            d->info->mode = BlendingFile;
             // Swap source and destination before calling this
-            m_info->swapSourceWithDestination();
+            d->info->swapSourceWithDestination();
             // Do we need to notify anyone we swapped source and destination?
             // No we do not need to notify anyone about swapping source with destination
             result = openFileAndDiff();
@@ -173,20 +147,20 @@ bool ModelList::compare()
         else
         {
             qCDebug(LIBKOMPAREDIFF2) << "Comparing source with destination";
-            m_info->mode = ComparingFiles;
-            result = compare(m_info->mode);
+            d->info->mode = ComparingFiles;
+            result = compare(d->info->mode);
         }
     }
     else if (sourceIsDirectory && !destinationIsDirectory)
     {
-        m_info->mode = BlendingDir;
+        d->info->mode = BlendingDir;
         result = openDirAndDiff();
     }
     else
     {
-        m_info->mode = BlendingDir;
-        // Swap source and destination first in m_info
-        m_info->swapSourceWithDestination();
+        d->info->mode = BlendingDir;
+        // Swap source and destination first in d->info
+        d->info->swapSourceWithDestination();
         // Do we need to notify anyone we swapped source and destination?
         // No we do not need to notify anyone about swapping source with destination
         result = openDirAndDiff();
@@ -197,70 +171,44 @@ bool ModelList::compare()
 
 bool ModelList::compare(Mode mode)
 {
+    Q_D(ModelList);
+
     clear(); // Destroy the old models...
 
-    m_diffProcess = new KompareProcess(m_diffSettings, Custom, m_info->localSource, m_info->localDestination, QString(), mode);
-    m_diffProcess->setEncoding(m_encoding);
+    d->diffProcess = new KompareProcess(d->diffSettings, Custom, d->info->localSource, d->info->localDestination, QString(), mode);
+    d->diffProcess->setEncoding(d->encoding);
 
-    connect(m_diffProcess, &KompareProcess::diffHasFinished,
+    connect(d->diffProcess, &KompareProcess::diffHasFinished,
             this, &ModelList::slotDiffProcessFinished);
 
     Q_EMIT status(RunningDiff);
-    m_diffProcess->start();
+    d->diffProcess->start();
 
     return true;
 }
 
-static QString lstripSeparators(const QString& from, uint count)
-{
-    int position = 0;
-    for (uint i = 0; i < count; ++i)
-    {
-        position = from.indexOf(QLatin1Char('/'), position);
-        if (position == -1)
-        {
-            break;
-        }
-    }
-    if (position == -1)
-    {
-        return QString();
-    }
-
-    return from.mid(position + 1);
-}
-
-void ModelList::setDepthAndApplied()
-{
-    // Splice to avoid calling ~DiffModelList
-    const QList<KompareDiff2::DiffModel*> splicedModelList(*m_models);
-    for (DiffModel* model : splicedModelList) {
-        model->setSourceFile(lstripSeparators(model->source(), m_info->depth));
-        model->setDestinationFile(lstripSeparators(model->destination(), m_info->depth));
-        model->applyAllDifferences(m_info->applied);
-    }
-}
-
 bool ModelList::openFileAndDiff()
 {
+    Q_D(ModelList);
+
     clear();
 
-    if (parseDiffOutput(readFile(m_info->localDestination)) != 0)
+    if (parseDiffOutput(d->readFile(d->info->localDestination)) != 0)
     {
-        Q_EMIT error(i18n("<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff file.</qt>", m_info->destination.url()));
+        Q_EMIT error(i18n("<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff file.</qt>", d->info->destination.url()));
         return false;
     }
 
-    setDepthAndApplied();
+    d->setDepthAndApplied();
 
-    if (!blendOriginalIntoModelList(m_info->localSource))
+    if (!blendOriginalIntoModelList(d->info->localSource))
     {
-        qCDebug(LIBKOMPAREDIFF2) << "Oops cant blend original file into modellist : " << m_info->localSource;
-        Q_EMIT error(i18n("<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</qt>", m_info->destination.url(), m_info->source.url()));
+        qCDebug(LIBKOMPAREDIFF2) << "Oops cant blend original file into modellist : " << d->info->localSource;
+        Q_EMIT error(i18n("<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</qt>", d->info->destination.url(), d->info->source.url()));
         return false;
     }
 
-    updateModelListActions();
+    d->updateModelListActions();
     show();
 
     return true;
@@ -268,26 +216,28 @@ bool ModelList::openFileAndDiff()
 
 bool ModelList::openDirAndDiff()
 {
+    Q_D(ModelList);
+
     clear();
 
-    if (parseDiffOutput(readFile(m_info->localDestination)) != 0)
+    if (parseDiffOutput(d->readFile(d->info->localDestination)) != 0)
     {
-        Q_EMIT error(i18n("<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff file.</qt>", m_info->destination.url()));
+        Q_EMIT error(i18n("<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff file.</qt>", d->info->destination.url()));
         return false;
     }
 
-    setDepthAndApplied();
+    d->setDepthAndApplied();
 
     // Do our thing :)
-    if (!blendOriginalIntoModelList(m_info->localSource))
+    if (!blendOriginalIntoModelList(d->info->localSource))
     {
         // Trouble blending the original into the model
-        qCDebug(LIBKOMPAREDIFF2) << "Oops cant blend original dir into modellist : " << m_info->localSource;
-        Q_EMIT error(i18n("<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>.</qt>", m_info->destination.url(), m_info->source.url()));
+        qCDebug(LIBKOMPAREDIFF2) << "Oops cant blend original dir into modellist : " << d->info->localSource;
+        Q_EMIT error(i18n("<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>.</qt>", d->info->destination.url(), d->info->source.url()));
         return false;
     }
 
-    updateModelListActions();
+    d->updateModelListActions();
     show();
 
     return true;
@@ -295,17 +245,21 @@ bool ModelList::openDirAndDiff()
 
 void ModelList::slotSaveDestination()
 {
+    Q_D(ModelList);
+
     // Unnecessary safety check! We can now guarantee that saving is only possible when there is a model and there are unsaved changes
-    if (m_selectedModel)
+    if (d->selectedModel)
     {
-        saveDestination(m_selectedModel);
-        if (m_save) m_save->setEnabled(false);
+        saveDestination(d->selectedModel);
+        if (d->save) d->save->setEnabled(false);
         Q_EMIT updateActions();
     }
 }
 
 bool ModelList::saveDestination(DiffModel* model)
 {
+    Q_D(ModelList);
+
     qCDebug(LIBKOMPAREDIFF2) << "ModelList::saveDestination: ";
 
     // Unnecessary safety check, we can guarantee there are unsaved changes!!!
@@ -378,20 +332,20 @@ bool ModelList::saveDestination(DiffModel* model)
     bool result = false;
 
     // Make sure the destination directory exists, it is possible when using -N to not have the destination dir/file available
-    if (m_info->mode == ComparingDirs)
+    if (d->info->mode == ComparingDirs)
     {
         // Don't use destination which was used for creating the diff directly, use the original URL!!!
         // FIXME!!! Wrong destination this way! Need to add the sub directory to the url!!!!
         qCDebug(LIBKOMPAREDIFF2) << "Tempfilename (save) : " << temp.fileName();
         qCDebug(LIBKOMPAREDIFF2) << "Model->path+file    : " << model->destinationPath() << model->destinationFile();
-        qCDebug(LIBKOMPAREDIFF2) << "info->localdest     : " << m_info->localDestination;
+        qCDebug(LIBKOMPAREDIFF2) << "info->localdest     : " << d->info->localDestination;
         QString tmp = model->destinationPath();
-        if (tmp.startsWith(m_info->localDestination))     // It should, if not serious trouble...
-            tmp.remove(0, m_info->localDestination.size());
-        qCDebug(LIBKOMPAREDIFF2) << "DestinationURL      : " << m_info->destination;
+        if (tmp.startsWith(d->info->localDestination))     // It should, if not serious trouble...
+            tmp.remove(0, d->info->localDestination.size());
+        qCDebug(LIBKOMPAREDIFF2) << "DestinationURL      : " << d->info->destination;
         qCDebug(LIBKOMPAREDIFF2) << "tmp                 : " << tmp;
         KIO::UDSEntry entry;
-        QUrl fullDestinationPath = m_info->destination;
+        QUrl fullDestinationPath = d->info->destination;
         fullDestinationPath.setPath(fullDestinationPath.path() + tmp);
         qCDebug(LIBKOMPAREDIFF2) << "fullDestinationPath : " << fullDestinationPath;
         KIO::StatJob* statJob = KIO::stat(fullDestinationPath);
@@ -412,16 +366,16 @@ bool ModelList::saveDestination(DiffModel* model)
     else
     {
         qCDebug(LIBKOMPAREDIFF2) << "Tempfilename   : " << temp.fileName();
-        qCDebug(LIBKOMPAREDIFF2) << "DestinationURL : " << m_info->destination;
+        qCDebug(LIBKOMPAREDIFF2) << "DestinationURL : " << d->info->destination;
 
         // Get permissions of existing file and copy temporary file with the same permissions
         int permissions = -1;
-        KIO::StatJob* statJob = KIO::stat(m_info->destination);
+        KIO::StatJob* statJob = KIO::stat(d->info->destination);
         result = statJob->exec();
         if (result)
             permissions = statJob->statResult().numberValue(KIO::UDSEntry::UDS_ACCESS);
 
-        KIO::FileCopyJob* copyJob = KIO::file_copy(QUrl::fromLocalFile(temp.fileName()), m_info->destination , permissions, KIO::Overwrite);
+        KIO::FileCopyJob* copyJob = KIO::file_copy(QUrl::fromLocalFile(temp.fileName()), d->info->destination , permissions, KIO::Overwrite);
         result = copyJob->exec();
         qCDebug(LIBKOMPAREDIFF2) << "true or false?" << result;
     }
@@ -429,7 +383,7 @@ bool ModelList::saveDestination(DiffModel* model)
     if (!result)
     {
         // FIXME: Wrong first argument given in case of comparing directories!
-        Q_EMIT error(i18n("<qt>Could not upload the temporary file to the destination location <b>%1</b>. The temporary file is still available under: <b>%2</b>. You can manually copy it to the right place.</qt>", m_info->destination.url(), temp.fileName()));
+        Q_EMIT error(i18n("<qt>Could not upload the temporary file to the destination location <b>%1</b>. The temporary file is still available under: <b>%2</b>. You can manually copy it to the right place.</qt>", d->info->destination.url(), temp.fileName()));
         //Don't remove file when we delete temp and don't leak it.
         temp.setAutoRemove(false);
     }
@@ -455,11 +409,13 @@ bool ModelList::saveDestination(DiffModel* model)
 
 bool ModelList::saveAll()
 {
+    Q_D(ModelList);
+
     if (modelCount() == 0)
         return false;
 
-    DiffModelListIterator it  =  m_models->begin();
-    DiffModelListIterator end =  m_models->end();
+    DiffModelListIterator it  =  d->models->begin();
+    DiffModelListIterator end =  d->models->end();
     for (; it != end; ++it)
     {
         if (!saveDestination(*it))
@@ -471,129 +427,88 @@ bool ModelList::saveAll()
 
 void ModelList::setEncoding(const QString& encoding)
 {
-    m_encoding = encoding;
+    Q_D(ModelList);
+
+    d->encoding = encoding;
     if (!encoding.compare(QLatin1String("default"), Qt::CaseInsensitive))
     {
-        m_textCodec = QTextCodec::codecForLocale();
+        d->textCodec = QTextCodec::codecForLocale();
     }
     else
     {
         qCDebug(LIBKOMPAREDIFF2) << "Encoding : " << encoding;
-        m_textCodec = QTextCodec::codecForName(encoding.toUtf8());
-        qCDebug(LIBKOMPAREDIFF2) << "TextCodec: " << m_textCodec;
-        if (!m_textCodec)
-            m_textCodec = QTextCodec::codecForLocale();
+        d->textCodec = QTextCodec::codecForName(encoding.toUtf8());
+        qCDebug(LIBKOMPAREDIFF2) << "TextCodec: " << d->textCodec;
+        if (!d->textCodec)
+            d->textCodec = QTextCodec::codecForLocale();
     }
-    qCDebug(LIBKOMPAREDIFF2) << "TextCodec: " << m_textCodec;
+    qCDebug(LIBKOMPAREDIFF2) << "TextCodec: " << d->textCodec;
 }
 
 void ModelList::setReadWrite(bool isReadWrite)
 {
-    if (m_isReadWrite == isReadWrite)
+    Q_D(ModelList);
+
+    if (d->isReadWrite == isReadWrite)
         return;
 
-    m_isReadWrite = isReadWrite;
-    updateModelListActions();
+    d->isReadWrite = isReadWrite;
+    d->updateModelListActions();
 }
 
 bool ModelList::isReadWrite() const
 {
-    return m_isReadWrite;
+    Q_D(const ModelList);
+
+    return d->isReadWrite;
 }
 
 void ModelList::slotDiffProcessFinished(bool success)
 {
+    Q_D(ModelList);
+
     if (success)
     {
         Q_EMIT status(Parsing);
-        if (parseDiffOutput(m_diffProcess->diffOutput()) != 0)
+        if (parseDiffOutput(d->diffProcess->diffOutput()) != 0)
         {
             Q_EMIT error(i18n("Could not parse diff output."));
         }
         else
         {
-            if (m_info->mode != ShowingDiff)
+            if (d->info->mode != ShowingDiff)
             {
                 qCDebug(LIBKOMPAREDIFF2) << "Blend this crap please and do not give me any conflicts...";
-                blendOriginalIntoModelList(m_info->localSource);
+                blendOriginalIntoModelList(d->info->localSource);
             }
-            updateModelListActions();
+            d->updateModelListActions();
             show();
         }
         Q_EMIT status(FinishedParsing);
     }
-    else if (m_diffProcess->exitStatus() == 0)
+    else if (d->diffProcess->exitStatus() == 0)
     {
         Q_EMIT error(i18n("The files are identical."));
     }
     else
     {
-        Q_EMIT error(m_diffProcess->stdErr());
+        Q_EMIT error(d->diffProcess->stdErr());
     }
 
-    m_diffProcess->deleteLater();
-    m_diffProcess = nullptr;
-}
-
-QStringList ModelList::split(const QString& fileContents)
-{
-    QString contents = fileContents;
-    QStringList list;
-
-    int pos = 0;
-    int oldpos = 0;
-    // split that does not strip the split char
-#ifdef QT_OS_MAC
-    const char split = '\r';
-#else
-    const char split = '\n';
-#endif
-    while ((pos = contents.indexOf(QLatin1Char(split), oldpos)) >= 0)
-    {
-        list.append(contents.mid(oldpos, pos - oldpos + 1));
-        oldpos = pos + 1;
-    }
-
-    if (contents.length() > oldpos)
-    {
-        list.append(contents.right(contents.length() - oldpos));
-    }
-
-    return list;
-}
-
-QString ModelList::readFile(const QString& fileName)
-{
-    QStringList list;
-
-    QFile file(fileName);
-    file.open(QIODevice::ReadOnly);
-
-    qCDebug(LIBKOMPAREDIFF2) << "Codec = " << m_textCodec;
-    if (!m_textCodec)
-        m_textCodec = QTextCodec::codecForLocale();
-    std::unique_ptr<QTextDecoder> decoder(m_textCodec->makeDecoder());
-
-    QString contents;
-    while (!file.atEnd()) {
-        char buffer[4096];
-        const auto len = file.read(buffer, 4096);
-        contents += decoder->toUnicode(buffer, len);
-    }
-
-    file.close();
-
-    return contents;
+    d->diffProcess->deleteLater();
+    d->diffProcess = nullptr;
 }
 
 bool ModelList::openDiff(const QString& diffFile)
 {
+    Q_D(ModelList);
+
     qCDebug(LIBKOMPAREDIFF2) << "Stupid :) Url = " << diffFile;
 
     if (diffFile.isEmpty())
         return false;
 
-    QString diff = readFile(diffFile);
+    QString diff = d->readFile(diffFile);
 
     clear(); // Clear the current models
 
@@ -605,7 +520,7 @@ bool ModelList::openDiff(const QString& diffFile)
         return false;
     }
 
-    updateModelListActions();
+    d->updateModelListActions();
     show();
 
     Q_EMIT status(FinishedParsing);
@@ -615,6 +530,8 @@ bool ModelList::openDiff(const QString& diffFile)
 
 bool ModelList::parseAndOpenDiff(const QString& diff)
 {
+    Q_D(ModelList);
+
     clear(); // Clear the current models
 
     Q_EMIT status(Parsing);
@@ -625,7 +542,7 @@ bool ModelList::parseAndOpenDiff(const QString& diff)
         return false;
     }
 
-    updateModelListActions();
+    d->updateModelListActions();
     show();
 
     Q_EMIT status(FinishedParsing);
@@ -634,10 +551,12 @@ bool ModelList::parseAndOpenDiff(const QString& diff)
 
 QString ModelList::recreateDiff() const
 {
+    Q_D(const ModelList);
+
     QString diff;
 
-    DiffModelListConstIterator modelIt = m_models->constBegin();
-    DiffModelListConstIterator mEnd    = m_models->constEnd();
+    DiffModelListConstIterator modelIt = d->models->constBegin();
+    DiffModelListConstIterator mEnd    = d->models->constEnd();
 
     for (; modelIt != mEnd; ++modelIt)
     {
@@ -648,236 +567,208 @@ QString ModelList::recreateDiff() const
 
 bool ModelList::saveDiff(const QString& url, const QString& directory, DiffSettings* diffSettings)
 {
+    Q_D(ModelList);
+
     qCDebug(LIBKOMPAREDIFF2) << "ModelList::saveDiff: ";
 
-    m_diffTemp = new QTemporaryFile();
-    m_diffURL = QUrl(url); // ### TODO the "url" argument should be a QUrl
+    d->diffTemp = new QTemporaryFile();
+    d->diffURL = QUrl(url); // ### TODO the "url" argument should be a QUrl
 
-    if (!m_diffTemp->open()) {
+    if (!d->diffTemp->open()) {
         Q_EMIT error(i18n("Could not open a temporary file."));
-        m_diffTemp->remove();
-        delete m_diffTemp;
-        m_diffTemp = nullptr;
+        d->diffTemp->remove();
+        delete d->diffTemp;
+        d->diffTemp = nullptr;
         return false;
     }
 
-    m_diffProcess = new KompareProcess(diffSettings, Custom, m_info->localSource, m_info->localDestination, directory);
-    m_diffProcess->setEncoding(m_encoding);
+    d->diffProcess = new KompareProcess(diffSettings, Custom, d->info->localSource, d->info->localDestination, directory);
+    d->diffProcess->setEncoding(d->encoding);
 
-    connect(m_diffProcess, &KompareProcess::diffHasFinished,
+    connect(d->diffProcess, &KompareProcess::diffHasFinished,
             this, &ModelList::slotWriteDiffOutput);
 
     Q_EMIT status(RunningDiff);
-    m_diffProcess->start();
+    d->diffProcess->start();
     return true;
 }
 
 void ModelList::slotWriteDiffOutput(bool success)
 {
+    Q_D(ModelList);
+
     qCDebug(LIBKOMPAREDIFF2) << "Success = " << success;
 
     if (success)
     {
-        QTextStream stream(m_diffTemp);
+        QTextStream stream(d->diffTemp);
 
-        stream << m_diffProcess->diffOutput();
+        stream << d->diffProcess->diffOutput();
 
-        m_diffTemp->close();
+        d->diffTemp->close();
 
-        if (false /*|| m_diffTemp->status() != 0 */)
+        if (false /*|| d->diffTemp->status() != 0 */)
         {
             Q_EMIT error(i18n("Could not write to the temporary file."));
         }
 
-        KIO::FileCopyJob* copyJob = KIO::file_copy(QUrl::fromLocalFile(m_diffTemp->fileName()), m_diffURL);
+        KIO::FileCopyJob* copyJob = KIO::file_copy(QUrl::fromLocalFile(d->diffTemp->fileName()), d->diffURL);
         copyJob->exec();
 
         Q_EMIT status(FinishedWritingDiff);
     }
 
-    m_diffURL = QUrl();
-    m_diffTemp->remove();
+    d->diffURL = QUrl();
+    d->diffTemp->remove();
 
-    delete m_diffTemp;
-    m_diffTemp = nullptr;
+    delete d->diffTemp;
+    d->diffTemp = nullptr;
 
-    delete m_diffProcess;
-    m_diffProcess = nullptr;
+    delete d->diffProcess;
+    d->diffProcess = nullptr;
 }
 
 void ModelList::slotSelectionChanged(const KompareDiff2::DiffModel* model, const KompareDiff2::Difference* diff)
 {
+    Q_D(ModelList);
+
 // This method will signal all the other objects about a change in selection,
 // it will Q_EMIT setSelection( const DiffModel*, const Difference* ) to all who are connected
     qCDebug(LIBKOMPAREDIFF2) << "ModelList::slotSelectionChanged( " << model << ", " << diff << " )";
     qCDebug(LIBKOMPAREDIFF2) << "Sender is : " << sender()->metaObject()->className();
 //     qCDebug(LIBKOMPAREDIFF2) << kBacktrace();
 
-    m_selectedModel = const_cast<DiffModel*>(model);
-    m_modelIndex = m_models->indexOf(m_selectedModel);
-    qCDebug(LIBKOMPAREDIFF2) << "m_modelIndex = " << m_modelIndex;
-    m_selectedDifference = const_cast<Difference*>(diff);
+    d->selectedModel = const_cast<DiffModel*>(model);
+    d->modelIndex = d->models->indexOf(d->selectedModel);
+    qCDebug(LIBKOMPAREDIFF2) << "d->modelIndex = " << d->modelIndex;
+    d->selectedDifference = const_cast<Difference*>(diff);
 
-    m_selectedModel->setSelectedDifference(m_selectedDifference);
+    d->selectedModel->setSelectedDifference(d->selectedDifference);
 
     // setSelected* search for the argument in the lists and return false if not found
-    // if found they return true and set the m_selected*
-    if (!setSelectedModel(m_selectedModel))
+    // if found they return true and set the d->selected*
+    if (!d->setSelectedModel(d->selectedModel))
     {
         // Backup plan
-        m_selectedModel = firstModel();
-        m_selectedDifference = m_selectedModel->firstDifference();
+        d->selectedModel = d->firstModel();
+        d->selectedDifference = d->selectedModel->firstDifference();
     }
-    else if (!m_selectedModel->setSelectedDifference(m_selectedDifference))
+    else if (!d->selectedModel->setSelectedDifference(d->selectedDifference))
     {
         // Another backup plan
-        m_selectedDifference = m_selectedModel->firstDifference();
+        d->selectedDifference = d->selectedModel->firstDifference();
     }
 
     Q_EMIT setSelection(model, diff);
-    Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
+    Q_EMIT setStatusBarModelInfo(findModel(d->selectedModel), d->selectedModel->findDifference(d->selectedDifference), modelCount(), differenceCount(), d->selectedModel->appliedCount());
 
-    updateModelListActions();
+    d->updateModelListActions();
 }
 
 void ModelList::slotSelectionChanged(const KompareDiff2::Difference* diff)
 {
+    Q_D(ModelList);
+
 // This method will Q_EMIT setSelection( const Difference* ) to whomever is listening
 // when for instance in kompareview the selection has changed
     qCDebug(LIBKOMPAREDIFF2) << "ModelList::slotSelectionChanged( " << diff << " )";
     qCDebug(LIBKOMPAREDIFF2) << "Sender is : " << sender()->metaObject()->className();
 
-    m_selectedDifference = const_cast<Difference*>(diff);
+    d->selectedDifference = const_cast<Difference*>(diff);
 
-    if (!m_selectedModel->setSelectedDifference(m_selectedDifference))
+    if (!d->selectedModel->setSelectedDifference(d->selectedDifference))
     {
         // Backup plan
-        m_selectedDifference = m_selectedModel->firstDifference();
+        d->selectedDifference = d->selectedModel->firstDifference();
     }
 
     Q_EMIT setSelection(diff);
-    Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
+    Q_EMIT setStatusBarModelInfo(findModel(d->selectedModel), d->selectedModel->findDifference(d->selectedDifference), modelCount(), differenceCount(), d->selectedModel->appliedCount());
 
-    updateModelListActions();
+    d->updateModelListActions();
 }
 
 void ModelList::slotPreviousModel()
 {
-    if ((m_selectedModel = prevModel()) != nullptr)
+    Q_D(ModelList);
+
+    if ((d->selectedModel = d->prevModel()) != nullptr)
     {
-        m_selectedDifference = m_selectedModel->firstDifference();
+        d->selectedDifference = d->selectedModel->firstDifference();
     }
     else
     {
-        m_selectedModel = firstModel();
-        m_selectedDifference = m_selectedModel->firstDifference();
+        d->selectedModel = d->firstModel();
+        d->selectedDifference = d->selectedModel->firstDifference();
     }
 
-    Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
-    Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
-    updateModelListActions();
+    Q_EMIT setSelection(d->selectedModel, d->selectedDifference);
+    Q_EMIT setStatusBarModelInfo(findModel(d->selectedModel), d->selectedModel->findDifference(d->selectedDifference), modelCount(), differenceCount(), d->selectedModel->appliedCount());
+    d->updateModelListActions();
 }
 
 void ModelList::slotNextModel()
 {
-    if ((m_selectedModel = nextModel()) != nullptr)
+    Q_D(ModelList);
+
+    if ((d->selectedModel = d->nextModel()) != nullptr)
     {
-        m_selectedDifference = m_selectedModel->firstDifference();
+        d->selectedDifference = d->selectedModel->firstDifference();
     }
     else
     {
-        m_selectedModel = lastModel();
-        m_selectedDifference = m_selectedModel->firstDifference();
+        d->selectedModel = d->lastModel();
+        d->selectedDifference = d->selectedModel->firstDifference();
     }
 
-    Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
-    Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
-    updateModelListActions();
+    Q_EMIT setSelection(d->selectedModel, d->selectedDifference);
+    Q_EMIT setStatusBarModelInfo(findModel(d->selectedModel), d->selectedModel->findDifference(d->selectedDifference), modelCount(), differenceCount(), d->selectedModel->appliedCount());
+    d->updateModelListActions();
 }
 
-DiffModel* ModelList::firstModel()
+enum Mode ModelList::mode() const
 {
-    qCDebug(LIBKOMPAREDIFF2) << "ModelList::firstModel()";
-    m_modelIndex = 0;
-    qCDebug(LIBKOMPAREDIFF2) << "m_modelIndex = " << m_modelIndex;
+    Q_D(const ModelList);
 
-    m_selectedModel = m_models->first();
-
-    return m_selectedModel;
+    return d->info->mode;
 }
 
-DiffModel* ModelList::lastModel()
+const DiffModelList* ModelList::models() const
 {
-    qCDebug(LIBKOMPAREDIFF2) << "ModelList::lastModel()";
-    m_modelIndex = m_models->count() - 1;
-    qCDebug(LIBKOMPAREDIFF2) << "m_modelIndex = " << m_modelIndex;
+    Q_D(const ModelList);
 
-    m_selectedModel = m_models->last();
-
-    return m_selectedModel;
-}
-
-DiffModel* ModelList::prevModel()
-{
-    qCDebug(LIBKOMPAREDIFF2) << "ModelList::prevModel()";
-    if (m_modelIndex > 0 && --m_modelIndex < m_models->count())
-    {
-        qCDebug(LIBKOMPAREDIFF2) << "m_modelIndex = " << m_modelIndex;
-        m_selectedModel = (*m_models)[ m_modelIndex ];
-    }
-    else
-    {
-        m_selectedModel = nullptr;
-        m_modelIndex = 0;
-        qCDebug(LIBKOMPAREDIFF2) << "m_modelIndex = " << m_modelIndex;
-    }
-
-    return m_selectedModel;
-}
-
-DiffModel* ModelList::nextModel()
-{
-    qCDebug(LIBKOMPAREDIFF2) << "ModelList::nextModel()";
-    if (++m_modelIndex < m_models->count())
-    {
-        qCDebug(LIBKOMPAREDIFF2) << "m_modelIndex = " << m_modelIndex;
-        m_selectedModel = (*m_models)[ m_modelIndex ];
-    }
-    else
-    {
-        m_selectedModel = nullptr;
-        m_modelIndex = 0;
-        qCDebug(LIBKOMPAREDIFF2) << "m_modelIndex = " << m_modelIndex;
-    }
-
-    return m_selectedModel;
+    return d->models;
 }
 
 KActionCollection* ModelList::actionCollection() const
 {
-    return m_actionCollection;
+    Q_D(const ModelList);
+
+    return d->actionCollection;
 }
 
 void ModelList::slotPreviousDifference()
 {
+    Q_D(ModelList);
+
     qCDebug(LIBKOMPAREDIFF2) << "slotPreviousDifference called";
-    if ((m_selectedDifference = m_selectedModel->prevDifference()) != nullptr)
+    if ((d->selectedDifference = d->selectedModel->prevDifference()) != nullptr)
     {
-        Q_EMIT setSelection(m_selectedDifference);
-        Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
-        updateModelListActions();
+        Q_EMIT setSelection(d->selectedDifference);
+        Q_EMIT setStatusBarModelInfo(findModel(d->selectedModel), d->selectedModel->findDifference(d->selectedDifference), modelCount(), differenceCount(), d->selectedModel->appliedCount());
+        d->updateModelListActions();
         return;
     }
 
     qCDebug(LIBKOMPAREDIFF2) << "**** no previous difference... ok lets find the previous model...";
 
-    if ((m_selectedModel = prevModel()) != nullptr)
+    if ((d->selectedModel = d->prevModel()) != nullptr)
     {
-        m_selectedDifference = m_selectedModel->lastDifference();
+        d->selectedDifference = d->selectedModel->lastDifference();
 
-        Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
-        Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
-        updateModelListActions();
+        Q_EMIT setSelection(d->selectedModel, d->selectedDifference);
+        Q_EMIT setStatusBarModelInfo(findModel(d->selectedModel), d->selectedModel->findDifference(d->selectedDifference), modelCount(), differenceCount(), d->selectedModel->appliedCount());
+        d->updateModelListActions();
         return;
     }
 
@@ -885,77 +776,85 @@ void ModelList::slotPreviousDifference()
     qCDebug(LIBKOMPAREDIFF2) << "**** !!! No previous model, ok backup plan activated...";
 
     // Backup plan
-    m_selectedModel = firstModel();
-    m_selectedDifference = m_selectedModel->firstDifference();
+    d->selectedModel = d->firstModel();
+    d->selectedDifference = d->selectedModel->firstDifference();
 
-    Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
-    Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
-    updateModelListActions();
+    Q_EMIT setSelection(d->selectedModel, d->selectedDifference);
+    Q_EMIT setStatusBarModelInfo(findModel(d->selectedModel), d->selectedModel->findDifference(d->selectedDifference), modelCount(), differenceCount(), d->selectedModel->appliedCount());
+    d->updateModelListActions();
 }
 
 void ModelList::slotNextDifference()
 {
+    Q_D(ModelList);
+
     qCDebug(LIBKOMPAREDIFF2) << "slotNextDifference called";
-    if ((m_selectedDifference = m_selectedModel->nextDifference()) != nullptr)
+    if ((d->selectedDifference = d->selectedModel->nextDifference()) != nullptr)
     {
-        Q_EMIT setSelection(m_selectedDifference);
-        Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
-        updateModelListActions();
+        Q_EMIT setSelection(d->selectedDifference);
+        Q_EMIT setStatusBarModelInfo(findModel(d->selectedModel), d->selectedModel->findDifference(d->selectedDifference), modelCount(), differenceCount(), d->selectedModel->appliedCount());
+        d->updateModelListActions();
         return;
     }
 
     qCDebug(LIBKOMPAREDIFF2) << "**** no next difference... ok lets find the next model...";
 
-    if ((m_selectedModel = nextModel()) != nullptr)
+    if ((d->selectedModel = d->nextModel()) != nullptr)
     {
-        m_selectedDifference = m_selectedModel->firstDifference();
+        d->selectedDifference = d->selectedModel->firstDifference();
 
-        Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
-        Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
-        updateModelListActions();
+        Q_EMIT setSelection(d->selectedModel, d->selectedDifference);
+        Q_EMIT setStatusBarModelInfo(findModel(d->selectedModel), d->selectedModel->findDifference(d->selectedDifference), modelCount(), differenceCount(), d->selectedModel->appliedCount());
+        d->updateModelListActions();
         return;
     }
 
     qCDebug(LIBKOMPAREDIFF2) << "**** !!! No next model, ok backup plan activated...";
 
     // Backup plan
-    m_selectedModel = lastModel();
-    m_selectedDifference = m_selectedModel->lastDifference();
+    d->selectedModel = d->lastModel();
+    d->selectedDifference = d->selectedModel->lastDifference();
 
-    Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
-    Q_EMIT setStatusBarModelInfo(findModel(m_selectedModel), m_selectedModel->findDifference(m_selectedDifference), modelCount(), differenceCount(), m_selectedModel->appliedCount());
-    updateModelListActions();
+    Q_EMIT setSelection(d->selectedModel, d->selectedDifference);
+    Q_EMIT setStatusBarModelInfo(findModel(d->selectedModel), d->selectedModel->findDifference(d->selectedDifference), modelCount(), differenceCount(), d->selectedModel->appliedCount());
+    d->updateModelListActions();
 }
 
 void ModelList::slotApplyDifference(bool apply)
 {
-    m_selectedModel->applyDifference(apply);
+    Q_D(ModelList);
+
+    d->selectedModel->applyDifference(apply);
     Q_EMIT applyDifference(apply);
 }
 
 void ModelList::slotApplyAllDifferences(bool apply)
 {
-    m_selectedModel->applyAllDifferences(apply);
+    Q_D(ModelList);
+
+    d->selectedModel->applyAllDifferences(apply);
     Q_EMIT applyAllDifferences(apply);
 }
 
 int ModelList::parseDiffOutput(const QString& diff)
 {
+    Q_D(ModelList);
+
     qCDebug(LIBKOMPAREDIFF2) << "ModelList::parseDiffOutput";
     Q_EMIT diffString(diff);
 
-    QStringList diffLines = split(diff);
+    QStringList diffLines = ModelListPrivate::split(diff);
 
     Parser* parser = new Parser(this);
     bool malformed = false;
-    m_models = parser->parse(diffLines, &malformed);
+    d->models = parser->parse(diffLines, &malformed);
 
-    m_info->generator = parser->generator();
-    m_info->format    = parser->format();
+    d->info->generator = parser->generator();
+    d->info->format    = parser->format();
 
     delete parser;
 
-    if (m_models)
+    if (d->models)
     {
         if (malformed)
         {
@@ -963,9 +862,9 @@ int ModelList::parseDiffOutput(const QString& diff)
             Q_EMIT error(i18n("The diff is malformed. Some lines could not be parsed and will not be displayed in the diff view."));
             // proceed anyway with the lines which have been parsed
         }
-        m_selectedModel = firstModel();
+        d->selectedModel = d->firstModel();
         qCDebug(LIBKOMPAREDIFF2) << "Ok there are differences...";
-        m_selectedDifference = m_selectedModel->firstDifference();
+        d->selectedDifference = d->selectedModel->firstDifference();
         Q_EMIT setStatusBarModelInfo(0, 0, modelCount(), differenceCount(), 0);
     }
     else
@@ -980,6 +879,8 @@ int ModelList::parseDiffOutput(const QString& diff)
 
 bool ModelList::blendOriginalIntoModelList(const QString& localURL)
 {
+    Q_D(ModelList);
+
     qCDebug(LIBKOMPAREDIFF2) << "Hurrah we are blending...";
     QFileInfo fi(localURL);
 
@@ -992,8 +893,8 @@ bool ModelList::blendOriginalIntoModelList(const QString& localURL)
     {   // is a dir
         qCDebug(LIBKOMPAREDIFF2) << "Blend Dir";
 //      QDir dir( localURL, QString(), QDir::Name|QDir::DirsFirst, QDir::TypeMask );
-        DiffModelListIterator modelIt = m_models->begin();
-        DiffModelListIterator mEnd    = m_models->end();
+        DiffModelListIterator modelIt = d->models->begin();
+        DiffModelListIterator mEnd    = d->models->end();
         for (; modelIt != mEnd; ++modelIt)
         {
             model = *modelIt;
@@ -1005,15 +906,15 @@ bool ModelList::blendOriginalIntoModelList(const QString& localURL)
             if (fi2.exists())
             {
                 qCDebug(LIBKOMPAREDIFF2) << "Reading from: " << filename;
-                fileContents = readFile(filename);
-                result = blendFile(model, fileContents);
+                fileContents = d->readFile(filename);
+                result = d->blendFile(model, fileContents);
             }
             else
             {
                 qCDebug(LIBKOMPAREDIFF2) << "File " << filename << " does not exist !";
                 qCDebug(LIBKOMPAREDIFF2) << "Assume empty file !";
                 fileContents.truncate(0);
-                result = blendFile(model, fileContents);
+                result = d->blendFile(model, fileContents);
             }
         }
         qCDebug(LIBKOMPAREDIFF2) << "End of Blend Dir";
@@ -1022,284 +923,111 @@ bool ModelList::blendOriginalIntoModelList(const QString& localURL)
     {   // is a file
         qCDebug(LIBKOMPAREDIFF2) << "Blend File";
         qCDebug(LIBKOMPAREDIFF2) << "Reading from: " << localURL;
-        fileContents = readFile(localURL);
+        fileContents = d->readFile(localURL);
 
-        result = blendFile((*m_models)[ 0 ], fileContents);
+        result = d->blendFile((*d->models)[ 0 ], fileContents);
         qCDebug(LIBKOMPAREDIFF2) << "End of Blend File";
     }
 
     return result;
 }
 
-bool ModelList::blendFile(DiffModel* model, const QString& fileContents)
-{
-    if (!model)
-    {
-        qCDebug(LIBKOMPAREDIFF2) << "**** model is null :(";
-        return false;
-    }
-
-    model->setBlended(true);
-
-    int srcLineNo = 1, destLineNo = 1;
-
-    const QStringList lines = split(fileContents);
-    auto linesIt = lines.constBegin(), lEnd = lines.constEnd();
-
-    DiffHunkList* hunks = model->hunks();
-    qCDebug(LIBKOMPAREDIFF2) << "Hunks in hunklist: " << hunks->count();
-    DiffHunkListIterator hunkIt = hunks->begin();
-
-    DiffHunk*   newHunk = nullptr;
-    Difference* newDiff = nullptr;
-
-    // FIXME: this approach is not very good, we should first check if the hunk applies cleanly
-    // and without offset and if not use that new linenumber with offset to compare against
-    // This will only work for files we just diffed with kompare but not for blending where
-    // file(s) to patch has/have potentially changed
-
-    for (; hunkIt != hunks->end(); ++hunkIt)
-    {
-        // Do we need to insert a new hunk before this one ?
-        DiffHunk* hunk = *hunkIt;
-        if (srcLineNo < hunk->sourceLineNumber())
-        {
-            newHunk = new DiffHunk(srcLineNo, destLineNo, QString(), DiffHunk::AddedByBlend);
-
-            hunkIt = ++hunks->insert(hunkIt, newHunk);
-
-            newDiff = new Difference(srcLineNo, destLineNo,
-                                     Difference::Unchanged);
-
-            newHunk->add(newDiff);
-
-            while (srcLineNo < hunk->sourceLineNumber() && linesIt != lEnd)
-            {
-                newDiff->addSourceLine(*linesIt);
-                newDiff->addDestinationLine(*linesIt);
-                ++srcLineNo;
-                ++destLineNo;
-                ++linesIt;
-            }
-        }
-
-        // Now we add the linecount difference for the hunk that follows
-        int size = hunk->sourceLineCount();
-
-        linesIt += size;
-        if (linesIt > lEnd)
-        {
-            linesIt = lEnd;
-        }
-
-        srcLineNo += size;
-        destLineNo += hunk->destinationLineCount();
-    }
-
-    if (linesIt != lEnd)
-    {
-        newHunk = new DiffHunk(srcLineNo, destLineNo, QString(), DiffHunk::AddedByBlend);
-
-        model->addHunk(newHunk);
-
-        newDiff = new Difference(srcLineNo, destLineNo, Difference::Unchanged);
-
-        newHunk->add(newDiff);
-
-        while (linesIt != lEnd)
-        {
-            newDiff->addSourceLine(*linesIt);
-            newDiff->addDestinationLine(*linesIt);
-            ++linesIt;
-        }
-    }
-#if 0
-    DifferenceList hunkDiffList   = (*hunkIt)->differences();
-    DifferenceListIterator diffIt = hunkDiffList.begin();
-    DifferenceListIterator dEnd   = hunkDiffList.end();
-    qCDebug(LIBKOMPAREDIFF2) << "Number of differences in hunkDiffList = " << diffList.count();
-
-    DifferenceListIterator tempIt;
-    Difference* diff;
-
-    for (; diffIt != dEnd; ++diffIt)
-    {
-        diff = *diffIt;
-        qCDebug(LIBKOMPAREDIFF2) << "*(Diff it) = " << diff;
-        // Check if there are lines in the original file before the difference
-        // that are not yet in the diff. If so create new Unchanged diff
-        if (srcLineNo < diff->sourceLineNumber())
-        {
-            newDiff = new Difference(srcLineNo, destLineNo,
-                                     Difference::Unchanged | Difference::AddedByBlend);
-            newHunk->add(newDiff);
-            while (srcLineNo < diff->sourceLineNumber() && linesIt != lEnd)
-            {
-//                  qCDebug(LIBKOMPAREDIFF2) << "SourceLine = " << srcLineNo << ": " << *linesIt;
-                newDiff->addSourceLine(*linesIt);
-                newDiff->addDestinationLine(*linesIt);
-                ++srcLineNo;
-                ++destLineNo;
-                ++linesIt;
-            }
-        }
-        // Now i've got to add that diff
-        switch (diff->type())
-        {
-        case Difference::Unchanged:
-            qCDebug(LIBKOMPAREDIFF2) << "Unchanged";
-            for (int i = 0; i < diff->sourceLineCount(); ++i)
-            {
-                if (linesIt != lEnd && *linesIt != diff->sourceLineAt(i)->string())
-                {
-                    qCDebug(LIBKOMPAREDIFF2) << "Conflict: SourceLine = " << srcLineNo << ": " << *linesIt;
-                    qCDebug(LIBKOMPAREDIFF2) << "Conflict: DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt(i)->string();
-
-                    // Do conflict resolution (well sort of)
-                    diff->sourceLineAt(i)->setConflictString(*linesIt);
-                    diff->setConflict(true);
-                }
-//                  qCDebug(LIBKOMPAREDIFF2) << "SourceLine = " << srcLineNo << ": " << *linesIt;
-//                  qCDebug(LIBKOMPAREDIFF2) << "DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt( i )->string();
-                ++srcLineNo;
-                ++destLineNo;
-                ++linesIt;
-            }
-
-            tempIt = diffIt;
-            --diffIt;
-            diffList.remove(tempIt);
-            newHunk->add(diff);
-
-            break;
-        case Difference::Change:
-            qCDebug(LIBKOMPAREDIFF2) << "Change";
-
-            //QStringListConstIterator saveIt = linesIt;
-
-            for (int i = 0; i < diff->sourceLineCount(); ++i)
-            {
-                if (linesIt != lEnd && *linesIt != diff->sourceLineAt(i)->string())
-                {
-                    qCDebug(LIBKOMPAREDIFF2) << "Conflict: SourceLine = " << srcLineNo << ": " << *linesIt;
-                    qCDebug(LIBKOMPAREDIFF2) << "Conflict: DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt(i)->string();
-
-                    // Do conflict resolution (well sort of)
-                    diff->sourceLineAt(i)->setConflictString(*linesIt);
-                    diff->setConflict(true);
-                }
-                ++srcLineNo;
-                ++destLineNo;
-                ++linesIt;
-            }
-
-            destLineNo += diff->destinationLineCount();
-
-            tempIt = diffIt;
-            --diffIt;
-            diffList.remove(tempIt);
-            newHunk->add(diff);
-            newModel->addDiff(diff);
-
-            break;
-        case Difference::Insert:
-            qCDebug(LIBKOMPAREDIFF2) << "Insert";
-            destLineNo += diff->destinationLineCount();
-            tempIt = diffIt;
-            --diffIt;
-            diffList.remove(tempIt);
-            newHunk->add(diff);
-            newModel->addDiff(diff);
-            break;
-        case Difference::Delete:
-            qCDebug(LIBKOMPAREDIFF2) << "Delete";
-            qCDebug(LIBKOMPAREDIFF2) << "Number of lines in Delete: " << diff->sourceLineCount();
-            for (int i = 0; i < diff->sourceLineCount(); ++i)
-            {
-                if (linesIt != lEnd && *linesIt != diff->sourceLineAt(i)->string())
-                {
-                    qCDebug(LIBKOMPAREDIFF2) << "Conflict: SourceLine = " << srcLineNo << ": " << *linesIt;
-                    qCDebug(LIBKOMPAREDIFF2) << "Conflict: DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt(i)->string();
-
-                    // Do conflict resolution (well sort of)
-                    diff->sourceLineAt(i)->setConflictString(*linesIt);
-                    diff->setConflict(true);
-                }
-
-//                  qCDebug(LIBKOMPAREDIFF2) << "SourceLine = " << srcLineNo << ": " << *it;
-//                  qCDebug(LIBKOMPAREDIFF2) << "DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt( i )->string();
-                ++srcLineNo;
-                ++linesIt;
-            }
-
-            tempIt = diffIt;
-            --diffIt;
-            diffList.remove(tempIt);
-            newHunk->add(diff);
-            newModel->addDiff(diff);
-            break;
-        default:
-            qCDebug(LIBKOMPAREDIFF2) << "****, some diff type we do not know about ???";
-        }
-    }
-}
-#endif
-
-/*
-    diffList = newModel->differences();
-
-    diff = diffList.first();
-    qCDebug(LIBKOMPAREDIFF2) << "Count = " << diffList.count();
-    for ( diff = diffList.first(); diff; diff = diffList.next() )
-    {
-        qCDebug(LIBKOMPAREDIFF2) << "sourcelinenumber = " << diff->sourceLineNumber();
-    }
-*/
-
-m_selectedModel = firstModel();
-
-m_selectedDifference = m_selectedModel->firstDifference();
-
-return true;
-}
-
 void ModelList::show()
 {
-    qCDebug(LIBKOMPAREDIFF2) << "ModelList::Show Number of models = " << m_models->count();
-    Q_EMIT modelsChanged(m_models);
-    Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
+    Q_D(ModelList);
+
+    qCDebug(LIBKOMPAREDIFF2) << "ModelList::Show Number of models = " << d->models->count();
+    Q_EMIT modelsChanged(d->models);
+    Q_EMIT setSelection(d->selectedModel, d->selectedDifference);
+}
+
+const DiffModel* ModelList::modelAt(int i) const
+{
+    Q_D(const ModelList);
+
+    return d->models->at(i);
+}
+
+DiffModel* ModelList::modelAt(int i)
+{
+    Q_D(ModelList);
+
+    return d->models->at(i);
+}
+
+int ModelList::findModel(DiffModel* model) const
+{
+    Q_D(const ModelList);
+
+    return d->models->indexOf(model);
+}
+
+int ModelList::currentModel() const
+{
+    Q_D(const ModelList);
+
+    return d->models->indexOf(d->selectedModel);
+}
+
+int ModelList::currentDifference() const
+{
+    Q_D(const ModelList);
+
+    return d->selectedModel ? d->selectedModel->findDifference(d->selectedDifference) : -1;
+}
+
+const DiffModel* ModelList::selectedModel() const
+{
+    Q_D(const ModelList);
+
+    return d->selectedModel;
+}
+
+const Difference* ModelList::selectedDifference() const
+{
+    Q_D(const ModelList);
+
+    return d->selectedDifference;
 }
 
 void ModelList::clear()
 {
-    if (m_models)
-        m_models->clear();
+    Q_D(ModelList);
 
-    Q_EMIT modelsChanged(m_models);
+    if (d->models)
+        d->models->clear();
+
+    Q_EMIT modelsChanged(d->models);
 }
 
 void ModelList::refresh()
 {
+    Q_D(ModelList);
+
     // FIXME: I can imagine blending also wants to be refreshed so make a switch case here
-    compare(m_info->mode);
+    compare(d->info->mode);
 }
 
 void ModelList::swap()
 {
+    Q_D(ModelList);
+
     //FIXME Not sure if any mode could be swapped
-    if (m_info->mode == ComparingFiles)
-        compare(m_info->mode);
-    else if (m_info->mode == ComparingDirs)
-        compare(m_info->mode);
+    if (d->info->mode == ComparingFiles)
+        compare(d->info->mode);
+    else if (d->info->mode == ComparingDirs)
+        compare(d->info->mode);
 }
 
 bool ModelList::hasUnsavedChanges() const
 {
+    Q_D(const ModelList);
+
     if (modelCount() == 0)
         return false;
 
-    DiffModelListConstIterator modelIt = m_models->constBegin();
-    DiffModelListConstIterator endIt   = m_models->constEnd();
+    DiffModelListConstIterator modelIt = d->models->constBegin();
+    DiffModelListConstIterator endIt   = d->models->constEnd();
 
     for (; modelIt != endIt; ++modelIt)
     {
@@ -1311,193 +1039,66 @@ bool ModelList::hasUnsavedChanges() const
 
 int ModelList::modelCount() const
 {
-    return m_models ? m_models->count() : 0;
+    Q_D(const ModelList);
+
+    return d->models ? d->models->count() : 0;
 }
 
 int ModelList::differenceCount() const
 {
-    return m_selectedModel ? m_selectedModel->differenceCount() : -1;
+    Q_D(const ModelList);
+
+    return d->selectedModel ? d->selectedModel->differenceCount() : -1;
 }
 
 int ModelList::appliedCount() const
 {
-    return m_selectedModel ? m_selectedModel->appliedCount() : -1;
+    Q_D(const ModelList);
+
+    return d->selectedModel ? d->selectedModel->appliedCount() : -1;
 }
 
 void ModelList::slotKompareInfo(Info* info)
 {
-    m_info = info;
-}
+    Q_D(ModelList);
 
-bool ModelList::setSelectedModel(DiffModel* model)
-{
-    qCDebug(LIBKOMPAREDIFF2) << "ModelList::setSelectedModel( " << model << " )";
-
-    if (model != m_selectedModel)
-    {
-        if (!m_models->contains(model))
-            return false;
-        qCDebug(LIBKOMPAREDIFF2) << "m_selectedModel (was) = " << m_selectedModel;
-        m_modelIndex = m_models->indexOf(model);
-        qCDebug(LIBKOMPAREDIFF2) << "m_selectedModel (is)  = " << m_selectedModel;
-        m_selectedModel = model;
-    }
-
-    updateModelListActions();
-
-    return true;
-}
-
-void ModelList::updateModelListActions()
-{
-    if (m_models && m_selectedModel && m_selectedDifference)
-    {
-        if (m_isReadWrite && m_save)
-        {
-            if (m_selectedModel->appliedCount() != m_selectedModel->differenceCount())
-                m_applyAll->setEnabled(true);
-            else
-                m_applyAll->setEnabled(false);
-
-            if (m_selectedModel->appliedCount() != 0)
-                m_unapplyAll->setEnabled(true);
-            else
-                m_unapplyAll->setEnabled(false);
-
-            m_applyDifference->setEnabled(m_selectedDifference->applied() == false);
-            m_unApplyDifference->setEnabled(m_selectedDifference->applied() == true);
-            m_save->setEnabled(m_selectedModel->hasUnsavedChanges());
-        }
-        else if (m_save)
-        {
-            m_applyDifference->setEnabled(false);
-            m_unApplyDifference->setEnabled(false);
-            m_applyAll->setEnabled(false);
-            m_unapplyAll->setEnabled(false);
-            m_save->setEnabled(false);
-        }
-
-        m_previousFile->setEnabled(hasPrevModel());
-        m_nextFile->setEnabled(hasNextModel());
-        m_previousDifference->setEnabled(hasPrevDiff());
-        m_nextDifference->setEnabled(hasNextDiff());
-    }
-    else
-    {
-        if (m_save) {
-            m_applyDifference->setEnabled(false);
-            m_unApplyDifference->setEnabled(false);
-            m_applyAll->setEnabled(false);
-            m_unapplyAll->setEnabled(false);
-            m_save->setEnabled(false);
-        }
-
-        m_previousFile->setEnabled(false);
-        m_nextFile->setEnabled(false);
-        m_previousDifference->setEnabled(false);
-        m_nextDifference->setEnabled(false);
-    }
-}
-
-bool ModelList::hasPrevModel() const
-{
-    qCDebug(LIBKOMPAREDIFF2) << "ModelList::hasPrevModel()";
-
-    if (m_modelIndex > 0)
-    {
-//         qCDebug(LIBKOMPAREDIFF2) << "has prev model";
-        return true;
-    }
-
-//     qCDebug(LIBKOMPAREDIFF2) << "doesn't have a prev model, this is the first one...";
-
-    return false;
-}
-
-bool ModelList::hasNextModel() const
-{
-    qCDebug(LIBKOMPAREDIFF2) << "ModelList::hasNextModel()";
-
-    if (m_modelIndex < (m_models->count() - 1))
-    {
-//         qCDebug(LIBKOMPAREDIFF2) << "has next model";
-        return true;
-    }
-
-//     qCDebug(LIBKOMPAREDIFF2) << "doesn't have a next model, this is the last one...";
-    return false;
-}
-
-bool ModelList::hasPrevDiff() const
-{
-//     qCDebug(LIBKOMPAREDIFF2) << "ModelList::hasPrevDiff()";
-    int index = m_selectedModel->diffIndex();
-
-    if (index > 0)
-    {
-//         qCDebug(LIBKOMPAREDIFF2) << "has prev difference in same model";
-        return true;
-    }
-
-    if (hasPrevModel())
-    {
-//         qCDebug(LIBKOMPAREDIFF2) << "has prev difference but in prev model";
-        return true;
-    }
-
-//     qCDebug(LIBKOMPAREDIFF2) << "doesn't have a prev difference, not even in the previous model because there is no previous model";
-
-    return false;
-}
-
-bool ModelList::hasNextDiff() const
-{
-//     qCDebug(LIBKOMPAREDIFF2) << "ModelList::hasNextDiff()";
-    int index = m_selectedModel->diffIndex();
-
-    if (index < (m_selectedModel->differenceCount() - 1))
-    {
-//         qCDebug(LIBKOMPAREDIFF2) << "has next difference in same model";
-        return true;
-    }
-
-    if (hasNextModel())
-    {
-//         qCDebug(LIBKOMPAREDIFF2) << "has next difference but in next model";
-        return true;
-    }
-
-//     qCDebug(LIBKOMPAREDIFF2) << "doesn't have a next difference, not even in next model because there is no next model";
-
-    return false;
+    d->info = info;
 }
 
 void ModelList::slotActionApplyDifference()
 {
-    if (!m_selectedDifference->applied())
+    Q_D(ModelList);
+
+    if (!d->selectedDifference->applied())
         slotApplyDifference(true);
     slotNextDifference();
-    updateModelListActions();
+    d->updateModelListActions();
 }
 
 void ModelList::slotActionUnApplyDifference()
 {
-    if (m_selectedDifference->applied())
+    Q_D(ModelList);
+
+    if (d->selectedDifference->applied())
         slotApplyDifference(false);
     slotPreviousDifference();
-    updateModelListActions();
+    d->updateModelListActions();
 }
 
 void ModelList::slotActionApplyAllDifferences()
 {
+    Q_D(ModelList);
+
     slotApplyAllDifferences(true);
-    updateModelListActions();
+    d->updateModelListActions();
 }
 
 void ModelList::slotActionUnapplyAllDifferences()
 {
+    Q_D(ModelList);
+
     slotApplyAllDifferences(false);
-    updateModelListActions();
+    d->updateModelListActions();
 }
 
 #include "moc_modellist.cpp"

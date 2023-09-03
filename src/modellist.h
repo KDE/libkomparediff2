@@ -10,23 +10,23 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef KOMPAREDIFF2_MODELLIST_H
 #define KOMPAREDIFF2_MODELLIST_H
 
-#include <QObject>
-
+// lib
 #include "diffmodel.h"
 #include "diffmodellist.h"
 #include "info.h"
 #include "komparediff2_export.h"
+// Qt
+#include <QObject>
+// Std
+#include <memory>
 
-class QAction;
-class QTemporaryFile;
-class QTextCodec;
 class KActionCollection;
 
 class DiffSettings;
-class KompareProcess;
 
 namespace KompareDiff2
 {
+class ModelListPrivate;
 
 /**
  * @class ModelList modellist.h <KompareDiff2/ModelList>
@@ -81,40 +81,27 @@ public:
     bool blendOriginalIntoModelList(const QString& localURL);
 
     // This mode() method is superfluous now so FIXME
-    enum Mode    mode()   const { return m_info->mode; };
-    const DiffModelList*  models() const { return m_models; };
+    enum Mode mode() const;
+    const DiffModelList* models() const;
 
     KActionCollection* actionCollection() const;
     int modelCount() const;
     int differenceCount() const;
     int appliedCount() const;
 
-    const DiffModel* modelAt(int i) const { return m_models->at(i); };
-    DiffModel* modelAt(int i) { return m_models->at(i); };
-    int              findModel(DiffModel* model) const { return m_models->indexOf(model); };
+    const DiffModel* modelAt(int i) const;
+    DiffModel* modelAt(int i);
+    int findModel(DiffModel* model) const;
 
     bool hasUnsavedChanges() const;
 
-    int currentModel() const      { return m_models->indexOf(m_selectedModel); };
-    int currentDifference() const { return m_selectedModel ? m_selectedModel->findDifference(m_selectedDifference) : -1; };
+    int currentModel() const;
+    int currentDifference() const;
 
-    const DiffModel* selectedModel() const       { return m_selectedModel; };
-    const Difference* selectedDifference() const { return m_selectedDifference; };
+    const DiffModel* selectedModel() const;
+    const Difference* selectedDifference() const;
 
     void clear();
-
-private:
-    KompareDiff2::DiffModel* firstModel();
-    KompareDiff2::DiffModel* lastModel();
-    KompareDiff2::DiffModel* prevModel();
-    KompareDiff2::DiffModel* nextModel();
-
-    bool setSelectedModel(KompareDiff2::DiffModel* model);
-
-    void updateModelListActions();
-
-protected:
-    bool blendFile(DiffModel* model, const QString& lines);
 
 Q_SIGNALS:
     void status(KompareDiff2::Status status);
@@ -155,52 +142,9 @@ protected Q_SLOTS:
         or the single destination if a single file diff. */
     void slotSaveDestination();
 
-private: // Helper methods
-    bool isDirectory(const QString& url) const;
-    bool isDiff(const QString& mimetype) const;
-    QString readFile(const QString& fileName);
-
-    bool hasPrevModel() const;
-    bool hasNextModel() const;
-    bool hasPrevDiff() const;
-    bool hasNextDiff() const;
-
-    QStringList split(const QString& diff);
-    void setDepthAndApplied();
-
-private: // ### an exported class without a d pointer? Really? What about BC?
-    QTemporaryFile*       m_diffTemp;
-    QUrl                  m_diffURL;
-
-    KompareProcess*       m_diffProcess;
-
-    DiffSettings*         m_diffSettings;
-
-    DiffModelList*        m_models;
-
-    DiffModel*            m_selectedModel;
-    Difference*           m_selectedDifference;
-
-    int                   m_modelIndex;
-
-    class Info*           m_info;
-
-    KActionCollection*    m_actionCollection;
-    QAction*              m_applyDifference;
-    QAction*              m_unApplyDifference;
-    QAction*              m_applyAll;
-    QAction*              m_unapplyAll;
-    QAction*              m_previousFile;
-    QAction*              m_nextFile;
-    QAction*              m_previousDifference;
-    QAction*              m_nextDifference;
-
-    QAction*              m_save;
-
-    QString               m_encoding;
-    QTextCodec*           m_textCodec;
-
-    bool                  m_isReadWrite;
+private:
+    Q_DECLARE_PRIVATE(ModelList)
+    std::unique_ptr<ModelListPrivate> const d_ptr;
 };
 
 } // End of namespace KompareDiff2

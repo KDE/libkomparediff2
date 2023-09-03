@@ -33,6 +33,7 @@ target_sources(interactiveDiffTest PRIVATE
     ${LIB_SOURCE_DIR}/diffparser.cpp
     ${LIB_SOURCE_DIR}/info.cpp
     ${LIB_SOURCE_DIR}/modellist.cpp
+    ${LIB_SOURCE_DIR}/modellist_p.cpp
     ${LIB_SOURCE_DIR}/kompareprocess.cpp
     ${LIB_SOURCE_DIR}/parser.cpp
     ${LIB_SOURCE_DIR}/parserbase.cpp

@@ -8,14 +8,19 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef KOMPAREDIFF2_DIFFMODEL_H
 #define KOMPAREDIFF2_DIFFMODEL_H
 
-#include <QObject>
-#include <QStringList>
+// lib
 #include "diffhunk.h"
 #include "global.h"
 #include "komparediff2_export.h"
+// Qt
+#include <QObject>
+#include <QStringList>
+// Std
+#include <memory>
 
 namespace KompareDiff2
 {
+class DiffModelPrivate;
 
 /**
  * @class DiffModel diffmodel.h <KompareDiff2/DiffModel>
@@ -25,50 +30,50 @@ namespace KompareDiff2
 class KOMPAREDIFF2_EXPORT DiffModel : public QObject
 {
     Q_OBJECT
-public:
 
+public:
     DiffModel(const QString& srcBaseURL, const QString& destBaseURL);
     DiffModel();
     ~DiffModel() override;
 
-private:
-    DiffModel(const DiffModel&) : QObject() {}
-
 public:
+    DiffModel& operator=(const DiffModel& model);
+    bool operator<(const DiffModel& model) const;
+
     int parseDiff(enum Format format, const QStringList& list);
 
     QString recreateDiff() const;
 
-    int hunkCount() const       { return m_hunks.count(); }
-    int differenceCount() const { return m_differences.count(); }
-    int appliedCount() const    { return m_appliedCount; }
+    int hunkCount() const;
+    int differenceCount() const;
+    int appliedCount() const;
 
-    DiffHunk* hunkAt(int i)               { return (m_hunks.at(i)); }
-    const Difference* differenceAt(int i) const { return (m_differences.at(i)); }
-    Difference* differenceAt(int i) { return (m_differences.at(i)); }
+    DiffHunk* hunkAt(int i);
+    const Difference* differenceAt(int i) const;
+    Difference* differenceAt(int i);
 
-    DiffHunkList*         hunks()             { return &m_hunks; }
-    const DiffHunkList*   hunks() const       { return &m_hunks; }
-    DifferenceList*       differences()       { return &m_differences; }
-    const DifferenceList* differences() const { return &m_differences; }
+    DiffHunkList*         hunks();
+    const DiffHunkList*   hunks() const;
+    DifferenceList*       differences();
+    const DifferenceList* differences() const;
 
-    int findDifference(Difference* diff) const { return m_differences.indexOf(diff); }
+    int findDifference(Difference* diff) const;
 
     Difference* firstDifference();
     Difference* lastDifference();
     Difference* prevDifference();
     Difference* nextDifference();
 
-    const QString source() const               { return m_source; }
-    const QString destination() const          { return m_destination; }
+    const QString source() const;
+    const QString destination() const;
     const QString sourceFile() const;
     const QString destinationFile() const;
     const QString sourcePath() const;
     const QString destinationPath() const;
-    const QString sourceTimestamp() const      { return m_sourceTimestamp; }
-    const QString destinationTimestamp() const { return m_destinationTimestamp; }
-    const QString sourceRevision() const       { return m_sourceRevision; }
-    const QString destinationRevision() const  { return m_destinationRevision; }
+    const QString sourceTimestamp() const;
+    const QString destinationTimestamp() const;
+    const QString sourceRevision() const;
+    const QString destinationRevision() const;
 
     void setSourceFile(const QString &path);
     void setDestinationFile(const QString &path);
@@ -81,21 +86,18 @@ public:
     void addDiff(Difference* diff);
     bool hasUnsavedChanges() const;
 
-    int  diffIndex(void) const       { return m_diffIndex; }
-    void setDiffIndex(int diffIndex) { m_diffIndex = diffIndex; }
+    int  diffIndex() const;
+    void setDiffIndex(int diffIndex);
 
     void applyDifference(bool apply);
     void applyAllDifferences(bool apply);
 
     bool setSelectedDifference(Difference* diff);
 
-    DiffModel& operator=(const DiffModel& model);
-    bool operator<(const DiffModel& model);
+    int localeAwareCompareSource(const DiffModel& model) const;
 
-    int localeAwareCompareSource(const DiffModel& model);
-
-    bool isBlended() const { return m_blended; }
-    void setBlended(bool blended) { m_blended = blended; }
+    bool isBlended() const;
+    void setBlended(bool blended);
 
     /**
      * @p oldlines - lines that were removed.
@@ -110,34 +112,12 @@ private:
     void computeDiffStats(Difference* diff);
     void processStartMarker(Difference* diff, const QStringList& lines, MarkerListConstIterator& currentMarker, int& currentListLine, bool isSource);
 
-private:
-    QString m_source;
-    QString m_destination;
-
-    QString m_sourcePath;
-    QString m_destinationPath;
-
-    QString m_sourceFile;
-    QString m_destinationFile;
-
-    QString m_sourceTimestamp;
-    QString m_destinationTimestamp;
-
-    QString m_sourceRevision;
-    QString m_destinationRevision;
-
-    DiffHunkList   m_hunks;
-    DifferenceList m_differences;
-
-    int  m_appliedCount;
-
-    int          m_diffIndex;
-    Difference*  m_selectedDifference;
-
-    bool m_blended;
-
 private Q_SLOTS:
     void slotDifferenceApplied(Difference* diff);
+
+private:
+    Q_DECLARE_PRIVATE(DiffModel)
+    std::unique_ptr<DiffModelPrivate> const d_ptr;
 };
 
 } // End of namespace KompareDiff2

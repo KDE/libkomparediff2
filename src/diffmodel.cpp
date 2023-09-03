@@ -6,7 +6,9 @@ SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "diffmodel.h"
+#include "diffmodel_p.h"
 
+// lib
 #include <komparediffdebug.h>
 #include "difference.h"
 #include "levenshteintable.h"
@@ -16,146 +18,187 @@ SPDX-License-Identifier: GPL-2.0-or-later
 using namespace KompareDiff2;
 
 /**  */
-DiffModel::DiffModel(const QString& source, const QString& destination) :
-    m_source(source),
-    m_destination(destination),
-    m_sourcePath(),
-    m_destinationPath(),
-    m_sourceFile(),
-    m_destinationFile(),
-    m_sourceTimestamp(),
-    m_destinationTimestamp(),
-    m_sourceRevision(),
-    m_destinationRevision(),
-    m_appliedCount(0),
-    m_diffIndex(0),
-    m_selectedDifference(nullptr),
-    m_blended(false)
+DiffModel::DiffModel(const QString& source, const QString& destination)
+    : d_ptr(new DiffModelPrivate(source, destination))
 {
     splitSourceInPathAndFileName();
     splitDestinationInPathAndFileName();
 }
 
-DiffModel::DiffModel() :
-    m_source(),
-    m_destination(),
-    m_sourcePath(),
-    m_destinationPath(),
-    m_sourceFile(),
-    m_destinationFile(),
-    m_sourceTimestamp(),
-    m_destinationTimestamp(),
-    m_sourceRevision(),
-    m_destinationRevision(),
-    m_appliedCount(0),
-    m_diffIndex(0),
-    m_selectedDifference(nullptr),
-    m_blended(false)
+DiffModel::DiffModel()
+    : d_ptr(new DiffModelPrivate())
 {
 }
 
-/**  */
-DiffModel::~DiffModel()
-{
-    m_selectedDifference = nullptr;
-
-    qDeleteAll(m_hunks);
-    qDeleteAll(m_differences);
-}
+DiffModel::~DiffModel() = default;
 
 void DiffModel::splitSourceInPathAndFileName()
 {
+    Q_D(DiffModel);
+
     int pos;
 
-    if ((pos = m_source.lastIndexOf(QLatin1Char('/'))) >= 0)
-        m_sourcePath = m_source.mid(0, pos + 1);
+    if ((pos = d->source.lastIndexOf(QLatin1Char('/'))) >= 0)
+        d->sourcePath = d->source.mid(0, pos + 1);
 
-    if ((pos = m_source.lastIndexOf(QLatin1Char('/'))) >= 0)
-        m_sourceFile = m_source.mid(pos + 1, m_source.length() - pos);
+    if ((pos = d->source.lastIndexOf(QLatin1Char('/'))) >= 0)
+        d->sourceFile = d->source.mid(pos + 1, d->source.length() - pos);
     else
-        m_sourceFile = m_source;
+        d->sourceFile = d->source;
 
-    qCDebug(LIBKOMPAREDIFF2) << m_source << " was split into " << m_sourcePath << " and " << m_sourceFile;
+    qCDebug(LIBKOMPAREDIFF2) << d->source << " was split into " << d->sourcePath << " and " << d->sourceFile;
 }
 
 void DiffModel::splitDestinationInPathAndFileName()
 {
+    Q_D(DiffModel);
+
     int pos;
 
-    if ((pos = m_destination.lastIndexOf(QLatin1Char('/'))) >= 0)
-        m_destinationPath = m_destination.mid(0, pos + 1);
+    if ((pos = d->destination.lastIndexOf(QLatin1Char('/'))) >= 0)
+        d->destinationPath = d->destination.mid(0, pos + 1);
 
-    if ((pos = m_destination.lastIndexOf(QLatin1Char('/'))) >= 0)
-        m_destinationFile = m_destination.mid(pos + 1, m_destination.length() - pos);
+    if ((pos = d->destination.lastIndexOf(QLatin1Char('/'))) >= 0)
+        d->destinationFile = d->destination.mid(pos + 1, d->destination.length() - pos);
     else
-        m_destinationFile = m_destination;
+        d->destinationFile = d->destination;
 
-    qCDebug(LIBKOMPAREDIFF2) << m_destination << " was split into " << m_destinationPath << " and " << m_destinationFile;
+    qCDebug(LIBKOMPAREDIFF2) << d->destination << " was split into " << d->destinationPath << " and " << d->destinationFile;
 }
 
 DiffModel& DiffModel::operator=(const DiffModel& model)
 {
+    Q_D(DiffModel);
+
     if (&model != this)   // Guard from self-assignment
     {
-        m_source = model.m_source;
-        m_destination = model.m_destination;
-        m_sourcePath = model.m_sourcePath;
-        m_sourceFile = model.m_sourceFile;
-        m_sourceTimestamp = model.m_sourceTimestamp;
-        m_sourceRevision = model.m_sourceRevision;
-        m_destinationPath = model.m_destinationPath;
-        m_destinationFile = model.m_destinationFile;
-        m_destinationTimestamp = model.m_destinationTimestamp;
-        m_destinationRevision = model.m_destinationRevision;
-        m_appliedCount = model.m_appliedCount;
-
-        m_diffIndex = model.m_diffIndex;
-        m_selectedDifference = model.m_selectedDifference;
+        *d = *model.d_ptr;
     }
 
     return *this;
 }
 
-bool DiffModel::operator<(const DiffModel& model)
+bool DiffModel::operator<(const DiffModel& model) const
 {
     if (localeAwareCompareSource(model) < 0)
         return true;
     return false;
 }
 
-int DiffModel::localeAwareCompareSource(const DiffModel& model)
+int DiffModel::hunkCount() const
 {
-    qCDebug(LIBKOMPAREDIFF2) << "Path: " << model.m_sourcePath;
-    qCDebug(LIBKOMPAREDIFF2) << "File: " << model.m_sourceFile;
+    Q_D(const DiffModel);
 
-    int result = m_sourcePath.localeAwareCompare(model.m_sourcePath);
+    return d->hunks.count();
+}
+
+int DiffModel::differenceCount() const
+{
+    Q_D(const DiffModel);
+
+    return d->differences.count();
+}
+
+int DiffModel::appliedCount() const
+{
+    Q_D(const DiffModel);
+
+    return d->appliedCount;
+}
+
+DiffHunk* DiffModel::hunkAt(int i)
+{
+    Q_D(DiffModel);
+
+    return (d->hunks.at(i));
+}
+
+const Difference* DiffModel::differenceAt(int i) const
+{
+    Q_D(const DiffModel);
+
+    return (d->differences.at(i));
+}
+
+Difference* DiffModel::differenceAt(int i)
+{
+    Q_D(DiffModel);
+
+    return (d->differences.at(i));
+}
+
+DiffHunkList* DiffModel::hunks()
+{
+    Q_D(DiffModel);
+
+    return &d->hunks;
+}
+
+const DiffHunkList* DiffModel::hunks() const
+{
+    Q_D(const DiffModel);
+
+    return &d->hunks;
+}
+
+DifferenceList* DiffModel::differences()
+{
+    Q_D(DiffModel);
+
+    return &d->differences;
+}
+
+const DifferenceList* DiffModel::differences() const
+{
+    Q_D(const DiffModel);
+
+    return &d->differences;
+}
+
+int DiffModel::findDifference(Difference* diff) const
+{
+    Q_D(const DiffModel);
+
+    return d->differences.indexOf(diff);
+}
+
+int DiffModel::localeAwareCompareSource(const DiffModel& model) const
+{
+    Q_D(const DiffModel);
+
+    qCDebug(LIBKOMPAREDIFF2) << "Path: " << model.d_ptr->sourcePath;
+    qCDebug(LIBKOMPAREDIFF2) << "File: " << model.d_ptr->sourceFile;
+
+    int result = d->sourcePath.localeAwareCompare(model.d_ptr->sourcePath);
 
     if (result == 0)
-        return m_sourceFile.localeAwareCompare(model.m_sourceFile);
+        return d->sourceFile.localeAwareCompare(model.d_ptr->sourceFile);
 
     return result;
 }
 
 QString DiffModel::recreateDiff() const
 {
+    Q_D(const DiffModel);
+
     // For now we'll always return a diff in the diff format
     QString diff;
 
     // recreate header
     const QChar tab = QLatin1Char('\t');
     const QChar nl  = QLatin1Char('\n');
-    diff += QStringLiteral("--- %1\t%2").arg(ParserBase::escapePath(m_source), m_sourceTimestamp);
-    if (!m_sourceRevision.isEmpty())
-        diff += tab + m_sourceRevision;
+    diff += QStringLiteral("--- %1\t%2").arg(ParserBase::escapePath(d->source), d->sourceTimestamp);
+    if (!d->sourceRevision.isEmpty())
+        diff += tab + d->sourceRevision;
     diff += nl;
-    diff += QStringLiteral("+++ %1\t%2").arg(ParserBase::escapePath(m_destination), m_destinationTimestamp);
-    if (!m_destinationRevision.isEmpty())
-        diff += tab + m_destinationRevision;
+    diff += QStringLiteral("+++ %1\t%2").arg(ParserBase::escapePath(d->destination), d->destinationTimestamp);
+    if (!d->destinationRevision.isEmpty())
+        diff += tab + d->destinationRevision;
     diff += nl;
 
     // recreate body by iterating over the hunks
-    DiffHunkListConstIterator hunkIt = m_hunks.begin();
-    DiffHunkListConstIterator hEnd   = m_hunks.end();
+    DiffHunkListConstIterator hunkIt = d->hunks.begin();
+    DiffHunkListConstIterator hEnd   = d->hunks.end();
 
     for (; hunkIt != hEnd; ++hunkIt)
     {
@@ -168,130 +211,234 @@ QString DiffModel::recreateDiff() const
 
 Difference* DiffModel::firstDifference()
 {
+    Q_D(DiffModel);
+
     qCDebug(LIBKOMPAREDIFF2) << "DiffModel::firstDifference()";
-    m_diffIndex = 0;
-    qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
+    d->diffIndex = 0;
+    qCDebug(LIBKOMPAREDIFF2) << "d->diffIndex = " << d->diffIndex;
 
-    m_selectedDifference = m_differences[ m_diffIndex ];
+    d->selectedDifference = d->differences[ d->diffIndex ];
 
-    return m_selectedDifference;
+    return d->selectedDifference;
 }
 
 Difference* DiffModel::lastDifference()
 {
+    Q_D(DiffModel);
+
     qCDebug(LIBKOMPAREDIFF2) << "DiffModel::lastDifference()";
-    m_diffIndex = m_differences.count() - 1;
-    qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
+    d->diffIndex = d->differences.count() - 1;
+    qCDebug(LIBKOMPAREDIFF2) << "d->diffIndex = " << d->diffIndex;
 
-    m_selectedDifference = m_differences[ m_diffIndex ];
+    d->selectedDifference = d->differences[ d->diffIndex ];
 
-    return m_selectedDifference;
+    return d->selectedDifference;
 }
 
 Difference* DiffModel::prevDifference()
 {
+    Q_D(DiffModel);
+
     qCDebug(LIBKOMPAREDIFF2) << "DiffModel::prevDifference()";
-    if (m_diffIndex > 0 && --m_diffIndex < m_differences.count())
+    if (d->diffIndex > 0 && --d->diffIndex < d->differences.count())
     {
-        qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
-        m_selectedDifference = m_differences[ m_diffIndex ];
+        qCDebug(LIBKOMPAREDIFF2) << "d->diffIndex = " << d->diffIndex;
+        d->selectedDifference = d->differences[ d->diffIndex ];
     }
     else
     {
-        m_selectedDifference = nullptr;
-        m_diffIndex = 0;
-        qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
+        d->selectedDifference = nullptr;
+        d->diffIndex = 0;
+        qCDebug(LIBKOMPAREDIFF2) << "d->diffIndex = " << d->diffIndex;
     }
 
-    return m_selectedDifference;
+    return d->selectedDifference;
 }
 
 Difference* DiffModel::nextDifference()
 {
+    Q_D(DiffModel);
+
     qCDebug(LIBKOMPAREDIFF2) << "DiffModel::nextDifference()";
-    if (++m_diffIndex < m_differences.count())
+    if (++d->diffIndex < d->differences.count())
     {
-        qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
-        m_selectedDifference = m_differences[ m_diffIndex ];
+        qCDebug(LIBKOMPAREDIFF2) << "d->diffIndex = " << d->diffIndex;
+        d->selectedDifference = d->differences[ d->diffIndex ];
     }
     else
     {
-        m_selectedDifference = nullptr;
-        m_diffIndex = 0; // just for safety...
-        qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
+        d->selectedDifference = nullptr;
+        d->diffIndex = 0; // just for safety...
+        qCDebug(LIBKOMPAREDIFF2) << "d->diffIndex = " << d->diffIndex;
     }
 
-    return m_selectedDifference;
+    return d->selectedDifference;
+}
+
+const QString DiffModel::source() const
+{
+    Q_D(const DiffModel);
+
+    return d->source;
+}
+
+const QString DiffModel::destination() const
+{
+    Q_D(const DiffModel);
+
+    return d->destination;
 }
 
 const QString DiffModel::sourceFile() const
 {
-    return m_sourceFile;
+    Q_D(const DiffModel);
+
+    return d->sourceFile;
 }
 
 const QString DiffModel::destinationFile() const
 {
-    return m_destinationFile;
+    Q_D(const DiffModel);
+
+    return d->destinationFile;
 }
 
 const QString DiffModel::sourcePath() const
 {
-    return m_sourcePath;
+    Q_D(const DiffModel);
+
+    return d->sourcePath;
 }
 
 const QString DiffModel::destinationPath() const
 {
-    return m_destinationPath;
+    Q_D(const DiffModel);
+
+    return d->destinationPath;
+}
+
+const QString DiffModel::sourceTimestamp() const
+{
+    Q_D(const DiffModel);
+
+    return d->sourceTimestamp;
+}
+
+const QString DiffModel::destinationTimestamp() const
+{
+    Q_D(const DiffModel);
+
+    return d->destinationTimestamp;
+}
+
+const QString DiffModel::sourceRevision() const
+{
+    Q_D(const DiffModel);
+
+    return d->sourceRevision;
+}
+
+const QString DiffModel::destinationRevision() const
+{
+    Q_D(const DiffModel);
+
+    return d->destinationRevision;
 }
 
 void DiffModel::setSourceFile(const QString &path)
 {
-    m_source = path;
+    Q_D(DiffModel);
+
+    d->source = path;
     splitSourceInPathAndFileName();
 }
 
 void DiffModel::setDestinationFile(const QString &path)
 {
-    m_destination = path;
+    Q_D(DiffModel);
+
+    d->destination = path;
     splitDestinationInPathAndFileName();
 }
 
 void DiffModel::setSourceTimestamp(const QString &timestamp)
 {
-    m_sourceTimestamp = timestamp;
+    Q_D(DiffModel);
+
+    d->sourceTimestamp = timestamp;
 }
 
 void DiffModel::setDestinationTimestamp(const QString &timestamp)
 {
-    m_destinationTimestamp = timestamp;
+    Q_D(DiffModel);
+
+    d->destinationTimestamp = timestamp;
 }
 
 void DiffModel::setSourceRevision(const QString &revision)
 {
-    m_sourceRevision = revision;
+    Q_D(DiffModel);
+
+    d->sourceRevision = revision;
 }
 
 void DiffModel::setDestinationRevision(const QString &revision)
 {
-    m_destinationRevision = revision;
+    Q_D(DiffModel);
+
+    d->destinationRevision = revision;
+}
+
+bool DiffModel::isBlended() const
+{
+    Q_D(const DiffModel);
+
+    return d->blended;
+}
+
+void DiffModel::setBlended(bool blended)
+{
+    Q_D(DiffModel);
+
+    d->blended = blended;
 }
 
 void DiffModel::addHunk(DiffHunk* hunk)
 {
-    m_hunks.append(hunk);
+    Q_D(DiffModel);
+
+    d->hunks.append(hunk);
 }
 
 void DiffModel::addDiff(Difference* diff)
 {
-    m_differences.append(diff);
+    Q_D(DiffModel);
+
+    d->differences.append(diff);
     connect(diff, &Difference::differenceApplied,
             this, &DiffModel::slotDifferenceApplied);
 }
 
+int  DiffModel::diffIndex() const
+{
+    Q_D(const DiffModel);
+
+    return d->diffIndex;
+}
+
+void DiffModel::setDiffIndex(int diffIndex)
+{
+    Q_D(DiffModel);
+
+    d->diffIndex = diffIndex;
+}
+
 bool DiffModel::hasUnsavedChanges(void) const
 {
-    DifferenceListConstIterator diffIt = m_differences.begin();
-    DifferenceListConstIterator endIt  = m_differences.end();
+    Q_D(const DiffModel);
+
+    DifferenceListConstIterator diffIt = d->differences.begin();
+    DifferenceListConstIterator endIt  = d->differences.end();
 
     for (; diffIt != endIt; ++diffIt)
     {
@@ -304,17 +451,19 @@ bool DiffModel::hasUnsavedChanges(void) const
 
 void DiffModel::applyDifference(bool apply)
 {
-    bool appliedState = m_selectedDifference->applied();
+    Q_D(DiffModel);
+
+    bool appliedState = d->selectedDifference->applied();
     if (appliedState == apply)
     {
         return;
     }
-    if (apply && !m_selectedDifference->applied())
-        ++m_appliedCount;
-    else if (!apply && m_selectedDifference->applied())
-        --m_appliedCount;
+    if (apply && !d->selectedDifference->applied())
+        ++d->appliedCount;
+    else if (!apply && d->selectedDifference->applied())
+        --d->appliedCount;
 
-    m_selectedDifference->apply(apply);
+    d->selectedDifference->apply(apply);
 }
 
 static int GetDifferenceDelta(Difference* diff)
@@ -329,8 +478,10 @@ static int GetDifferenceDelta(Difference* diff)
 
 void DiffModel::slotDifferenceApplied(Difference* diff)
 {
+    Q_D(DiffModel);
+
     int delta = GetDifferenceDelta(diff);
-    for (Difference *current : std::as_const(m_differences)) {
+    for (Difference *current : std::as_const(d->differences)) {
         if (current->destinationLineNumber() > diff->destinationLineNumber())
         {
             current->setTrackingDestinationLineNumber(current->trackingDestinationLineNumber() + delta);
@@ -340,17 +491,19 @@ void DiffModel::slotDifferenceApplied(Difference* diff)
 
 void DiffModel::applyAllDifferences(bool apply)
 {
+    Q_D(DiffModel);
+
     if (apply)
     {
-        m_appliedCount = m_differences.count();
+        d->appliedCount = d->differences.count();
     }
     else
     {
-        m_appliedCount = 0;
+        d->appliedCount = 0;
     }
 
-    DifferenceListIterator diffIt = m_differences.begin();
-    DifferenceListIterator dEnd   = m_differences.end();
+    DifferenceListIterator diffIt = d->differences.begin();
+    DifferenceListIterator dEnd   = d->differences.end();
 
     int totalDelta = 0;
     for (; diffIt != dEnd; ++diffIt)
@@ -369,17 +522,19 @@ void DiffModel::applyAllDifferences(bool apply)
 
 bool DiffModel::setSelectedDifference(Difference* diff)
 {
-    qCDebug(LIBKOMPAREDIFF2) << "diff = " << diff;
-    qCDebug(LIBKOMPAREDIFF2) << "m_selectedDifference = " << m_selectedDifference;
+    Q_D(DiffModel);
 
-    if (diff != m_selectedDifference)
+    qCDebug(LIBKOMPAREDIFF2) << "diff = " << diff;
+    qCDebug(LIBKOMPAREDIFF2) << "d->selectedDifference = " << d->selectedDifference;
+
+    if (diff != d->selectedDifference)
     {
-        if ((m_differences.indexOf(diff)) == -1)
+        if ((d->differences.indexOf(diff)) == -1)
             return false;
-        // Do not set m_diffIndex if it cant be found
-        m_diffIndex = m_differences.indexOf(diff);
-        qCDebug(LIBKOMPAREDIFF2) << "m_diffIndex = " << m_diffIndex;
-        m_selectedDifference = diff;
+        // Do not set d->diffIndex if it cant be found
+        d->diffIndex = d->differences.indexOf(diff);
+        qCDebug(LIBKOMPAREDIFF2) << "d->diffIndex = " << d->diffIndex;
+        d->selectedDifference = diff;
     }
 
     return true;
@@ -387,6 +542,8 @@ bool DiffModel::setSelectedDifference(Difference* diff)
 
 QPair<QList<Difference*>, QList<Difference*> > DiffModel::linesChanged(const QStringList& oldLines, const QStringList& newLines, int editLineNumber)
 {
+    Q_D(DiffModel);
+
     // These two will be returned as the function result
     QList<Difference*> inserted;
     QList<Difference*> removed;
@@ -398,7 +555,7 @@ QPair<QList<Difference*>, QList<Difference*> > DiffModel::linesChanged(const QSt
     // TODO: assume that differences are ordered by starting line. Check that this is always the case
     DifferenceList applied;
     DifferenceListIterator iterBegin; // first diff ending a line before editLineNo or later
-    for (iterBegin = m_differences.begin(); iterBegin != m_differences.end(); ++iterBegin) {
+    for (iterBegin = d->differences.begin(); iterBegin != d->differences.end(); ++iterBegin) {
         // If the difference ends a line before the edit starts, they should be merged if this difference is applied.
         // Also it should be merged if it starts on editLineNumber, otherwise there will be two markers for the same line
         int lineAfterLast = (*iterBegin)->trackingDestinationLineEnd();
@@ -408,7 +565,7 @@ QPair<QList<Difference*>, QList<Difference*> > DiffModel::linesChanged(const QSt
         }
     }
     DifferenceListIterator iterEnd;
-    for (iterEnd = iterBegin; iterEnd != m_differences.end(); ++iterEnd) {
+    for (iterEnd = iterBegin; iterEnd != d->differences.end(); ++iterEnd) {
         // If the difference starts a line after the edit ends, it should still be merged if it is applied
         int firstLine = (*iterEnd)->trackingDestinationLineNumber();
         if (firstLine > editLineEnd || (!(*iterEnd)->applied() && firstLine == editLineEnd)) {
@@ -422,10 +579,10 @@ QPair<QList<Difference*>, QList<Difference*> > DiffModel::linesChanged(const QSt
     // Compute line numbers in source and destination to which the for diff line sequences (will be created later)
     int sourceLineNumber;
     int destinationLineNumber;
-    if (iterBegin == m_differences.end()) {    // All existing diffs are after the change
+    if (iterBegin == d->differences.end()) {    // All existing diffs are after the change
         destinationLineNumber = editLineNumber;
-        if (!m_differences.isEmpty()) {
-            sourceLineNumber = m_differences.last()->sourceLineEnd() - (m_differences.last()->trackingDestinationLineEnd() - editLineNumber);
+        if (!d->differences.isEmpty()) {
+            sourceLineNumber = d->differences.last()->sourceLineEnd() - (d->differences.last()->trackingDestinationLineEnd() - editLineNumber);
         } else {
             sourceLineNumber = destinationLineNumber;
         }
@@ -492,7 +649,7 @@ QPair<QList<Difference*>, QList<Difference*> > DiffModel::linesChanged(const QSt
     for (DifferenceListIterator iter = iterBegin; iter != iterEnd; ++iter) {
         removed << *iter;
     }
-    insertPosition = m_differences.erase(iterBegin, iterEnd);
+    insertPosition = d->differences.erase(iterBegin, iterEnd);
 
     // Compute the Levenshtein table for two line sequences and construct the shortest possible edit script
     StringListPair* pair = new StringListPair(sourceLines, destinationLines);
@@ -529,12 +686,12 @@ QPair<QList<Difference*>, QList<Difference*> > DiffModel::linesChanged(const QSt
         Q_ASSERT(diff->type() != Difference::Unchanged);
         diff->applyQuietly(true);
         diff->setTrackingDestinationLineNumber(diff->destinationLineNumber());
-        insertPosition = m_differences.insert(insertPosition, diff);
+        insertPosition = d->differences.insert(insertPosition, diff);
         ++insertPosition;
         inserted << diff;
     }
     // Update line numbers for differences that are after the edit
-    for (; insertPosition != m_differences.end(); ++insertPosition) {
+    for (; insertPosition != d->differences.end(); ++insertPosition) {
         (*insertPosition)->setTrackingDestinationLineNumber((*insertPosition)->trackingDestinationLineNumber() + (newLines.size() - oldLines.size()));
     }
     return qMakePair(inserted, removed);

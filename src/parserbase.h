@@ -11,7 +11,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <QRegularExpression>
 #include <QStringList>
 
-#include "kompare.h"
+#include "global.h"
 #include "difference.h"
 
 class QString;

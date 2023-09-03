@@ -11,7 +11,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <KProcess>
 
-#include "kompare.h"
+#include "global.h"
 
 class QTextDecoder;
 class QTextCodec;

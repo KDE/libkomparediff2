@@ -79,7 +79,7 @@ ecm_generate_headers(komparediff2_CamelCase_HEADERS
         DiffModelList
         DiffSettings
         Info
-        Kompare
+        Global
         KompareModelList
         Marker
         SettingsBase

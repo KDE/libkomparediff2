@@ -11,7 +11,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <QObject>
 #include <QStringList>
 #include "diffhunk.h"
-#include "kompare.h"
+#include "global.h"
 #include "komparediff2_export.h"
 
 namespace KompareDiff2

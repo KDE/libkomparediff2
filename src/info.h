@@ -9,7 +9,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #define KOMPAREDIFF2_INFO_H
 
 #include "komparediff2_export.h"
-#include "kompare.h"
+#include "global.h"
 
 #include <QUrl>
 

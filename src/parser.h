@@ -8,7 +8,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef KOMPAREDIFF2_PARSER_H
 #define KOMPAREDIFF2_PARSER_H
 
-#include "kompare.h"
+#include "global.h"
 
 #include <QStringList>
 

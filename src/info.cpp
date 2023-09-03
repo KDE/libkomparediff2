@@ -9,7 +9,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 using namespace KompareDiff2;
 
-Info::Info(Mode _mode, DiffMode _diffMode, Format _format, Generator _generator, QUrl _source, QUrl _destination, QString _localSource, QString _localDestination, QTemporaryDir* _sourceQTempDir, QTemporaryDir* _destinationQTempDir, uint _depth, bool _applied)
+Info::Info(Mode _mode, DiffMode _diffMode, Format _format, Generator _generator, QUrl _source, QUrl _destination, const QString& _localSource, const QString& _localDestination, QTemporaryDir* _sourceQTempDir, QTemporaryDir* _destinationQTempDir, uint _depth, bool _applied)
     : mode(_mode)
     , diffMode(_diffMode)
     , format(_format)

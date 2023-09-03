@@ -668,7 +668,7 @@ QString ModelList::recreateDiff() const
     return diff;
 }
 
-bool ModelList::saveDiff(const QString& url, QString directory, DiffSettings* diffSettings)
+bool ModelList::saveDiff(const QString& url, const QString& directory, DiffSettings* diffSettings)
 {
     qCDebug(LIBKOMPAREDIFF2) << "ModelList::saveDiff: ";
 

@@ -244,34 +244,34 @@ const QString DiffModel::destinationPath() const
     return m_destinationPath;
 }
 
-void DiffModel::setSourceFile(QString path)
+void DiffModel::setSourceFile(const QString &path)
 {
     m_source = path;
     splitSourceInPathAndFileName();
 }
 
-void DiffModel::setDestinationFile(QString path)
+void DiffModel::setDestinationFile(const QString &path)
 {
     m_destination = path;
     splitDestinationInPathAndFileName();
 }
 
-void DiffModel::setSourceTimestamp(QString timestamp)
+void DiffModel::setSourceTimestamp(const QString &timestamp)
 {
     m_sourceTimestamp = timestamp;
 }
 
-void DiffModel::setDestinationTimestamp(QString timestamp)
+void DiffModel::setDestinationTimestamp(const QString &timestamp)
 {
     m_destinationTimestamp = timestamp;
 }
 
-void DiffModel::setSourceRevision(QString revision)
+void DiffModel::setSourceRevision(const QString &revision)
 {
     m_sourceRevision = revision;
 }
 
-void DiffModel::setDestinationRevision(QString revision)
+void DiffModel::setDestinationRevision(const QString &revision)
 {
     m_destinationRevision = revision;
 }

@@ -55,7 +55,7 @@ public:
     bool openFileAndDiff();
     bool openDirAndDiff();
 
-    bool saveDiff(const QString& url, QString directory, DiffSettings* diffSettings);
+    bool saveDiff(const QString& url, const QString& directory, DiffSettings* diffSettings);
     bool saveAll();
 
     bool saveDestination(DiffModel* model);
@@ -119,7 +119,7 @@ protected:
 Q_SIGNALS:
     void status(KompareDiff2::Status status);
     void setStatusBarModelInfo(int modelIndex, int differenceIndex, int modelCount, int differenceCount, int appliedCount);
-    void error(QString error);
+    void error(const QString &error);
     void modelsChanged(const KompareDiff2::DiffModelList* models);
     void setSelection(const KompareDiff2::DiffModel* model, const KompareDiff2::Difference* diff);
     void setSelection(const KompareDiff2::Difference* diff);

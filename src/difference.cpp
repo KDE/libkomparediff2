@@ -29,12 +29,12 @@ Difference::~Difference()
     qDeleteAll(m_destinationLines);
 }
 
-void Difference::addSourceLine(QString line)
+void Difference::addSourceLine(const QString &line)
 {
     m_sourceLines.append(new DifferenceString(line));
 }
 
-void Difference::addDestinationLine(QString line)
+void Difference::addDestinationLine(const QString &line)
 {
     m_destinationLines.append(new DifferenceString(line));
 }

@@ -82,8 +82,8 @@ public:
 
     void setType(int type) { m_type = type; }
 
-    void addSourceLine(QString line);
-    void addDestinationLine(QString line);
+    void addSourceLine(const QString &line);
+    void addDestinationLine(const QString &line);
 
     /** This method will calculate the differences between the individual strings and store them as Markers */
     void determineInlineDifferences();

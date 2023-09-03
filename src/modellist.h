@@ -155,10 +155,6 @@ protected Q_SLOTS:
         or the single destination if a single file diff. */
     void slotSaveDestination();
 
-private Q_SLOTS:
-    void slotDirectoryChanged(const QString&);
-    void slotFileChanged(const QString&);
-
 private: // Helper methods
     bool isDirectory(const QString& url) const;
     bool isDiff(const QString& mimetype) const;

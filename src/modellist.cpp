@@ -535,28 +535,6 @@ void ModelList::slotDiffProcessFinished(bool success)
     m_diffProcess = nullptr;
 }
 
-void ModelList::slotDirectoryChanged(const QString& /*dir*/)
-{
-    // some debug output to see if watching works properly
-    qCDebug(LIBKOMPAREDIFF2) << "Yippie directories are being watched !!! :)";
-    if (m_diffProcess)
-    {
-        Q_EMIT status(ReRunningDiff);
-        m_diffProcess->start();
-    }
-}
-
-void ModelList::slotFileChanged(const QString& /*file*/)
-{
-    // some debug output to see if watching works properly
-    qCDebug(LIBKOMPAREDIFF2) << "Yippie files are being watched !!! :)";
-    if (m_diffProcess)
-    {
-        Q_EMIT status(ReRunningDiff);
-        m_diffProcess->start();
-    }
-}
-
 QStringList ModelList::split(const QString& fileContents)
 {
     QString contents = fileContents;

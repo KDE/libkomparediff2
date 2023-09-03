@@ -74,14 +74,6 @@ enum Status {
     ReRunningDiff   // When a change has been detected after diff has run
 };
 
-/**
- * Target
- */
-enum Target {
-    Source,
-    Destination
-};
-
 } // End of namespace KompareDiff2
 
 #endif

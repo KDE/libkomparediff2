@@ -72,7 +72,8 @@ install(TARGETS komparediff2 EXPORT LibKompareDiff2Targets ${KDE_INSTALL_TARGETS
 
 ecm_generate_headers(komparediff2_CamelCase_HEADERS
     HEADER_NAMES
-        Difference,DifferenceString
+        Difference
+        DifferenceString
         DiffHunk
         DiffModel
         DiffModelList

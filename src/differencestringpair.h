@@ -9,7 +9,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include <QString>
 
-#include "difference.h"
+#include "differencestring.h"
 
 namespace KompareDiff2 {
 

@@ -14,7 +14,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "diffmodel.h"
 #include "diffmodellist.h"
-#include "kompare.h"
+#include "info.h"
 #include "komparediff2_export.h"
 
 class QAction;
@@ -141,7 +141,7 @@ public Q_SLOTS:
     void slotPreviousDifference();
     void slotNextDifference();
 
-    void slotKompareInfo(struct KompareDiff2::Info*);
+    void slotKompareInfo(KompareDiff2::Info*);
 
 protected Q_SLOTS:
     void slotDiffProcessFinished(bool success);
@@ -188,7 +188,7 @@ private: // ### an exported class without a d pointer? Really? What about BC?
 
     int                   m_modelIndex;
 
-    struct Info*          m_info;
+    class Info*           m_info;
 
     KActionCollection*    m_actionCollection;
     QAction*              m_applyDifference;

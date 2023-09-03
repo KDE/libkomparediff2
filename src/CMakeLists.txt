@@ -27,6 +27,7 @@ target_sources(komparediff2 PRIVATE
     difference.cpp
     diffhunk.cpp
     diffsettings.cpp
+    info.cpp
     settingsbase.cpp
     parser.cpp
     parserbase.cpp
@@ -34,7 +35,6 @@ target_sources(komparediff2 PRIVATE
     diffparser.cpp
     perforceparser.cpp
     stringlistpair.cpp
-    kompare.cpp
 )
 
 ecm_qt_declare_logging_category(komparediff2
@@ -77,6 +77,7 @@ ecm_generate_headers(komparediff2_CamelCase_HEADERS
         DiffModel
         DiffModelList
         DiffSettings
+        Info
         Kompare
         KompareModelList
         Marker

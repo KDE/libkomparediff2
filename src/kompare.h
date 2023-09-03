@@ -8,13 +8,6 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef KOMPAREDIFF2_KOMPARE_H
 #define KOMPAREDIFF2_KOMPARE_H
 
-#include <QUrl>
-
-#include "komparediff2_export.h"
-
-// Forward declaration needed
-class QTemporaryDir;
-
 namespace KompareDiff2
 {
 /**
@@ -87,42 +80,6 @@ enum Status {
 enum Target {
     Source,
     Destination
-};
-
-/**
- * @class Info kompare.h <KompareDiff2/Kompare>
- *
- * Info.
- */
-struct KOMPAREDIFF2_EXPORT Info {
-    Info(
-        enum Mode _mode = UnknownMode,
-        enum DiffMode _diffMode = UnknownDiffMode,
-        enum Format _format = UnknownFormat,
-        enum Generator _generator = UnknownGenerator,
-        QUrl _source = QUrl(),
-        QUrl _destination = QUrl(),
-        QString _localSource = QString(),
-        QString _localDestination = QString(),
-        QTemporaryDir* _sourceQTempDir = nullptr,
-        QTemporaryDir* _destinationQTempDir = nullptr,
-        uint _depth = 0,
-        bool _applied = true
-    );
-    void swapSourceWithDestination();
-
-    enum Mode      mode;
-    enum DiffMode  diffMode;
-    enum Format    format;
-    enum Generator generator;
-    QUrl           source;
-    QUrl           destination;
-    QString        localSource;
-    QString        localDestination;
-    QTemporaryDir*      sourceQTempDir;
-    QTemporaryDir*      destinationQTempDir;
-    uint           depth;
-    bool           applied;
 };
 
 } // End of namespace KompareDiff2

@@ -5,7 +5,7 @@ SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
 SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "kompare.h"
+#include "info.h"
 
 using namespace KompareDiff2;
 

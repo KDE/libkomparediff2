@@ -8,6 +8,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "kompareprocess.h"
 
+#include <QUrl>
 #include <QDir>
 #include <QStringList>
 #include <QTextCodec>

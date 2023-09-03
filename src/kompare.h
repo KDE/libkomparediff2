@@ -5,8 +5,8 @@ SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
 SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef KOMPARE_H
-#define KOMPARE_H
+#ifndef KOMPAREDIFF2_KOMPARE_H
+#define KOMPAREDIFF2_KOMPARE_H
 
 #include <QUrl>
 

@@ -4,8 +4,8 @@ SPDX-FileCopyrightText: 2011 Dmitry Risenberg <dmitry.risenberg@gmail.com>
 SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MARKER_H
-#define MARKER_H
+#ifndef KOMPAREDIFF2_MARKER_H
+#define KOMPAREDIFF2_MARKER_H
 
 #include <QList>
 #include "komparediff2_export.h"
@@ -57,4 +57,4 @@ using MarkerListConstIterator = QList<Marker*>::const_iterator;
 
 }
 
-#endif // MARKER_H
+#endif // KOMPAREDIFF2_MARKER_H

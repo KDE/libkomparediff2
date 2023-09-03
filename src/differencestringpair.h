@@ -4,8 +4,8 @@ SPDX-FileCopyrightText: 2011 Dmitry Risenberg <dmitry.risenberg@gmail.com>
 SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-#ifndef DIFFERENCESTRINGPAIR_H
-#define DIFFERENCESTRINGPAIR_H
+#ifndef KOMPAREDIFF2_DIFFERENCESTRINGPAIR_H
+#define KOMPAREDIFF2_DIFFERENCESTRINGPAIR_H
 
 #include <QString>
 
@@ -72,4 +72,4 @@ private:
 
 }
 
-#endif // DIFFERENCESTRINGPAIR_H
+#endif // KOMPAREDIFF2_DIFFERENCESTRINGPAIR_H

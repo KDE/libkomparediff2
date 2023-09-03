@@ -8,18 +8,22 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef KOMPAREDIFF2_DIFFHUNK_H
 #define KOMPAREDIFF2_DIFFHUNK_H
 
+// lib
+#include "komparediff2_export.h"
 #include "difference.h"
-
+// Std
+#include <memory>
 
 namespace KompareDiff2
 {
 
 class Difference;
+class DiffHunkPrivate;
 
 /**
  * DiffHunk
  */
-class DiffHunk
+class KOMPAREDIFF2_EXPORT DiffHunk
 {
 public:
     enum Type { Normal, AddedByBlend };
@@ -28,28 +32,25 @@ public:
     DiffHunk(int sourceLine, int destinationLine, const QString& function = QString(), Type type = Normal);
     ~DiffHunk();
 
-    const DifferenceList& differences() const { return m_differences; };
-    const QString& function() const           { return m_function; };
+    const DifferenceList& differences() const;
+    const QString& function() const;
 
-    int sourceLineNumber() const      { return m_sourceLine; };
-    int destinationLineNumber() const { return m_destinationLine; };
+    int sourceLineNumber() const;
+    int destinationLineNumber() const;
 
     int sourceLineCount() const;
     int destinationLineCount() const;
 
-    Type type() const       { return m_type; }
-    void setType(Type type) { m_type = type; }
+    Type type() const;
+    void setType(Type type);
 
     void add(Difference* diff);
 
     QString recreateHunk() const;
 
 private:
-    int            m_sourceLine;
-    int            m_destinationLine;
-    DifferenceList m_differences;
-    QString        m_function;
-    Type           m_type;
+    Q_DECLARE_PRIVATE(DiffHunk)
+    std::unique_ptr<DiffHunkPrivate> const d_ptr;
 };
 
 using DiffHunkList =              QList<DiffHunk*>;

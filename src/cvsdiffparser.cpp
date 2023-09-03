@@ -9,11 +9,11 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <QRegularExpression>
 
 #include <komparediffdebug.h>
-#include "komparemodellist.h"
+#include "modellist.h"
 
 using namespace KompareDiff2;
 
-CVSDiffParser::CVSDiffParser(const KompareModelList* list, const QStringList& diff) : ParserBase(list, diff)
+CVSDiffParser::CVSDiffParser(const ModelList* list, const QStringList& diff) : ParserBase(list, diff)
 {
     // The regexps needed for context cvs diff parsing, the rest is the same as in parserbase.cpp
     // third capture in header1 is non optional for cvs diff, it is the revision

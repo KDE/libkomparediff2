@@ -12,12 +12,12 @@ SPDX-License-Identifier: GPL-2.0-or-later
 namespace KompareDiff2
 {
 
-class KompareModelList;
+class ModelList;
 
 class CVSDiffParser : public ParserBase
 {
 public:
-    CVSDiffParser(const KompareModelList* list, const QStringList& diff);
+    CVSDiffParser(const ModelList* list, const QStringList& diff);
     ~CVSDiffParser() override;
 
 protected:

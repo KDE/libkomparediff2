@@ -16,7 +16,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 using namespace KompareDiff2;
 
-Parser::Parser(const KompareModelList* list) :
+Parser::Parser(const ModelList* list) :
     m_list(list)
 {
 }

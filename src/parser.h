@@ -16,12 +16,12 @@ namespace KompareDiff2
 {
 
 class DiffModelList;
-class KompareModelList;
+class ModelList;
 
 class Parser
 {
 public:
-    explicit Parser(const KompareModelList* list);
+    explicit Parser(const ModelList* list);
     ~Parser();
 
 public:
@@ -40,7 +40,7 @@ private:
     enum Generator m_generator;
     enum Format    m_format;
 
-    const KompareModelList* m_list;
+    const ModelList* m_list;
 };
 
 } // End of namespace KompareDiff2

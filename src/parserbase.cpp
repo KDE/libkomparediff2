@@ -14,7 +14,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "diffmodel.h"
 #include "diffhunk.h"
 #include "difference.h"
-#include "komparemodellist.h"
+#include "modellist.h"
 
 using namespace KompareDiff2;
 
@@ -54,7 +54,7 @@ QString ParserBase::escapePath(QString path)
     return path;
 }
 
-ParserBase::ParserBase(const KompareModelList* list, const QStringList& diff) :
+ParserBase::ParserBase(const ModelList* list, const QStringList& diff) :
     m_diffLines(diff),
     m_currentModel(nullptr),
     m_models(nullptr),

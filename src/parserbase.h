@@ -19,14 +19,14 @@ class QString;
 namespace KompareDiff2
 {
 
-class KompareModelList;
+class ModelList;
 class DiffModelList;
 class DiffModel;
 
 class ParserBase
 {
 public:
-    ParserBase(const KompareModelList* list, const QStringList& diff);
+    ParserBase(const ModelList* list, const QStringList& diff);
     virtual ~ParserBase();
 
     static QString escapePath(QString path);
@@ -122,7 +122,7 @@ protected:
     bool                       m_malformed;
 
 protected:
-    const KompareModelList* m_list;
+    const ModelList* m_list;
 };
 
 } // End of namespace KompareDiff2

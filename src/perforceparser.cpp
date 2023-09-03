@@ -13,7 +13,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 using namespace KompareDiff2;
 
-PerforceParser::PerforceParser(const KompareModelList* list, const QStringList& diff) : ParserBase(list, diff)
+PerforceParser::PerforceParser(const ModelList* list, const QStringList& diff) : ParserBase(list, diff)
 {
     m_contextDiffHeader1.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("==== (.*) - (.*) ====\\n")));
     m_contextDiffHeader1.setPatternOptions(QRegularExpression::InvertedGreedinessOption);

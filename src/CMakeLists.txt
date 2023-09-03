@@ -21,7 +21,7 @@ set_target_properties(komparediff2 PROPERTIES
 
 target_sources(komparediff2 PRIVATE
     kompareprocess.cpp
-    komparemodellist.cpp
+    modellist.cpp
     diffmodellist.cpp
     diffmodel.cpp
     difference.cpp
@@ -80,8 +80,8 @@ ecm_generate_headers(komparediff2_CamelCase_HEADERS
         DiffSettings
         Info
         Global
-        KompareModelList
         Marker
+        ModelList
         SettingsBase
     PREFIX KompareDiff2
     REQUIRED_HEADERS komparediff2_HEADERS

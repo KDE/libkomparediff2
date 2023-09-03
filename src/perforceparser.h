@@ -15,7 +15,7 @@ namespace KompareDiff2
 class PerforceParser : public ParserBase
 {
 public:
-    PerforceParser(const KompareModelList* list, const QStringList& diff);
+    PerforceParser(const ModelList* list, const QStringList& diff);
     ~PerforceParser() override;
 
 protected:

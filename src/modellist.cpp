@@ -7,7 +7,7 @@ SPDX-FileCopyrightText: 2012 Jean -Nicolas Artaud <jeannicolasartaud@gmail.com>
 SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "komparemodellist.h"
+#include "modellist.h"
 
 #include <QAction>
 #include <QFile>
@@ -35,7 +35,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 using namespace KompareDiff2;
 
-KompareModelList::KompareModelList(DiffSettings* diffSettings, QObject* parent, const char* name, bool supportReadWrite)
+ModelList::ModelList(DiffSettings* diffSettings, QObject* parent, const char* name, bool supportReadWrite)
     : QObject(parent),
       m_diffProcess(nullptr),
       m_diffSettings(diffSettings),
@@ -50,19 +50,19 @@ KompareModelList::KompareModelList(DiffSettings* diffSettings, QObject* parent, 
     qCDebug(LIBKOMPAREDIFF2) << "Show me the arguments: " << diffSettings << ", " << parent << ", " << name;
     m_actionCollection = new KActionCollection(this);
     if (supportReadWrite) {
-        m_applyDifference = m_actionCollection->addAction(QStringLiteral("difference_apply"), this, &KompareModelList::slotActionApplyDifference);
+        m_applyDifference = m_actionCollection->addAction(QStringLiteral("difference_apply"), this, &ModelList::slotActionApplyDifference);
         m_applyDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right")));
         m_applyDifference->setText(i18nc("@action", "&Apply Difference"));
         m_actionCollection->setDefaultShortcut(m_applyDifference, QKeySequence(Qt::Key_Space));
-        m_unApplyDifference = m_actionCollection->addAction(QStringLiteral("difference_unapply"), this, &KompareModelList::slotActionUnApplyDifference);
+        m_unApplyDifference = m_actionCollection->addAction(QStringLiteral("difference_unapply"), this, &ModelList::slotActionUnApplyDifference);
         m_unApplyDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-left")));
         m_unApplyDifference->setText(i18nc("@action", "Un&apply Difference"));
         m_actionCollection->setDefaultShortcut(m_unApplyDifference, QKeySequence(Qt::Key_Backspace));
-        m_applyAll = m_actionCollection->addAction(QStringLiteral("difference_applyall"), this, &KompareModelList::slotActionApplyAllDifferences);
+        m_applyAll = m_actionCollection->addAction(QStringLiteral("difference_applyall"), this, &ModelList::slotActionApplyAllDifferences);
         m_applyAll->setIcon(QIcon::fromTheme(QStringLiteral("arrow-right-double")));
         m_applyAll->setText(i18nc("@action", "App&ly All"));
         m_actionCollection->setDefaultShortcut(m_applyAll, QKeySequence(Qt::CTRL | Qt::Key_A));
-        m_unapplyAll = m_actionCollection->addAction(QStringLiteral("difference_unapplyall"), this, &KompareModelList::slotActionUnapplyAllDifferences);
+        m_unapplyAll = m_actionCollection->addAction(QStringLiteral("difference_unapplyall"), this, &ModelList::slotActionUnapplyAllDifferences);
         m_unapplyAll->setIcon(QIcon::fromTheme(QStringLiteral("arrow-left-double")));
         m_unapplyAll->setText(i18nc("@action", "&Unapply All"));
         m_actionCollection->setDefaultShortcut(m_unapplyAll, QKeySequence(Qt::CTRL | Qt::Key_U));
@@ -72,19 +72,19 @@ KompareModelList::KompareModelList(DiffSettings* diffSettings, QObject* parent, 
         m_applyAll = nullptr;
         m_unapplyAll = nullptr;
     }
-    m_previousFile = m_actionCollection->addAction(QStringLiteral("difference_previousfile"), this, &KompareModelList::slotPreviousModel);
+    m_previousFile = m_actionCollection->addAction(QStringLiteral("difference_previousfile"), this, &ModelList::slotPreviousModel);
     m_previousFile->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up-double")));
     m_previousFile->setText(i18nc("@action", "P&revious File"));
     m_actionCollection->setDefaultShortcut(m_previousFile, QKeySequence(Qt::CTRL | Qt::Key_PageUp));
-    m_nextFile = m_actionCollection->addAction(QStringLiteral("difference_nextfile"), this, &KompareModelList::slotNextModel);
+    m_nextFile = m_actionCollection->addAction(QStringLiteral("difference_nextfile"), this, &ModelList::slotNextModel);
     m_nextFile->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down-double")));
     m_nextFile->setText(i18nc("@action", "N&ext File"));
     m_actionCollection->setDefaultShortcut(m_nextFile, QKeySequence(Qt::CTRL | Qt::Key_PageDown));
-    m_previousDifference = m_actionCollection->addAction(QStringLiteral("difference_previous"), this, &KompareModelList::slotPreviousDifference);
+    m_previousDifference = m_actionCollection->addAction(QStringLiteral("difference_previous"), this, &ModelList::slotPreviousDifference);
     m_previousDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up")));
     m_previousDifference->setText(i18nc("@action", "&Previous Difference"));
     m_actionCollection->setDefaultShortcut(m_previousDifference, QKeySequence(Qt::CTRL | Qt::Key_Up));
-    m_nextDifference = m_actionCollection->addAction(QStringLiteral("difference_next"), this, &KompareModelList::slotNextDifference);
+    m_nextDifference = m_actionCollection->addAction(QStringLiteral("difference_next"), this, &ModelList::slotNextDifference);
     m_nextDifference->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
     m_nextDifference->setText(i18nc("@action", "&Next Difference"));
     m_actionCollection->setDefaultShortcut(m_nextDifference, QKeySequence(Qt::CTRL | Qt::Key_Down));
@@ -92,7 +92,7 @@ KompareModelList::KompareModelList(DiffSettings* diffSettings, QObject* parent, 
     m_nextDifference->setEnabled(false);
 
     if (supportReadWrite) {
-        m_save = KStandardAction::save(this, &KompareModelList::slotSaveDestination, m_actionCollection);
+        m_save = KStandardAction::save(this, &ModelList::slotSaveDestination, m_actionCollection);
         m_save->setEnabled(false);
     } else {
         m_save = nullptr;
@@ -101,7 +101,7 @@ KompareModelList::KompareModelList(DiffSettings* diffSettings, QObject* parent, 
     updateModelListActions();
 }
 
-KompareModelList::~KompareModelList()
+ModelList::~ModelList()
 {
     m_selectedModel = nullptr;
     m_selectedDifference = nullptr;
@@ -109,7 +109,7 @@ KompareModelList::~KompareModelList()
     delete m_models;
 }
 
-bool KompareModelList::isDirectory(const QString& url) const
+bool ModelList::isDirectory(const QString& url) const
 {
     QFileInfo fi(url);
     if (fi.isDir())
@@ -118,7 +118,7 @@ bool KompareModelList::isDirectory(const QString& url) const
         return false;
 }
 
-bool KompareModelList::isDiff(const QString& mimeType) const
+bool ModelList::isDiff(const QString& mimeType) const
 {
     if (mimeType == QLatin1String("text/x-patch"))
         return true;
@@ -126,7 +126,7 @@ bool KompareModelList::isDiff(const QString& mimeType) const
         return false;
 }
 
-bool KompareModelList::compare()
+bool ModelList::compare()
 {
     bool result = false;
 
@@ -195,7 +195,7 @@ bool KompareModelList::compare()
     return result;
 }
 
-bool KompareModelList::compare(Mode mode)
+bool ModelList::compare(Mode mode)
 {
     clear(); // Destroy the old models...
 
@@ -203,7 +203,7 @@ bool KompareModelList::compare(Mode mode)
     m_diffProcess->setEncoding(m_encoding);
 
     connect(m_diffProcess, &KompareProcess::diffHasFinished,
-            this, &KompareModelList::slotDiffProcessFinished);
+            this, &ModelList::slotDiffProcessFinished);
 
     Q_EMIT status(RunningDiff);
     m_diffProcess->start();
@@ -230,7 +230,7 @@ static QString lstripSeparators(const QString& from, uint count)
     return from.mid(position + 1);
 }
 
-void KompareModelList::setDepthAndApplied()
+void ModelList::setDepthAndApplied()
 {
     // Splice to avoid calling ~DiffModelList
     const QList<KompareDiff2::DiffModel*> splicedModelList(*m_models);
@@ -241,7 +241,7 @@ void KompareModelList::setDepthAndApplied()
     }
 }
 
-bool KompareModelList::openFileAndDiff()
+bool ModelList::openFileAndDiff()
 {
     clear();
 
@@ -266,7 +266,7 @@ bool KompareModelList::openFileAndDiff()
     return true;
 }
 
-bool KompareModelList::openDirAndDiff()
+bool ModelList::openDirAndDiff()
 {
     clear();
 
@@ -293,7 +293,7 @@ bool KompareModelList::openDirAndDiff()
     return true;
 }
 
-void KompareModelList::slotSaveDestination()
+void ModelList::slotSaveDestination()
 {
     // Unnecessary safety check! We can now guarantee that saving is only possible when there is a model and there are unsaved changes
     if (m_selectedModel)
@@ -304,9 +304,9 @@ void KompareModelList::slotSaveDestination()
     }
 }
 
-bool KompareModelList::saveDestination(DiffModel* model)
+bool ModelList::saveDestination(DiffModel* model)
 {
-    qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::saveDestination: ";
+    qCDebug(LIBKOMPAREDIFF2) << "ModelList::saveDestination: ";
 
     // Unnecessary safety check, we can guarantee there are unsaved changes!!!
     if (!model->hasUnsavedChanges())
@@ -453,7 +453,7 @@ bool KompareModelList::saveDestination(DiffModel* model)
     return true;
 }
 
-bool KompareModelList::saveAll()
+bool ModelList::saveAll()
 {
     if (modelCount() == 0)
         return false;
@@ -469,7 +469,7 @@ bool KompareModelList::saveAll()
     return true;
 }
 
-void KompareModelList::setEncoding(const QString& encoding)
+void ModelList::setEncoding(const QString& encoding)
 {
     m_encoding = encoding;
     if (!encoding.compare(QLatin1String("default"), Qt::CaseInsensitive))
@@ -487,7 +487,7 @@ void KompareModelList::setEncoding(const QString& encoding)
     qCDebug(LIBKOMPAREDIFF2) << "TextCodec: " << m_textCodec;
 }
 
-void KompareModelList::setReadWrite(bool isReadWrite)
+void ModelList::setReadWrite(bool isReadWrite)
 {
     if (m_isReadWrite == isReadWrite)
         return;
@@ -496,12 +496,12 @@ void KompareModelList::setReadWrite(bool isReadWrite)
     updateModelListActions();
 }
 
-bool KompareModelList::isReadWrite() const
+bool ModelList::isReadWrite() const
 {
     return m_isReadWrite;
 }
 
-void KompareModelList::slotDiffProcessFinished(bool success)
+void ModelList::slotDiffProcessFinished(bool success)
 {
     if (success)
     {
@@ -535,7 +535,7 @@ void KompareModelList::slotDiffProcessFinished(bool success)
     m_diffProcess = nullptr;
 }
 
-void KompareModelList::slotDirectoryChanged(const QString& /*dir*/)
+void ModelList::slotDirectoryChanged(const QString& /*dir*/)
 {
     // some debug output to see if watching works properly
     qCDebug(LIBKOMPAREDIFF2) << "Yippie directories are being watched !!! :)";
@@ -546,7 +546,7 @@ void KompareModelList::slotDirectoryChanged(const QString& /*dir*/)
     }
 }
 
-void KompareModelList::slotFileChanged(const QString& /*file*/)
+void ModelList::slotFileChanged(const QString& /*file*/)
 {
     // some debug output to see if watching works properly
     qCDebug(LIBKOMPAREDIFF2) << "Yippie files are being watched !!! :)";
@@ -557,7 +557,7 @@ void KompareModelList::slotFileChanged(const QString& /*file*/)
     }
 }
 
-QStringList KompareModelList::split(const QString& fileContents)
+QStringList ModelList::split(const QString& fileContents)
 {
     QString contents = fileContents;
     QStringList list;
@@ -584,7 +584,7 @@ QStringList KompareModelList::split(const QString& fileContents)
     return list;
 }
 
-QString KompareModelList::readFile(const QString& fileName)
+QString ModelList::readFile(const QString& fileName)
 {
     QStringList list;
 
@@ -608,7 +608,7 @@ QString KompareModelList::readFile(const QString& fileName)
     return contents;
 }
 
-bool KompareModelList::openDiff(const QString& diffFile)
+bool ModelList::openDiff(const QString& diffFile)
 {
     qCDebug(LIBKOMPAREDIFF2) << "Stupid :) Url = " << diffFile;
 
@@ -635,7 +635,7 @@ bool KompareModelList::openDiff(const QString& diffFile)
     return true;
 }
 
-bool KompareModelList::parseAndOpenDiff(const QString& diff)
+bool ModelList::parseAndOpenDiff(const QString& diff)
 {
     clear(); // Clear the current models
 
@@ -654,7 +654,7 @@ bool KompareModelList::parseAndOpenDiff(const QString& diff)
     return true;
 }
 
-QString KompareModelList::recreateDiff() const
+QString ModelList::recreateDiff() const
 {
     QString diff;
 
@@ -668,9 +668,9 @@ QString KompareModelList::recreateDiff() const
     return diff;
 }
 
-bool KompareModelList::saveDiff(const QString& url, QString directory, DiffSettings* diffSettings)
+bool ModelList::saveDiff(const QString& url, QString directory, DiffSettings* diffSettings)
 {
-    qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::saveDiff: ";
+    qCDebug(LIBKOMPAREDIFF2) << "ModelList::saveDiff: ";
 
     m_diffTemp = new QTemporaryFile();
     m_diffURL = QUrl(url); // ### TODO the "url" argument should be a QUrl
@@ -687,14 +687,14 @@ bool KompareModelList::saveDiff(const QString& url, QString directory, DiffSetti
     m_diffProcess->setEncoding(m_encoding);
 
     connect(m_diffProcess, &KompareProcess::diffHasFinished,
-            this, &KompareModelList::slotWriteDiffOutput);
+            this, &ModelList::slotWriteDiffOutput);
 
     Q_EMIT status(RunningDiff);
     m_diffProcess->start();
     return true;
 }
 
-void KompareModelList::slotWriteDiffOutput(bool success)
+void ModelList::slotWriteDiffOutput(bool success)
 {
     qCDebug(LIBKOMPAREDIFF2) << "Success = " << success;
 
@@ -727,11 +727,11 @@ void KompareModelList::slotWriteDiffOutput(bool success)
     m_diffProcess = nullptr;
 }
 
-void KompareModelList::slotSelectionChanged(const KompareDiff2::DiffModel* model, const KompareDiff2::Difference* diff)
+void ModelList::slotSelectionChanged(const KompareDiff2::DiffModel* model, const KompareDiff2::Difference* diff)
 {
 // This method will signal all the other objects about a change in selection,
 // it will Q_EMIT setSelection( const DiffModel*, const Difference* ) to all who are connected
-    qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::slotSelectionChanged( " << model << ", " << diff << " )";
+    qCDebug(LIBKOMPAREDIFF2) << "ModelList::slotSelectionChanged( " << model << ", " << diff << " )";
     qCDebug(LIBKOMPAREDIFF2) << "Sender is : " << sender()->metaObject()->className();
 //     qCDebug(LIBKOMPAREDIFF2) << kBacktrace();
 
@@ -762,11 +762,11 @@ void KompareModelList::slotSelectionChanged(const KompareDiff2::DiffModel* model
     updateModelListActions();
 }
 
-void KompareModelList::slotSelectionChanged(const KompareDiff2::Difference* diff)
+void ModelList::slotSelectionChanged(const KompareDiff2::Difference* diff)
 {
 // This method will Q_EMIT setSelection( const Difference* ) to whomever is listening
 // when for instance in kompareview the selection has changed
-    qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::slotSelectionChanged( " << diff << " )";
+    qCDebug(LIBKOMPAREDIFF2) << "ModelList::slotSelectionChanged( " << diff << " )";
     qCDebug(LIBKOMPAREDIFF2) << "Sender is : " << sender()->metaObject()->className();
 
     m_selectedDifference = const_cast<Difference*>(diff);
@@ -783,7 +783,7 @@ void KompareModelList::slotSelectionChanged(const KompareDiff2::Difference* diff
     updateModelListActions();
 }
 
-void KompareModelList::slotPreviousModel()
+void ModelList::slotPreviousModel()
 {
     if ((m_selectedModel = prevModel()) != nullptr)
     {
@@ -800,7 +800,7 @@ void KompareModelList::slotPreviousModel()
     updateModelListActions();
 }
 
-void KompareModelList::slotNextModel()
+void ModelList::slotNextModel()
 {
     if ((m_selectedModel = nextModel()) != nullptr)
     {
@@ -817,9 +817,9 @@ void KompareModelList::slotNextModel()
     updateModelListActions();
 }
 
-DiffModel* KompareModelList::firstModel()
+DiffModel* ModelList::firstModel()
 {
-    qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::firstModel()";
+    qCDebug(LIBKOMPAREDIFF2) << "ModelList::firstModel()";
     m_modelIndex = 0;
     qCDebug(LIBKOMPAREDIFF2) << "m_modelIndex = " << m_modelIndex;
 
@@ -828,9 +828,9 @@ DiffModel* KompareModelList::firstModel()
     return m_selectedModel;
 }
 
-DiffModel* KompareModelList::lastModel()
+DiffModel* ModelList::lastModel()
 {
-    qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::lastModel()";
+    qCDebug(LIBKOMPAREDIFF2) << "ModelList::lastModel()";
     m_modelIndex = m_models->count() - 1;
     qCDebug(LIBKOMPAREDIFF2) << "m_modelIndex = " << m_modelIndex;
 
@@ -839,9 +839,9 @@ DiffModel* KompareModelList::lastModel()
     return m_selectedModel;
 }
 
-DiffModel* KompareModelList::prevModel()
+DiffModel* ModelList::prevModel()
 {
-    qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::prevModel()";
+    qCDebug(LIBKOMPAREDIFF2) << "ModelList::prevModel()";
     if (m_modelIndex > 0 && --m_modelIndex < m_models->count())
     {
         qCDebug(LIBKOMPAREDIFF2) << "m_modelIndex = " << m_modelIndex;
@@ -857,9 +857,9 @@ DiffModel* KompareModelList::prevModel()
     return m_selectedModel;
 }
 
-DiffModel* KompareModelList::nextModel()
+DiffModel* ModelList::nextModel()
 {
-    qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::nextModel()";
+    qCDebug(LIBKOMPAREDIFF2) << "ModelList::nextModel()";
     if (++m_modelIndex < m_models->count())
     {
         qCDebug(LIBKOMPAREDIFF2) << "m_modelIndex = " << m_modelIndex;
@@ -875,12 +875,12 @@ DiffModel* KompareModelList::nextModel()
     return m_selectedModel;
 }
 
-KActionCollection* KompareModelList::actionCollection() const
+KActionCollection* ModelList::actionCollection() const
 {
     return m_actionCollection;
 }
 
-void KompareModelList::slotPreviousDifference()
+void ModelList::slotPreviousDifference()
 {
     qCDebug(LIBKOMPAREDIFF2) << "slotPreviousDifference called";
     if ((m_selectedDifference = m_selectedModel->prevDifference()) != nullptr)
@@ -915,7 +915,7 @@ void KompareModelList::slotPreviousDifference()
     updateModelListActions();
 }
 
-void KompareModelList::slotNextDifference()
+void ModelList::slotNextDifference()
 {
     qCDebug(LIBKOMPAREDIFF2) << "slotNextDifference called";
     if ((m_selectedDifference = m_selectedModel->nextDifference()) != nullptr)
@@ -949,21 +949,21 @@ void KompareModelList::slotNextDifference()
     updateModelListActions();
 }
 
-void KompareModelList::slotApplyDifference(bool apply)
+void ModelList::slotApplyDifference(bool apply)
 {
     m_selectedModel->applyDifference(apply);
     Q_EMIT applyDifference(apply);
 }
 
-void KompareModelList::slotApplyAllDifferences(bool apply)
+void ModelList::slotApplyAllDifferences(bool apply)
 {
     m_selectedModel->applyAllDifferences(apply);
     Q_EMIT applyAllDifferences(apply);
 }
 
-int KompareModelList::parseDiffOutput(const QString& diff)
+int ModelList::parseDiffOutput(const QString& diff)
 {
-    qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::parseDiffOutput";
+    qCDebug(LIBKOMPAREDIFF2) << "ModelList::parseDiffOutput";
     Q_EMIT diffString(diff);
 
     QStringList diffLines = split(diff);
@@ -1000,7 +1000,7 @@ int KompareModelList::parseDiffOutput(const QString& diff)
     return 0;
 }
 
-bool KompareModelList::blendOriginalIntoModelList(const QString& localURL)
+bool ModelList::blendOriginalIntoModelList(const QString& localURL)
 {
     qCDebug(LIBKOMPAREDIFF2) << "Hurrah we are blending...";
     QFileInfo fi(localURL);
@@ -1053,7 +1053,7 @@ bool KompareModelList::blendOriginalIntoModelList(const QString& localURL)
     return result;
 }
 
-bool KompareModelList::blendFile(DiffModel* model, const QString& fileContents)
+bool ModelList::blendFile(DiffModel* model, const QString& fileContents)
 {
     if (!model)
     {
@@ -1285,14 +1285,14 @@ m_selectedDifference = m_selectedModel->firstDifference();
 return true;
 }
 
-void KompareModelList::show()
+void ModelList::show()
 {
-    qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::Show Number of models = " << m_models->count();
+    qCDebug(LIBKOMPAREDIFF2) << "ModelList::Show Number of models = " << m_models->count();
     Q_EMIT modelsChanged(m_models);
     Q_EMIT setSelection(m_selectedModel, m_selectedDifference);
 }
 
-void KompareModelList::clear()
+void ModelList::clear()
 {
     if (m_models)
         m_models->clear();
@@ -1300,13 +1300,13 @@ void KompareModelList::clear()
     Q_EMIT modelsChanged(m_models);
 }
 
-void KompareModelList::refresh()
+void ModelList::refresh()
 {
     // FIXME: I can imagine blending also wants to be refreshed so make a switch case here
     compare(m_info->mode);
 }
 
-void KompareModelList::swap()
+void ModelList::swap()
 {
     //FIXME Not sure if any mode could be swapped
     if (m_info->mode == ComparingFiles)
@@ -1315,7 +1315,7 @@ void KompareModelList::swap()
         compare(m_info->mode);
 }
 
-bool KompareModelList::hasUnsavedChanges() const
+bool ModelList::hasUnsavedChanges() const
 {
     if (modelCount() == 0)
         return false;
@@ -1331,29 +1331,29 @@ bool KompareModelList::hasUnsavedChanges() const
     return false;
 }
 
-int KompareModelList::modelCount() const
+int ModelList::modelCount() const
 {
     return m_models ? m_models->count() : 0;
 }
 
-int KompareModelList::differenceCount() const
+int ModelList::differenceCount() const
 {
     return m_selectedModel ? m_selectedModel->differenceCount() : -1;
 }
 
-int KompareModelList::appliedCount() const
+int ModelList::appliedCount() const
 {
     return m_selectedModel ? m_selectedModel->appliedCount() : -1;
 }
 
-void KompareModelList::slotKompareInfo(Info* info)
+void ModelList::slotKompareInfo(Info* info)
 {
     m_info = info;
 }
 
-bool KompareModelList::setSelectedModel(DiffModel* model)
+bool ModelList::setSelectedModel(DiffModel* model)
 {
-    qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::setSelectedModel( " << model << " )";
+    qCDebug(LIBKOMPAREDIFF2) << "ModelList::setSelectedModel( " << model << " )";
 
     if (model != m_selectedModel)
     {
@@ -1370,7 +1370,7 @@ bool KompareModelList::setSelectedModel(DiffModel* model)
     return true;
 }
 
-void KompareModelList::updateModelListActions()
+void ModelList::updateModelListActions()
 {
     if (m_models && m_selectedModel && m_selectedDifference)
     {
@@ -1421,9 +1421,9 @@ void KompareModelList::updateModelListActions()
     }
 }
 
-bool KompareModelList::hasPrevModel() const
+bool ModelList::hasPrevModel() const
 {
-    qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::hasPrevModel()";
+    qCDebug(LIBKOMPAREDIFF2) << "ModelList::hasPrevModel()";
 
     if (m_modelIndex > 0)
     {
@@ -1436,9 +1436,9 @@ bool KompareModelList::hasPrevModel() const
     return false;
 }
 
-bool KompareModelList::hasNextModel() const
+bool ModelList::hasNextModel() const
 {
-    qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::hasNextModel()";
+    qCDebug(LIBKOMPAREDIFF2) << "ModelList::hasNextModel()";
 
     if (m_modelIndex < (m_models->count() - 1))
     {
@@ -1450,9 +1450,9 @@ bool KompareModelList::hasNextModel() const
     return false;
 }
 
-bool KompareModelList::hasPrevDiff() const
+bool ModelList::hasPrevDiff() const
 {
-//     qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::hasPrevDiff()";
+//     qCDebug(LIBKOMPAREDIFF2) << "ModelList::hasPrevDiff()";
     int index = m_selectedModel->diffIndex();
 
     if (index > 0)
@@ -1472,9 +1472,9 @@ bool KompareModelList::hasPrevDiff() const
     return false;
 }
 
-bool KompareModelList::hasNextDiff() const
+bool ModelList::hasNextDiff() const
 {
-//     qCDebug(LIBKOMPAREDIFF2) << "KompareModelList::hasNextDiff()";
+//     qCDebug(LIBKOMPAREDIFF2) << "ModelList::hasNextDiff()";
     int index = m_selectedModel->diffIndex();
 
     if (index < (m_selectedModel->differenceCount() - 1))
@@ -1494,7 +1494,7 @@ bool KompareModelList::hasNextDiff() const
     return false;
 }
 
-void KompareModelList::slotActionApplyDifference()
+void ModelList::slotActionApplyDifference()
 {
     if (!m_selectedDifference->applied())
         slotApplyDifference(true);
@@ -1502,7 +1502,7 @@ void KompareModelList::slotActionApplyDifference()
     updateModelListActions();
 }
 
-void KompareModelList::slotActionUnApplyDifference()
+void ModelList::slotActionUnApplyDifference()
 {
     if (m_selectedDifference->applied())
         slotApplyDifference(false);
@@ -1510,18 +1510,18 @@ void KompareModelList::slotActionUnApplyDifference()
     updateModelListActions();
 }
 
-void KompareModelList::slotActionApplyAllDifferences()
+void ModelList::slotActionApplyAllDifferences()
 {
     slotApplyAllDifferences(true);
     updateModelListActions();
 }
 
-void KompareModelList::slotActionUnapplyAllDifferences()
+void ModelList::slotActionUnapplyAllDifferences()
 {
     slotApplyAllDifferences(false);
     updateModelListActions();
 }
 
-#include "moc_komparemodellist.cpp"
+#include "moc_modellist.cpp"
 
 /* vim: set ts=4 sw=4 noet: */

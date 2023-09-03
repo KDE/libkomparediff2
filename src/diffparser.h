@@ -15,7 +15,7 @@ namespace KompareDiff2
 class DiffParser : public ParserBase
 {
 public:
-    DiffParser(const KompareModelList* list, const QStringList& diff);
+    DiffParser(const ModelList* list, const QStringList& diff);
     ~DiffParser() override;
 
 protected:

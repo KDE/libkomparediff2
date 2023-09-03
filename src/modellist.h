@@ -7,8 +7,8 @@ SPDX-FileCopyrightText: 2012 Jean -Nicolas Artaud <jeannicolasartaud@gmail.com>
 SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef KOMPAREDIFF2_KOMPAREMODELLIST_H
-#define KOMPAREDIFF2_KOMPAREMODELLIST_H
+#ifndef KOMPAREDIFF2_MODELLIST_H
+#define KOMPAREDIFF2_MODELLIST_H
 
 #include <QObject>
 
@@ -29,17 +29,16 @@ namespace KompareDiff2
 {
 
 /**
- * @class KompareModelList komparemodellist.h <KompareDiff2/KompareModelList>
+ * @class ModelList modellist.h <KompareDiff2/ModelList>
  *
- * KompareModelList
+ * ModelList
  */
-class KOMPAREDIFF2_EXPORT KompareModelList : public QObject
+class KOMPAREDIFF2_EXPORT ModelList : public QObject
 {
     Q_OBJECT
 public:
-    /// @since 5.4
-    KompareModelList(DiffSettings* diffSettings, QObject* parent, const char* name = nullptr, bool supportReadWrite = true);
-    ~KompareModelList() override;
+    ModelList(DiffSettings* diffSettings, QObject* parent, const char* name = nullptr, bool supportReadWrite = true);
+    ~ModelList() override;
 
 public:
     void refresh();

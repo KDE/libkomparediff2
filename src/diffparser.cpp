@@ -12,7 +12,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 using namespace KompareDiff2;
 
-DiffParser::DiffParser(const KompareModelList* list, const QStringList& diff) : ParserBase(list, diff)
+DiffParser::DiffParser(const ModelList* list, const QStringList& diff) : ParserBase(list, diff)
 {
     // The regexps needed for context diff parsing, the rest is the same as in parserbase.cpp
     m_contextDiffHeader1.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("\\*\\*\\* ([^\\t]+)(\\t([^\\t]+))?\\n")));

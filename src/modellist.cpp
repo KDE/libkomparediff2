@@ -35,7 +35,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 using namespace KompareDiff2;
 
-ModelList::ModelList(DiffSettings* diffSettings, QObject* parent, const char* name, bool supportReadWrite)
+ModelList::ModelList(DiffSettings* diffSettings, QObject* parent, bool supportReadWrite)
     : QObject(parent),
       m_diffProcess(nullptr),
       m_diffSettings(diffSettings),
@@ -47,7 +47,7 @@ ModelList::ModelList(DiffSettings* diffSettings, QObject* parent, const char* na
       m_textCodec(nullptr),
       m_isReadWrite(supportReadWrite)
 {
-    qCDebug(LIBKOMPAREDIFF2) << "Show me the arguments: " << diffSettings << ", " << parent << ", " << name;
+    qCDebug(LIBKOMPAREDIFF2) << "Show me the arguments: " << diffSettings << ", " << parent;
     m_actionCollection = new KActionCollection(this);
     if (supportReadWrite) {
         m_applyDifference = m_actionCollection->addAction(QStringLiteral("difference_apply"), this, &ModelList::slotActionApplyDifference);

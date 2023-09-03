@@ -37,7 +37,7 @@ class KOMPAREDIFF2_EXPORT ModelList : public QObject
 {
     Q_OBJECT
 public:
-    ModelList(DiffSettings* diffSettings, QObject* parent, const char* name = nullptr, bool supportReadWrite = true);
+    ModelList(DiffSettings* diffSettings, QObject* parent, bool supportReadWrite = true);
     ~ModelList() override;
 
 public:

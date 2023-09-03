@@ -12,7 +12,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "komparediff2_export.h"
 #include "marker.h"
 // Qt
-#include <QVector>
+#include <QList>
 #include <QString>
 // Std
 #include <memory>
@@ -50,9 +50,9 @@ private:
     std::unique_ptr<DifferenceStringPrivate> const d_ptr;
 };
 
-using DifferenceStringList =              QVector<DifferenceString*>;
-using DifferenceStringListIterator =      QVector<DifferenceString*>::iterator;
-using DifferenceStringListConstIterator = QVector<DifferenceString*>::const_iterator;
+using DifferenceStringList =              QList<DifferenceString*>;
+using DifferenceStringListIterator =      QList<DifferenceString*>::iterator;
+using DifferenceStringListConstIterator = QList<DifferenceString*>::const_iterator;
 
 }
 

@@ -16,14 +16,17 @@ SPDX-License-Identifier: GPL-2.0-or-later
 class QTextDecoder;
 class QTextCodec;
 
+namespace KompareDiff2 {
 class DiffSettings;
+}
 
 class KompareProcess : public KProcess
 {
     Q_OBJECT
 
 public:
-    KompareProcess(DiffSettings* diffSettings, enum KompareDiff2::DiffMode mode, const QString& source,
+    KompareProcess(KompareDiff2::DiffSettings* diffSettings,
+                   enum KompareDiff2::DiffMode mode, const QString& source,
                    const QString& destination, const QString& directory = QString(), enum KompareDiff2::Mode = KompareDiff2::UnknownMode);
     ~KompareProcess() override;
 
@@ -46,7 +49,7 @@ protected Q_SLOTS:
     void slotFinished(int, QProcess::ExitStatus);
 
 private:
-    DiffSettings*          m_diffSettings;
+    KompareDiff2::DiffSettings* m_diffSettings;
     enum KompareDiff2::DiffMode m_mode;
     const QString*         m_customString; // Used when a comparison between a file and a string is requested
     QString                m_stdout;

@@ -46,7 +46,8 @@ static QString constructRelativePath(const QString& from, const QString& to)
 }
 }
 
-KompareProcess::KompareProcess(DiffSettings* diffSettings, KompareDiff2::DiffMode diffMode, const QString& source, const QString& destination, const QString& dir, KompareDiff2::Mode mode)
+KompareProcess::KompareProcess(KompareDiff2::DiffSettings* diffSettings,
+                               KompareDiff2::DiffMode diffMode, const QString& source, const QString& destination, const QString& dir, KompareDiff2::Mode mode)
     : KProcess(),
       m_diffSettings(diffSettings),
       m_mode(diffMode),

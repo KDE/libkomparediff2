@@ -21,11 +21,11 @@ class QAction;
 class QTemporaryFile;
 class QTextCodec;
 
-class DiffSettings;
 class KompareProcess;
 
 namespace KompareDiff2
 {
+class DiffSettings;
 class DiffModelList;
 class DiffModel;
 class Difference;

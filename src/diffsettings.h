@@ -16,6 +16,8 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 class KConfig;
 
+namespace KompareDiff2 {
+
 /**
  * @class DiffSettings diffsettings.h <KompareDiff2/DiffSettings>
  *
@@ -34,7 +36,7 @@ public:
 public:
     QString m_diffProgram;
     int m_linesOfContext;
-    KompareDiff2::Format m_format;
+    Format m_format;
     bool m_largeFiles;                           // -H
     bool m_ignoreWhiteSpace;                     // -b
     bool m_ignoreAllWhiteSpace;                  // -w
@@ -56,5 +58,7 @@ public:
     QString m_excludeFilesFileURL;               // The filename to -X
     QStringList m_excludeFilesFileHistoryList;   // The history list of filenames
 };
+
+}
 
 #endif

@@ -7,14 +7,17 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "diffsettings.h"
 
+// KF
 #include <KConfig>
 #include <KConfigGroup>
-
+// Qt
 #include <QWidget>
+
+namespace KompareDiff2 {
 
 DiffSettings::DiffSettings()
     : m_linesOfContext(0),
-      m_format(KompareDiff2::Unified),
+      m_format(Unified),
       m_largeFiles(false),
       m_ignoreWhiteSpace(false),
       m_ignoreAllWhiteSpace(false),
@@ -56,7 +59,7 @@ void DiffSettings::loadSettings(KConfig* config)
     m_recursive                      = group.readEntry("CompareRecursively", true);
     m_newFiles                       = group.readEntry("NewFiles", true);
 
-    m_format = static_cast<KompareDiff2::Format>(group.readEntry("Format", (int) KompareDiff2::Unified));
+    m_format = static_cast<Format>(group.readEntry("Format", static_cast<int>(Unified)));
 
     KConfigGroup group2(config, "Exclude File Options");
     m_excludeFilePattern             = group2.readEntry("Pattern", false);
@@ -95,4 +98,6 @@ void DiffSettings::saveSettings(KConfig* config)
     group2.writeEntry("FileHistoryList",    m_excludeFilesFileHistoryList);
 
     config->sync();
+}
+
 }

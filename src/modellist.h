@@ -22,10 +22,9 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 class KActionCollection;
 
-class DiffSettings;
-
 namespace KompareDiff2
 {
+class DiffSettings;
 class ModelListPrivate;
 
 /**

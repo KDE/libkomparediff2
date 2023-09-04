@@ -39,7 +39,7 @@ public:
     unsigned int height() const { return m_height; };
 
     /** Debug method  to check if the table is properly filled */
-    void dumpLevenshteinTable(void);
+    void dumpLevenshteinTable();
 
     /**
      * This calculates the levenshtein distance of 2 sequences.
@@ -47,7 +47,7 @@ public:
      */
     unsigned int createTable(SequencePair* sequences);
 
-    void createListsOfMarkers(void);
+    void createListsOfMarkers();
     int chooseRoute(int c1, int c2, int c3, int current);
 
 protected:

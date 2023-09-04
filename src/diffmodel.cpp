@@ -401,7 +401,7 @@ void DiffModel::setDiffIndex(int diffIndex)
     d->diffIndex = diffIndex;
 }
 
-bool DiffModel::hasUnsavedChanges(void) const
+bool DiffModel::hasUnsavedChanges() const
 {
     Q_D(const DiffModel);
 

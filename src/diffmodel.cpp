@@ -243,70 +243,70 @@ Difference* DiffModel::nextDifference()
     return d->selectedDifference;
 }
 
-const QString DiffModel::source() const
+QString DiffModel::source() const
 {
     Q_D(const DiffModel);
 
     return d->source;
 }
 
-const QString DiffModel::destination() const
+QString DiffModel::destination() const
 {
     Q_D(const DiffModel);
 
     return d->destination;
 }
 
-const QString DiffModel::sourceFile() const
+QString DiffModel::sourceFile() const
 {
     Q_D(const DiffModel);
 
     return d->sourceFile;
 }
 
-const QString DiffModel::destinationFile() const
+QString DiffModel::destinationFile() const
 {
     Q_D(const DiffModel);
 
     return d->destinationFile;
 }
 
-const QString DiffModel::sourcePath() const
+QString DiffModel::sourcePath() const
 {
     Q_D(const DiffModel);
 
     return d->sourcePath;
 }
 
-const QString DiffModel::destinationPath() const
+QString DiffModel::destinationPath() const
 {
     Q_D(const DiffModel);
 
     return d->destinationPath;
 }
 
-const QString DiffModel::sourceTimestamp() const
+QString DiffModel::sourceTimestamp() const
 {
     Q_D(const DiffModel);
 
     return d->sourceTimestamp;
 }
 
-const QString DiffModel::destinationTimestamp() const
+QString DiffModel::destinationTimestamp() const
 {
     Q_D(const DiffModel);
 
     return d->destinationTimestamp;
 }
 
-const QString DiffModel::sourceRevision() const
+QString DiffModel::sourceRevision() const
 {
     Q_D(const DiffModel);
 
     return d->sourceRevision;
 }
 
-const QString DiffModel::destinationRevision() const
+QString DiffModel::destinationRevision() const
 {
     Q_D(const DiffModel);
 

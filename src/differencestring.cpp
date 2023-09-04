@@ -38,21 +38,21 @@ bool DifferenceString::operator==(const DifferenceString& ks) const
     return (*d == *ks.d_ptr);
 }
 
-const QString& DifferenceString::string() const
+QString DifferenceString::string() const
 {
     Q_D(const DifferenceString);
 
     return d->string;
 }
 
-const QString& DifferenceString::conflictString() const
+QString DifferenceString::conflictString() const
 {
     Q_D(const DifferenceString);
 
     return d->conflict;
 }
 
-const MarkerList& DifferenceString::markerList() const
+MarkerList DifferenceString::markerList() const
 {
     Q_D(const DifferenceString);
 

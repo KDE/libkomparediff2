@@ -64,16 +64,16 @@ public:
     Difference* prevDifference();
     Difference* nextDifference();
 
-    const QString source() const;
-    const QString destination() const;
-    const QString sourceFile() const;
-    const QString destinationFile() const;
-    const QString sourcePath() const;
-    const QString destinationPath() const;
-    const QString sourceTimestamp() const;
-    const QString destinationTimestamp() const;
-    const QString sourceRevision() const;
-    const QString destinationRevision() const;
+    QString source() const;
+    QString destination() const;
+    QString sourceFile() const;
+    QString destinationFile() const;
+    QString sourcePath() const;
+    QString destinationPath() const;
+    QString sourceTimestamp() const;
+    QString destinationTimestamp() const;
+    QString sourceRevision() const;
+    QString destinationRevision() const;
 
     void setSourceFile(const QString &path);
     void setDestinationFile(const QString &path);

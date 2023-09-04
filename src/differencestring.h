@@ -37,9 +37,9 @@ public:
 public:
     bool operator==(const DifferenceString& ks) const;
 
-    const QString& string() const;
-    const QString& conflictString() const;
-    const MarkerList& markerList() const;
+    QString string() const;
+    QString conflictString() const;
+    MarkerList markerList() const;
     void setString(const QString& string);
     void setConflictString(const QString& conflict);
     void setMarkerList(const MarkerList& markerList);

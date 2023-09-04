@@ -20,14 +20,14 @@ DiffHunk::DiffHunk(int sourceLine, int destinationLine, const QString& function,
 
 DiffHunk::~DiffHunk() = default;
 
-const DifferenceList& DiffHunk::differences() const
+DifferenceList DiffHunk::differences() const
 {
     Q_D(const DiffHunk);
 
     return d->differences;
 };
 
-const QString& DiffHunk::function() const
+QString DiffHunk::function() const
 {
     Q_D(const DiffHunk);
 

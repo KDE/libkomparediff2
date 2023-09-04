@@ -56,8 +56,8 @@ public:
     DifferenceString* sourceLineAt(int i) const;
     DifferenceString* destinationLineAt(int i) const;
 
-    const DifferenceStringList sourceLines() const;
-    const DifferenceStringList destinationLines() const;
+    DifferenceStringList sourceLines() const;
+    DifferenceStringList destinationLines() const;
 
     bool hasConflict() const;
     void setConflict(bool conflicts);

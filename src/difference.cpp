@@ -70,14 +70,14 @@ DifferenceString* Difference::destinationLineAt(int i) const
     return d->destinationLines[i];
 }
 
-const DifferenceStringList Difference::sourceLines() const
+DifferenceStringList Difference::sourceLines() const
 {
     Q_D(const Difference);
 
     return d->sourceLines;
 }
 
-const DifferenceStringList Difference::destinationLines() const
+DifferenceStringList Difference::destinationLines() const
 {
     Q_D(const Difference);
 

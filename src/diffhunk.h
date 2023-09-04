@@ -32,8 +32,8 @@ public:
     DiffHunk(int sourceLine, int destinationLine, const QString& function = QString(), Type type = Normal);
     ~DiffHunk();
 
-    const DifferenceList& differences() const;
-    const QString& function() const;
+    DifferenceList differences() const;
+    QString function() const;
 
     int sourceLineNumber() const;
     int destinationLineNumber() const;

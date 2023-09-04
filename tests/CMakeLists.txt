@@ -29,6 +29,7 @@ target_sources(interactiveDiffTest PRIVATE
     ${LIB_SOURCE_DIR}/differencestring.cpp
     ${LIB_SOURCE_DIR}/diffhunk.cpp
     ${LIB_SOURCE_DIR}/diffmodel.cpp
+    ${LIB_SOURCE_DIR}/diffmodel_p.cpp
     ${LIB_SOURCE_DIR}/diffmodellist.cpp
     ${LIB_SOURCE_DIR}/diffparser.cpp
     ${LIB_SOURCE_DIR}/info.cpp

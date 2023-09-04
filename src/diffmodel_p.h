@@ -9,6 +9,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #define KOMPAREDIFF2_DIFFMODEL_P_H
 
 // lib
+#include "diffmodel.h"
 #include "diffhunk.h"
 
 namespace KompareDiff2
@@ -23,6 +24,13 @@ public:
 
 public:
     DiffModelPrivate& operator=(const DiffModelPrivate& other);
+
+    void splitSourceInPathAndFileName();
+    void splitDestinationInPathAndFileName();
+
+    static void computeDiffStats(Difference* diff);
+    static void processStartMarker(Difference* diff, const QStringList& lines,
+                                   MarkerListConstIterator& currentMarker, int& currentListLine, bool isSource);
 
 public:
     QString source;

@@ -21,8 +21,10 @@ using namespace KompareDiff2;
 DiffModel::DiffModel(const QString& source, const QString& destination)
     : d_ptr(new DiffModelPrivate(source, destination))
 {
-    splitSourceInPathAndFileName();
-    splitDestinationInPathAndFileName();
+    Q_D(DiffModel);
+
+    d->splitSourceInPathAndFileName();
+    d->splitDestinationInPathAndFileName();
 }
 
 DiffModel::DiffModel()
@@ -31,40 +33,6 @@ DiffModel::DiffModel()
 }
 
 DiffModel::~DiffModel() = default;
-
-void DiffModel::splitSourceInPathAndFileName()
-{
-    Q_D(DiffModel);
-
-    int pos;
-
-    if ((pos = d->source.lastIndexOf(QLatin1Char('/'))) >= 0)
-        d->sourcePath = d->source.mid(0, pos + 1);
-
-    if ((pos = d->source.lastIndexOf(QLatin1Char('/'))) >= 0)
-        d->sourceFile = d->source.mid(pos + 1, d->source.length() - pos);
-    else
-        d->sourceFile = d->source;
-
-    qCDebug(LIBKOMPAREDIFF2) << d->source << " was split into " << d->sourcePath << " and " << d->sourceFile;
-}
-
-void DiffModel::splitDestinationInPathAndFileName()
-{
-    Q_D(DiffModel);
-
-    int pos;
-
-    if ((pos = d->destination.lastIndexOf(QLatin1Char('/'))) >= 0)
-        d->destinationPath = d->destination.mid(0, pos + 1);
-
-    if ((pos = d->destination.lastIndexOf(QLatin1Char('/'))) >= 0)
-        d->destinationFile = d->destination.mid(pos + 1, d->destination.length() - pos);
-    else
-        d->destinationFile = d->destination;
-
-    qCDebug(LIBKOMPAREDIFF2) << d->destination << " was split into " << d->destinationPath << " and " << d->destinationFile;
-}
 
 DiffModel& DiffModel::operator=(const DiffModel& model)
 {
@@ -350,7 +318,7 @@ void DiffModel::setSourceFile(const QString &path)
     Q_D(DiffModel);
 
     d->source = path;
-    splitSourceInPathAndFileName();
+    d->splitSourceInPathAndFileName();
 }
 
 void DiffModel::setDestinationFile(const QString &path)
@@ -358,7 +326,7 @@ void DiffModel::setDestinationFile(const QString &path)
     Q_D(DiffModel);
 
     d->destination = path;
-    splitDestinationInPathAndFileName();
+    d->splitDestinationInPathAndFileName();
 }
 
 void DiffModel::setSourceTimestamp(const QString &timestamp)
@@ -677,12 +645,12 @@ QPair<QList<Difference*>, QList<Difference*> > DiffModel::linesChanged(const QSt
         currentDestinationListLine += linesToSkip;
         Difference* diff = new Difference(sourceLineNumber + currentSourceListLine, destinationLineNumber + currentDestinationListLine);
         if (nextSourceListLine == currentSourceListLine) {
-            processStartMarker(diff, sourceLines, sourceMarkerIter, currentSourceListLine, true);
+            DiffModelPrivate::processStartMarker(diff, sourceLines, sourceMarkerIter, currentSourceListLine, true);
         }
         if (nextDestinationListLine == currentDestinationListLine) {
-            processStartMarker(diff, destinationLines, destinationMarkerIter, currentDestinationListLine, false);
+            DiffModelPrivate::processStartMarker(diff, destinationLines, destinationMarkerIter, currentDestinationListLine, false);
         }
-        computeDiffStats(diff);
+        DiffModelPrivate::computeDiffStats(diff);
         Q_ASSERT(diff->type() != Difference::Unchanged);
         diff->applyQuietly(true);
         diff->setTrackingDestinationLineNumber(diff->destinationLineNumber());
@@ -695,37 +663,6 @@ QPair<QList<Difference*>, QList<Difference*> > DiffModel::linesChanged(const QSt
         (*insertPosition)->setTrackingDestinationLineNumber((*insertPosition)->trackingDestinationLineNumber() + (newLines.size() - oldLines.size()));
     }
     return qMakePair(inserted, removed);
-}
-
-// Some common computing after diff contents have been filled.
-void DiffModel::computeDiffStats(Difference* diff)
-{
-    if (diff->sourceLineCount() > 0 && diff->destinationLineCount() > 0) {
-        diff->setType(Difference::Change);
-    } else if (diff->sourceLineCount() > 0) {
-        diff->setType(Difference::Delete);
-    } else if (diff->destinationLineCount() > 0) {
-        diff->setType(Difference::Insert);
-    }
-    diff->determineInlineDifferences();
-}
-
-// Helper method to extract duplicate code from DiffModel::linesChanged
-void DiffModel::processStartMarker(Difference* diff, const QStringList& lines, MarkerListConstIterator& currentMarker, int& currentListLine, bool isSource)
-{
-    Q_ASSERT((*currentMarker)->type() == Marker::Start);
-    ++currentMarker;
-    Q_ASSERT((*currentMarker)->type() == Marker::End);
-    int nextDestinationListLine = (*currentMarker)->offset();
-    for (; currentListLine < nextDestinationListLine; ++currentListLine) {
-        if (isSource) {
-            diff->addSourceLine(lines.at(currentListLine));
-        } else {
-            diff->addDestinationLine(lines.at(currentListLine));
-        }
-    }
-    ++currentMarker;
-    currentListLine = nextDestinationListLine;
 }
 
 #include "moc_diffmodel.cpp"

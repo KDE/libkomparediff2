@@ -106,12 +106,6 @@ public:
      */
     QPair<QList<Difference*>, QList<Difference*> > linesChanged(const QStringList& oldLines, const QStringList& newLines, int editLineNumber);
 
-private:
-    void splitSourceInPathAndFileName();
-    void splitDestinationInPathAndFileName();
-    void computeDiffStats(Difference* diff);
-    void processStartMarker(Difference* diff, const QStringList& lines, MarkerListConstIterator& currentMarker, int& currentListLine, bool isSource);
-
 private Q_SLOTS:
     void slotDifferenceApplied(Difference* diff);
 

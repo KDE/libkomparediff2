@@ -13,7 +13,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "komparediff2_export.h"
 
 /**
- * Diff2 namespace
+ * KompareDiff2 namespace
  */
 namespace KompareDiff2
 {
@@ -41,6 +41,6 @@ public:
 
 }; // End of class DiffModelList
 
-} // End of Namespace Diff2
+} // End of Namespace KompareDiff2
 
 #endif // KOMPAREDIFF2_DIFFMODELLIST_H

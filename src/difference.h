@@ -81,7 +81,7 @@ public:
     QString recreateDifference() const;
 
 Q_SIGNALS:
-    void differenceApplied(Difference*);
+    void differenceApplied(KompareDiff2::Difference*);
 
 private:
     Q_DECLARE_PRIVATE(Difference)

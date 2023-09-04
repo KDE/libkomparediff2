@@ -8,27 +8,28 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef KOMPAREDIFF2_DIFFSETTINGS_H
 #define KOMPAREDIFF2_DIFFSETTINGS_H
 
+// lib
+#include "komparediff2_export.h"
+#include "global.h"
+// Qt
 #include <QStringList>
 
-#include "global.h"
-#include "settingsbase.h"
-#include "komparediff2_export.h"
+class KConfig;
 
 /**
  * @class DiffSettings diffsettings.h <KompareDiff2/DiffSettings>
  *
  * The settings for a diff.
  */
-class KOMPAREDIFF2_EXPORT  DiffSettings : public SettingsBase
+class KOMPAREDIFF2_EXPORT  DiffSettings
 {
-    Q_OBJECT
 public:
-    explicit DiffSettings(QWidget* parent);
-    ~DiffSettings() override;
+    DiffSettings();
+    ~DiffSettings();
+
 public:
-    // some virtual functions that will be overloaded from the base class
-    void loadSettings(KConfig* config) override;
-    void saveSettings(KConfig* config) override;
+    void loadSettings(KConfig* config);
+    void saveSettings(KConfig* config);
 
 public:
     QString m_diffProgram;

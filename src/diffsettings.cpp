@@ -12,9 +12,8 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <QWidget>
 
-DiffSettings::DiffSettings(QWidget* parent)
-    : SettingsBase(parent),
-      m_linesOfContext(0),
+DiffSettings::DiffSettings()
+    : m_linesOfContext(0),
       m_format(KompareDiff2::Unified),
       m_largeFiles(false),
       m_ignoreWhiteSpace(false),
@@ -97,5 +96,3 @@ void DiffSettings::saveSettings(KConfig* config)
 
     config->sync();
 }
-
-#include "moc_diffsettings.cpp"

@@ -30,7 +30,6 @@ target_sources(komparediff2 PRIVATE
     diffhunk.cpp
     diffsettings.cpp
     info.cpp
-    settingsbase.cpp
     parser.cpp
     parserbase.cpp
     cvsdiffparser.cpp
@@ -84,7 +83,6 @@ ecm_generate_headers(komparediff2_CamelCase_HEADERS
         Global
         Marker
         ModelList
-        SettingsBase
     PREFIX KompareDiff2
     REQUIRED_HEADERS komparediff2_HEADERS
 )

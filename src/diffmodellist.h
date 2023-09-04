@@ -37,7 +37,7 @@ public:
     }
 
 public:
-    virtual void sort();
+    void sort();
 
 }; // End of class DiffModelList
 

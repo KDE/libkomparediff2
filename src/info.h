@@ -1,16 +1,16 @@
 /*
-SPDX-FileCopyrightText: 2001-2003 Otto Bruggeman <otto.bruggeman@home.nl>
-SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
+    SPDX-FileCopyrightText: 2001-2003 Otto Bruggeman <otto.bruggeman@home.nl>
+    SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #ifndef KOMPAREDIFF2_INFO_H
 #define KOMPAREDIFF2_INFO_H
 
 // lib
-#include "komparediff2_export.h"
 #include "global.h"
+#include "komparediff2_export.h"
 // Qt
 #include <QUrl>
 
@@ -28,35 +28,33 @@ namespace KompareDiff2
 class KOMPAREDIFF2_EXPORT Info
 {
 public:
-    Info(
-        enum Mode _mode = UnknownMode,
-        enum DiffMode _diffMode = UnknownDiffMode,
-        enum Format _format = UnknownFormat,
-        enum Generator _generator = UnknownGenerator,
-        const QUrl& _source = QUrl(),
-        const QUrl& _destination = QUrl(),
-        const QString& _localSource = QString(),
-        const QString& _localDestination = QString(),
-        QTemporaryDir* _sourceQTempDir = nullptr,
-        QTemporaryDir* _destinationQTempDir = nullptr,
-        uint _depth = 0,
-        bool _applied = true
-    );
+    Info(Mode _mode = UnknownMode,
+         DiffMode _diffMode = UnknownDiffMode,
+         Format _format = UnknownFormat,
+         Generator _generator = UnknownGenerator,
+         const QUrl &_source = QUrl(),
+         const QUrl &_destination = QUrl(),
+         const QString &_localSource = QString(),
+         const QString &_localDestination = QString(),
+         QTemporaryDir *_sourceQTempDir = nullptr,
+         QTemporaryDir *_destinationQTempDir = nullptr,
+         uint _depth = 0,
+         bool _applied = true);
 
     void swapSourceWithDestination();
 
-    enum Mode      mode;
-    enum DiffMode  diffMode;
-    enum Format    format;
-    enum Generator generator;
-    QUrl           source;
-    QUrl           destination;
-    QString        localSource;
-    QString        localDestination;
-    QTemporaryDir*      sourceQTempDir;
-    QTemporaryDir*      destinationQTempDir;
-    uint           depth;
-    bool           applied;
+    Mode mode;
+    DiffMode diffMode;
+    Format format;
+    Generator generator;
+    QUrl source;
+    QUrl destination;
+    QString localSource;
+    QString localDestination;
+    QTemporaryDir *sourceQTempDir;
+    QTemporaryDir *destinationQTempDir;
+    uint depth;
+    bool applied;
 };
 
 } // End of namespace KompareDiff2

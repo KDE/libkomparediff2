@@ -1,22 +1,26 @@
 /*
-SPDX-FileCopyrightText: 2011 Dmitry Risenberg <dmitry.risenberg@gmail.com>
+    SPDX-FileCopyrightText: 2011 Dmitry Risenberg <dmitry.risenberg@gmail.com>
 
-SPDX-License-Identifier: LGPL-2.0-or-later
+    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
 #include "levenshteintest.h"
 
-#include <QTest>
+// lib
 #include "difference.h"
 #include "differencestringpair.h"
 #include "levenshteintable.h"
 #include "stringlistpair.h"
+// Qt
+#include <QTest>
 
 using namespace KompareDiff2;
 
-namespace QTest {
+namespace QTest
+{
 
-template<> char* toString(const Marker& marker)
+template<>
+char *toString(const Marker &marker)
 {
     QByteArray result = "Marker(";
     if (marker.type() == Marker::Start) {
@@ -33,9 +37,9 @@ template<> char* toString(const Marker& marker)
 
 void LevenshteinTest::testFirstEmptyString()
 {
-    DifferenceString* string1 = new DifferenceString(QString("12345"));
-    DifferenceString* string2 = new DifferenceString(QString());
-    DifferenceStringPair* pair = new DifferenceStringPair(string1, string2);
+    DifferenceString *string1 = new DifferenceString(QString("12345"));
+    DifferenceString *string2 = new DifferenceString(QString());
+    DifferenceStringPair *pair = new DifferenceStringPair(string1, string2);
     LevenshteinTable<DifferenceStringPair> table;
     table.createTable(pair);
     table.createListsOfMarkers();
@@ -53,9 +57,9 @@ void LevenshteinTest::testFirstEmptyString()
 
 void LevenshteinTest::testSecondEmptyString()
 {
-    DifferenceString* string1 = new DifferenceString(QString());
-    DifferenceString* string2 = new DifferenceString(QString("12345"));
-    DifferenceStringPair* pair = new DifferenceStringPair(string1, string2);
+    DifferenceString *string1 = new DifferenceString(QString());
+    DifferenceString *string2 = new DifferenceString(QString("12345"));
+    DifferenceStringPair *pair = new DifferenceStringPair(string1, string2);
     LevenshteinTable<DifferenceStringPair> table;
     table.createTable(pair);
     table.createListsOfMarkers();
@@ -71,12 +75,11 @@ void LevenshteinTest::testSecondEmptyString()
     }
 }
 
-
 void LevenshteinTest::testDifferenceStrings()
 {
-    DifferenceString* string1 = new DifferenceString(QString("aaabcddefghik"));
-    DifferenceString* string2 = new DifferenceString(QString("aabcefghijk"));
-    DifferenceStringPair* pair = new DifferenceStringPair(string1, string2);
+    DifferenceString *string1 = new DifferenceString(QString("aaabcddefghik"));
+    DifferenceString *string2 = new DifferenceString(QString("aabcefghijk"));
+    DifferenceStringPair *pair = new DifferenceStringPair(string1, string2);
     LevenshteinTable<DifferenceStringPair> table;
     table.createTable(pair);
     table.createListsOfMarkers();
@@ -95,10 +98,21 @@ void LevenshteinTest::testDifferenceStrings()
 void LevenshteinTest::testStringLists()
 {
     QStringList list1;
-    list1 << "delete1" << "line1" << "line2" << "line3" << "delete2" << "delete3" << "line4";
+    list1 << "delete1"
+          << "line1"
+          << "line2"
+          << "line3"
+          << "delete2"
+          << "delete3"
+          << "line4";
     QStringList list2;
-    list2 << "line1" << "line2" << "line3" << "insert1" << "line4" << "insert2";
-    StringListPair* pair = new StringListPair(list1, list2);
+    list2 << "line1"
+          << "line2"
+          << "line3"
+          << "insert1"
+          << "line4"
+          << "insert2";
+    StringListPair *pair = new StringListPair(list1, list2);
     LevenshteinTable<StringListPair> table;
     table.createTable(pair);
     table.createListsOfMarkers();
@@ -118,10 +132,16 @@ void LevenshteinTest::testStringLists()
 void LevenshteinTest::testSmth()
 {
     QStringList list1;
-    list1 << "insert1\n" << "newline1\n" << "newline2\n" << "insert2\n";;
+    list1 << "insert1\n"
+          << "newline1\n"
+          << "newline2\n"
+          << "insert2\n";
+    ;
     QStringList list2;
-    list2 << "delete1\n" << "efgh\n" << "delete2\n";
-    StringListPair* pair = new StringListPair(list1, list2);
+    list2 << "delete1\n"
+          << "efgh\n"
+          << "delete2\n";
+    StringListPair *pair = new StringListPair(list1, list2);
     LevenshteinTable<StringListPair> table;
     table.createTable(pair);
     table.createListsOfMarkers();
@@ -132,12 +152,11 @@ void LevenshteinTest::testSmth()
         QCOMPARE(*pair->markerListFirst()[i], *markersFirstExpected[i]);
     }
     MarkerList markersSecondExpected;
-    markersSecondExpected << new Marker(Marker::Start, 0)  << new Marker(Marker::End, 3);
+    markersSecondExpected << new Marker(Marker::Start, 0) << new Marker(Marker::End, 3);
     for (int i = 0; i < markersSecondExpected.size(); ++i) {
         QCOMPARE(*pair->markerListSecond()[i], *markersSecondExpected[i]);
     }
 }
-
 
 QTEST_GUILESS_MAIN(LevenshteinTest);
 

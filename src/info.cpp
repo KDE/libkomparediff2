@@ -1,19 +1,26 @@
 /*
-SPDX-FileCopyrightText: 2001-2003 Otto Bruggeman <otto.bruggeman@home.nl>
-SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
+    SPDX-FileCopyrightText: 2001-2003 Otto Bruggeman <otto.bruggeman@home.nl>
+    SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "info.h"
 
 using namespace KompareDiff2;
 
-Info::Info(Mode _mode, DiffMode _diffMode, Format _format, Generator _generator,
-           const QUrl& _source, const QUrl& _destination,
-           const QString& _localSource, const QString& _localDestination,
-           QTemporaryDir* _sourceQTempDir, QTemporaryDir* _destinationQTempDir,
-           uint _depth, bool _applied)
+Info::Info(Mode _mode,
+           DiffMode _diffMode,
+           Format _format,
+           Generator _generator,
+           const QUrl &_source,
+           const QUrl &_destination,
+           const QString &_localSource,
+           const QString &_localDestination,
+           QTemporaryDir *_sourceQTempDir,
+           QTemporaryDir *_destinationQTempDir,
+           uint _depth,
+           bool _applied)
     : mode(_mode)
     , diffMode(_diffMode)
     , format(_format)
@@ -29,7 +36,6 @@ Info::Info(Mode _mode, DiffMode _diffMode, Format _format, Generator _generator,
 {
 }
 
-
 void Info::swapSourceWithDestination()
 {
     QUrl url = source;
@@ -40,7 +46,7 @@ void Info::swapSourceWithDestination()
     localSource = localDestination;
     localDestination = string;
 
-    QTemporaryDir* tmpDir = sourceQTempDir;
+    QTemporaryDir *tmpDir = sourceQTempDir;
     sourceQTempDir = destinationQTempDir;
     destinationQTempDir = tmpDir;
 }

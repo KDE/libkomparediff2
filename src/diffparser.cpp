@@ -1,7 +1,7 @@
 /*
-SPDX-FileCopyrightText: 2002-2004 Otto Bruggeman <otto.bruggeman@home.nl>
+    SPDX-FileCopyrightText: 2002-2004 Otto Bruggeman <otto.bruggeman@home.nl>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "diffparser.h"
@@ -13,7 +13,8 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 using namespace KompareDiff2;
 
-DiffParser::DiffParser(const ModelList* list, const QStringList& diff) : ParserBase(list, diff)
+DiffParser::DiffParser(const ModelList *list, const QStringList &diff)
+    : ParserBase(list, diff)
 {
     // The regexps needed for context diff parsing, the rest is the same as in parserbase.cpp
     m_contextDiffHeader1.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("\\*\\*\\* ([^\\t]+)(\\t([^\\t]+))?\\n")));
@@ -22,7 +23,7 @@ DiffParser::DiffParser(const ModelList* list, const QStringList& diff) : ParserB
 
 DiffParser::~DiffParser() = default;
 
-enum Format DiffParser::determineFormat()
+Format DiffParser::determineFormat()
 {
     qCDebug(KOMPAREDIFF2_LOG) << "Determining the format of the diff Diff" << m_diffLines;
 
@@ -34,31 +35,21 @@ enum Format DiffParser::determineFormat()
 
     QStringList::ConstIterator it = m_diffLines.begin();
 
-    while (it != m_diffLines.end())
-    {
+    while (it != m_diffLines.end()) {
         qCDebug(KOMPAREDIFF2_LOG) << (*it);
-        if (it->indexOf(normalRE, 0) == 0)
-        {
+        if (it->indexOf(normalRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Normal diff...";
             return Normal;
-        }
-        else if (it->indexOf(unifiedRE, 0) == 0)
-        {
+        } else if (it->indexOf(unifiedRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Unified diff...";
             return Unified;
-        }
-        else if (it->indexOf(contextRE, 0) == 0)
-        {
+        } else if (it->indexOf(contextRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Context diff...";
             return Context;
-        }
-        else if (it->indexOf(rcsRE, 0) == 0)
-        {
+        } else if (it->indexOf(rcsRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from an RCS diff...";
             return RCS;
-        }
-        else if (it->indexOf(edRE, 0) == 0)
-        {
+        } else if (it->indexOf(edRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from an ED diff...";
             return Ed;
         }

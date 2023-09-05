@@ -1,7 +1,7 @@
 /*
-SPDX-FileCopyrightText: 2011 Dmitry Risenberg <dmitry.risenberg@gmail.com>
+    SPDX-FileCopyrightText: 2011 Dmitry Risenberg <dmitry.risenberg@gmail.com>
 
-SPDX-License-Identifier: LGPL-2.0-or-later
+    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
 #include "stringlistpair.h"
@@ -31,17 +31,17 @@ MarkerList StringListPair::markerListSecond() const
     return m_markersSecond;
 }
 
-void StringListPair::prependFirst(Marker* marker)
+void StringListPair::prependFirst(Marker *marker)
 {
     m_markersFirst.prepend(marker);
 }
 
-void StringListPair::prependSecond(Marker* marker)
+void StringListPair::prependSecond(Marker *marker)
 {
     m_markersSecond.prepend(marker);
 }
 
-StringListPair::StringListPair(const QStringList& first, const QStringList& second)
+StringListPair::StringListPair(const QStringList &first, const QStringList &second)
     : m_first(first)
     , m_second(second)
     // Do not forget about 1 virtual element - see LevenshteinTable
@@ -50,7 +50,6 @@ StringListPair::StringListPair(const QStringList& first, const QStringList& seco
     , m_hashesFirst(m_lengthFirst)
     , m_hashesSecond(m_lengthSecond)
 {
-
     m_hashesFirst[0] = qHash(QString());
     for (unsigned int i = 1; i < m_lengthFirst; ++i) {
         m_hashesFirst[i] = qHash(first[i - 1]);

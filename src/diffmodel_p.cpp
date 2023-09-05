@@ -1,8 +1,8 @@
 /*
-SPDX-FileCopyrightText: 2001-2009 Otto Bruggeman <bruggie@gmail.com>
-SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
+    SPDX-FileCopyrightText: 2001-2009 Otto Bruggeman <bruggie@gmail.com>
+    SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "diffmodel_p.h"
@@ -43,7 +43,7 @@ void DiffModelPrivate::splitDestinationInPathAndFileName()
 }
 
 // Some common computing after diff contents have been filled.
-void DiffModelPrivate::computeDiffStats(Difference* diff)
+void DiffModelPrivate::computeDiffStats(Difference *diff)
 {
     if (diff->sourceLineCount() > 0 && diff->destinationLineCount() > 0) {
         diff->setType(Difference::Change);
@@ -56,8 +56,10 @@ void DiffModelPrivate::computeDiffStats(Difference* diff)
 }
 
 // Helper method to extract duplicate code from DiffModel::linesChanged
-void DiffModelPrivate::processStartMarker(Difference* diff, const QStringList& lines,
-                                          MarkerListConstIterator& currentMarker, int& currentListLine,
+void DiffModelPrivate::processStartMarker(Difference *diff,
+                                          const QStringList &lines,
+                                          MarkerListConstIterator &currentMarker,
+                                          int &currentListLine,
                                           bool isSource)
 {
     Q_ASSERT((*currentMarker)->type() == Marker::Start);

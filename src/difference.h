@@ -1,16 +1,16 @@
 /*
-SPDX-FileCopyrightText: 2001-2004,2009 Otto Bruggeman <bruggie@gmail.com>
-SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
+    SPDX-FileCopyrightText: 2001-2004,2009 Otto Bruggeman <bruggie@gmail.com>
+    SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #ifndef KOMPAREDIFF2_DIFFERENCE_H
 #define KOMPAREDIFF2_DIFFERENCE_H
 
 // lib
-#include "komparediff2_export.h"
 #include "differencestring.h"
+#include "komparediff2_export.h"
 // Qt
 #include <QObject>
 // Std
@@ -29,7 +29,12 @@ class KOMPAREDIFF2_EXPORT Difference : public QObject
 {
     Q_OBJECT
 public:
-    enum Type { Change, Insert, Delete, Unchanged };
+    enum Type {
+        Change,
+        Insert,
+        Delete,
+        Unchanged,
+    };
 
 public:
     Difference(int sourceLineNo, int destinationLineNo, int type = Difference::Unchanged);
@@ -53,8 +58,8 @@ public:
     int trackingDestinationLineEnd() const;
     void setTrackingDestinationLineNumber(int i);
 
-    DifferenceString* sourceLineAt(int i) const;
-    DifferenceString* destinationLineAt(int i) const;
+    DifferenceString *sourceLineAt(int i) const;
+    DifferenceString *destinationLineAt(int i) const;
 
     DifferenceStringList sourceLines() const;
     DifferenceStringList destinationLines() const;
@@ -81,18 +86,17 @@ public:
     QString recreateDifference() const;
 
 Q_SIGNALS:
-    void differenceApplied(KompareDiff2::Difference*);
+    void differenceApplied(KompareDiff2::Difference *);
 
 private:
     Q_DECLARE_PRIVATE(Difference)
     std::unique_ptr<DifferencePrivate> const d_ptr;
 };
 
-using DifferenceList =              QList<Difference*>;
-using DifferenceListIterator =      QList<Difference*>::iterator;
-using DifferenceListConstIterator = QList<Difference*>::const_iterator;
+using DifferenceList =              QList<Difference *>;
+using DifferenceListIterator =      QList<Difference *>::iterator;
+using DifferenceListConstIterator = QList<Difference *>::const_iterator;
 
 } // End of namespace KompareDiff2
 
 #endif
-

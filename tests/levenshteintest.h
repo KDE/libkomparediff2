@@ -1,12 +1,13 @@
 /*
-SPDX-FileCopyrightText: 2011 Dmitry Risenberg <dmitry.risenberg@gmail.com>
+    SPDX-FileCopyrightText: 2011 Dmitry Risenberg <dmitry.risenberg@gmail.com>
 
-SPDX-License-Identifier: LGPL-2.0-or-later
+    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
 #ifndef LEVENSHTEINTEST_H
 #define LEVENSHTEINTEST_H
 
+// Qt
 #include <QObject>
 
 class LevenshteinTest : public QObject

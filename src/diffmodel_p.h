@@ -1,16 +1,16 @@
 /*
-SPDX-FileCopyrightText: 2001-2004,2009 Otto Bruggeman <bruggie@gmail.com>
-SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
+    SPDX-FileCopyrightText: 2001-2004,2009 Otto Bruggeman <bruggie@gmail.com>
+    SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #ifndef KOMPAREDIFF2_DIFFMODEL_P_H
 #define KOMPAREDIFF2_DIFFMODEL_P_H
 
 // lib
-#include "diffmodel.h"
 #include "diffhunk.h"
+#include "diffmodel.h"
 
 namespace KompareDiff2
 {
@@ -19,18 +19,17 @@ class DiffModelPrivate
 {
 public:
     DiffModelPrivate() = default;
-    DiffModelPrivate(const QString& source, const QString& destination);
+    DiffModelPrivate(const QString &source, const QString &destination);
     ~DiffModelPrivate();
 
 public:
-    DiffModelPrivate& operator=(const DiffModelPrivate& other);
+    DiffModelPrivate &operator=(const DiffModelPrivate &other);
 
     void splitSourceInPathAndFileName();
     void splitDestinationInPathAndFileName();
 
-    static void computeDiffStats(Difference* diff);
-    static void processStartMarker(Difference* diff, const QStringList& lines,
-                                   MarkerListConstIterator& currentMarker, int& currentListLine, bool isSource);
+    static void computeDiffStats(Difference *diff);
+    static void processStartMarker(Difference *diff, const QStringList &lines, MarkerListConstIterator &currentMarker, int &currentListLine, bool isSource);
 
 public:
     QString source;
@@ -53,21 +52,19 @@ public:
 
     int appliedCount = 0;
 
-    int  diffIndex = 0;
-    Difference* selectedDifference = nullptr;
+    int diffIndex = 0;
+    Difference *selectedDifference = nullptr;
 
     bool blended = false;
 };
 
-inline
-DiffModelPrivate::DiffModelPrivate(const QString& source, const QString& destination)
+inline DiffModelPrivate::DiffModelPrivate(const QString &source, const QString &destination)
     : source(source)
     , destination(destination)
 {
 }
 
-inline
-DiffModelPrivate::~DiffModelPrivate()
+inline DiffModelPrivate::~DiffModelPrivate()
 {
     selectedDifference = nullptr;
 
@@ -75,8 +72,7 @@ DiffModelPrivate::~DiffModelPrivate()
     qDeleteAll(differences);
 }
 
-inline
-DiffModelPrivate& DiffModelPrivate::operator=(const DiffModelPrivate& other)
+inline DiffModelPrivate &DiffModelPrivate::operator=(const DiffModelPrivate &other)
 {
     source = other.source;
     sourcePath = other.sourcePath;

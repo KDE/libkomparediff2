@@ -1,7 +1,7 @@
 /*
-SPDX-FileCopyrightText: 2002-2004 Otto Bruggeman <otto.bruggeman@home.nl>
+    SPDX-FileCopyrightText: 2002-2004 Otto Bruggeman <otto.bruggeman@home.nl>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #ifndef KOMPAREDIFF2_PERFORCEPARSER_H
@@ -16,7 +16,7 @@ namespace KompareDiff2
 class PerforceParser : public ParserBase
 {
 public:
-    PerforceParser(const ModelList* list, const QStringList& diff);
+    PerforceParser(const ModelList *list, const QStringList &diff);
     ~PerforceParser() override;
 
 protected:
@@ -26,7 +26,7 @@ protected:
     bool parseUnifiedDiffHeader() override;
 
 protected:
-    enum Format determineFormat() override;
+    Format determineFormat() override;
 };
 
 } // End of namespace KompareDiff2

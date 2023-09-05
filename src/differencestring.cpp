@@ -1,8 +1,8 @@
 /*
-SPDX-FileCopyrightText: 2001-2004,2009 Otto Bruggeman <bruggie@gmail.com>
-SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
+    SPDX-FileCopyrightText: 2001-2004,2009 Otto Bruggeman <bruggie@gmail.com>
+    SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "differencestring.h"
@@ -17,21 +17,21 @@ DifferenceString::DifferenceString()
 //         qCDebug(KOMPAREDIFF2_LOG) << "DifferenceString::DifferenceString()";
 }
 
-DifferenceString::DifferenceString(const QString& string, const MarkerList& markerList)
+DifferenceString::DifferenceString(const QString &string, const MarkerList &markerList)
     : d_ptr(new DifferenceStringPrivate(string, markerList))
 {
 //         qCDebug(KOMPAREDIFF2_LOG) << "DifferenceString::DifferenceString( " << string << ", " << markerList << " )";
 }
 
-DifferenceString::DifferenceString(const DifferenceString& ds)
-    :d_ptr (new DifferenceStringPrivate(*ds.d_ptr))
+DifferenceString::DifferenceString(const DifferenceString &ds)
+    : d_ptr(new DifferenceStringPrivate(*ds.d_ptr))
 {
 //         qCDebug(KOMPAREDIFF2_LOG) << "DifferenceString::DifferenceString( const DifferenceString& " << ds << " )";
 }
 
 DifferenceString::~DifferenceString() = default;
 
-bool DifferenceString::operator==(const DifferenceString& ks) const
+bool DifferenceString::operator==(const DifferenceString &ks) const
 {
     Q_D(const DifferenceString);
 
@@ -59,7 +59,7 @@ MarkerList DifferenceString::markerList() const
     return d->markerList;
 }
 
-void DifferenceString::setString(const QString& string)
+void DifferenceString::setString(const QString &string)
 {
     Q_D(DifferenceString);
 
@@ -67,21 +67,21 @@ void DifferenceString::setString(const QString& string)
     d->calculateHash();
 }
 
-void DifferenceString::setConflictString(const QString& conflict)
+void DifferenceString::setConflictString(const QString &conflict)
 {
     Q_D(DifferenceString);
 
     d->conflict = conflict;
 }
 
-void DifferenceString::setMarkerList(const MarkerList& markerList)
+void DifferenceString::setMarkerList(const MarkerList &markerList)
 {
     Q_D(DifferenceString);
 
     d->markerList = markerList;
 }
 
-void DifferenceString::prepend(Marker* marker)
+void DifferenceString::prepend(Marker *marker)
 {
     Q_D(DifferenceString);
 

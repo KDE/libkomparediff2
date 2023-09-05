@@ -1,7 +1,7 @@
 /*
-SPDX-FileCopyrightText: 2011 Dmitry Risenberg <dmitry.risenberg@gmail.com>
+    SPDX-FileCopyrightText: 2011 Dmitry Risenberg <dmitry.risenberg@gmail.com>
 
-SPDX-License-Identifier: LGPL-2.0-or-later
+    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
 #ifndef KOMPAREDIFF2_STRINGLISTPAIR_H
@@ -14,19 +14,21 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 // Std
 #include <vector>
 
-namespace KompareDiff2 {
+namespace KompareDiff2
+{
 
-class StringListPair {
+class StringListPair
+{
 public:
-    StringListPair(const QStringList& first, const QStringList& second);
+    StringListPair(const QStringList &first, const QStringList &second);
     ~StringListPair();
     bool equal(unsigned int firstIndex, unsigned int secondIndex) const;
     unsigned int lengthFirst() const;
     unsigned int lengthSecond() const;
     MarkerList markerListFirst() const;
     MarkerList markerListSecond() const;
-    void prependFirst(Marker* marker);
-    void prependSecond(Marker* marker);
+    void prependFirst(Marker *marker);
+    void prependSecond(Marker *marker);
     bool needFineGrainedOutput(unsigned int difference) const;
 
     const static bool allowReplace = false;

@@ -1,10 +1,10 @@
 /*
-SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
-SPDX-FileCopyrightText: 2001-2005,2009 Otto Bruggeman <bruggie@gmail.com>
-SPDX-FileCopyrightText: 2007-2008 Kevin Kofler <kevin.kofler@chello.at>
-SPDX-FileCopyrightText: 2012 Jean -Nicolas Artaud <jeannicolasartaud@gmail.com>
+    SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
+    SPDX-FileCopyrightText: 2001-2005,2009 Otto Bruggeman <bruggie@gmail.com>
+    SPDX-FileCopyrightText: 2007-2008 Kevin Kofler <kevin.kofler@chello.at>
+    SPDX-FileCopyrightText: 2012 Jean -Nicolas Artaud <jeannicolasartaud@gmail.com>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "modellist_p.h"
@@ -13,12 +13,12 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "info.h"
 #include <komparediff2_logging.h>
 // Qt
-#include <QTextCodec>
 #include <QAction>
+#include <QTextCodec>
 
 using namespace KompareDiff2;
 
-QStringList ModelListPrivate::split(const QString& fileContents)
+QStringList ModelListPrivate::split(const QString &fileContents)
 {
     QString contents = fileContents;
     QStringList list;
@@ -31,21 +31,19 @@ QStringList ModelListPrivate::split(const QString& fileContents)
 #else
     const QLatin1Char split = QLatin1Char('\n');
 #endif
-    while ((pos = contents.indexOf(split, oldpos)) >= 0)
-    {
+    while ((pos = contents.indexOf(split, oldpos)) >= 0) {
         list.append(contents.mid(oldpos, pos - oldpos + 1));
         oldpos = pos + 1;
     }
 
-    if (contents.length() > oldpos)
-    {
+    if (contents.length() > oldpos) {
         list.append(contents.right(contents.length() - oldpos));
     }
 
     return list;
 }
- 
-QString ModelListPrivate::readFile(const QString& fileName)
+
+QString ModelListPrivate::readFile(const QString &fileName)
 {
     QStringList list;
 
@@ -73,8 +71,7 @@ bool ModelListPrivate::hasPrevModel() const
 {
     // qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::hasPrevModel()";
 
-    if (modelIndex > 0)
-    {
+    if (modelIndex > 0) {
 //         qCDebug(KOMPAREDIFF2_LOG) << "has prev model";
         return true;
     }
@@ -88,8 +85,7 @@ bool ModelListPrivate::hasNextModel() const
 {
     // qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::hasNextModel()";
 
-    if (modelIndex < (models->count() - 1))
-    {
+    if (modelIndex < (models->count() - 1)) {
 //         qCDebug(KOMPAREDIFF2_LOG) << "has next model";
         return true;
     }
@@ -103,14 +99,12 @@ bool ModelListPrivate::hasPrevDiff() const
 //     qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::hasPrevDiff()";
     const int index = selectedModel->diffIndex();
 
-    if (index > 0)
-    {
+    if (index > 0) {
 //         qCDebug(KOMPAREDIFF2_LOG) << "has prev difference in same model";
         return true;
     }
 
-    if (hasPrevModel())
-    {
+    if (hasPrevModel()) {
 //         qCDebug(KOMPAREDIFF2_LOG) << "has prev difference but in prev model";
         return true;
     }
@@ -125,14 +119,12 @@ bool ModelListPrivate::hasNextDiff() const
 //     qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::hasNextDiff()";
     const int index = selectedModel->diffIndex();
 
-    if (index < (selectedModel->differenceCount() - 1))
-    {
+    if (index < (selectedModel->differenceCount() - 1)) {
 //         qCDebug(KOMPAREDIFF2_LOG) << "has next difference in same model";
         return true;
     }
 
-    if (hasNextModel())
-    {
+    if (hasNextModel()) {
 //         qCDebug(KOMPAREDIFF2_LOG) << "has next difference but in next model";
         return true;
     }
@@ -142,20 +134,16 @@ bool ModelListPrivate::hasNextDiff() const
     return false;
 }
 
-static
-QString lstripSeparators(const QString& from, uint count)
+static QString lstripSeparators(const QString &from, uint count)
 {
     int position = 0;
-    for (uint i = 0; i < count; ++i)
-    {
+    for (uint i = 0; i < count; ++i) {
         position = from.indexOf(QLatin1Char('/'), position);
-        if (position == -1)
-        {
+        if (position == -1) {
             break;
         }
     }
-    if (position == -1)
-    {
+    if (position == -1) {
         return QString();
     }
 
@@ -165,15 +153,15 @@ QString lstripSeparators(const QString& from, uint count)
 void ModelListPrivate::setDepthAndApplied()
 {
     // Splice to avoid calling ~DiffModelList
-    const QList<KompareDiff2::DiffModel*> splicedModelList(*models);
-    for (DiffModel* model : splicedModelList) {
+    const QList<KompareDiff2::DiffModel *> splicedModelList(*models);
+    for (DiffModel *model : splicedModelList) {
         model->setSourceFile(lstripSeparators(model->source(), info->depth));
         model->setDestinationFile(lstripSeparators(model->destination(), info->depth));
         model->applyAllDifferences(info->applied);
     }
 }
 
-DiffModel* ModelListPrivate::firstModel()
+DiffModel *ModelListPrivate::firstModel()
 {
     qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::firstModel()";
     modelIndex = 0;
@@ -184,7 +172,7 @@ DiffModel* ModelListPrivate::firstModel()
     return selectedModel;
 }
 
-DiffModel* ModelListPrivate::lastModel()
+DiffModel *ModelListPrivate::lastModel()
 {
     qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::lastModel()";
     modelIndex = models->count() - 1;
@@ -195,16 +183,13 @@ DiffModel* ModelListPrivate::lastModel()
     return selectedModel;
 }
 
-DiffModel* ModelListPrivate::prevModel()
+DiffModel *ModelListPrivate::prevModel()
 {
     qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::prevModel()";
-    if (modelIndex > 0 && --modelIndex < models->count())
-    {
+    if (modelIndex > 0 && --modelIndex < models->count()) {
         qCDebug(KOMPAREDIFF2_LOG) << "modelIndex = " << modelIndex;
-        selectedModel = (*models)[ modelIndex ];
-    }
-    else
-    {
+        selectedModel = (*models)[modelIndex];
+    } else {
         selectedModel = nullptr;
         modelIndex = 0;
         qCDebug(KOMPAREDIFF2_LOG) << "modelIndex = " << modelIndex;
@@ -213,16 +198,13 @@ DiffModel* ModelListPrivate::prevModel()
     return selectedModel;
 }
 
-DiffModel* ModelListPrivate::nextModel()
+DiffModel *ModelListPrivate::nextModel()
 {
     qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::nextModel()";
-    if (++modelIndex < models->count())
-    {
+    if (++modelIndex < models->count()) {
         qCDebug(KOMPAREDIFF2_LOG) << "modelIndex = " << modelIndex;
-        selectedModel = (*models)[ modelIndex ];
-    }
-    else
-    {
+        selectedModel = (*models)[modelIndex];
+    } else {
         selectedModel = nullptr;
         modelIndex = 0;
         qCDebug(KOMPAREDIFF2_LOG) << "modelIndex = " << modelIndex;
@@ -231,12 +213,11 @@ DiffModel* ModelListPrivate::nextModel()
     return selectedModel;
 }
 
-bool ModelListPrivate::setSelectedModel(DiffModel* model)
+bool ModelListPrivate::setSelectedModel(DiffModel *model)
 {
     qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::setSelectedModel( " << model << " )";
 
-    if (model != selectedModel)
-    {
+    if (model != selectedModel) {
         if (!models->contains(model))
             return false;
         qCDebug(KOMPAREDIFF2_LOG) << "selectedModel (was) = " << selectedModel;
@@ -252,10 +233,8 @@ bool ModelListPrivate::setSelectedModel(DiffModel* model)
 
 void ModelListPrivate::updateModelListActions()
 {
-    if (models && selectedModel && selectedDifference)
-    {
-        if (isReadWrite && save)
-        {
+    if (models && selectedModel && selectedDifference) {
+        if (isReadWrite && save) {
             if (selectedModel->appliedCount() != selectedModel->differenceCount())
                 applyAll->setEnabled(true);
             else
@@ -269,9 +248,7 @@ void ModelListPrivate::updateModelListActions()
             applyDifference->setEnabled(selectedDifference->applied() == false);
             unApplyDifference->setEnabled(selectedDifference->applied() == true);
             save->setEnabled(selectedModel->hasUnsavedChanges());
-        }
-        else if (save)
-        {
+        } else if (save) {
             applyDifference->setEnabled(false);
             unApplyDifference->setEnabled(false);
             applyAll->setEnabled(false);
@@ -283,9 +260,7 @@ void ModelListPrivate::updateModelListActions()
         nextFile->setEnabled(hasNextModel());
         previousDifference->setEnabled(hasPrevDiff());
         nextDifference->setEnabled(hasNextDiff());
-    }
-    else
-    {
+    } else {
         if (save) {
             applyDifference->setEnabled(false);
             unApplyDifference->setEnabled(false);
@@ -301,10 +276,9 @@ void ModelListPrivate::updateModelListActions()
     }
 }
 
-bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
+bool ModelListPrivate::blendFile(DiffModel *model, const QString &fileContents)
 {
-    if (!model)
-    {
+    if (!model) {
         qCDebug(KOMPAREDIFF2_LOG) << "**** model is null :(";
         return false;
     }
@@ -316,35 +290,31 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
     const QStringList lines = split(fileContents);
     auto linesIt = lines.constBegin(), lEnd = lines.constEnd();
 
-    DiffHunkList* hunks = model->hunks();
+    DiffHunkList *hunks = model->hunks();
     qCDebug(KOMPAREDIFF2_LOG) << "Hunks in hunklist: " << hunks->count();
     DiffHunkListIterator hunkIt = hunks->begin();
 
-    DiffHunk*   newHunk = nullptr;
-    Difference* newDiff = nullptr;
+    DiffHunk *newHunk = nullptr;
+    Difference *newDiff = nullptr;
 
     // FIXME: this approach is not very good, we should first check if the hunk applies cleanly
     // and without offset and if not use that new linenumber with offset to compare against
     // This will only work for files we just diffed with kompare but not for blending where
     // file(s) to patch has/have potentially changed
 
-    for (; hunkIt != hunks->end(); ++hunkIt)
-    {
+    for (; hunkIt != hunks->end(); ++hunkIt) {
         // Do we need to insert a new hunk before this one ?
-        DiffHunk* hunk = *hunkIt;
-        if (srcLineNo < hunk->sourceLineNumber())
-        {
+        DiffHunk *hunk = *hunkIt;
+        if (srcLineNo < hunk->sourceLineNumber()) {
             newHunk = new DiffHunk(srcLineNo, destLineNo, QString(), DiffHunk::AddedByBlend);
 
             hunkIt = ++hunks->insert(hunkIt, newHunk);
 
-            newDiff = new Difference(srcLineNo, destLineNo,
-                                     Difference::Unchanged);
+            newDiff = new Difference(srcLineNo, destLineNo, Difference::Unchanged);
 
             newHunk->add(newDiff);
 
-            while (srcLineNo < hunk->sourceLineNumber() && linesIt != lEnd)
-            {
+            while (srcLineNo < hunk->sourceLineNumber() && linesIt != lEnd) {
                 newDiff->addSourceLine(*linesIt);
                 newDiff->addDestinationLine(*linesIt);
                 ++srcLineNo;
@@ -357,8 +327,7 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
         int size = hunk->sourceLineCount();
 
         linesIt += size;
-        if (linesIt > lEnd)
-        {
+        if (linesIt > lEnd) {
             linesIt = lEnd;
         }
 
@@ -366,8 +335,7 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
         destLineNo += hunk->destinationLineCount();
     }
 
-    if (linesIt != lEnd)
-    {
+    if (linesIt != lEnd) {
         newHunk = new DiffHunk(srcLineNo, destLineNo, QString(), DiffHunk::AddedByBlend);
 
         model->addHunk(newHunk);
@@ -376,8 +344,7 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
 
         newHunk->add(newDiff);
 
-        while (linesIt != lEnd)
-        {
+        while (linesIt != lEnd) {
             newDiff->addSourceLine(*linesIt);
             newDiff->addDestinationLine(*linesIt);
             ++linesIt;

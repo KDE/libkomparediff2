@@ -1,7 +1,7 @@
 /*
-SPDX-FileCopyrightText: 2002-2004 Otto Bruggeman <otto.bruggeman@home.nl>
+    SPDX-FileCopyrightText: 2002-2004 Otto Bruggeman <otto.bruggeman@home.nl>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "perforceparser.h"
@@ -14,7 +14,8 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 using namespace KompareDiff2;
 
-PerforceParser::PerforceParser(const ModelList* list, const QStringList& diff) : ParserBase(list, diff)
+PerforceParser::PerforceParser(const ModelList *list, const QStringList &diff)
+    : ParserBase(list, diff)
 {
     m_contextDiffHeader1.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("==== (.*) - (.*) ====\\n")));
     m_contextDiffHeader1.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
@@ -28,7 +29,7 @@ PerforceParser::PerforceParser(const ModelList* list, const QStringList& diff) :
 
 PerforceParser::~PerforceParser() = default;
 
-enum Format PerforceParser::determineFormat()
+Format PerforceParser::determineFormat()
 {
     qCDebug(KOMPAREDIFF2_LOG) << "Determining the format of the Perforce Diff";
 
@@ -40,25 +41,17 @@ enum Format PerforceParser::determineFormat()
 
     QStringList::ConstIterator it = m_diffLines.begin();
 
-    while (it != m_diffLines.end())
-    {
-        if (it->indexOf(unifiedRE, 0) == 0)
-        {
+    while (it != m_diffLines.end()) {
+        if (it->indexOf(unifiedRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Unified diff...";
             return Unified;
-        }
-        else if (it->indexOf(contextRE, 0) == 0)
-        {
+        } else if (it->indexOf(contextRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Context diff...";
             return Context;
-        }
-        else if (it->indexOf(normalRE, 0) == 0)
-        {
+        } else if (it->indexOf(normalRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Normal diff...";
             return Normal;
-        }
-        else if (it->indexOf(rcsRE, 0) == 0)
-        {
+        } else if (it->indexOf(rcsRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a RCS diff...";
             return RCS;
         }
@@ -78,11 +71,9 @@ bool PerforceParser::parseContextDiffHeader()
     const QRegularExpression sourceFileRE(QRegularExpression::anchoredPattern(QStringLiteral("([^\\#]+)#(\\d+)")));
     const QRegularExpression destinationFileRE(QRegularExpression::anchoredPattern(QStringLiteral("([^\\#]+)#(|\\d+)")));
 
-    while (m_diffIterator != itEnd)
-    {
+    while (m_diffIterator != itEnd) {
         const auto contextDiffHeader1Match = m_contextDiffHeader1.match(*(m_diffIterator)++);
-        if (contextDiffHeader1Match.hasMatch())
-        {
+        if (contextDiffHeader1Match.hasMatch()) {
 //             qCDebug(KOMPAREDIFF2_LOG) << "Matched length Header1 = " << contextDiffHeader1Match.capturedLength();
 //             qCDebug(KOMPAREDIFF2_LOG) << "Matched string Header1 = " << contextDiffHeader1Match.captured( 0 );
 //             qCDebug(KOMPAREDIFF2_LOG) << "First capture  Header1 = " << contextDiffHeader1Match.captured( 1 );
@@ -103,9 +94,7 @@ bool PerforceParser::parseContextDiffHeader()
             result = true;
 
             break;
-        }
-        else
-        {
+        } else {
             qCDebug(KOMPAREDIFF2_LOG) << "Matched length = " << contextDiffHeader1Match.capturedLength();
             qCDebug(KOMPAREDIFF2_LOG) << "Captured texts = " << contextDiffHeader1Match.capturedTexts();
         }
@@ -123,13 +112,11 @@ bool PerforceParser::parseNormalDiffHeader()
     QRegularExpression sourceFileRE(QRegularExpression::anchoredPattern(QStringLiteral("([^\\#]+)#(\\d+)")));
     QRegularExpression destinationFileRE(QRegularExpression::anchoredPattern(QStringLiteral("([^\\#]+)#(|\\d+)")));
 
-    while (m_diffIterator != itEnd)
-    {
+    while (m_diffIterator != itEnd) {
         qCDebug(KOMPAREDIFF2_LOG) << "Line = " << *m_diffIterator;
         qCDebug(KOMPAREDIFF2_LOG) << "String length  = " << (*m_diffIterator).length();
         const auto normalDiffHeaderMatch = m_normalDiffHeader.match(*(m_diffIterator)++);
-        if (normalDiffHeaderMatch.hasMatch())
-        {
+        if (normalDiffHeaderMatch.hasMatch()) {
             qCDebug(KOMPAREDIFF2_LOG) << "Matched length Header1 = " << normalDiffHeaderMatch.capturedLength();
             qCDebug(KOMPAREDIFF2_LOG) << "Matched string Header1 = " << normalDiffHeaderMatch.captured(0);
             qCDebug(KOMPAREDIFF2_LOG) << "First  capture Header1 = \"" << normalDiffHeaderMatch.captured(1) << "\"";
@@ -150,9 +137,7 @@ bool PerforceParser::parseNormalDiffHeader()
             result = true;
 
             break;
-        }
-        else
-        {
+        } else {
             qCDebug(KOMPAREDIFF2_LOG) << "Matched length = " << normalDiffHeaderMatch.capturedLength();
             qCDebug(KOMPAREDIFF2_LOG) << "Captured texts = " << normalDiffHeaderMatch.capturedTexts();
         }
@@ -175,13 +160,11 @@ bool PerforceParser::parseUnifiedDiffHeader()
     QRegularExpression sourceFileRE(QRegularExpression::anchoredPattern(QStringLiteral("([^\\#]+)#(\\d+)")));
     QRegularExpression destinationFileRE(QRegularExpression::anchoredPattern(QStringLiteral("([^\\#]+)#(|\\d+)")));
 
-    while (m_diffIterator != itEnd)
-    {
+    while (m_diffIterator != itEnd) {
 //         qCDebug(KOMPAREDIFF2_LOG) << "Line = " << *m_diffIterator;
 //         qCDebug(KOMPAREDIFF2_LOG) << "String length  = " << (*m_diffIterator).length();
         const auto unifiedDiffHeader1Match = m_unifiedDiffHeader1.match(*(m_diffIterator)++);
-        if (unifiedDiffHeader1Match.hasMatch())
-        {
+        if (unifiedDiffHeader1Match.hasMatch()) {
 //             qCDebug(KOMPAREDIFF2_LOG) << "Matched length Header1 = " << unifiedDiffHeader1Match.capturedLength();
 //             qCDebug(KOMPAREDIFF2_LOG) << "Matched string Header1 = " << unifiedDiffHeader1Match.captured( 0 );
 //             qCDebug(KOMPAREDIFF2_LOG) << "First  capture Header1 = \"" << unifiedDiffHeader1Match.captured( 1 ) << "\"";
@@ -202,9 +185,7 @@ bool PerforceParser::parseUnifiedDiffHeader()
             result = true;
 
             break;
-        }
-        else
-        {
+        } else {
 //             qCDebug(KOMPAREDIFF2_LOG) << "Matched length = " << unifiedDiffHeader1Match.capturedLength();
 //             qCDebug(KOMPAREDIFF2_LOG) << "Captured texts = " << unifiedDiffHeader1Match.capturedTexts();
         }
@@ -212,4 +193,3 @@ bool PerforceParser::parseUnifiedDiffHeader()
 
     return result;
 }
-

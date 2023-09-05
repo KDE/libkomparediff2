@@ -1,10 +1,10 @@
 /*
-SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
-SPDX-FileCopyrightText: 2001-2005,2009 Otto Bruggeman <bruggie@gmail.com>
-SPDX-FileCopyrightText: 2007-2008 Kevin Kofler <kevin.kofler@chello.at>
-SPDX-FileCopyrightText: 2012 Jean -Nicolas Artaud <jeannicolasartaud@gmail.com>
+    SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
+    SPDX-FileCopyrightText: 2001-2005,2009 Otto Bruggeman <bruggie@gmail.com>
+    SPDX-FileCopyrightText: 2007-2008 Kevin Kofler <kevin.kofler@chello.at>
+    SPDX-FileCopyrightText: 2012 Jean -Nicolas Artaud <jeannicolasartaud@gmail.com>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #ifndef KOMPAREDIFF2_MODELLIST_P_H
@@ -14,9 +14,9 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "diffmodellist.h"
 #include "kompareprocess.h"
 // Qt
-#include <QUrl>
 #include <QFileInfo>
 #include <QTemporaryFile>
+#include <QUrl>
 // Std
 #include <memory>
 
@@ -35,16 +35,16 @@ class Info;
 class ModelListPrivate
 {
 public:
-    ModelListPrivate(DiffSettings* diffSettings, bool supportReadWrite);
+    ModelListPrivate(DiffSettings *diffSettings, bool supportReadWrite);
     ~ModelListPrivate() = default;
 
 public: // Helper methods
-    static bool isDirectory(const QString& url);
-    static bool isDiff(const QString& mimetype);
+    static bool isDirectory(const QString &url);
+    static bool isDiff(const QString &mimetype);
 
-    static QStringList split(const QString& diff);
+    static QStringList split(const QString &diff);
 
-    QString readFile(const QString& fileName);
+    QString readFile(const QString &fileName);
 
     bool hasPrevModel() const;
     bool hasNextModel() const;
@@ -53,16 +53,16 @@ public: // Helper methods
 
     void setDepthAndApplied();
 
-    DiffModel* firstModel();
-    DiffModel* lastModel();
-    DiffModel* prevModel();
-    DiffModel* nextModel();
+    DiffModel *firstModel();
+    DiffModel *lastModel();
+    DiffModel *prevModel();
+    DiffModel *nextModel();
 
-    bool setSelectedModel(DiffModel* model);
+    bool setSelectedModel(DiffModel *model);
 
     void updateModelListActions();
 
-    bool blendFile(DiffModel* model, const QString& lines);
+    bool blendFile(DiffModel *model, const QString &lines);
 
 public:
     std::unique_ptr<QTemporaryFile> diffTemp;
@@ -70,51 +70,48 @@ public:
 
     std::unique_ptr<KompareProcess> diffProcess;
 
-    DiffSettings* diffSettings;
+    DiffSettings *diffSettings;
 
     std::unique_ptr<DiffModelList> models;
 
-    DiffModel* selectedModel = nullptr;
-    Difference* selectedDifference = nullptr;
+    DiffModel *selectedModel = nullptr;
+    Difference *selectedDifference = nullptr;
 
     int modelIndex = 0;
 
-    Info* info = nullptr;
+    Info *info = nullptr;
 
-    KActionCollection* actionCollection;
-    QAction* applyDifference;
-    QAction* unApplyDifference;
-    QAction* applyAll;
-    QAction* unapplyAll;
-    QAction* previousFile;
-    QAction* nextFile;
-    QAction* previousDifference;
-    QAction* nextDifference;
+    KActionCollection *actionCollection;
+    QAction *applyDifference;
+    QAction *unApplyDifference;
+    QAction *applyAll;
+    QAction *unapplyAll;
+    QAction *previousFile;
+    QAction *nextFile;
+    QAction *previousDifference;
+    QAction *nextDifference;
 
-    QAction* save;
+    QAction *save;
 
     QString encoding;
-    QTextCodec* textCodec = nullptr;
+    QTextCodec *textCodec = nullptr;
 
     bool isReadWrite;
 };
 
-inline
-ModelListPrivate::ModelListPrivate(DiffSettings* diffSettings, bool supportReadWrite)
-    : diffSettings(diffSettings),
-      isReadWrite(supportReadWrite)
+inline ModelListPrivate::ModelListPrivate(DiffSettings *diffSettings, bool supportReadWrite)
+    : diffSettings(diffSettings)
+    , isReadWrite(supportReadWrite)
 {
 }
 
-inline
-bool ModelListPrivate::isDirectory(const QString& url)
+inline bool ModelListPrivate::isDirectory(const QString &url)
 {
     QFileInfo fi(url);
     return fi.isDir();
 }
 
-inline
-bool ModelListPrivate::isDiff(const QString& mimeType)
+inline bool ModelListPrivate::isDiff(const QString &mimeType)
 {
     return (mimeType == QLatin1String("text/x-patch"));
 }

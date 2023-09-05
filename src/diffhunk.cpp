@@ -1,8 +1,8 @@
 /*
-SPDX-FileCopyrightText: 2001-2004,2009 Otto Bruggeman <bruggie@gmail.com>
-SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
+    SPDX-FileCopyrightText: 2001-2004,2009 Otto Bruggeman <bruggie@gmail.com>
+    SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "diffhunk.h"
@@ -13,7 +13,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 using namespace KompareDiff2;
 
-DiffHunk::DiffHunk(int sourceLine, int destinationLine, const QString& function, Type type)
+DiffHunk::DiffHunk(int sourceLine, int destinationLine, const QString &function, Type type)
     : d_ptr(new DiffHunkPrivate(sourceLine, destinationLine, function, type))
 {
 }
@@ -62,7 +62,7 @@ void DiffHunk::setType(Type type)
     d->type = type;
 }
 
-void DiffHunk::add(Difference* diff)
+void DiffHunk::add(Difference *diff)
 {
     Q_D(DiffHunk);
 
@@ -74,7 +74,7 @@ int DiffHunk::sourceLineCount() const
     Q_D(const DiffHunk);
 
     DifferenceListConstIterator diffIt = d->differences.begin();
-    DifferenceListConstIterator dEnd   = d->differences.end();
+    DifferenceListConstIterator dEnd = d->differences.end();
 
     int lineCount = 0;
 
@@ -89,7 +89,7 @@ int DiffHunk::destinationLineCount() const
     Q_D(const DiffHunk);
 
     DifferenceListConstIterator diffIt = d->differences.begin();
-    DifferenceListConstIterator dEnd   = d->differences.end();
+    DifferenceListConstIterator dEnd = d->differences.end();
 
     int lineCount = 0;
 
@@ -108,14 +108,12 @@ QString DiffHunk::recreateHunk() const
 
     // recreate body
     DifferenceListConstIterator diffIt = d->differences.begin();
-    DifferenceListConstIterator dEnd   = d->differences.end();
+    DifferenceListConstIterator dEnd = d->differences.end();
 
     int slc = 0; // source line count
     int dlc = 0; // destination line count
-    for (; diffIt != dEnd; ++diffIt)
-    {
-        switch ((*diffIt)->type())
-        {
+    for (; diffIt != dEnd; ++diffIt) {
+        switch ((*diffIt)->type()) {
         case Difference::Unchanged:
         case Difference::Change:
             slc += (*diffIt)->sourceLineCount();
@@ -132,11 +130,7 @@ QString DiffHunk::recreateHunk() const
     }
 
     // recreate header
-    hunk += QStringLiteral("@@ -%1,%3 +%2,%4 @@")
-            .arg(d->sourceLine)
-            .arg(d->destinationLine)
-            .arg(slc)
-            .arg(dlc);
+    hunk += QStringLiteral("@@ -%1,%3 +%2,%4 @@").arg(d->sourceLine).arg(d->destinationLine).arg(slc).arg(dlc);
 
     if (!d->function.isEmpty())
         hunk += QLatin1Char(' ') + d->function;

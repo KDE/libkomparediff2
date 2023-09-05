@@ -1,8 +1,8 @@
 /*
-SPDX-FileCopyrightText: 2001-2004,2009 Otto Bruggeman <bruggie@gmail.com>
-SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
+    SPDX-FileCopyrightText: 2001-2004,2009 Otto Bruggeman <bruggie@gmail.com>
+    SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "difference.h"
@@ -14,8 +14,8 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 using namespace KompareDiff2;
 
-Difference::Difference(int sourceLineNo, int destinationLineNo, int type) :
-    d_ptr(new DifferencePrivate(sourceLineNo, destinationLineNo, type))
+Difference::Difference(int sourceLineNo, int destinationLineNo, int type)
+    : d_ptr(new DifferencePrivate(sourceLineNo, destinationLineNo, type))
 {
 }
 
@@ -56,14 +56,14 @@ void Difference::setTrackingDestinationLineNumber(int i)
     d->trackingDestinationLineNo = i;
 }
 
-DifferenceString* Difference::sourceLineAt(int i) const
+DifferenceString *Difference::sourceLineAt(int i) const
 {
     Q_D(const Difference);
 
     return d->sourceLines[i];
 }
 
-DifferenceString* Difference::destinationLineAt(int i) const
+DifferenceString *Difference::destinationLineAt(int i) const
 {
     Q_D(const Difference);
 
@@ -217,11 +217,10 @@ void Difference::determineInlineDifferences()
 
     LevenshteinTable<DifferenceStringPair> table;
 
-    for (int i = 0; i < slc; ++i)
-    {
-        DifferenceString* sl = sourceLineAt(i);
-        DifferenceString* dl = destinationLineAt(i);
-        DifferenceStringPair* pair = new DifferenceStringPair(sl, dl);
+    for (int i = 0; i < slc; ++i) {
+        DifferenceString *sl = sourceLineAt(i);
+        DifferenceString *dl = destinationLineAt(i);
+        DifferenceStringPair *pair = new DifferenceStringPair(sl, dl);
 
         // return value 0 means something went wrong creating the table so don't bother finding markers
         if (table.createTable(pair) != 0)
@@ -237,12 +236,10 @@ QString Difference::recreateDifference() const
 
     // source
     DifferenceStringListConstIterator stringIt = d->sourceLines.begin();
-    DifferenceStringListConstIterator sEnd     = d->sourceLines.end();
+    DifferenceStringListConstIterator sEnd = d->sourceLines.end();
 
-    for (; stringIt != sEnd; ++stringIt)
-    {
-        switch (d->type)
-        {
+    for (; stringIt != sEnd; ++stringIt) {
+        switch (d->type) {
         case Change:
         case Delete:
             difference += QLatin1Char('-');
@@ -257,14 +254,12 @@ QString Difference::recreateDifference() const
         difference += (*stringIt)->string();
     }
 
-    //destination
+    // destination
     stringIt = d->destinationLines.begin();
-    sEnd     = d->destinationLines.end();
+    sEnd = d->destinationLines.end();
 
-    for (; stringIt != sEnd; ++stringIt)
-    {
-        switch (d->type)
-        {
+    for (; stringIt != sEnd; ++stringIt) {
+        switch (d->type) {
         case Change:
         case Insert:
             difference += QLatin1Char('+');

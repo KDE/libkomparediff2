@@ -1,30 +1,30 @@
 /*
-SPDX-FileCopyrightText: 2002-2004 Otto Bruggeman <otto.bruggeman@home.nl>
-SPDX-FileCopyrightText: 2010 Kevin Kofler <kevin.kofler@chello.at>
+    SPDX-FileCopyrightText: 2002-2004 Otto Bruggeman <otto.bruggeman@home.nl>
+    SPDX-FileCopyrightText: 2010 Kevin Kofler <kevin.kofler@chello.at>
 
-SPDX-License-Identifier: GPL-2.0-or-later
+    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "parser.h"
 
 // lib
 #include "cvsdiffparser.h"
-#include "diffparser.h"
-#include "perforceparser.h"
 #include "diffmodel.h"
 #include "diffmodellist.h"
+#include "diffparser.h"
+#include "perforceparser.h"
 #include <komparediff2_logging.h>
 
 using namespace KompareDiff2;
 
-Parser::Parser(const ModelList* list) :
-    m_list(list)
+Parser::Parser(const ModelList *list)
+    : m_list(list)
 {
 }
 
 Parser::~Parser() = default;
 
-int Parser::cleanUpCrap(QStringList& diffLines)
+int Parser::cleanUpCrap(QStringList &diffLines)
 {
     QStringList::Iterator it = diffLines.begin();
 
@@ -32,10 +32,8 @@ int Parser::cleanUpCrap(QStringList& diffLines)
 
     QLatin1String noNewLine("\\ No newline");
 
-    for (; it != diffLines.end(); ++it)
-    {
-        if ((*it).startsWith(noNewLine))
-        {
+    for (; it != diffLines.end(); ++it) {
+        if ((*it).startsWith(noNewLine)) {
             it = diffLines.erase(it);
             // correcting the advance of the iterator because of the remove
             --it;
@@ -49,7 +47,7 @@ int Parser::cleanUpCrap(QStringList& diffLines)
     return nol;
 }
 
-DiffModelList* Parser::parse(QStringList& diffLines, bool* malformed)
+DiffModelList *Parser::parse(QStringList &diffLines, bool *malformed)
 {
     /* Basically determine the generator then call the parse method */
     std::unique_ptr<ParserBase> parser;
@@ -59,17 +57,16 @@ DiffModelList* Parser::parse(QStringList& diffLines, bool* malformed)
     int nol = cleanUpCrap(diffLines);
     qCDebug(KOMPAREDIFF2_LOG) << "Cleaned up " << nol << " line(s) of crap from the diff...";
 
-    switch (m_generator)
-    {
-    case CVSDiff :
+    switch (m_generator) {
+    case CVSDiff:
         qCDebug(KOMPAREDIFF2_LOG) << "It is a CVS generated diff...";
         parser = std::make_unique<CVSDiffParser>(m_list, diffLines);
         break;
-    case Diff :
+    case Diff:
         qCDebug(KOMPAREDIFF2_LOG) << "It is a diff generated diff...";
         parser = std::make_unique<DiffParser>(m_list, diffLines);
         break;
-    case Perforce :
+    case Perforce:
         qCDebug(KOMPAREDIFF2_LOG) << "It is a Perforce generated diff...";
         parser = std::make_unique<PerforceParser>(m_list, diffLines);
         break;
@@ -79,14 +76,12 @@ DiffModelList* Parser::parse(QStringList& diffLines, bool* malformed)
     }
 
     m_format = parser->format();
-    DiffModelList* modelList = parser->parse(malformed);
-    if (modelList)
-    {
+    DiffModelList *modelList = parser->parse(malformed);
+    if (modelList) {
         qCDebug(KOMPAREDIFF2_LOG) << "Modelcount: " << modelList->count();
         DiffModelListIterator modelIt = modelList->begin();
-        DiffModelListIterator mEnd    = modelList->end();
-        for (; modelIt != mEnd; ++modelIt)
-        {
+        DiffModelListIterator mEnd = modelList->end();
+        for (; modelIt != mEnd; ++modelIt) {
             qCDebug(KOMPAREDIFF2_LOG) << "Hunkcount:  " << (*modelIt)->hunkCount();
             qCDebug(KOMPAREDIFF2_LOG) << "Diffcount:  " << (*modelIt)->differenceCount();
         }
@@ -95,7 +90,7 @@ DiffModelList* Parser::parse(QStringList& diffLines, bool* malformed)
     return modelList;
 }
 
-enum Generator Parser::determineGenerator(const QStringList& diffLines)
+Generator Parser::determineGenerator(const QStringList &diffLines)
 {
     // Shit have to duplicate some code with this method and the ParserBase derived classes
     QLatin1String cvsDiff("Index: ");
@@ -104,15 +99,11 @@ enum Generator Parser::determineGenerator(const QStringList& diffLines)
     QStringList::ConstIterator it = diffLines.begin();
     QStringList::ConstIterator linesEnd = diffLines.end();
 
-    while (it != linesEnd)
-    {
-        if ((*it).startsWith(cvsDiff))
-        {
+    while (it != linesEnd) {
+        if ((*it).startsWith(cvsDiff)) {
             qCDebug(KOMPAREDIFF2_LOG) << "Diff is a CVSDiff";
             return CVSDiff;
-        }
-        else if ((*it).startsWith(perforceDiff))
-        {
+        } else if ((*it).startsWith(perforceDiff)) {
             qCDebug(KOMPAREDIFF2_LOG) << "Diff is a Perforce Diff";
             return Perforce;
         }

@@ -260,27 +260,31 @@ bool ModelList::saveDestination(DiffModel *model)
     QTextStream stream(&temp);
     QStringList list;
 
-    DiffHunkListConstIterator hunkIt = model->hunks()->constBegin();
-    DiffHunkListConstIterator hEnd = model->hunks()->constEnd();
+    const DiffHunkList *hunks = model->hunks();
+    DiffHunkListConstIterator hunkIt = hunks->constBegin();
+    DiffHunkListConstIterator hEnd = hunks->constEnd();
 
     for (; hunkIt != hEnd; ++hunkIt) {
         DiffHunk *hunk = *hunkIt;
 
-        DifferenceListConstIterator diffIt = hunk->differences().constBegin();
-        DifferenceListConstIterator dEnd = hunk->differences().constEnd();
+        const DifferenceList differences = hunk->differences();
+        DifferenceListConstIterator diffIt = differences.constBegin();
+        DifferenceListConstIterator dEnd = differences.constEnd();
 
         Difference *diff;
         for (; diffIt != dEnd; ++diffIt) {
             diff = *diffIt;
             if (!diff->applied()) {
-                DifferenceStringListConstIterator stringIt = diff->destinationLines().begin();
-                DifferenceStringListConstIterator sEnd = diff->destinationLines().end();
+                const DifferenceStringList destinationLines = diff->destinationLines();
+                DifferenceStringListConstIterator stringIt = destinationLines.begin();
+                DifferenceStringListConstIterator sEnd = destinationLines.end();
                 for (; stringIt != sEnd; ++stringIt) {
                     list.append((*stringIt)->string());
                 }
             } else {
-                DifferenceStringListConstIterator stringIt = diff->sourceLines().begin();
-                DifferenceStringListConstIterator sEnd = diff->sourceLines().end();
+                const DifferenceStringList sourceLines = diff->sourceLines();
+                DifferenceStringListConstIterator stringIt = sourceLines.begin();
+                DifferenceStringListConstIterator sEnd = sourceLines.end();
                 for (; stringIt != sEnd; ++stringIt) {
                     list.append((*stringIt)->string());
                 }
@@ -366,8 +370,9 @@ bool ModelList::saveDestination(DiffModel *model)
 
     // If saving was fine set all differences to saved so we can start again with a clean slate
     if (result) {
-        DifferenceListConstIterator diffIt = model->differences()->constBegin();
-        DifferenceListConstIterator endIt = model->differences()->constEnd();
+        const DifferenceList *differences = model->differences();
+        DifferenceListConstIterator diffIt = differences->constBegin();
+        DifferenceListConstIterator endIt = differences->constEnd();
 
         for (; diffIt != endIt; ++diffIt) {
             (*diffIt)->setUnsaved(false);

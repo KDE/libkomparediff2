@@ -56,19 +56,16 @@ protected:
     const LevenshteinTable& operator = (const LevenshteinTable& table);
 
 private:
-    unsigned int      m_width;
-    unsigned int      m_height;
+    unsigned int      m_width = 256;
+    unsigned int      m_height = 256;
     unsigned int      m_size;
     unsigned int*     m_table;
-    SequencePair*     m_sequences;
+    SequencePair*     m_sequences = nullptr;
 };
 
 template<class SequencePair> LevenshteinTable<SequencePair>::LevenshteinTable()
-    : m_width(256),
-      m_height(256),
-      m_size(m_height* m_width),
-      m_table(new unsigned int[ m_size ]),
-      m_sequences(nullptr)
+    : m_size(m_height* m_width),
+      m_table(new unsigned int[ m_size ])
 {
 }
 
@@ -76,8 +73,7 @@ template<class SequencePair> LevenshteinTable<SequencePair>::LevenshteinTable(un
     : m_width(width),
       m_height(height),
       m_size(m_width* m_height),
-      m_table(new unsigned int[ m_size ]),
-      m_sequences(0)
+      m_table(new unsigned int[ m_size ])
 {
 }
 

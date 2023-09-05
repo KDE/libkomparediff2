@@ -115,12 +115,12 @@ protected:
 
 protected:
     const QStringList&         m_diffLines;
-    DiffModel*                 m_currentModel;
-    DiffModelList*             m_models;
+    DiffModel*                 m_currentModel = nullptr;
+    DiffModelList*             m_models = nullptr;
     QStringList::ConstIterator m_diffIterator;
 
-    bool                       m_singleFileDiff;
-    bool                       m_malformed;
+    bool                       m_singleFileDiff = false;
+    bool                       m_malformed = false;
 
 protected:
     const ModelList* m_list;

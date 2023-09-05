@@ -55,8 +55,8 @@ private:
     const QString*         m_customString; // Used when a comparison between a file and a string is requested
     QString                m_stdout;
     QString                m_stderr;
-    QTextDecoder*          m_textDecoder;
-    QTextCodec*            m_codec;
+    QTextDecoder*          m_textDecoder = nullptr;
+    QTextCodec*            m_codec = nullptr;
 };
 
 #endif

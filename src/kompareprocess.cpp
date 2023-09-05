@@ -51,9 +51,7 @@ KompareProcess::KompareProcess(KompareDiff2::DiffSettings* diffSettings,
                                KompareDiff2::DiffMode diffMode, const QString& source, const QString& destination, const QString& dir, KompareDiff2::Mode mode)
     : KProcess(),
       m_diffSettings(diffSettings),
-      m_mode(diffMode),
-      m_customString(nullptr),
-      m_textDecoder(nullptr)
+      m_mode(diffMode)
 {
     // connect the signal that indicates that the process has exited
     connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),

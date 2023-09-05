@@ -57,11 +57,7 @@ QString ParserBase::escapePath(QString path)
 
 ParserBase::ParserBase(const ModelList* list, const QStringList& diff) :
     m_diffLines(diff),
-    m_currentModel(nullptr),
-    m_models(nullptr),
     m_diffIterator(m_diffLines.begin()),
-    m_singleFileDiff(false),
-    m_malformed(false),
     m_list(list)
 {
 //     qCDebug(KOMPAREDIFF2_LOG) << diff;

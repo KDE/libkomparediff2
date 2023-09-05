@@ -6,6 +6,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "stringlistpair.h"
 
+// Qt
 #include <QHash>
 
 using namespace KompareDiff2;

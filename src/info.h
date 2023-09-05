@@ -8,9 +8,10 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef KOMPAREDIFF2_INFO_H
 #define KOMPAREDIFF2_INFO_H
 
+// lib
 #include "komparediff2_export.h"
 #include "global.h"
-
+// Qt
 #include <QUrl>
 
 // Forward declaration needed

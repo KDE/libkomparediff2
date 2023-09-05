@@ -6,10 +6,11 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "cvsdiffparser.h"
 
-#include <QRegularExpression>
-
-#include <komparediff2_logging.h>
+// lib
 #include "modellist.h"
+#include <komparediff2_logging.h>
+// Qt
+#include <QRegularExpression>
 
 using namespace KompareDiff2;
 

@@ -7,6 +7,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef KOMPAREDIFF2_PERFORCEPARSER_H
 #define KOMPAREDIFF2_PERFORCEPARSER_H
 
+// lib
 #include "parserbase.h"
 
 namespace KompareDiff2

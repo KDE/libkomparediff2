@@ -7,14 +7,15 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "parserbase.h"
 
-#include <QObject>
-
-#include <komparediff2_logging.h>
+// lib
 #include "diffmodellist.h"
 #include "diffmodel.h"
 #include "diffhunk.h"
 #include "difference.h"
 #include "modellist.h"
+#include <komparediff2_logging.h>
+// Qt
+#include <QObject>
 
 using namespace KompareDiff2;
 

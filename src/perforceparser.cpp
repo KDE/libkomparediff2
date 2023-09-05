@@ -6,10 +6,11 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "perforceparser.h"
 
-#include <QRegularExpression>
-
-#include <komparediff2_logging.h>
+// lib
 #include "diffmodel.h"
+#include <komparediff2_logging.h>
+// Qt
+#include <QRegularExpression>
 
 using namespace KompareDiff2;
 

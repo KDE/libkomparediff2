@@ -7,12 +7,13 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "parser.h"
 
-#include <komparediff2_logging.h>
+// lib
 #include "cvsdiffparser.h"
 #include "diffparser.h"
 #include "perforceparser.h"
 #include "diffmodel.h"
 #include "diffmodellist.h"
+#include <komparediff2_logging.h>
 
 using namespace KompareDiff2;
 

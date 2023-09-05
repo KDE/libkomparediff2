@@ -7,10 +7,11 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef KOMPAREDIFF2_DIFFMODELLIST_H
 #define KOMPAREDIFF2_DIFFMODELLIST_H
 
-#include <QList> // include for the base class
-
-#include "diffmodel.h"
+// lib
 #include "komparediff2_export.h"
+#include "diffmodel.h"
+// Qt
+#include <QList>
 
 /**
  * KompareDiff2 namespace

@@ -8,11 +8,12 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef KOMPAREDIFF2_PARSERBASE_H
 #define KOMPAREDIFF2_PARSERBASE_H
 
-#include <QRegularExpression>
-#include <QStringList>
-
+// lib
 #include "global.h"
 #include "difference.h"
+// Qt
+#include <QRegularExpression>
+#include <QStringList>
 
 class QString;
 

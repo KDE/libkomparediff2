@@ -7,9 +7,10 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 #ifndef KOMPAREDIFF2_DIFFERENCESTRINGPAIR_H
 #define KOMPAREDIFF2_DIFFERENCESTRINGPAIR_H
 
-#include <QString>
-
+// lib
 #include "differencestring.h"
+// Qt
+#include <QString>
 
 namespace KompareDiff2 {
 

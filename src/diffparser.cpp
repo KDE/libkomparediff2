@@ -6,9 +6,10 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "diffparser.h"
 
-#include <QRegularExpression>
-
+// lib
 #include <komparediff2_logging.h>
+// Qt
+#include <QRegularExpression>
 
 using namespace KompareDiff2;
 

@@ -7,8 +7,10 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 #ifndef KOMPAREDIFF2_STRINGLISTPAIR_H
 #define KOMPAREDIFF2_STRINGLISTPAIR_H
 
-#include <QStringList>
+// lib
 #include "marker.h"
+// Qt
+#include <QStringList>
 
 namespace KompareDiff2 {
 

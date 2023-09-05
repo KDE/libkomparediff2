@@ -9,9 +9,10 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef KOMPAREPROCESS_H
 #define KOMPAREPROCESS_H
 
-#include <KProcess>
-
+// lib
 #include "global.h"
+// KF
+#include <KProcess>
 
 class QTextDecoder;
 class QTextCodec;

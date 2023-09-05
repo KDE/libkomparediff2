@@ -9,11 +9,11 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "diffmodel_p.h"
 
 // lib
-#include <komparediff2_logging.h>
 #include "difference.h"
 #include "levenshteintable.h"
 #include "stringlistpair.h"
 #include "parserbase.h"
+#include <komparediff2_logging.h>
 
 using namespace KompareDiff2;
 

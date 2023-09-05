@@ -8,9 +8,10 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef KOMPAREDIFF2_LEVENSHTEINTABLE_H
 #define KOMPAREDIFF2_LEVENSHTEINTABLE_H
 
-#include <iostream>
 // #include <QString>
 // #include <komparediff2_logging.h>
+// Std
+#include <iostream>
 
 namespace KompareDiff2 {
 

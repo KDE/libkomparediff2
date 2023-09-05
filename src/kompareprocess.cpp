@@ -8,15 +8,16 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "kompareprocess.h"
 
+// lib
+#include "diffsettings.h"
+#include <komparediff2_logging.h>
+// KF
+#include <KIO/Global>
+// Qt
 #include <QUrl>
 #include <QDir>
 #include <QStringList>
 #include <QTextCodec>
-
-#include <KIO/Global>
-
-#include <komparediff2_logging.h>
-#include "diffsettings.h"
 
 namespace {
 /// TODO: This should be replaced to QDir::relativeFilePath

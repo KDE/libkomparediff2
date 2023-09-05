@@ -34,6 +34,9 @@ public:
     LevenshteinTable(unsigned int width, unsigned int height);
     ~LevenshteinTable() = default;
 
+    LevenshteinTable(const LevenshteinTable &table) = delete;
+    const LevenshteinTable &operator=(const LevenshteinTable &table) = delete;
+
 public:
     int getContent(unsigned int posX, unsigned int posY) const;
     int setContent(unsigned int posX, unsigned int posY, int value);
@@ -59,10 +62,6 @@ public:
 
     void createListsOfMarkers();
     int chooseRoute(int c1, int c2, int c3, int current);
-
-protected:
-    LevenshteinTable(const LevenshteinTable &table);
-    const LevenshteinTable &operator=(const LevenshteinTable &table);
 
 private:
     unsigned int m_width = 256;

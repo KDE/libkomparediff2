@@ -24,9 +24,7 @@ CVSDiffParser::CVSDiffParser(const ModelList* list, const QStringList& diff) : P
     m_normalDiffHeader.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("Index: (.*)\\n")));
 }
 
-CVSDiffParser::~CVSDiffParser()
-{
-}
+CVSDiffParser::~CVSDiffParser() = default;
 
 enum Format CVSDiffParser::determineFormat()
 {

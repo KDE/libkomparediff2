@@ -22,9 +22,7 @@ Parser::Parser(const ModelList* list) :
 {
 }
 
-Parser::~Parser()
-{
-}
+Parser::~Parser() = default;
 
 int Parser::cleanUpCrap(QStringList& diffLines)
 {

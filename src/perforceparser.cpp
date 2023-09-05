@@ -26,9 +26,7 @@ PerforceParser::PerforceParser(const ModelList* list, const QStringList& diff) :
     m_unifiedDiffHeader1.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
 }
 
-PerforceParser::~PerforceParser()
-{
-}
+PerforceParser::~PerforceParser() = default;
 
 enum Format PerforceParser::determineFormat()
 {

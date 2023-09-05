@@ -35,9 +35,7 @@ DiffSettings::DiffSettings()
 {
 }
 
-DiffSettings::~DiffSettings()
-{
-}
+DiffSettings::~DiffSettings() = default;
 
 void DiffSettings::loadSettings(KConfig* config)
 {

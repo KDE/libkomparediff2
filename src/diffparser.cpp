@@ -20,9 +20,7 @@ DiffParser::DiffParser(const ModelList* list, const QStringList& diff) : ParserB
     m_contextDiffHeader2.setPattern(QRegularExpression::anchoredPattern(QStringLiteral("--- ([^\\t]+)(\\t([^\\t]+))?\\n")));
 }
 
-DiffParser::~DiffParser()
-{
-}
+DiffParser::~DiffParser() = default;
 
 enum Format DiffParser::determineFormat()
 {

@@ -35,7 +35,7 @@ public:
         m_type = type;
         m_offset = offset;
     }
-    ~Marker() {}
+    ~Marker() = default;
 
 public:
     enum Marker::Type type()   const { return m_type; }

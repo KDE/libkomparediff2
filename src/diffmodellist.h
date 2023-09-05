@@ -30,7 +30,7 @@ using DiffModelListConstIterator = QList<DiffModel*>::const_iterator;
 class KOMPAREDIFF2_EXPORT DiffModelList : public QList<DiffModel*>
 {
 public:
-    DiffModelList() {}
+    DiffModelList() = default;
     DiffModelList(const DiffModelList& list) : QList<DiffModel*>(list) {}
     virtual ~DiffModelList()
     {

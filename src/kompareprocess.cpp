@@ -234,27 +234,24 @@ void KompareProcess::writeCommandLine()
     }
 }
 
-KompareProcess::~KompareProcess()
-{
-    delete m_textDecoder;
-}
+KompareProcess::~KompareProcess() = default;
 
 void KompareProcess::setEncoding(const QString& encoding)
 {
     if (!encoding.compare(QLatin1String("default"), Qt::CaseInsensitive))
     {
-        m_textDecoder = QTextCodec::codecForLocale()->makeDecoder();
+        m_textDecoder.reset(QTextCodec::codecForLocale()->makeDecoder());
     }
     else
     {
         m_codec = QTextCodec::codecForName(encoding.toUtf8());
         if (m_codec)
-            m_textDecoder = m_codec->makeDecoder();
+            m_textDecoder.reset(m_codec->makeDecoder());
         else
         {
             qCDebug(KOMPAREDIFF2_LOG) << "Using locale codec as backup...";
             m_codec = QTextCodec::codecForLocale();
-            m_textDecoder = m_codec->makeDecoder();
+            m_textDecoder.reset(m_codec->makeDecoder());
         }
     }
 }

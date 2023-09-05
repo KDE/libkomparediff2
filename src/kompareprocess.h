@@ -13,6 +13,8 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "global.h"
 // KF
 #include <KProcess>
+// Std
+#include <memory>
 
 class QTextDecoder;
 class QTextCodec;
@@ -55,7 +57,7 @@ private:
     const QString*         m_customString; // Used when a comparison between a file and a string is requested
     QString                m_stdout;
     QString                m_stderr;
-    QTextDecoder*          m_textDecoder = nullptr;
+    std::unique_ptr<QTextDecoder>  m_textDecoder;
     QTextCodec*            m_codec = nullptr;
 };
 

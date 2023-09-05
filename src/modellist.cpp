@@ -12,7 +12,6 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 // lib
 #include "diffhunk.h"
-#include "kompareprocess.h"
 #include "parser.h"
 #include <komparediff2_logging.h>
 // KF
@@ -29,7 +28,6 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <QDir>
 #include <QTextStream>
 #include <QList>
-#include <QTemporaryFile>
 #include <QMimeType>
 #include <QMimeDatabase>
 #include <QTextCodec>
@@ -175,10 +173,10 @@ bool ModelList::compare(Mode mode)
 
     clear(); // Destroy the old models...
 
-    d->diffProcess = new KompareProcess(d->diffSettings, Custom, d->info->localSource, d->info->localDestination, QString(), mode);
+    d->diffProcess = std::make_unique<KompareProcess>(d->diffSettings, Custom, d->info->localSource, d->info->localDestination, QString(), mode);
     d->diffProcess->setEncoding(d->encoding);
 
-    connect(d->diffProcess, &KompareProcess::diffHasFinished,
+    connect(d->diffProcess.get(), &KompareProcess::diffHasFinished,
             this, &ModelList::slotDiffProcessFinished);
 
     Q_EMIT status(RunningDiff);
@@ -495,8 +493,8 @@ void ModelList::slotDiffProcessFinished(bool success)
         Q_EMIT error(d->diffProcess->stdErr());
     }
 
-    d->diffProcess->deleteLater();
-    d->diffProcess = nullptr;
+    // delay deletion, see bug 182792
+    d->diffProcess.release()->deleteLater();
 }
 
 bool ModelList::openDiff(const QString& diffFile)
@@ -571,21 +569,20 @@ bool ModelList::saveDiff(const QString& url, const QString& directory, DiffSetti
 
     qCDebug(KOMPAREDIFF2_LOG) << "ModelList::saveDiff: ";
 
-    d->diffTemp = new QTemporaryFile();
+    d->diffTemp = std::make_unique<QTemporaryFile>();
     d->diffURL = QUrl(url); // ### TODO the "url" argument should be a QUrl
 
     if (!d->diffTemp->open()) {
         Q_EMIT error(i18n("Could not open a temporary file."));
         d->diffTemp->remove();
-        delete d->diffTemp;
-        d->diffTemp = nullptr;
+        d->diffTemp.reset();
         return false;
     }
 
-    d->diffProcess = new KompareProcess(diffSettings, Custom, d->info->localSource, d->info->localDestination, directory);
+    d->diffProcess = std::make_unique<KompareProcess>(diffSettings, Custom, d->info->localSource, d->info->localDestination, directory);
     d->diffProcess->setEncoding(d->encoding);
 
-    connect(d->diffProcess, &KompareProcess::diffHasFinished,
+    connect(d->diffProcess.get(), &KompareProcess::diffHasFinished,
             this, &ModelList::slotWriteDiffOutput);
 
     Q_EMIT status(RunningDiff);
@@ -601,7 +598,7 @@ void ModelList::slotWriteDiffOutput(bool success)
 
     if (success)
     {
-        QTextStream stream(d->diffTemp);
+        QTextStream stream(d->diffTemp.get());
 
         stream << d->diffProcess->diffOutput();
 
@@ -620,12 +617,9 @@ void ModelList::slotWriteDiffOutput(bool success)
 
     d->diffURL = QUrl();
     d->diffTemp->remove();
+    d->diffTemp.reset();
 
-    delete d->diffTemp;
-    d->diffTemp = nullptr;
-
-    delete d->diffProcess;
-    d->diffProcess = nullptr;
+    d->diffProcess.reset();
 }
 
 void ModelList::slotSelectionChanged(const KompareDiff2::DiffModel* model, const KompareDiff2::Difference* diff)
@@ -737,7 +731,7 @@ const DiffModelList* ModelList::models() const
 {
     Q_D(const ModelList);
 
-    return d->models;
+    return d->models.get();
 }
 
 KActionCollection* ModelList::actionCollection() const
@@ -845,14 +839,14 @@ int ModelList::parseDiffOutput(const QString& diff)
 
     QStringList diffLines = ModelListPrivate::split(diff);
 
-    Parser* parser = new Parser(this);
+    std::unique_ptr<Parser> parser = std::make_unique<Parser>(this);
     bool malformed = false;
-    d->models = parser->parse(diffLines, &malformed);
+    d->models.reset(parser->parse(diffLines, &malformed));
 
     d->info->generator = parser->generator();
     d->info->format    = parser->format();
 
-    delete parser;
+    parser.reset();
 
     if (d->models)
     {
@@ -937,7 +931,7 @@ void ModelList::show()
     Q_D(ModelList);
 
     qCDebug(KOMPAREDIFF2_LOG) << "ModelList::Show Number of models = " << d->models->count();
-    Q_EMIT modelsChanged(d->models);
+    Q_EMIT modelsChanged(d->models.get());
     Q_EMIT setSelection(d->selectedModel, d->selectedDifference);
 }
 
@@ -997,7 +991,7 @@ void ModelList::clear()
     if (d->models)
         d->models->clear();
 
-    Q_EMIT modelsChanged(d->models);
+    Q_EMIT modelsChanged(d->models.get());
 }
 
 void ModelList::refresh()

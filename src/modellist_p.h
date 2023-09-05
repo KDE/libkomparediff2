@@ -12,16 +12,17 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 // lib
 #include "diffmodellist.h"
+#include "kompareprocess.h"
 // Qt
 #include <QUrl>
 #include <QFileInfo>
+#include <QTemporaryFile>
+// Std
+#include <memory>
 
 class KActionCollection;
 class QAction;
-class QTemporaryFile;
 class QTextCodec;
-
-class KompareProcess;
 
 namespace KompareDiff2
 {
@@ -35,7 +36,7 @@ class ModelListPrivate
 {
 public:
     ModelListPrivate(DiffSettings* diffSettings, bool supportReadWrite);
-    ~ModelListPrivate();
+    ~ModelListPrivate() = default;
 
 public: // Helper methods
     static bool isDirectory(const QString& url);
@@ -64,14 +65,14 @@ public: // Helper methods
     bool blendFile(DiffModel* model, const QString& lines);
 
 public:
-    QTemporaryFile* diffTemp;
+    std::unique_ptr<QTemporaryFile> diffTemp;
     QUrl diffURL;
 
-    KompareProcess* diffProcess = nullptr;
+    std::unique_ptr<KompareProcess> diffProcess;
 
     DiffSettings* diffSettings;
 
-    DiffModelList* models = nullptr;
+    std::unique_ptr<DiffModelList> models;
 
     DiffModel* selectedModel = nullptr;
     Difference* selectedDifference = nullptr;
@@ -103,15 +104,6 @@ ModelListPrivate::ModelListPrivate(DiffSettings* diffSettings, bool supportReadW
     : diffSettings(diffSettings),
       isReadWrite(supportReadWrite)
 {
-}
-
-inline
-ModelListPrivate::~ModelListPrivate()
-{
-    selectedModel = nullptr;
-    selectedDifference = nullptr;
-    info = nullptr;
-    delete models;
 }
 
 inline

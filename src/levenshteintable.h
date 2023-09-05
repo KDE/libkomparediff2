@@ -12,6 +12,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 // #include <komparediff2_logging.h>
 // Std
 #include <iostream>
+#include <memory>
 
 namespace KompareDiff2 {
 
@@ -60,7 +61,7 @@ private:
     unsigned int      m_height = 256;
     unsigned int      m_size;
     unsigned int*     m_table;
-    SequencePair*     m_sequences = nullptr;
+    std::unique_ptr<SequencePair> m_sequences;
 };
 
 template<class SequencePair> LevenshteinTable<SequencePair>::LevenshteinTable()
@@ -80,7 +81,6 @@ template<class SequencePair> LevenshteinTable<SequencePair>::LevenshteinTable(un
 template<class SequencePair> LevenshteinTable<SequencePair>::~LevenshteinTable()
 {
     delete[] m_table;
-    delete m_sequences;
 }
 
 template<class SequencePair> int LevenshteinTable<SequencePair>::getContent(unsigned int posX, unsigned int posY) const
@@ -131,7 +131,7 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::dumpLevenshtei
 
 template<class SequencePair> unsigned int LevenshteinTable<SequencePair>::createTable(SequencePair* sequences)
 {
-    m_sequences = sequences;
+    m_sequences.reset(sequences);
     unsigned int m = m_sequences->lengthFirst();
     unsigned int n = m_sequences->lengthSecond();
 

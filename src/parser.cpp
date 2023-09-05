@@ -52,7 +52,7 @@ int Parser::cleanUpCrap(QStringList& diffLines)
 DiffModelList* Parser::parse(QStringList& diffLines, bool* malformed)
 {
     /* Basically determine the generator then call the parse method */
-    ParserBase* parser;
+    std::unique_ptr<ParserBase> parser;
 
     m_generator = determineGenerator(diffLines);
 
@@ -63,15 +63,15 @@ DiffModelList* Parser::parse(QStringList& diffLines, bool* malformed)
     {
     case CVSDiff :
         qCDebug(KOMPAREDIFF2_LOG) << "It is a CVS generated diff...";
-        parser = new CVSDiffParser(m_list, diffLines);
+        parser = std::make_unique<CVSDiffParser>(m_list, diffLines);
         break;
     case Diff :
         qCDebug(KOMPAREDIFF2_LOG) << "It is a diff generated diff...";
-        parser = new DiffParser(m_list, diffLines);
+        parser = std::make_unique<DiffParser>(m_list, diffLines);
         break;
     case Perforce :
         qCDebug(KOMPAREDIFF2_LOG) << "It is a Perforce generated diff...";
-        parser = new PerforceParser(m_list, diffLines);
+        parser = std::make_unique<PerforceParser>(m_list, diffLines);
         break;
     default:
         // Nothing to delete, just leave...
@@ -91,8 +91,6 @@ DiffModelList* Parser::parse(QStringList& diffLines, bool* malformed)
             qCDebug(KOMPAREDIFF2_LOG) << "Diffcount:  " << (*modelIt)->differenceCount();
         }
     }
-
-    delete parser;
 
     return modelList;
 }

@@ -11,6 +11,8 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 #include "marker.h"
 // Qt
 #include <QStringList>
+// Std
+#include <vector>
 
 namespace KompareDiff2 {
 
@@ -28,13 +30,14 @@ public:
     bool needFineGrainedOutput(unsigned int difference) const;
 
     const static bool allowReplace = false;
+
 private:
     const QStringList m_first;
     const QStringList m_second;
-    unsigned int m_lengthFirst;
-    unsigned int m_lengthSecond;
-    unsigned int* m_hashesFirst;
-    unsigned int* m_hashesSecond;
+    const unsigned int m_lengthFirst;
+    const unsigned int m_lengthSecond;
+    std::vector<unsigned int> m_hashesFirst;
+    std::vector<unsigned int> m_hashesSecond;
     MarkerList m_markersFirst;
     MarkerList m_markersSecond;
 };

@@ -13,6 +13,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 // Std
 #include <iostream>
 #include <memory>
+#include <vector>
 
 namespace KompareDiff2 {
 
@@ -30,7 +31,7 @@ template<class SequencePair> class LevenshteinTable
 public:
     LevenshteinTable();
     LevenshteinTable(unsigned int width, unsigned int height);
-    ~LevenshteinTable();
+    ~LevenshteinTable() = default;
 
 public:
     int  getContent(unsigned int posX, unsigned int posY) const;
@@ -60,13 +61,13 @@ private:
     unsigned int      m_width = 256;
     unsigned int      m_height = 256;
     unsigned int      m_size;
-    unsigned int*     m_table;
+    std::vector<unsigned int> m_table;
     std::unique_ptr<SequencePair> m_sequences;
 };
 
 template<class SequencePair> LevenshteinTable<SequencePair>::LevenshteinTable()
     : m_size(m_height* m_width),
-      m_table(new unsigned int[ m_size ])
+      m_table(m_size)
 {
 }
 
@@ -74,13 +75,8 @@ template<class SequencePair> LevenshteinTable<SequencePair>::LevenshteinTable(un
     : m_width(width),
       m_height(height),
       m_size(m_width* m_height),
-      m_table(new unsigned int[ m_size ])
+      m_table(m_size)
 {
-}
-
-template<class SequencePair> LevenshteinTable<SequencePair>::~LevenshteinTable()
-{
-    delete[] m_table;
 }
 
 template<class SequencePair> int LevenshteinTable<SequencePair>::getContent(unsigned int posX, unsigned int posY) const
@@ -104,10 +100,8 @@ template<class SequencePair> bool LevenshteinTable<SequencePair>::setSize(unsign
 
     if (((width) * (height)) > m_size)
     {
-        delete[] m_table;
-
         m_size = width * height;
-        m_table = new unsigned int[ m_size ];
+        m_table.resize(m_size);
     }
 
     m_width = width;

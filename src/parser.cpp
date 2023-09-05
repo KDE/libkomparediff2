@@ -79,11 +79,9 @@ DiffModelList *Parser::parse(QStringList &diffLines, bool *malformed)
     DiffModelList *modelList = parser->parse(malformed);
     if (modelList) {
         qCDebug(KOMPAREDIFF2_LOG) << "Modelcount: " << modelList->count();
-        DiffModelListIterator modelIt = modelList->begin();
-        DiffModelListIterator mEnd = modelList->end();
-        for (; modelIt != mEnd; ++modelIt) {
-            qCDebug(KOMPAREDIFF2_LOG) << "Hunkcount:  " << (*modelIt)->hunkCount();
-            qCDebug(KOMPAREDIFF2_LOG) << "Diffcount:  " << (*modelIt)->differenceCount();
+        for (const DiffModel *model : std::as_const(*modelList)) {
+            qCDebug(KOMPAREDIFF2_LOG) << "Hunkcount:  " << model->hunkCount();
+            qCDebug(KOMPAREDIFF2_LOG) << "Diffcount:  " << model->differenceCount();
         }
     }
 
@@ -96,18 +94,15 @@ Generator Parser::determineGenerator(const QStringList &diffLines)
     QLatin1String cvsDiff("Index: ");
     QLatin1String perforceDiff("==== ");
 
-    QStringList::ConstIterator it = diffLines.begin();
-    QStringList::ConstIterator linesEnd = diffLines.end();
-
-    while (it != linesEnd) {
-        if ((*it).startsWith(cvsDiff)) {
+    for (const QString &diffLine : diffLines) {
+        if (diffLine.startsWith(cvsDiff)) {
             qCDebug(KOMPAREDIFF2_LOG) << "Diff is a CVSDiff";
             return CVSDiff;
-        } else if ((*it).startsWith(perforceDiff)) {
+        }
+        if (diffLine.startsWith(perforceDiff)) {
             qCDebug(KOMPAREDIFF2_LOG) << "Diff is a Perforce Diff";
             return Perforce;
         }
-        ++it;
     }
 
     qCDebug(KOMPAREDIFF2_LOG) << "We'll assume it is a diff Diff";

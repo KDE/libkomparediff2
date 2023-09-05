@@ -39,23 +39,23 @@ Format PerforceParser::determineFormat()
     QRegularExpression rcsRE(QStringLiteral("^[acd]\\d+ \\d+"));
     // Summary is not supported since it gives no useful parsable info
 
-    QStringList::ConstIterator it = m_diffLines.begin();
-
-    while (it != m_diffLines.end()) {
-        if (it->indexOf(unifiedRE, 0) == 0) {
+    for (const QString &diffLine : std::as_const(m_diffLines)) {
+        if (diffLine.indexOf(unifiedRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Unified diff...";
             return Unified;
-        } else if (it->indexOf(contextRE, 0) == 0) {
+        }
+        if (diffLine.indexOf(contextRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Context diff...";
             return Context;
-        } else if (it->indexOf(normalRE, 0) == 0) {
+        }
+        if (diffLine.indexOf(normalRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Normal diff...";
             return Normal;
-        } else if (it->indexOf(rcsRE, 0) == 0) {
+        }
+        if (diffLine.indexOf(rcsRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a RCS diff...";
             return RCS;
         }
-        ++it;
     }
     qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from an unknown diff...";
     return UnknownFormat;

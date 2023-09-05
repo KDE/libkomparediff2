@@ -33,27 +33,28 @@ Format DiffParser::determineFormat()
     QRegularExpression rcsRE(QStringLiteral("^[acd][0-9]+ [0-9]+"));
     QRegularExpression edRE(QStringLiteral("^[0-9]+[0-9,]*[acd]"));
 
-    QStringList::ConstIterator it = m_diffLines.begin();
-
-    while (it != m_diffLines.end()) {
-        qCDebug(KOMPAREDIFF2_LOG) << (*it);
-        if (it->indexOf(normalRE, 0) == 0) {
+    for (const QString &diffLine : std::as_const(m_diffLines)) {
+        qCDebug(KOMPAREDIFF2_LOG) << diffLine;
+        if (diffLine.indexOf(normalRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Normal diff...";
             return Normal;
-        } else if (it->indexOf(unifiedRE, 0) == 0) {
+        }
+        if (diffLine.indexOf(unifiedRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Unified diff...";
             return Unified;
-        } else if (it->indexOf(contextRE, 0) == 0) {
+        }
+        if (diffLine.indexOf(contextRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Context diff...";
             return Context;
-        } else if (it->indexOf(rcsRE, 0) == 0) {
+        }
+        if (diffLine.indexOf(rcsRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from an RCS diff...";
             return RCS;
-        } else if (it->indexOf(edRE, 0) == 0) {
+        }
+        if (diffLine.indexOf(edRE, 0) == 0) {
             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from an ED diff...";
             return Ed;
         }
-        ++it;
     }
     qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from an unknown diff...";
     return UnknownFormat;

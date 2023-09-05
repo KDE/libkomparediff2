@@ -73,13 +73,11 @@ int DiffHunk::sourceLineCount() const
 {
     Q_D(const DiffHunk);
 
-    DifferenceListConstIterator diffIt = d->differences.begin();
-    DifferenceListConstIterator dEnd = d->differences.end();
-
     int lineCount = 0;
 
-    for (; diffIt != dEnd; ++diffIt)
-        lineCount += (*diffIt)->sourceLineCount();
+    for (const Difference *diff : d->differences) {
+        lineCount += diff->sourceLineCount();
+    }
 
     return lineCount;
 }
@@ -88,13 +86,11 @@ int DiffHunk::destinationLineCount() const
 {
     Q_D(const DiffHunk);
 
-    DifferenceListConstIterator diffIt = d->differences.begin();
-    DifferenceListConstIterator dEnd = d->differences.end();
-
     int lineCount = 0;
 
-    for (; diffIt != dEnd; ++diffIt)
-        lineCount += (*diffIt)->destinationLineCount();
+    for (const Difference *diff : d->differences) {
+        lineCount += diff->destinationLineCount();
+    }
 
     return lineCount;
 }
@@ -107,26 +103,23 @@ QString DiffHunk::recreateHunk() const
     QString differences;
 
     // recreate body
-    DifferenceListConstIterator diffIt = d->differences.begin();
-    DifferenceListConstIterator dEnd = d->differences.end();
-
     int slc = 0; // source line count
     int dlc = 0; // destination line count
-    for (; diffIt != dEnd; ++diffIt) {
-        switch ((*diffIt)->type()) {
+    for (const Difference *diff : d->differences) {
+        switch (diff->type()) {
         case Difference::Unchanged:
         case Difference::Change:
-            slc += (*diffIt)->sourceLineCount();
-            dlc += (*diffIt)->destinationLineCount();
+            slc += diff->sourceLineCount();
+            dlc += diff->destinationLineCount();
             break;
         case Difference::Insert:
-            dlc += (*diffIt)->destinationLineCount();
+            dlc += diff->destinationLineCount();
             break;
         case Difference::Delete:
-            slc += (*diffIt)->sourceLineCount();
+            slc += diff->sourceLineCount();
             break;
         }
-        differences += (*diffIt)->recreateDifference();
+        differences += diff->recreateDifference();
     }
 
     // recreate header

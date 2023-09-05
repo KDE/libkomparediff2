@@ -263,32 +263,20 @@ bool ModelList::saveDestination(DiffModel *model)
     QStringList list;
 
     const DiffHunkList *hunks = model->hunks();
-    DiffHunkListConstIterator hunkIt = hunks->constBegin();
-    DiffHunkListConstIterator hEnd = hunks->constEnd();
 
-    for (; hunkIt != hEnd; ++hunkIt) {
-        DiffHunk *hunk = *hunkIt;
-
+    for (const DiffHunk *hunk : *hunks) {
         const DifferenceList differences = hunk->differences();
-        DifferenceListConstIterator diffIt = differences.constBegin();
-        DifferenceListConstIterator dEnd = differences.constEnd();
 
-        Difference *diff;
-        for (; diffIt != dEnd; ++diffIt) {
-            diff = *diffIt;
+        for (const Difference *diff : differences) {
             if (!diff->applied()) {
                 const DifferenceStringList destinationLines = diff->destinationLines();
-                DifferenceStringListConstIterator stringIt = destinationLines.begin();
-                DifferenceStringListConstIterator sEnd = destinationLines.end();
-                for (; stringIt != sEnd; ++stringIt) {
-                    list.append((*stringIt)->string());
+                for (const DifferenceString *diffString : destinationLines) {
+                    list.append(diffString->string());
                 }
             } else {
                 const DifferenceStringList sourceLines = diff->sourceLines();
-                DifferenceStringListConstIterator stringIt = sourceLines.begin();
-                DifferenceStringListConstIterator sEnd = sourceLines.end();
-                for (; stringIt != sEnd; ++stringIt) {
-                    list.append((*stringIt)->string());
+                for (const DifferenceString *diffString : sourceLines) {
+                    list.append(diffString->string());
                 }
             }
         }
@@ -373,11 +361,9 @@ bool ModelList::saveDestination(DiffModel *model)
     // If saving was fine set all differences to saved so we can start again with a clean slate
     if (result) {
         const DifferenceList *differences = model->differences();
-        DifferenceListConstIterator diffIt = differences->constBegin();
-        DifferenceListConstIterator endIt = differences->constEnd();
 
-        for (; diffIt != endIt; ++diffIt) {
-            (*diffIt)->setUnsaved(false);
+        for (Difference *diff : *differences) {
+            diff->setUnsaved(false);
         }
     }
 
@@ -391,10 +377,8 @@ bool ModelList::saveAll()
     if (modelCount() == 0)
         return false;
 
-    DiffModelListIterator it = d->models->begin();
-    DiffModelListIterator end = d->models->end();
-    for (; it != end; ++it) {
-        if (!saveDestination(*it))
+    for (DiffModel *model : std::as_const(*d->models)) {
+        if (!saveDestination(model))
             return false;
     }
 
@@ -517,12 +501,10 @@ QString ModelList::recreateDiff() const
 
     QString diff;
 
-    DiffModelListConstIterator modelIt = d->models->constBegin();
-    DiffModelListConstIterator mEnd = d->models->constEnd();
-
-    for (; modelIt != mEnd; ++modelIt) {
-        diff += (*modelIt)->recreateDiff();
+    for (const DiffModel *model : *d->models) {
+        diff += model->recreateDiff();
     }
+
     return diff;
 }
 
@@ -860,17 +842,13 @@ bool ModelList::blendOriginalIntoModelList(const QString &localURL)
     QFileInfo fi(localURL);
 
     bool result = false;
-    DiffModel *model;
 
     QString fileContents;
 
     if (fi.isDir()) { // is a dir
         qCDebug(KOMPAREDIFF2_LOG) << "Blend Dir";
 //      QDir dir( localURL, QString(), QDir::Name|QDir::DirsFirst, QDir::TypeMask );
-        DiffModelListIterator modelIt = d->models->begin();
-        DiffModelListIterator mEnd = d->models->end();
-        for (; modelIt != mEnd; ++modelIt) {
-            model = *modelIt;
+        for (DiffModel *model : std::as_const(*d->models)) {
             qCDebug(KOMPAREDIFF2_LOG) << "Model : " << model;
             QString filename = model->source();
             if (!filename.startsWith(localURL))

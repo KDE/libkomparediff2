@@ -231,11 +231,9 @@ void KompareProcess::start()
 {
 #ifndef NDEBUG
     QString cmdLine;
-    QStringList program = KProcess::program();
-    QStringList::ConstIterator it = program.constBegin();
-    QStringList::ConstIterator end = program.constEnd();
-    for (; it != end; ++it)
-        cmdLine += QLatin1Char('\"') + (*it) + QLatin1String("\" ");
+    const QStringList program = KProcess::program();
+    for (const QString &arg : program)
+        cmdLine += QLatin1Char('\"') + arg + QLatin1String("\" ");
     qCDebug(KOMPAREDIFF2_LOG) << cmdLine;
 #endif
     setOutputChannelMode(SeparateChannels);

@@ -235,10 +235,7 @@ QString Difference::recreateDifference() const
     QString difference;
 
     // source
-    DifferenceStringListConstIterator stringIt = d->sourceLines.begin();
-    DifferenceStringListConstIterator sEnd = d->sourceLines.end();
-
-    for (; stringIt != sEnd; ++stringIt) {
+    for (const DifferenceString *diffString : d->sourceLines) {
         switch (d->type) {
         case Change:
         case Delete:
@@ -251,14 +248,11 @@ QString Difference::recreateDifference() const
 //             qCDebug(KOMPAREDIFF2_LOG) << "Go away, nothing to do for you in source...";
             continue;
         }
-        difference += (*stringIt)->string();
+        difference += diffString->string();
     }
 
     // destination
-    stringIt = d->destinationLines.begin();
-    sEnd = d->destinationLines.end();
-
-    for (; stringIt != sEnd; ++stringIt) {
+    for (const DifferenceString *diffString : d->destinationLines) {
         switch (d->type) {
         case Change:
         case Insert:
@@ -271,7 +265,7 @@ QString Difference::recreateDifference() const
 //             qCDebug(KOMPAREDIFF2_LOG) << "Go away, nothing to do for you in destination...";
             continue;
         }
-        difference += (*stringIt)->string();
+        difference += diffString->string();
     }
 
     return difference;

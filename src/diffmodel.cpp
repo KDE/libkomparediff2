@@ -167,12 +167,10 @@ QString DiffModel::recreateDiff() const
     diff += nl;
 
     // recreate body by iterating over the hunks
-    DiffHunkListConstIterator hunkIt = d->hunks.begin();
-    DiffHunkListConstIterator hEnd = d->hunks.end();
-
-    for (; hunkIt != hEnd; ++hunkIt) {
-        if ((*hunkIt)->type() != DiffHunk::AddedByBlend)
-            diff += (*hunkIt)->recreateHunk();
+    for (const DiffHunk *hunk : d->hunks) {
+        if (hunk->type() != DiffHunk::AddedByBlend) {
+            diff += hunk->recreateHunk();
+        }
     }
 
     return diff;
@@ -451,18 +449,16 @@ void DiffModel::applyAllDifferences(bool apply)
         d->appliedCount = 0;
     }
 
-    DifferenceListIterator diffIt = d->differences.begin();
-    DifferenceListIterator dEnd = d->differences.end();
-
     int totalDelta = 0;
-    for (; diffIt != dEnd; ++diffIt) {
-        (*diffIt)->setTrackingDestinationLineNumber((*diffIt)->trackingDestinationLineNumber() + totalDelta);
-        bool appliedState = (*diffIt)->applied();
+
+    for (Difference *diff : std::as_const(d->differences)) {
+        diff->setTrackingDestinationLineNumber(diff->trackingDestinationLineNumber() + totalDelta);
+        const bool appliedState = diff->applied();
         if (appliedState == apply) {
             continue;
         }
-        (*diffIt)->applyQuietly(apply);
-        int currentDelta = GetDifferenceDelta(*diffIt);
+        diff->applyQuietly(apply);
+        const int currentDelta = GetDifferenceDelta(diff);
         totalDelta += currentDelta;
     }
 }

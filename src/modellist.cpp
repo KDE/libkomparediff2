@@ -14,7 +14,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "diffhunk.h"
 #include "kompareprocess.h"
 #include "parser.h"
-#include <komparediffdebug.h>
+#include <komparediff2_logging.h>
 // KF
 #include <KActionCollection>
 #include <KDirWatch>
@@ -42,7 +42,7 @@ ModelList::ModelList(DiffSettings* diffSettings, QObject* parent, bool supportRe
 {
     Q_D(ModelList);
 
-    qCDebug(LIBKOMPAREDIFF2) << "Show me the arguments: " << diffSettings << ", " << parent;
+    qCDebug(KOMPAREDIFF2_LOG) << "Show me the arguments: " << diffSettings << ", " << parent;
     d->actionCollection = new KActionCollection(this);
     if (supportReadWrite) {
         d->applyDifference = d->actionCollection->addAction(QStringLiteral("difference_apply"), this, &ModelList::slotActionApplyDifference);
@@ -119,24 +119,24 @@ bool ModelList::compare()
         QMimeDatabase db;
         QString sourceMimeType = (db.mimeTypeForData(sourceFile.readAll())).name();
         sourceFile.close();
-        qCDebug(LIBKOMPAREDIFF2) << "Mimetype source     : " << sourceMimeType;
+        qCDebug(KOMPAREDIFF2_LOG) << "Mimetype source     : " << sourceMimeType;
 
         QFile destinationFile(d->info->localDestination);
         destinationFile.open(QIODevice::ReadOnly);
         QString destinationMimeType = (db.mimeTypeForData(destinationFile.readAll())).name();
         destinationFile.close();
-        qCDebug(LIBKOMPAREDIFF2) << "Mimetype destination: " << destinationMimeType;
+        qCDebug(KOMPAREDIFF2_LOG) << "Mimetype destination: " << destinationMimeType;
 
         // Not checking if it is a text file/something diff can even compare, we'll let diff handle that
         if (!ModelListPrivate::isDiff(sourceMimeType) && ModelListPrivate::isDiff(destinationMimeType))
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Blending destination into source...";
+            qCDebug(KOMPAREDIFF2_LOG) << "Blending destination into source...";
             d->info->mode = BlendingFile;
             result = openFileAndDiff();
         }
         else if (ModelListPrivate::isDiff(sourceMimeType) && !ModelListPrivate::isDiff(destinationMimeType))
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Blending source into destination...";
+            qCDebug(KOMPAREDIFF2_LOG) << "Blending source into destination...";
             d->info->mode = BlendingFile;
             // Swap source and destination before calling this
             d->info->swapSourceWithDestination();
@@ -146,7 +146,7 @@ bool ModelList::compare()
         }
         else
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Comparing source with destination";
+            qCDebug(KOMPAREDIFF2_LOG) << "Comparing source with destination";
             d->info->mode = ComparingFiles;
             result = compare(d->info->mode);
         }
@@ -203,7 +203,7 @@ bool ModelList::openFileAndDiff()
 
     if (!blendOriginalIntoModelList(d->info->localSource))
     {
-        qCDebug(LIBKOMPAREDIFF2) << "Oops cant blend original file into modellist : " << d->info->localSource;
+        qCDebug(KOMPAREDIFF2_LOG) << "Oops cant blend original file into modellist : " << d->info->localSource;
         Q_EMIT error(i18n("<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</qt>", d->info->destination.url(), d->info->source.url()));
         return false;
     }
@@ -232,7 +232,7 @@ bool ModelList::openDirAndDiff()
     if (!blendOriginalIntoModelList(d->info->localSource))
     {
         // Trouble blending the original into the model
-        qCDebug(LIBKOMPAREDIFF2) << "Oops cant blend original dir into modellist : " << d->info->localSource;
+        qCDebug(KOMPAREDIFF2_LOG) << "Oops cant blend original dir into modellist : " << d->info->localSource;
         Q_EMIT error(i18n("<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>.</qt>", d->info->destination.url(), d->info->source.url()));
         return false;
     }
@@ -260,7 +260,7 @@ bool ModelList::saveDestination(DiffModel* model)
 {
     Q_D(ModelList);
 
-    qCDebug(LIBKOMPAREDIFF2) << "ModelList::saveDestination: ";
+    qCDebug(KOMPAREDIFF2_LOG) << "ModelList::saveDestination: ";
 
     // Unnecessary safety check, we can guarantee there are unsaved changes!!!
     if (!model->hasUnsavedChanges())
@@ -312,7 +312,7 @@ bool ModelList::saveDestination(DiffModel* model)
         }
     }
 
-    // qCDebug(LIBKOMPAREDIFF2) << "Everything: " << endl << list.join( "\n" );
+    // qCDebug(KOMPAREDIFF2_LOG) << "Everything: " << endl << list.join( "\n" );
 
     if (list.count() > 0)
         stream << list.join(QString());
@@ -336,18 +336,18 @@ bool ModelList::saveDestination(DiffModel* model)
     {
         // Don't use destination which was used for creating the diff directly, use the original URL!!!
         // FIXME!!! Wrong destination this way! Need to add the sub directory to the url!!!!
-        qCDebug(LIBKOMPAREDIFF2) << "Tempfilename (save) : " << temp.fileName();
-        qCDebug(LIBKOMPAREDIFF2) << "Model->path+file    : " << model->destinationPath() << model->destinationFile();
-        qCDebug(LIBKOMPAREDIFF2) << "info->localdest     : " << d->info->localDestination;
+        qCDebug(KOMPAREDIFF2_LOG) << "Tempfilename (save) : " << temp.fileName();
+        qCDebug(KOMPAREDIFF2_LOG) << "Model->path+file    : " << model->destinationPath() << model->destinationFile();
+        qCDebug(KOMPAREDIFF2_LOG) << "info->localdest     : " << d->info->localDestination;
         QString tmp = model->destinationPath();
         if (tmp.startsWith(d->info->localDestination))     // It should, if not serious trouble...
             tmp.remove(0, d->info->localDestination.size());
-        qCDebug(LIBKOMPAREDIFF2) << "DestinationURL      : " << d->info->destination;
-        qCDebug(LIBKOMPAREDIFF2) << "tmp                 : " << tmp;
+        qCDebug(KOMPAREDIFF2_LOG) << "DestinationURL      : " << d->info->destination;
+        qCDebug(KOMPAREDIFF2_LOG) << "tmp                 : " << tmp;
         KIO::UDSEntry entry;
         QUrl fullDestinationPath = d->info->destination;
         fullDestinationPath.setPath(fullDestinationPath.path() + tmp);
-        qCDebug(LIBKOMPAREDIFF2) << "fullDestinationPath : " << fullDestinationPath;
+        qCDebug(KOMPAREDIFF2_LOG) << "fullDestinationPath : " << fullDestinationPath;
         KIO::StatJob* statJob = KIO::stat(fullDestinationPath);
         if (!statJob->exec())
         {
@@ -365,8 +365,8 @@ bool ModelList::saveDestination(DiffModel* model)
     }
     else
     {
-        qCDebug(LIBKOMPAREDIFF2) << "Tempfilename   : " << temp.fileName();
-        qCDebug(LIBKOMPAREDIFF2) << "DestinationURL : " << d->info->destination;
+        qCDebug(KOMPAREDIFF2_LOG) << "Tempfilename   : " << temp.fileName();
+        qCDebug(KOMPAREDIFF2_LOG) << "DestinationURL : " << d->info->destination;
 
         // Get permissions of existing file and copy temporary file with the same permissions
         int permissions = -1;
@@ -377,7 +377,7 @@ bool ModelList::saveDestination(DiffModel* model)
 
         KIO::FileCopyJob* copyJob = KIO::file_copy(QUrl::fromLocalFile(temp.fileName()), d->info->destination , permissions, KIO::Overwrite);
         result = copyJob->exec();
-        qCDebug(LIBKOMPAREDIFF2) << "true or false?" << result;
+        qCDebug(KOMPAREDIFF2_LOG) << "true or false?" << result;
     }
 
     if (!result)
@@ -436,13 +436,13 @@ void ModelList::setEncoding(const QString& encoding)
     }
     else
     {
-        qCDebug(LIBKOMPAREDIFF2) << "Encoding : " << encoding;
+        qCDebug(KOMPAREDIFF2_LOG) << "Encoding : " << encoding;
         d->textCodec = QTextCodec::codecForName(encoding.toUtf8());
-        qCDebug(LIBKOMPAREDIFF2) << "TextCodec: " << d->textCodec;
+        qCDebug(KOMPAREDIFF2_LOG) << "TextCodec: " << d->textCodec;
         if (!d->textCodec)
             d->textCodec = QTextCodec::codecForLocale();
     }
-    qCDebug(LIBKOMPAREDIFF2) << "TextCodec: " << d->textCodec;
+    qCDebug(KOMPAREDIFF2_LOG) << "TextCodec: " << d->textCodec;
 }
 
 void ModelList::setReadWrite(bool isReadWrite)
@@ -478,7 +478,7 @@ void ModelList::slotDiffProcessFinished(bool success)
         {
             if (d->info->mode != ShowingDiff)
             {
-                qCDebug(LIBKOMPAREDIFF2) << "Blend this crap please and do not give me any conflicts...";
+                qCDebug(KOMPAREDIFF2_LOG) << "Blend this crap please and do not give me any conflicts...";
                 blendOriginalIntoModelList(d->info->localSource);
             }
             d->updateModelListActions();
@@ -503,7 +503,7 @@ bool ModelList::openDiff(const QString& diffFile)
 {
     Q_D(ModelList);
 
-    qCDebug(LIBKOMPAREDIFF2) << "Stupid :) Url = " << diffFile;
+    qCDebug(KOMPAREDIFF2_LOG) << "Stupid :) Url = " << diffFile;
 
     if (diffFile.isEmpty())
         return false;
@@ -569,7 +569,7 @@ bool ModelList::saveDiff(const QString& url, const QString& directory, DiffSetti
 {
     Q_D(ModelList);
 
-    qCDebug(LIBKOMPAREDIFF2) << "ModelList::saveDiff: ";
+    qCDebug(KOMPAREDIFF2_LOG) << "ModelList::saveDiff: ";
 
     d->diffTemp = new QTemporaryFile();
     d->diffURL = QUrl(url); // ### TODO the "url" argument should be a QUrl
@@ -597,7 +597,7 @@ void ModelList::slotWriteDiffOutput(bool success)
 {
     Q_D(ModelList);
 
-    qCDebug(LIBKOMPAREDIFF2) << "Success = " << success;
+    qCDebug(KOMPAREDIFF2_LOG) << "Success = " << success;
 
     if (success)
     {
@@ -634,13 +634,13 @@ void ModelList::slotSelectionChanged(const KompareDiff2::DiffModel* model, const
 
 // This method will signal all the other objects about a change in selection,
 // it will Q_EMIT setSelection( const DiffModel*, const Difference* ) to all who are connected
-    qCDebug(LIBKOMPAREDIFF2) << "ModelList::slotSelectionChanged( " << model << ", " << diff << " )";
-    qCDebug(LIBKOMPAREDIFF2) << "Sender is : " << sender()->metaObject()->className();
-//     qCDebug(LIBKOMPAREDIFF2) << kBacktrace();
+    qCDebug(KOMPAREDIFF2_LOG) << "ModelList::slotSelectionChanged( " << model << ", " << diff << " )";
+    qCDebug(KOMPAREDIFF2_LOG) << "Sender is : " << sender()->metaObject()->className();
+//     qCDebug(KOMPAREDIFF2_LOG) << kBacktrace();
 
     d->selectedModel = const_cast<DiffModel*>(model);
     d->modelIndex = d->models->indexOf(d->selectedModel);
-    qCDebug(LIBKOMPAREDIFF2) << "d->modelIndex = " << d->modelIndex;
+    qCDebug(KOMPAREDIFF2_LOG) << "d->modelIndex = " << d->modelIndex;
     d->selectedDifference = const_cast<Difference*>(diff);
 
     d->selectedModel->setSelectedDifference(d->selectedDifference);
@@ -671,8 +671,8 @@ void ModelList::slotSelectionChanged(const KompareDiff2::Difference* diff)
 
 // This method will Q_EMIT setSelection( const Difference* ) to whomever is listening
 // when for instance in kompareview the selection has changed
-    qCDebug(LIBKOMPAREDIFF2) << "ModelList::slotSelectionChanged( " << diff << " )";
-    qCDebug(LIBKOMPAREDIFF2) << "Sender is : " << sender()->metaObject()->className();
+    qCDebug(KOMPAREDIFF2_LOG) << "ModelList::slotSelectionChanged( " << diff << " )";
+    qCDebug(KOMPAREDIFF2_LOG) << "Sender is : " << sender()->metaObject()->className();
 
     d->selectedDifference = const_cast<Difference*>(diff);
 
@@ -751,7 +751,7 @@ void ModelList::slotPreviousDifference()
 {
     Q_D(ModelList);
 
-    qCDebug(LIBKOMPAREDIFF2) << "slotPreviousDifference called";
+    qCDebug(KOMPAREDIFF2_LOG) << "slotPreviousDifference called";
     if ((d->selectedDifference = d->selectedModel->prevDifference()) != nullptr)
     {
         Q_EMIT setSelection(d->selectedDifference);
@@ -760,7 +760,7 @@ void ModelList::slotPreviousDifference()
         return;
     }
 
-    qCDebug(LIBKOMPAREDIFF2) << "**** no previous difference... ok lets find the previous model...";
+    qCDebug(KOMPAREDIFF2_LOG) << "**** no previous difference... ok lets find the previous model...";
 
     if ((d->selectedModel = d->prevModel()) != nullptr)
     {
@@ -773,7 +773,7 @@ void ModelList::slotPreviousDifference()
     }
 
 
-    qCDebug(LIBKOMPAREDIFF2) << "**** !!! No previous model, ok backup plan activated...";
+    qCDebug(KOMPAREDIFF2_LOG) << "**** !!! No previous model, ok backup plan activated...";
 
     // Backup plan
     d->selectedModel = d->firstModel();
@@ -788,7 +788,7 @@ void ModelList::slotNextDifference()
 {
     Q_D(ModelList);
 
-    qCDebug(LIBKOMPAREDIFF2) << "slotNextDifference called";
+    qCDebug(KOMPAREDIFF2_LOG) << "slotNextDifference called";
     if ((d->selectedDifference = d->selectedModel->nextDifference()) != nullptr)
     {
         Q_EMIT setSelection(d->selectedDifference);
@@ -797,7 +797,7 @@ void ModelList::slotNextDifference()
         return;
     }
 
-    qCDebug(LIBKOMPAREDIFF2) << "**** no next difference... ok lets find the next model...";
+    qCDebug(KOMPAREDIFF2_LOG) << "**** no next difference... ok lets find the next model...";
 
     if ((d->selectedModel = d->nextModel()) != nullptr)
     {
@@ -809,7 +809,7 @@ void ModelList::slotNextDifference()
         return;
     }
 
-    qCDebug(LIBKOMPAREDIFF2) << "**** !!! No next model, ok backup plan activated...";
+    qCDebug(KOMPAREDIFF2_LOG) << "**** !!! No next model, ok backup plan activated...";
 
     // Backup plan
     d->selectedModel = d->lastModel();
@@ -840,7 +840,7 @@ int ModelList::parseDiffOutput(const QString& diff)
 {
     Q_D(ModelList);
 
-    qCDebug(LIBKOMPAREDIFF2) << "ModelList::parseDiffOutput";
+    qCDebug(KOMPAREDIFF2_LOG) << "ModelList::parseDiffOutput";
     Q_EMIT diffString(diff);
 
     QStringList diffLines = ModelListPrivate::split(diff);
@@ -858,19 +858,19 @@ int ModelList::parseDiffOutput(const QString& diff)
     {
         if (malformed)
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Malformed diff";
+            qCDebug(KOMPAREDIFF2_LOG) << "Malformed diff";
             Q_EMIT error(i18n("The diff is malformed. Some lines could not be parsed and will not be displayed in the diff view."));
             // proceed anyway with the lines which have been parsed
         }
         d->selectedModel = d->firstModel();
-        qCDebug(LIBKOMPAREDIFF2) << "Ok there are differences...";
+        qCDebug(KOMPAREDIFF2_LOG) << "Ok there are differences...";
         d->selectedDifference = d->selectedModel->firstDifference();
         Q_EMIT setStatusBarModelInfo(0, 0, modelCount(), differenceCount(), 0);
     }
     else
     {
         // Wow trouble, no models, so no differences...
-        qCDebug(LIBKOMPAREDIFF2) << "Now i'll be damned, there should be models here !!!";
+        qCDebug(KOMPAREDIFF2_LOG) << "Now i'll be damned, there should be models here !!!";
         return -1;
     }
 
@@ -881,7 +881,7 @@ bool ModelList::blendOriginalIntoModelList(const QString& localURL)
 {
     Q_D(ModelList);
 
-    qCDebug(LIBKOMPAREDIFF2) << "Hurrah we are blending...";
+    qCDebug(KOMPAREDIFF2_LOG) << "Hurrah we are blending...";
     QFileInfo fi(localURL);
 
     bool result = false;
@@ -891,42 +891,42 @@ bool ModelList::blendOriginalIntoModelList(const QString& localURL)
 
     if (fi.isDir())
     {   // is a dir
-        qCDebug(LIBKOMPAREDIFF2) << "Blend Dir";
+        qCDebug(KOMPAREDIFF2_LOG) << "Blend Dir";
 //      QDir dir( localURL, QString(), QDir::Name|QDir::DirsFirst, QDir::TypeMask );
         DiffModelListIterator modelIt = d->models->begin();
         DiffModelListIterator mEnd    = d->models->end();
         for (; modelIt != mEnd; ++modelIt)
         {
             model = *modelIt;
-            qCDebug(LIBKOMPAREDIFF2) << "Model : " << model;
+            qCDebug(KOMPAREDIFF2_LOG) << "Model : " << model;
             QString filename = model->source();
             if (!filename.startsWith(localURL))
                 filename = QDir(localURL).filePath(filename);
             QFileInfo fi2(filename);
             if (fi2.exists())
             {
-                qCDebug(LIBKOMPAREDIFF2) << "Reading from: " << filename;
+                qCDebug(KOMPAREDIFF2_LOG) << "Reading from: " << filename;
                 fileContents = d->readFile(filename);
                 result = d->blendFile(model, fileContents);
             }
             else
             {
-                qCDebug(LIBKOMPAREDIFF2) << "File " << filename << " does not exist !";
-                qCDebug(LIBKOMPAREDIFF2) << "Assume empty file !";
+                qCDebug(KOMPAREDIFF2_LOG) << "File " << filename << " does not exist !";
+                qCDebug(KOMPAREDIFF2_LOG) << "Assume empty file !";
                 fileContents.truncate(0);
                 result = d->blendFile(model, fileContents);
             }
         }
-        qCDebug(LIBKOMPAREDIFF2) << "End of Blend Dir";
+        qCDebug(KOMPAREDIFF2_LOG) << "End of Blend Dir";
     }
     else if (fi.isFile())
     {   // is a file
-        qCDebug(LIBKOMPAREDIFF2) << "Blend File";
-        qCDebug(LIBKOMPAREDIFF2) << "Reading from: " << localURL;
+        qCDebug(KOMPAREDIFF2_LOG) << "Blend File";
+        qCDebug(KOMPAREDIFF2_LOG) << "Reading from: " << localURL;
         fileContents = d->readFile(localURL);
 
         result = d->blendFile((*d->models)[ 0 ], fileContents);
-        qCDebug(LIBKOMPAREDIFF2) << "End of Blend File";
+        qCDebug(KOMPAREDIFF2_LOG) << "End of Blend File";
     }
 
     return result;
@@ -936,7 +936,7 @@ void ModelList::show()
 {
     Q_D(ModelList);
 
-    qCDebug(LIBKOMPAREDIFF2) << "ModelList::Show Number of models = " << d->models->count();
+    qCDebug(KOMPAREDIFF2_LOG) << "ModelList::Show Number of models = " << d->models->count();
     Q_EMIT modelsChanged(d->models);
     Q_EMIT setSelection(d->selectedModel, d->selectedDifference);
 }

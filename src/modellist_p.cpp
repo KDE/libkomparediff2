@@ -11,7 +11,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 // lib
 #include "info.h"
-#include <komparediffdebug.h>
+#include <komparediff2_logging.h>
 // Qt
 #include <QTextCodec>
 #include <QAction>
@@ -52,7 +52,7 @@ QString ModelListPrivate::readFile(const QString& fileName)
     QFile file(fileName);
     file.open(QIODevice::ReadOnly);
 
-    qCDebug(LIBKOMPAREDIFF2) << "Codec = " << textCodec;
+    qCDebug(KOMPAREDIFF2_LOG) << "Codec = " << textCodec;
     if (!textCodec)
         textCodec = QTextCodec::codecForLocale();
     std::unique_ptr<QTextDecoder> decoder(textCodec->makeDecoder());
@@ -71,73 +71,73 @@ QString ModelListPrivate::readFile(const QString& fileName)
 
 bool ModelListPrivate::hasPrevModel() const
 {
-    // qCDebug(LIBKOMPAREDIFF2) << "ModelListPrivate::hasPrevModel()";
+    // qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::hasPrevModel()";
 
     if (modelIndex > 0)
     {
-//         qCDebug(LIBKOMPAREDIFF2) << "has prev model";
+//         qCDebug(KOMPAREDIFF2_LOG) << "has prev model";
         return true;
     }
 
-//     qCDebug(LIBKOMPAREDIFF2) << "doesn't have a prev model, this is the first one...";
+//     qCDebug(KOMPAREDIFF2_LOG) << "doesn't have a prev model, this is the first one...";
 
     return false;
 }
 
 bool ModelListPrivate::hasNextModel() const
 {
-    // qCDebug(LIBKOMPAREDIFF2) << "ModelListPrivate::hasNextModel()";
+    // qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::hasNextModel()";
 
     if (modelIndex < (models->count() - 1))
     {
-//         qCDebug(LIBKOMPAREDIFF2) << "has next model";
+//         qCDebug(KOMPAREDIFF2_LOG) << "has next model";
         return true;
     }
 
-//     qCDebug(LIBKOMPAREDIFF2) << "doesn't have a next model, this is the last one...";
+//     qCDebug(KOMPAREDIFF2_LOG) << "doesn't have a next model, this is the last one...";
     return false;
 }
 
 bool ModelListPrivate::hasPrevDiff() const
 {
-//     qCDebug(LIBKOMPAREDIFF2) << "ModelListPrivate::hasPrevDiff()";
+//     qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::hasPrevDiff()";
     const int index = selectedModel->diffIndex();
 
     if (index > 0)
     {
-//         qCDebug(LIBKOMPAREDIFF2) << "has prev difference in same model";
+//         qCDebug(KOMPAREDIFF2_LOG) << "has prev difference in same model";
         return true;
     }
 
     if (hasPrevModel())
     {
-//         qCDebug(LIBKOMPAREDIFF2) << "has prev difference but in prev model";
+//         qCDebug(KOMPAREDIFF2_LOG) << "has prev difference but in prev model";
         return true;
     }
 
-//     qCDebug(LIBKOMPAREDIFF2) << "doesn't have a prev difference, not even in the previous model because there is no previous model";
+//     qCDebug(KOMPAREDIFF2_LOG) << "doesn't have a prev difference, not even in the previous model because there is no previous model";
 
     return false;
 }
 
 bool ModelListPrivate::hasNextDiff() const
 {
-//     qCDebug(LIBKOMPAREDIFF2) << "ModelListPrivate::hasNextDiff()";
+//     qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::hasNextDiff()";
     const int index = selectedModel->diffIndex();
 
     if (index < (selectedModel->differenceCount() - 1))
     {
-//         qCDebug(LIBKOMPAREDIFF2) << "has next difference in same model";
+//         qCDebug(KOMPAREDIFF2_LOG) << "has next difference in same model";
         return true;
     }
 
     if (hasNextModel())
     {
-//         qCDebug(LIBKOMPAREDIFF2) << "has next difference but in next model";
+//         qCDebug(KOMPAREDIFF2_LOG) << "has next difference but in next model";
         return true;
     }
 
-//     qCDebug(LIBKOMPAREDIFF2) << "doesn't have a next difference, not even in next model because there is no next model";
+//     qCDebug(KOMPAREDIFF2_LOG) << "doesn't have a next difference, not even in next model because there is no next model";
 
     return false;
 }
@@ -175,9 +175,9 @@ void ModelListPrivate::setDepthAndApplied()
 
 DiffModel* ModelListPrivate::firstModel()
 {
-    qCDebug(LIBKOMPAREDIFF2) << "ModelListPrivate::firstModel()";
+    qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::firstModel()";
     modelIndex = 0;
-    qCDebug(LIBKOMPAREDIFF2) << "modelIndex = " << modelIndex;
+    qCDebug(KOMPAREDIFF2_LOG) << "modelIndex = " << modelIndex;
 
     selectedModel = models->first();
 
@@ -186,9 +186,9 @@ DiffModel* ModelListPrivate::firstModel()
 
 DiffModel* ModelListPrivate::lastModel()
 {
-    qCDebug(LIBKOMPAREDIFF2) << "ModelListPrivate::lastModel()";
+    qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::lastModel()";
     modelIndex = models->count() - 1;
-    qCDebug(LIBKOMPAREDIFF2) << "modelIndex = " << modelIndex;
+    qCDebug(KOMPAREDIFF2_LOG) << "modelIndex = " << modelIndex;
 
     selectedModel = models->last();
 
@@ -197,17 +197,17 @@ DiffModel* ModelListPrivate::lastModel()
 
 DiffModel* ModelListPrivate::prevModel()
 {
-    qCDebug(LIBKOMPAREDIFF2) << "ModelListPrivate::prevModel()";
+    qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::prevModel()";
     if (modelIndex > 0 && --modelIndex < models->count())
     {
-        qCDebug(LIBKOMPAREDIFF2) << "modelIndex = " << modelIndex;
+        qCDebug(KOMPAREDIFF2_LOG) << "modelIndex = " << modelIndex;
         selectedModel = (*models)[ modelIndex ];
     }
     else
     {
         selectedModel = nullptr;
         modelIndex = 0;
-        qCDebug(LIBKOMPAREDIFF2) << "modelIndex = " << modelIndex;
+        qCDebug(KOMPAREDIFF2_LOG) << "modelIndex = " << modelIndex;
     }
 
     return selectedModel;
@@ -215,17 +215,17 @@ DiffModel* ModelListPrivate::prevModel()
 
 DiffModel* ModelListPrivate::nextModel()
 {
-    qCDebug(LIBKOMPAREDIFF2) << "ModelListPrivate::nextModel()";
+    qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::nextModel()";
     if (++modelIndex < models->count())
     {
-        qCDebug(LIBKOMPAREDIFF2) << "modelIndex = " << modelIndex;
+        qCDebug(KOMPAREDIFF2_LOG) << "modelIndex = " << modelIndex;
         selectedModel = (*models)[ modelIndex ];
     }
     else
     {
         selectedModel = nullptr;
         modelIndex = 0;
-        qCDebug(LIBKOMPAREDIFF2) << "modelIndex = " << modelIndex;
+        qCDebug(KOMPAREDIFF2_LOG) << "modelIndex = " << modelIndex;
     }
 
     return selectedModel;
@@ -233,15 +233,15 @@ DiffModel* ModelListPrivate::nextModel()
 
 bool ModelListPrivate::setSelectedModel(DiffModel* model)
 {
-    qCDebug(LIBKOMPAREDIFF2) << "ModelListPrivate::setSelectedModel( " << model << " )";
+    qCDebug(KOMPAREDIFF2_LOG) << "ModelListPrivate::setSelectedModel( " << model << " )";
 
     if (model != selectedModel)
     {
         if (!models->contains(model))
             return false;
-        qCDebug(LIBKOMPAREDIFF2) << "selectedModel (was) = " << selectedModel;
+        qCDebug(KOMPAREDIFF2_LOG) << "selectedModel (was) = " << selectedModel;
         modelIndex = models->indexOf(model);
-        qCDebug(LIBKOMPAREDIFF2) << "selectedModel (is)  = " << selectedModel;
+        qCDebug(KOMPAREDIFF2_LOG) << "selectedModel (is)  = " << selectedModel;
         selectedModel = model;
     }
 
@@ -305,7 +305,7 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
 {
     if (!model)
     {
-        qCDebug(LIBKOMPAREDIFF2) << "**** model is null :(";
+        qCDebug(KOMPAREDIFF2_LOG) << "**** model is null :(";
         return false;
     }
 
@@ -317,7 +317,7 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
     auto linesIt = lines.constBegin(), lEnd = lines.constEnd();
 
     DiffHunkList* hunks = model->hunks();
-    qCDebug(LIBKOMPAREDIFF2) << "Hunks in hunklist: " << hunks->count();
+    qCDebug(KOMPAREDIFF2_LOG) << "Hunks in hunklist: " << hunks->count();
     DiffHunkListIterator hunkIt = hunks->begin();
 
     DiffHunk*   newHunk = nullptr;
@@ -387,7 +387,7 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
     DifferenceList hunkDiffList   = (*hunkIt)->differences();
     DifferenceListIterator diffIt = hunkDiffList.begin();
     DifferenceListIterator dEnd   = hunkDiffList.end();
-    qCDebug(LIBKOMPAREDIFF2) << "Number of differences in hunkDiffList = " << diffList.count();
+    qCDebug(KOMPAREDIFF2_LOG) << "Number of differences in hunkDiffList = " << diffList.count();
 
     DifferenceListIterator tempIt;
     Difference* diff;
@@ -395,7 +395,7 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
     for (; diffIt != dEnd; ++diffIt)
     {
         diff = *diffIt;
-        qCDebug(LIBKOMPAREDIFF2) << "*(Diff it) = " << diff;
+        qCDebug(KOMPAREDIFF2_LOG) << "*(Diff it) = " << diff;
         // Check if there are lines in the original file before the difference
         // that are not yet in the diff. If so create new Unchanged diff
         if (srcLineNo < diff->sourceLineNumber())
@@ -405,7 +405,7 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
             newHunk->add(newDiff);
             while (srcLineNo < diff->sourceLineNumber() && linesIt != lEnd)
             {
-//                  qCDebug(LIBKOMPAREDIFF2) << "SourceLine = " << srcLineNo << ": " << *linesIt;
+//                  qCDebug(KOMPAREDIFF2_LOG) << "SourceLine = " << srcLineNo << ": " << *linesIt;
                 newDiff->addSourceLine(*linesIt);
                 newDiff->addDestinationLine(*linesIt);
                 ++srcLineNo;
@@ -417,20 +417,20 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
         switch (diff->type())
         {
         case Difference::Unchanged:
-            qCDebug(LIBKOMPAREDIFF2) << "Unchanged";
+            qCDebug(KOMPAREDIFF2_LOG) << "Unchanged";
             for (int i = 0; i < diff->sourceLineCount(); ++i)
             {
                 if (linesIt != lEnd && *linesIt != diff->sourceLineAt(i)->string())
                 {
-                    qCDebug(LIBKOMPAREDIFF2) << "Conflict: SourceLine = " << srcLineNo << ": " << *linesIt;
-                    qCDebug(LIBKOMPAREDIFF2) << "Conflict: DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt(i)->string();
+                    qCDebug(KOMPAREDIFF2_LOG) << "Conflict: SourceLine = " << srcLineNo << ": " << *linesIt;
+                    qCDebug(KOMPAREDIFF2_LOG) << "Conflict: DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt(i)->string();
 
                     // Do conflict resolution (well sort of)
                     diff->sourceLineAt(i)->setConflictString(*linesIt);
                     diff->setConflict(true);
                 }
-//                  qCDebug(LIBKOMPAREDIFF2) << "SourceLine = " << srcLineNo << ": " << *linesIt;
-//                  qCDebug(LIBKOMPAREDIFF2) << "DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt( i )->string();
+//                  qCDebug(KOMPAREDIFF2_LOG) << "SourceLine = " << srcLineNo << ": " << *linesIt;
+//                  qCDebug(KOMPAREDIFF2_LOG) << "DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt( i )->string();
                 ++srcLineNo;
                 ++destLineNo;
                 ++linesIt;
@@ -443,7 +443,7 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
 
             break;
         case Difference::Change:
-            qCDebug(LIBKOMPAREDIFF2) << "Change";
+            qCDebug(KOMPAREDIFF2_LOG) << "Change";
 
             //QStringListConstIterator saveIt = linesIt;
 
@@ -451,8 +451,8 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
             {
                 if (linesIt != lEnd && *linesIt != diff->sourceLineAt(i)->string())
                 {
-                    qCDebug(LIBKOMPAREDIFF2) << "Conflict: SourceLine = " << srcLineNo << ": " << *linesIt;
-                    qCDebug(LIBKOMPAREDIFF2) << "Conflict: DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt(i)->string();
+                    qCDebug(KOMPAREDIFF2_LOG) << "Conflict: SourceLine = " << srcLineNo << ": " << *linesIt;
+                    qCDebug(KOMPAREDIFF2_LOG) << "Conflict: DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt(i)->string();
 
                     // Do conflict resolution (well sort of)
                     diff->sourceLineAt(i)->setConflictString(*linesIt);
@@ -473,7 +473,7 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
 
             break;
         case Difference::Insert:
-            qCDebug(LIBKOMPAREDIFF2) << "Insert";
+            qCDebug(KOMPAREDIFF2_LOG) << "Insert";
             destLineNo += diff->destinationLineCount();
             tempIt = diffIt;
             --diffIt;
@@ -482,22 +482,22 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
             newModel->addDiff(diff);
             break;
         case Difference::Delete:
-            qCDebug(LIBKOMPAREDIFF2) << "Delete";
-            qCDebug(LIBKOMPAREDIFF2) << "Number of lines in Delete: " << diff->sourceLineCount();
+            qCDebug(KOMPAREDIFF2_LOG) << "Delete";
+            qCDebug(KOMPAREDIFF2_LOG) << "Number of lines in Delete: " << diff->sourceLineCount();
             for (int i = 0; i < diff->sourceLineCount(); ++i)
             {
                 if (linesIt != lEnd && *linesIt != diff->sourceLineAt(i)->string())
                 {
-                    qCDebug(LIBKOMPAREDIFF2) << "Conflict: SourceLine = " << srcLineNo << ": " << *linesIt;
-                    qCDebug(LIBKOMPAREDIFF2) << "Conflict: DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt(i)->string();
+                    qCDebug(KOMPAREDIFF2_LOG) << "Conflict: SourceLine = " << srcLineNo << ": " << *linesIt;
+                    qCDebug(KOMPAREDIFF2_LOG) << "Conflict: DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt(i)->string();
 
                     // Do conflict resolution (well sort of)
                     diff->sourceLineAt(i)->setConflictString(*linesIt);
                     diff->setConflict(true);
                 }
 
-//                  qCDebug(LIBKOMPAREDIFF2) << "SourceLine = " << srcLineNo << ": " << *it;
-//                  qCDebug(LIBKOMPAREDIFF2) << "DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt( i )->string();
+//                  qCDebug(KOMPAREDIFF2_LOG) << "SourceLine = " << srcLineNo << ": " << *it;
+//                  qCDebug(KOMPAREDIFF2_LOG) << "DiffLine   = " << diff->sourceLineNumber() + i << ": " << diff->sourceLineAt( i )->string();
                 ++srcLineNo;
                 ++linesIt;
             }
@@ -509,7 +509,7 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
             newModel->addDiff(diff);
             break;
         default:
-            qCDebug(LIBKOMPAREDIFF2) << "****, some diff type we do not know about ???";
+            qCDebug(KOMPAREDIFF2_LOG) << "****, some diff type we do not know about ???";
         }
     }
 }
@@ -519,10 +519,10 @@ bool ModelListPrivate::blendFile(DiffModel* model, const QString& fileContents)
     diffList = newModel->differences();
 
     diff = diffList.first();
-    qCDebug(LIBKOMPAREDIFF2) << "Count = " << diffList.count();
+    qCDebug(KOMPAREDIFF2_LOG) << "Count = " << diffList.count();
     for ( diff = diffList.first(); diff; diff = diffList.next() )
     {
-        qCDebug(LIBKOMPAREDIFF2) << "sourcelinenumber = " << diff->sourceLineNumber();
+        qCDebug(KOMPAREDIFF2_LOG) << "sourcelinenumber = " << diff->sourceLineNumber();
     }
 */
 

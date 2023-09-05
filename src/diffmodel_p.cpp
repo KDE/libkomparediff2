@@ -8,7 +8,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "diffmodel_p.h"
 
 // lib
-#include <komparediffdebug.h>
+#include <komparediff2_logging.h>
 
 using namespace KompareDiff2;
 
@@ -24,7 +24,7 @@ void DiffModelPrivate::splitSourceInPathAndFileName()
     else
         sourceFile = source;
 
-    qCDebug(LIBKOMPAREDIFF2) << source << " was split into " << sourcePath << " and " << sourceFile;
+    qCDebug(KOMPAREDIFF2_LOG) << source << " was split into " << sourcePath << " and " << sourceFile;
 }
 
 void DiffModelPrivate::splitDestinationInPathAndFileName()
@@ -39,7 +39,7 @@ void DiffModelPrivate::splitDestinationInPathAndFileName()
     else
         destinationFile = destination;
 
-    qCDebug(LIBKOMPAREDIFF2) << destination << " was split into " << destinationPath << " and " << destinationFile;
+    qCDebug(KOMPAREDIFF2_LOG) << destination << " was split into " << destinationPath << " and " << destinationFile;
 }
 
 // Some common computing after diff contents have been filled.

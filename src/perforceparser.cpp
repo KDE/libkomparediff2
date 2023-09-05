@@ -8,7 +8,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <QRegularExpression>
 
-#include <komparediffdebug.h>
+#include <komparediff2_logging.h>
 #include "diffmodel.h"
 
 using namespace KompareDiff2;
@@ -31,7 +31,7 @@ PerforceParser::~PerforceParser()
 
 enum Format PerforceParser::determineFormat()
 {
-    qCDebug(LIBKOMPAREDIFF2) << "Determining the format of the Perforce Diff";
+    qCDebug(KOMPAREDIFF2_LOG) << "Determining the format of the Perforce Diff";
 
     QRegularExpression unifiedRE(QStringLiteral("^@@"));
     QRegularExpression contextRE(QStringLiteral("^\\*{15}"));
@@ -45,33 +45,33 @@ enum Format PerforceParser::determineFormat()
     {
         if (it->indexOf(unifiedRE, 0) == 0)
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Unified diff...";
+            qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Unified diff...";
             return Unified;
         }
         else if (it->indexOf(contextRE, 0) == 0)
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Context diff...";
+            qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Context diff...";
             return Context;
         }
         else if (it->indexOf(normalRE, 0) == 0)
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Normal diff...";
+            qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Normal diff...";
             return Normal;
         }
         else if (it->indexOf(rcsRE, 0) == 0)
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a RCS diff...";
+            qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a RCS diff...";
             return RCS;
         }
         ++it;
     }
-    qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an unknown diff...";
+    qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from an unknown diff...";
     return UnknownFormat;
 }
 
 bool PerforceParser::parseContextDiffHeader()
 {
-//     qCDebug(LIBKOMPAREDIFF2) << "ParserBase::parseContextDiffHeader()";
+//     qCDebug(KOMPAREDIFF2_LOG) << "ParserBase::parseContextDiffHeader()";
     bool result = false;
 
     QStringList::ConstIterator itEnd = m_diffLines.end();
@@ -84,20 +84,20 @@ bool PerforceParser::parseContextDiffHeader()
         const auto contextDiffHeader1Match = m_contextDiffHeader1.match(*(m_diffIterator)++);
         if (contextDiffHeader1Match.hasMatch())
         {
-//             qCDebug(LIBKOMPAREDIFF2) << "Matched length Header1 = " << contextDiffHeader1Match.capturedLength();
-//             qCDebug(LIBKOMPAREDIFF2) << "Matched string Header1 = " << contextDiffHeader1Match.captured( 0 );
-//             qCDebug(LIBKOMPAREDIFF2) << "First capture  Header1 = " << contextDiffHeader1Match.captured( 1 );
-//             qCDebug(LIBKOMPAREDIFF2) << "Second capture Header1 = " << contextDiffHeader1Match.captured( 2 );
+//             qCDebug(KOMPAREDIFF2_LOG) << "Matched length Header1 = " << contextDiffHeader1Match.capturedLength();
+//             qCDebug(KOMPAREDIFF2_LOG) << "Matched string Header1 = " << contextDiffHeader1Match.captured( 0 );
+//             qCDebug(KOMPAREDIFF2_LOG) << "First capture  Header1 = " << contextDiffHeader1Match.captured( 1 );
+//             qCDebug(KOMPAREDIFF2_LOG) << "Second capture Header1 = " << contextDiffHeader1Match.captured( 2 );
 
             m_currentModel = new DiffModel();
             const auto sourceFileREMatch = sourceFileRE.match(contextDiffHeader1Match.captured(1));
             const auto destinationFileREMatch = destinationFileRE.match(contextDiffHeader1Match.captured(2));
-            qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << sourceFileREMatch.capturedLength();
-            qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << destinationFileREMatch.capturedLength();
-            qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << sourceFileREMatch.capturedTexts();
-            qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << destinationFileREMatch.capturedTexts();
-            qCDebug(LIBKOMPAREDIFF2) << "Source File      : " << sourceFileREMatch.captured(1);
-            qCDebug(LIBKOMPAREDIFF2) << "Destination File : " << destinationFileREMatch.captured(1);
+            qCDebug(KOMPAREDIFF2_LOG) << "Matched length   = " << sourceFileREMatch.capturedLength();
+            qCDebug(KOMPAREDIFF2_LOG) << "Matched length   = " << destinationFileREMatch.capturedLength();
+            qCDebug(KOMPAREDIFF2_LOG) << "Captured texts   = " << sourceFileREMatch.capturedTexts();
+            qCDebug(KOMPAREDIFF2_LOG) << "Captured texts   = " << destinationFileREMatch.capturedTexts();
+            qCDebug(KOMPAREDIFF2_LOG) << "Source File      : " << sourceFileREMatch.captured(1);
+            qCDebug(KOMPAREDIFF2_LOG) << "Destination File : " << destinationFileREMatch.captured(1);
             m_currentModel->setSourceFile(sourceFileREMatch.captured(1));
             m_currentModel->setDestinationFile(destinationFileREMatch.captured(1));
 
@@ -107,8 +107,8 @@ bool PerforceParser::parseContextDiffHeader()
         }
         else
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Matched length = " << contextDiffHeader1Match.capturedLength();
-            qCDebug(LIBKOMPAREDIFF2) << "Captured texts = " << contextDiffHeader1Match.capturedTexts();
+            qCDebug(KOMPAREDIFF2_LOG) << "Matched length = " << contextDiffHeader1Match.capturedLength();
+            qCDebug(KOMPAREDIFF2_LOG) << "Captured texts = " << contextDiffHeader1Match.capturedTexts();
         }
     }
 
@@ -126,25 +126,25 @@ bool PerforceParser::parseNormalDiffHeader()
 
     while (m_diffIterator != itEnd)
     {
-        qCDebug(LIBKOMPAREDIFF2) << "Line = " << *m_diffIterator;
-        qCDebug(LIBKOMPAREDIFF2) << "String length  = " << (*m_diffIterator).length();
+        qCDebug(KOMPAREDIFF2_LOG) << "Line = " << *m_diffIterator;
+        qCDebug(KOMPAREDIFF2_LOG) << "String length  = " << (*m_diffIterator).length();
         const auto normalDiffHeaderMatch = m_normalDiffHeader.match(*(m_diffIterator)++);
         if (normalDiffHeaderMatch.hasMatch())
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Matched length Header1 = " << normalDiffHeaderMatch.capturedLength();
-            qCDebug(LIBKOMPAREDIFF2) << "Matched string Header1 = " << normalDiffHeaderMatch.captured(0);
-            qCDebug(LIBKOMPAREDIFF2) << "First  capture Header1 = \"" << normalDiffHeaderMatch.captured(1) << "\"";
-            qCDebug(LIBKOMPAREDIFF2) << "Second capture Header1 = \"" << normalDiffHeaderMatch.captured(2) << "\"";
+            qCDebug(KOMPAREDIFF2_LOG) << "Matched length Header1 = " << normalDiffHeaderMatch.capturedLength();
+            qCDebug(KOMPAREDIFF2_LOG) << "Matched string Header1 = " << normalDiffHeaderMatch.captured(0);
+            qCDebug(KOMPAREDIFF2_LOG) << "First  capture Header1 = \"" << normalDiffHeaderMatch.captured(1) << "\"";
+            qCDebug(KOMPAREDIFF2_LOG) << "Second capture Header1 = \"" << normalDiffHeaderMatch.captured(2) << "\"";
 
             m_currentModel = new DiffModel();
             const auto sourceFileREMatch = sourceFileRE.match(normalDiffHeaderMatch.captured(1));
             const auto destinationFileREMatch = destinationFileRE.match(normalDiffHeaderMatch.captured(2));
-            qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << sourceFileREMatch.capturedLength();
-            qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << destinationFileREMatch.capturedLength();
-            qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << sourceFileREMatch.capturedTexts();
-            qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << destinationFileREMatch.capturedTexts();
-            qCDebug(LIBKOMPAREDIFF2) << "Source File      : " << sourceFileREMatch.captured(1);
-            qCDebug(LIBKOMPAREDIFF2) << "Destination File : " << destinationFileREMatch.captured(1);
+            qCDebug(KOMPAREDIFF2_LOG) << "Matched length   = " << sourceFileREMatch.capturedLength();
+            qCDebug(KOMPAREDIFF2_LOG) << "Matched length   = " << destinationFileREMatch.capturedLength();
+            qCDebug(KOMPAREDIFF2_LOG) << "Captured texts   = " << sourceFileREMatch.capturedTexts();
+            qCDebug(KOMPAREDIFF2_LOG) << "Captured texts   = " << destinationFileREMatch.capturedTexts();
+            qCDebug(KOMPAREDIFF2_LOG) << "Source File      : " << sourceFileREMatch.captured(1);
+            qCDebug(KOMPAREDIFF2_LOG) << "Destination File : " << destinationFileREMatch.captured(1);
             m_currentModel->setSourceFile(sourceFileREMatch.captured(1));
             m_currentModel->setDestinationFile(destinationFileREMatch.captured(1));
 
@@ -154,8 +154,8 @@ bool PerforceParser::parseNormalDiffHeader()
         }
         else
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Matched length = " << normalDiffHeaderMatch.capturedLength();
-            qCDebug(LIBKOMPAREDIFF2) << "Captured texts = " << normalDiffHeaderMatch.capturedTexts();
+            qCDebug(KOMPAREDIFF2_LOG) << "Matched length = " << normalDiffHeaderMatch.capturedLength();
+            qCDebug(KOMPAREDIFF2_LOG) << "Captured texts = " << normalDiffHeaderMatch.capturedTexts();
         }
     }
 
@@ -178,25 +178,25 @@ bool PerforceParser::parseUnifiedDiffHeader()
 
     while (m_diffIterator != itEnd)
     {
-//         qCDebug(LIBKOMPAREDIFF2) << "Line = " << *m_diffIterator;
-//         qCDebug(LIBKOMPAREDIFF2) << "String length  = " << (*m_diffIterator).length();
+//         qCDebug(KOMPAREDIFF2_LOG) << "Line = " << *m_diffIterator;
+//         qCDebug(KOMPAREDIFF2_LOG) << "String length  = " << (*m_diffIterator).length();
         const auto unifiedDiffHeader1Match = m_unifiedDiffHeader1.match(*(m_diffIterator)++);
         if (unifiedDiffHeader1Match.hasMatch())
         {
-//             qCDebug(LIBKOMPAREDIFF2) << "Matched length Header1 = " << unifiedDiffHeader1Match.capturedLength();
-//             qCDebug(LIBKOMPAREDIFF2) << "Matched string Header1 = " << unifiedDiffHeader1Match.captured( 0 );
-//             qCDebug(LIBKOMPAREDIFF2) << "First  capture Header1 = \"" << unifiedDiffHeader1Match.captured( 1 ) << "\"";
-//             qCDebug(LIBKOMPAREDIFF2) << "Second capture Header1 = \"" << unifiedDiffHeader1Match.captured( 2 ) << "\"";
+//             qCDebug(KOMPAREDIFF2_LOG) << "Matched length Header1 = " << unifiedDiffHeader1Match.capturedLength();
+//             qCDebug(KOMPAREDIFF2_LOG) << "Matched string Header1 = " << unifiedDiffHeader1Match.captured( 0 );
+//             qCDebug(KOMPAREDIFF2_LOG) << "First  capture Header1 = \"" << unifiedDiffHeader1Match.captured( 1 ) << "\"";
+//             qCDebug(KOMPAREDIFF2_LOG) << "Second capture Header1 = \"" << unifiedDiffHeader1Match.captured( 2 ) << "\"";
 
             m_currentModel = new DiffModel();
             const auto sourceFileREMatch = sourceFileRE.match(unifiedDiffHeader1Match.captured(1));
             const auto destinationFileREMatch = destinationFileRE.match(unifiedDiffHeader1Match.captured(2));
-//             qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << sourceFileREMatch.capturedLength();
-//             qCDebug(LIBKOMPAREDIFF2) << "Matched length   = " << destinationFileREMatch.capturedLength();
-//             qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << sourceFileREMatch.capturedTexts();
-//             qCDebug(LIBKOMPAREDIFF2) << "Captured texts   = " << destinationFileREMatch.capturedTexts();
-//             qCDebug(LIBKOMPAREDIFF2) << "Source File      : " << sourceFileREMatch.captured( 1 );
-//             qCDebug(LIBKOMPAREDIFF2) << "Destination File : " << destinationFileREMatch.captured( 1 );
+//             qCDebug(KOMPAREDIFF2_LOG) << "Matched length   = " << sourceFileREMatch.capturedLength();
+//             qCDebug(KOMPAREDIFF2_LOG) << "Matched length   = " << destinationFileREMatch.capturedLength();
+//             qCDebug(KOMPAREDIFF2_LOG) << "Captured texts   = " << sourceFileREMatch.capturedTexts();
+//             qCDebug(KOMPAREDIFF2_LOG) << "Captured texts   = " << destinationFileREMatch.capturedTexts();
+//             qCDebug(KOMPAREDIFF2_LOG) << "Source File      : " << sourceFileREMatch.captured( 1 );
+//             qCDebug(KOMPAREDIFF2_LOG) << "Destination File : " << destinationFileREMatch.captured( 1 );
             m_currentModel->setSourceFile(sourceFileREMatch.captured(1));
             m_currentModel->setDestinationFile(destinationFileREMatch.captured(1));
 
@@ -206,8 +206,8 @@ bool PerforceParser::parseUnifiedDiffHeader()
         }
         else
         {
-//             qCDebug(LIBKOMPAREDIFF2) << "Matched length = " << unifiedDiffHeader1Match.capturedLength();
-//             qCDebug(LIBKOMPAREDIFF2) << "Captured texts = " << unifiedDiffHeader1Match.capturedTexts();
+//             qCDebug(KOMPAREDIFF2_LOG) << "Matched length = " << unifiedDiffHeader1Match.capturedLength();
+//             qCDebug(KOMPAREDIFF2_LOG) << "Captured texts = " << unifiedDiffHeader1Match.capturedTexts();
         }
     }
 

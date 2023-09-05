@@ -9,7 +9,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "diffmodel_p.h"
 
 // lib
-#include <komparediffdebug.h>
+#include <komparediff2_logging.h>
 #include "difference.h"
 #include "levenshteintable.h"
 #include "stringlistpair.h"
@@ -134,8 +134,8 @@ int DiffModel::localeAwareCompareSource(const DiffModel& model) const
 {
     Q_D(const DiffModel);
 
-    qCDebug(LIBKOMPAREDIFF2) << "Path: " << model.d_ptr->sourcePath;
-    qCDebug(LIBKOMPAREDIFF2) << "File: " << model.d_ptr->sourceFile;
+    qCDebug(KOMPAREDIFF2_LOG) << "Path: " << model.d_ptr->sourcePath;
+    qCDebug(KOMPAREDIFF2_LOG) << "File: " << model.d_ptr->sourceFile;
 
     int result = d->sourcePath.localeAwareCompare(model.d_ptr->sourcePath);
 
@@ -181,9 +181,9 @@ Difference* DiffModel::firstDifference()
 {
     Q_D(DiffModel);
 
-    qCDebug(LIBKOMPAREDIFF2) << "DiffModel::firstDifference()";
+    qCDebug(KOMPAREDIFF2_LOG) << "DiffModel::firstDifference()";
     d->diffIndex = 0;
-    qCDebug(LIBKOMPAREDIFF2) << "d->diffIndex = " << d->diffIndex;
+    qCDebug(KOMPAREDIFF2_LOG) << "d->diffIndex = " << d->diffIndex;
 
     d->selectedDifference = d->differences[ d->diffIndex ];
 
@@ -194,9 +194,9 @@ Difference* DiffModel::lastDifference()
 {
     Q_D(DiffModel);
 
-    qCDebug(LIBKOMPAREDIFF2) << "DiffModel::lastDifference()";
+    qCDebug(KOMPAREDIFF2_LOG) << "DiffModel::lastDifference()";
     d->diffIndex = d->differences.count() - 1;
-    qCDebug(LIBKOMPAREDIFF2) << "d->diffIndex = " << d->diffIndex;
+    qCDebug(KOMPAREDIFF2_LOG) << "d->diffIndex = " << d->diffIndex;
 
     d->selectedDifference = d->differences[ d->diffIndex ];
 
@@ -207,17 +207,17 @@ Difference* DiffModel::prevDifference()
 {
     Q_D(DiffModel);
 
-    qCDebug(LIBKOMPAREDIFF2) << "DiffModel::prevDifference()";
+    qCDebug(KOMPAREDIFF2_LOG) << "DiffModel::prevDifference()";
     if (d->diffIndex > 0 && --d->diffIndex < d->differences.count())
     {
-        qCDebug(LIBKOMPAREDIFF2) << "d->diffIndex = " << d->diffIndex;
+        qCDebug(KOMPAREDIFF2_LOG) << "d->diffIndex = " << d->diffIndex;
         d->selectedDifference = d->differences[ d->diffIndex ];
     }
     else
     {
         d->selectedDifference = nullptr;
         d->diffIndex = 0;
-        qCDebug(LIBKOMPAREDIFF2) << "d->diffIndex = " << d->diffIndex;
+        qCDebug(KOMPAREDIFF2_LOG) << "d->diffIndex = " << d->diffIndex;
     }
 
     return d->selectedDifference;
@@ -227,17 +227,17 @@ Difference* DiffModel::nextDifference()
 {
     Q_D(DiffModel);
 
-    qCDebug(LIBKOMPAREDIFF2) << "DiffModel::nextDifference()";
+    qCDebug(KOMPAREDIFF2_LOG) << "DiffModel::nextDifference()";
     if (++d->diffIndex < d->differences.count())
     {
-        qCDebug(LIBKOMPAREDIFF2) << "d->diffIndex = " << d->diffIndex;
+        qCDebug(KOMPAREDIFF2_LOG) << "d->diffIndex = " << d->diffIndex;
         d->selectedDifference = d->differences[ d->diffIndex ];
     }
     else
     {
         d->selectedDifference = nullptr;
         d->diffIndex = 0; // just for safety...
-        qCDebug(LIBKOMPAREDIFF2) << "d->diffIndex = " << d->diffIndex;
+        qCDebug(KOMPAREDIFF2_LOG) << "d->diffIndex = " << d->diffIndex;
     }
 
     return d->selectedDifference;
@@ -492,8 +492,8 @@ bool DiffModel::setSelectedDifference(Difference* diff)
 {
     Q_D(DiffModel);
 
-    qCDebug(LIBKOMPAREDIFF2) << "diff = " << diff;
-    qCDebug(LIBKOMPAREDIFF2) << "d->selectedDifference = " << d->selectedDifference;
+    qCDebug(KOMPAREDIFF2_LOG) << "diff = " << diff;
+    qCDebug(KOMPAREDIFF2_LOG) << "d->selectedDifference = " << d->selectedDifference;
 
     if (diff != d->selectedDifference)
     {
@@ -501,7 +501,7 @@ bool DiffModel::setSelectedDifference(Difference* diff)
             return false;
         // Do not set d->diffIndex if it cant be found
         d->diffIndex = d->differences.indexOf(diff);
-        qCDebug(LIBKOMPAREDIFF2) << "d->diffIndex = " << d->diffIndex;
+        qCDebug(KOMPAREDIFF2_LOG) << "d->diffIndex = " << d->diffIndex;
         d->selectedDifference = diff;
     }
 

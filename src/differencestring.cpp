@@ -14,19 +14,19 @@ namespace KompareDiff2
 DifferenceString::DifferenceString()
     : d_ptr(new DifferenceStringPrivate())
 {
-//         qCDebug(LIBKOMPAREDIFF2) << "DifferenceString::DifferenceString()";
+//         qCDebug(KOMPAREDIFF2_LOG) << "DifferenceString::DifferenceString()";
 }
 
 DifferenceString::DifferenceString(const QString& string, const MarkerList& markerList)
     : d_ptr(new DifferenceStringPrivate(string, markerList))
 {
-//         qCDebug(LIBKOMPAREDIFF2) << "DifferenceString::DifferenceString( " << string << ", " << markerList << " )";
+//         qCDebug(KOMPAREDIFF2_LOG) << "DifferenceString::DifferenceString( " << string << ", " << markerList << " )";
 }
 
 DifferenceString::DifferenceString(const DifferenceString& ds)
     :d_ptr (new DifferenceStringPrivate(*ds.d_ptr))
 {
-//         qCDebug(LIBKOMPAREDIFF2) << "DifferenceString::DifferenceString( const DifferenceString& " << ds << " )";
+//         qCDebug(KOMPAREDIFF2_LOG) << "DifferenceString::DifferenceString( const DifferenceString& " << ds << " )";
 }
 
 DifferenceString::~DifferenceString() = default;

@@ -9,7 +9,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "diffhunk_p.h"
 
 // lib
-#include <komparediffdebug.h>
+#include <komparediff2_logging.h>
 
 using namespace KompareDiff2;
 
@@ -145,6 +145,6 @@ QString DiffHunk::recreateHunk() const
 
     hunk += differences;
 
-    qCDebug(LIBKOMPAREDIFF2) << hunk;
+    qCDebug(KOMPAREDIFF2_LOG) << hunk;
     return hunk;
 }

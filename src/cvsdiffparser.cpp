@@ -8,7 +8,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <QRegularExpression>
 
-#include <komparediffdebug.h>
+#include <komparediff2_logging.h>
 #include "modellist.h"
 
 using namespace KompareDiff2;
@@ -29,7 +29,7 @@ CVSDiffParser::~CVSDiffParser()
 
 enum Format CVSDiffParser::determineFormat()
 {
-//     qCDebug(LIBKOMPAREDIFF2) << "Determining the format of the CVSDiff";
+//     qCDebug(KOMPAREDIFF2_LOG) << "Determining the format of the CVSDiff";
 
     QRegularExpression normalRE(QStringLiteral("[0-9]+[0-9,]*[acd][0-9]+[0-9,]*"));
     QRegularExpression unifiedRE(QStringLiteral("^--- [^\\t]+\\t"));
@@ -43,38 +43,38 @@ enum Format CVSDiffParser::determineFormat()
     {
         if ((*it).indexOf(normalRE, 0) == 0)
         {
-//             qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Normal diff...";
+//             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Normal diff...";
             return Normal;
         }
         else if ((*it).indexOf(unifiedRE, 0) == 0)
         {
-//             qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Unified diff...";
+//             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Unified diff...";
             return Unified;
         }
         else if ((*it).indexOf(contextRE, 0) == 0)
         {
-//             qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Context diff...";
+//             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Context diff...";
             return Context;
         }
         else if ((*it).indexOf(rcsRE, 0) == 0)
         {
-//             qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a RCS diff...";
+//             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a RCS diff...";
             return RCS;
         }
         else if ((*it).indexOf(edRE, 0) == 0)
         {
-//             qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an ED diff...";
+//             qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from an ED diff...";
             return Ed;
         }
         ++it;
     }
-//     qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an unknown diff...";
+//     qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from an unknown diff...";
     return UnknownFormat;
 }
 
 bool CVSDiffParser::parseNormalDiffHeader()
 {
-    qCDebug(LIBKOMPAREDIFF2) << "CVSDiffParser::parseNormalDiffHeader()";
+    qCDebug(KOMPAREDIFF2_LOG) << "CVSDiffParser::parseNormalDiffHeader()";
     bool result = false;
 
     QStringList::ConstIterator diffEnd = m_diffLines.end();
@@ -84,8 +84,8 @@ bool CVSDiffParser::parseNormalDiffHeader()
         const auto normalDiffHeaderMatch = m_normalDiffHeader.match(*m_diffIterator);
         if (normalDiffHeaderMatch.hasMatch())
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Matched length Header = " << normalDiffHeaderMatch.capturedLength();
-            qCDebug(LIBKOMPAREDIFF2) << "Matched string Header = " << normalDiffHeaderMatch.captured(0);
+            qCDebug(KOMPAREDIFF2_LOG) << "Matched length Header = " << normalDiffHeaderMatch.capturedLength();
+            qCDebug(KOMPAREDIFF2_LOG) << "Matched string Header = " << normalDiffHeaderMatch.captured(0);
 
             m_currentModel = new DiffModel();
             m_currentModel->setSourceFile(normalDiffHeaderMatch.captured(1));
@@ -98,7 +98,7 @@ bool CVSDiffParser::parseNormalDiffHeader()
         }
         else
         {
-            qCDebug(LIBKOMPAREDIFF2) << "No match for: " << (*m_diffIterator);
+            qCDebug(KOMPAREDIFF2_LOG) << "No match for: " << (*m_diffIterator);
         }
         ++m_diffIterator;
     }

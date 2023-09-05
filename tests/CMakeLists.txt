@@ -14,8 +14,8 @@ include_directories(
 )
 
 ecm_qt_declare_logging_category(komparediff2_DBG_SRCS
-    HEADER komparediffdebug.h
-    IDENTIFIER LIBKOMPAREDIFF2
+    HEADER komparediff2_logging.h
+    IDENTIFIER KOMPAREDIFF2_LOG
     CATEGORY_NAME "libkomparediff"
 )
 

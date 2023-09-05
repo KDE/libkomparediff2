@@ -251,7 +251,7 @@ QString Difference::recreateDifference() const
             // Insert but this is not possible in source
             // Unchanged will be handled in destination
             // since they are the same
-//             qCDebug(LIBKOMPAREDIFF2) << "Go away, nothing to do for you in source...";
+//             qCDebug(KOMPAREDIFF2_LOG) << "Go away, nothing to do for you in source...";
             continue;
         }
         difference += (*stringIt)->string();
@@ -273,7 +273,7 @@ QString Difference::recreateDifference() const
             difference += QLatin1Char(' ');
             break;
         default: // Delete but this is not possible in destination
-//             qCDebug(LIBKOMPAREDIFF2) << "Go away, nothing to do for you in destination...";
+//             qCDebug(KOMPAREDIFF2_LOG) << "Go away, nothing to do for you in destination...";
             continue;
         }
         difference += (*stringIt)->string();

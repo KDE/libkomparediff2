@@ -8,7 +8,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <QRegularExpression>
 
-#include <komparediffdebug.h>
+#include <komparediff2_logging.h>
 
 using namespace KompareDiff2;
 
@@ -25,7 +25,7 @@ DiffParser::~DiffParser()
 
 enum Format DiffParser::determineFormat()
 {
-    qCDebug(LIBKOMPAREDIFF2) << "Determining the format of the diff Diff" << m_diffLines;
+    qCDebug(KOMPAREDIFF2_LOG) << "Determining the format of the diff Diff" << m_diffLines;
 
     QRegularExpression normalRE(QStringLiteral("[0-9]+[0-9,]*[acd][0-9]+[0-9,]*"));
     QRegularExpression unifiedRE(QStringLiteral("^--- "));
@@ -37,34 +37,34 @@ enum Format DiffParser::determineFormat()
 
     while (it != m_diffLines.end())
     {
-        qCDebug(LIBKOMPAREDIFF2) << (*it);
+        qCDebug(KOMPAREDIFF2_LOG) << (*it);
         if (it->indexOf(normalRE, 0) == 0)
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Normal diff...";
+            qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Normal diff...";
             return Normal;
         }
         else if (it->indexOf(unifiedRE, 0) == 0)
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Unified diff...";
+            qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Unified diff...";
             return Unified;
         }
         else if (it->indexOf(contextRE, 0) == 0)
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Difflines are from a Context diff...";
+            qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from a Context diff...";
             return Context;
         }
         else if (it->indexOf(rcsRE, 0) == 0)
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an RCS diff...";
+            qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from an RCS diff...";
             return RCS;
         }
         else if (it->indexOf(edRE, 0) == 0)
         {
-            qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an ED diff...";
+            qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from an ED diff...";
             return Ed;
         }
         ++it;
     }
-    qCDebug(LIBKOMPAREDIFF2) << "Difflines are from an unknown diff...";
+    qCDebug(KOMPAREDIFF2_LOG) << "Difflines are from an unknown diff...";
     return UnknownFormat;
 }

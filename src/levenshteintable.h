@@ -10,7 +10,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <iostream>
 // #include <QString>
-// #include <komparediffdebug.h>
+// #include <komparediff2_logging.h>
 
 namespace KompareDiff2 {
 
@@ -88,7 +88,7 @@ template<class SequencePair> LevenshteinTable<SequencePair>::~LevenshteinTable()
 
 template<class SequencePair> int LevenshteinTable<SequencePair>::getContent(unsigned int posX, unsigned int posY) const
 {
-//     qCDebug(LIBKOMPAREDIFF2) << "Width = " << m_width << ", height = " << m_height << ", posX = " << posX << ", posY = " << posY;
+//     qCDebug(KOMPAREDIFF2_LOG) << "Width = " << m_width << ", height = " << m_height << ", posX = " << posX << ", posY = " << posY;
     return m_table[ posY * m_width + posX ];
 }
 
@@ -176,7 +176,7 @@ template<class SequencePair> unsigned int LevenshteinTable<SequencePair>::create
 
 template<class SequencePair> int LevenshteinTable<SequencePair>::chooseRoute(int c1, int c2, int c3, int current)
 {
-//     qCDebug(LIBKOMPAREDIFF2) << "c1 = " << c1 << ", c2 = " << c2 << ", c3 = " << c3;
+//     qCDebug(KOMPAREDIFF2_LOG) << "c1 = " << c1 << ", c2 = " << c2 << ", c3 = " << c3;
     // preference order: c2, c3, c1, hopefully this will work out for me
     if (c2 <= c1 && c2 <= c3)
     {
@@ -194,8 +194,8 @@ template<class SequencePair> int LevenshteinTable<SequencePair>::chooseRoute(int
 
 template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfMarkers()
 {
-//     qCDebug(LIBKOMPAREDIFF2) << source;
-//     qCDebug(LIBKOMPAREDIFF2) << destination;
+//     qCDebug(KOMPAREDIFF2_LOG) << source;
+//     qCDebug(KOMPAREDIFF2_LOG) << destination;
 //     dumpLevenshteinTable();
 
     unsigned int x = m_width - 1;
@@ -230,8 +230,8 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
         switch (direction)
         {
         case 0: // north
-//             qCDebug(LIBKOMPAREDIFF2) << "Picking north";
-//             qCDebug(LIBKOMPAREDIFF2) << "Source[" << ( x - 1 ) << "] = " << QString( source[ x-1 ] ) << ", destination[" << ( y - 1 ) << "] = " << QString( destination[ y-1 ] );
+//             qCDebug(KOMPAREDIFF2_LOG) << "Picking north";
+//             qCDebug(KOMPAREDIFF2_LOG) << "Source[" << ( x - 1 ) << "] = " << QString( source[ x-1 ] ) << ", destination[" << ( y - 1 ) << "] = " << QString( destination[ y-1 ] );
 
             if (!m_sequences->markerListSecond().isEmpty())
                 c = m_sequences->markerListSecond().first();
@@ -240,14 +240,14 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 
             if (c && c->type() == Marker::End)
             {
-//                 qCDebug(LIBKOMPAREDIFF2) << "CurrentValue: " << currentValue;
+//                 qCDebug(KOMPAREDIFF2_LOG) << "CurrentValue: " << currentValue;
                 if (n == currentValue)
                     m_sequences->prependSecond(new Marker(Marker::Start, y));
 // else: the change continues, do not do anything
             }
             else
             {
-//                 qCDebug(LIBKOMPAREDIFF2) << "CurrentValue: " << currentValue;
+//                 qCDebug(KOMPAREDIFF2_LOG) << "CurrentValue: " << currentValue;
                 if (n < currentValue)
                     m_sequences->prependSecond(new Marker(Marker::End, y));
             }
@@ -258,8 +258,8 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
             }
             break;
         case 1: // northwest
-//             qCDebug(LIBKOMPAREDIFF2) << "Picking northwest";
-//             qCDebug(LIBKOMPAREDIFF2) << "Source[" << ( x - 1 ) << "] = " << QString( source[ x-1 ] ) << ", destination[" << ( y - 1 ) << "] = " << QString( destination[ y-1 ] );
+//             qCDebug(KOMPAREDIFF2_LOG) << "Picking northwest";
+//             qCDebug(KOMPAREDIFF2_LOG) << "Source[" << ( x - 1 ) << "] = " << QString( source[ x-1 ] ) << ", destination[" << ( y - 1 ) << "] = " << QString( destination[ y-1 ] );
 
             if (!m_sequences->markerListSecond().isEmpty())
                 c = m_sequences->markerListSecond().first();
@@ -268,14 +268,14 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 
             if (c && c->type() == Marker::End)
             {
-//                 qCDebug(LIBKOMPAREDIFF2) << "End found: CurrentValue: " << currentValue;
+//                 qCDebug(KOMPAREDIFF2_LOG) << "End found: CurrentValue: " << currentValue;
                 if (nw == currentValue)
                     m_sequences->prependSecond(new Marker(Marker::Start, y));
                 // else: the change continues, do not do anything
             }
             else
             {
-//                 qCDebug(LIBKOMPAREDIFF2) << "CurrentValue: " << currentValue;
+//                 qCDebug(KOMPAREDIFF2_LOG) << "CurrentValue: " << currentValue;
                 if (nw < currentValue)
                     m_sequences->prependSecond(new Marker(Marker::End, y));
             }
@@ -287,14 +287,14 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 
             if (c && c->type() == Marker::End)
             {
-//                 qCDebug(LIBKOMPAREDIFF2) << "End found: CurrentValue: " << currentValue;
+//                 qCDebug(KOMPAREDIFF2_LOG) << "End found: CurrentValue: " << currentValue;
                 if (nw == currentValue)
                     m_sequences->prependFirst(new Marker(Marker::Start, x));
                 // else: the change continues, do not do anything
             }
             else
             {
-//                 qCDebug(LIBKOMPAREDIFF2) << "CurrentValue: " << currentValue;
+//                 qCDebug(KOMPAREDIFF2_LOG) << "CurrentValue: " << currentValue;
                 if (nw < currentValue)
                     m_sequences->prependFirst(new Marker(Marker::End, x));
             }
@@ -303,8 +303,8 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
             --x;
             break;
         case 2: // west
-//             qCDebug(LIBKOMPAREDIFF2) << "Picking west";
-//             qCDebug(LIBKOMPAREDIFF2) << "Source[" << ( x - 1 ) << "] = " << QString( source[ x-1 ] ) << ", destination[" << ( y - 1 ) << "] = " << QString( destination[ y-1 ] );
+//             qCDebug(KOMPAREDIFF2_LOG) << "Picking west";
+//             qCDebug(KOMPAREDIFF2_LOG) << "Source[" << ( x - 1 ) << "] = " << QString( source[ x-1 ] ) << ", destination[" << ( y - 1 ) << "] = " << QString( destination[ y-1 ] );
 
             if (!m_sequences->markerListFirst().isEmpty())
                 c = m_sequences->markerListFirst().first();
@@ -313,14 +313,14 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 
             if (c && c->type() == Marker::End)
             {
-//                 qCDebug(LIBKOMPAREDIFF2) << "End found: CurrentValue: " << currentValue;
+//                 qCDebug(KOMPAREDIFF2_LOG) << "End found: CurrentValue: " << currentValue;
                 if (w == currentValue)
                     m_sequences->prependFirst(new Marker(Marker::Start, x));
                 // else: the change continues, do not do anything
             }
             else
             {
-//                 qCDebug(LIBKOMPAREDIFF2) << "CurrentValue: " << currentValue;
+//                 qCDebug(KOMPAREDIFF2_LOG) << "CurrentValue: " << currentValue;
                 if (w < currentValue)
                     m_sequences->prependFirst(new Marker(Marker::End, x));
             }
@@ -346,7 +346,7 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
         m_sequences->prependSecond(new Marker(Marker::Start, 0));
     }
 
-//     qCDebug(LIBKOMPAREDIFF2) << "Source string: " << source;
+//     qCDebug(KOMPAREDIFF2_LOG) << "Source string: " << source;
 
 //     QStringList list;
 //     int prevValue = 0;
@@ -355,7 +355,7 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 //     for ( ; mit != end; ++mit )
 //     {
 //         c = *mit;
-//         qCDebug(LIBKOMPAREDIFF2) << "Source Marker Entry : Type: " << c->type() << ", Offset: " << c->offset();
+//         qCDebug(KOMPAREDIFF2_LOG) << "Source Marker Entry : Type: " << c->type() << ", Offset: " << c->offset();
 //         list.append( source.mid( prevValue, c->offset() - prevValue ) );
 //         prevValue = c->offset();
 //     }
@@ -363,18 +363,18 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 //     {
 //         list.append( source.mid( prevValue, source.length() - prevValue ) );
 //     }
-//     qCDebug(LIBKOMPAREDIFF2) << "Source Resulting stringlist : " << list.join("\n");
+//     qCDebug(KOMPAREDIFF2_LOG) << "Source Resulting stringlist : " << list.join("\n");
 //
 //     list.clear();
 //     prevValue = 0;
 //
-//     qCDebug(LIBKOMPAREDIFF2) << "Destination string: " << destination;
+//     qCDebug(KOMPAREDIFF2_LOG) << "Destination string: " << destination;
 //     mit = m_sequences->markerListSecond().begin();
 //     end = m_sequences->markerListSecond().end();
 //     for ( ; mit != end; ++mit )
 //     {
 //         c = *mit;
-//         qCDebug(LIBKOMPAREDIFF2) << "Destination Marker Entry : Type: " << c->type() << ", Offset: " << c->offset();
+//         qCDebug(KOMPAREDIFF2_LOG) << "Destination Marker Entry : Type: " << c->type() << ", Offset: " << c->offset();
 //         list.append( destination.mid( prevValue, c->offset() - prevValue ) );
 //         prevValue = c->offset();
 //     }
@@ -382,7 +382,7 @@ template<class SequencePair> void LevenshteinTable<SequencePair>::createListsOfM
 //     {
 //         list.append( destination.mid( prevValue, destination.length() - prevValue ) );
 //     }
-//     qCDebug(LIBKOMPAREDIFF2) << "Destination Resulting string : " << list.join("\n");
+//     qCDebug(KOMPAREDIFF2_LOG) << "Destination Resulting string : " << list.join("\n");
 }
 
 } // namespace KompareDiff2

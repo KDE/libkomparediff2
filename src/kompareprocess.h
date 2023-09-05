@@ -58,11 +58,11 @@ public:
 Q_SIGNALS:
     void diffHasFinished(bool finishedNormally);
 
-protected:
+private:
     void writeDefaultCommandLine();
     void writeCommandLine();
 
-protected Q_SLOTS:
+private Q_SLOTS:
     void slotFinished(int, QProcess::ExitStatus);
 
 private:

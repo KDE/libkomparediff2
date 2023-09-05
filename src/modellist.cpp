@@ -31,6 +31,8 @@
 #include <QMimeType>
 #include <QTextCodec>
 #include <QTextStream>
+// Std
+#include <algorithm>
 
 using namespace KompareDiff2;
 
@@ -989,17 +991,13 @@ bool ModelList::hasUnsavedChanges() const
 {
     Q_D(const ModelList);
 
-    if (modelCount() == 0)
+    if (!d->models) {
         return false;
-
-    DiffModelListConstIterator modelIt = d->models->constBegin();
-    DiffModelListConstIterator endIt = d->models->constEnd();
-
-    for (; modelIt != endIt; ++modelIt) {
-        if ((*modelIt)->hasUnsavedChanges())
-            return true;
     }
-    return false;
+
+    return std::any_of(d->models->constBegin(), d->models->constEnd(), [] (const DiffModel *model) {
+        return model->hasUnsavedChanges();
+    });
 }
 
 int ModelList::modelCount() const

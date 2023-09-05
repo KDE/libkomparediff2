@@ -14,6 +14,8 @@
 #include "parserbase.h"
 #include "stringlistpair.h"
 #include <komparediff2_logging.h>
+// Std
+#include <algorithm>
 
 using namespace KompareDiff2;
 
@@ -397,15 +399,9 @@ bool DiffModel::hasUnsavedChanges() const
 {
     Q_D(const DiffModel);
 
-    DifferenceListConstIterator diffIt = d->differences.begin();
-    DifferenceListConstIterator endIt = d->differences.end();
-
-    for (; diffIt != endIt; ++diffIt) {
-        if ((*diffIt)->isUnsaved())
-            return true;
-    }
-
-    return false;
+    return std::any_of(d->differences.constBegin(), d->differences.constEnd(), [] (const Difference* diff) {
+        return diff->isUnsaved();
+    });
 }
 
 void DiffModel::applyDifference(bool apply)

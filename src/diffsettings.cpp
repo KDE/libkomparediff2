@@ -40,7 +40,7 @@ DiffSettings::~DiffSettings() = default;
 
 void DiffSettings::loadSettings(KConfig *config)
 {
-    KConfigGroup group(config, "Diff Options");
+    KConfigGroup group(config, QStringLiteral("Diff Options"));
     // clang-format off
     m_diffProgram                    = group.readEntry("DiffProgram", QString());
     m_linesOfContext                 = group.readEntry("LinesOfContext", 3);
@@ -62,7 +62,7 @@ void DiffSettings::loadSettings(KConfig *config)
 
     m_format = static_cast<Format>(group.readEntry("Format", static_cast<int>(Unified)));
 
-    KConfigGroup group2(config, "Exclude File Options");
+    KConfigGroup group2(config, QStringLiteral("Exclude File Options"));
     // clang-format off
     m_excludeFilePattern          = group2.readEntry("Pattern", false);
     m_excludeFilePatternList      = group2.readEntry("PatternList", QStringList());
@@ -74,7 +74,7 @@ void DiffSettings::loadSettings(KConfig *config)
 
 void DiffSettings::saveSettings(KConfig *config)
 {
-    KConfigGroup group(config, "Diff Options");
+    KConfigGroup group(config, QStringLiteral("Diff Options"));
     // clang-format off
     group.writeEntry("DiffProgram",                    m_diffProgram);
     group.writeEntry("LinesOfContext",                 m_linesOfContext);
@@ -95,7 +95,7 @@ void DiffSettings::saveSettings(KConfig *config)
     group.writeEntry("NewFiles",                       m_newFiles);
     // clang-format on
 
-    KConfigGroup group2(config, "Exclude File Options");
+    KConfigGroup group2(config, QStringLiteral("Exclude File Options"));
     // clang-format off
     group2.writeEntry("Pattern",         m_excludeFilePattern);
     group2.writeEntry("PatternList",     m_excludeFilePatternList);

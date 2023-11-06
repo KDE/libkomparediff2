@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:38+0000\n"
-"PO-Revision-Date: 2023-01-08 12:30+0100\n"
+"PO-Revision-Date: 2023-11-05 17:03+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -73,6 +73,8 @@ msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
 "file.</qt>"
 msgstr ""
+"<qt>Neniuj modeloj aŭ neniuj diferencoj, ĉi tiu dosiero: <b>%1</b>, ne estas "
+"valida diff-dosiero.</qt>"
 
 #: komparemodellist.cpp:267
 #, kde-format
@@ -80,6 +82,7 @@ msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
 "qt>"
 msgstr ""
+"<qt>Estis problemoj apliki la diff-on <b>%1</b> al la dosiero <b>%2</b>.</qt>"
 
 #: komparemodellist.cpp:294
 #, kde-format
@@ -87,16 +90,18 @@ msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
 "</qt>"
 msgstr ""
+"<qt>Estis problemoj apliki la diff-on <b>%1</b> al la dosierujo <b>%2</b>.</"
+"qt>"
 
 #: komparemodellist.cpp:326 komparemodellist.cpp:687
 #, kde-format
 msgid "Could not open a temporary file."
-msgstr ""
+msgstr "Ne eblis malfermi dumtempan dosieron."
 
 #: komparemodellist.cpp:374 komparemodellist.cpp:381
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
-msgstr ""
+msgstr "<qtNe eblis skribi al dumtempa dosiero <b>%1</b>, forigante ĝin.</qt>"
 
 #: komparemodellist.cpp:412
 #, kde-format
@@ -104,6 +109,8 @@ msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
 "The file has not been saved.</qt>"
 msgstr ""
+"<qtNe eblis krei celdosierujon <b>%1</b>.\n"
+"La dosiero ne estis konservita</qt>"
 
 #: komparemodellist.cpp:440
 #, kde-format
@@ -112,21 +119,24 @@ msgid ""
 "b>. The temporary file is still available under: <b>%2</b>. You can manually "
 "copy it to the right place.</qt>"
 msgstr ""
+"<qt>Ne eblis alŝuti la provizoran dosieron al la celloko <b>%1</b>. La "
+"dumtempa dosiero ankoraŭ disponeblas sub: <b>%2</b>. Vi povas permane kopii "
+"ĝin al la ĝusta loko.</qt>"
 
 #: komparemodellist.cpp:519 komparemodellist.cpp:634 komparemodellist.cpp:654
 #, kde-format
 msgid "Could not parse diff output."
-msgstr ""
+msgstr "Ne eblis analizi diff-eligon."
 
 #: komparemodellist.cpp:535
 #, kde-format
 msgid "The files are identical."
-msgstr ""
+msgstr "La dosieroj estas identaj."
 
 #: komparemodellist.cpp:719
 #, kde-format
 msgid "Could not write to the temporary file."
-msgstr ""
+msgstr "Ne eblis skribi al provizora dosiero."
 
 #: komparemodellist.cpp:993
 #, kde-format
@@ -134,3 +144,5 @@ msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "
 "displayed in the diff view."
 msgstr ""
+"La diferenco estas misformita. Kelkaj linioj ne povis esti analizitaj kaj ne "
+"estos montrataj en la diff-vido."

@@ -39,7 +39,7 @@ DiffSettings::~DiffSettings()
 
 void DiffSettings::loadSettings(KConfig* config)
 {
-    KConfigGroup group(config, "Diff Options");
+    KConfigGroup group(config, QStringLiteral("Diff Options"));
     m_diffProgram                    = group.readEntry("DiffProgram", QString());
     m_linesOfContext                 = group.readEntry("LinesOfContext", 3);
     m_largeFiles                     = group.readEntry("LargeFiles", true);
@@ -59,7 +59,7 @@ void DiffSettings::loadSettings(KConfig* config)
 
     m_format = static_cast<Kompare::Format>(group.readEntry("Format", (int) Kompare::Unified));
 
-    KConfigGroup group2(config, "Exclude File Options");
+    KConfigGroup group2(config, QStringLiteral("Exclude File Options"));
     m_excludeFilePattern             = group2.readEntry("Pattern", false);
     m_excludeFilePatternList         = group2.readEntry("PatternList", QStringList());
     m_excludeFilesFile               = group2.readEntry("File", false);
@@ -69,7 +69,7 @@ void DiffSettings::loadSettings(KConfig* config)
 
 void DiffSettings::saveSettings(KConfig* config)
 {
-    KConfigGroup group(config, "Diff Options");
+    KConfigGroup group(config, QStringLiteral("Diff Options"));
     group.writeEntry("DiffProgram",                    m_diffProgram);
     group.writeEntry("LinesOfContext",                 m_linesOfContext);
     group.writeEntry("Format",                         (int)m_format);
@@ -88,7 +88,7 @@ void DiffSettings::saveSettings(KConfig* config)
     group.writeEntry("CompareRecursively",             m_recursive);
     group.writeEntry("NewFiles",                       m_newFiles);
 
-    KConfigGroup group2(config, "Exclude File Options");
+    KConfigGroup group2(config, QStringLiteral("Exclude File Options"));
     group2.writeEntry("Pattern",            m_excludeFilePattern);
     group2.writeEntry("PatternList",        m_excludeFilePatternList);
     group2.writeEntry("File",               m_excludeFilesFile);

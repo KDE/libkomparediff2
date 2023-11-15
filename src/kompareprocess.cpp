@@ -242,7 +242,8 @@ void KompareProcess::setEncoding(const QString& encoding)
 {
     if (!encoding.compare(QLatin1String("default"), Qt::CaseInsensitive))
     {
-        m_textDecoder = QTextCodec::codecForLocale()->makeDecoder();
+        m_codec = QTextCodec::codecForLocale();
+        m_textDecoder = m_codec->makeDecoder();
     }
     else
     {

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:38+0000\n"
-"PO-Revision-Date: 2023-11-05 17:03+0100\n"
+"PO-Revision-Date: 2023-11-16 20:31+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -101,7 +101,7 @@ msgstr "Ne eblis malfermi dumtempan dosieron."
 #: komparemodellist.cpp:374 komparemodellist.cpp:381
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
-msgstr "<qtNe eblis skribi al dumtempa dosiero <b>%1</b>, forigante ĝin.</qt>"
+msgstr "<qt>Ne eblis skribi al dumtempa dosiero <b>%1</b>, forigante ĝin.</qt>"
 
 #: komparemodellist.cpp:412
 #, kde-format
@@ -109,7 +109,7 @@ msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
 "The file has not been saved.</qt>"
 msgstr ""
-"<qtNe eblis krei celdosierujon <b>%1</b>.\n"
+"<qt>Ne eblis krei celdosierujon <b>%1</b>.\n"
 "La dosiero ne estis konservita</qt>"
 
 #: komparemodellist.cpp:440

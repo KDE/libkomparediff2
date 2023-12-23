@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# xavier <xavier.besnard@neuf.fr>, 2013, 2020.
+# Xavier Besnard <xavier.besnard@kde.org>, 2013, 2020.
 #
 msgid ""
 msgstr ""

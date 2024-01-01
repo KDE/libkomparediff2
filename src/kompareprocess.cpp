@@ -57,7 +57,8 @@ KompareProcess::KompareProcess(KompareDiff2::DiffSettings *diffSettings,
                                KompareDiff2::Mode mode)
     : KProcess()
     , m_diffSettings(diffSettings)
-    , m_mode(diffMode)
+    , m_diffMode(diffMode)
+    , m_mode(mode)
 {
     // connect the signal that indicates that the process has exited
     connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &KompareProcess::slotFinished);
@@ -65,7 +66,7 @@ KompareProcess::KompareProcess(KompareDiff2::DiffSettings *diffSettings,
     setEnv(QStringLiteral("LANG"), QStringLiteral("C"));
 
     // Write command and options
-    if (m_mode == KompareDiff2::Default) {
+    if (m_diffMode == KompareDiff2::Default) {
         writeDefaultCommandLine();
     } else {
         writeCommandLine();
@@ -79,16 +80,16 @@ KompareProcess::KompareProcess(KompareDiff2::DiffSettings *diffSettings,
     *this << QStringLiteral("--");
 
     // Add the option for diff to read from stdin(QIODevice::write), and save a pointer to the string
-    if (mode == KompareDiff2::ComparingStringFile) {
+    if (m_mode == KompareDiff2::ComparingStringFile) {
         *this << QStringLiteral("-");
-        m_customString = &source;
+        m_customString = source;
     } else {
         *this << constructRelativePath(dir, source);
     }
 
-    if (mode == KompareDiff2::ComparingFileString) {
+    if (m_mode == KompareDiff2::ComparingFileString) {
         *this << QStringLiteral("-");
-        m_customString = &destination;
+        m_customString = destination;
     } else {
         *this << constructRelativePath(dir, destination);
     }
@@ -214,7 +215,8 @@ KompareProcess::~KompareProcess() = default;
 void KompareProcess::setEncoding(const QString &encoding)
 {
     if (!encoding.compare(QLatin1String("default"), Qt::CaseInsensitive)) {
-        m_textDecoder.reset(QTextCodec::codecForLocale()->makeDecoder());
+        m_codec = QTextCodec::codecForLocale();
+        m_textDecoder.reset(m_codec->makeDecoder());
     } else {
         m_codec = QTextCodec::codecForName(encoding.toUtf8());
         if (m_codec)
@@ -241,8 +243,8 @@ void KompareProcess::start()
     KProcess::start();
 
     // If we have a string to compare against input it now
-    if (m_customString)
-        write(m_codec->fromUnicode(*m_customString));
+    if ((m_mode == KompareDiff2::ComparingStringFile) || (m_mode == KompareDiff2::ComparingFileString))
+        write(m_codec->fromUnicode(m_customString));
     closeWriteChannel();
 }
 

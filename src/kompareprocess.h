@@ -67,8 +67,9 @@ private Q_SLOTS:
 
 private:
     KompareDiff2::DiffSettings *m_diffSettings;
-    KompareDiff2::DiffMode m_mode;
-    const QString *m_customString; // Used when a comparison between a file and a string is requested
+    const KompareDiff2::DiffMode m_diffMode;
+    const KompareDiff2::Mode m_mode;
+    QString m_customString; // Used when a comparison between a file and a string is requested
     QString m_stdout;
     QString m_stderr;
     std::unique_ptr<QTextDecoder> m_textDecoder;

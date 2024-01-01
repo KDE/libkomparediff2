@@ -47,8 +47,9 @@ protected Q_SLOTS:
 
 private:
     DiffSettings*          m_diffSettings;
-    enum Kompare::DiffMode m_mode;
-    const QString*         m_customString; // Used when a comparison between a file and a string is requested
+    const Kompare::DiffMode m_diffMode;
+    const Kompare::Mode    m_mode;
+    QString                m_customString; // Used when a comparison between a file and a string is requested
     QString                m_stdout;
     QString                m_stderr;
     QTextDecoder*          m_textDecoder;

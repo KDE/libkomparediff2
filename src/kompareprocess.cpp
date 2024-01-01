@@ -48,8 +48,8 @@ static QString constructRelativePath(const QString& from, const QString& to)
 KompareProcess::KompareProcess(DiffSettings* diffSettings, Kompare::DiffMode diffMode, const QString& source, const QString& destination, const QString& dir, Kompare::Mode mode)
     : KProcess(),
       m_diffSettings(diffSettings),
-      m_mode(diffMode),
-      m_customString(nullptr),
+      m_diffMode(diffMode),
+      m_mode(mode),
       m_textDecoder(nullptr)
 {
     // connect the signal that indicates that the process has exited
@@ -59,7 +59,7 @@ KompareProcess::KompareProcess(DiffSettings* diffSettings, Kompare::DiffMode dif
     setEnv(QStringLiteral("LANG"), QStringLiteral("C"));
 
     // Write command and options
-    if (m_mode == Kompare::Default)
+    if (m_diffMode == Kompare::Default)
     {
         writeDefaultCommandLine();
     }
@@ -76,20 +76,20 @@ KompareProcess::KompareProcess(DiffSettings* diffSettings, Kompare::DiffMode dif
     *this << QStringLiteral("--");
 
     //Add the option for diff to read from stdin(QIODevice::write), and save a pointer to the string
-    if (mode == Kompare::ComparingStringFile)
+    if (m_mode == Kompare::ComparingStringFile)
     {
         *this << QStringLiteral("-");
-        m_customString = &source;
+        m_customString = source;
     }
     else
     {
         *this << constructRelativePath(dir, source);
     }
 
-    if (mode == Kompare::ComparingFileString)
+    if (m_mode == Kompare::ComparingFileString)
     {
         *this << QStringLiteral("-");
-        m_customString = &destination;
+        m_customString = destination;
     }
     else
     {
@@ -275,8 +275,8 @@ void KompareProcess::start()
     KProcess::start();
 
     //If we have a string to compare against input it now
-    if (m_customString)
-        write(m_codec->fromUnicode(*m_customString));
+    if ((m_mode == Kompare::ComparingStringFile) || (m_mode == Kompare::ComparingFileString))
+        write(m_codec->fromUnicode(m_customString));
     closeWriteChannel();
 }
 

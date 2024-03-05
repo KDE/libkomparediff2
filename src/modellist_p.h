@@ -17,12 +17,12 @@
 #include <QFileInfo>
 #include <QTemporaryFile>
 #include <QUrl>
+#include <QStringDecoder>
 // Std
 #include <memory>
 
 class KActionCollection;
 class QAction;
-class QTextCodec;
 
 namespace KompareDiff2
 {
@@ -94,7 +94,7 @@ public:
     QAction *save;
 
     QString encoding;
-    QTextCodec *textCodec = nullptr;
+    QStringDecoder textDecoder;
 
     bool isReadWrite;
 };

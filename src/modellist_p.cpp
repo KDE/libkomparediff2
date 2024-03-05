@@ -14,7 +14,6 @@
 #include <komparediff2_logging.h>
 // Qt
 #include <QAction>
-#include <QTextCodec>
 
 using namespace KompareDiff2;
 
@@ -50,16 +49,16 @@ QString ModelListPrivate::readFile(const QString &fileName)
     QFile file(fileName);
     file.open(QIODevice::ReadOnly);
 
-    qCDebug(KOMPAREDIFF2_LOG) << "Codec = " << textCodec;
-    if (!textCodec)
-        textCodec = QTextCodec::codecForLocale();
-    std::unique_ptr<QTextDecoder> decoder(textCodec->makeDecoder());
+    qCDebug(KOMPAREDIFF2_LOG) << "Codec = " << textDecoder.name();
+    if (!textDecoder.isValid())
+        textDecoder = QStringDecoder(QStringDecoder::System);
+    textDecoder.resetState();
 
     QString contents;
     while (!file.atEnd()) {
         char buffer[4096];
         const auto len = file.read(buffer, 4096);
-        contents += decoder->toUnicode(buffer, len);
+        contents += textDecoder.decode(QByteArrayView(buffer, len));
     }
 
     file.close();

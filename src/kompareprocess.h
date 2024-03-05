@@ -13,11 +13,11 @@
 #include "global.h"
 // KF
 #include <KProcess>
+// Qt
+#include <QStringDecoder>
+#include <QStringEncoder>
 // Std
 #include <memory>
-
-class QTextDecoder;
-class QTextCodec;
 
 namespace KompareDiff2
 {
@@ -72,8 +72,8 @@ private:
     QString m_customString; // Used when a comparison between a file and a string is requested
     QString m_stdout;
     QString m_stderr;
-    std::unique_ptr<QTextDecoder> m_textDecoder;
-    QTextCodec *m_codec = nullptr;
+    QStringDecoder m_textDecoder;
+    QStringEncoder m_textEncoder;
 };
 
 #endif

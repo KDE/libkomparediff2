@@ -29,7 +29,6 @@
 #include <QList>
 #include <QMimeDatabase>
 #include <QMimeType>
-#include <QTextCodec>
 #include <QTextStream>
 // Std
 #include <algorithm>
@@ -391,15 +390,15 @@ void ModelList::setEncoding(const QString &encoding)
 
     d->encoding = encoding;
     if (!encoding.compare(QLatin1String("default"), Qt::CaseInsensitive)) {
-        d->textCodec = QTextCodec::codecForLocale();
+        d->textDecoder = QStringDecoder(QStringDecoder::System);
     } else {
         qCDebug(KOMPAREDIFF2_LOG) << "Encoding : " << encoding;
-        d->textCodec = QTextCodec::codecForName(encoding.toUtf8());
-        qCDebug(KOMPAREDIFF2_LOG) << "TextCodec: " << d->textCodec;
-        if (!d->textCodec)
-            d->textCodec = QTextCodec::codecForLocale();
+        d->textDecoder = QStringDecoder(encoding.toUtf8().constData());
+        qCDebug(KOMPAREDIFF2_LOG) << "TextCodec: " << d->textDecoder.name();
+        if (!d->textDecoder.isValid())
+            d->textDecoder = QStringDecoder(QStringDecoder::System);
     }
-    qCDebug(KOMPAREDIFF2_LOG) << "TextCodec: " << d->textCodec;
+    qCDebug(KOMPAREDIFF2_LOG) << "TextCodec: " << d->textDecoder.name();
 }
 
 void ModelList::setReadWrite(bool isReadWrite)

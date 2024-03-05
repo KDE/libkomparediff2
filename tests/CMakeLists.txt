@@ -53,7 +53,6 @@ target_compile_definitions(interactiveDiffTest
 )
 target_link_libraries(interactiveDiffTest
     Qt6::Core
-    Qt6::Core5Compat
     Qt6::Test
     KF6::CoreAddons
     KF6::I18n

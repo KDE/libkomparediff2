@@ -30,7 +30,6 @@ endif()
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED
     COMPONENTS
         Core
-        Core5Compat # QTextCodec
         Widgets
         ${ADDITIONAL_REQUIRED_QT_COMPONENTS}
 )

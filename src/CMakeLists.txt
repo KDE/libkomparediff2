@@ -65,7 +65,6 @@ target_link_libraries(komparediff2
         KF6::KIOCore
         KF6::I18n
         KF6::CoreAddons
-        Qt6::Core5Compat
 )
 
 target_include_directories(komparediff2 INTERFACE "$<INSTALL_INTERFACE:${KOMPAREDIFF2_INSTALL_INCLUDEDIR}>")

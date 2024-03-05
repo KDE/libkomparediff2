@@ -16,7 +16,6 @@
 // Qt
 #include <QDir>
 #include <QStringList>
-#include <QTextCodec>
 #include <QUrl>
 
 namespace
@@ -215,16 +214,15 @@ KompareProcess::~KompareProcess() = default;
 void KompareProcess::setEncoding(const QString &encoding)
 {
     if (!encoding.compare(QLatin1String("default"), Qt::CaseInsensitive)) {
-        m_codec = QTextCodec::codecForLocale();
-        m_textDecoder.reset(m_codec->makeDecoder());
+        m_textDecoder = QStringDecoder(QStringDecoder::System);
+        m_textEncoder = QStringEncoder(QStringEncoder::System);
     } else {
-        m_codec = QTextCodec::codecForName(encoding.toUtf8());
-        if (m_codec)
-            m_textDecoder.reset(m_codec->makeDecoder());
-        else {
+        m_textDecoder = QStringDecoder(encoding.toUtf8().constData());
+        m_textEncoder = QStringEncoder(encoding.toUtf8().constData());
+        if (!m_textDecoder.isValid() || !m_textEncoder.isValid()) {
             qCDebug(KOMPAREDIFF2_LOG) << "Using locale codec as backup...";
-            m_codec = QTextCodec::codecForLocale();
-            m_textDecoder.reset(m_codec->makeDecoder());
+            m_textDecoder = QStringDecoder(QStringDecoder::System);
+            m_textEncoder = QStringEncoder(QStringEncoder::System);
         }
     }
 }
@@ -244,18 +242,17 @@ void KompareProcess::start()
 
     // If we have a string to compare against input it now
     if ((m_mode == KompareDiff2::ComparingStringFile) || (m_mode == KompareDiff2::ComparingFileString))
-        write(m_codec->fromUnicode(m_customString));
+        write(m_textEncoder.encode(m_customString));
     closeWriteChannel();
 }
 
 void KompareProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
     // add all output to m_stdout/m_stderr
-    if (m_textDecoder) {
-        m_stdout = m_textDecoder->toUnicode(readAllStandardOutput());
-        m_stderr = m_textDecoder->toUnicode(readAllStandardError());
-    } else
-        qCDebug(KOMPAREDIFF2_LOG) << "KompareProcess::slotFinished : No decoder !!!";
+    m_textDecoder.resetState();
+    m_stdout = m_textDecoder.decode(readAllStandardOutput());
+    m_textDecoder.resetState();
+    m_stderr = m_textDecoder.decode(readAllStandardError());
 
     // exit code of 0: no differences
     //              1: some differences

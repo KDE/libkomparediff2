@@ -2,6 +2,22 @@ cmake_minimum_required(VERSION 3.16)
 
 project(LibKompareDiff2 VERSION "5.4.0")
 
+# Note about preliminary Qt6-port code around in "master" branch:
+# While initial Qt6 build suppprt was directly done in the "master" branch,
+# further work changed some LibKompareDiff2 API, taking advantage of given ABI breakage.
+# To not complicate the code trying to support both old and new in the same branch
+# instead a dedicated "kf6" branch was created.
+# For the 2 known consumers, kompare was kept in sync, also getting a reepective "kf6" branch,
+# while KDevelop (latest state: March 10th 2024) still needs a Qt6 port completed.
+# Plan so far has been to switch all three together to Qt6-based releases.
+# The initial Qt6 build support has not been removed from the "master" branch
+# in the (untested) assumption merging the "kf6" branch back will have less conflicts.
+# Once KDevelop is Qt6/KF6-ready, the "kf6" branch of libkomparediff2 and kompare
+# is to be merged into the "master" branch again, for a common Qt6 build release in KDE Gear.
+if (QT_MAJOR_VERSION STREQUAL "6" OR BUILD_WITH_QT6)
+    message(FATAL_ERROR "For Qt6 usage see the \"kf6\" work branch. Waiting on KDevelop to be Qt6/KF6-ready.")
+endif()
+
 set(QT_MIN_VERSION "5.15.2")
 set(KF_MIN_VERSION "5.91.0")
 

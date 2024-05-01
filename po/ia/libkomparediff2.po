@@ -1,0 +1,134 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the libkomparediff2 package.
+#
+# giovanni <g.sora@tiscali.it>, 2024.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkomparediff2\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-05 12:38+0000\n"
+"PO-Revision-Date: 2024-04-30 12:19+0200\n"
+"Last-Translator: giovanni <g.sora@tiscali.it>\n"
+"Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
+"Language: ia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#: komparemodellist.cpp:63
+#, kde-format
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "&Applica Differentia"
+
+#: komparemodellist.cpp:67
+#, kde-format
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr ""
+
+#: komparemodellist.cpp:71
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr ""
+
+#: komparemodellist.cpp:75
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr ""
+
+#: komparemodellist.cpp:85
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr ""
+
+#: komparemodellist.cpp:89
+#, kde-format
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "Proxim&e File"
+
+#: komparemodellist.cpp:93
+#, kde-format
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr ""
+
+#: komparemodellist.cpp:97
+#, kde-format
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr ""
+
+#: komparemodellist.cpp:258 komparemodellist.cpp:283
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:267
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr ""
+
+#: komparemodellist.cpp:294
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:326 komparemodellist.cpp:687
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "Il non pote aperir un file temporanee."
+
+#: komparemodellist.cpp:374 komparemodellist.cpp:381
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:412
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:440
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+
+#: komparemodellist.cpp:519 komparemodellist.cpp:634 komparemodellist.cpp:654
+#, kde-format
+msgid "Could not parse diff output."
+msgstr ""
+
+#: komparemodellist.cpp:535
+#, kde-format
+msgid "The files are identical."
+msgstr "Le files es identic."
+
+#: komparemodellist.cpp:719
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr ""
+
+#: komparemodellist.cpp:993
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:38+0000\n"
+"POT-Creation-Date: 2024-07-19 00:41+0000\n"
 "PO-Revision-Date: 2013-04-09 23:49+0200\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -18,63 +18,63 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: komparemodellist.cpp:63
+#: modellist.cpp:49
 #, fuzzy, kde-format
 #| msgid "&Apply Difference"
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "Az eltérés al&kalmazása"
 
-#: komparemodellist.cpp:67
+#: modellist.cpp:53
 #, fuzzy, kde-format
 #| msgid "Un&apply Difference"
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "Eltérés alkalmazásának v&isszavonása"
 
-#: komparemodellist.cpp:71
+#: modellist.cpp:57
 #, fuzzy, kde-format
 #| msgid "App&ly All"
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "Alkalma&zás (teljes)"
 
-#: komparemodellist.cpp:75
+#: modellist.cpp:61
 #, fuzzy, kde-format
 #| msgid "&Unapply All"
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "Az alkalmazások &visszavonása"
 
-#: komparemodellist.cpp:85
+#: modellist.cpp:71
 #, fuzzy, kde-format
 #| msgid "P&revious File"
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "Az &előző fájl"
 
-#: komparemodellist.cpp:89
+#: modellist.cpp:75
 #, fuzzy, kde-format
 #| msgid "N&ext File"
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "A következő &fájl"
 
-#: komparemodellist.cpp:93
+#: modellist.cpp:79
 #, fuzzy, kde-format
 #| msgid "&Previous Difference"
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "Az e&lőző eltérés"
 
-#: komparemodellist.cpp:97
+#: modellist.cpp:83
 #, fuzzy, kde-format
 #| msgid "&Next Difference"
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "A köve&tkező eltérés"
 
-#: komparemodellist.cpp:258 komparemodellist.cpp:283
+#: modellist.cpp:183 modellist.cpp:209
 #, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
@@ -82,7 +82,7 @@ msgid ""
 msgstr ""
 "<qt>Nincs modell vagy különbség, a(z) <b>%1</b> fájl nem diff-fájl.</qt>"
 
-#: komparemodellist.cpp:267
+#: modellist.cpp:192
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
@@ -91,7 +91,7 @@ msgstr ""
 "<qt>Nem sikerült alkalmazni a(z) <b>%1</b> diff-fájlt a(z) <b>%2</b> fájlra."
 "</qt>"
 
-#: komparemodellist.cpp:294
+#: modellist.cpp:220
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
@@ -100,19 +100,19 @@ msgstr ""
 "<qt>Nem sikerült alkalmazni a(z) <b>%1</b> diff-kimenetet a(z) <b>%2</b> "
 "mappára.</qt>"
 
-#: komparemodellist.cpp:326 komparemodellist.cpp:687
+#: modellist.cpp:256 modellist.cpp:520
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Az egyik ideiglenes fájlt nem sikerült megnyitni."
 
-#: komparemodellist.cpp:374 komparemodellist.cpp:381
+#: modellist.cpp:289 modellist.cpp:296
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr ""
 "<qt>Nem sikerült írni a(z) <b>%1</b> ideiglenes fájlba, ezért le lesz "
 "törölve.</qt>"
 
-#: komparemodellist.cpp:412
+#: modellist.cpp:324
 #, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
@@ -121,7 +121,7 @@ msgstr ""
 "<qt>Nem sikerült létrehozni a célmappát: <b>%1</b>.\n"
 "A fájl nem lett elmentve.</qt>"
 
-#: komparemodellist.cpp:440
+#: modellist.cpp:350
 #, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -132,22 +132,22 @@ msgstr ""
 "Az ideiglenes fájl még található itt: <b>%2</b>. Próbálja meg átmásolni a "
 "fájlt a megfelelő helyre.</qt>"
 
-#: komparemodellist.cpp:519 komparemodellist.cpp:634 komparemodellist.cpp:654
+#: modellist.cpp:429 modellist.cpp:465 modellist.cpp:486
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "A diff kimenet feldolgozása nem sikerült."
 
-#: komparemodellist.cpp:535
+#: modellist.cpp:440
 #, kde-format
 msgid "The files are identical."
 msgstr "A fájlok teljesen egyformák."
 
-#: komparemodellist.cpp:719
+#: modellist.cpp:550
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Nem sikerült írni egy ideiglenes fájlba."
 
-#: komparemodellist.cpp:993
+#: modellist.cpp:820
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

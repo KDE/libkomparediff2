@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:38+0000\n"
+"POT-Creation-Date: 2024-07-19 00:41+0000\n"
 "PO-Revision-Date: 2009-06-04 12:04+0300\n"
 "Last-Translator: Viesturs Zariņš <viesturs.zarins@mii.lu.lv>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -19,63 +19,63 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
-#: komparemodellist.cpp:63
+#: modellist.cpp:49
 #, fuzzy, kde-format
 #| msgid "&Apply Difference"
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "&Pielietot atšķirību"
 
-#: komparemodellist.cpp:67
+#: modellist.cpp:53
 #, fuzzy, kde-format
 #| msgid "Un&apply Difference"
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "&Atcelt atšķirību"
 
-#: komparemodellist.cpp:71
+#: modellist.cpp:57
 #, fuzzy, kde-format
 #| msgid "App&ly All"
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "Pie&lietot visas"
 
-#: komparemodellist.cpp:75
+#: modellist.cpp:61
 #, fuzzy, kde-format
 #| msgid "&Unapply All"
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "A&tcelt visas"
 
-#: komparemodellist.cpp:85
+#: modellist.cpp:71
 #, fuzzy, kde-format
 #| msgid "P&revious File"
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "Iep&riekšējais fails"
 
-#: komparemodellist.cpp:89
+#: modellist.cpp:75
 #, fuzzy, kde-format
 #| msgid "N&ext File"
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "Nā&kamais fails"
 
-#: komparemodellist.cpp:93
+#: modellist.cpp:79
 #, fuzzy, kde-format
 #| msgid "&Previous Difference"
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "&Iepriekšējā atšķirība"
 
-#: komparemodellist.cpp:97
+#: modellist.cpp:83
 #, fuzzy, kde-format
 #| msgid "&Next Difference"
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "&Nākamā atšķirība"
 
-#: komparemodellist.cpp:258 komparemodellist.cpp:283
+#: modellist.cpp:183 modellist.cpp:209
 #, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
@@ -84,7 +84,7 @@ msgstr ""
 "<qt>Šajā failā nav ne modeļu ne atšķirību: <b>%1</b>, nav derīgs diff fails."
 "</qt>"
 
-#: komparemodellist.cpp:267
+#: modellist.cpp:192
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
@@ -92,7 +92,7 @@ msgid ""
 msgstr ""
 "<qt>Gadījās problēmas diff <b>%1</b> pielietošanāto uz failu <b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:294
+#: modellist.cpp:220
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
@@ -100,17 +100,17 @@ msgid ""
 msgstr ""
 "<qt>Gadījās problēmas diff <b>%1</b> pielietošanā uz mapi <b>%2</b>.</qt>"
 
-#: komparemodellist.cpp:326 komparemodellist.cpp:687
+#: modellist.cpp:256 modellist.cpp:520
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Neizdevās atvērt pagaidu failu."
 
-#: komparemodellist.cpp:374 komparemodellist.cpp:381
+#: modellist.cpp:289 modellist.cpp:296
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr "<qt>Neizdevas rakstīt pagaidu failā <b>%1</b>, izdzēš to.</qt>"
 
-#: komparemodellist.cpp:412
+#: modellist.cpp:324
 #, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
@@ -119,7 +119,7 @@ msgstr ""
 "<qt>Neizdevās izveidot mērķa mapi <b>%1</b>.\n"
 "Fails netika saglabāts.</qt>"
 
-#: komparemodellist.cpp:440
+#: modellist.cpp:350
 #, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -130,22 +130,22 @@ msgstr ""
 "joprojām atrodas iekš: <b>%2</b>. Jūs varat to pārkopēt pats uz pareizo "
 "vietu.</qt>"
 
-#: komparemodellist.cpp:519 komparemodellist.cpp:634 komparemodellist.cpp:654
+#: modellist.cpp:429 modellist.cpp:465 modellist.cpp:486
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Neizdevās analizēt diff izvadu."
 
-#: komparemodellist.cpp:535
+#: modellist.cpp:440
 #, kde-format
 msgid "The files are identical."
 msgstr "Faili ir identiski."
 
-#: komparemodellist.cpp:719
+#: modellist.cpp:550
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Neizdevās rakstīt pagaidu failā."
 
-#: komparemodellist.cpp:993
+#: modellist.cpp:820
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

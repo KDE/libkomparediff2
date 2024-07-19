@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:38+0000\n"
+"POT-Creation-Date: 2024-07-19 00:41+0000\n"
 "PO-Revision-Date: 2023-04-28 20:20+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -19,55 +19,55 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.04.0\n"
 
-#: komparemodellist.cpp:63
+#: modellist.cpp:49
 #, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "&Aplicar a diferenza"
 
-#: komparemodellist.cpp:67
+#: modellist.cpp:53
 #, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "&Anular a aplicación da diferenza"
 
-#: komparemodellist.cpp:71
+#: modellist.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "Ap&licar todo"
 
-#: komparemodellist.cpp:75
+#: modellist.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "Anular t&odas as aplicacións"
 
-#: komparemodellist.cpp:85
+#: modellist.cpp:71
 #, kde-format
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "Fichei&ro anterior"
 
-#: komparemodellist.cpp:89
+#: modellist.cpp:75
 #, kde-format
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "&Seguinte ficheiro"
 
-#: komparemodellist.cpp:93
+#: modellist.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "Diferenza &anterior"
 
-#: komparemodellist.cpp:97
+#: modellist.cpp:83
 #, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "&Seguinte diferenza"
 
-#: komparemodellist.cpp:258 komparemodellist.cpp:283
+#: modellist.cpp:183 modellist.cpp:209
 #, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
@@ -76,7 +76,7 @@ msgstr ""
 "<qt>Non existen modelos nin diferenzas, este ficheiro: <b>%1</b>, non é un "
 "ficheiro de «diff» correcto.</qt>"
 
-#: komparemodellist.cpp:267
+#: modellist.cpp:192
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
@@ -85,7 +85,7 @@ msgstr ""
 "<qt>Ocorreron problemas ao aplicar as diferenzas <b>%1</b> ao ficheiro <b>"
 "%2</b>.</qt>"
 
-#: komparemodellist.cpp:294
+#: modellist.cpp:220
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
@@ -94,18 +94,18 @@ msgstr ""
 "<qt>Ocorreron problemas ao aplicar as diferenzas <b>%1</b> ao cartafol <b>"
 "%2</b>.</qt>"
 
-#: komparemodellist.cpp:326 komparemodellist.cpp:687
+#: modellist.cpp:256 modellist.cpp:520
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Non foi posíbel acceder a un ficheiro temporal."
 
-#: komparemodellist.cpp:374 komparemodellist.cpp:381
+#: modellist.cpp:289 modellist.cpp:296
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr ""
 "<qt>Non se puido gardar no ficheiro temporal <b>%1</b>, a eliminalo.</qt>"
 
-#: komparemodellist.cpp:412
+#: modellist.cpp:324
 #, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
@@ -114,7 +114,7 @@ msgstr ""
 "<qt>Non se puido crear o directorio de destino <b>%1</b>.\n"
 "O ficheiro non se gardou.</qt>"
 
-#: komparemodellist.cpp:440
+#: modellist.cpp:350
 #, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -125,22 +125,22 @@ msgstr ""
 "<b>%1</b>. O ficheiro temporal aínda está dispoñíbel en: <b>%2</b>. Pode "
 "copialo manualmente para o lugar correcta.</qt>"
 
-#: komparemodellist.cpp:519 komparemodellist.cpp:634 komparemodellist.cpp:654
+#: modellist.cpp:429 modellist.cpp:465 modellist.cpp:486
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Non foi posíbel procesar a saída de diff."
 
-#: komparemodellist.cpp:535
+#: modellist.cpp:440
 #, kde-format
 msgid "The files are identical."
 msgstr "Os ficheiros son idénticos."
 
-#: komparemodellist.cpp:719
+#: modellist.cpp:550
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Non foi posíbel escribir no ficheiro temporal."
 
-#: komparemodellist.cpp:993
+#: modellist.cpp:820
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

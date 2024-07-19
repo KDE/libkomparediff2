@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:38+0000\n"
+"POT-Creation-Date: 2024-07-19 00:41+0000\n"
 "PO-Revision-Date: 2006-12-03 15:38+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -16,100 +16,100 @@ msgstr ""
 "X-Generator: KBabel 0.9.6\n"
 "Plural-Forms: nplurals=2; plural=1;\n"
 
-#: komparemodellist.cpp:63
+#: modellist.cpp:49
 #, fuzzy, kde-format
 #| msgid "&Apply Difference"
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "Ter&ap Perubahan"
 
-#: komparemodellist.cpp:67
+#: modellist.cpp:53
 #, fuzzy, kde-format
 #| msgid "Un&apply Difference"
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "Nyah Ter&ap Perbezaan"
 
-#: komparemodellist.cpp:71
+#: modellist.cpp:57
 #, fuzzy, kde-format
 #| msgid "App&ly All"
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "Tera&p Semua"
 
-#: komparemodellist.cpp:75
+#: modellist.cpp:61
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "Semua Pakej"
 
-#: komparemodellist.cpp:85
+#: modellist.cpp:71
 #, fuzzy, kde-format
 #| msgid "P&revious File"
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "Fail Te&rdahulu"
 
-#: komparemodellist.cpp:89
+#: modellist.cpp:75
 #, fuzzy, kde-format
 #| msgid "N&ext File"
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "Fail S&eterusnya"
 
-#: komparemodellist.cpp:93
+#: modellist.cpp:79
 #, fuzzy, kde-format
 #| msgid "&Previous Difference"
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "&Perbezaan Terdahulu"
 
-#: komparemodellist.cpp:97
+#: modellist.cpp:83
 #, fuzzy, kde-format
 #| msgid "&Next Difference"
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "Perbezaan Seterus&nya"
 
-#: komparemodellist.cpp:258 komparemodellist.cpp:283
+#: modellist.cpp:183 modellist.cpp:209
 #, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
 "file.</qt>"
 msgstr ""
 
-#: komparemodellist.cpp:267
+#: modellist.cpp:192
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
 "qt>"
 msgstr ""
 
-#: komparemodellist.cpp:294
+#: modellist.cpp:220
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
 "</qt>"
 msgstr ""
 
-#: komparemodellist.cpp:326 komparemodellist.cpp:687
+#: modellist.cpp:256 modellist.cpp:520
 #, fuzzy, kde-format
 msgid "Could not open a temporary file."
 msgstr "tidak dapat membuka fail tetapan `%s': %s"
 
-#: komparemodellist.cpp:374 komparemodellist.cpp:381
+#: modellist.cpp:289 modellist.cpp:296
 #, fuzzy, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr "Tidak dapat tulis kepada fail."
 
-#: komparemodellist.cpp:412
+#: modellist.cpp:324
 #, fuzzy, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
 "The file has not been saved.</qt>"
 msgstr "Tidak dapat tulis kepada fail."
 
-#: komparemodellist.cpp:440
+#: modellist.cpp:350
 #, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -117,24 +117,24 @@ msgid ""
 "copy it to the right place.</qt>"
 msgstr ""
 
-#: komparemodellist.cpp:519 komparemodellist.cpp:634 komparemodellist.cpp:654
+#: modellist.cpp:429 modellist.cpp:465 modellist.cpp:486
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Tidak dapat huraikan diff output."
 
-#: komparemodellist.cpp:535
+#: modellist.cpp:440
 #, kde-format
 msgid "The files are identical."
 msgstr "Fail adalah sama."
 
-#: komparemodellist.cpp:719
+#: modellist.cpp:550
 #, fuzzy, kde-format
 msgid "Could not write to the temporary file."
 msgstr ""
 "Tidak dapat menulis ke fail %1:\n"
 "\"%2\" adalah huraian terperinci ralat."
 
-#: komparemodellist.cpp:993
+#: modellist.cpp:820
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

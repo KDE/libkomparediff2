@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:38+0000\n"
+"POT-Creation-Date: 2024-07-19 00:41+0000\n"
 "PO-Revision-Date: 2020-09-01 11:02+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -23,55 +23,55 @@ msgstr ""
 "X-Generator: Lokalize 20.04.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: komparemodellist.cpp:63
+#: modellist.cpp:49
 #, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
 msgstr "&Εφαρμογή διαφοράς"
 
-#: komparemodellist.cpp:67
+#: modellist.cpp:53
 #, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "Αν&αίρεση εφαρμογής διαφοράς"
 
-#: komparemodellist.cpp:71
+#: modellist.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "App&ly All"
 msgstr "Ε&φαρμογή όλων"
 
-#: komparemodellist.cpp:75
+#: modellist.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
 msgstr "Α&ναίρεση εφαρμογής όλων"
 
-#: komparemodellist.cpp:85
+#: modellist.cpp:71
 #, kde-format
 msgctxt "@action"
 msgid "P&revious File"
 msgstr "Π&ροηγούμενο αρχείο"
 
-#: komparemodellist.cpp:89
+#: modellist.cpp:75
 #, kde-format
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "Ε&πόμενο αρχείο"
 
-#: komparemodellist.cpp:93
+#: modellist.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
 msgstr "Πρ&οηγούμενη διαφορά"
 
-#: komparemodellist.cpp:97
+#: modellist.cpp:83
 #, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "Επό&μενη διαφορά"
 
-#: komparemodellist.cpp:258 komparemodellist.cpp:283
+#: modellist.cpp:183 modellist.cpp:209
 #, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
@@ -80,7 +80,7 @@ msgstr ""
 "<qt>Χωρίς μοντέλα ή χωρίς διαφορές, το αρχείο: <b>%1</b>, δεν είναι ένα "
 "έγκυρο αρχείο διαφορών.</qt>"
 
-#: komparemodellist.cpp:267
+#: modellist.cpp:192
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
@@ -89,7 +89,7 @@ msgstr ""
 "<qt>Υπήρξαν προβλήματα εφαρμογής του diff <b>%1</b> στο αρχείο <b>%2</b>.</"
 "qt>"
 
-#: komparemodellist.cpp:294
+#: modellist.cpp:220
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
@@ -98,18 +98,18 @@ msgstr ""
 "<qt>Υπήρξαν προβλήματα εφαρμογής του diff <b>%1</b> στο φάκελο <b>%2</b>.</"
 "qt>"
 
-#: komparemodellist.cpp:326 komparemodellist.cpp:687
+#: modellist.cpp:256 modellist.cpp:520
 #, kde-format
 msgid "Could not open a temporary file."
 msgstr "Αδύνατο το άνοιγμα ενός προσωρινού αρχείου."
 
-#: komparemodellist.cpp:374 komparemodellist.cpp:381
+#: modellist.cpp:289 modellist.cpp:296
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr ""
 "<qt>Αδύνατη η εγγραφή στο προσωρινό αρχείο <b>%1</b>, το διαγράφω.</qt>"
 
-#: komparemodellist.cpp:412
+#: modellist.cpp:324
 #, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
@@ -118,7 +118,7 @@ msgstr ""
 "<qt>Αδύνατη η δημιουργία του καταλόγου προορισμού <b>%1</b>.\n"
 "Το αρχείο δεν αποθηκεύτηκε.</qt>"
 
-#: komparemodellist.cpp:440
+#: modellist.cpp:350
 #, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
@@ -129,22 +129,22 @@ msgstr ""
 "%1</b>. Το προσωρινό αρχείο είναι ακόμη διαθέσιμο κάτω από το: <b>%2</b>. "
 "Μπορείτε να το αντιγράψετε χειροκίνητα στη σωστή θέση.</qt>"
 
-#: komparemodellist.cpp:519 komparemodellist.cpp:634 komparemodellist.cpp:654
+#: modellist.cpp:429 modellist.cpp:465 modellist.cpp:486
 #, kde-format
 msgid "Could not parse diff output."
 msgstr "Δεν ήταν δυνατή η επεξεργασία της εξόδου του diff."
 
-#: komparemodellist.cpp:535
+#: modellist.cpp:440
 #, kde-format
 msgid "The files are identical."
 msgstr "Τα αρχεία είναι όμοια."
 
-#: komparemodellist.cpp:719
+#: modellist.cpp:550
 #, kde-format
 msgid "Could not write to the temporary file."
 msgstr "Αδύνατο η εγγραφή στο προσωρινό αρχείο."
 
-#: komparemodellist.cpp:993
+#: modellist.cpp:820
 #, kde-format
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "

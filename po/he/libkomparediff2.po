@@ -1,0 +1,142 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the libkomparediff2 package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: libkomparediff2\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-07-19 00:41+0000\n"
+"PO-Revision-Date: 2024-07-26 10:45+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.05.2\n"
+
+#: modellist.cpp:49
+#, kde-format
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr "החלת ההבד&ל"
+
+#: modellist.cpp:53
+#, kde-format
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr "ה&סגת ההבדל"
+
+#: modellist.cpp:57
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr "החלה של ה&כול"
+
+#: modellist.cpp:61
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr "הס&גה של הכול"
+
+#: modellist.cpp:71
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr "הקובץ הקו&דם"
+
+#: modellist.cpp:75
+#, kde-format
+msgctxt "@action"
+msgid "N&ext File"
+msgstr "הקובץ הב&א"
+
+#: modellist.cpp:79
+#, kde-format
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr "ההבדל ה&קודם"
+
+#: modellist.cpp:83
+#, kde-format
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr "ההבדל ה&בא"
+
+#: modellist.cpp:183 modellist.cpp:209
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>אין דגמים או שאין הבדלים, הקובץ הזה: <b>%1</b>, אינו קובץ הבדלים תקף.</"
+"qt>"
+
+#: modellist.cpp:192
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr "<qt>אירעו תקלות בהחלת ההבדלים <b>%1</b> לקובץ <b>%2</b>.</qt>"
+
+#: modellist.cpp:220
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr "<qt>אירוע תקלות בהחלת ההבדלים <b>%1</b> לתיקייה <b>%2</b>.</qt>"
+
+#: modellist.cpp:256 modellist.cpp:520
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "לא ניתן לפתוח קובץ זמני."
+
+#: modellist.cpp:289 modellist.cpp:296
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr "<qt>לא ניתן לכתוב לקובץ הזמני <b>%1</b>, הוא יימחק.</qt>"
+
+#: modellist.cpp:324
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr ""
+"<qt>לא ניתן ליצור את תיקיית היעד <b>%1</b>.\n"
+"הקובץ לא נשמר.</qt>"
+
+#: modellist.cpp:350
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+
+#: modellist.cpp:429 modellist.cpp:465 modellist.cpp:486
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "לא ניתן לפענח את פלט ההבדלים."
+
+#: modellist.cpp:440
+#, kde-format
+msgid "The files are identical."
+msgstr "הקבצים זהים."
+
+#: modellist.cpp:550
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "לא ניתן לכתוב לקובץ הזמני."
+
+#: modellist.cpp:820
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+"תיעוד ההבדלים פגום. פענוח חלק מהשורות נכשל והם לא יוצגו בתצוגת ההבדלים."

@@ -3,76 +3,69 @@
 # Tamas Krutki, 2011.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2011.
 # Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-19 00:41+0000\n"
-"PO-Revision-Date: 2013-04-09 23:49+0200\n"
-"Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
+"PO-Revision-Date: 2024-07-31 21:28+0200\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: modellist.cpp:49
-#, fuzzy, kde-format
-#| msgid "&Apply Difference"
+#, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
-msgstr "Az eltérés al&kalmazása"
+msgstr "Eltérés al&kalmazása"
 
 #: modellist.cpp:53
-#, fuzzy, kde-format
-#| msgid "Un&apply Difference"
+#, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
 msgstr "Eltérés alkalmazásának v&isszavonása"
 
 #: modellist.cpp:57
-#, fuzzy, kde-format
-#| msgid "App&ly All"
+#, kde-format
 msgctxt "@action"
 msgid "App&ly All"
-msgstr "Alkalma&zás (teljes)"
+msgstr "Összes a&lkalmazása"
 
 #: modellist.cpp:61
-#, fuzzy, kde-format
-#| msgid "&Unapply All"
+#, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
-msgstr "Az alkalmazások &visszavonása"
+msgstr "Alkalmazások &visszavonása"
 
 #: modellist.cpp:71
-#, fuzzy, kde-format
-#| msgid "P&revious File"
+#, kde-format
 msgctxt "@action"
 msgid "P&revious File"
-msgstr "Az &előző fájl"
+msgstr "&Előző fájl"
 
 #: modellist.cpp:75
-#, fuzzy, kde-format
-#| msgid "N&ext File"
+#, kde-format
 msgctxt "@action"
 msgid "N&ext File"
-msgstr "A következő &fájl"
+msgstr "Következő &fájl"
 
 #: modellist.cpp:79
-#, fuzzy, kde-format
-#| msgid "&Previous Difference"
+#, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
-msgstr "Az e&lőző eltérés"
+msgstr "E&lőző eltérés"
 
 #: modellist.cpp:83
-#, fuzzy, kde-format
-#| msgid "&Next Difference"
+#, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
-msgstr "A köve&tkező eltérés"
+msgstr "Köve&tkező eltérés"
 
 #: modellist.cpp:183 modellist.cpp:209
 #, kde-format
@@ -103,7 +96,7 @@ msgstr ""
 #: modellist.cpp:256 modellist.cpp:520
 #, kde-format
 msgid "Could not open a temporary file."
-msgstr "Az egyik ideiglenes fájlt nem sikerült megnyitni."
+msgstr "Nem sikerült megnyitni egy ideiglenes fájlt."
 
 #: modellist.cpp:289 modellist.cpp:296
 #, kde-format

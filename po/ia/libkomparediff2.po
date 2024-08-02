@@ -107,7 +107,7 @@ msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
 "The file has not been saved.</qt>"
 msgstr ""
-"<qt>Nonpoteva crear directorio de destination <b>%1</b>.\n"
+"<qt>Non poteva crear directorio de destination <b>%1</b>.\n"
 "Le file non ha essite salveguardate.</qt>"
 
 #: modellist.cpp:350
@@ -117,7 +117,7 @@ msgid ""
 "b>. The temporary file is still available under: <b>%2</b>. You can manually "
 "copy it to the right place.</qt>"
 msgstr ""
-"<qt>Nonpoteva incargar le file temporanee al location de destination <b>%1</"
+"<qt>Non poteva incargar le file temporanee al location de destination <b>%1</"
 "b>. Le file temporanee es ancora disponibile sub: <b>%2</b>. Tu pote copiar "
 "lo manualmente in le loco correcte.</qt>"
 

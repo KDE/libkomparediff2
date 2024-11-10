@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/libkomparediff2/libkomparediff2.pot\n"
-"X-Crowdin-File-ID: 54564\n"
+"X-Crowdin-File: /kf6-stable/messages/libkomparediff2/libkomparediff2.pot\n"
+"X-Crowdin-File-ID: 54952\n"
 
 #: modellist.cpp:49
 #, kde-format

@@ -1,0 +1,139 @@
+# Sanskrit translations for libkomparediff2 package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the libkomparediff2 package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libkomparediff2\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-07-19 00:41+0000\n"
+"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: modellist.cpp:49
+#, kde-format
+msgctxt "@action"
+msgid "&Apply Difference"
+msgstr ""
+
+#: modellist.cpp:53
+#, kde-format
+msgctxt "@action"
+msgid "Un&apply Difference"
+msgstr ""
+
+#: modellist.cpp:57
+#, kde-format
+msgctxt "@action"
+msgid "App&ly All"
+msgstr ""
+
+#: modellist.cpp:61
+#, kde-format
+msgctxt "@action"
+msgid "&Unapply All"
+msgstr ""
+
+#: modellist.cpp:71
+#, kde-format
+msgctxt "@action"
+msgid "P&revious File"
+msgstr ""
+
+#: modellist.cpp:75
+#, kde-format
+msgctxt "@action"
+msgid "N&ext File"
+msgstr ""
+
+#: modellist.cpp:79
+#, kde-format
+msgctxt "@action"
+msgid "&Previous Difference"
+msgstr ""
+
+#: modellist.cpp:83
+#, kde-format
+msgctxt "@action"
+msgid "&Next Difference"
+msgstr ""
+
+#: modellist.cpp:183 modellist.cpp:209
+#, kde-format
+msgid ""
+"<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
+"file.</qt>"
+msgstr ""
+"<qt>न मॉडल् अथवा कोऽपि भेदः नास्ति, एषा सञ्चिका: <b>%1</b> , वैधः diff सञ्चिका "
+"नास्ति ।</qt>"
+
+#: modellist.cpp:192
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
+"qt>"
+msgstr "<qt><b>%2</b> सञ्चिकायां diff <b>%1</b> प्रयोक्तुं समस्याः आसन् ।</qt>"
+
+#: modellist.cpp:220
+#, kde-format
+msgid ""
+"<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
+"</qt>"
+msgstr "<qt><b>%2</b> पुटस्य मध्ये diff <b>%1</b> प्रयोक्तुं समस्याः आसन् ।</qt>"
+
+#: modellist.cpp:256 modellist.cpp:520
+#, kde-format
+msgid "Could not open a temporary file."
+msgstr "अस्थायीसञ्चिकां उद्घाटयितुं न शक्तवान् ।"
+
+#: modellist.cpp:289 modellist.cpp:296
+#, kde-format
+msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
+msgstr "<qt>अस्थायी सञ्चिकायां <b>%1</b> लिखितुं न शक्तवान्, तत् विलोपयन् ।</qt>"
+
+#: modellist.cpp:324
+#, kde-format
+msgid ""
+"<qt>Could not create destination directory <b>%1</b>.\n"
+"The file has not been saved.</qt>"
+msgstr "<qt>गन्तव्यनिर्देशिका <b>%1</b> निर्मातुं न शक्यते । सञ्चिका न रक्षिता ।</qt>"
+
+#: modellist.cpp:350
+#, kde-format
+msgid ""
+"<qt>Could not upload the temporary file to the destination location <b>%1</"
+"b>. The temporary file is still available under: <b>%2</b>. You can manually "
+"copy it to the right place.</qt>"
+msgstr ""
+"<qt>अस्थायीसञ्चिकां गन्तव्यस्थाने <b>%1</b> अपलोड् कर्तुं न शक्यते । अस्थायी सञ्चिका अद्यापि "
+"अत्र उपलभ्यते: <b>%2</b> . भवान् स्वहस्तेन तस्य प्रतिलिपिं सम्यक् स्थाने कर्तुं शक्नोति ।</qt>"
+
+#: modellist.cpp:429 modellist.cpp:465 modellist.cpp:486
+#, kde-format
+msgid "Could not parse diff output."
+msgstr "diff output इत्यस्य विश्लेषणं कर्तुं न शक्तवान् ।"
+
+#: modellist.cpp:440
+#, kde-format
+msgid "The files are identical."
+msgstr "सञ्चिकाः समानाः सन्ति ।"
+
+#: modellist.cpp:550
+#, kde-format
+msgid "Could not write to the temporary file."
+msgstr "अस्थायीसञ्चिकायां लिखितुं न शक्तवान् ।"
+
+#: modellist.cpp:820
+#, kde-format
+msgid ""
+"The diff is malformed. Some lines could not be parsed and will not be "
+"displayed in the diff view."
+msgstr ""
+"विभेदः विकृतः अस्ति। काश्चन पङ्क्तयः विश्लेषणं कर्तुं न शक्यन्ते, ते च diff दृश्ये न प्रदर्शिताः "
+"भविष्यन्ति ।"

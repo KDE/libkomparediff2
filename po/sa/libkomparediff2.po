@@ -20,49 +20,49 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
-msgstr ""
+msgstr "&अंतरं प्रयोजयन्तु"
 
 #: modellist.cpp:53
 #, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
-msgstr ""
+msgstr "Un&apply भेदः"
 
 #: modellist.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "App&ly All"
-msgstr ""
+msgstr "App&ly All"
 
 #: modellist.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
-msgstr ""
+msgstr "&अप्रयोगः सर्वः"
 
 #: modellist.cpp:71
 #, kde-format
 msgctxt "@action"
 msgid "P&revious File"
-msgstr ""
+msgstr "P&revious सञ्चिका"
 
 #: modellist.cpp:75
 #, kde-format
 msgctxt "@action"
 msgid "N&ext File"
-msgstr ""
+msgstr "N&ext सञ्चिका"
 
 #: modellist.cpp:79
 #, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
-msgstr ""
+msgstr "&पूर्व भेद"
 
 #: modellist.cpp:83
 #, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
-msgstr ""
+msgstr "&अनन्तरं भेदः"
 
 #: modellist.cpp:183 modellist.cpp:209
 #, kde-format

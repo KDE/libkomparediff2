@@ -1,23 +1,23 @@
 # translation of kompare.po to galician
 #
+# SPDX-FileCopyrightText: 2024 Adrián Chaves (Gallaecio)
 # mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2009, 2013.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-19 00:41+0000\n"
-"PO-Revision-Date: 2023-04-28 20:20+0200\n"
+"PO-Revision-Date: 2024-12-16 01:07+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: modellist.cpp:49
 #, kde-format
@@ -146,8 +146,8 @@ msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "
 "displayed in the diff view."
 msgstr ""
-"O formato do ficheiro de diferenza é incorrecto. Algunhas das liñas non "
-"puideron analizarse, e non se amosarán na vista das diferenzas."
+"O formato da diferenza é incorrecto. Algunhas das liñas non puideron "
+"analizarse, e non se amosarán na vista das diferenzas."
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

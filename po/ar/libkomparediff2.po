@@ -4,13 +4,13 @@
 # Ahmad M. Zawawi <azawawi@emirates.net.ae>, 2004.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
 # Abdalrahim Fakhouri <abdilra7eem@yahoo.com>, 2012.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-19 00:41+0000\n"
-"PO-Revision-Date: 2022-02-05 14:38+0400\n"
+"PO-Revision-Date: 2024-12-19 07:29+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -19,6 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: modellist.cpp:49
 #, kde-format
@@ -74,6 +75,8 @@ msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
 "file.</qt>"
 msgstr ""
+"<qt>لا يوجد نماذج أو اختلافات، هذا الملف: <b>%1</b>، ليس ملف اختلاف صالحًا.</"
+"qt>"
 
 #: modellist.cpp:192
 #, kde-format
@@ -81,6 +84,7 @@ msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
 "qt>"
 msgstr ""
+"<qt>كانت هناك مشاكل أثناء تطبيق الاختلاف <b>%1</b> على الملف <b>%2</b>.</qt>"
 
 #: modellist.cpp:220
 #, kde-format
@@ -88,6 +92,7 @@ msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
 "</qt>"
 msgstr ""
+"<qt>كانت هناك مشاكل في تطبيق الاختلاف <b>%1</b> على المجلد <b>%2</b>.</qt>"
 
 #: modellist.cpp:256 modellist.cpp:520
 #, kde-format
@@ -97,7 +102,7 @@ msgstr "فشل فتح ملف مؤقَت."
 #: modellist.cpp:289 modellist.cpp:296
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
-msgstr ""
+msgstr "<qt>لم يتمكن من الكتابة إلى الملف المؤقت <b>%1</b>، لذا حُذف.</qt>"
 
 #: modellist.cpp:324
 #, kde-format
@@ -105,6 +110,8 @@ msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
 "The file has not been saved.</qt>"
 msgstr ""
+"<qt>لم يتمكن من إنشاء دليل الوجهة <b>%1</b>.\n"
+"لم يحفظ الملف.</qt>"
 
 #: modellist.cpp:350
 #, kde-format
@@ -113,6 +120,8 @@ msgid ""
 "b>. The temporary file is still available under: <b>%2</b>. You can manually "
 "copy it to the right place.</qt>"
 msgstr ""
+"<qt>لم نتمكن من تحميل الملف المؤقت إلى موقع الوجهة <b>%1</b>. لا يزال الملف "
+"المؤقت متاحًا ضمن: <b>%2</b>. يمكنك نسخه يدويًا إلى المكان الصحيح.</qt>"
 
 #: modellist.cpp:429 modellist.cpp:465 modellist.cpp:486
 #, kde-format
@@ -134,7 +143,7 @@ msgstr "فشل الكتابة إلى الملف المؤقَت."
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "
 "displayed in the diff view."
-msgstr ""
+msgstr "تم تشويه الفرق. لم يتم تحليل بعض الأسطر ولن يتم عرضها في عرض الاختلاف."
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

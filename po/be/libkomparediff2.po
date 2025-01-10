@@ -1,15 +1,13 @@
-# translation of kompare.po to Belarusian
-#
 # Siarhei Liantsevich <serzh.by@gmail.com>, 2007.
 # Darafei Praliaskouski <komzpa@licei2.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: kompare\n"
+"Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-19 00:41+0000\n"
-"PO-Revision-Date: 2007-10-28 14:03+0200\n"
+"PO-Revision-Date: 2025-01-08 21:32\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
-"Language-Team: Belarusian <i18n@mova.org>\n"
+"Language-Team: Belarusian\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,125 +16,132 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
 "%100>=11 && n%100<=14 ? 2 : 3);\n"
+"X-Crowdin-Project: fc57ad16a28d02dea100ceb1c60de14e\n"
+"X-Crowdin-Project-ID: 136\n"
+"X-Crowdin-Language: be\n"
+"X-Crowdin-File: /main/KDE6/be/messages/libkomparediff2/libkomparediff2.po\n"
+"X-Crowdin-File-ID: 19555\n"
 
 #: modellist.cpp:49
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
-msgstr "Ужыць адрозненні"
+msgstr "&Ужыць адрозненне"
 
 #: modellist.cpp:53
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
-msgstr "Адмяніць адрозненні"
+msgstr "Прыбр&аць адрозненне"
 
 #: modellist.cpp:57
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "App&ly All"
-msgstr "Ужыць усё"
+msgstr "Ужы&ць усё"
 
 #: modellist.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
-msgstr "Адмяніць усё"
+msgstr "&Прыбраць усё"
 
 #: modellist.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "P&revious File"
-msgstr "Папярэдні файл"
+msgstr "&Папярэдні файл"
 
 #: modellist.cpp:75
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "N&ext File"
-msgstr "Наступны файл"
+msgstr "&Наступны файл"
 
 #: modellist.cpp:79
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
-msgstr "Папярэдняе адрозненне"
+msgstr "П&апярэдняе адрозненне"
 
 #: modellist.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
-msgstr "Наступнае адрозненне"
+msgstr "На&ступнае адрозненне"
 
 #: modellist.cpp:183 modellist.cpp:209
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
 "file.</qt>"
 msgstr ""
-"<qt>Няма макетаў або адрозненняў. Файл  <b>%1</b> не з'яўляецца файлам "
-"фармату diff.</qt>"
+"<qt>Няма мадэляў або адрозненняў. Файл <b>%1</b> не ёсць сапраўдным файлам "
+"адрозненняў.</qt>"
 
 #: modellist.cpp:192
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
 "qt>"
 msgstr ""
-"<qt>Паўсталі праблемы падчас ужывання diff <b>%1</b> да файла <b>%2</b>.</qt>"
+"<qt>Пры ўжыванні адрознення <b>%1</b> да файла <b>%2</b> паўсталі праблемы.</"
+"qt>"
 
 #: modellist.cpp:220
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
 "</qt>"
 msgstr ""
-"<qt>Паўсталі праблемы падчас ужывання diff <b>%1</b> да тэчкі <b>%2</b>.</qt>"
+"<qt>Пры ўжыванні адрознення <b>%1</b> да каталога <b>%2</b> паўсталі "
+"праблемы.</qt>"
 
 #: modellist.cpp:256 modellist.cpp:520
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not open a temporary file."
-msgstr "Не атрымліваецца адкрыць часовы файл."
+msgstr "Не ўдалося адкрыць часовы файл."
 
 #: modellist.cpp:289 modellist.cpp:296
-#, fuzzy, kde-format
+#, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
 msgstr ""
-"<qt>Не атрымліваецца запісаць у часовы файл <b>%1</b>, выдаляемы яго.</qt>"
+"<qt>Немагчыма запісаць у часовы файл <b>%1</b>, файл будзе выдалены.</qt>"
 
 #: modellist.cpp:324
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
 "The file has not been saved.</qt>"
 msgstr ""
-"<qt>Не атрымалася стварыць канчатковую тэчку <b>%1</b>.\n"
-"Файл не захаваны.</qt>"
+"<qt>Не ўдалося стварыць мэтавы каталог <b>%1</b>.\n"
+" Файл не быў захаваны.</qt>"
 
 #: modellist.cpp:350
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<qt>Could not upload the temporary file to the destination location <b>%1</"
 "b>. The temporary file is still available under: <b>%2</b>. You can manually "
 "copy it to the right place.</qt>"
 msgstr ""
-"<qt>Не атрымліваецца загрузіць часовы файл у кропку прызначэння <b>%1</b>. "
-"Часовы файл усё яшчэ даступны пад імем <b>%2</b>. Вы можаце ўручную "
-"скапіраваць яго ў патрэбнае месца.</qt>"
+"<qt>Не ўдалося запампаваць часовы файл у мэтавае размяшчэнне <b>%1</b>. "
+"часовы файл усё яшчэ даступны: <b>%2</b>. Вы можаце ўласнаручна скапіяваць "
+"яго ў патрэбнае размяшчэнне.</qt>"
 
 #: modellist.cpp:429 modellist.cpp:465 modellist.cpp:486
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not parse diff output."
-msgstr "Не атрымліваецца апрацаваць выснову diff."
+msgstr "Не ўдалося прааналізаваць вывад адрознення."
 
 #: modellist.cpp:440
-#, fuzzy, kde-format
+#, kde-format
 msgid "The files are identical."
-msgstr "Усе файлы ідэнтычныя."
+msgstr "Файлы аднолькавыя."
 
 #: modellist.cpp:550
-#, fuzzy, kde-format
+#, kde-format
 msgid "Could not write to the temporary file."
-msgstr "Не атрымліваецца запісаць у часовы файл."
+msgstr "Не ўдалося запісаць у часовы файл."
 
 #: modellist.cpp:820
 #, kde-format
@@ -144,6 +149,8 @@ msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "
 "displayed in the diff view."
 msgstr ""
+"Адрозненне няправільнае. Некаторыя радкі не ўдалося прааналізаваць, яны не "
+"будуць паказвацца пры праглядзе."
 
 #, fuzzy
 #~ msgid "Could not load our KompareViewPart."

@@ -1,6 +1,6 @@
 # translation of kompare.po to galician
 #
-# SPDX-FileCopyrightText: 2024 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2024, 2025 Adrián Chaves (Gallaecio)
 # mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2009, 2013.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013.
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-19 00:41+0000\n"
-"PO-Revision-Date: 2024-12-16 01:07+0100\n"
+"PO-Revision-Date: 2025-01-12 15:44+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -97,7 +97,7 @@ msgstr ""
 #: modellist.cpp:256 modellist.cpp:520
 #, kde-format
 msgid "Could not open a temporary file."
-msgstr "Non foi posíbel acceder a un ficheiro temporal."
+msgstr "Non foi posíbel abrir un ficheiro temporal."
 
 #: modellist.cpp:289 modellist.cpp:296
 #, kde-format

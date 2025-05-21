@@ -10,8 +10,16 @@
 
 namespace KompareDiff2
 {
-/**
- * Patch format enum.
+/*!
+ * \enum KompareDiff2::Format
+ * \brief Patch format enum.
+ * \value UnknownFormat
+ * \value Context
+ * \value Ed
+ * \value Normal
+ * \value RCS
+ * \value Unified
+ * \value SideBySide
  */
 enum Format {
     UnknownFormat = -1,
@@ -23,8 +31,20 @@ enum Format {
     SideBySide    = 5,
 };
 
-/**
- * Patch generator enum.
+/*!
+ * \enum KompareDiff2::Generator
+ * \brief Patch generator enum.
+ * \value UnknownGenerator
+ * \value CVSDiff
+ * \value Diff
+ * \value Perforce
+ * \value SubVersion
+ * \value Reserved2
+ * \value Reserved3
+ * \value Reserved4
+ * \value Reserved5
+ * \value Reserved6
+ * \value Reserved7
  */
 enum Generator {
     UnknownGenerator = -1,
@@ -40,38 +60,64 @@ enum Generator {
     Reserved7        = 9,
 };
 
-/**
- * Mode
+/*!
+ * \enum KompareDiff2::Mode
+ * \value ComparingFiles
+ *        compareFiles
+ * \value ComparingFileString
+ *        Compare a source file with a destination string.
+ * \value ComparingStringFile
+ *        Compare a source string with a destination file.
+ * \value ComparingDirs
+ *        compareDirs
+ * \value ShowingDiff
+ *        openDiff
+ * \value BlendingDir
+ *        openDirAndDiff
+ * \value BlendingFile
+ *        openFileAndDiff
+ * \value UnknownMode
+ *        Used to initialize the Info struct.
  */
 enum Mode {
-    ComparingFiles,      ///< compareFiles
-    ComparingFileString, ///< Compare a source file with a destination string
-    ComparingStringFile, ///< Compare a source string with a destination file
-    ComparingDirs,       ///< compareDirs
-    ShowingDiff,         ///< openDiff
-    BlendingDir,         ///< openDirAndDiff
-    BlendingFile,        ///< openFileAndDiff
-    UnknownMode,         ///< Used to initialize the Infoi struct
+    ComparingFiles,
+    ComparingFileString,
+    ComparingStringFile,
+    ComparingDirs,
+    ShowingDiff,
+    BlendingDir,
+    BlendingFile,
+    UnknownMode,
 };
 
-/**
- * DiffMode
+/*!
+ * \enum KompareDiff2::DiffMode
+ * \value Default
+ * \value Custom
+ * \value UnknownDiffMode
+ *        Use to initialize the Info struct.
  */
 enum DiffMode {
     Default,
     Custom,
-    UnknownDiffMode, ///< Use to initialize the Info struct
+    UnknownDiffMode,
 };
 
-/**
- * State
+/*!
+ * \enum KompareDiff2::Status
+ * \value RunningDiff
+ * \value Parsing
+ * \value FinishedParsing
+ * \value FinishedWritingDiff
+ * \value ReRunningDiff
+ *        When a change has been detected after the diff has run.
  */
 enum Status {
     RunningDiff,
     Parsing,
     FinishedParsing,
     FinishedWritingDiff,
-    ReRunningDiff, ///< When a change has been detected after diff has run
+    ReRunningDiff,
 };
 
 } // End of namespace KompareDiff2

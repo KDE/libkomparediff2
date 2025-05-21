@@ -21,28 +21,52 @@ namespace KompareDiff2
 {
 class DifferenceStringPrivate;
 
-/**
- * @class DifferenceString differencestring.h <KompareDiff2/DifferenceString>
- *
- * A difference string.
+/*!
+ * \inmodule KompareDiff2
+ * \class KompareDiff2::DifferenceString
+ * \inheaderfile KompareDiff2/DifferenceString
+ * \brief A difference string.
  */
 class KOMPAREDIFF2_EXPORT DifferenceString
 {
 public:
+
+    /*!
+     */
     DifferenceString();
+    /*!
+     */
     explicit DifferenceString(const QString &string, const MarkerList &markerList = MarkerList());
+    /*!
+     */
     DifferenceString(const DifferenceString &ds);
     ~DifferenceString();
 
 public:
+    /*!
+     */
     bool operator==(const DifferenceString &ks) const;
 
+    /*!
+     */
     QString string() const;
+    /*!
+     */
     QString conflictString() const;
+    /*!
+     */
     MarkerList markerList() const;
+    /*!
+     */
     void setString(const QString &string);
+    /*!
+     */
     void setConflictString(const QString &conflict);
+    /*!
+     */
     void setMarkerList(const MarkerList &markerList);
+    /*!
+     */
     void prepend(Marker *marker);
 
 private:

@@ -20,35 +20,66 @@ namespace KompareDiff2
 class Difference;
 class DiffHunkPrivate;
 
-/**
- * DiffHunk
+/*!
+ * \inmodule KompareDiff2
+ * \class KompareDiff2::DiffHunk
+ * \inheaderfile KompareDiff2/DiffHunk
  */
 class KOMPAREDIFF2_EXPORT DiffHunk
 {
 public:
+    /*!
+     * \enum KompareDiff2::DiffHunk::Type
+     * \value Normal
+     * \value AddedByBlend
+     */
     enum Type {
         Normal,
         AddedByBlend,
     };
 
 public:
+    /*!
+     */
     DiffHunk(int sourceLine, int destinationLine, const QString &function = QString(), Type type = Normal);
+    /*!
+     */
     ~DiffHunk();
 
+    /*!
+     */
     DifferenceList differences() const;
+    /*!
+     */
     QString function() const;
 
+    /*!
+     */
     int sourceLineNumber() const;
+    /*!
+     */
     int destinationLineNumber() const;
 
+    /*!
+     */
     int sourceLineCount() const;
+    /*!
+     */
     int destinationLineCount() const;
 
+    /*!
+     */
     Type type() const;
+    /*!
+     */
     void setType(Type type);
 
+    /*!
+     */
     void add(Difference *diff);
 
+    /*!
+     */
     QString recreateHunk() const;
 
 private:

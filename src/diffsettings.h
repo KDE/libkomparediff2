@@ -19,19 +19,28 @@ class KConfig;
 namespace KompareDiff2
 {
 
-/**
- * @class DiffSettings diffsettings.h <KompareDiff2/DiffSettings>
- *
- * The settings for a diff.
+/*!
+ * \inmodule KompareDiff2
+ * \class KompareDiff2::DiffSettings
+ * \inheaderfile KompareDiff2/DiffSettings
+ * \brief The settings for a diff.
  */
 class KOMPAREDIFF2_EXPORT DiffSettings
 {
 public:
+    /*!
+     */
     DiffSettings();
+    /*!
+     */
     ~DiffSettings();
 
 public:
+    /*!
+     */
     void loadSettings(KConfig *config);
+    /*!
+     */
     void saveSettings(KConfig *config);
 
 public:

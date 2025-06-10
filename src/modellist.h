@@ -1,7 +1,7 @@
 /*
     SPDX-FileCopyrightText: 2001-2003 John Firebaugh <jfirebaugh@kde.org>
     SPDX-FileCopyrightText: 2001-2005,2009 Otto Bruggeman <bruggie@gmail.com>
-    SPDX-FileCopyrightText: 2007-2008 Kevin Kofler <kevin.kofler\chello.at>
+    SPDX-FileCopyrightText: 2007-2008 Kevin Kofler <kevin.kofler@chello.at>
     SPDX-FileCopyrightText: 2012 Jean -Nicolas Artaud <jeannicolasartaud@gmail.com>
 
     SPDX-License-Identifier: GPL-2.0-or-later

@@ -67,7 +67,7 @@ msgstr "ال&تغيّر السابق"
 #, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
-msgstr "التغيّّر التال&ي"
+msgstr "التغيّر التال&ي"
 
 #: modellist.cpp:183 modellist.cpp:209
 #, kde-format

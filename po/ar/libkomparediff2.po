@@ -4,13 +4,13 @@
 # Ahmad M. Zawawi <azawawi@emirates.net.ae>, 2004.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
 # Abdalrahim Fakhouri <abdilra7eem@yahoo.com>, 2012.
-# SPDX-FileCopyrightText: 2022, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2022, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-19 00:41+0000\n"
-"PO-Revision-Date: 2024-12-19 07:29+0400\n"
+"PO-Revision-Date: 2025-08-09 19:46+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -126,7 +126,7 @@ msgstr ""
 #: modellist.cpp:429 modellist.cpp:465 modellist.cpp:486
 #, kde-format
 msgid "Could not parse diff output."
-msgstr "فشل إعراب مخرجات الإختلافات."
+msgstr "فشل إعراب مخرجات الاختلافات."
 
 #: modellist.cpp:440
 #, kde-format
@@ -143,7 +143,7 @@ msgstr "فشل الكتابة إلى الملف المؤقَت."
 msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "
 "displayed in the diff view."
-msgstr "تم تشويه الفرق. لم يتم تحليل بعض الأسطر ولن يتم عرضها في عرض الاختلاف."
+msgstr "تشوه الفرق. لم تُحلل بعض الأسطر ولتُعرض في منظور الاختلاف."
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

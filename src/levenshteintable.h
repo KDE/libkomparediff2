@@ -22,45 +22,68 @@ class Marker;
 
 class Marker;
 
-/**
- * Computes the Levenshtein distance between two sequences.
+/*!
+ * \inmodule KompareDiff2
+ * \class KompareDiff2::LevenshteinTable
+ * \brief Computes the Levenshtein distance between two sequences.
+ *
  * The actual sequence contents must be prepended with one virtual item each for easier index access.
  */
 template<class SequencePair>
 class LevenshteinTable
 {
 public:
+    /*!
+     */
     LevenshteinTable();
+    /*!
+     */
     LevenshteinTable(unsigned int width, unsigned int height);
+    /*!
+     */
     ~LevenshteinTable() = default;
 
     LevenshteinTable(const LevenshteinTable &table) = delete;
     const LevenshteinTable &operator=(const LevenshteinTable &table) = delete;
 
 public:
+    /*!
+     */
     int getContent(unsigned int posX, unsigned int posY) const;
+    /*!
+     */
     int setContent(unsigned int posX, unsigned int posY, int value);
+    /*!
+     */
     bool setSize(unsigned int width, unsigned int height);
 
+    /*!
+     */
     unsigned int width() const
     {
         return m_width;
     };
+    /*!
+     */
     unsigned int height() const
     {
         return m_height;
     };
 
-    /** Debug method  to check if the table is properly filled */
+    /*! Debug method  to check if the table is properly filled */
     void dumpLevenshteinTable();
 
-    /**
+    /*!
      * This calculates the levenshtein distance of 2 sequences.
      * This object takes ownership of the argument
      */
     unsigned int createTable(SequencePair *sequences);
 
+    /*!
+     */
     void createListsOfMarkers();
+    /*!
+     */
     int chooseRoute(int c1, int c2, int c3, int current);
 
 private:

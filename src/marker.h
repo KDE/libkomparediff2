@@ -15,51 +15,73 @@
 namespace KompareDiff2
 {
 
-/**
- * @class Marker marker.h <KompareDiff2/Marker>
- *
- * A Marker.
+/*!
+ * \inmodule KompareDiff2
+ * \class KompareDiff2::Marker
+ * \inheaderfile KompareDiff2/Marker
+ * \brief A Marker.
  */
 class KOMPAREDIFF2_EXPORT Marker
 {
 public:
+    /*!
+     * \enum KompareDiff2::Marker::Type
+     * \value Start
+     * \value End
+     */
     enum Type {
         Start = 0,
         End = 1,
     };
 
 public:
+    /*!
+     */
     Marker()
     {
         m_type = Marker::Start;
         m_offset = 0;
     }
+    /*!
+     */
     Marker(Marker::Type type, unsigned int offset)
     {
         m_type = type;
         m_offset = offset;
     }
+    /*!
+     */
     ~Marker() = default;
 
 public:
+    /*!
+     */
     Marker::Type type() const
     {
         return m_type;
     }
+    /*!
+     */
     unsigned int offset() const
     {
         return m_offset;
     }
 
+    /*!
+     */
     void setType(Marker::Type type)
     {
         m_type = type;
     }
+    /*!
+     */
     void setOffset(unsigned int offset)
     {
         m_offset = offset;
     }
 
+    /*!
+     */
     bool operator==(const Marker &rhs) const
     {
         return this->type() == rhs.type() && this->offset() == rhs.offset();

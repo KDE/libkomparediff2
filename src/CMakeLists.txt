@@ -12,6 +12,7 @@ ecm_setup_version(PROJECT
 )
 
 add_library(komparediff2 SHARED)
+ecm_generate_qdoc(komparediff2 libkomparediff2.qdocconf)
 
 set_target_properties(komparediff2 PROPERTIES
     VERSION     ${KOMPAREDIFF2_VERSION}

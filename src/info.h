@@ -20,14 +20,17 @@ class QTemporaryDir;
 namespace KompareDiff2
 {
 
-/**
- * @class Info info.h <KompareDiff2/Info>
- *
- * Info.
+/*!
+ * \inmodule KompareDiff2
+ * \class KompareDiff2::Info
+ * \inheaderfile KompareDiff2/Info
+ * \brief Info.
  */
 class KOMPAREDIFF2_EXPORT Info
 {
 public:
+    /*!
+     */
     Info(Mode _mode = UnknownMode,
          DiffMode _diffMode = UnknownDiffMode,
          Format _format = UnknownFormat,
@@ -41,19 +44,45 @@ public:
          uint _depth = 0,
          bool _applied = true);
 
+    /*!
+     */
     void swapSourceWithDestination();
 
+    /*!
+     */
     Mode mode;
+    /*!
+     */
     DiffMode diffMode;
+    /*!
+     */
     Format format;
+    /*!
+     */
     Generator generator;
+    /*!
+     */
     QUrl source;
+    /*!
+     */
     QUrl destination;
+    /*!
+     */
     QString localSource;
+    /*!
+     */
     QString localDestination;
+    /*!
+     */
     QTemporaryDir *sourceQTempDir;
+    /*!
+     */
     QTemporaryDir *destinationQTempDir;
+    /*!
+     */
     uint depth;
+    /*!
+     */
     bool applied;
 };
 

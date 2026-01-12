@@ -13,31 +13,40 @@
 // Qt
 #include <QList>
 
-/**
+/*!
  * KompareDiff2 namespace
  */
 namespace KompareDiff2
 {
 
-/**
- * @class DiffModelList diffmodellist.h <KompareDiff2/DiffModelList>
- *
- * A list of DiffModel.
+/*!
+ * \inmodule KompareDiff2
+ * \class KompareDiff2::DiffModelList
+ * \inheaderfile KompareDiff2/DiffModelList
+ * \brief A list of DiffModel.
  */
 class KOMPAREDIFF2_EXPORT DiffModelList : public QList<DiffModel *>
 {
 public:
+    /*!
+     */
     DiffModelList() = default;
+    /*!
+     */
     DiffModelList(const DiffModelList &list)
         : QList<DiffModel *>(list)
     {
     }
+    /*!
+     */
     virtual ~DiffModelList()
     {
         qDeleteAll(begin(), end());
     }
 
 public:
+    /*!
+     */
     void sort();
 };
 

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kompare\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2013-05-03 19:16+0300\n"
+"PO-Revision-Date: 2026-06-12 14:24+0300\n"
 "Last-Translator: Liudas Ališauskas <liudas@akmc.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -18,60 +18,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Poedit 3.9\n"
 
 #: modellist.cpp:49
-#, fuzzy, kde-format
-#| msgid "&Apply Difference"
+#, kde-format
 msgctxt "@action"
 msgid "&Apply Difference"
-msgstr "Prit&aikyti skirtumą"
+msgstr "T&aikyti skirtumą"
 
 #: modellist.cpp:53
-#, fuzzy, kde-format
-#| msgid "Un&apply Difference"
+#, kde-format
 msgctxt "@action"
 msgid "Un&apply Difference"
-msgstr "Pa&naikinti skirtumo pritaikymą"
+msgstr "Atšau&kti skirtumo taikymą"
 
 #: modellist.cpp:57
-#, fuzzy, kde-format
-#| msgid "App&ly All"
+#, kde-format
 msgctxt "@action"
 msgid "App&ly All"
-msgstr "Pritaik&yti viską"
+msgstr "Taik&yti visus"
 
 #: modellist.cpp:61
-#, fuzzy, kde-format
-#| msgid "&Unapply All"
+#, kde-format
 msgctxt "@action"
 msgid "&Unapply All"
-msgstr "&Panaikinti visko pritaikymą"
+msgstr "Atša&ukti visų taikymą"
 
 #: modellist.cpp:71
-#, fuzzy, kde-format
-#| msgid "P&revious File"
+#, kde-format
 msgctxt "@action"
 msgid "P&revious File"
-msgstr "&Ankstesnis failas"
+msgstr "A&nkstesnis failas"
 
 #: modellist.cpp:75
-#, fuzzy, kde-format
-#| msgid "N&ext File"
+#, kde-format
 msgctxt "@action"
 msgid "N&ext File"
 msgstr "K&itas failas"
 
 #: modellist.cpp:79
-#, fuzzy, kde-format
-#| msgid "&Previous Difference"
+#, kde-format
 msgctxt "@action"
 msgid "&Previous Difference"
-msgstr "A&nkstesnis skirtumas"
+msgstr "Ank&stesnis skirtumas"
 
 #: modellist.cpp:83
-#, fuzzy, kde-format
-#| msgid "&Next Difference"
+#, kde-format
 msgctxt "@action"
 msgid "&Next Difference"
 msgstr "&Kitas skirtumas"
@@ -82,13 +74,15 @@ msgid ""
 "<qt>No models or no differences, this file: <b>%1</b>, is not a valid diff "
 "file.</qt>"
 msgstr ""
+"<qt>Nėra modelių arba nėra skirtumų, šis failas: <b>%1</b>, nėra tinkamas "
+"skirtumų failas.</qt>"
 
 #: modellist.cpp:192
 #, kde-format
 msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the file <b>%2</b>.</"
 "qt>"
-msgstr ""
+msgstr "<qt>Iškilo problemų taikant <b>%1</b> skirtumus failui <b>%2</b>.</qt>"
 
 #: modellist.cpp:220
 #, kde-format
@@ -96,16 +90,17 @@ msgid ""
 "<qt>There were problems applying the diff <b>%1</b> to the folder <b>%2</b>."
 "</qt>"
 msgstr ""
+"<qt>Iškilo problemų taikant <b>%1</b> skirtumus aplankui <b>%2</b>.</qt>"
 
 #: modellist.cpp:256 modellist.cpp:520
 #, kde-format
 msgid "Could not open a temporary file."
-msgstr "Negalima atidaryti laikino failo."
+msgstr "Nepavyko atverti laikinojo failo."
 
 #: modellist.cpp:289 modellist.cpp:296
 #, kde-format
 msgid "<qt>Could not write to the temporary file <b>%1</b>, deleting it.</qt>"
-msgstr ""
+msgstr "<qt>Nepavyko rašyti į laikinąjį failą <b>%1</b>, jis ištrinamas.</qt>"
 
 #: modellist.cpp:324
 #, kde-format
@@ -113,6 +108,8 @@ msgid ""
 "<qt>Could not create destination directory <b>%1</b>.\n"
 "The file has not been saved.</qt>"
 msgstr ""
+"<qt>Nepavyko sukurti paskirties katalogo <b>%1</b>.\n"
+"Failas neįrašytas.</qt>"
 
 #: modellist.cpp:350
 #, kde-format
@@ -121,21 +118,24 @@ msgid ""
 "b>. The temporary file is still available under: <b>%2</b>. You can manually "
 "copy it to the right place.</qt>"
 msgstr ""
+"<qt>Nepavyko išsiųsti laikinojo failo į paskirties vietą <b>%1</b>. "
+"Laikinasis failas yra vis dar prieinamas: <b>%2</b>. Galite jį nukopijuoti "
+"rankiniu būdu į reikiamą vietą.</qt>"
 
 #: modellist.cpp:429 modellist.cpp:465 modellist.cpp:486
 #, kde-format
 msgid "Could not parse diff output."
-msgstr "Negalima išnagrinėti diff išvesties."
+msgstr "Nepavyko išnagrinėti skirtumų išvesties."
 
 #: modellist.cpp:440
 #, kde-format
 msgid "The files are identical."
-msgstr "Failai yra identiški."
+msgstr "Failai yra vienodi."
 
 #: modellist.cpp:550
 #, kde-format
 msgid "Could not write to the temporary file."
-msgstr "Negalima įrašyti į laikiną failą."
+msgstr "Nepavyko rašyti į laikinąjį failą."
 
 #: modellist.cpp:820
 #, kde-format
@@ -143,6 +143,8 @@ msgid ""
 "The diff is malformed. Some lines could not be parsed and will not be "
 "displayed in the diff view."
 msgstr ""
+"Skirtumai yra netaisyklingi. Kai kurių eilučių nepavyko išnagrinėti ir jos "
+"nebus rodomos skirtumų rodinyje."
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

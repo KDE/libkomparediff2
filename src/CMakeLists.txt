@@ -137,3 +137,19 @@ install( FILES
 install( EXPORT LibKompareDiff2Targets
          DESTINATION "${_LibKompareDiff2_CONFIG_DEST}"
          FILE ${KOMPAREDIFF2_CMAKECONFIG_NAME}Targets.cmake )
+
+if(${ECM_VERSION} VERSION_GREATER_EQUAL 6.30)
+include(ECMInstalledLibraryCheck)
+
+ecm_add_installed_library_check(komparediff2
+    PACKAGE_NAME "${KOMPAREDIFF2_CMAKECONFIG_NAME}"
+    NO_PACKAGE_TARGET_NAMESPACE
+)
+
+ecm_installed_library_check_include_strings(komparediff2
+    HEADERS ${komparediff2_CamelCase_HEADERS}
+    PREFIX KompareDiff2
+)
+
+ecm_installed_library_check_version_preprocessor_macros(komparediff2)
+endif()

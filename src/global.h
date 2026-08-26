@@ -8,6 +8,10 @@
 #ifndef KOMPAREDIFF2_GLOBAL_H
 #define KOMPAREDIFF2_GLOBAL_H
 
+// Include version header explicitly because the export header
+// (which usually takes care of that) isn't used here
+#include <komparediff2_version.h> // IWYU pragma: export
+
 namespace KompareDiff2
 {
 /*!

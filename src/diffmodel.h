@@ -17,6 +17,7 @@
 #include <QStringList>
 // Std
 #include <memory>
+#include <utility>
 
 namespace KompareDiff2
 {
@@ -202,7 +203,7 @@ public:
      * Returns the lines changed after taking into account
      * \a oldLines and \a newLines in relation to the \a editLineNumber where the change occurred.
      */
-    QPair<QList<Difference *>, QList<Difference *>> linesChanged(const QStringList &oldLines, const QStringList &newLines, int editLineNumber);
+    std::pair<QList<Difference *>, QList<Difference *>> linesChanged(const QStringList &oldLines, const QStringList &newLines, int editLineNumber);
 
 private Q_SLOTS:
     void slotDifferenceApplied(Difference *diff);

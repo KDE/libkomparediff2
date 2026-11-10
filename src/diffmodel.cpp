@@ -482,7 +482,7 @@ bool DiffModel::setSelectedDifference(Difference *diff)
     return true;
 }
 
-QPair<QList<Difference *>, QList<Difference *>> DiffModel::linesChanged(const QStringList &oldLines, const QStringList &newLines, int editLineNumber)
+std::pair<QList<Difference *>, QList<Difference *>> DiffModel::linesChanged(const QStringList &oldLines, const QStringList &newLines, int editLineNumber)
 {
     Q_D(DiffModel);
 
@@ -490,7 +490,7 @@ QPair<QList<Difference *>, QList<Difference *>> DiffModel::linesChanged(const QS
     QList<Difference *> inserted;
     QList<Difference *> removed;
     if (oldLines.size() == 0 && newLines.size() == 0) {
-        return qMakePair(QList<Difference *>(), QList<Difference *>());
+        return std::make_pair(QList<Difference *>(), QList<Difference *>());
     }
     int editLineEnd = editLineNumber + oldLines.size();
     // Find the range of differences [iterBegin, iterEnd) that should be updated
@@ -636,7 +636,7 @@ QPair<QList<Difference *>, QList<Difference *>> DiffModel::linesChanged(const QS
     for (; insertPosition != d->differences.end(); ++insertPosition) {
         (*insertPosition)->setTrackingDestinationLineNumber((*insertPosition)->trackingDestinationLineNumber() + (newLines.size() - oldLines.size()));
     }
-    return qMakePair(inserted, removed);
+    return std::make_pair(inserted, removed);
 }
 
 #include "moc_diffmodel.cpp"

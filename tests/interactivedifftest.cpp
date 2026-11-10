@@ -15,9 +15,9 @@
 
 using namespace KompareDiff2;
 
-typedef QHash<int, QPair<QStringList, QStringList>> DifferenceHash;
+typedef QHash<int, std::pair<QStringList, QStringList>> DifferenceHash;
 Q_DECLARE_METATYPE(DifferenceHash);
-typedef QHash<int, QPair<int, int>> LineNumberHash;
+typedef QHash<int, std::pair<int, int>> LineNumberHash;
 Q_DECLARE_METATYPE(LineNumberHash);
 
 void InteractiveDiffTest::CompareDifferenceStringList(const DifferenceStringList &actual, const QStringList &expected)
@@ -144,7 +144,7 @@ void InteractiveDiffTest::testDifferenceContents_data()
                          << "newline2\n"
                          << "insert2\n";
         DifferenceHash expectedDifferences;
-        expectedDifferences.insert(0, qMakePair(sourceLines, destinationLines));
+        expectedDifferences.insert(0, std::make_pair(sourceLines, destinationLines));
 
         QTest::newRow("Merge adjacent differences") << patch << oldLines << newLines << 3 << true << 1 << expectedDifferences;
     }
@@ -173,7 +173,7 @@ void InteractiveDiffTest::testDifferenceContents_data()
                          << "insert2\n"
                          << "newline1\n";
         DifferenceHash expectedDifferences;
-        expectedDifferences.insert(0, qMakePair(sourceLines, destinationLines));
+        expectedDifferences.insert(0, std::make_pair(sourceLines, destinationLines));
 
         // Append a line to a multiline diff
         QTest::newRow("Append multiline") << patch << oldLines << newLines << 4 << true << 1 << expectedDifferences;
@@ -228,8 +228,8 @@ void InteractiveDiffTest::testDifferenceContents_data()
         QStringList oldLines;
         oldLines << "insert2\n";
         DifferenceHash expectedDifferences;
-        expectedDifferences.insert(0, qMakePair(QStringList() << "delete1\n", QStringList() << "insert1\n"));
-        expectedDifferences.insert(1, qMakePair(QStringList(), QStringList() << "insert3\n"));
+        expectedDifferences.insert(0, std::make_pair(QStringList() << "delete1\n", QStringList() << "insert1\n"));
+        expectedDifferences.insert(1, std::make_pair(QStringList(), QStringList() << "insert3\n"));
 
         QTest::newRow("Partial reversion") << patch << oldLines << newLines << 3 << true << 2 << expectedDifferences;
     }
@@ -262,7 +262,7 @@ void InteractiveDiffTest::testDifferenceContents_data()
         destinationLines << "newline1\n"
                          << "newline2\n";
         DifferenceHash expectedDifferences;
-        expectedDifferences.insert(0, qMakePair(sourceLines, destinationLines));
+        expectedDifferences.insert(0, std::make_pair(sourceLines, destinationLines));
 
         // The first existing difference inside the edit
         QTest::newRow("First inside") << patch << oldLines << newLines << 1 << true << 1 << expectedDifferences;
@@ -294,7 +294,7 @@ void InteractiveDiffTest::testDifferenceContents_data()
                          << "newline1\n"
                          << "newline2\n";
         DifferenceHash expectedDifferences;
-        expectedDifferences.insert(0, qMakePair(sourceLines, destinationLines));
+        expectedDifferences.insert(0, std::make_pair(sourceLines, destinationLines));
 
         // The first existing difference intersects with the edit
         QTest::newRow("First intersects") << patch << oldLines << newLines << 3 << true << 1 << expectedDifferences;
@@ -313,7 +313,7 @@ void InteractiveDiffTest::testDifferenceContents_data()
         QStringList oldLines;
         oldLines << "\n";
         DifferenceHash expectedDifferences;
-        expectedDifferences.insert(0, qMakePair(QStringList(), QStringList() << "a\n"));
+        expectedDifferences.insert(0, std::make_pair(QStringList(), QStringList() << "a\n"));
 
         QTest::newRow("Replace empty line") << patch << oldLines << newLines << 2 << true << 1 << expectedDifferences;
     }
@@ -340,7 +340,7 @@ void InteractiveDiffTest::testDifferenceContents_data()
         QStringList oldLines;
         oldLines << "delete1\n";
         DifferenceHash expectedDifferences;
-        expectedDifferences.insert(1, qMakePair(QStringList() << "delete1\n", QStringList() << "newline1\n"));
+        expectedDifferences.insert(1, std::make_pair(QStringList() << "delete1\n", QStringList() << "newline1\n"));
 
         QTest::newRow("Replace line in source") << patch << oldLines << newLines << 11 << false << 2 << expectedDifferences;
     }
@@ -382,8 +382,8 @@ void InteractiveDiffTest::testLineNumbers_data()
         QStringList oldLines;
         oldLines << "oldline1\n";
         LineNumberHash expectedLineNumbers;
-        expectedLineNumbers.insert(0, qMakePair(2, 2));
-        expectedLineNumbers.insert(2, qMakePair(16, 20));
+        expectedLineNumbers.insert(0, std::make_pair(2, 2));
+        expectedLineNumbers.insert(2, std::make_pair(16, 20));
         QTest::newRow("Update existing line numbers") << patch << oldLines << newLines << 10 << 3 << expectedLineNumbers;
     }
     {
@@ -411,7 +411,7 @@ void InteractiveDiffTest::testLineNumbers_data()
         QStringList oldLines;
         oldLines << "oldline1\n";
         LineNumberHash expectedLineNumbers;
-        expectedLineNumbers.insert(2, qMakePair(22, 25));
+        expectedLineNumbers.insert(2, std::make_pair(22, 25));
 
         // Line numbers assigned to new difference when it is inserted after all existing differences
         QTest::newRow("Last edit line number") << patch << oldLines << newLines << 25 << 3 << expectedLineNumbers;
@@ -441,7 +441,7 @@ void InteractiveDiffTest::testLineNumbers_data()
         QStringList oldLines;
         oldLines << "oldline1\n";
         LineNumberHash expectedLineNumbers;
-        expectedLineNumbers.insert(1, qMakePair(11, 13));
+        expectedLineNumbers.insert(1, std::make_pair(11, 13));
 
         // Line numbers assigned to new difference when it is inserted between existing differences
         QTest::newRow("Middle edit line number") << patch << oldLines << newLines << 13 << 3 << expectedLineNumbers;
@@ -463,7 +463,7 @@ void InteractiveDiffTest::testLineNumbers_data()
         QStringList oldLines;
         oldLines << "oldline1\n";
         LineNumberHash expectedLineNumbers;
-        expectedLineNumbers.insert(0, qMakePair(5, 5));
+        expectedLineNumbers.insert(0, std::make_pair(5, 5));
 
         // Line numbers assigned to new difference when it is inserted before all existing differences
         QTest::newRow("First edit line number") << patch << oldLines << newLines << 5 << 2 << expectedLineNumbers;
@@ -498,10 +498,10 @@ void InteractiveDiffTest::testLineNumbers_data()
         QStringList oldLines;
         oldLines << "insert4\n";
         LineNumberHash expectedLineNumbers;
-        expectedLineNumbers.insert(0, qMakePair(2, 2));
-        expectedLineNumbers.insert(1, qMakePair(12, 13));
-        expectedLineNumbers.insert(2, qMakePair(13, 15));
-        expectedLineNumbers.insert(3, qMakePair(22, 24));
+        expectedLineNumbers.insert(0, std::make_pair(2, 2));
+        expectedLineNumbers.insert(1, std::make_pair(12, 13));
+        expectedLineNumbers.insert(2, std::make_pair(13, 15));
+        expectedLineNumbers.insert(3, std::make_pair(22, 24));
 
         QTest::newRow("Partial reversion") << patch << oldLines << newLines << 14 << 4 << expectedLineNumbers;
     }
